@@ -1,0 +1,1241 @@
+2024-05-26 12:10:50,747 - ==> Logging on master GPU: 0
+2024-05-26 12:10:50,748 - ==> Running Trainer: CFLOWTrainer
+2024-05-26 12:10:50,748 - ==> Using GPU: [0] for Training
+2024-05-26 12:10:50,748 - ==> Building model
+2024-05-26 12:10:51,544 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_2-95faca4d.pth'
+2024-05-26 12:15:15,876 - 
+------------------------------------ CFLOW ------------------------------------
+| module                                     | #parameters or shape    | #flops   |
+|:-------------------------------------------|:------------------------|:---------|
+| model                                      | 0.237G                  | 0        |
+|  encoder                                   |  66.834M                |          |
+|   encoder.conv1                            |   9.408K                |          |
+|    encoder.conv1.weight                    |    (64, 3, 7, 7)        |          |
+|   encoder.bn1                              |   0.128K                |          |
+|    encoder.bn1.weight                      |    (64,)                |          |
+|    encoder.bn1.bias                        |    (64,)                |          |
+|   encoder.layer1                           |   0.634M                |          |
+|    encoder.layer1.0                        |    0.206M               |          |
+|     encoder.layer1.0.conv1                 |     8.192K              |          |
+|      encoder.layer1.0.conv1.weight         |      (128, 64, 1, 1)    |          |
+|     encoder.layer1.0.bn1                   |     0.256K              |          |
+|      encoder.layer1.0.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.0.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.0.conv2                 |     0.147M              |          |
+|      encoder.layer1.0.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.0.bn2                   |     0.256K              |          |
+|      encoder.layer1.0.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.0.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.0.conv3                 |     32.768K             |          |
+|      encoder.layer1.0.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.0.bn3                   |     0.512K              |          |
+|      encoder.layer1.0.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.0.bn3.bias             |      (256,)             |          |
+|     encoder.layer1.0.downsample            |     16.896K             |          |
+|      encoder.layer1.0.downsample.0         |      16.384K            |          |
+|      encoder.layer1.0.downsample.1         |      0.512K             |          |
+|    encoder.layer1.1                        |    0.214M               |          |
+|     encoder.layer1.1.conv1                 |     32.768K             |          |
+|      encoder.layer1.1.conv1.weight         |      (128, 256, 1, 1)   |          |
+|     encoder.layer1.1.bn1                   |     0.256K              |          |
+|      encoder.layer1.1.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.1.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.1.conv2                 |     0.147M              |          |
+|      encoder.layer1.1.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.1.bn2                   |     0.256K              |          |
+|      encoder.layer1.1.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.1.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.1.conv3                 |     32.768K             |          |
+|      encoder.layer1.1.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.1.bn3                   |     0.512K              |          |
+|      encoder.layer1.1.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.1.bn3.bias             |      (256,)             |          |
+|    encoder.layer1.2                        |    0.214M               |          |
+|     encoder.layer1.2.conv1                 |     32.768K             |          |
+|      encoder.layer1.2.conv1.weight         |      (128, 256, 1, 1)   |          |
+|     encoder.layer1.2.bn1                   |     0.256K              |          |
+|      encoder.layer1.2.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.2.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.2.conv2                 |     0.147M              |          |
+|      encoder.layer1.2.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.2.bn2                   |     0.256K              |          |
+|      encoder.layer1.2.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.2.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.2.conv3                 |     32.768K             |          |
+|      encoder.layer1.2.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.2.bn3                   |     0.512K              |          |
+|      encoder.layer1.2.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.2.bn3.bias             |      (256,)             |          |
+|   encoder.layer2                           |   3.483M                |          |
+|    encoder.layer2.0                        |    0.921M               |          |
+|     encoder.layer2.0.conv1                 |     65.536K             |          |
+|      encoder.layer2.0.conv1.weight         |      (256, 256, 1, 1)   |          |
+|     encoder.layer2.0.bn1                   |     0.512K              |          |
+|      encoder.layer2.0.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.0.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.0.conv2                 |     0.59M               |          |
+|      encoder.layer2.0.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.0.bn2                   |     0.512K              |          |
+|      encoder.layer2.0.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.0.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.0.conv3                 |     0.131M              |          |
+|      encoder.layer2.0.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.0.bn3                   |     1.024K              |          |
+|      encoder.layer2.0.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.0.bn3.bias             |      (512,)             |          |
+|     encoder.layer2.0.downsample            |     0.132M              |          |
+|      encoder.layer2.0.downsample.0         |      0.131M             |          |
+|      encoder.layer2.0.downsample.1         |      1.024K             |          |
+|    encoder.layer2.1                        |    0.854M               |          |
+|     encoder.layer2.1.conv1                 |     0.131M              |          |
+|      encoder.layer2.1.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.1.bn1                   |     0.512K              |          |
+|      encoder.layer2.1.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.1.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.1.conv2                 |     0.59M               |          |
+|      encoder.layer2.1.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.1.bn2                   |     0.512K              |          |
+|      encoder.layer2.1.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.1.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.1.conv3                 |     0.131M              |          |
+|      encoder.layer2.1.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.1.bn3                   |     1.024K              |          |
+|      encoder.layer2.1.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.1.bn3.bias             |      (512,)             |          |
+|    encoder.layer2.2                        |    0.854M               |          |
+|     encoder.layer2.2.conv1                 |     0.131M              |          |
+|      encoder.layer2.2.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.2.bn1                   |     0.512K              |          |
+|      encoder.layer2.2.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.2.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.2.conv2                 |     0.59M               |          |
+|      encoder.layer2.2.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.2.bn2                   |     0.512K              |          |
+|      encoder.layer2.2.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.2.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.2.conv3                 |     0.131M              |          |
+|      encoder.layer2.2.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.2.bn3                   |     1.024K              |          |
+|      encoder.layer2.2.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.2.bn3.bias             |      (512,)             |          |
+|    encoder.layer2.3                        |    0.854M               |          |
+|     encoder.layer2.3.conv1                 |     0.131M              |          |
+|      encoder.layer2.3.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.3.bn1                   |     0.512K              |          |
+|      encoder.layer2.3.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.3.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.3.conv2                 |     0.59M               |          |
+|      encoder.layer2.3.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.3.bn2                   |     0.512K              |          |
+|      encoder.layer2.3.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.3.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.3.conv3                 |     0.131M              |          |
+|      encoder.layer2.3.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.3.bn3                   |     1.024K              |          |
+|      encoder.layer2.3.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.3.bn3.bias             |      (512,)             |          |
+|   encoder.layer3                           |   20.736M               |          |
+|    encoder.layer3.0                        |    3.676M               |          |
+|     encoder.layer3.0.conv1                 |     0.262M              |          |
+|      encoder.layer3.0.conv1.weight         |      (512, 512, 1, 1)   |          |
+|     encoder.layer3.0.bn1                   |     1.024K              |          |
+|      encoder.layer3.0.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.0.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.0.conv2                 |     2.359M              |          |
+|      encoder.layer3.0.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.0.bn2                   |     1.024K              |          |
+|      encoder.layer3.0.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.0.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.0.conv3                 |     0.524M              |          |
+|      encoder.layer3.0.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.0.bn3                   |     2.048K              |          |
+|      encoder.layer3.0.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.0.bn3.bias             |      (1024,)            |          |
+|     encoder.layer3.0.downsample            |     0.526M              |          |
+|      encoder.layer3.0.downsample.0         |      0.524M             |          |
+|      encoder.layer3.0.downsample.1         |      2.048K             |          |
+|    encoder.layer3.1                        |    3.412M               |          |
+|     encoder.layer3.1.conv1                 |     0.524M              |          |
+|      encoder.layer3.1.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.1.bn1                   |     1.024K              |          |
+|      encoder.layer3.1.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.1.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.1.conv2                 |     2.359M              |          |
+|      encoder.layer3.1.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.1.bn2                   |     1.024K              |          |
+|      encoder.layer3.1.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.1.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.1.conv3                 |     0.524M              |          |
+|      encoder.layer3.1.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.1.bn3                   |     2.048K              |          |
+|      encoder.layer3.1.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.1.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.2                        |    3.412M               |          |
+|     encoder.layer3.2.conv1                 |     0.524M              |          |
+|      encoder.layer3.2.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.2.bn1                   |     1.024K              |          |
+|      encoder.layer3.2.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.2.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.2.conv2                 |     2.359M              |          |
+|      encoder.layer3.2.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.2.bn2                   |     1.024K              |          |
+|      encoder.layer3.2.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.2.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.2.conv3                 |     0.524M              |          |
+|      encoder.layer3.2.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.2.bn3                   |     2.048K              |          |
+|      encoder.layer3.2.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.2.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.3                        |    3.412M               |          |
+|     encoder.layer3.3.conv1                 |     0.524M              |          |
+|      encoder.layer3.3.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.3.bn1                   |     1.024K              |          |
+|      encoder.layer3.3.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.3.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.3.conv2                 |     2.359M              |          |
+|      encoder.layer3.3.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.3.bn2                   |     1.024K              |          |
+|      encoder.layer3.3.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.3.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.3.conv3                 |     0.524M              |          |
+|      encoder.layer3.3.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.3.bn3                   |     2.048K              |          |
+|      encoder.layer3.3.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.3.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.4                        |    3.412M               |          |
+|     encoder.layer3.4.conv1                 |     0.524M              |          |
+|      encoder.layer3.4.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.4.bn1                   |     1.024K              |          |
+|      encoder.layer3.4.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.4.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.4.conv2                 |     2.359M              |          |
+|      encoder.layer3.4.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.4.bn2                   |     1.024K              |          |
+|      encoder.layer3.4.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.4.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.4.conv3                 |     0.524M              |          |
+|      encoder.layer3.4.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.4.bn3                   |     2.048K              |          |
+|      encoder.layer3.4.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.4.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.5                        |    3.412M               |          |
+|     encoder.layer3.5.conv1                 |     0.524M              |          |
+|      encoder.layer3.5.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.5.bn1                   |     1.024K              |          |
+|      encoder.layer3.5.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.5.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.5.conv2                 |     2.359M              |          |
+|      encoder.layer3.5.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.5.bn2                   |     1.024K              |          |
+|      encoder.layer3.5.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.5.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.5.conv3                 |     0.524M              |          |
+|      encoder.layer3.5.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.5.bn3                   |     2.048K              |          |
+|      encoder.layer3.5.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.5.bn3.bias             |      (1024,)            |          |
+|   encoder.layer4                           |   41.972M               |          |
+|    encoder.layer4.0                        |    14.692M              |          |
+|     encoder.layer4.0.conv1                 |     1.049M              |          |
+|      encoder.layer4.0.conv1.weight         |      (1024, 1024, 1, 1) |          |
+|     encoder.layer4.0.bn1                   |     2.048K              |          |
+|      encoder.layer4.0.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.0.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.0.conv2                 |     9.437M              |          |
+|      encoder.layer4.0.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.0.bn2                   |     2.048K              |          |
+|      encoder.layer4.0.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.0.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.0.conv3                 |     2.097M              |          |
+|      encoder.layer4.0.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.0.bn3                   |     4.096K              |          |
+|      encoder.layer4.0.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.0.bn3.bias             |      (2048,)            |          |
+|     encoder.layer4.0.downsample            |     2.101M              |          |
+|      encoder.layer4.0.downsample.0         |      2.097M             |          |
+|      encoder.layer4.0.downsample.1         |      4.096K             |          |
+|    encoder.layer4.1                        |    13.64M               |          |
+|     encoder.layer4.1.conv1                 |     2.097M              |          |
+|      encoder.layer4.1.conv1.weight         |      (1024, 2048, 1, 1) |          |
+|     encoder.layer4.1.bn1                   |     2.048K              |          |
+|      encoder.layer4.1.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.1.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.1.conv2                 |     9.437M              |          |
+|      encoder.layer4.1.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.1.bn2                   |     2.048K              |          |
+|      encoder.layer4.1.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.1.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.1.conv3                 |     2.097M              |          |
+|      encoder.layer4.1.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.1.bn3                   |     4.096K              |          |
+|      encoder.layer4.1.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.1.bn3.bias             |      (2048,)            |          |
+|    encoder.layer4.2                        |    13.64M               |          |
+|     encoder.layer4.2.conv1                 |     2.097M              |          |
+|      encoder.layer4.2.conv1.weight         |      (1024, 2048, 1, 1) |          |
+|     encoder.layer4.2.bn1                   |     2.048K              |          |
+|      encoder.layer4.2.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.2.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.2.conv2                 |     9.437M              |          |
+|      encoder.layer4.2.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.2.bn2                   |     2.048K              |          |
+|      encoder.layer4.2.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.2.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.2.conv3                 |     2.097M              |          |
+|      encoder.layer4.2.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.2.bn3                   |     4.096K              |          |
+|      encoder.layer4.2.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.2.bn3.bias             |      (2048,)            |          |
+|  decoders                                  |  0.17G                  |          |
+|   decoders.0.module_list                   |   9.718M                |          |
+|    decoders.0.module_list.0                |    1.215M               |          |
+|     decoders.0.module_list.0.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.0.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.0.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.0.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.0.subnet        |     0.689M              |          |
+|      decoders.0.module_list.0.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.0.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.1                |    1.215M               |          |
+|     decoders.0.module_list.1.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.1.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.1.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.1.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.1.subnet        |     0.689M              |          |
+|      decoders.0.module_list.1.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.1.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.2                |    1.215M               |          |
+|     decoders.0.module_list.2.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.2.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.2.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.2.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.2.subnet        |     0.689M              |          |
+|      decoders.0.module_list.2.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.2.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.3                |    1.215M               |          |
+|     decoders.0.module_list.3.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.3.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.3.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.3.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.3.subnet        |     0.689M              |          |
+|      decoders.0.module_list.3.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.3.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.4                |    1.215M               |          |
+|     decoders.0.module_list.4.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.4.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.4.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.4.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.4.subnet        |     0.689M              |          |
+|      decoders.0.module_list.4.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.4.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.5                |    1.215M               |          |
+|     decoders.0.module_list.5.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.5.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.5.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.5.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.5.subnet        |     0.689M              |          |
+|      decoders.0.module_list.5.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.5.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.6                |    1.215M               |          |
+|     decoders.0.module_list.6.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.6.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.6.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.6.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.6.subnet        |     0.689M              |          |
+|      decoders.0.module_list.6.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.6.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.7                |    1.215M               |          |
+|     decoders.0.module_list.7.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.7.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.7.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.7.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.7.subnet        |     0.689M              |          |
+|      decoders.0.module_list.7.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.7.subnet.2     |      0.394M             |          |
+|   decoders.1.module_list                   |   33.851M               |          |
+|    decoders.1.module_list.0                |    4.231M               |          |
+|     decoders.1.module_list.0.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.0.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.0.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.0.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.0.subnet        |     2.132M              |          |
+|      decoders.1.module_list.0.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.0.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.1                |    4.231M               |          |
+|     decoders.1.module_list.1.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.1.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.1.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.1.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.1.subnet        |     2.132M              |          |
+|      decoders.1.module_list.1.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.1.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.2                |    4.231M               |          |
+|     decoders.1.module_list.2.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.2.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.2.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.2.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.2.subnet        |     2.132M              |          |
+|      decoders.1.module_list.2.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.2.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.3                |    4.231M               |          |
+|     decoders.1.module_list.3.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.3.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.3.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.3.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.3.subnet        |     2.132M              |          |
+|      decoders.1.module_list.3.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.3.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.4                |    4.231M               |          |
+|     decoders.1.module_list.4.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.4.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.4.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.4.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.4.subnet        |     2.132M              |          |
+|      decoders.1.module_list.4.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.4.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.5                |    4.231M               |          |
+|     decoders.1.module_list.5.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.5.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.5.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.5.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.5.subnet        |     2.132M              |          |
+|      decoders.1.module_list.5.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.5.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.6                |    4.231M               |          |
+|     decoders.1.module_list.6.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.6.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.6.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.6.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.6.subnet        |     2.132M              |          |
+|      decoders.1.module_list.6.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.6.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.7                |    4.231M               |          |
+|     decoders.1.module_list.7.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.7.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.7.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.7.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.7.subnet        |     2.132M              |          |
+|      decoders.1.module_list.7.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.7.subnet.2     |      1.312M             |          |
+|   decoders.2.module_list                   |   0.126G                |          |
+|    decoders.2.module_list.0                |    15.77M               |          |
+|     decoders.2.module_list.0.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.0.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.0.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.0.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.0.subnet        |     7.377M              |          |
+|      decoders.2.module_list.0.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.0.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.1                |    15.77M               |          |
+|     decoders.2.module_list.1.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.1.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.1.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.1.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.1.subnet        |     7.377M              |          |
+|      decoders.2.module_list.1.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.1.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.2                |    15.77M               |          |
+|     decoders.2.module_list.2.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.2.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.2.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.2.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.2.subnet        |     7.377M              |          |
+|      decoders.2.module_list.2.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.2.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.3                |    15.77M               |          |
+|     decoders.2.module_list.3.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.3.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.3.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.3.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.3.subnet        |     7.377M              |          |
+|      decoders.2.module_list.3.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.3.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.4                |    15.77M               |          |
+|     decoders.2.module_list.4.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.4.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.4.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.4.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.4.subnet        |     7.377M              |          |
+|      decoders.2.module_list.4.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.4.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.5                |    15.77M               |          |
+|     decoders.2.module_list.5.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.5.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.5.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.5.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.5.subnet        |     7.377M              |          |
+|      decoders.2.module_list.5.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.5.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.6                |    15.77M               |          |
+|     decoders.2.module_list.6.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.6.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.6.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.6.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.6.subnet        |     7.377M              |          |
+|      decoders.2.module_list.6.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.6.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.7                |    15.77M               |          |
+|     decoders.2.module_list.7.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.7.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.7.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.7.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.7.subnet        |     7.377M              |          |
+|      decoders.2.module_list.7.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.7.subnet.2     |      4.721M             |          |
+-------------------------------------------------------------------------------
+2024-05-26 12:15:15,879 - ==> Creating optimizer
+2024-05-26 12:15:15,896 - ==> Loading dataset: DefaultAD
+2024-05-26 12:15:15,900 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 30                                  
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.0002                              
+optim.kwargs                         : {'name': 'adam', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0, 'amsgrad': False}
+trainer.name                         : CFLOWTrainer                        
+trainer.checkpoint                   : runs/benchmark/cflow_256_300e/mpdd  
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 30                                  
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 2e-06, 'warmup_lr': 2.0000000000000002e-07, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 24, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.lr                           : 0.0002                              
+trainer.lr_warm_epochs               : 2                                   
+trainer.lr_cosine                    : True                                
+trainer.lr_warm                      : True                                
+trainer.lr_decay_rate                : 0.1                                 
+trainer.meta_epochs                  : 30                                  
+trainer.sub_epochs                   : 10                                  
+trainer.lr_decay_epochs              : [15, 21, 27]                        
+trainer.lr_warmup_from               : 2e-05                               
+trainer.lr_warmup_to                 : 0.0001978169453133072               
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 810                                 
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : None                                
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'RandomRotation', 'degrees': 5}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 27                                  
+data.test_size                       : 15                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_backbone.name                  : timm_wide_resnet50_2                
+model_backbone.device                : cuda                                
+model_backbone.dec_arch              : freia-cflow                         
+model_backbone.condition_vec         : 128                                 
+model_backbone.coupling_blocks       : 8                                   
+model_backbone.clamp_alpha           : 1.9                                 
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}
+model.name                           : cflow                               
+model.pool_layers                    : 3                                   
+model.N                              : 256                                 
+model.kwargs                         : {'pretrained': True, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='timm_wide_resnet50_2', device='cuda', dec_arch='freia-cflow', condition_vec=128, coupling_blocks=8, clamp_alpha=1.9, kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}), 'L': 3, 'N': 256}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.0002                              
+weight_decay                         : 0.0                                 
+cfg_path                             : configs.benchmark.cflow_256_300e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/cflow_256_300e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.cflow_256_300e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/cflow_256_300e/mpdd data.root=data/mpdd
+task_start_time                      : 3099330.937241637                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050/show_train
+logdir_test                          : runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050/show_test
+2024-05-26 12:15:15,901 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-26 12:15:54,376 - ==> Total time: 0:05:03	 Eta: 2:26:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:16:27,017 - Train: 0.62% [50/8100]  [1.9/300.0] [batch_t 1.239 (1.263)] [data_t 0.001] [optim_t 1.238] [pixel 0.876 (0.926)]
+2024-05-26 12:16:31,969 - ==> Total time: 0:05:41	 Eta: 1:19:38 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:17:07,760 - ==> Total time: 0:06:17	 Eta: 0:56:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:17:35,684 - Train: 1.23% [100/8100]  [3.7/300.0] [batch_t 1.244 (1.293)] [data_t 0.002] [optim_t 1.242] [pixel 0.707 (0.744)]
+2024-05-26 12:17:45,608 - ==> Total time: 0:06:54	 Eta: 0:44:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:18:24,727 - ==> Total time: 0:07:34	 Eta: 0:37:50 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:18:49,673 - Train: 1.85% [150/8100]  [5.6/300.0] [batch_t 1.324 (1.431)] [data_t 0.001] [optim_t 1.323] [pixel 0.673 (0.664)]
+2024-05-26 12:19:04,659 - ==> Total time: 0:08:14	 Eta: 0:32:56 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:19:44,490 - ==> Total time: 0:08:53	 Eta: 0:29:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:20:02,738 - Train: 2.47% [200/8100]  [7.4/300.0] [batch_t 1.254 (1.366)] [data_t 0.001] [optim_t 1.253] [pixel 0.585 (0.609)]
+2024-05-26 12:20:22,738 - ==> Total time: 0:09:32	 Eta: 0:26:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:20:57,681 - ==> Total time: 0:10:07	 Eta: 0:23:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:21:11,362 - Train: 3.09% [250/8100]  [9.3/300.0] [batch_t 1.242 (1.417)] [data_t 0.001] [optim_t 1.240] [pixel 0.587 (0.578)]
+2024-05-26 12:21:36,621 - ==> Total time: 0:10:45	 Eta: 0:21:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:22:17,156 - ==> Total time: 0:11:26	 Eta: 0:19:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:22:25,616 - Train: 3.70% [300/8100]  [11.1/300.0] [batch_t 1.365 (1.726)] [data_t 0.001] [optim_t 1.364] [pixel 0.540 (0.557)]
+2024-05-26 12:22:58,061 - ==> Total time: 0:12:07	 Eta: 0:18:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:23:38,248 - Train: 4.32% [350/8100]  [13.0/300.0] [batch_t 1.373 (1.413)] [data_t 0.001] [optim_t 1.371] [pixel 0.544 (0.543)]
+2024-05-26 12:23:39,598 - ==> Total time: 0:12:48	 Eta: 0:16:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:24:21,305 - ==> Total time: 0:13:30	 Eta: 0:15:26 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:24:53,346 - Train: 4.94% [400/8100]  [14.8/300.0] [batch_t 1.240 (1.299)] [data_t 0.001] [optim_t 1.238] [pixel 0.504 (0.526)]
+2024-05-26 12:24:59,588 - ==> Total time: 0:14:08	 Eta: 0:14:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:25:38,843 - ==> Total time: 0:14:48	 Eta: 0:12:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:26:08,083 - Train: 5.56% [450/8100]  [16.7/300.0] [batch_t 1.350 (1.426)] [data_t 0.002] [optim_t 1.348] [pixel 0.517 (0.514)]
+2024-05-26 12:26:20,147 - ==> Total time: 0:15:29	 Eta: 0:11:50 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:26:57,907 - ==> Total time: 0:16:07	 Eta: 0:10:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:27:19,421 - Train: 6.17% [500/8100]  [18.5/300.0] [batch_t 1.285 (1.313)] [data_t 0.002] [optim_t 1.283] [pixel 0.505 (0.505)]
+2024-05-26 12:27:35,695 - ==> Total time: 0:16:45	 Eta: 0:09:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:28:14,596 - ==> Total time: 0:17:23	 Eta: 0:08:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:28:32,600 - Train: 6.79% [550/8100]  [20.4/300.0] [batch_t 1.344 (1.363)] [data_t 0.002] [optim_t 1.343] [pixel 0.473 (0.492)]
+2024-05-26 12:28:55,310 - ==> Total time: 0:18:04	 Eta: 0:07:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:29:34,442 - ==> Total time: 0:18:43	 Eta: 0:06:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:29:47,192 - Train: 7.41% [600/8100]  [22.2/300.0] [batch_t 1.361 (1.543)] [data_t 0.001] [optim_t 1.360] [pixel 0.489 (0.486)]
+2024-05-26 12:30:14,446 - ==> Total time: 0:19:23	 Eta: 0:05:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:30:52,729 - ==> Total time: 0:20:02	 Eta: 0:05:00 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:30:59,556 - Train: 8.02% [650/8100]  [24.1/300.0] [batch_t 1.245 (1.812)] [data_t 0.002] [optim_t 1.244] [pixel 0.486 (0.482)]
+2024-05-26 12:31:30,157 - ==> Total time: 0:20:39	 Eta: 0:04:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:32:03,987 - Train: 8.64% [700/8100]  [25.9/300.0] [batch_t 1.140 (1.217)] [data_t 0.001] [optim_t 1.139] [pixel 0.480 (0.468)]
+2024-05-26 12:32:06,269 - ==> Total time: 0:21:15	 Eta: 0:03:16 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:32:43,959 - ==> Total time: 0:21:53	 Eta: 0:02:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:33:16,050 - Train: 9.26% [750/8100]  [27.8/300.0] [batch_t 1.423 (1.373)] [data_t 0.002] [optim_t 1.422] [pixel 0.459 (0.462)]
+2024-05-26 12:33:24,255 - ==> Total time: 0:22:33	 Eta: 0:01:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:34:04,911 - ==> Total time: 0:23:14	 Eta: 0:00:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:34:32,461 - Train: 9.88% [800/8100]  [29.6/300.0] [batch_t 1.360 (1.408)] [data_t 0.002] [optim_t 1.358] [pixel 0.465 (0.463)]
+2024-05-26 12:34:54,587 - Test: 100.00% [15/15] [batch_t 0.833 (0.563)] [pixel 0.429 (0.499)]
+2024-05-26 12:34:55,758 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.158 (mF1_max_px)	  0.053 (mF1_px_0.2_0.8_0.1)	  0.053 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.148 (mIoU_max_px)	
+2024-05-26 12:34:56,564 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-26 12:34:57,159 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-26 12:34:57,579 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.026 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.074 (mIoU_max_px)	
+2024-05-26 12:34:58,596 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-26 12:34:59,639 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-26 12:34:59,646 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.508      |  59.508 (30  epoch)   |    69.471    | 69.471 (30  epoch) |      76.667      |   76.667 (30  epoch)   |   83.840    | 83.840 (30  epoch) |   95.313    | 95.313 (30  epoch) |  1.696   | 1.696 (30  epoch)  |    4.272     | 4.272 (30  epoch)  |        0.533         |     0.533 (30  epoch)      |        99.121         |     99.121 (30  epoch)      |         0.268         |      0.268 (30  epoch)      |     2.183     |  2.183 (30  epoch)  |
+| bracket_brown |     71.719      |  71.719 (30  epoch)   |    76.958    | 76.958 (30  epoch) |      84.211      |   84.211 (30  epoch)   |   89.874    | 89.874 (30  epoch) |   95.428    | 95.428 (30  epoch) |  5.121   | 5.121 (30  epoch)  |    10.738    | 10.738 (30  epoch) |        3.632         |     3.632 (30  epoch)      |        96.228         |     96.228 (30  epoch)      |         1.875         |      1.875 (30  epoch)      |     5.674     |  5.674 (30  epoch)  |
+| bracket_white |     53.000      |  53.000 (30  epoch)   |    59.397    | 59.397 (30  epoch) |      67.470      |   67.470 (30  epoch)   |   91.977    | 91.977 (30  epoch) |   97.867    | 97.867 (30  epoch) |  0.686   | 0.686 (30  epoch)  |    1.504     | 1.504 (30  epoch)  |        0.204         |     0.204 (30  epoch)      |        100.000        |     100.000 (30  epoch)     |         0.102         |      0.102 (30  epoch)      |     0.757     |  0.757 (30  epoch)  |
+|   connector   |     80.714      |  80.714 (30  epoch)   |    74.360    | 74.360 (30  epoch) |      70.968      |   70.968 (30  epoch)   |   86.956    | 86.956 (30  epoch) |   95.977    | 95.977 (30  epoch) |  21.358  | 21.358 (30  epoch) |    23.635    | 23.635 (30  epoch) |        4.238         |     4.238 (30  epoch)      |        95.664         |     95.664 (30  epoch)      |         2.203         |      2.203 (30  epoch)      |    13.401     | 13.401 (30  epoch)  |
+|  metal_plate  |     99.025      |  99.025 (30  epoch)   |    99.632    | 99.632 (30  epoch) |      98.611      |   98.611 (30  epoch)   |   91.475    | 91.475 (30  epoch) |   98.312    | 98.312 (30  epoch) |  88.643  | 88.643 (30  epoch) |    81.081    | 81.081 (30  epoch) |        46.900        |     46.900 (30  epoch)     |        95.528         |     95.528 (30  epoch)      |        33.152         |     33.152 (30  epoch)      |    68.181     | 68.181 (30  epoch)  |
+|     tubes     |     63.225      |  63.225 (30  epoch)   |    82.277    | 82.277 (30  epoch) |      81.657      |   81.657 (30  epoch)   |   84.683    | 84.683 (30  epoch) |   95.779    | 95.779 (30  epoch) |  29.389  | 29.389 (30  epoch) |    33.805    | 33.805 (30  epoch) |        9.351         |     9.351 (30  epoch)      |        88.658         |     88.658 (30  epoch)      |         5.257         |      5.257 (30  epoch)      |    20.341     | 20.341 (30  epoch)  |
+|      Avg      |     71.199      |  71.199 (30  epoch)   |    77.016    | 77.016 (30  epoch) |      79.930      |   79.930 (30  epoch)   |   88.134    | 88.134 (30  epoch) |   96.446    | 96.446 (30  epoch) |  24.482  | 24.482 (30  epoch) |    25.839    | 25.839 (30  epoch) |        10.810        |     10.810 (30  epoch)     |        95.867         |     95.867 (30  epoch)      |         7.143         |      7.143 (30  epoch)      |    18.423     | 18.423 (30  epoch)  |
+2024-05-26 12:34:59,768 - ==> Total time: 0:24:09	 Eta: 0:00:00 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:35:44,043 - ==> Total time: 0:24:53	 Eta: -1 day, 23:59:12 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:36:06,046 - Train: 10.49% [850/8100]  [31.5/300.0] [batch_t 1.336 (1.420)] [data_t 0.002] [optim_t 1.334] [pixel 0.453 (0.452)]
+2024-05-26 12:36:24,897 - ==> Total time: 0:25:34	 Eta: -1 day, 23:58:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:37:05,791 - ==> Total time: 0:26:15	 Eta: -1 day, 23:57:37 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:37:22,641 - Train: 11.11% [900/8100]  [33.3/300.0] [batch_t 1.347 (1.507)] [data_t 0.001] [optim_t 1.345] [pixel 0.452 (0.449)]
+2024-05-26 12:37:45,623 - ==> Total time: 0:26:54	 Eta: -1 day, 23:56:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:38:24,793 - ==> Total time: 0:27:34	 Eta: -1 day, 23:56:04 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:38:36,028 - Train: 11.73% [950/8100]  [35.2/300.0] [batch_t 1.274 (1.506)] [data_t 0.001] [optim_t 1.273] [pixel 0.437 (0.437)]
+2024-05-26 12:39:04,474 - ==> Total time: 0:28:13	 Eta: -1 day, 23:55:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:39:44,194 - ==> Total time: 0:28:53	 Eta: -1 day, 23:54:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:39:49,693 - Train: 12.35% [1000/8100]  [37.0/300.0] [batch_t 2.229 (2.229)] [data_t 1.087] [optim_t 1.142] [pixel 0.444 (0.444)]
+2024-05-26 12:40:24,512 - ==> Total time: 0:29:33	 Eta: -1 day, 23:53:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:40:58,593 - Train: 12.96% [1050/8100]  [38.9/300.0] [batch_t 1.261 (1.286)] [data_t 0.001] [optim_t 1.260] [pixel 0.436 (0.439)]
+2024-05-26 12:41:02,415 - ==> Total time: 0:30:11	 Eta: -1 day, 23:53:02 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:41:42,623 - ==> Total time: 0:30:51	 Eta: -1 day, 23:52:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:42:12,109 - Train: 13.58% [1100/8100]  [40.7/300.0] [batch_t 1.250 (1.261)] [data_t 0.001] [optim_t 1.248] [pixel 0.436 (0.436)]
+2024-05-26 12:42:21,141 - ==> Total time: 0:31:30	 Eta: -1 day, 23:51:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:43:00,304 - ==> Total time: 0:32:09	 Eta: -1 day, 23:50:49 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:43:24,376 - Train: 14.20% [1150/8100]  [42.6/300.0] [batch_t 1.256 (1.258)] [data_t 0.001] [optim_t 1.254] [pixel 0.421 (0.428)]
+2024-05-26 12:43:37,462 - ==> Total time: 0:32:46	 Eta: -1 day, 23:50:06 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:44:16,201 - ==> Total time: 0:33:25	 Eta: -1 day, 23:49:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:44:34,913 - Train: 14.81% [1200/8100]  [44.4/300.0] [batch_t 1.239 (1.283)] [data_t 0.002] [optim_t 1.238] [pixel 0.415 (0.425)]
+2024-05-26 12:44:53,334 - ==> Total time: 0:34:02	 Eta: -1 day, 23:48:40 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:45:33,228 - ==> Total time: 0:34:42	 Eta: -1 day, 23:47:56 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:45:48,547 - Train: 15.43% [1250/8100]  [46.3/300.0] [batch_t 1.346 (1.478)] [data_t 0.001] [optim_t 1.345] [pixel 0.424 (0.426)]
+2024-05-26 12:46:13,922 - ==> Total time: 0:35:23	 Eta: -1 day, 23:47:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:46:52,340 - ==> Total time: 0:36:01	 Eta: -1 day, 23:46:30 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:47:02,130 - Train: 16.05% [1300/8100]  [48.1/300.0] [batch_t 1.372 (1.658)] [data_t 0.001] [optim_t 1.370] [pixel 0.435 (0.429)]
+2024-05-26 12:47:29,105 - ==> Total time: 0:36:38	 Eta: -1 day, 23:45:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:48:07,820 - Train: 16.67% [1350/8100]  [50.0/300.0] [batch_t 1.285 (1.296)] [data_t 0.001] [optim_t 1.284] [pixel 0.423 (0.419)]
+2024-05-26 12:48:07,823 - ==> Total time: 0:37:17	 Eta: -1 day, 23:45:06 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:48:46,954 - ==> Total time: 0:37:56	 Eta: -1 day, 23:44:23 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:49:20,964 - Train: 17.28% [1400/8100]  [51.9/300.0] [batch_t 1.346 (1.345)] [data_t 0.001] [optim_t 1.345] [pixel 0.416 (0.415)]
+2024-05-26 12:49:26,355 - ==> Total time: 0:38:35	 Eta: -1 day, 23:43:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:50:07,594 - ==> Total time: 0:39:16	 Eta: -1 day, 23:42:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:50:38,226 - Train: 17.90% [1450/8100]  [53.7/300.0] [batch_t 1.352 (1.421)] [data_t 0.001] [optim_t 1.351] [pixel 0.409 (0.411)]
+2024-05-26 12:50:49,165 - ==> Total time: 0:39:58	 Eta: -1 day, 23:42:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:51:29,973 - ==> Total time: 0:40:39	 Eta: -1 day, 23:41:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:51:54,661 - Train: 18.52% [1500/8100]  [55.6/300.0] [batch_t 1.392 (1.433)] [data_t 0.001] [optim_t 1.390] [pixel 0.403 (0.409)]
+2024-05-26 12:52:11,270 - ==> Total time: 0:41:20	 Eta: -1 day, 23:40:49 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:52:51,890 - ==> Total time: 0:42:01	 Eta: -1 day, 23:40:06 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:53:10,028 - Train: 19.14% [1550/8100]  [57.4/300.0] [batch_t 1.142 (1.314)] [data_t 0.002] [optim_t 1.140] [pixel 0.415 (0.408)]
+2024-05-26 12:53:30,154 - ==> Total time: 0:42:39	 Eta: -1 day, 23:39:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:54:09,817 - ==> Total time: 0:43:19	 Eta: -1 day, 23:38:43 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:54:24,000 - Train: 19.75% [1600/8100]  [59.3/300.0] [batch_t 1.347 (1.514)] [data_t 0.001] [optim_t 1.346] [pixel 0.416 (0.407)]
+2024-05-26 12:54:58,989 - Test: 100.00% [15/15] [batch_t 0.171 (0.521)] [pixel 0.387 (0.452)]
+2024-05-26 12:55:00,127 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.154 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.054 (mIoU_px_0.2_0.8_0.1)	  0.151 (mIoU_max_px)	
+2024-05-26 12:55:00,933 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-26 12:55:01,537 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.115 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-26 12:55:01,959 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-26 12:55:02,973 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-26 12:55:04,023 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.201 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.069 (mIoU_px_0.2_0.8_0.1)	  0.196 (mIoU_max_px)	
+2024-05-26 12:55:04,029 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     61.370      |  61.370 (60  epoch)   |    71.426    | 71.426 (60  epoch)  |      75.806      |   76.667 (30  epoch)   |   85.301    | 85.301 (60  epoch) |   95.559    | 95.559 (60  epoch) |  1.747   | 1.747 (60  epoch)  |    4.167     | 4.272 (30  epoch)  |        0.507         |     0.533 (30  epoch)      |        99.280         |     99.280 (60  epoch)      |         0.254         |      0.268 (30  epoch)      |     2.128     |  2.183 (30  epoch)  |
+| bracket_brown |     73.906      |  73.906 (60  epoch)   |    77.423    | 77.423 (60  epoch)  |      84.685      |   84.685 (60  epoch)   |   91.039    | 91.039 (60  epoch) |   95.895    | 95.895 (60  epoch) |  5.914   | 5.914 (60  epoch)  |    12.013    | 12.013 (60  epoch) |        3.526         |     3.632 (30  epoch)      |        97.223         |     97.223 (60  epoch)      |         1.822         |      1.875 (30  epoch)      |     6.390     |  6.390 (60  epoch)  |
+| bracket_white |     62.778      |  62.778 (60  epoch)   |    63.750    | 63.750 (60  epoch)  |      69.136      |   69.136 (60  epoch)   |   92.886    | 92.886 (60  epoch) |   98.176    | 98.176 (60  epoch) |  1.090   | 1.090 (60  epoch)  |    3.114     | 3.114 (60  epoch)  |        0.193         |     0.204 (30  epoch)      |        100.000        |     100.000 (30  epoch)     |         0.097         |      0.102 (30  epoch)      |     1.582     |  1.582 (60  epoch)  |
+|   connector   |     90.476      |  90.476 (60  epoch)   |    85.345    | 85.345 (60  epoch)  |      77.419      |   77.419 (60  epoch)   |   89.345    | 89.345 (60  epoch) |   96.716    | 96.716 (60  epoch) |  27.861  | 27.861 (60  epoch) |    29.285    | 29.285 (60  epoch) |        4.535         |     4.535 (60  epoch)      |        96.159         |     96.159 (60  epoch)      |         2.374         |      2.374 (60  epoch)      |    17.154     | 17.154 (60  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.213    | 92.213 (60  epoch) |   98.471    | 98.471 (60  epoch) |  89.022  | 89.022 (60  epoch) |    83.326    | 83.326 (60  epoch) |        45.486        |     46.900 (30  epoch)     |        97.652         |     97.652 (60  epoch)      |        32.156         |     33.152 (30  epoch)      |    71.418     | 71.418 (60  epoch)  |
+|     tubes     |     67.980      |  67.980 (60  epoch)   |    84.858    | 84.858 (60  epoch)  |      81.707      |   81.707 (60  epoch)   |   87.014    | 87.014 (60  epoch) |   96.524    | 96.524 (60  epoch) |  34.314  | 34.314 (60  epoch) |    39.062    | 39.062 (60  epoch) |        10.224        |     10.224 (60  epoch)     |        89.390         |     89.390 (60  epoch)      |         5.890         |      5.890 (60  epoch)      |    24.272     | 24.272 (60  epoch)  |
+|      Avg      |     76.085      |  76.085 (60  epoch)   |    80.467    | 80.467 (60  epoch)  |      81.459      |   81.459 (60  epoch)   |   89.633    | 89.633 (60  epoch) |   96.890    | 96.890 (60  epoch) |  26.658  | 26.658 (60  epoch) |    28.495    | 28.495 (60  epoch) |        10.745        |     10.810 (30  epoch)     |        96.617         |     96.617 (60  epoch)      |         7.099         |      7.143 (30  epoch)      |    20.491     | 20.491 (60  epoch)  |
+2024-05-26 12:55:04,134 - ==> Total time: 0:44:13	 Eta: -1 day, 23:37:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:55:45,830 - ==> Total time: 0:44:55	 Eta: -1 day, 23:37:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:55:54,758 - Train: 20.37% [1650/8100]  [61.1/300.0] [batch_t 1.341 (1.696)] [data_t 0.001] [optim_t 1.340] [pixel 0.394 (0.396)]
+2024-05-26 12:56:27,019 - ==> Total time: 0:45:36	 Eta: -1 day, 23:36:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:57:04,570 - Train: 20.99% [1700/8100]  [63.0/300.0] [batch_t 1.247 (1.321)] [data_t 0.001] [optim_t 1.245] [pixel 0.391 (0.402)]
+2024-05-26 12:57:05,819 - ==> Total time: 0:46:15	 Eta: -1 day, 23:35:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:57:41,979 - ==> Total time: 0:46:51	 Eta: -1 day, 23:35:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:58:13,131 - Train: 21.60% [1750/8100]  [64.8/300.0] [batch_t 1.147 (1.255)] [data_t 0.001] [optim_t 1.146] [pixel 0.382 (0.398)]
+2024-05-26 12:58:18,868 - ==> Total time: 0:47:28	 Eta: -1 day, 23:34:27 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:58:57,906 - ==> Total time: 0:48:07	 Eta: -1 day, 23:33:46 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 12:59:24,419 - Train: 22.22% [1800/8100]  [66.7/300.0] [batch_t 1.247 (1.269)] [data_t 0.002] [optim_t 1.245] [pixel 0.407 (0.396)]
+2024-05-26 12:59:35,645 - ==> Total time: 0:48:44	 Eta: -1 day, 23:33:05 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:00:14,706 - ==> Total time: 0:49:24	 Eta: -1 day, 23:32:24 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:00:36,880 - Train: 22.84% [1850/8100]  [68.5/300.0] [batch_t 1.275 (1.345)] [data_t 0.002] [optim_t 1.274] [pixel 0.395 (0.392)]
+2024-05-26 13:00:52,568 - ==> Total time: 0:50:01	 Eta: -1 day, 23:31:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:01:31,521 - ==> Total time: 0:50:40	 Eta: -1 day, 23:31:03 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:01:49,072 - Train: 23.46% [1900/8100]  [70.4/300.0] [batch_t 1.354 (1.328)] [data_t 0.002] [optim_t 1.352] [pixel 0.378 (0.390)]
+2024-05-26 13:02:11,963 - ==> Total time: 0:51:21	 Eta: -1 day, 23:30:21 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:02:52,275 - ==> Total time: 0:52:01	 Eta: -1 day, 23:29:40 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:03:04,170 - Train: 24.07% [1950/8100]  [72.2/300.0] [batch_t 1.280 (1.473)] [data_t 0.001] [optim_t 1.279] [pixel 0.398 (0.390)]
+2024-05-26 13:03:32,030 - ==> Total time: 0:52:41	 Eta: -1 day, 23:28:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:04:12,686 - ==> Total time: 0:53:22	 Eta: -1 day, 23:28:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:04:19,967 - Train: 24.69% [2000/8100]  [74.1/300.0] [batch_t 1.376 (1.937)] [data_t 0.002] [optim_t 1.375] [pixel 0.377 (0.381)]
+2024-05-26 13:04:53,290 - ==> Total time: 0:54:02	 Eta: -1 day, 23:27:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:05:29,440 - Train: 25.31% [2050/8100]  [75.9/300.0] [batch_t 1.276 (1.322)] [data_t 0.001] [optim_t 1.275] [pixel 0.387 (0.385)]
+2024-05-26 13:05:31,992 - ==> Total time: 0:54:41	 Eta: -1 day, 23:26:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:06:11,379 - ==> Total time: 0:55:20	 Eta: -1 day, 23:26:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:06:42,879 - Train: 25.93% [2100/8100]  [77.8/300.0] [batch_t 1.298 (1.356)] [data_t 0.001] [optim_t 1.297] [pixel 0.379 (0.382)]
+2024-05-26 13:06:50,730 - ==> Total time: 0:56:00	 Eta: -1 day, 23:25:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:07:29,688 - ==> Total time: 0:56:39	 Eta: -1 day, 23:24:52 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:07:54,437 - Train: 26.54% [2150/8100]  [79.6/300.0] [batch_t 1.281 (1.247)] [data_t 0.002] [optim_t 1.280] [pixel 0.389 (0.380)]
+2024-05-26 13:08:07,233 - ==> Total time: 0:57:16	 Eta: -1 day, 23:24:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:08:47,513 - ==> Total time: 0:57:56	 Eta: -1 day, 23:23:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:09:09,185 - Train: 27.16% [2200/8100]  [81.5/300.0] [batch_t 1.345 (1.436)] [data_t 0.001] [optim_t 1.344] [pixel 0.364 (0.379)]
+2024-05-26 13:09:27,013 - ==> Total time: 0:58:36	 Eta: -1 day, 23:22:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:10:06,744 - ==> Total time: 0:59:16	 Eta: -1 day, 23:22:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:10:22,889 - Train: 27.78% [2250/8100]  [83.3/300.0] [batch_t 1.279 (1.395)] [data_t 0.001] [optim_t 1.278] [pixel 0.383 (0.378)]
+2024-05-26 13:10:44,761 - ==> Total time: 0:59:54	 Eta: -1 day, 23:21:30 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:11:23,378 - ==> Total time: 1:00:32	 Eta: -1 day, 23:20:50 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:11:34,211 - Train: 28.40% [2300/8100]  [85.2/300.0] [batch_t 1.263 (1.481)] [data_t 0.001] [optim_t 1.262] [pixel 0.379 (0.379)]
+2024-05-26 13:12:01,324 - ==> Total time: 1:01:10	 Eta: -1 day, 23:20:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:12:38,425 - ==> Total time: 1:01:47	 Eta: -1 day, 23:19:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:12:43,880 - Train: 29.01% [2350/8100]  [87.0/300.0] [batch_t 2.302 (2.302)] [data_t 1.096] [optim_t 1.206] [pixel 0.375 (0.375)]
+2024-05-26 13:13:17,605 - ==> Total time: 1:02:26	 Eta: -1 day, 23:18:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:13:53,735 - Train: 29.63% [2400/8100]  [88.9/300.0] [batch_t 1.344 (1.364)] [data_t 0.001] [optim_t 1.343] [pixel 0.379 (0.375)]
+2024-05-26 13:13:57,773 - ==> Total time: 1:03:07	 Eta: -1 day, 23:18:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:14:43,112 - Test: 100.00% [15/15] [batch_t 0.167 (0.524)] [pixel 0.367 (0.427)]
+2024-05-26 13:14:44,284 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.153 (mF1_max_px)	  0.053 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-26 13:14:45,091 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-26 13:14:45,690 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-26 13:14:46,114 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.077 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-26 13:14:47,125 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.189 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-26 13:14:48,169 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.196 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.196 (mIoU_max_px)	
+2024-05-26 13:14:48,175 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     62.766      |  62.766 (90  epoch)   |    72.047    | 72.047 (90  epoch)  |      75.229      |   76.667 (30  epoch)   |   86.061    | 86.061 (90  epoch) |   95.768    | 95.768 (90  epoch) |  2.036   | 2.036 (90  epoch)  |    4.677     | 4.677 (90  epoch)  |        0.528         |     0.533 (30  epoch)      |        99.163         |     99.280 (60  epoch)      |         0.265         |      0.268 (30  epoch)      |     2.394     |  2.394 (90  epoch)  |
+| bracket_brown |     74.962      |  74.962 (90  epoch)   |    79.066    | 79.066 (90  epoch)  |      86.486      |   86.486 (90  epoch)   |   91.736    | 91.736 (90  epoch) |   96.104    | 96.104 (90  epoch) |  6.489   | 6.489 (90  epoch)  |    12.597    | 12.597 (90  epoch) |        3.932         |     3.932 (90  epoch)      |        96.082         |     97.223 (60  epoch)      |         2.041         |      2.041 (90  epoch)      |     6.722     |  6.722 (90  epoch)  |
+| bracket_white |     69.000      |  69.000 (90  epoch)   |    69.212    | 69.212 (90  epoch)  |      70.732      |   70.732 (90  epoch)   |   93.416    | 93.416 (90  epoch) |   98.338    | 98.338 (90  epoch) |  1.284   | 1.284 (90  epoch)  |    3.942     | 3.942 (90  epoch)  |        0.207         |     0.207 (90  epoch)      |        99.987         |     100.000 (30  epoch)     |         0.104         |      0.104 (90  epoch)      |     2.011     |  2.011 (90  epoch)  |
+|   connector   |     94.524      |  94.524 (90  epoch)   |    90.151    | 90.151 (90  epoch)  |      83.871      |   83.871 (90  epoch)   |   90.052    | 90.052 (90  epoch) |   96.937    | 96.937 (90  epoch) |  28.345  | 28.345 (90  epoch) |    29.819    | 29.819 (90  epoch) |        4.797         |     4.797 (90  epoch)      |        96.151         |     96.159 (60  epoch)      |         2.521         |      2.521 (90  epoch)      |    17.522     | 17.522 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.633    | 92.633 (90  epoch) |   98.564    | 98.564 (90  epoch) |  89.421  | 89.421 (90  epoch) |    83.910    | 83.910 (90  epoch) |        46.544        |     46.900 (30  epoch)     |        97.872         |     97.872 (90  epoch)      |        33.108         |     33.152 (30  epoch)      |    72.280     | 72.280 (90  epoch)  |
+|     tubes     |     69.203      |  69.203 (90  epoch)   |    85.748    | 85.748 (90  epoch)  |      81.212      |   81.707 (60  epoch)   |   88.138    | 88.138 (90  epoch) |   96.842    | 96.842 (90  epoch) |  36.576  | 36.576 (90  epoch) |    39.991    | 39.991 (90  epoch) |        10.778        |     10.778 (90  epoch)     |        88.423         |     89.390 (60  epoch)      |         6.233         |      6.233 (90  epoch)      |    24.993     | 24.993 (90  epoch)  |
+|      Avg      |     78.409      |  78.409 (90  epoch)   |    82.704    | 82.704 (90  epoch)  |      82.922      |   82.922 (90  epoch)   |   90.339    | 90.339 (90  epoch) |   97.092    | 97.092 (90  epoch) |  27.358  | 27.358 (90  epoch) |    29.156    | 29.156 (90  epoch) |        11.131        |     11.131 (90  epoch)     |        96.280         |     96.617 (60  epoch)      |         7.379         |      7.379 (90  epoch)      |    20.987     | 20.987 (90  epoch)  |
+2024-05-26 13:14:48,309 - ==> Total time: 1:03:57	 Eta: -1 day, 23:17:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:15:19,456 - Train: 30.25% [2450/8100]  [90.7/300.0] [batch_t 1.322 (1.305)] [data_t 0.002] [optim_t 1.321] [pixel 0.383 (0.373)]
+2024-05-26 13:15:28,755 - ==> Total time: 1:04:38	 Eta: -1 day, 23:16:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:16:08,997 - ==> Total time: 1:05:18	 Eta: -1 day, 23:16:00 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:16:34,790 - Train: 30.86% [2500/8100]  [92.6/300.0] [batch_t 1.352 (1.418)] [data_t 0.002] [optim_t 1.351] [pixel 0.374 (0.367)]
+2024-05-26 13:16:49,571 - ==> Total time: 1:05:58	 Eta: -1 day, 23:15:19 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:17:29,036 - ==> Total time: 1:06:38	 Eta: -1 day, 23:14:38 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:17:48,629 - Train: 31.48% [2550/8100]  [94.4/300.0] [batch_t 1.343 (1.394)] [data_t 0.001] [optim_t 1.342] [pixel 0.362 (0.370)]
+2024-05-26 13:18:08,778 - ==> Total time: 1:07:18	 Eta: -1 day, 23:13:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:18:49,165 - ==> Total time: 1:07:58	 Eta: -1 day, 23:13:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:19:03,874 - Train: 32.10% [2600/8100]  [96.3/300.0] [batch_t 1.329 (1.473)] [data_t 0.002] [optim_t 1.328] [pixel 0.369 (0.366)]
+2024-05-26 13:19:29,219 - ==> Total time: 1:08:38	 Eta: -1 day, 23:12:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:20:06,810 - ==> Total time: 1:09:16	 Eta: -1 day, 23:11:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:20:16,415 - Train: 32.72% [2650/8100]  [98.1/300.0] [batch_t 1.318 (1.580)] [data_t 0.001] [optim_t 1.316] [pixel 0.353 (0.365)]
+2024-05-26 13:20:44,203 - ==> Total time: 1:09:53	 Eta: -1 day, 23:11:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:21:23,205 - Train: 33.33% [2700/8100]  [100.0/300.0] [batch_t 1.339 (1.335)] [data_t 0.001] [optim_t 1.338] [pixel 0.354 (0.364)]
+2024-05-26 13:21:23,208 - ==> Total time: 1:10:32	 Eta: -1 day, 23:10:38 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:22:00,928 - ==> Total time: 1:11:10	 Eta: -1 day, 23:09:59 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:22:33,124 - Train: 33.95% [2750/8100]  [101.9/300.0] [batch_t 1.244 (1.249)] [data_t 0.001] [optim_t 1.243] [pixel 0.370 (0.363)]
+2024-05-26 13:22:38,099 - ==> Total time: 1:11:47	 Eta: -1 day, 23:09:20 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:23:15,929 - ==> Total time: 1:12:25	 Eta: -1 day, 23:08:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:23:43,578 - Train: 34.57% [2800/8100]  [103.7/300.0] [batch_t 1.246 (1.304)] [data_t 0.001] [optim_t 1.244] [pixel 0.376 (0.362)]
+2024-05-26 13:23:52,900 - ==> Total time: 1:13:02	 Eta: -1 day, 23:08:02 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:24:28,691 - ==> Total time: 1:13:38	 Eta: -1 day, 23:07:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:24:51,533 - Train: 35.19% [2850/8100]  [105.6/300.0] [batch_t 1.251 (1.314)] [data_t 0.001] [optim_t 1.250] [pixel 0.352 (0.362)]
+2024-05-26 13:25:05,765 - ==> Total time: 1:14:15	 Eta: -1 day, 23:06:46 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:25:44,037 - ==> Total time: 1:14:53	 Eta: -1 day, 23:06:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:26:02,761 - Train: 35.80% [2900/8100]  [107.4/300.0] [batch_t 1.270 (1.434)] [data_t 0.002] [optim_t 1.269] [pixel 0.363 (0.360)]
+2024-05-26 13:26:22,103 - ==> Total time: 1:15:31	 Eta: -1 day, 23:05:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:27:01,664 - ==> Total time: 1:16:11	 Eta: -1 day, 23:04:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:27:15,734 - Train: 36.42% [2950/8100]  [109.3/300.0] [batch_t 1.245 (1.404)] [data_t 0.001] [optim_t 1.244] [pixel 0.358 (0.364)]
+2024-05-26 13:27:40,658 - ==> Total time: 1:16:50	 Eta: -1 day, 23:04:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:28:15,934 - ==> Total time: 1:17:25	 Eta: -1 day, 23:03:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:28:23,830 - Train: 37.04% [3000/8100]  [111.1/300.0] [batch_t 1.239 (1.604)] [data_t 0.002] [optim_t 1.237] [pixel 0.347 (0.353)]
+2024-05-26 13:28:51,998 - ==> Total time: 1:18:01	 Eta: -1 day, 23:02:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:29:26,593 - Train: 37.65% [3050/8100]  [113.0/300.0] [batch_t 1.216 (1.216)] [data_t 0.001] [optim_t 1.214] [pixel 0.363 (0.357)]
+2024-05-26 13:29:27,721 - ==> Total time: 1:18:37	 Eta: -1 day, 23:02:16 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:30:07,998 - ==> Total time: 1:19:17	 Eta: -1 day, 23:01:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:30:40,690 - Train: 38.27% [3100/8100]  [114.8/300.0] [batch_t 1.351 (1.347)] [data_t 0.001] [optim_t 1.349] [pixel 0.361 (0.357)]
+2024-05-26 13:30:47,374 - ==> Total time: 1:19:56	 Eta: -1 day, 23:00:55 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:31:26,612 - ==> Total time: 1:20:35	 Eta: -1 day, 23:00:15 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:31:54,999 - Train: 38.89% [3150/8100]  [116.7/300.0] [batch_t 1.353 (1.395)] [data_t 0.001] [optim_t 1.352] [pixel 0.370 (0.357)]
+2024-05-26 13:32:06,835 - ==> Total time: 1:21:16	 Eta: -1 day, 22:59:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:32:41,896 - ==> Total time: 1:21:51	 Eta: -1 day, 22:58:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:33:03,371 - Train: 39.51% [3200/8100]  [118.5/300.0] [batch_t 1.360 (1.329)] [data_t 0.002] [optim_t 1.358] [pixel 0.346 (0.352)]
+2024-05-26 13:33:20,733 - ==> Total time: 1:22:30	 Eta: -1 day, 22:58:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:34:07,731 - Test: 100.00% [15/15] [batch_t 0.168 (0.510)] [pixel 0.350 (0.409)]
+2024-05-26 13:34:08,882 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-26 13:34:09,676 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-26 13:34:10,270 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-26 13:34:10,684 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.074 (mIoU_max_px)	
+2024-05-26 13:34:11,684 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-26 13:34:12,717 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.194 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-26 13:34:12,723 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     63.431      |  63.431 (120 epoch)   |    73.515    | 73.515 (120 epoch)  |      75.410      |   76.667 (30  epoch)   |   86.185    | 86.185 (120 epoch) |   95.756    | 95.768 (90  epoch) |  2.132   | 2.132 (120 epoch)  |    4.911     | 4.911 (120 epoch)  |        0.503         |     0.533 (30  epoch)      |        99.220         |     99.280 (60  epoch)      |         0.252         |      0.268 (30  epoch)      |     2.517     |  2.517 (120 epoch)  |
+| bracket_brown |     76.320      |  76.320 (120 epoch)   |    79.939    | 79.939 (120 epoch)  |      87.273      |   87.273 (120 epoch)   |   92.024    | 92.024 (120 epoch) |   96.272    | 96.272 (120 epoch) |  6.706   | 6.706 (120 epoch)  |    13.177    | 13.177 (120 epoch) |        3.874         |     3.932 (90  epoch)      |        96.374         |     97.223 (60  epoch)      |         2.013         |      2.041 (90  epoch)      |     7.053     |  7.053 (120 epoch)  |
+| bracket_white |     72.111      |  72.111 (120 epoch)   |    72.612    | 72.612 (120 epoch)  |      71.605      |   71.605 (120 epoch)   |   93.309    | 93.416 (90  epoch) |   98.368    | 98.368 (120 epoch) |  1.679   | 1.679 (120 epoch)  |    4.709     | 4.709 (120 epoch)  |        0.203         |     0.207 (90  epoch)      |        99.973         |     100.000 (30  epoch)     |         0.102         |      0.104 (90  epoch)      |     2.411     |  2.411 (120 epoch)  |
+|   connector   |     95.952      |  95.952 (120 epoch)   |    91.909    | 91.909 (120 epoch)  |      86.667      |   86.667 (120 epoch)   |   90.695    | 90.695 (120 epoch) |   97.120    | 97.120 (120 epoch) |  30.653  | 30.653 (120 epoch) |    31.968    | 31.968 (120 epoch) |        4.646         |     4.797 (90  epoch)      |        96.660         |     96.660 (120 epoch)      |         2.444         |      2.521 (90  epoch)      |    19.025     | 19.025 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.774    | 92.774 (120 epoch) |   98.610    | 98.610 (120 epoch) |  89.685  | 89.685 (120 epoch) |    83.711    | 83.910 (90  epoch) |        44.994        |     46.900 (30  epoch)     |        98.470         |     98.470 (120 epoch)      |        31.715         |     33.152 (30  epoch)      |    71.986     | 72.280 (90  epoch)  |
+|     tubes     |     67.889      |  69.203 (90  epoch)   |    85.311    | 85.748 (90  epoch)  |      81.176      |   81.707 (60  epoch)   |   87.663    | 88.138 (90  epoch) |   96.734    | 96.842 (90  epoch) |  35.128  | 36.576 (90  epoch) |    39.787    | 39.991 (90  epoch) |        10.557        |     10.778 (90  epoch)     |        88.876         |     89.390 (60  epoch)      |         6.104         |      6.233 (90  epoch)      |    24.834     | 24.993 (90  epoch)  |
+|      Avg      |     79.284      |  79.284 (120 epoch)   |    83.881    | 83.881 (120 epoch)  |      83.688      |   83.688 (120 epoch)   |   90.442    | 90.442 (120 epoch) |   97.143    | 97.143 (120 epoch) |  27.664  | 27.664 (120 epoch) |    29.711    | 29.711 (120 epoch) |        10.796        |     11.131 (90  epoch)     |        96.595         |     96.617 (60  epoch)      |         7.105         |      7.379 (90  epoch)      |    21.304     | 21.304 (120 epoch)  |
+2024-05-26 13:34:12,830 - ==> Total time: 1:23:22	 Eta: -1 day, 22:57:29 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:34:30,995 - Train: 40.12% [3250/8100]  [120.4/300.0] [batch_t 1.148 (1.276)] [data_t 0.002] [optim_t 1.146] [pixel 0.335 (0.348)]
+2024-05-26 13:34:53,003 - ==> Total time: 1:24:02	 Eta: -1 day, 22:56:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:35:33,603 - ==> Total time: 1:24:42	 Eta: -1 day, 22:56:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:35:44,954 - Train: 40.74% [3300/8100]  [122.2/300.0] [batch_t 1.264 (1.368)] [data_t 0.002] [optim_t 1.262] [pixel 0.353 (0.350)]
+2024-05-26 13:36:11,034 - ==> Total time: 1:25:20	 Eta: -1 day, 22:55:29 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:36:47,037 - ==> Total time: 1:25:56	 Eta: -1 day, 22:54:52 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:36:54,378 - Train: 41.36% [3350/8100]  [124.1/300.0] [batch_t 1.129 (1.672)] [data_t 0.001] [optim_t 1.128] [pixel 0.345 (0.346)]
+2024-05-26 13:37:27,194 - ==> Total time: 1:26:36	 Eta: -1 day, 22:54:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:38:05,493 - Train: 41.98% [3400/8100]  [125.9/300.0] [batch_t 1.362 (1.392)] [data_t 0.001] [optim_t 1.360] [pixel 0.357 (0.349)]
+2024-05-26 13:38:08,194 - ==> Total time: 1:27:17	 Eta: -1 day, 22:53:30 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:38:47,317 - ==> Total time: 1:27:56	 Eta: -1 day, 22:52:50 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:39:18,223 - Train: 42.59% [3450/8100]  [127.8/300.0] [batch_t 1.252 (1.304)] [data_t 0.001] [optim_t 1.250] [pixel 0.335 (0.345)]
+2024-05-26 13:39:25,732 - ==> Total time: 1:28:35	 Eta: -1 day, 22:52:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:40:02,303 - ==> Total time: 1:29:11	 Eta: -1 day, 22:51:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:40:29,971 - Train: 43.21% [3500/8100]  [129.6/300.0] [batch_t 1.336 (1.396)] [data_t 0.002] [optim_t 1.335] [pixel 0.352 (0.345)]
+2024-05-26 13:40:43,383 - ==> Total time: 1:29:52	 Eta: -1 day, 22:50:52 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:41:23,826 - ==> Total time: 1:30:33	 Eta: -1 day, 22:50:12 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:41:43,904 - Train: 43.83% [3550/8100]  [131.5/300.0] [batch_t 1.215 (1.301)] [data_t 0.002] [optim_t 1.214] [pixel 0.338 (0.344)]
+2024-05-26 13:42:02,513 - ==> Total time: 1:31:11	 Eta: -1 day, 22:49:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:42:40,950 - ==> Total time: 1:31:50	 Eta: -1 day, 22:48:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:42:57,333 - Train: 44.44% [3600/8100]  [133.3/300.0] [batch_t 1.322 (1.457)] [data_t 0.001] [optim_t 1.320] [pixel 0.354 (0.339)]
+2024-05-26 13:43:20,420 - ==> Total time: 1:32:29	 Eta: -1 day, 22:48:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:43:59,925 - ==> Total time: 1:33:09	 Eta: -1 day, 22:47:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:44:10,935 - Train: 45.06% [3650/8100]  [135.2/300.0] [batch_t 1.259 (1.474)] [data_t 0.002] [optim_t 1.257] [pixel 0.338 (0.344)]
+2024-05-26 13:44:38,332 - ==> Total time: 1:33:47	 Eta: -1 day, 22:46:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:45:16,625 - ==> Total time: 1:34:25	 Eta: -1 day, 22:46:15 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:45:22,070 - Train: 45.68% [3700/8100]  [137.0/300.0] [batch_t 2.454 (2.454)] [data_t 1.115] [optim_t 1.339] [pixel 0.345 (0.345)]
+2024-05-26 13:45:57,074 - ==> Total time: 1:35:06	 Eta: -1 day, 22:45:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:46:29,688 - Train: 46.30% [3750/8100]  [138.9/300.0] [batch_t 1.131 (1.242)] [data_t 0.001] [optim_t 1.129] [pixel 0.333 (0.339)]
+2024-05-26 13:46:33,364 - ==> Total time: 1:35:42	 Eta: -1 day, 22:44:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:47:10,497 - ==> Total time: 1:36:19	 Eta: -1 day, 22:44:19 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:47:37,598 - Train: 46.91% [3800/8100]  [140.7/300.0] [batch_t 1.132 (1.152)] [data_t 0.002] [optim_t 1.130] [pixel 0.326 (0.340)]
+2024-05-26 13:47:46,239 - ==> Total time: 1:36:55	 Eta: -1 day, 22:43:42 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:48:22,517 - ==> Total time: 1:37:31	 Eta: -1 day, 22:43:05 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:48:48,030 - Train: 47.53% [3850/8100]  [142.6/300.0] [batch_t 1.335 (1.406)] [data_t 0.002] [optim_t 1.333] [pixel 0.345 (0.339)]
+2024-05-26 13:49:02,716 - ==> Total time: 1:38:12	 Eta: -1 day, 22:42:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:49:42,994 - ==> Total time: 1:38:52	 Eta: -1 day, 22:41:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:50:02,264 - Train: 48.15% [3900/8100]  [144.4/300.0] [batch_t 1.277 (1.364)] [data_t 0.001] [optim_t 1.276] [pixel 0.339 (0.342)]
+2024-05-26 13:50:22,176 - ==> Total time: 1:39:31	 Eta: -1 day, 22:41:04 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:51:01,060 - ==> Total time: 1:40:10	 Eta: -1 day, 22:40:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:51:16,677 - Train: 48.77% [3950/8100]  [146.3/300.0] [batch_t 1.339 (1.496)] [data_t 0.001] [optim_t 1.337] [pixel 0.346 (0.343)]
+2024-05-26 13:51:42,283 - ==> Total time: 1:40:51	 Eta: -1 day, 22:39:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:52:19,619 - ==> Total time: 1:41:28	 Eta: -1 day, 22:39:06 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:52:28,413 - Train: 49.38% [4000/8100]  [148.1/300.0] [batch_t 1.204 (1.426)] [data_t 0.001] [optim_t 1.202] [pixel 0.338 (0.335)]
+2024-05-26 13:52:59,136 - ==> Total time: 1:42:08	 Eta: -1 day, 22:38:26 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:53:40,521 - Train: 50.00% [4050/8100]  [150.0/300.0] [batch_t 1.328 (1.382)] [data_t 0.001] [optim_t 1.327] [pixel 0.333 (0.337)]
+2024-05-26 13:53:48,269 - Test: 100.00% [15/15] [batch_t 0.166 (0.509)] [pixel 0.338 (0.397)]
+2024-05-26 13:53:49,423 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.153 (mF1_max_px)	  0.053 (mF1_px_0.2_0.8_0.1)	  0.054 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.152 (mIoU_max_px)	
+2024-05-26 13:53:50,235 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.148 (mIoU_max_px)	
+2024-05-26 13:53:50,854 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.115 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-26 13:53:51,281 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.077 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-26 13:53:52,298 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-26 13:53:53,348 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.196 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.194 (mIoU_max_px)	
+2024-05-26 13:53:53,354 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     63.963      |  63.963 (150 epoch)   |    73.675    | 73.675 (150 epoch)  |      76.190      |   76.667 (30  epoch)   |   86.076    | 86.185 (120 epoch) |   95.846    | 95.846 (150 epoch) |  2.312   | 2.312 (150 epoch)  |    5.841     | 5.841 (150 epoch)  |        0.533         |     0.533 (30  epoch)      |        99.055         |     99.280 (60  epoch)      |         0.268         |      0.268 (30  epoch)      |     3.008     |  3.008 (150 epoch)  |
+| bracket_brown |     76.546      |  76.546 (150 epoch)   |    80.734    | 80.734 (150 epoch)  |      87.273      |   87.273 (120 epoch)   |   92.171    | 92.171 (150 epoch) |   96.298    | 96.298 (150 epoch) |  6.843   | 6.843 (150 epoch)  |    13.468    | 13.468 (150 epoch) |        3.932         |     3.932 (150 epoch)      |        96.209         |     97.223 (60  epoch)      |         2.044         |      2.044 (150 epoch)      |     7.220     |  7.220 (150 epoch)  |
+| bracket_white |     73.444      |  73.444 (150 epoch)   |    73.766    | 73.766 (150 epoch)  |      72.289      |   72.289 (150 epoch)   |   93.576    | 93.576 (150 epoch) |   98.459    | 98.459 (150 epoch) |  1.845   | 1.845 (150 epoch)  |    4.251     | 4.709 (120 epoch)  |        0.219         |     0.219 (150 epoch)      |        99.920         |     100.000 (30  epoch)     |         0.110         |      0.110 (150 epoch)      |     2.172     |  2.411 (120 epoch)  |
+|   connector   |     95.952      |  95.952 (120 epoch)   |    92.058    | 92.058 (150 epoch)  |      89.655      |   89.655 (150 epoch)   |   90.841    | 90.841 (150 epoch) |   97.163    | 97.163 (150 epoch) |  30.511  | 30.653 (120 epoch) |    31.018    | 31.968 (120 epoch) |        4.528         |     4.797 (90  epoch)      |        97.065         |     97.065 (150 epoch)      |         2.375         |      2.521 (90  epoch)      |    18.356     | 19.025 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.947    | 92.947 (150 epoch) |   98.642    | 98.642 (150 epoch) |  89.940  | 89.940 (150 epoch) |    83.584    | 83.910 (90  epoch) |        45.433        |     46.900 (30  epoch)     |        98.564         |     98.564 (150 epoch)      |        32.035         |     33.152 (30  epoch)      |    71.798     | 72.280 (90  epoch)  |
+|     tubes     |     68.569      |  69.203 (90  epoch)   |    85.265    | 85.748 (90  epoch)  |      81.212      |   81.707 (60  epoch)   |   88.480    | 88.480 (150 epoch) |   96.971    | 96.971 (150 epoch) |  37.053  | 37.053 (150 epoch) |    41.488    | 41.488 (150 epoch) |        10.777        |     10.778 (90  epoch)     |        89.322         |     89.390 (60  epoch)      |         6.282         |      6.282 (150 epoch)      |    26.173     | 26.173 (150 epoch)  |
+|      Avg      |     79.746      |  79.746 (150 epoch)   |    84.250    | 84.250 (150 epoch)  |      84.437      |   84.437 (150 epoch)   |   90.682    | 90.682 (150 epoch) |   97.230    | 97.230 (150 epoch) |  28.084  | 28.084 (150 epoch) |    29.942    | 29.942 (150 epoch) |        10.904        |     11.131 (90  epoch)     |        96.689         |     96.689 (150 epoch)      |         7.186         |      7.379 (90  epoch)      |    21.455     | 21.455 (150 epoch)  |
+2024-05-26 13:53:53,468 - ==> Total time: 1:43:02	 Eta: -1 day, 22:37:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:54:34,733 - ==> Total time: 1:43:44	 Eta: -1 day, 22:36:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:55:07,196 - Train: 50.62% [4100/8100]  [151.9/300.0] [batch_t 1.251 (1.279)] [data_t 0.001] [optim_t 1.249] [pixel 0.340 (0.339)]
+2024-05-26 13:55:12,197 - ==> Total time: 1:44:21	 Eta: -1 day, 22:36:15 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:55:52,039 - ==> Total time: 1:45:01	 Eta: -1 day, 22:35:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:56:20,455 - Train: 51.23% [4150/8100]  [153.7/300.0] [batch_t 1.284 (1.349)] [data_t 0.001] [optim_t 1.283] [pixel 0.338 (0.336)]
+2024-05-26 13:56:30,779 - ==> Total time: 1:45:40	 Eta: -1 day, 22:34:55 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:57:07,639 - ==> Total time: 1:46:16	 Eta: -1 day, 22:34:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:57:30,406 - Train: 51.85% [4200/8100]  [155.6/300.0] [batch_t 1.243 (1.316)] [data_t 0.001] [optim_t 1.242] [pixel 0.325 (0.331)]
+2024-05-26 13:57:45,482 - ==> Total time: 1:46:54	 Eta: -1 day, 22:33:39 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:58:23,637 - ==> Total time: 1:47:32	 Eta: -1 day, 22:33:01 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:58:42,325 - Train: 52.47% [4250/8100]  [157.4/300.0] [batch_t 1.335 (1.420)] [data_t 0.001] [optim_t 1.333] [pixel 0.343 (0.334)]
+2024-05-26 13:59:01,774 - ==> Total time: 1:48:11	 Eta: -1 day, 22:32:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:59:38,973 - ==> Total time: 1:48:48	 Eta: -1 day, 22:31:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 13:59:51,355 - Train: 53.09% [4300/8100]  [159.3/300.0] [batch_t 1.243 (1.326)] [data_t 0.002] [optim_t 1.241] [pixel 0.337 (0.334)]
+2024-05-26 14:00:14,863 - ==> Total time: 1:49:24	 Eta: -1 day, 22:31:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:00:53,589 - ==> Total time: 1:50:02	 Eta: -1 day, 22:30:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:01:01,722 - Train: 53.70% [4350/8100]  [161.1/300.0] [batch_t 1.284 (1.656)] [data_t 0.002] [optim_t 1.282] [pixel 0.323 (0.329)]
+2024-05-26 14:01:33,539 - ==> Total time: 1:50:42	 Eta: -1 day, 22:29:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:02:11,457 - Train: 54.32% [4400/8100]  [163.0/300.0] [batch_t 1.276 (1.334)] [data_t 0.001] [optim_t 1.274] [pixel 0.329 (0.333)]
+2024-05-26 14:02:12,744 - ==> Total time: 1:51:22	 Eta: -1 day, 22:29:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:02:50,574 - ==> Total time: 1:51:59	 Eta: -1 day, 22:28:30 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:03:23,378 - Train: 54.94% [4450/8100]  [164.8/300.0] [batch_t 1.262 (1.347)] [data_t 0.001] [optim_t 1.261] [pixel 0.321 (0.333)]
+2024-05-26 14:03:29,707 - ==> Total time: 1:52:39	 Eta: -1 day, 22:27:50 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:04:10,051 - ==> Total time: 1:53:19	 Eta: -1 day, 22:27:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:04:38,717 - Train: 55.56% [4500/8100]  [166.7/300.0] [batch_t 1.334 (1.411)] [data_t 0.002] [optim_t 1.332] [pixel 0.338 (0.326)]
+2024-05-26 14:04:50,683 - ==> Total time: 1:54:00	 Eta: -1 day, 22:26:29 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:05:31,285 - ==> Total time: 1:54:40	 Eta: -1 day, 22:25:49 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:05:52,978 - Train: 56.17% [4550/8100]  [168.5/300.0] [batch_t 1.248 (1.331)] [data_t 0.001] [optim_t 1.247] [pixel 0.336 (0.330)]
+2024-05-26 14:06:09,836 - ==> Total time: 1:55:19	 Eta: -1 day, 22:25:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:06:47,119 - ==> Total time: 1:55:56	 Eta: -1 day, 22:24:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:07:04,940 - Train: 56.79% [4600/8100]  [170.4/300.0] [batch_t 1.336 (1.362)] [data_t 0.002] [optim_t 1.335] [pixel 0.317 (0.328)]
+2024-05-26 14:07:27,700 - ==> Total time: 1:56:37	 Eta: -1 day, 22:23:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:08:08,175 - ==> Total time: 1:57:17	 Eta: -1 day, 22:23:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:08:20,467 - Train: 57.41% [4650/8100]  [172.2/300.0] [batch_t 1.345 (1.542)] [data_t 0.001] [optim_t 1.344] [pixel 0.345 (0.332)]
+2024-05-26 14:08:48,697 - ==> Total time: 1:57:58	 Eta: -1 day, 22:22:30 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:09:25,101 - ==> Total time: 1:58:34	 Eta: -1 day, 22:21:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:09:31,556 - Train: 58.02% [4700/8100]  [174.1/300.0] [batch_t 1.228 (1.733)] [data_t 0.001] [optim_t 1.226] [pixel 0.318 (0.326)]
+2024-05-26 14:10:00,255 - ==> Total time: 1:59:09	 Eta: -1 day, 22:21:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:10:37,757 - Train: 58.64% [4750/8100]  [175.9/300.0] [batch_t 1.334 (1.367)] [data_t 0.001] [optim_t 1.332] [pixel 0.324 (0.326)]
+2024-05-26 14:10:40,350 - ==> Total time: 1:59:49	 Eta: -1 day, 22:20:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:11:18,874 - ==> Total time: 2:00:28	 Eta: -1 day, 22:19:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:11:50,053 - Train: 59.26% [4800/8100]  [177.8/300.0] [batch_t 1.136 (1.327)] [data_t 0.001] [optim_t 1.135] [pixel 0.327 (0.326)]
+2024-05-26 14:11:56,877 - ==> Total time: 2:01:06	 Eta: -1 day, 22:19:19 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:12:34,681 - ==> Total time: 2:01:44	 Eta: -1 day, 22:18:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:12:59,559 - Train: 59.88% [4850/8100]  [179.6/300.0] [batch_t 1.282 (1.284)] [data_t 0.001] [optim_t 1.281] [pixel 0.338 (0.326)]
+2024-05-26 14:13:19,717 - Test: 100.00% [15/15] [batch_t 0.165 (0.512)] [pixel 0.331 (0.388)]
+2024-05-26 14:13:20,900 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.152 (mF1_max_px)	  0.053 (mF1_px_0.2_0.8_0.1)	  0.053 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.154 (mIoU_max_px)	
+2024-05-26 14:13:21,714 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-26 14:13:22,320 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-26 14:13:22,745 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.077 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.078 (mIoU_max_px)	
+2024-05-26 14:13:23,756 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.189 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-26 14:13:24,803 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.197 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.193 (mIoU_max_px)	
+2024-05-26 14:13:24,810 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     64.295      |  64.295 (180 epoch)   |    74.480    | 74.480 (180 epoch)  |      76.271      |   76.667 (30  epoch)   |   86.342    | 86.342 (180 epoch) |   95.839    | 95.846 (150 epoch) |  2.335   | 2.335 (180 epoch)  |    5.531     | 5.841 (150 epoch)  |        0.508         |     0.533 (30  epoch)      |        99.223         |     99.280 (60  epoch)      |         0.255         |      0.268 (30  epoch)      |     2.844     |  3.008 (150 epoch)  |
+| bracket_brown |     77.074      |  77.074 (180 epoch)   |    80.215    | 80.734 (150 epoch)  |      87.719      |   87.719 (180 epoch)   |   92.324    | 92.324 (180 epoch) |   96.299    | 96.299 (180 epoch) |  6.919   | 6.919 (180 epoch)  |    13.573    | 13.573 (180 epoch) |        3.791         |     3.932 (150 epoch)      |        96.746         |     97.223 (60  epoch)      |         1.968         |      2.044 (150 epoch)      |     7.281     |  7.281 (180 epoch)  |
+| bracket_white |     73.556      |  73.556 (180 epoch)   |    74.350    | 74.350 (180 epoch)  |      72.289      |   72.289 (150 epoch)   |   93.676    | 93.676 (180 epoch) |   98.494    | 98.494 (180 epoch) |  2.060   | 2.060 (180 epoch)  |    5.276     | 5.276 (180 epoch)  |        0.214         |     0.219 (150 epoch)      |        99.946         |     100.000 (30  epoch)     |         0.107         |      0.110 (150 epoch)      |     2.709     |  2.709 (180 epoch)  |
+|   connector   |     96.429      |  96.429 (180 epoch)   |    92.559    | 92.559 (180 epoch)  |      89.655      |   89.655 (150 epoch)   |   91.225    | 91.225 (180 epoch) |   97.277    | 97.277 (180 epoch) |  31.693  | 31.693 (180 epoch) |    32.339    | 32.339 (180 epoch) |        4.548         |     4.797 (90  epoch)      |        97.192         |     97.192 (180 epoch)      |         2.389         |      2.521 (90  epoch)      |    19.288     | 19.288 (180 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.828    | 92.947 (150 epoch) |   98.620    | 98.642 (150 epoch) |  89.644  | 89.940 (150 epoch) |    82.942    | 83.910 (90  epoch) |        44.670        |     46.900 (30  epoch)     |        98.731         |     98.731 (180 epoch)      |        31.320         |     33.152 (30  epoch)      |    70.856     | 72.280 (90  epoch)  |
+|     tubes     |     69.746      |  69.746 (180 epoch)   |    85.745    | 85.748 (90  epoch)  |      81.437      |   81.707 (60  epoch)   |   88.590    | 88.590 (180 epoch) |   96.996    | 96.996 (180 epoch) |  36.587  | 37.053 (150 epoch) |    41.222    | 41.488 (150 epoch) |        10.535        |     10.778 (90  epoch)     |        89.931         |     89.931 (180 epoch)      |         6.138         |      6.282 (150 epoch)      |    25.962     | 26.173 (150 epoch)  |
+|      Avg      |     80.183      |  80.183 (180 epoch)   |    84.558    | 84.558 (180 epoch)  |      84.562      |   84.562 (180 epoch)   |   90.831    | 90.831 (180 epoch) |   97.254    | 97.254 (180 epoch) |  28.206  | 28.206 (180 epoch) |    30.147    | 30.147 (180 epoch) |        10.711        |     11.131 (90  epoch)     |        96.962         |     96.962 (180 epoch)      |         7.029         |      7.379 (90  epoch)      |    21.490     | 21.490 (180 epoch)  |
+2024-05-26 14:13:24,927 - ==> Total time: 2:02:34	 Eta: -1 day, 22:17:52 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:14:04,576 - ==> Total time: 2:03:13	 Eta: -1 day, 22:17:12 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:14:25,657 - Train: 60.49% [4900/8100]  [181.5/300.0] [batch_t 1.140 (1.397)] [data_t 0.001] [optim_t 1.139] [pixel 0.323 (0.326)]
+2024-05-26 14:14:41,555 - ==> Total time: 2:03:50	 Eta: -1 day, 22:16:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:15:16,556 - ==> Total time: 2:04:25	 Eta: -1 day, 22:15:59 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:15:31,040 - Train: 61.11% [4950/8100]  [183.3/300.0] [batch_t 1.127 (1.277)] [data_t 0.001] [optim_t 1.126] [pixel 0.332 (0.327)]
+2024-05-26 14:15:53,017 - ==> Total time: 2:05:02	 Eta: -1 day, 22:15:21 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:16:28,396 - ==> Total time: 2:05:37	 Eta: -1 day, 22:14:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:16:38,511 - Train: 61.73% [5000/8100]  [185.2/300.0] [batch_t 1.229 (1.415)] [data_t 0.001] [optim_t 1.228] [pixel 0.318 (0.323)]
+2024-05-26 14:17:05,959 - ==> Total time: 2:06:15	 Eta: -1 day, 22:14:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:17:44,304 - ==> Total time: 2:06:53	 Eta: -1 day, 22:13:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:17:49,784 - Train: 62.35% [5050/8100]  [187.0/300.0] [batch_t 2.442 (2.442)] [data_t 1.092] [optim_t 1.350] [pixel 0.320 (0.320)]
+2024-05-26 14:18:21,311 - ==> Total time: 2:07:30	 Eta: -1 day, 22:12:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:18:52,747 - Train: 62.96% [5100/8100]  [188.9/300.0] [batch_t 1.129 (1.183)] [data_t 0.001] [optim_t 1.128] [pixel 0.324 (0.324)]
+2024-05-26 14:18:56,464 - ==> Total time: 2:08:05	 Eta: -1 day, 22:12:15 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:19:36,937 - ==> Total time: 2:08:46	 Eta: -1 day, 22:11:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:20:07,889 - Train: 63.58% [5150/8100]  [190.7/300.0] [batch_t 1.310 (1.339)] [data_t 0.002] [optim_t 1.309] [pixel 0.336 (0.321)]
+2024-05-26 14:20:16,853 - ==> Total time: 2:09:26	 Eta: -1 day, 22:10:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:20:55,268 - ==> Total time: 2:10:04	 Eta: -1 day, 22:10:15 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:21:20,520 - Train: 64.20% [5200/8100]  [192.6/300.0] [batch_t 1.339 (1.380)] [data_t 0.001] [optim_t 1.337] [pixel 0.318 (0.323)]
+2024-05-26 14:21:35,175 - ==> Total time: 2:10:44	 Eta: -1 day, 22:09:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:22:15,782 - ==> Total time: 2:11:25	 Eta: -1 day, 22:08:55 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:22:35,959 - Train: 64.81% [5250/8100]  [194.4/300.0] [batch_t 1.325 (1.424)] [data_t 0.002] [optim_t 1.324] [pixel 0.314 (0.327)]
+2024-05-26 14:22:56,162 - ==> Total time: 2:12:05	 Eta: -1 day, 22:08:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:23:35,970 - ==> Total time: 2:12:45	 Eta: -1 day, 22:07:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:23:50,276 - Train: 65.43% [5300/8100]  [196.3/300.0] [batch_t 1.336 (1.432)] [data_t 0.002] [optim_t 1.335] [pixel 0.312 (0.322)]
+2024-05-26 14:24:15,703 - ==> Total time: 2:13:25	 Eta: -1 day, 22:06:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:24:56,095 - ==> Total time: 2:14:05	 Eta: -1 day, 22:06:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:25:05,445 - Train: 66.05% [5350/8100]  [198.1/300.0] [batch_t 1.346 (1.622)] [data_t 0.002] [optim_t 1.344] [pixel 0.340 (0.323)]
+2024-05-26 14:25:36,556 - ==> Total time: 2:14:45	 Eta: -1 day, 22:05:34 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:26:16,846 - Train: 66.67% [5400/8100]  [200.0/300.0] [batch_t 1.356 (1.385)] [data_t 0.001] [optim_t 1.355] [pixel 0.325 (0.321)]
+2024-05-26 14:26:16,848 - ==> Total time: 2:15:26	 Eta: -1 day, 22:04:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:26:57,339 - ==> Total time: 2:16:06	 Eta: -1 day, 22:04:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:27:32,307 - Train: 67.28% [5450/8100]  [201.9/300.0] [batch_t 1.327 (1.382)] [data_t 0.001] [optim_t 1.326] [pixel 0.336 (0.318)]
+2024-05-26 14:27:37,607 - ==> Total time: 2:16:46	 Eta: -1 day, 22:03:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:28:15,403 - ==> Total time: 2:17:24	 Eta: -1 day, 22:02:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:28:41,283 - Train: 67.90% [5500/8100]  [203.7/300.0] [batch_t 1.129 (1.203)] [data_t 0.001] [optim_t 1.128] [pixel 0.329 (0.318)]
+2024-05-26 14:28:50,339 - ==> Total time: 2:17:59	 Eta: -1 day, 22:02:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:29:25,436 - ==> Total time: 2:18:34	 Eta: -1 day, 22:01:43 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:29:49,629 - Train: 68.52% [5550/8100]  [205.6/300.0] [batch_t 1.383 (1.407)] [data_t 0.001] [optim_t 1.382] [pixel 0.316 (0.319)]
+2024-05-26 14:30:06,006 - ==> Total time: 2:19:15	 Eta: -1 day, 22:01:02 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:30:45,589 - ==> Total time: 2:19:54	 Eta: -1 day, 22:00:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:31:04,484 - Train: 69.14% [5600/8100]  [207.4/300.0] [batch_t 1.351 (1.455)] [data_t 0.001] [optim_t 1.350] [pixel 0.312 (0.320)]
+2024-05-26 14:31:23,360 - ==> Total time: 2:20:32	 Eta: -1 day, 21:59:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:32:01,954 - ==> Total time: 2:21:11	 Eta: -1 day, 21:59:05 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:32:16,218 - Train: 69.75% [5650/8100]  [209.3/300.0] [batch_t 1.338 (1.504)] [data_t 0.001] [optim_t 1.337] [pixel 0.322 (0.317)]
+2024-05-26 14:32:50,775 - Test: 100.00% [15/15] [batch_t 0.164 (0.508)] [pixel 0.322 (0.382)]
+2024-05-26 14:32:51,920 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.150 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.150 (mIoU_max_px)	
+2024-05-26 14:32:52,717 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-26 14:32:53,312 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-26 14:32:53,726 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.074 (mF1_max_px)	  0.026 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.074 (mIoU_max_px)	
+2024-05-26 14:32:54,724 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-26 14:32:55,767 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.069 (mIoU_px_0.2_0.8_0.1)	  0.202 (mIoU_max_px)	
+2024-05-26 14:32:55,774 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     64.894      |  64.894 (210 epoch)   |    75.013    | 75.013 (210 epoch)  |      76.271      |   76.667 (30  epoch)   |   86.458    | 86.458 (210 epoch) |   95.835    | 95.846 (150 epoch) |  2.391   | 2.391 (210 epoch)  |    5.712     | 5.841 (150 epoch)  |        0.495         |     0.533 (30  epoch)      |        99.350         |     99.350 (210 epoch)      |         0.248         |      0.268 (30  epoch)      |     2.940     |  3.008 (150 epoch)  |
+| bracket_brown |     77.451      |  77.451 (210 epoch)   |    81.189    | 81.189 (210 epoch)  |      87.719      |   87.719 (180 epoch)   |   92.371    | 92.371 (210 epoch) |   96.356    | 96.356 (210 epoch) |  7.047   | 7.047 (210 epoch)  |    13.767    | 13.767 (210 epoch) |        3.720         |     3.932 (150 epoch)      |        96.934         |     97.223 (60  epoch)      |         1.931         |      2.044 (150 epoch)      |     7.392     |  7.392 (210 epoch)  |
+| bracket_white |     74.222      |  74.222 (210 epoch)   |    75.430    | 75.430 (210 epoch)  |      71.875      |   72.289 (150 epoch)   |   93.671    | 93.676 (180 epoch) |   98.518    | 98.518 (210 epoch) |  2.114   | 2.114 (210 epoch)  |    4.058     | 5.276 (180 epoch)  |        0.214         |     0.219 (150 epoch)      |        99.960         |     100.000 (30  epoch)     |         0.107         |      0.110 (150 epoch)      |     2.071     |  2.709 (180 epoch)  |
+|   connector   |     96.667      |  96.667 (210 epoch)   |    92.852    | 92.852 (210 epoch)  |      89.655      |   89.655 (150 epoch)   |   91.280    | 91.280 (210 epoch) |   97.297    | 97.297 (210 epoch) |  32.257  | 32.257 (210 epoch) |    32.503    | 32.503 (210 epoch) |        4.409         |     4.797 (90  epoch)      |        97.356         |     97.356 (210 epoch)      |         2.313         |      2.521 (90  epoch)      |    19.405     | 19.405 (210 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.973    | 92.973 (210 epoch) |   98.654    | 98.654 (210 epoch) |  89.913  | 89.940 (150 epoch) |    83.384    | 83.910 (90  epoch) |        44.346        |     46.900 (30  epoch)     |        98.875         |     98.875 (210 epoch)      |        31.005         |     33.152 (30  epoch)      |    71.503     | 72.280 (90  epoch)  |
+|     tubes     |     69.475      |  69.746 (180 epoch)   |    85.684    | 85.748 (90  epoch)  |      81.437      |   81.707 (60  epoch)   |   88.425    | 88.590 (180 epoch) |   96.958    | 96.996 (180 epoch) |  36.492  | 37.053 (150 epoch) |    41.020    | 41.488 (150 epoch) |        10.554        |     10.778 (90  epoch)     |        89.830         |     89.931 (180 epoch)      |         6.141         |      6.282 (150 epoch)      |    25.802     | 26.173 (150 epoch)  |
+|      Avg      |     80.451      |  80.451 (210 epoch)   |    85.028    | 85.028 (210 epoch)  |      84.493      |   84.562 (180 epoch)   |   90.863    | 90.863 (210 epoch) |   97.270    | 97.270 (210 epoch) |  28.369  | 28.369 (210 epoch) |    30.074    | 30.147 (180 epoch) |        10.623        |     11.131 (90  epoch)     |        97.051         |     97.051 (210 epoch)      |         6.958         |      7.379 (90  epoch)      |    21.519     | 21.519 (210 epoch)  |
+2024-05-26 14:32:55,903 - ==> Total time: 2:22:05	 Eta: -1 day, 21:58:13 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:33:37,069 - ==> Total time: 2:22:46	 Eta: -1 day, 21:57:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:33:44,573 - Train: 70.37% [5700/8100]  [211.1/300.0] [batch_t 1.194 (1.529)] [data_t 0.001] [optim_t 1.192] [pixel 0.322 (0.320)]
+2024-05-26 14:34:11,675 - ==> Total time: 2:23:21	 Eta: -1 day, 21:56:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:34:48,073 - Train: 70.99% [5750/8100]  [213.0/300.0] [batch_t 1.289 (1.288)] [data_t 0.001] [optim_t 1.287] [pixel 0.302 (0.318)]
+2024-05-26 14:34:49,377 - ==> Total time: 2:23:58	 Eta: -1 day, 21:56:18 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:35:25,668 - ==> Total time: 2:24:35	 Eta: -1 day, 21:55:42 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:35:57,870 - Train: 71.60% [5800/8100]  [214.8/300.0] [batch_t 1.338 (1.331)] [data_t 0.001] [optim_t 1.337] [pixel 0.323 (0.317)]
+2024-05-26 14:36:04,405 - ==> Total time: 2:25:13	 Eta: -1 day, 21:55:03 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:36:40,921 - ==> Total time: 2:25:50	 Eta: -1 day, 21:54:26 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:37:06,964 - Train: 72.22% [5850/8100]  [216.7/300.0] [batch_t 1.254 (1.289)] [data_t 0.002] [optim_t 1.252] [pixel 0.318 (0.315)]
+2024-05-26 14:37:18,274 - ==> Total time: 2:26:27	 Eta: -1 day, 21:53:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:37:56,325 - ==> Total time: 2:27:05	 Eta: -1 day, 21:53:09 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:38:16,841 - Train: 72.84% [5900/8100]  [218.5/300.0] [batch_t 1.138 (1.225)] [data_t 0.001] [optim_t 1.137] [pixel 0.308 (0.315)]
+2024-05-26 14:38:33,841 - ==> Total time: 2:27:43	 Eta: -1 day, 21:52:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:39:14,049 - ==> Total time: 2:28:23	 Eta: -1 day, 21:51:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:39:31,524 - Train: 73.46% [5950/8100]  [220.4/300.0] [batch_t 1.336 (1.352)] [data_t 0.002] [optim_t 1.334] [pixel 0.317 (0.315)]
+2024-05-26 14:39:54,217 - ==> Total time: 2:29:03	 Eta: -1 day, 21:51:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:40:33,394 - ==> Total time: 2:29:42	 Eta: -1 day, 21:50:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:40:44,964 - Train: 74.07% [6000/8100]  [222.2/300.0] [batch_t 1.243 (1.425)] [data_t 0.002] [optim_t 1.241] [pixel 0.322 (0.317)]
+2024-05-26 14:41:09,327 - ==> Total time: 2:30:18	 Eta: -1 day, 21:49:55 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:41:48,100 - ==> Total time: 2:30:57	 Eta: -1 day, 21:49:16 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:41:55,269 - Train: 74.69% [6050/8100]  [224.1/300.0] [batch_t 1.337 (1.897)] [data_t 0.002] [optim_t 1.335] [pixel 0.311 (0.314)]
+2024-05-26 14:42:27,255 - ==> Total time: 2:31:36	 Eta: -1 day, 21:48:37 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:43:03,366 - Train: 75.31% [6100/8100]  [225.9/300.0] [batch_t 1.314 (1.331)] [data_t 0.001] [optim_t 1.312] [pixel 0.321 (0.316)]
+2024-05-26 14:43:05,946 - ==> Total time: 2:32:15	 Eta: -1 day, 21:47:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:43:46,570 - ==> Total time: 2:32:55	 Eta: -1 day, 21:47:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:44:17,381 - Train: 75.93% [6150/8100]  [227.8/300.0] [batch_t 1.272 (1.332)] [data_t 0.001] [optim_t 1.271] [pixel 0.319 (0.316)]
+2024-05-26 14:44:24,749 - ==> Total time: 2:33:34	 Eta: -1 day, 21:46:39 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:45:01,797 - ==> Total time: 2:34:11	 Eta: -1 day, 21:46:01 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:45:27,188 - Train: 76.54% [6200/8100]  [229.6/300.0] [batch_t 1.127 (1.283)] [data_t 0.002] [optim_t 1.125] [pixel 0.313 (0.315)]
+2024-05-26 14:45:38,474 - ==> Total time: 2:34:47	 Eta: -1 day, 21:45:24 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:46:16,514 - ==> Total time: 2:35:25	 Eta: -1 day, 21:44:46 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:46:36,077 - Train: 77.16% [6250/8100]  [231.5/300.0] [batch_t 1.129 (1.278)] [data_t 0.002] [optim_t 1.128] [pixel 0.312 (0.312)]
+2024-05-26 14:46:51,900 - ==> Total time: 2:36:01	 Eta: -1 day, 21:44:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:47:28,357 - ==> Total time: 2:36:37	 Eta: -1 day, 21:43:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:47:42,913 - Train: 77.78% [6300/8100]  [233.3/300.0] [batch_t 1.131 (1.265)] [data_t 0.001] [optim_t 1.130] [pixel 0.307 (0.312)]
+2024-05-26 14:48:04,284 - ==> Total time: 2:37:13	 Eta: -1 day, 21:42:56 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:48:44,048 - ==> Total time: 2:37:53	 Eta: -1 day, 21:42:16 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:48:54,630 - Train: 78.40% [6350/8100]  [235.2/300.0] [batch_t 1.328 (1.563)] [data_t 0.001] [optim_t 1.326] [pixel 0.330 (0.313)]
+2024-05-26 14:49:23,926 - ==> Total time: 2:38:33	 Eta: -1 day, 21:41:37 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:50:03,643 - ==> Total time: 2:39:12	 Eta: -1 day, 21:40:57 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:50:08,847 - Train: 79.01% [6400/8100]  [237.0/300.0] [batch_t 2.425 (2.425)] [data_t 1.085] [optim_t 1.340] [pixel 0.316 (0.316)]
+2024-05-26 14:50:43,463 - ==> Total time: 2:39:52	 Eta: -1 day, 21:40:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:51:14,851 - Train: 79.63% [6450/8100]  [238.9/300.0] [batch_t 1.125 (1.191)] [data_t 0.001] [optim_t 1.123] [pixel 0.303 (0.313)]
+2024-05-26 14:51:18,239 - ==> Total time: 2:40:27	 Eta: -1 day, 21:39:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:52:02,903 - Test: 100.00% [15/15] [batch_t 0.176 (0.520)] [pixel 0.318 (0.376)]
+2024-05-26 14:52:04,059 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.150 (mF1_max_px)	  0.054 (mF1_px_0.2_0.8_0.1)	  0.055 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-26 14:52:04,864 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-26 14:52:05,462 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.114 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-26 14:52:05,878 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.026 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.075 (mIoU_max_px)	
+2024-05-26 14:52:06,886 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-26 14:52:07,922 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.069 (mAcc_px_0.2_0.8_0.1)	  0.071 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-26 14:52:07,928 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     65.027      |  65.027 (240 epoch)   |    74.584    | 75.013 (210 epoch)  |      76.667      |   76.667 (30  epoch)   |   86.475    | 86.475 (240 epoch) |   95.816    | 95.846 (150 epoch) |  2.425   | 2.425 (240 epoch)  |    5.533     | 5.841 (150 epoch)  |        0.491         |     0.533 (30  epoch)      |        99.366         |     99.366 (240 epoch)      |         0.246         |      0.268 (30  epoch)      |     2.845     |  3.008 (150 epoch)  |
+| bracket_brown |     77.526      |  77.526 (240 epoch)   |    81.376    | 81.376 (240 epoch)  |      87.719      |   87.719 (180 epoch)   |   92.399    | 92.399 (240 epoch) |   96.370    | 96.370 (240 epoch) |  7.051   | 7.051 (240 epoch)  |    13.849    | 13.849 (240 epoch) |        3.611         |     3.932 (150 epoch)      |        97.270         |     97.270 (240 epoch)      |         1.872         |      2.044 (150 epoch)      |     7.440     |  7.440 (240 epoch)  |
+| bracket_white |     74.556      |  74.556 (240 epoch)   |    75.614    | 75.614 (240 epoch)  |      73.016      |   73.016 (240 epoch)   |   93.718    | 93.718 (240 epoch) |   98.531    | 98.531 (240 epoch) |  2.086   | 2.114 (210 epoch)  |    4.042     | 5.276 (180 epoch)  |        0.211         |     0.219 (150 epoch)      |        99.960         |     100.000 (30  epoch)     |         0.106         |      0.110 (150 epoch)      |     2.063     |  2.709 (180 epoch)  |
+|   connector   |     96.667      |  96.667 (210 epoch)   |    92.852    | 92.852 (210 epoch)  |      89.655      |   89.655 (150 epoch)   |   91.477    | 91.477 (240 epoch) |   97.357    | 97.357 (240 epoch) |  32.820  | 32.820 (240 epoch) |    33.007    | 33.007 (240 epoch) |        4.451         |     4.797 (90  epoch)      |        97.391         |     97.391 (240 epoch)      |         2.337         |      2.521 (90  epoch)      |    19.766     | 19.766 (240 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.961    | 92.973 (210 epoch) |   98.646    | 98.654 (210 epoch) |  89.780  | 89.940 (150 epoch) |    83.445    | 83.910 (90  epoch) |        44.101        |     46.900 (30  epoch)     |        98.928         |     98.928 (240 epoch)      |        30.773         |     33.152 (30  epoch)      |    71.593     | 72.280 (90  epoch)  |
+|     tubes     |     68.841      |  69.746 (180 epoch)   |    85.388    | 85.748 (90  epoch)  |      81.437      |   81.707 (60  epoch)   |   88.373    | 88.590 (180 epoch) |   96.952    | 96.996 (180 epoch) |  36.196  | 37.053 (150 epoch) |    40.499    | 41.488 (150 epoch) |        10.321        |     10.778 (90  epoch)     |        90.340         |     90.340 (240 epoch)      |         5.994         |      6.282 (150 epoch)      |    25.391     | 26.173 (150 epoch)  |
+|      Avg      |     80.436      |  80.451 (210 epoch)   |    84.969    | 85.028 (210 epoch)  |      84.749      |   84.749 (240 epoch)   |   90.901    | 90.901 (240 epoch) |   97.278    | 97.278 (240 epoch) |  28.393  | 28.393 (240 epoch) |    30.063    | 30.147 (180 epoch) |        10.531        |     11.131 (90  epoch)     |        97.209         |     97.209 (240 epoch)      |         6.888         |      7.379 (90  epoch)      |    21.516     | 21.519 (210 epoch)  |
+2024-05-26 14:52:08,071 - ==> Total time: 2:41:17	 Eta: -1 day, 21:38:53 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:52:37,740 - Train: 80.25% [6500/8100]  [240.7/300.0] [batch_t 1.243 (1.234)] [data_t 0.002] [optim_t 1.242] [pixel 0.301 (0.312)]
+2024-05-26 14:52:46,453 - ==> Total time: 2:41:55	 Eta: -1 day, 21:38:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:53:24,179 - ==> Total time: 2:42:33	 Eta: -1 day, 21:37:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:53:48,056 - Train: 80.86% [6550/8100]  [242.6/300.0] [batch_t 1.242 (1.318)] [data_t 0.001] [optim_t 1.240] [pixel 0.316 (0.310)]
+2024-05-26 14:54:01,750 - ==> Total time: 2:43:11	 Eta: -1 day, 21:36:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:54:38,426 - ==> Total time: 2:43:47	 Eta: -1 day, 21:36:21 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:54:55,887 - Train: 81.48% [6600/8100]  [244.4/300.0] [batch_t 1.133 (1.224)] [data_t 0.002] [optim_t 1.132] [pixel 0.313 (0.312)]
+2024-05-26 14:55:13,627 - ==> Total time: 2:44:22	 Eta: -1 day, 21:35:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:55:51,820 - ==> Total time: 2:45:01	 Eta: -1 day, 21:35:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:56:06,828 - Train: 82.10% [6650/8100]  [246.3/300.0] [batch_t 1.325 (1.464)] [data_t 0.002] [optim_t 1.324] [pixel 0.321 (0.311)]
+2024-05-26 14:56:32,086 - ==> Total time: 2:45:41	 Eta: -1 day, 21:34:27 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:57:11,959 - ==> Total time: 2:46:21	 Eta: -1 day, 21:33:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:57:21,436 - Train: 82.72% [6700/8100]  [248.1/300.0] [batch_t 1.343 (1.621)] [data_t 0.001] [optim_t 1.342] [pixel 0.297 (0.306)]
+2024-05-26 14:57:52,127 - ==> Total time: 2:47:01	 Eta: -1 day, 21:33:06 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:58:31,669 - Train: 83.33% [6750/8100]  [250.0/300.0] [batch_t 1.317 (1.369)] [data_t 0.001] [optim_t 1.315] [pixel 0.300 (0.311)]
+2024-05-26 14:58:31,672 - ==> Total time: 2:47:41	 Eta: -1 day, 21:32:27 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:59:11,483 - ==> Total time: 2:48:20	 Eta: -1 day, 21:31:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 14:59:45,771 - Train: 83.95% [6800/8100]  [251.9/300.0] [batch_t 1.325 (1.372)] [data_t 0.001] [optim_t 1.324] [pixel 0.308 (0.310)]
+2024-05-26 14:59:51,071 - ==> Total time: 2:49:00	 Eta: -1 day, 21:31:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:00:31,031 - ==> Total time: 2:49:40	 Eta: -1 day, 21:30:27 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:01:00,459 - Train: 84.57% [6850/8100]  [253.7/300.0] [batch_t 1.328 (1.385)] [data_t 0.001] [optim_t 1.327] [pixel 0.321 (0.310)]
+2024-05-26 15:01:11,059 - ==> Total time: 2:50:20	 Eta: -1 day, 21:29:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:01:50,814 - ==> Total time: 2:51:00	 Eta: -1 day, 21:29:07 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:02:11,757 - Train: 85.19% [6900/8100]  [255.6/300.0] [batch_t 1.131 (1.216)] [data_t 0.001] [optim_t 1.130] [pixel 0.298 (0.311)]
+2024-05-26 15:02:25,333 - ==> Total time: 2:51:34	 Eta: -1 day, 21:28:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:03:02,728 - ==> Total time: 2:52:12	 Eta: -1 day, 21:27:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:03:19,433 - Train: 85.80% [6950/8100]  [257.4/300.0] [batch_t 1.145 (1.242)] [data_t 0.001] [optim_t 1.143] [pixel 0.310 (0.310)]
+2024-05-26 15:03:39,548 - ==> Total time: 2:52:48	 Eta: -1 day, 21:27:17 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:04:15,520 - ==> Total time: 2:53:24	 Eta: -1 day, 21:26:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:04:28,690 - Train: 86.42% [7000/8100]  [259.3/300.0] [batch_t 1.329 (1.484)] [data_t 0.002] [optim_t 1.328] [pixel 0.320 (0.311)]
+2024-05-26 15:04:55,216 - ==> Total time: 2:54:04	 Eta: -1 day, 21:26:01 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:05:35,192 - ==> Total time: 2:54:44	 Eta: -1 day, 21:25:21 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:05:42,589 - Train: 87.04% [7050/8100]  [261.1/300.0] [batch_t 1.232 (1.526)] [data_t 0.001] [optim_t 1.230] [pixel 0.301 (0.308)]
+2024-05-26 15:06:10,618 - ==> Total time: 2:55:19	 Eta: -1 day, 21:24:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:06:45,440 - Train: 87.65% [7100/8100]  [263.0/300.0] [batch_t 1.269 (1.233)] [data_t 0.001] [optim_t 1.268] [pixel 0.301 (0.306)]
+2024-05-26 15:06:46,705 - ==> Total time: 2:55:56	 Eta: -1 day, 21:24:09 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:07:24,306 - ==> Total time: 2:56:33	 Eta: -1 day, 21:23:31 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:07:54,593 - Train: 88.27% [7150/8100]  [264.8/300.0] [batch_t 1.129 (1.243)] [data_t 0.001] [optim_t 1.128] [pixel 0.306 (0.309)]
+2024-05-26 15:08:00,231 - ==> Total time: 2:57:09	 Eta: -1 day, 21:22:54 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:08:35,376 - ==> Total time: 2:57:44	 Eta: -1 day, 21:22:19 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:09:01,710 - Train: 88.89% [7200/8100]  [266.7/300.0] [batch_t 1.237 (1.306)] [data_t 0.001] [optim_t 1.236] [pixel 0.311 (0.307)]
+2024-05-26 15:09:12,857 - ==> Total time: 2:58:22	 Eta: -1 day, 21:21:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:09:49,964 - ==> Total time: 2:58:59	 Eta: -1 day, 21:21:03 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:10:11,280 - Train: 89.51% [7250/8100]  [268.5/300.0] [batch_t 1.235 (1.320)] [data_t 0.001] [optim_t 1.234] [pixel 0.323 (0.309)]
+2024-05-26 15:10:27,286 - ==> Total time: 2:59:36	 Eta: -1 day, 21:20:26 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:11:12,656 - Test: 100.00% [15/15] [batch_t 0.167 (0.512)] [pixel 0.314 (0.372)]
+2024-05-26 15:11:13,797 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.153 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-26 15:11:14,601 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-26 15:11:15,199 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.114 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-26 15:11:15,614 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.074 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.074 (mIoU_max_px)	
+2024-05-26 15:11:16,621 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-26 15:11:17,667 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.195 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.196 (mIoU_max_px)	
+2024-05-26 15:11:17,673 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     65.027      |  65.027 (240 epoch)   |    74.724    | 75.013 (210 epoch)  |      76.667      |   76.667 (30  epoch)   |   86.506    | 86.506 (270 epoch) |   95.829    | 95.846 (150 epoch) |  2.448   | 2.448 (270 epoch)  |    5.450     | 5.841 (150 epoch)  |        0.486         |     0.533 (30  epoch)      |        99.442         |     99.442 (270 epoch)      |         0.244         |      0.268 (30  epoch)      |     2.801     |  3.008 (150 epoch)  |
+| bracket_brown |     77.903      |  77.903 (270 epoch)   |    81.662    | 81.662 (270 epoch)  |      87.719      |   87.719 (180 epoch)   |   92.482    | 92.482 (270 epoch) |   96.379    | 96.379 (270 epoch) |  7.099   | 7.099 (270 epoch)  |    13.904    | 13.904 (270 epoch) |        3.625         |     3.932 (150 epoch)      |        97.284         |     97.284 (270 epoch)      |         1.879         |      2.044 (150 epoch)      |     7.472     |  7.472 (270 epoch)  |
+| bracket_white |     75.111      |  75.111 (270 epoch)   |    76.260    | 76.260 (270 epoch)  |      72.289      |   73.016 (240 epoch)   |   93.815    | 93.815 (270 epoch) |   98.543    | 98.543 (270 epoch) |  2.103   | 2.114 (210 epoch)  |    4.293     | 5.276 (180 epoch)  |        0.203         |     0.219 (150 epoch)      |        99.973         |     100.000 (30  epoch)     |         0.102         |      0.110 (150 epoch)      |     2.194     |  2.709 (180 epoch)  |
+|   connector   |     96.429      |  96.667 (210 epoch)   |    92.058    | 92.852 (210 epoch)  |      89.655      |   89.655 (150 epoch)   |   91.509    | 91.509 (270 epoch) |   97.366    | 97.366 (270 epoch) |  32.842  | 32.842 (270 epoch) |    33.075    | 33.075 (270 epoch) |        4.383         |     4.797 (90  epoch)      |        97.469         |     97.469 (270 epoch)      |         2.300         |      2.521 (90  epoch)      |    19.814     | 19.814 (270 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.908    | 92.973 (210 epoch) |   98.640    | 98.654 (210 epoch) |  89.740  | 89.940 (150 epoch) |    83.684    | 83.910 (90  epoch) |        43.794        |     46.900 (30  epoch)     |        99.004         |     99.004 (270 epoch)      |        30.461         |     33.152 (30  epoch)      |    71.946     | 72.280 (90  epoch)  |
+|     tubes     |     68.116      |  69.746 (180 epoch)   |    84.972    | 85.748 (90  epoch)  |      81.437      |   81.707 (60  epoch)   |   88.257    | 88.590 (180 epoch) |   96.917    | 96.996 (180 epoch) |  35.831  | 37.053 (150 epoch) |    39.848    | 41.488 (150 epoch) |        10.117        |     10.778 (90  epoch)     |        90.536         |     90.536 (270 epoch)      |         5.860         |      6.282 (150 epoch)      |    24.881     | 26.173 (150 epoch)  |
+|      Avg      |     80.431      |  80.451 (210 epoch)   |    84.946    | 85.028 (210 epoch)  |      84.628      |   84.749 (240 epoch)   |   90.913    | 90.913 (270 epoch) |   97.279    | 97.279 (270 epoch) |  28.344  | 28.393 (240 epoch) |    30.042    | 30.147 (180 epoch) |        10.435        |     11.131 (90  epoch)     |        97.285         |     97.285 (270 epoch)      |         6.808         |      7.379 (90  epoch)      |    21.518     | 21.519 (210 epoch)  |
+2024-05-26 15:11:17,801 - ==> Total time: 3:00:27	 Eta: -1 day, 21:19:36 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:11:35,002 - Train: 90.12% [7300/8100]  [270.4/300.0] [batch_t 1.227 (1.230)] [data_t 0.001] [optim_t 1.225] [pixel 0.312 (0.306)]
+2024-05-26 15:11:55,339 - ==> Total time: 3:01:04	 Eta: -1 day, 21:18:59 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:12:31,933 - ==> Total time: 3:01:41	 Eta: -1 day, 21:18:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:12:42,919 - Train: 90.74% [7350/8100]  [272.2/300.0] [batch_t 1.136 (1.355)] [data_t 0.001] [optim_t 1.134] [pixel 0.324 (0.311)]
+2024-05-26 15:13:08,556 - ==> Total time: 3:02:17	 Eta: -1 day, 21:17:45 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:13:44,810 - ==> Total time: 3:02:54	 Eta: -1 day, 21:17:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:13:51,040 - Train: 91.36% [7400/8100]  [274.1/300.0] [batch_t 1.132 (1.658)] [data_t 0.002] [optim_t 1.131] [pixel 0.291 (0.301)]
+2024-05-26 15:14:19,266 - ==> Total time: 3:03:28	 Eta: -1 day, 21:16:33 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:14:52,729 - Train: 91.98% [7450/8100]  [275.9/300.0] [batch_t 1.248 (1.222)] [data_t 0.001] [optim_t 1.247] [pixel 0.324 (0.310)]
+2024-05-26 15:14:55,214 - ==> Total time: 3:04:04	 Eta: -1 day, 21:15:56 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:15:32,512 - ==> Total time: 3:04:41	 Eta: -1 day, 21:15:19 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:16:02,790 - Train: 92.59% [7500/8100]  [277.8/300.0] [batch_t 1.241 (1.291)] [data_t 0.001] [optim_t 1.240] [pixel 0.307 (0.309)]
+2024-05-26 15:16:10,189 - ==> Total time: 3:05:19	 Eta: -1 day, 21:14:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:16:47,736 - ==> Total time: 3:05:57	 Eta: -1 day, 21:14:03 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:17:11,218 - Train: 93.21% [7550/8100]  [279.6/300.0] [batch_t 1.124 (1.209)] [data_t 0.001] [optim_t 1.123] [pixel 0.313 (0.308)]
+2024-05-26 15:17:22,496 - ==> Total time: 3:06:31	 Eta: -1 day, 21:13:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:17:58,761 - ==> Total time: 3:07:08	 Eta: -1 day, 21:12:51 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:18:18,331 - Train: 93.83% [7600/8100]  [281.5/300.0] [batch_t 1.233 (1.280)] [data_t 0.002] [optim_t 1.232] [pixel 0.301 (0.307)]
+2024-05-26 15:18:35,681 - ==> Total time: 3:07:45	 Eta: -1 day, 21:12:14 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:19:11,683 - ==> Total time: 3:08:21	 Eta: -1 day, 21:11:37 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:19:25,858 - Train: 94.44% [7650/8100]  [283.3/300.0] [batch_t 1.131 (1.251)] [data_t 0.001] [optim_t 1.129] [pixel 0.317 (0.314)]
+2024-05-26 15:19:46,197 - ==> Total time: 3:08:55	 Eta: -1 day, 21:11:02 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:20:23,044 - ==> Total time: 3:09:32	 Eta: -1 day, 21:10:25 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:20:33,260 - Train: 95.06% [7700/8100]  [285.2/300.0] [batch_t 1.238 (1.456)] [data_t 0.001] [optim_t 1.237] [pixel 0.308 (0.310)]
+2024-05-26 15:21:00,588 - ==> Total time: 3:10:09	 Eta: -1 day, 21:09:47 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:21:37,363 - ==> Total time: 3:10:46	 Eta: -1 day, 21:09:10 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:21:42,479 - Train: 95.68% [7750/8100]  [287.0/300.0] [batch_t 2.206 (2.206)] [data_t 1.073] [optim_t 1.132] [pixel 0.312 (0.312)]
+2024-05-26 15:22:11,816 - ==> Total time: 3:11:21	 Eta: -1 day, 21:08:35 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:22:45,269 - Train: 96.30% [7800/8100]  [288.9/300.0] [batch_t 1.257 (1.272)] [data_t 0.001] [optim_t 1.256] [pixel 0.308 (0.307)]
+2024-05-26 15:22:49,052 - ==> Total time: 3:11:58	 Eta: -1 day, 21:07:58 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:23:24,670 - ==> Total time: 3:12:34	 Eta: -1 day, 21:07:22 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:23:53,536 - Train: 96.91% [7850/8100]  [290.7/300.0] [batch_t 1.234 (1.249)] [data_t 0.002] [optim_t 1.233] [pixel 0.301 (0.307)]
+2024-05-26 15:24:02,183 - ==> Total time: 3:13:11	 Eta: -1 day, 21:06:44 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:24:37,669 - ==> Total time: 3:13:47	 Eta: -1 day, 21:06:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:25:03,123 - Train: 97.53% [7900/8100]  [292.6/300.0] [batch_t 1.344 (1.412)] [data_t 0.001] [optim_t 1.343] [pixel 0.308 (0.305)]
+2024-05-26 15:25:17,724 - ==> Total time: 3:14:27	 Eta: -1 day, 21:05:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:25:58,158 - ==> Total time: 3:15:07	 Eta: -1 day, 21:04:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:26:18,226 - Train: 98.15% [7950/8100]  [294.4/300.0] [batch_t 1.345 (1.431)] [data_t 0.001] [optim_t 1.343] [pixel 0.316 (0.305)]
+2024-05-26 15:26:38,111 - ==> Total time: 3:15:47	 Eta: -1 day, 21:04:08 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:27:17,962 - ==> Total time: 3:16:27	 Eta: -1 day, 21:03:28 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:27:32,644 - Train: 98.77% [8000/8100]  [296.3/300.0] [batch_t 1.330 (1.465)] [data_t 0.001] [optim_t 1.328] [pixel 0.306 (0.308)]
+2024-05-26 15:27:57,872 - ==> Total time: 3:17:07	 Eta: -1 day, 21:02:48 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:28:34,794 - ==> Total time: 3:17:44	 Eta: -1 day, 21:02:11 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:28:44,444 - Train: 99.38% [8050/8100]  [298.1/300.0] [batch_t 1.260 (1.538)] [data_t 0.002] [optim_t 1.258] [pixel 0.308 (0.305)]
+2024-05-26 15:29:13,823 - ==> Total time: 3:18:23	 Eta: -1 day, 21:01:32 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:29:52,536 - Train: 100.00% [8100/8100]  [300.0/300.0] [batch_t 1.424 (1.298)] [data_t 0.001] [optim_t 1.422] [pixel 0.299 (0.306)]
+2024-05-26 15:30:00,701 - Test: 100.00% [15/15] [batch_t 0.179 (0.535)] [pixel 0.313 (0.372)]
+2024-05-26 15:30:01,899 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.157 (mF1_max_px)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-26 15:30:02,732 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.152 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.150 (mIoU_max_px)	
+2024-05-26 15:30:03,358 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.119 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.120 (mIoU_max_px)	
+2024-05-26 15:30:03,793 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.077 (mF1_max_px)	  0.032 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-26 15:30:04,857 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.195 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.069 (mIoU_px_0.2_0.8_0.1)	  0.192 (mIoU_max_px)	
+2024-05-26 15:30:05,942 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.201 (mF1_max_px)	  0.071 (mF1_px_0.2_0.8_0.1)	  0.070 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.200 (mIoU_max_px)	
+2024-05-26 15:30:05,951 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     64.761      |  65.027 (240 epoch)   |    74.585    | 75.013 (210 epoch)  |      76.667      |   76.667 (30  epoch)   |   86.500    | 86.506 (270 epoch) |   95.828    | 95.846 (150 epoch) |  2.452   | 2.452 (300 epoch)  |    5.415     | 5.841 (150 epoch)  |        0.481         |     0.533 (30  epoch)      |        99.489         |     99.489 (300 epoch)      |         0.241         |      0.268 (30  epoch)      |     2.783     |  3.008 (150 epoch)  |
+| bracket_brown |     77.828      |  77.903 (270 epoch)   |    81.617    | 81.662 (270 epoch)  |      87.719      |   87.719 (180 epoch)   |   92.502    | 92.502 (300 epoch) |   96.405    | 96.405 (300 epoch) |  7.175   | 7.175 (300 epoch)  |    13.957    | 13.957 (300 epoch) |        3.537         |     3.932 (150 epoch)      |        97.516         |     97.516 (300 epoch)      |         1.832         |      2.044 (150 epoch)      |     7.502     |  7.502 (300 epoch)  |
+| bracket_white |     75.333      |  75.333 (300 epoch)   |    76.356    | 76.356 (300 epoch)  |      73.016      |   73.016 (240 epoch)   |   93.806    | 93.815 (270 epoch) |   98.551    | 98.551 (300 epoch) |  2.118   | 2.118 (300 epoch)  |    4.623     | 5.276 (180 epoch)  |        0.201         |     0.219 (150 epoch)      |        99.987         |     100.000 (30  epoch)     |         0.101         |      0.110 (150 epoch)      |     2.366     |  2.709 (180 epoch)  |
+|   connector   |     96.667      |  96.667 (210 epoch)   |    92.852    | 92.852 (210 epoch)  |      89.655      |   89.655 (150 epoch)   |   91.535    | 91.535 (300 epoch) |   97.374    | 97.374 (300 epoch) |  33.120  | 33.120 (300 epoch) |    33.207    | 33.207 (300 epoch) |        4.357         |     4.797 (90  epoch)      |        97.500         |     97.500 (300 epoch)      |         2.285         |      2.521 (90  epoch)      |    19.909     | 19.909 (300 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   92.919    | 92.973 (210 epoch) |   98.639    | 98.654 (210 epoch) |  89.719  | 89.940 (150 epoch) |    83.704    | 83.910 (90  epoch) |        43.745        |     46.900 (30  epoch)     |        99.008         |     99.008 (300 epoch)      |        30.420         |     33.152 (30  epoch)      |    71.976     | 72.280 (90  epoch)  |
+|     tubes     |     68.025      |  69.746 (180 epoch)   |    85.017    | 85.748 (90  epoch)  |      81.212      |   81.707 (60  epoch)   |   88.227    | 88.590 (180 epoch) |   96.907    | 96.996 (180 epoch) |  35.744  | 37.053 (150 epoch) |    39.617    | 41.488 (150 epoch) |        10.075        |     10.778 (90  epoch)     |        90.619         |     90.619 (300 epoch)      |         5.829         |      6.282 (150 epoch)      |    24.702     | 26.173 (150 epoch)  |
+|      Avg      |     80.436      |  80.451 (210 epoch)   |    85.071    | 85.071 (300 epoch)  |      84.712      |   84.749 (240 epoch)   |   90.914    | 90.914 (300 epoch) |   97.284    | 97.284 (300 epoch) |  28.388  | 28.393 (240 epoch) |    30.087    | 30.147 (180 epoch) |        10.399        |     11.131 (90  epoch)     |        97.353         |     97.353 (300 epoch)      |         6.785         |      7.379 (90  epoch)      |    21.540     | 21.540 (300 epoch)  |
+2024-05-26 15:30:06,076 - ==> Total time: 3:19:15	 Eta: -1 day, 21:00:41 	Logged in 'runs/benchmark/cflow_256_300e/mpdd/CFLOWTrainer_configs_benchmark_cflow_256_300e_20240526-121050'
+2024-05-26 15:30:10,935 - finish training

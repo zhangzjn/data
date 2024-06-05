@@ -1,0 +1,136 @@
+2024-05-25 20:55:22,634 - ==> Logging on master GPU: 0
+2024-05-25 20:55:22,634 - ==> Running Trainer: PatchCoreTrainer
+2024-05-25 20:55:22,634 - ==> Using GPU: [0] for Training
+2024-05-25 20:55:22,634 - ==> Building model
+2024-05-25 20:55:31,315 - ==> Creating optimizer
+2024-05-25 20:55:31,383 - ==> Loading dataset: DefaultAD
+2024-05-25 20:55:31,389 - ==> ********** cfg ********** 
+fvcore_is                            : False                               
+fvcore_b                             : 2                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 1                                   
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : PatchCoreTrainer                    
+trainer.checkpoint                   : runs/benchmark/patchcore_256_100e/mpdd
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 1                                   
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 0, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 1                                   
+trainer.test_per_epoch               : 1                                   
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 2                                   
+trainer.data.batch_size_per_gpu      : 2                                   
+trainer.data.batch_size_test         : 2                                   
+trainer.data.batch_size_per_gpu_test : 2                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 444                                 
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'AUROC_sp_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'AUROC_sp_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'AUROC_sp_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'AUROC_sp_connector': [], 'mAUROC_px_connector': [], 'mAUPRO_px_connector': [], 'mAP_sp_max_connector': [], 'mAP_px_connector': [], 'mF1_max_sp_max_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mF1_max_px_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'AUROC_sp_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_tubes': [], 'AUROC_sp_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'SumLoss', 'name': 'sum', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 444                                 
+data.test_size                       : 229                                 
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_backbone.name                  : tv_wide_resnet50_2                  
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}
+model.name                           : patchcore                           
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='tv_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}), 'layers_to_extract_from': ('layer2', 'layer3'), 'input_size': (3, 256, 256)}
+seed                                 : 42                                  
+size                                 : 256                                 
+image_size                           : 256                                 
+input_size                           : (3, 256, 256)                       
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 1                                   
+test_per_epoch                       : 1                                   
+batch_train                          : 2                                   
+batch_test_per                       : 2                                   
+lr                                   : 0.001                               
+weight_decay                         : 0.01                                
+layers_to_extract_from               : ('layer2', 'layer3')                
+cfg_path                             : configs.benchmark.patchcore_256_100e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/patchcore_256_100e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.patchcore_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/patchcore_256_100e/mpdd data.root=data/mpdd
+task_start_time                      : 20981.522797454                     
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/patchcore_256_100e/mpdd/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205522
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/patchcore_256_100e/mpdd/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205522/show_train
+logdir_test                          : runs/benchmark/patchcore_256_100e/mpdd/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205522/show_test
+2024-05-25 20:55:31,390 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-25 21:02:55,696 - Test: 21.83% [50/229] [batch_t 4.934 (4.934)]
+2024-05-25 21:07:02,697 - Test: 43.67% [100/229] [batch_t 4.917 (4.937)]
+2024-05-25 21:11:09,968 - Test: 65.50% [150/229] [batch_t 4.960 (4.940)]
+2024-05-25 21:15:17,595 - Test: 87.34% [200/229] [batch_t 4.956 (4.943)]
+2024-05-25 21:17:41,273 - Test: 100.00% [229/229] [batch_t 4.942 (4.944)]
+2024-05-25 21:17:42,299 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.075 (mF1_px_0.2_0.8_0.1)	  0.071 (mAcc_px_0.2_0.8_0.1)	  0.071 (mIoU_px_0.2_0.8_0.1)	  0.205 (mF1_max_px)	  0.206 (mIoU_max_px)	
+2024-05-25 21:17:43,135 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.070 (mAcc_px_0.2_0.8_0.1)	  0.069 (mIoU_px_0.2_0.8_0.1)	  0.201 (mF1_max_px)	  0.202 (mIoU_max_px)	
+2024-05-25 21:17:43,753 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.053 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.154 (mF1_max_px)	  0.154 (mIoU_max_px)	
+2024-05-25 21:17:44,195 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.113 (mF1_max_px)	  0.114 (mIoU_max_px)	
+2024-05-25 21:17:45,247 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.091 (mAcc_px_0.2_0.8_0.1)	  0.090 (mIoU_px_0.2_0.8_0.1)	  0.258 (mF1_max_px)	  0.257 (mIoU_max_px)	
+2024-05-25 21:17:46,309 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.097 (mF1_px_0.2_0.8_0.1)	  0.093 (mAcc_px_0.2_0.8_0.1)	  0.093 (mIoU_px_0.2_0.8_0.1)	  0.268 (mF1_max_px)	  0.269 (mIoU_max_px)	
+2024-05-25 21:17:46,313 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     88.431      |  88.431 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.499    | 98.499 (1   epoch) |   96.660    | 96.660 (1   epoch) |    92.711    | 92.711 (1   epoch)  |  10.987  | 10.987 (1   epoch) |      83.871      |   83.871 (1   epoch)   |        11.450        |     11.450 (1   epoch)     |        50.235         |     50.235 (1   epoch)      |         6.203         |      6.203 (1   epoch)      |    21.047    | 21.047 (1   epoch) |    11.761     | 11.761 (1   epoch)  |
+| bracket_brown |     95.626      |  95.626 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.612    | 98.612 (1   epoch) |   95.403    | 95.403 (1   epoch) |    97.229    | 97.229 (1   epoch)  |  26.238  | 26.238 (1   epoch) |      95.327      |   95.327 (1   epoch)   |        18.643        |     18.643 (1   epoch)     |        38.760         |     38.760 (1   epoch)      |        10.589         |     10.589 (1   epoch)      |    31.978    | 31.978 (1   epoch) |    19.032     | 19.032 (1   epoch)  |
+| bracket_white |     93.333      |  93.333 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.847    | 98.847 (1   epoch) |   93.924    | 93.924 (1   epoch) |    94.761    | 94.761 (1   epoch)  |  10.047  | 10.047 (1   epoch) |      88.889      |   88.889 (1   epoch)   |        7.093         |     7.093 (1   epoch)      |        72.113         |     72.113 (1   epoch)      |         3.809         |      3.809 (1   epoch)      |    19.290    | 19.290 (1   epoch) |    10.675     | 10.675 (1   epoch)  |
+|   connector   |     100.000     |  100.000 (1   epoch)  |  100.000   | 100.000 (1   epoch) |   99.538    | 99.538 (1   epoch) |   98.442    | 98.442 (1   epoch) |   100.000    | 100.000 (1   epoch) |  71.241  | 71.241 (1   epoch) |     100.000      |  100.000 (1   epoch)   |        39.638        |     39.638 (1   epoch)     |        64.879         |     64.879 (1   epoch)      |        26.535         |     26.535 (1   epoch)      |    63.260    | 63.260 (1   epoch) |    46.263     | 46.263 (1   epoch)  |
+|  metal_plate  |     100.000     |  100.000 (1   epoch)  |  100.000   | 100.000 (1   epoch) |   99.011    | 99.011 (1   epoch) |   94.113    | 94.113 (1   epoch) |   100.000    | 100.000 (1   epoch) |  93.550  | 93.550 (1   epoch) |     100.000      |  100.000 (1   epoch)   |        60.922        |     60.922 (1   epoch)     |        61.772         |     61.772 (1   epoch)      |        49.574         |     49.574 (1   epoch)      |    86.142    | 86.142 (1   epoch) |    75.658     | 75.658 (1   epoch)  |
+|     tubes     |     90.444      |  90.444 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.840    | 98.840 (1   epoch) |   95.470    | 95.470 (1   epoch) |    96.612    | 96.612 (1   epoch)  |  64.535  | 64.535 (1   epoch) |      92.424      |   92.424 (1   epoch)   |        23.795        |     23.795 (1   epoch)     |        52.126         |     52.126 (1   epoch)      |        15.125         |     15.125 (1   epoch)      |    63.848    | 63.848 (1   epoch) |    46.895     | 46.895 (1   epoch)  |
+|      Avg      |     94.639      |  94.639 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.891    | 98.891 (1   epoch) |   95.669    | 95.669 (1   epoch) |    96.885    | 96.885 (1   epoch)  |  46.100  | 46.100 (1   epoch) |      93.419      |   93.419 (1   epoch)   |        26.923        |     26.923 (1   epoch)     |        56.648         |     56.648 (1   epoch)      |        18.639         |     18.639 (1   epoch)      |    47.594    | 47.594 (1   epoch) |    35.047     | 35.047 (1   epoch)  |
+2024-05-25 21:17:46,470 - ==> Total time: 0:22:24	 Eta: -1 day, 23:48:48 	Logged in 'runs/benchmark/patchcore_256_100e/mpdd/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205522'
+2024-05-25 21:17:49,323 - finish training

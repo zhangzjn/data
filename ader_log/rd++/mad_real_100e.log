@@ -1,0 +1,1099 @@
+2024-05-27 17:11:34,043 - ==> Logging on master GPU: 0
+2024-05-27 17:11:34,044 - ==> Running Trainer: RDPTrainer
+2024-05-27 17:11:34,044 - ==> Using GPU: [0] for Training
+2024-05-27 17:11:34,044 - ==> Building model
+2024-05-27 17:11:47,360 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_racm-8234f177.pth'
+2024-05-27 17:12:01,714 - 
+------------------------------------ RDPP ------------------------------------
+| module                               | #parameters or shape   | #flops       |
+|:-------------------------------------|:-----------------------|:-------------|
+| model                                | 96.097M                | 37.511G      |
+|  net_t                               |  24.863M               |  12.034G     |
+|   net_t.conv1                        |   9.408K               |   0.154G     |
+|    net_t.conv1.weight                |    (64, 3, 7, 7)       |              |
+|   net_t.bn1                          |   0.128K               |   2.097M     |
+|    net_t.bn1.weight                  |    (64,)               |              |
+|    net_t.bn1.bias                    |    (64,)               |              |
+|   net_t.layer1                       |   0.634M               |   2.598G     |
+|    net_t.layer1.0                    |    0.206M              |    0.845G    |
+|     net_t.layer1.0.conv1             |     8.192K             |     33.554M  |
+|      net_t.layer1.0.conv1.weight     |      (128, 64, 1, 1)   |              |
+|     net_t.layer1.0.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.0.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.0.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.0.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.0.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.0.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.0.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.0.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.0.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.0.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.0.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.0.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.0.bn3.bias         |      (256,)            |              |
+|     net_t.layer1.0.downsample        |     16.896K            |     69.206M  |
+|      net_t.layer1.0.downsample.0     |      16.384K           |      67.109M |
+|      net_t.layer1.0.downsample.1     |      0.512K            |      2.097M  |
+|    net_t.layer1.1                    |    0.214M              |    0.877G    |
+|     net_t.layer1.1.conv1             |     32.768K            |     0.134G   |
+|      net_t.layer1.1.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_t.layer1.1.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.1.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.1.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.1.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.1.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.1.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.1.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.1.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.1.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.1.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.1.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.1.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.1.bn3.bias         |      (256,)            |              |
+|    net_t.layer1.2                    |    0.214M              |    0.877G    |
+|     net_t.layer1.2.conv1             |     32.768K            |     0.134G   |
+|      net_t.layer1.2.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_t.layer1.2.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.2.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.2.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.2.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.2.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.2.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.2.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.2.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.2.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.2.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.2.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.2.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.2.bn3.bias         |      (256,)            |              |
+|   net_t.layer2                       |   3.483M               |   3.769G     |
+|    net_t.layer2.0                    |    0.921M              |    1.146G    |
+|     net_t.layer2.0.conv1             |     65.536K            |     0.268G   |
+|      net_t.layer2.0.conv1.weight     |      (256, 256, 1, 1)  |              |
+|     net_t.layer2.0.bn1               |     0.512K             |     2.097M   |
+|      net_t.layer2.0.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.0.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.0.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.0.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.0.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.0.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.0.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.0.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.0.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.0.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.0.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.0.bn3.bias         |      (512,)            |              |
+|     net_t.layer2.0.downsample        |     0.132M             |     0.135G   |
+|      net_t.layer2.0.downsample.0     |      0.131M            |      0.134G  |
+|      net_t.layer2.0.downsample.1     |      1.024K            |      1.049M  |
+|    net_t.layer2.1                    |    0.854M              |    0.875G    |
+|     net_t.layer2.1.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.1.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.1.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.1.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.1.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.1.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.1.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.1.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.1.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.1.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.1.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.1.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.1.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.1.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.1.bn3.bias         |      (512,)            |              |
+|    net_t.layer2.2                    |    0.854M              |    0.875G    |
+|     net_t.layer2.2.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.2.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.2.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.2.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.2.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.2.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.2.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.2.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.2.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.2.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.2.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.2.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.2.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.2.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.2.bn3.bias         |      (512,)            |              |
+|    net_t.layer2.3                    |    0.854M              |    0.875G    |
+|     net_t.layer2.3.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.3.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.3.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.3.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.3.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.3.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.3.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.3.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.3.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.3.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.3.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.3.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.3.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.3.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.3.bn3.bias         |      (512,)            |              |
+|   net_t.layer3                       |   20.736M              |   5.511G     |
+|    net_t.layer3.0                    |    3.676M              |    1.143G    |
+|     net_t.layer3.0.conv1             |     0.262M             |     0.268G   |
+|      net_t.layer3.0.conv1.weight     |      (512, 512, 1, 1)  |              |
+|     net_t.layer3.0.bn1               |     1.024K             |     1.049M   |
+|      net_t.layer3.0.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.0.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.0.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.0.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.0.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.0.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.0.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.0.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.0.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.0.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.0.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.0.bn3.bias         |      (1024,)           |              |
+|     net_t.layer3.0.downsample        |     0.526M             |     0.135G   |
+|      net_t.layer3.0.downsample.0     |      0.524M            |      0.134G  |
+|      net_t.layer3.0.downsample.1     |      2.048K            |      0.524M  |
+|    net_t.layer3.1                    |    3.412M              |    0.873G    |
+|     net_t.layer3.1.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.1.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.1.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.1.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.1.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.1.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.1.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.1.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.1.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.1.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.1.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.1.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.1.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.1.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.1.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.2                    |    3.412M              |    0.873G    |
+|     net_t.layer3.2.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.2.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.2.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.2.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.2.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.2.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.2.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.2.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.2.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.2.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.2.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.2.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.2.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.2.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.2.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.3                    |    3.412M              |    0.873G    |
+|     net_t.layer3.3.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.3.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.3.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.3.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.3.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.3.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.3.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.3.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.3.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.3.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.3.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.3.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.3.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.3.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.3.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.4                    |    3.412M              |    0.873G    |
+|     net_t.layer3.4.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.4.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.4.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.4.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.4.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.4.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.4.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.4.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.4.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.4.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.4.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.4.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.4.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.4.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.4.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.5                    |    3.412M              |    0.873G    |
+|     net_t.layer3.5.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.5.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.5.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.5.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.5.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.5.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.5.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.5.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.5.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.5.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.5.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.5.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.5.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.5.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.5.bn3.bias         |      (1024,)           |              |
+|  mff_oce                             |  30.83M                |  5.221G      |
+|   mff_oce.bn_layer                   |   20.208M              |   1.595G     |
+|    mff_oce.bn_layer.0                |    11.282M             |    1.024G    |
+|     mff_oce.bn_layer.0.conv1         |     1.573M             |     0.403G   |
+|      mff_oce.bn_layer.0.conv1.weight |      (512, 3072, 1, 1) |              |
+|     mff_oce.bn_layer.0.bn1           |     1.024K             |     0.262M   |
+|      mff_oce.bn_layer.0.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.0.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.0.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.0.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.0.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.0.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.0.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.0.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.0.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.0.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.0.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.0.bn3.bias     |      (2048,)           |              |
+|     mff_oce.bn_layer.0.downsample    |     6.296M             |     0.403G   |
+|      mff_oce.bn_layer.0.downsample.0 |      6.291M            |      0.403G  |
+|      mff_oce.bn_layer.0.downsample.1 |      4.096K            |      0.262M  |
+|    mff_oce.bn_layer.1                |    4.463M              |    0.286G    |
+|     mff_oce.bn_layer.1.conv1         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.1.conv1.weight |      (512, 2048, 1, 1) |              |
+|     mff_oce.bn_layer.1.bn1           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.1.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.1.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.1.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.1.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.1.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.1.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.1.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.1.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.1.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.1.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.1.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.1.bn3.bias     |      (2048,)           |              |
+|    mff_oce.bn_layer.2                |    4.463M              |    0.286G    |
+|     mff_oce.bn_layer.2.conv1         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.2.conv1.weight |      (512, 2048, 1, 1) |              |
+|     mff_oce.bn_layer.2.bn1           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.2.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.2.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.2.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.2.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.2.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.2.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.2.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.2.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.2.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.2.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.2.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.2.bn3.bias     |      (2048,)           |              |
+|   mff_oce.conv1                      |   1.18M                |   1.208G     |
+|    mff_oce.conv1.weight              |    (512, 256, 3, 3)    |              |
+|   mff_oce.bn1                        |   1.024K               |   1.049M     |
+|    mff_oce.bn1.weight                |    (512,)              |              |
+|    mff_oce.bn1.bias                  |    (512,)              |              |
+|   mff_oce.conv2                      |   4.719M               |   1.208G     |
+|    mff_oce.conv2.weight              |    (1024, 512, 3, 3)   |              |
+|   mff_oce.bn2                        |   2.048K               |   0.524M     |
+|    mff_oce.bn2.weight                |    (1024,)             |              |
+|    mff_oce.bn2.bias                  |    (1024,)             |              |
+|   mff_oce.conv3                      |   4.719M               |   1.208G     |
+|    mff_oce.conv3.weight              |    (1024, 512, 3, 3)   |              |
+|   mff_oce.bn3                        |   2.048K               |   0.524M     |
+|    mff_oce.bn3.weight                |    (1024,)             |              |
+|    mff_oce.bn3.bias                  |    (1024,)             |              |
+|  proj_layer                          |  15.487M               |  9.076G      |
+|   proj_layer.proj_a.proj             |   0.738M               |   3.029G     |
+|    proj_layer.proj_a.proj.0          |    0.295M              |    1.208G    |
+|     proj_layer.proj_a.proj.0.weight  |     (128, 256, 3, 3)   |              |
+|     proj_layer.proj_a.proj.0.bias    |     (128,)             |              |
+|    proj_layer.proj_a.proj.3          |    73.792K             |    0.302G    |
+|     proj_layer.proj_a.proj.3.weight  |     (64, 128, 3, 3)    |              |
+|     proj_layer.proj_a.proj.3.bias    |     (64,)              |              |
+|    proj_layer.proj_a.proj.6          |    73.856K             |    0.302G    |
+|     proj_layer.proj_a.proj.6.weight  |     (128, 64, 3, 3)    |              |
+|     proj_layer.proj_a.proj.6.bias    |     (128,)             |              |
+|    proj_layer.proj_a.proj.9          |    0.295M              |    1.208G    |
+|     proj_layer.proj_a.proj.9.weight  |     (256, 128, 3, 3)   |              |
+|     proj_layer.proj_a.proj.9.bias    |     (256,)             |              |
+|    proj_layer.proj_a.proj.1          |                        |    2.097M    |
+|    proj_layer.proj_a.proj.4          |                        |    1.049M    |
+|    proj_layer.proj_a.proj.7          |                        |    2.097M    |
+|    proj_layer.proj_a.proj.10         |                        |    4.194M    |
+|   proj_layer.proj_b.proj             |   2.95M                |   3.025G     |
+|    proj_layer.proj_b.proj.0          |    1.18M               |    1.208G    |
+|     proj_layer.proj_b.proj.0.weight  |     (256, 512, 3, 3)   |              |
+|     proj_layer.proj_b.proj.0.bias    |     (256,)             |              |
+|    proj_layer.proj_b.proj.3          |    0.295M              |    0.302G    |
+|     proj_layer.proj_b.proj.3.weight  |     (128, 256, 3, 3)   |              |
+|     proj_layer.proj_b.proj.3.bias    |     (128,)             |              |
+|    proj_layer.proj_b.proj.6          |    0.295M              |    0.302G    |
+|     proj_layer.proj_b.proj.6.weight  |     (256, 128, 3, 3)   |              |
+|     proj_layer.proj_b.proj.6.bias    |     (256,)             |              |
+|    proj_layer.proj_b.proj.9          |    1.18M               |    1.208G    |
+|     proj_layer.proj_b.proj.9.weight  |     (512, 256, 3, 3)   |              |
+|     proj_layer.proj_b.proj.9.bias    |     (512,)             |              |
+|    proj_layer.proj_b.proj.1          |                        |    1.049M    |
+|    proj_layer.proj_b.proj.4          |                        |    0.524M    |
+|    proj_layer.proj_b.proj.7          |                        |    1.049M    |
+|    proj_layer.proj_b.proj.10         |                        |    2.097M    |
+|   proj_layer.proj_c.proj             |   11.799M              |   3.022G     |
+|    proj_layer.proj_c.proj.0          |    4.719M              |    1.208G    |
+|     proj_layer.proj_c.proj.0.weight  |     (512, 1024, 3, 3)  |              |
+|     proj_layer.proj_c.proj.0.bias    |     (512,)             |              |
+|    proj_layer.proj_c.proj.3          |    1.18M               |    0.302G    |
+|     proj_layer.proj_c.proj.3.weight  |     (256, 512, 3, 3)   |              |
+|     proj_layer.proj_c.proj.3.bias    |     (256,)             |              |
+|    proj_layer.proj_c.proj.6          |    1.18M               |    0.302G    |
+|     proj_layer.proj_c.proj.6.weight  |     (512, 256, 3, 3)   |              |
+|     proj_layer.proj_c.proj.6.bias    |     (512,)             |              |
+|    proj_layer.proj_c.proj.9          |    4.72M               |    1.208G    |
+|     proj_layer.proj_c.proj.9.weight  |     (1024, 512, 3, 3)  |              |
+|     proj_layer.proj_c.proj.9.bias    |     (1024,)            |              |
+|    proj_layer.proj_c.proj.1          |                        |    0.524M    |
+|    proj_layer.proj_c.proj.4          |                        |    0.262M    |
+|    proj_layer.proj_c.proj.7          |                        |    0.524M    |
+|    proj_layer.proj_c.proj.10         |                        |    1.049M    |
+|  net_s                               |  24.918M               |  11.179G     |
+|   net_s.layer1                       |   17.84M               |   2.554G     |
+|    net_s.layer1.0                    |    11.016M             |    0.807G    |
+|     net_s.layer1.0.conv1             |     1.049M             |     67.109M  |
+|      net_s.layer1.0.conv1.weight     |      (512, 2048, 1, 1) |              |
+|     net_s.layer1.0.bn1               |     1.024K             |     65.536K  |
+|      net_s.layer1.0.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.0.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.0.conv2             |     1.049M             |     67.109M  |
+|      net_s.layer1.0.conv2.weight     |      (512, 512, 2, 2)  |              |
+|     net_s.layer1.0.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.0.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.0.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.0.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.0.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.0.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.0.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.0.bn3.bias         |      (1024,)           |              |
+|     net_s.layer1.0.upsample          |     8.391M             |     0.537G   |
+|      net_s.layer1.0.upsample.0       |      8.389M            |      0.537G  |
+|      net_s.layer1.0.upsample.1       |      2.048K            |      0.524M  |
+|    net_s.layer1.1                    |    3.412M              |    0.873G    |
+|     net_s.layer1.1.conv1             |     0.524M             |     0.134G   |
+|      net_s.layer1.1.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_s.layer1.1.bn1               |     1.024K             |     0.262M   |
+|      net_s.layer1.1.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.1.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.1.conv2             |     2.359M             |     0.604G   |
+|      net_s.layer1.1.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_s.layer1.1.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.1.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.1.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.1.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.1.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.1.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.1.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.1.bn3.bias         |      (1024,)           |              |
+|    net_s.layer1.2                    |    3.412M              |    0.873G    |
+|     net_s.layer1.2.conv1             |     0.524M             |     0.134G   |
+|      net_s.layer1.2.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_s.layer1.2.bn1               |     1.024K             |     0.262M   |
+|      net_s.layer1.2.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.2.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.2.conv2             |     2.359M             |     0.604G   |
+|      net_s.layer1.2.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_s.layer1.2.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.2.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.2.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.2.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.2.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.2.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.2.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.2.bn3.bias         |      (1024,)           |              |
+|   net_s.layer2                       |   5.318M               |   3.432G     |
+|    net_s.layer2.0                    |    2.756M              |    0.808G    |
+|     net_s.layer2.0.conv1             |     0.262M             |     67.109M  |
+|      net_s.layer2.0.conv1.weight     |      (256, 1024, 1, 1) |              |
+|     net_s.layer2.0.bn1               |     0.512K             |     0.131M   |
+|      net_s.layer2.0.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.0.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.0.conv2             |     0.262M             |     67.109M  |
+|      net_s.layer2.0.conv2.weight     |      (256, 256, 2, 2)  |              |
+|     net_s.layer2.0.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.0.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.0.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.0.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.0.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.0.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.0.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.0.bn3.bias         |      (512,)            |              |
+|     net_s.layer2.0.upsample          |     2.098M             |     0.538G   |
+|      net_s.layer2.0.upsample.0       |      2.097M            |      0.537G  |
+|      net_s.layer2.0.upsample.1       |      1.024K            |      1.049M  |
+|    net_s.layer2.1                    |    0.854M              |    0.875G    |
+|     net_s.layer2.1.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.1.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.1.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.1.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.1.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.1.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.1.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.1.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.1.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.1.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.1.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.1.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.1.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.1.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.1.bn3.bias         |      (512,)            |              |
+|    net_s.layer2.2                    |    0.854M              |    0.875G    |
+|     net_s.layer2.2.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.2.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.2.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.2.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.2.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.2.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.2.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.2.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.2.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.2.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.2.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.2.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.2.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.2.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.2.bn3.bias         |      (512,)            |              |
+|    net_s.layer2.3                    |    0.854M              |    0.875G    |
+|     net_s.layer2.3.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.3.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.3.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.3.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.3.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.3.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.3.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.3.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.3.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.3.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.3.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.3.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.3.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.3.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.3.bn3.bias         |      (512,)            |              |
+|   net_s.layer3                       |   1.76M                |   5.194G     |
+|    net_s.layer3.0                    |    0.69M               |    0.811G    |
+|     net_s.layer3.0.conv1             |     65.536K            |     67.109M  |
+|      net_s.layer3.0.conv1.weight     |      (128, 512, 1, 1)  |              |
+|     net_s.layer3.0.bn1               |     0.256K             |     0.262M   |
+|      net_s.layer3.0.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.0.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.0.conv2             |     65.536K            |     67.109M  |
+|      net_s.layer3.0.conv2.weight     |      (128, 128, 2, 2)  |              |
+|     net_s.layer3.0.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.0.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.0.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.0.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.0.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.0.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.0.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.0.bn3.bias         |      (256,)            |              |
+|     net_s.layer3.0.upsample          |     0.525M             |     0.539G   |
+|      net_s.layer3.0.upsample.0       |      0.524M            |      0.537G  |
+|      net_s.layer3.0.upsample.1       |      0.512K            |      2.097M  |
+|    net_s.layer3.1                    |    0.214M              |    0.877G    |
+|     net_s.layer3.1.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.1.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.1.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.1.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.1.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.1.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.1.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.1.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.1.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.1.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.1.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.1.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.1.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.1.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.1.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.2                    |    0.214M              |    0.877G    |
+|     net_s.layer3.2.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.2.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.2.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.2.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.2.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.2.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.2.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.2.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.2.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.2.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.2.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.2.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.2.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.2.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.2.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.3                    |    0.214M              |    0.877G    |
+|     net_s.layer3.3.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.3.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.3.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.3.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.3.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.3.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.3.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.3.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.3.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.3.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.3.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.3.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.3.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.3.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.3.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.4                    |    0.214M              |    0.877G    |
+|     net_s.layer3.4.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.4.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.4.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.4.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.4.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.4.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.4.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.4.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.4.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.4.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.4.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.4.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.4.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.4.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.4.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.5                    |    0.214M              |    0.877G    |
+|     net_s.layer3.5.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.5.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.5.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.5.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.5.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.5.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.5.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.5.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.5.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.5.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.5.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.5.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.5.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.5.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.5.bn3.bias         |      (256,)            |              |
+------------------------------------------------------------------------------
+2024-05-27 17:12:01,717 - ==> Creating optimizer
+2024-05-27 17:12:02,757 - ==> Loading dataset: RDPPAD
+2024-05-27 17:12:02,761 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.001                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+optim.proj_opt.kwargs                : {'name': 'adam', 'betas': (0.5, 0.999)}
+optim.distill_opt.kwargs             : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : RDPTrainer                          
+trainer.checkpoint                   : runs/benchmark/rd++_256_100e/mad_real
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 16                                  
+trainer.data.batch_size_per_gpu      : 16                                  
+trainer.data.batch_size_test         : 16                                  
+trainer.data.batch_size_per_gpu_test : 16                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 3000                                
+trainer.metric_recorder              : {'mAUROC_sp_max_Bear': [], 'mAP_sp_max_Bear': [], 'mF1_max_sp_max_Bear': [], 'mAUPRO_px_Bear': [], 'mAUROC_px_Bear': [], 'mAP_px_Bear': [], 'mF1_max_px_Bear': [], 'mF1_px_0.2_0.8_0.1_Bear': [], 'mAcc_px_0.2_0.8_0.1_Bear': [], 'mIoU_px_0.2_0.8_0.1_Bear': [], 'mIoU_max_px_Bear': [], 'mAUROC_sp_max_Bird': [], 'mAP_sp_max_Bird': [], 'mF1_max_sp_max_Bird': [], 'mAUPRO_px_Bird': [], 'mAUROC_px_Bird': [], 'mAP_px_Bird': [], 'mF1_max_px_Bird': [], 'mF1_px_0.2_0.8_0.1_Bird': [], 'mAcc_px_0.2_0.8_0.1_Bird': [], 'mIoU_px_0.2_0.8_0.1_Bird': [], 'mIoU_max_px_Bird': [], 'mAUROC_sp_max_Elephant': [], 'mAP_sp_max_Elephant': [], 'mF1_max_sp_max_Elephant': [], 'mAUPRO_px_Elephant': [], 'mAUROC_px_Elephant': [], 'mAP_px_Elephant': [], 'mF1_max_px_Elephant': [], 'mF1_px_0.2_0.8_0.1_Elephant': [], 'mAcc_px_0.2_0.8_0.1_Elephant': [], 'mIoU_px_0.2_0.8_0.1_Elephant': [], 'mIoU_max_px_Elephant': [], 'mAUROC_sp_max_Parrot': [], 'mAP_sp_max_Parrot': [], 'mF1_max_sp_max_Parrot': [], 'mAUPRO_px_Parrot': [], 'mAUROC_px_Parrot': [], 'mAP_px_Parrot': [], 'mF1_max_px_Parrot': [], 'mF1_px_0.2_0.8_0.1_Parrot': [], 'mAcc_px_0.2_0.8_0.1_Parrot': [], 'mIoU_px_0.2_0.8_0.1_Parrot': [], 'mIoU_max_px_Parrot': [], 'mAUROC_sp_max_Pig': [], 'mAP_sp_max_Pig': [], 'mF1_max_sp_max_Pig': [], 'mAUPRO_px_Pig': [], 'mAUROC_px_Pig': [], 'mAP_px_Pig': [], 'mF1_max_px_Pig': [], 'mF1_px_0.2_0.8_0.1_Pig': [], 'mAcc_px_0.2_0.8_0.1_Pig': [], 'mIoU_px_0.2_0.8_0.1_Pig': [], 'mIoU_max_px_Pig': [], 'mAUROC_sp_max_Puppy': [], 'mAP_sp_max_Puppy': [], 'mF1_max_sp_max_Puppy': [], 'mAUPRO_px_Puppy': [], 'mAUROC_px_Puppy': [], 'mAP_px_Puppy': [], 'mF1_max_px_Puppy': [], 'mF1_px_0.2_0.8_0.1_Puppy': [], 'mAcc_px_0.2_0.8_0.1_Puppy': [], 'mIoU_px_0.2_0.8_0.1_Puppy': [], 'mIoU_max_px_Puppy': [], 'mAUROC_sp_max_Scorpion': [], 'mAP_sp_max_Scorpion': [], 'mF1_max_sp_max_Scorpion': [], 'mAUPRO_px_Scorpion': [], 'mAUROC_px_Scorpion': [], 'mAP_px_Scorpion': [], 'mF1_max_px_Scorpion': [], 'mF1_px_0.2_0.8_0.1_Scorpion': [], 'mAcc_px_0.2_0.8_0.1_Scorpion': [], 'mIoU_px_0.2_0.8_0.1_Scorpion': [], 'mIoU_max_px_Scorpion': [], 'mAUROC_sp_max_Turtle': [], 'mAP_sp_max_Turtle': [], 'mF1_max_sp_max_Turtle': [], 'mAUPRO_px_Turtle': [], 'mAUROC_px_Turtle': [], 'mAP_px_Turtle': [], 'mF1_max_px_Turtle': [], 'mF1_px_0.2_0.8_0.1_Turtle': [], 'mAcc_px_0.2_0.8_0.1_Turtle': [], 'mIoU_px_0.2_0.8_0.1_Turtle': [], 'mIoU_max_px_Turtle': [], 'mAUROC_sp_max_Unicorn': [], 'mAP_sp_max_Unicorn': [], 'mF1_max_sp_max_Unicorn': [], 'mAUPRO_px_Unicorn': [], 'mAUROC_px_Unicorn': [], 'mAP_px_Unicorn': [], 'mF1_max_px_Unicorn': [], 'mF1_px_0.2_0.8_0.1_Unicorn': [], 'mAcc_px_0.2_0.8_0.1_Unicorn': [], 'mIoU_px_0.2_0.8_0.1_Unicorn': [], 'mIoU_max_px_Unicorn': [], 'mAUROC_sp_max_Whale': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_Whale': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_Whale': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_Whale': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_Whale': [], 'mAUROC_px_Avg': [], 'mAP_px_Whale': [], 'mAP_px_Avg': [], 'mF1_max_px_Whale': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_Whale': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_Whale': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_Whale': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_Whale': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : RDPPAD                              
+data.root                            : data/mad_real                       
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 30                                  
+data.test_size                       : 17                                  
+data.train_length                    : 490                                 
+data.test_length                     : 271                                 
+model_t.name                         : timm_wide_resnet50_2                
+model_t.kwargs                       : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_s.name                         : de_wide_resnet50_2                  
+model_s.kwargs                       : {'pretrained': False, 'checkpoint_path': '', 'strict': False}
+model.name                           : rdpp                                
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_t': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_s': Namespace(name='de_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': '', 'strict': False})}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 16                                  
+batch_test_per                       : 16                                  
+lr                                   : 0.001                               
+weight_decay                         : 0.05                                
+cfg_path                             : configs.benchmark.rd++_256_100e     
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/rd++_256_100e/mad_real', 'data.root=data/mad_real']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.rd++_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/rd++_256_100e/mad_real data.root=data/mad_real
+task_start_time                      : 3202170.230365029                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133/show_train
+logdir_test                          : runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133/show_test
+2024-05-27 17:12:02,763 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-27 17:12:34,720 - ==> Total time: 0:01:00	 Eta: 1:40:18 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:12:53,951 - Train: 1.67% [50/3000]  [1.7/100.0] [batch_t 0.509 (0.889)] [data_t 0.001] [optim_t 0.507] [lr 0.001000] [cos 0.892 (0.918)]
+2024-05-27 17:13:02,129 - ==> Total time: 0:01:28	 Eta: 1:12:01 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:13:30,627 - ==> Total time: 0:01:56	 Eta: 1:02:53 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:13:42,516 - Train: 3.33% [100/3000]  [3.3/100.0] [batch_t 0.510 (1.058)] [data_t 0.001] [optim_t 0.508] [lr 0.001000] [cos 0.813 (0.816)]
+2024-05-27 17:13:58,456 - ==> Total time: 0:02:24	 Eta: 0:57:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:14:26,059 - Train: 5.00% [150/3000]  [5.0/100.0] [batch_t 0.511 (0.869)] [data_t 0.001] [optim_t 0.509] [lr 0.001000] [cos 0.760 (0.773)]
+2024-05-27 17:14:26,062 - ==> Total time: 0:02:52	 Eta: 0:54:30 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:14:53,566 - ==> Total time: 0:03:19	 Eta: 0:52:07 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:15:12,675 - Train: 6.67% [200/3000]  [6.7/100.0] [batch_t 0.515 (0.891)] [data_t 0.002] [optim_t 0.514] [lr 0.001000] [cos 0.698 (0.712)]
+2024-05-27 17:15:20,954 - ==> Total time: 0:03:47	 Eta: 0:50:16 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:15:49,148 - ==> Total time: 0:04:15	 Eta: 0:48:55 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:16:01,058 - Train: 8.33% [250/3000]  [8.3/100.0] [batch_t 0.514 (1.054)] [data_t 0.002] [optim_t 0.513] [lr 0.001000] [cos 0.645 (0.653)]
+2024-05-27 17:16:16,489 - ==> Total time: 0:04:42	 Eta: 0:47:37 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:16:43,711 - Train: 10.00% [300/3000]  [10.0/100.0] [batch_t 0.509 (0.868)] [data_t 0.001] [optim_t 0.508] [lr 0.001000] [cos 0.630 (0.621)]
+2024-05-27 17:17:06,823 - Test: 100.00% [17/17] [batch_t 6.447 (1.355)] [cos 0.642 (0.647)]
+2024-05-27 17:17:07,054 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:17:07,237 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-27 17:17:07,393 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:17:07,583 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.045 (mIoU_max_px)	
+2024-05-27 17:17:07,734 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.036 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 17:17:07,902 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 17:17:08,090 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:17:08,279 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:17:08,454 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:17:08,726 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.022 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.063 (mIoU_max_px)	
+2024-05-27 17:17:08,731 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     85.000      |  85.000 (10  epoch)   |    96.565    | 96.565 (10  epoch) |      94.118      |   94.118 (10  epoch)   |   98.806    | 98.806 (10  epoch) |   99.695    | 99.695 (10  epoch) |  27.951  | 27.951 (10  epoch) |    32.816    | 32.816 (10  epoch) |        3.484         |     3.484 (10  epoch)      |        97.529         |     97.529 (10  epoch)      |         1.857         |      1.857 (10  epoch)      |    19.629     | 19.629 (10  epoch)  |
+|   Bird   |     24.545      |  24.545 (10  epoch)   |    73.119    | 73.119 (10  epoch) |      89.796      |   89.796 (10  epoch)   |   60.768    | 60.768 (10  epoch) |   86.563    | 86.563 (10  epoch) |  2.803   | 2.803 (10  epoch)  |    7.031     | 7.031 (10  epoch)  |        4.405         |     4.405 (10  epoch)      |        60.693         |     60.693 (10  epoch)      |         2.264         |      2.264 (10  epoch)      |     3.644     |  3.644 (10  epoch)  |
+| Elephant |      8.889      |   8.889 (10  epoch)   |    62.105    | 62.105 (10  epoch) |      87.805      |   87.805 (10  epoch)   |   54.873    | 54.873 (10  epoch) |   85.735    | 85.735 (10  epoch) |  1.721   | 1.721 (10  epoch)  |    4.879     | 4.879 (10  epoch)  |        2.594         |     2.594 (10  epoch)      |        62.220         |     62.220 (10  epoch)      |         1.319         |      1.319 (10  epoch)      |     2.500     |  2.500 (10  epoch)  |
+|  Parrot  |     19.130      |  19.130 (10  epoch)   |    73.665    | 73.665 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   37.506    | 37.506 (10  epoch) |   57.143    | 57.143 (10  epoch) |  0.753   | 0.753 (10  epoch)  |    1.940     | 1.940 (10  epoch)  |        0.948         |     0.948 (10  epoch)      |        30.959         |     30.959 (10  epoch)      |         0.478         |      0.478 (10  epoch)      |     0.980     |  0.980 (10  epoch)  |
+|   Pig    |     57.647      |  57.647 (10  epoch)   |    76.113    | 76.113 (10  epoch) |      89.474      |   89.474 (10  epoch)   |   77.462    | 77.462 (10  epoch) |   93.794    | 93.794 (10  epoch) |  4.649   | 4.649 (10  epoch)  |    7.423     | 7.423 (10  epoch)  |        4.615         |     4.615 (10  epoch)      |        68.076         |     68.076 (10  epoch)      |         2.374         |      2.374 (10  epoch)      |     3.855     |  3.855 (10  epoch)  |
+|  Puppy   |     92.000      |  92.000 (10  epoch)   |    98.297    | 98.297 (10  epoch) |      94.737      |   94.737 (10  epoch)   |   95.826    | 95.826 (10  epoch) |   99.594    | 99.594 (10  epoch) |  36.284  | 36.284 (10  epoch) |    38.948    | 38.948 (10  epoch) |        10.002        |     10.002 (10  epoch)     |        91.562         |     91.562 (10  epoch)      |         5.877         |      5.877 (10  epoch)      |    24.184     | 24.184 (10  epoch)  |
+| Scorpion |     19.130      |  19.130 (10  epoch)   |    70.562    | 70.562 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   40.684    | 40.684 (10  epoch) |   79.195    | 79.195 (10  epoch) |  3.662   | 3.662 (10  epoch)  |    9.108     | 9.108 (10  epoch)  |        5.127         |     5.127 (10  epoch)      |        58.899         |     58.899 (10  epoch)      |         2.652         |      2.652 (10  epoch)      |     4.771     |  4.771 (10  epoch)  |
+|  Turtle  |     87.619      |  87.619 (10  epoch)   |    96.963    | 96.963 (10  epoch) |      93.333      |   93.333 (10  epoch)   |   96.976    | 96.976 (10  epoch) |   99.406    | 99.406 (10  epoch) |  40.165  | 40.165 (10  epoch) |    43.242    | 43.242 (10  epoch) |        11.340        |     11.340 (10  epoch)     |        95.742         |     95.742 (10  epoch)      |         6.688         |      6.688 (10  epoch)      |    27.585     | 27.585 (10  epoch)  |
+| Unicorn  |     43.810      |  43.810 (10  epoch)   |    82.077    | 82.077 (10  epoch) |      89.362      |   89.362 (10  epoch)   |   61.332    | 61.332 (10  epoch) |   88.425    | 88.425 (10  epoch) |  1.010   | 1.010 (10  epoch)  |    2.785     | 2.785 (10  epoch)  |        1.202         |     1.202 (10  epoch)      |        63.041         |     63.041 (10  epoch)      |         0.607         |      0.607 (10  epoch)      |     1.412     |  1.412 (10  epoch)  |
+|  Whale   |     76.875      |  76.875 (10  epoch)   |    96.318    | 96.318 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   93.798    | 93.798 (10  epoch) |   98.933    | 98.933 (10  epoch) |  22.850  | 22.850 (10  epoch) |    25.020    | 25.020 (10  epoch) |        4.449         |     4.449 (10  epoch)      |        95.639         |     95.639 (10  epoch)      |         2.352         |      2.352 (10  epoch)      |    14.299     | 14.299 (10  epoch)  |
+|   Avg    |     51.465      |  51.465 (10  epoch)   |    82.578    | 82.578 (10  epoch) |      91.177      |   91.177 (10  epoch)   |   71.803    | 71.803 (10  epoch) |   88.848    | 88.848 (10  epoch) |  14.185  | 14.185 (10  epoch) |    17.319    | 17.319 (10  epoch) |        4.817         |     4.817 (10  epoch)      |        72.436         |     72.436 (10  epoch)      |         2.647         |      2.647 (10  epoch)      |    10.286     | 10.286 (10  epoch)  |
+2024-05-27 17:17:08,839 - ==> Total time: 0:05:34	 Eta: 0:50:14 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:17:35,435 - ==> Total time: 0:06:01	 Eta: 0:48:44 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:17:53,314 - Train: 11.67% [350/3000]  [11.7/100.0] [batch_t 0.507 (0.822)] [data_t 0.001] [optim_t 0.505] [lr 0.001000] [cos 0.565 (0.576)]
+2024-05-27 17:18:01,250 - ==> Total time: 0:06:27	 Eta: 0:47:20 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:18:29,331 - ==> Total time: 0:06:55	 Eta: 0:46:20 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:18:40,470 - Train: 13.33% [400/3000]  [13.3/100.0] [batch_t 0.513 (0.990)] [data_t 0.002] [optim_t 0.512] [lr 0.001000] [cos 0.556 (0.551)]
+2024-05-27 17:18:55,201 - ==> Total time: 0:07:21	 Eta: 0:45:10 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:19:21,902 - Train: 15.00% [450/3000]  [15.0/100.0] [batch_t 0.509 (0.848)] [data_t 0.001] [optim_t 0.508] [lr 0.001000] [cos 0.539 (0.539)]
+2024-05-27 17:19:21,905 - ==> Total time: 0:07:47	 Eta: 0:44:11 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:19:48,093 - ==> Total time: 0:08:14	 Eta: 0:43:14 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:20:06,458 - Train: 16.67% [500/3000]  [16.7/100.0] [batch_t 0.509 (0.840)] [data_t 0.002] [optim_t 0.508] [lr 0.001000] [cos 0.519 (0.516)]
+2024-05-27 17:20:14,002 - ==> Total time: 0:08:40	 Eta: 0:42:19 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:20:40,782 - ==> Total time: 0:09:06	 Eta: 0:41:31 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:20:52,412 - Train: 18.33% [550/3000]  [18.3/100.0] [batch_t 0.511 (1.010)] [data_t 0.001] [optim_t 0.509] [lr 0.001000] [cos 0.495 (0.499)]
+2024-05-27 17:21:06,804 - ==> Total time: 0:09:32	 Eta: 0:40:42 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:21:33,716 - Train: 20.00% [600/3000]  [20.0/100.0] [batch_t 0.503 (0.831)] [data_t 0.001] [optim_t 0.502] [lr 0.001000] [cos 0.478 (0.484)]
+2024-05-27 17:21:52,918 - Test: 100.00% [17/17] [batch_t 3.091 (1.116)] [cos 0.516 (0.522)]
+2024-05-27 17:21:53,158 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.053 (mF1_max_px)	  0.018 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.018 (mIoU_px_0.2_0.8_0.1)	  0.051 (mIoU_max_px)	
+2024-05-27 17:21:53,342 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:21:53,500 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:21:53,702 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.048 (mF1_max_px)	  0.018 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.018 (mIoU_px_0.2_0.8_0.1)	  0.050 (mIoU_max_px)	
+2024-05-27 17:21:53,857 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.036 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 17:21:54,033 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-27 17:21:54,236 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.048 (mIoU_max_px)	
+2024-05-27 17:21:54,439 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:21:54,622 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.046 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:21:54,901 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-27 17:21:54,907 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     70.833      |  85.000 (10  epoch)   |    91.246    | 96.565 (10  epoch) |      92.308      |   94.118 (10  epoch)   |   98.560    | 98.806 (10  epoch) |   99.627    | 99.695 (10  epoch) |  17.412  | 27.951 (10  epoch) |    24.916    | 32.816 (10  epoch) |        2.532         |     3.484 (10  epoch)      |        98.623         |     98.623 (20  epoch)      |         1.315         |      1.857 (10  epoch)      |    14.231     | 19.629 (10  epoch)  |
+|   Bird   |     35.455      |  35.455 (20  epoch)   |    76.534    | 76.534 (20  epoch) |      89.796      |   89.796 (10  epoch)   |   60.383    | 60.768 (10  epoch) |   87.636    | 87.636 (20  epoch) |  3.035   | 3.035 (20  epoch)  |    7.688     | 7.688 (20  epoch)  |        4.746         |     4.746 (20  epoch)      |        59.714         |     60.693 (10  epoch)      |         2.445         |      2.445 (20  epoch)      |     3.998     |  3.998 (20  epoch)  |
+| Elephant |     38.889      |  38.889 (20  epoch)   |    75.117    | 75.117 (20  epoch) |      87.805      |   87.805 (10  epoch)   |   62.533    | 62.533 (20  epoch) |   88.827    | 88.827 (20  epoch) |  2.361   | 2.361 (20  epoch)  |    5.414     | 5.414 (20  epoch)  |        3.263         |     3.263 (20  epoch)      |        56.409         |     62.220 (10  epoch)      |         1.665         |      1.665 (20  epoch)      |     2.782     |  2.782 (20  epoch)  |
+|  Parrot  |      6.087      |  19.130 (10  epoch)   |    66.443    | 73.665 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   39.571    | 39.571 (20  epoch) |   61.329    | 61.329 (20  epoch) |  0.848   | 0.848 (20  epoch)  |    2.103     | 2.103 (20  epoch)  |        1.066         |     1.066 (20  epoch)      |        32.870         |     32.870 (20  epoch)      |         0.537         |      0.537 (20  epoch)      |     1.063     |  1.063 (20  epoch)  |
+|   Pig    |     54.118      |  57.647 (10  epoch)   |    77.999    | 77.999 (20  epoch) |      87.179      |   89.474 (10  epoch)   |   86.228    | 86.228 (20  epoch) |   96.603    | 96.603 (20  epoch) |  8.747   | 8.747 (20  epoch)  |    11.548    | 11.548 (20  epoch) |        7.439         |     7.439 (20  epoch)      |        67.551         |     68.076 (10  epoch)      |         3.906         |      3.906 (20  epoch)      |     6.128     |  6.128 (20  epoch)  |
+|  Puppy   |     87.000      |  92.000 (10  epoch)   |    96.277    | 98.297 (10  epoch) |      95.000      |   95.000 (20  epoch)   |   95.504    | 95.826 (10  epoch) |   99.185    | 99.594 (10  epoch) |  15.440  | 36.284 (10  epoch) |    20.448    | 38.948 (10  epoch) |        4.099         |     10.002 (10  epoch)     |        96.901         |     96.901 (20  epoch)      |         2.174         |      5.877 (10  epoch)      |    11.388     | 24.184 (10  epoch)  |
+| Scorpion |     25.217      |  25.217 (20  epoch)   |    74.302    | 74.302 (20  epoch) |      90.196      |   90.196 (10  epoch)   |   36.124    | 40.684 (10  epoch) |   77.519    | 79.195 (10  epoch) |  3.372   | 3.662 (10  epoch)  |    8.267     | 9.108 (10  epoch)  |        4.736         |     5.127 (10  epoch)      |        49.126         |     58.899 (10  epoch)      |         2.440         |      2.652 (10  epoch)      |     4.312     |  4.771 (10  epoch)  |
+|  Turtle  |     96.190      |  96.190 (20  epoch)   |    99.121    | 99.121 (20  epoch) |      95.455      |   95.455 (20  epoch)   |   96.484    | 96.976 (10  epoch) |   99.209    | 99.406 (10  epoch) |  31.275  | 40.165 (10  epoch) |    38.296    | 43.242 (10  epoch) |        12.239        |     12.239 (20  epoch)     |        92.567         |     95.742 (10  epoch)      |         7.056         |      7.056 (20  epoch)      |    23.683     | 27.585 (10  epoch)  |
+| Unicorn  |     58.095      |  58.095 (20  epoch)   |    84.624    | 84.624 (20  epoch) |      89.362      |   89.362 (10  epoch)   |   59.821    | 61.332 (10  epoch) |   87.648    | 88.425 (10  epoch) |  0.958   | 1.010 (10  epoch)  |    2.509     | 2.785 (10  epoch)  |        1.150         |     1.202 (10  epoch)      |        54.337         |     63.041 (10  epoch)      |         0.580         |      0.607 (10  epoch)      |     1.271     |  1.412 (10  epoch)  |
+|  Whale   |     83.125      |  83.125 (20  epoch)   |    97.090    | 97.090 (20  epoch) |      95.385      |   95.385 (20  epoch)   |   96.165    | 96.165 (20  epoch) |   99.402    | 99.402 (20  epoch) |  33.515  | 33.515 (20  epoch) |    35.823    | 35.823 (20  epoch) |        7.439         |     7.439 (20  epoch)      |        93.812         |     95.639 (10  epoch)      |         4.153         |      4.153 (20  epoch)      |    21.820     | 21.820 (20  epoch)  |
+|   Avg    |     55.501      |  55.501 (20  epoch)   |    83.875    | 83.875 (20  epoch) |      91.268      |   91.268 (20  epoch)   |   73.137    | 73.137 (20  epoch) |   89.699    | 89.699 (20  epoch) |  11.696  | 14.185 (10  epoch) |    15.701    | 17.319 (10  epoch) |        4.871         |     4.871 (20  epoch)      |        70.191         |     72.436 (10  epoch)      |         2.627         |      2.647 (10  epoch)      |     9.067     | 10.286 (10  epoch)  |
+2024-05-27 17:21:55,052 - ==> Total time: 0:10:21	 Eta: 0:41:24 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:22:22,175 - ==> Total time: 0:10:48	 Eta: 0:40:38 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:22:41,129 - Train: 21.67% [650/3000]  [21.7/100.0] [batch_t 0.514 (0.883)] [data_t 0.002] [optim_t 0.513] [lr 0.001000] [cos 0.471 (0.474)]
+2024-05-27 17:22:49,808 - ==> Total time: 0:11:15	 Eta: 0:39:56 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:23:16,110 - ==> Total time: 0:11:42	 Eta: 0:39:10 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:23:27,514 - Train: 23.33% [700/3000]  [23.3/100.0] [batch_t 0.508 (1.004)] [data_t 0.001] [optim_t 0.507] [lr 0.001000] [cos 0.450 (0.452)]
+2024-05-27 17:23:42,655 - ==> Total time: 0:12:08	 Eta: 0:38:27 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:24:08,661 - Train: 25.00% [750/3000]  [25.0/100.0] [batch_t 0.520 (0.818)] [data_t 0.001] [optim_t 0.518] [lr 0.001000] [cos 0.434 (0.435)]
+2024-05-27 17:24:08,664 - ==> Total time: 0:12:34	 Eta: 0:37:44 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:24:35,243 - ==> Total time: 0:13:01	 Eta: 0:37:03 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:24:53,827 - Train: 26.67% [800/3000]  [26.7/100.0] [batch_t 0.522 (0.863)] [data_t 0.001] [optim_t 0.520] [lr 0.001000] [cos 0.421 (0.423)]
+2024-05-27 17:25:01,556 - ==> Total time: 0:13:27	 Eta: 0:36:23 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:25:31,792 - ==> Total time: 0:13:57	 Eta: 0:35:54 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:25:43,124 - Train: 28.33% [850/3000]  [28.3/100.0] [batch_t 0.518 (0.985)] [data_t 0.002] [optim_t 0.516] [lr 0.001000] [cos 0.418 (0.409)]
+2024-05-27 17:25:57,796 - ==> Total time: 0:14:23	 Eta: 0:35:14 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:26:23,935 - Train: 30.00% [900/3000]  [30.0/100.0] [batch_t 0.514 (0.827)] [data_t 0.001] [optim_t 0.512] [lr 0.001000] [cos 0.401 (0.404)]
+2024-05-27 17:26:43,933 - Test: 100.00% [17/17] [batch_t 3.586 (1.158)] [cos 0.438 (0.440)]
+2024-05-27 17:26:44,167 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.017 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.047 (mIoU_max_px)	
+2024-05-27 17:26:44,351 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:26:44,507 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:26:44,695 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:26:44,846 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-27 17:26:45,013 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-27 17:26:45,212 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.048 (mIoU_max_px)	
+2024-05-27 17:26:45,401 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:26:45,582 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:26:45,851 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.061 (mIoU_max_px)	
+2024-05-27 17:26:45,856 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     80.833      |  85.000 (10  epoch)   |    95.157    | 96.565 (10  epoch)  |      96.000      |   96.000 (30  epoch)   |   98.674    | 98.806 (10  epoch) |   99.618    | 99.695 (10  epoch) |  16.824  | 27.951 (10  epoch) |    24.471    | 32.816 (10  epoch) |        3.692         |     3.692 (30  epoch)      |        96.017         |     98.623 (20  epoch)      |         1.955         |      1.955 (30  epoch)      |    13.941     | 19.629 (10  epoch)  |
+|   Bird   |     26.364      |  35.455 (20  epoch)   |    72.451    | 76.534 (20  epoch)  |      89.796      |   89.796 (10  epoch)   |   62.719    | 62.719 (30  epoch) |   88.498    | 88.498 (30  epoch) |  4.516   | 4.516 (30  epoch)  |    10.893    | 10.893 (30  epoch) |        5.972         |     5.972 (30  epoch)      |        58.859         |     60.693 (10  epoch)      |         3.105         |      3.105 (30  epoch)      |     5.760     |  5.760 (30  epoch)  |
+| Elephant |     31.111      |  38.889 (20  epoch)   |    69.704    | 75.117 (20  epoch)  |      87.805      |   87.805 (10  epoch)   |   60.571    | 62.533 (20  epoch) |   87.277    | 88.827 (20  epoch) |  1.782   | 2.361 (20  epoch)  |    4.065     | 5.414 (20  epoch)  |        2.791         |     3.263 (20  epoch)      |        50.890         |     62.220 (10  epoch)      |         1.418         |      1.665 (20  epoch)      |     2.075     |  2.782 (20  epoch)  |
+|  Parrot  |     19.130      |  19.130 (10  epoch)   |    69.815    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   37.436    | 39.571 (20  epoch) |   59.645    | 61.329 (20  epoch) |  0.772   | 0.848 (20  epoch)  |    1.797     | 2.103 (20  epoch)  |        0.809         |     1.066 (20  epoch)      |        25.477         |     32.870 (20  epoch)      |         0.407         |      0.537 (20  epoch)      |     0.907     |  1.063 (20  epoch)  |
+|   Pig    |     44.706      |  57.647 (10  epoch)   |    75.101    | 77.999 (20  epoch)  |      87.179      |   89.474 (10  epoch)   |   86.988    | 86.988 (30  epoch) |   97.025    | 97.025 (30  epoch) |  8.351   | 8.747 (20  epoch)  |    13.717    | 13.717 (30  epoch) |        7.829         |     7.829 (30  epoch)      |        57.720         |     68.076 (10  epoch)      |         4.118         |      4.118 (30  epoch)      |     7.364     |  7.364 (30  epoch)  |
+|  Puppy   |     74.000      |  92.000 (10  epoch)   |    88.985    | 98.297 (10  epoch)  |      93.023      |   95.000 (20  epoch)   |   96.922    | 96.922 (30  epoch) |   99.240    | 99.594 (10  epoch) |  13.777  | 36.284 (10  epoch) |    19.535    | 38.948 (10  epoch) |        5.644         |     10.002 (10  epoch)     |        90.680         |     96.901 (20  epoch)      |         3.030         |      5.877 (10  epoch)      |    10.825     | 24.184 (10  epoch)  |
+| Scorpion |     13.913      |  25.217 (20  epoch)   |    71.730    | 74.302 (20  epoch)  |      90.196      |   90.196 (10  epoch)   |   34.982    | 40.684 (10  epoch) |   76.391    | 79.195 (10  epoch) |  3.127   | 3.662 (10  epoch)  |    7.817     | 9.108 (10  epoch)  |        4.193         |     5.127 (10  epoch)      |        47.591         |     58.899 (10  epoch)      |         2.156         |      2.652 (10  epoch)      |     4.068     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   97.505    | 97.505 (30  epoch) |   99.447    | 99.447 (30  epoch) |  31.668  | 40.165 (10  epoch) |    43.883    | 43.883 (30  epoch) |        16.378        |     16.378 (30  epoch)     |        89.681         |     95.742 (10  epoch)      |         9.735         |      9.735 (30  epoch)      |    28.109     | 28.109 (30  epoch)  |
+| Unicorn  |     48.571      |  58.095 (20  epoch)   |    79.465    | 84.624 (20  epoch)  |      89.362      |   89.362 (10  epoch)   |   55.827    | 61.332 (10  epoch) |   85.445    | 88.425 (10  epoch) |  0.839   | 1.010 (10  epoch)  |    2.202     | 2.785 (10  epoch)  |        0.926         |     1.202 (10  epoch)      |        48.125         |     63.041 (10  epoch)      |         0.466         |      0.607 (10  epoch)      |     1.113     |  1.412 (10  epoch)  |
+|  Whale   |     83.750      |  83.750 (30  epoch)   |    96.747    | 97.090 (20  epoch)  |      95.385      |   95.385 (20  epoch)   |   96.692    | 96.692 (30  epoch) |   99.460    | 99.460 (30  epoch) |  31.025  | 33.515 (20  epoch) |    32.908    | 35.823 (20  epoch) |        9.599         |     9.599 (30  epoch)      |        90.225         |     95.639 (10  epoch)      |         5.442         |      5.442 (30  epoch)      |    19.694     | 21.820 (20  epoch)  |
+|   Avg    |     52.238      |  55.501 (20  epoch)   |    81.915    | 83.875 (20  epoch)  |      91.894      |   91.894 (30  epoch)   |   72.832    | 73.137 (20  epoch) |   89.205    | 89.699 (20  epoch) |  11.268  | 14.185 (10  epoch) |    16.129    | 17.319 (10  epoch) |        5.783         |     5.783 (30  epoch)      |        65.527         |     72.436 (10  epoch)      |         3.183         |      3.183 (30  epoch)      |     9.386     | 10.286 (10  epoch)  |
+2024-05-27 17:26:45,975 - ==> Total time: 0:15:12	 Eta: 0:35:28 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:27:11,898 - ==> Total time: 0:15:37	 Eta: 0:34:47 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:27:30,451 - Train: 31.67% [950/3000]  [31.7/100.0] [batch_t 0.509 (0.859)] [data_t 0.001] [optim_t 0.507] [lr 0.001000] [cos 0.386 (0.392)]
+2024-05-27 17:27:38,302 - ==> Total time: 0:16:04	 Eta: 0:34:09 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:28:05,110 - ==> Total time: 0:16:31	 Eta: 0:33:32 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:28:18,398 - Train: 33.33% [1000/3000]  [33.3/100.0] [batch_t 0.521 (1.046)] [data_t 0.002] [optim_t 0.519] [lr 0.001000] [cos 0.383 (0.378)]
+2024-05-27 17:28:35,030 - ==> Total time: 0:17:01	 Eta: 0:33:02 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:29:01,254 - Train: 35.00% [1050/3000]  [35.0/100.0] [batch_t 0.507 (0.821)] [data_t 0.001] [optim_t 0.506] [lr 0.001000] [cos 0.379 (0.384)]
+2024-05-27 17:29:01,256 - ==> Total time: 0:17:27	 Eta: 0:32:25 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:29:31,242 - ==> Total time: 0:17:57	 Eta: 0:31:55 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:29:49,968 - Train: 36.67% [1100/3000]  [36.7/100.0] [batch_t 0.513 (0.864)] [data_t 0.001] [optim_t 0.512] [lr 0.001000] [cos 0.370 (0.370)]
+2024-05-27 17:29:57,928 - ==> Total time: 0:18:24	 Eta: 0:31:19 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:30:24,049 - ==> Total time: 0:18:50	 Eta: 0:30:43 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:30:35,342 - Train: 38.33% [1150/3000]  [38.3/100.0] [batch_t 0.514 (0.972)] [data_t 0.001] [optim_t 0.513] [lr 0.001000] [cos 0.359 (0.362)]
+2024-05-27 17:30:49,903 - ==> Total time: 0:19:15	 Eta: 0:30:08 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:31:16,132 - Train: 40.00% [1200/3000]  [40.0/100.0] [batch_t 0.515 (0.827)] [data_t 0.001] [optim_t 0.514] [lr 0.001000] [cos 0.357 (0.358)]
+2024-05-27 17:31:35,955 - Test: 100.00% [17/17] [batch_t 3.574 (1.159)] [cos 0.408 (0.410)]
+2024-05-27 17:31:36,202 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.049 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:31:36,392 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.043 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:31:36,551 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-27 17:31:36,746 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.017 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:31:36,900 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.036 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 17:31:37,069 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-27 17:31:37,265 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.050 (mIoU_max_px)	
+2024-05-27 17:31:37,453 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:31:37,629 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:31:37,898 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.060 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.061 (mIoU_max_px)	
+2024-05-27 17:31:37,903 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     75.000      |  85.000 (10  epoch)   |    94.229    | 96.565 (10  epoch)  |      90.566      |   96.000 (30  epoch)   |   98.186    | 98.806 (10  epoch) |   99.488    | 99.695 (10  epoch) |  18.473  | 27.951 (10  epoch) |    27.005    | 32.816 (10  epoch) |        4.572         |     4.572 (40  epoch)      |        90.973         |     98.623 (20  epoch)      |         2.443         |      2.443 (40  epoch)      |    15.610     | 19.629 (10  epoch)  |
+|   Bird   |     45.455      |  45.455 (40  epoch)   |    83.612    | 83.612 (40  epoch)  |      89.796      |   89.796 (10  epoch)   |   63.850    | 63.850 (40  epoch) |   89.676    | 89.676 (40  epoch) |  6.370   | 6.370 (40  epoch)  |    14.515    | 14.515 (40  epoch) |        7.315         |     7.315 (40  epoch)      |        60.392         |     60.693 (10  epoch)      |         3.846         |      3.846 (40  epoch)      |     7.826     |  7.826 (40  epoch)  |
+| Elephant |     46.667      |  46.667 (40  epoch)   |    81.118    | 81.118 (40  epoch)  |      87.805      |   87.805 (10  epoch)   |   62.070    | 62.533 (20  epoch) |   86.963    | 88.827 (20  epoch) |  1.826   | 2.361 (20  epoch)  |    4.242     | 5.414 (20  epoch)  |        2.754         |     3.263 (20  epoch)      |        52.307         |     62.220 (10  epoch)      |         1.400         |      1.665 (20  epoch)      |     2.167     |  2.782 (20  epoch)  |
+|  Parrot  |      8.696      |  19.130 (10  epoch)   |    69.294    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   33.886    | 39.571 (20  epoch) |   60.590    | 61.329 (20  epoch) |  0.808   | 0.848 (20  epoch)  |    1.910     | 2.103 (20  epoch)  |        0.896         |     1.066 (20  epoch)      |        26.652         |     32.870 (20  epoch)      |         0.451         |      0.537 (20  epoch)      |     0.964     |  1.063 (20  epoch)  |
+|   Pig    |     52.941      |  57.647 (10  epoch)   |    77.741    | 77.999 (20  epoch)  |      87.179      |   89.474 (10  epoch)   |   89.356    | 89.356 (40  epoch) |   97.478    | 97.478 (40  epoch) |  9.329   | 9.329 (40  epoch)  |    15.533    | 15.533 (40  epoch) |        8.332         |     8.332 (40  epoch)      |        56.711         |     68.076 (10  epoch)      |         4.415         |      4.415 (40  epoch)      |     8.421     |  8.421 (40  epoch)  |
+|  Puppy   |     71.000      |  92.000 (10  epoch)   |    87.036    | 98.297 (10  epoch)  |      90.909      |   95.000 (20  epoch)   |   95.794    | 96.922 (30  epoch) |   99.028    | 99.594 (10  epoch) |  8.946   | 36.284 (10  epoch) |    16.607    | 38.948 (10  epoch) |        5.262         |     10.002 (10  epoch)     |        84.697         |     96.901 (20  epoch)      |         2.778         |      5.877 (10  epoch)      |     9.055     | 24.184 (10  epoch)  |
+| Scorpion |     25.217      |  25.217 (20  epoch)   |    75.012    | 75.012 (40  epoch)  |      90.196      |   90.196 (10  epoch)   |   27.080    | 40.684 (10  epoch) |   72.388    | 79.195 (10  epoch) |  2.626   | 3.662 (10  epoch)  |    6.404     | 9.108 (10  epoch)  |        3.120         |     5.127 (10  epoch)      |        41.154         |     58.899 (10  epoch)      |         1.596         |      2.652 (10  epoch)      |     3.308     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   97.697    | 97.697 (40  epoch) |   99.494    | 99.494 (40  epoch) |  34.656  | 40.165 (10  epoch) |    45.583    | 45.583 (40  epoch) |        18.290        |     18.290 (40  epoch)     |        86.173         |     95.742 (10  epoch)      |        10.897         |     10.897 (40  epoch)      |    29.519     | 29.519 (40  epoch)  |
+| Unicorn  |     40.000      |  58.095 (20  epoch)   |    77.324    | 84.624 (20  epoch)  |      89.362      |   89.362 (10  epoch)   |   48.051    | 61.332 (10  epoch) |   82.553    | 88.425 (10  epoch) |  0.730   | 1.010 (10  epoch)  |    1.764     | 2.785 (10  epoch)  |        0.893         |     1.202 (10  epoch)      |        45.360         |     63.041 (10  epoch)      |         0.449         |      0.607 (10  epoch)      |     0.890     |  1.412 (10  epoch)  |
+|  Whale   |     92.500      |  92.500 (40  epoch)   |    98.757    | 98.757 (40  epoch)  |      95.522      |   95.522 (40  epoch)   |   97.053    | 97.053 (40  epoch) |   99.540    | 99.540 (40  epoch) |  37.020  | 37.020 (40  epoch) |    37.404    | 37.404 (40  epoch) |        11.358        |     11.358 (40  epoch)     |        89.431         |     95.639 (10  epoch)      |         6.577         |      6.577 (40  epoch)      |    23.005     | 23.005 (40  epoch)  |
+|   Avg    |     55.748      |  55.748 (40  epoch)   |    84.412    | 84.412 (40  epoch)  |      91.153      |   91.894 (30  epoch)   |   71.302    | 73.137 (20  epoch) |   88.720    | 89.699 (20  epoch) |  12.078  | 14.185 (10  epoch) |    17.097    | 17.319 (10  epoch) |        6.279         |     6.279 (40  epoch)      |        63.385         |     72.436 (10  epoch)      |         3.485         |      3.485 (40  epoch)      |    10.076     | 10.286 (10  epoch)  |
+2024-05-27 17:31:38,020 - ==> Total time: 0:20:04	 Eta: 0:30:06 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:32:05,788 - ==> Total time: 0:20:31	 Eta: 0:29:32 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:32:24,445 - Train: 41.67% [1250/3000]  [41.7/100.0] [batch_t 0.517 (0.862)] [data_t 0.002] [optim_t 0.516] [lr 0.001000] [cos 0.350 (0.348)]
+2024-05-27 17:32:31,943 - ==> Total time: 0:20:58	 Eta: 0:28:57 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:32:58,298 - ==> Total time: 0:21:24	 Eta: 0:28:22 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:33:09,849 - Train: 43.33% [1300/3000]  [43.3/100.0] [batch_t 0.516 (1.015)] [data_t 0.001] [optim_t 0.515] [lr 0.001000] [cos 0.342 (0.339)]
+2024-05-27 17:33:24,797 - ==> Total time: 0:21:50	 Eta: 0:27:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:33:49,962 - Train: 45.00% [1350/3000]  [45.0/100.0] [batch_t 0.500 (0.784)] [data_t 0.001] [optim_t 0.499] [lr 0.001000] [cos 0.333 (0.335)]
+2024-05-27 17:33:49,964 - ==> Total time: 0:22:16	 Eta: 0:27:12 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:34:17,180 - ==> Total time: 0:22:43	 Eta: 0:26:40 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:34:41,340 - Train: 46.67% [1400/3000]  [46.7/100.0] [batch_t 0.511 (0.852)] [data_t 0.001] [optim_t 0.510] [lr 0.001000] [cos 0.325 (0.330)]
+2024-05-27 17:34:49,034 - ==> Total time: 0:23:15	 Eta: 0:26:13 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:35:14,628 - ==> Total time: 0:23:40	 Eta: 0:25:39 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:35:26,219 - Train: 48.33% [1450/3000]  [48.3/100.0] [batch_t 0.525 (1.013)] [data_t 0.001] [optim_t 0.523] [lr 0.001000] [cos 0.329 (0.323)]
+2024-05-27 17:35:40,946 - ==> Total time: 0:24:07	 Eta: 0:25:06 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:36:05,437 - Train: 50.00% [1500/3000]  [50.0/100.0] [batch_t 1.197 (0.771)] [data_t 0.688] [optim_t 0.509] [lr 0.001000] [cos 0.320 (0.322)]
+2024-05-27 17:36:25,529 - Test: 100.00% [17/17] [batch_t 3.624 (1.154)] [cos 0.401 (0.403)]
+2024-05-27 17:36:25,756 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.048 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:36:25,943 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:36:26,099 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:36:26,286 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:36:26,436 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.036 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 17:36:26,602 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 17:36:26,790 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:36:26,977 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:36:27,177 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.049 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.018 (mAcc_px_0.2_0.8_0.1)	  0.018 (mIoU_px_0.2_0.8_0.1)	  0.048 (mIoU_max_px)	
+2024-05-27 17:36:27,475 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.070 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.025 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.072 (mIoU_max_px)	
+2024-05-27 17:36:27,481 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     86.667      |  86.667 (50  epoch)   |    97.023    | 97.023 (50  epoch)  |      94.118      |   96.000 (30  epoch)   |   97.839    | 98.806 (10  epoch) |   99.357    | 99.695 (10  epoch) |  11.356  | 27.951 (10  epoch) |    17.777    | 32.816 (10  epoch) |        3.556         |     4.572 (40  epoch)      |        90.284         |     98.623 (20  epoch)      |         1.861         |      2.443 (40  epoch)      |     9.755     | 19.629 (10  epoch)  |
+|   Bird   |     50.909      |  50.909 (50  epoch)   |    81.227    | 83.612 (40  epoch)  |      89.796      |   89.796 (10  epoch)   |   65.037    | 65.037 (50  epoch) |   89.919    | 89.919 (50  epoch) |  5.674   | 6.370 (40  epoch)  |    13.585    | 14.515 (40  epoch) |        6.909         |     7.315 (40  epoch)      |        56.417         |     60.693 (10  epoch)      |         3.619         |      3.846 (40  epoch)      |     7.288     |  7.826 (40  epoch)  |
+| Elephant |     41.111      |  46.667 (40  epoch)   |    77.052    | 81.118 (40  epoch)  |      87.805      |   87.805 (10  epoch)   |   60.907    | 62.533 (20  epoch) |   87.085    | 88.827 (20  epoch) |  1.772   | 2.361 (20  epoch)  |    4.203     | 5.414 (20  epoch)  |        2.746         |     3.263 (20  epoch)      |        51.033         |     62.220 (10  epoch)      |         1.396         |      1.665 (20  epoch)      |     2.146     |  2.782 (20  epoch)  |
+|  Parrot  |      8.696      |  19.130 (10  epoch)   |    67.237    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   34.695    | 39.571 (20  epoch) |   62.501    | 62.501 (50  epoch) |  0.865   | 0.865 (50  epoch)  |    2.075     | 2.103 (20  epoch)  |        0.959         |     1.066 (20  epoch)      |        30.075         |     32.870 (20  epoch)      |         0.483         |      0.537 (20  epoch)      |     1.048     |  1.063 (20  epoch)  |
+|   Pig    |     54.118      |  57.647 (10  epoch)   |    78.044    | 78.044 (50  epoch)  |      87.179      |   89.474 (10  epoch)   |   90.095    | 90.095 (50  epoch) |   97.686    | 97.686 (50  epoch) |  9.885   | 9.885 (50  epoch)  |    16.858    | 16.858 (50  epoch) |        8.462         |     8.462 (50  epoch)      |        62.858         |     68.076 (10  epoch)      |         4.495         |      4.495 (50  epoch)      |     9.205     |  9.205 (50  epoch)  |
+|  Puppy   |     78.000      |  92.000 (10  epoch)   |    91.163    | 98.297 (10  epoch)  |      92.308      |   95.000 (20  epoch)   |   95.331    | 96.922 (30  epoch) |   98.415    | 99.594 (10  epoch) |  6.208   | 36.284 (10  epoch) |    12.099    | 38.948 (10  epoch) |        4.371         |     10.002 (10  epoch)     |        77.838         |     96.901 (20  epoch)      |         2.277         |      5.877 (10  epoch)      |     6.439     | 24.184 (10  epoch)  |
+| Scorpion |     39.130      |  39.130 (50  epoch)   |    76.162    | 76.162 (50  epoch)  |      90.196      |   90.196 (10  epoch)   |   31.556    | 40.684 (10  epoch) |   74.086    | 79.195 (10  epoch) |  2.868   | 3.662 (10  epoch)  |    7.210     | 9.108 (10  epoch)  |        3.504         |     5.127 (10  epoch)      |        41.883         |     58.899 (10  epoch)      |         1.796         |      2.652 (10  epoch)      |     3.740     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   96.401    | 97.697 (40  epoch) |   99.069    | 99.494 (40  epoch) |  21.881  | 40.165 (10  epoch) |    32.740    | 45.583 (40  epoch) |        12.771        |     18.290 (40  epoch)     |        83.526         |     95.742 (10  epoch)      |         7.188         |     10.897 (40  epoch)      |    19.575     | 29.519 (40  epoch)  |
+| Unicorn  |     46.667      |  58.095 (20  epoch)   |    80.767    | 84.624 (20  epoch)  |      89.362      |   89.362 (10  epoch)   |   59.212    | 61.332 (10  epoch) |   86.818    | 88.425 (10  epoch) |  0.917   | 1.010 (10  epoch)  |    2.374     | 2.785 (10  epoch)  |        1.058         |     1.202 (10  epoch)      |        50.128         |     63.041 (10  epoch)      |         0.533         |      0.607 (10  epoch)      |     1.201     |  1.412 (10  epoch)  |
+|  Whale   |     86.250      |  92.500 (40  epoch)   |    96.660    | 98.757 (40  epoch)  |      98.462      |   98.462 (50  epoch)   |   96.726    | 97.053 (40  epoch) |   99.393    | 99.540 (40  epoch) |  25.370  | 37.020 (40  epoch) |    32.919    | 37.404 (40  epoch) |        10.413        |     11.358 (40  epoch)     |        84.854         |     95.639 (10  epoch)      |         5.872         |      6.577 (40  epoch)      |    19.702     | 23.005 (40  epoch)  |
+|   Avg    |     59.155      |  59.155 (50  epoch)   |    84.533    | 84.533 (50  epoch)  |      91.942      |   91.942 (50  epoch)   |   72.780    | 73.137 (20  epoch) |   89.433    | 89.699 (20  epoch) |  8.680   | 14.185 (10  epoch) |    14.184    | 17.319 (10  epoch) |        5.475         |     6.279 (40  epoch)      |        62.890         |     72.436 (10  epoch)      |         2.952         |      3.485 (40  epoch)      |     8.010     | 10.286 (10  epoch)  |
+2024-05-27 17:36:27,618 - ==> Total time: 0:24:53	 Eta: 0:24:53 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:36:55,669 - ==> Total time: 0:25:21	 Eta: 0:24:22 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:37:14,824 - Train: 51.67% [1550/3000]  [51.7/100.0] [batch_t 0.515 (0.874)] [data_t 0.001] [optim_t 0.514] [lr 0.001000] [cos 0.319 (0.319)]
+2024-05-27 17:37:22,852 - ==> Total time: 0:25:48	 Eta: 0:23:49 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:37:50,263 - ==> Total time: 0:26:16	 Eta: 0:23:17 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:38:02,086 - Train: 53.33% [1600/3000]  [53.3/100.0] [batch_t 0.515 (1.049)] [data_t 0.001] [optim_t 0.514] [lr 0.001000] [cos 0.314 (0.312)]
+2024-05-27 17:38:17,708 - ==> Total time: 0:26:43	 Eta: 0:22:46 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:38:45,008 - Train: 55.00% [1650/3000]  [55.0/100.0] [batch_t 0.514 (0.868)] [data_t 0.001] [optim_t 0.513] [lr 0.001000] [cos 0.312 (0.311)]
+2024-05-27 17:38:45,011 - ==> Total time: 0:27:11	 Eta: 0:22:14 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:39:13,341 - ==> Total time: 0:27:39	 Eta: 0:21:43 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:39:32,945 - Train: 56.67% [1700/3000]  [56.7/100.0] [batch_t 0.511 (0.908)] [data_t 0.002] [optim_t 0.509] [lr 0.001000] [cos 0.306 (0.305)]
+2024-05-27 17:39:41,181 - ==> Total time: 0:28:07	 Eta: 0:21:12 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:40:08,966 - ==> Total time: 0:28:35	 Eta: 0:20:41 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:40:21,190 - Train: 58.33% [1750/3000]  [58.3/100.0] [batch_t 0.514 (1.073)] [data_t 0.001] [optim_t 0.512] [lr 0.001000] [cos 0.306 (0.306)]
+2024-05-27 17:40:37,078 - ==> Total time: 0:29:03	 Eta: 0:20:11 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:41:04,874 - Train: 60.00% [1800/3000]  [60.0/100.0] [batch_t 0.513 (0.874)] [data_t 0.001] [optim_t 0.512] [lr 0.001000] [cos 0.298 (0.298)]
+2024-05-27 17:41:25,752 - Test: 100.00% [17/17] [batch_t 3.504 (1.202)] [cos 0.384 (0.385)]
+2024-05-27 17:41:25,980 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.048 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.047 (mIoU_max_px)	
+2024-05-27 17:41:26,164 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:41:26,321 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:41:26,508 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:41:26,657 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-27 17:41:26,822 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 17:41:27,011 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:41:27,197 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:41:27,372 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-27 17:41:27,641 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.062 (mF1_max_px)	  0.021 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.061 (mIoU_max_px)	
+2024-05-27 17:41:27,646 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     90.833      |  90.833 (60  epoch)   |    98.239    | 98.239 (60  epoch)  |      93.878      |   96.000 (30  epoch)   |   98.092    | 98.806 (10  epoch) |   99.428    | 99.695 (10  epoch) |  15.090  | 27.951 (10  epoch) |    19.384    | 32.816 (10  epoch) |        4.470         |     4.572 (40  epoch)      |        89.630         |     98.623 (20  epoch)      |         2.369         |      2.443 (40  epoch)      |    10.732     | 19.629 (10  epoch)  |
+|   Bird   |     51.818      |  51.818 (60  epoch)   |    83.695    | 83.695 (60  epoch)  |      89.796      |   89.796 (10  epoch)   |   65.014    | 65.037 (50  epoch) |   89.876    | 89.919 (50  epoch) |  7.137   | 7.137 (60  epoch)  |    16.187    | 16.187 (60  epoch) |        8.051         |     8.051 (60  epoch)      |        63.671         |     63.671 (60  epoch)      |         4.272         |      4.272 (60  epoch)      |     8.806     |  8.806 (60  epoch)  |
+| Elephant |     37.778      |  46.667 (40  epoch)   |    80.275    | 81.118 (40  epoch)  |      87.805      |   87.805 (10  epoch)   |   61.385    | 62.533 (20  epoch) |   87.011    | 88.827 (20  epoch) |  1.624   | 2.361 (20  epoch)  |    3.791     | 5.414 (20  epoch)  |        2.160         |     3.263 (20  epoch)      |        48.523         |     62.220 (10  epoch)      |         1.096         |      1.665 (20  epoch)      |     1.932     |  2.782 (20  epoch)  |
+|  Parrot  |      4.348      |  19.130 (10  epoch)   |    65.486    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   33.406    | 39.571 (20  epoch) |   61.101    | 62.501 (50  epoch) |  0.809   | 0.865 (50  epoch)  |    1.924     | 2.103 (20  epoch)  |        0.814         |     1.066 (20  epoch)      |        22.802         |     32.870 (20  epoch)      |         0.410         |      0.537 (20  epoch)      |     0.971     |  1.063 (20  epoch)  |
+|   Pig    |     58.824      |  58.824 (60  epoch)   |    79.113    | 79.113 (60  epoch)  |      91.429      |   91.429 (60  epoch)   |   91.168    | 91.168 (60  epoch) |   97.991    | 97.991 (60  epoch) |  12.471  | 12.471 (60  epoch) |    21.489    | 21.489 (60  epoch) |        9.959         |     9.959 (60  epoch)      |        57.627         |     68.076 (10  epoch)      |         5.371         |      5.371 (60  epoch)      |    12.038     | 12.038 (60  epoch)  |
+|  Puppy   |     74.000      |  92.000 (10  epoch)   |    87.680    | 98.297 (10  epoch)  |      93.023      |   95.000 (20  epoch)   |   94.253    | 96.922 (30  epoch) |   98.602    | 99.594 (10  epoch) |  6.585   | 36.284 (10  epoch) |    11.671    | 38.948 (10  epoch) |        4.834         |     10.002 (10  epoch)     |        78.152         |     96.901 (20  epoch)      |         2.525         |      5.877 (10  epoch)      |     6.197     | 24.184 (10  epoch)  |
+| Scorpion |     31.304      |  39.130 (50  epoch)   |    79.424    | 79.424 (60  epoch)  |      90.196      |   90.196 (10  epoch)   |   27.866    | 40.684 (10  epoch) |   71.928    | 79.195 (10  epoch) |  2.609   | 3.662 (10  epoch)  |    6.083     | 9.108 (10  epoch)  |        3.282         |     5.127 (10  epoch)      |        40.802         |     58.899 (10  epoch)      |         1.678         |      2.652 (10  epoch)      |     3.137     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   96.985    | 97.697 (40  epoch) |   99.291    | 99.494 (40  epoch) |  28.601  | 40.165 (10  epoch) |    40.173    | 45.583 (40  epoch) |        15.971        |     18.290 (40  epoch)     |        82.609         |     95.742 (10  epoch)      |         9.290         |     10.897 (40  epoch)      |    25.135     | 29.519 (40  epoch)  |
+| Unicorn  |     29.524      |  58.095 (20  epoch)   |    73.819    | 84.624 (20  epoch)  |      89.362      |   89.362 (10  epoch)   |   51.355    | 61.332 (10  epoch) |   84.082    | 88.425 (10  epoch) |  0.824   | 1.010 (10  epoch)  |    1.932     | 2.785 (10  epoch)  |        1.040         |     1.202 (10  epoch)      |        44.628         |     63.041 (10  epoch)      |         0.524         |      0.607 (10  epoch)      |     0.975     |  1.412 (10  epoch)  |
+|  Whale   |     80.000      |  92.500 (40  epoch)   |    96.488    | 98.757 (40  epoch)  |      92.754      |   98.462 (50  epoch)   |   96.704    | 97.053 (40  epoch) |   99.423    | 99.540 (40  epoch) |  33.492  | 37.020 (40  epoch) |    35.096    | 37.404 (40  epoch) |        12.437        |     12.437 (60  epoch)     |        84.552         |     95.639 (10  epoch)      |         7.179         |      7.179 (60  epoch)      |    21.283     | 23.005 (40  epoch)  |
+|   Avg    |     55.843      |  59.155 (50  epoch)   |    84.422    | 84.533 (50  epoch)  |      91.844      |   91.942 (50  epoch)   |   71.623    | 73.137 (20  epoch) |   88.873    | 89.699 (20  epoch) |  10.924  | 14.185 (10  epoch) |    15.773    | 17.319 (10  epoch) |        6.302         |     6.302 (60  epoch)      |        61.300         |     72.436 (10  epoch)      |         3.471         |      3.485 (40  epoch)      |     9.121     | 10.286 (10  epoch)  |
+2024-05-27 17:41:27,750 - ==> Total time: 0:29:53	 Eta: 0:19:55 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:41:55,908 - ==> Total time: 0:30:21	 Eta: 0:19:24 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:42:14,536 - Train: 61.67% [1850/3000]  [61.7/100.0] [batch_t 0.508 (0.856)] [data_t 0.001] [optim_t 0.507] [lr 0.001000] [cos 0.290 (0.294)]
+2024-05-27 17:42:22,427 - ==> Total time: 0:30:48	 Eta: 0:18:52 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:42:48,294 - ==> Total time: 0:31:14	 Eta: 0:18:20 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:42:59,341 - Train: 63.33% [1900/3000]  [63.3/100.0] [batch_t 0.516 (0.965)] [data_t 0.001] [optim_t 0.514] [lr 0.001000] [cos 0.283 (0.290)]
+2024-05-27 17:43:14,157 - ==> Total time: 0:31:40	 Eta: 0:17:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:43:40,247 - Train: 65.00% [1950/3000]  [65.0/100.0] [batch_t 0.502 (0.820)] [data_t 0.001] [optim_t 0.501] [lr 0.001000] [cos 0.292 (0.290)]
+2024-05-27 17:43:40,250 - ==> Total time: 0:32:06	 Eta: 0:17:17 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:44:05,934 - ==> Total time: 0:32:32	 Eta: 0:16:45 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:44:24,417 - Train: 66.67% [2000/3000]  [66.7/100.0] [batch_t 0.524 (0.859)] [data_t 0.001] [optim_t 0.523] [lr 0.001000] [cos 0.290 (0.287)]
+2024-05-27 17:44:32,423 - ==> Total time: 0:32:58	 Eta: 0:16:14 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:44:58,559 - ==> Total time: 0:33:24	 Eta: 0:15:43 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:45:09,675 - Train: 68.33% [2050/3000]  [68.3/100.0] [batch_t 0.509 (0.979)] [data_t 0.001] [optim_t 0.508] [lr 0.001000] [cos 0.279 (0.279)]
+2024-05-27 17:45:24,433 - ==> Total time: 0:33:50	 Eta: 0:15:12 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:45:50,292 - Train: 70.00% [2100/3000]  [70.0/100.0] [batch_t 0.504 (0.814)] [data_t 0.001] [optim_t 0.503] [lr 0.001000] [cos 0.284 (0.282)]
+2024-05-27 17:46:09,490 - Test: 100.00% [17/17] [batch_t 2.972 (1.121)] [cos 0.373 (0.374)]
+2024-05-27 17:46:09,739 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.049 (mF1_max_px)	  0.017 (mF1_px_0.2_0.8_0.1)	  0.017 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.050 (mIoU_max_px)	
+2024-05-27 17:46:09,925 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:46:10,082 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-27 17:46:10,274 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.045 (mIoU_max_px)	
+2024-05-27 17:46:10,426 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-27 17:46:10,593 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 17:46:10,788 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.046 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:46:10,974 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:46:11,151 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:46:11,419 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.061 (mIoU_max_px)	
+2024-05-27 17:46:11,425 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     80.833      |  90.833 (60  epoch)   |    95.818    | 98.239 (60  epoch)  |      91.667      |   96.000 (30  epoch)   |   96.676    | 98.806 (10  epoch) |   98.966    | 99.695 (10  epoch) |  7.052   | 27.951 (10  epoch) |    12.306    | 32.816 (10  epoch) |        3.921         |     4.572 (40  epoch)      |        81.810         |     98.623 (20  epoch)      |         2.050         |      2.443 (40  epoch)      |     6.557     | 19.629 (10  epoch)  |
+|   Bird   |     50.909      |  51.818 (60  epoch)   |    80.278    | 83.695 (60  epoch)  |      89.796      |   89.796 (10  epoch)   |   60.001    | 65.037 (50  epoch) |   88.288    | 89.919 (50  epoch) |  5.655   | 7.137 (60  epoch)  |    13.989    | 16.187 (60  epoch) |        7.048         |     8.051 (60  epoch)      |        56.546         |     63.671 (60  epoch)      |         3.701         |      4.272 (60  epoch)      |     7.521     |  8.806 (60  epoch)  |
+| Elephant |     20.000      |  46.667 (40  epoch)   |    71.592    | 81.118 (40  epoch)  |      87.805      |   87.805 (10  epoch)   |   62.809    | 62.809 (70  epoch) |   87.513    | 88.827 (20  epoch) |  1.952   | 2.361 (20  epoch)  |    4.691     | 5.414 (20  epoch)  |        2.684         |     3.263 (20  epoch)      |        47.225         |     62.220 (10  epoch)      |         1.368         |      1.665 (20  epoch)      |     2.402     |  2.782 (20  epoch)  |
+|  Parrot  |      9.565      |  19.130 (10  epoch)   |    69.411    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   34.906    | 39.571 (20  epoch) |   61.101    | 62.501 (50  epoch) |  0.813   | 0.865 (50  epoch)  |    1.914     | 2.103 (20  epoch)  |        0.809         |     1.066 (20  epoch)      |        24.165         |     32.870 (20  epoch)      |         0.408         |      0.537 (20  epoch)      |     0.966     |  1.063 (20  epoch)  |
+|   Pig    |     55.294      |  58.824 (60  epoch)   |    78.302    | 79.113 (60  epoch)  |      87.179      |   91.429 (60  epoch)   |   91.892    | 91.892 (70  epoch) |   98.208    | 98.208 (70  epoch) |  15.201  | 15.201 (70  epoch) |    24.563    | 24.563 (70  epoch) |        11.251        |     11.251 (70  epoch)     |        54.609         |     68.076 (10  epoch)      |         6.118         |      6.118 (70  epoch)      |    14.001     | 14.001 (70  epoch)  |
+|  Puppy   |     65.000      |  92.000 (10  epoch)   |    87.999    | 98.297 (10  epoch)  |      90.909      |   95.000 (20  epoch)   |   91.690    | 96.922 (30  epoch) |   97.376    | 99.594 (10  epoch) |  3.836   | 36.284 (10  epoch) |    8.374     | 38.948 (10  epoch) |        3.480         |     10.002 (10  epoch)     |        70.969         |     96.901 (20  epoch)      |         1.787         |      5.877 (10  epoch)      |     4.370     | 24.184 (10  epoch)  |
+| Scorpion |     17.391      |  39.130 (50  epoch)   |    73.758    | 79.424 (60  epoch)  |      90.196      |   90.196 (10  epoch)   |   27.513    | 40.684 (10  epoch) |   71.791    | 79.195 (10  epoch) |  2.643   | 3.662 (10  epoch)  |    6.263     | 9.108 (10  epoch)  |        3.316         |     5.127 (10  epoch)      |        39.247         |     58.899 (10  epoch)      |         1.696         |      2.652 (10  epoch)      |     3.233     |  4.771 (10  epoch)  |
+|  Turtle  |     99.048      |  100.000 (30  epoch)  |    99.784    | 100.000 (30  epoch) |      97.674      |  100.000 (30  epoch)   |   96.753    | 97.697 (40  epoch) |   99.209    | 99.494 (40  epoch) |  24.245  | 40.165 (10  epoch) |    36.955    | 45.583 (40  epoch) |        14.174        |     18.290 (40  epoch)     |        72.244         |     95.742 (10  epoch)      |         8.098         |     10.897 (40  epoch)      |    22.665     | 29.519 (40  epoch)  |
+| Unicorn  |     29.524      |  58.095 (20  epoch)   |    74.820    | 84.624 (20  epoch)  |      89.362      |   89.362 (10  epoch)   |   52.204    | 61.332 (10  epoch) |   83.735    | 88.425 (10  epoch) |  0.861   | 1.010 (10  epoch)  |    2.065     | 2.785 (10  epoch)  |        0.993         |     1.202 (10  epoch)      |        43.124         |     63.041 (10  epoch)      |         0.500         |      0.607 (10  epoch)      |     1.044     |  1.412 (10  epoch)  |
+|  Whale   |     96.250      |  96.250 (70  epoch)   |    99.383    | 99.383 (70  epoch)  |      98.462      |   98.462 (50  epoch)   |   96.649    | 97.053 (40  epoch) |   99.373    | 99.540 (40  epoch) |  32.658  | 37.020 (40  epoch) |    34.220    | 37.404 (40  epoch) |        11.702        |     12.437 (60  epoch)     |        84.552         |     95.639 (10  epoch)      |         6.706         |      7.179 (60  epoch)      |    20.642     | 23.005 (40  epoch)  |
+|   Avg    |     52.381      |  59.155 (50  epoch)   |    83.114    | 84.533 (50  epoch)  |      91.325      |   91.942 (50  epoch)   |   71.109    | 73.137 (20  epoch) |   88.556    | 89.699 (20  epoch) |  9.492   | 14.185 (10  epoch) |    14.534    | 17.319 (10  epoch) |        5.938         |     6.302 (60  epoch)      |        57.449         |     72.436 (10  epoch)      |         3.243         |      3.485 (40  epoch)      |     8.340     | 10.286 (10  epoch)  |
+2024-05-27 17:46:11,560 - ==> Total time: 0:34:37	 Eta: 0:14:50 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:46:40,192 - ==> Total time: 0:35:06	 Eta: 0:14:20 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:46:59,371 - Train: 71.67% [2150/3000]  [71.7/100.0] [batch_t 0.515 (0.890)] [data_t 0.001] [optim_t 0.514] [lr 0.001000] [cos 0.281 (0.277)]
+2024-05-27 17:47:07,646 - ==> Total time: 0:35:33	 Eta: 0:13:49 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:47:34,990 - ==> Total time: 0:36:01	 Eta: 0:13:19 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:47:46,890 - Train: 73.33% [2200/3000]  [73.3/100.0] [batch_t 0.505 (1.051)] [data_t 0.002] [optim_t 0.503] [lr 0.001000] [cos 0.272 (0.273)]
+2024-05-27 17:48:02,479 - ==> Total time: 0:36:28	 Eta: 0:12:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:48:31,475 - Train: 75.00% [2250/3000]  [75.0/100.0] [batch_t 0.509 (0.865)] [data_t 0.001] [optim_t 0.508] [lr 0.001000] [cos 0.272 (0.275)]
+2024-05-27 17:48:31,478 - ==> Total time: 0:36:57	 Eta: 0:12:19 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:48:58,934 - ==> Total time: 0:37:25	 Eta: 0:11:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:49:18,198 - Train: 76.67% [2300/3000]  [76.7/100.0] [batch_t 0.516 (0.895)] [data_t 0.001] [optim_t 0.515] [lr 0.001000] [cos 0.268 (0.270)]
+2024-05-27 17:49:26,388 - ==> Total time: 0:37:52	 Eta: 0:11:18 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:49:53,856 - ==> Total time: 0:38:19	 Eta: 0:10:48 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:50:05,928 - Train: 78.33% [2350/3000]  [78.3/100.0] [batch_t 0.512 (1.063)] [data_t 0.001] [optim_t 0.511] [lr 0.001000] [cos 0.272 (0.267)]
+2024-05-27 17:50:21,512 - ==> Total time: 0:38:47	 Eta: 0:10:18 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:50:49,158 - Train: 80.00% [2400/3000]  [80.0/100.0] [batch_t 0.503 (0.871)] [data_t 0.001] [optim_t 0.502] [lr 0.001000] [cos 0.264 (0.266)]
+2024-05-27 17:51:09,999 - Test: 100.00% [17/17] [batch_t 3.818 (1.217)] [cos 0.373 (0.374)]
+2024-05-27 17:51:10,245 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:51:10,431 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:51:10,590 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-27 17:51:10,791 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.046 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.018 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.049 (mIoU_max_px)	
+2024-05-27 17:51:10,950 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 17:51:11,120 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 17:51:11,313 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:51:11,506 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:51:11,684 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:51:11,974 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.063 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.064 (mIoU_max_px)	
+2024-05-27 17:51:11,980 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     84.167      |  90.833 (60  epoch)   |    96.620    | 98.239 (60  epoch)  |      92.000      |   96.000 (30  epoch)   |   97.518    | 98.806 (10  epoch) |   99.264    | 99.695 (10  epoch) |  10.117  | 27.951 (10  epoch) |    19.219    | 32.816 (10  epoch) |        5.852         |     5.852 (80  epoch)      |        78.820         |     98.623 (20  epoch)      |         3.136         |      3.136 (80  epoch)      |    10.631     | 19.629 (10  epoch)  |
+|   Bird   |     28.182      |  51.818 (60  epoch)   |    76.061    | 83.695 (60  epoch)  |      89.796      |   89.796 (10  epoch)   |   64.264    | 65.037 (50  epoch) |   90.370    | 90.370 (80  epoch) |  5.963   | 7.137 (60  epoch)  |    14.593    | 16.187 (60  epoch) |        7.165         |     8.051 (60  epoch)      |        55.644         |     63.671 (60  epoch)      |         3.774         |      4.272 (60  epoch)      |     7.871     |  8.806 (60  epoch)  |
+| Elephant |     43.333      |  46.667 (40  epoch)   |    80.175    | 81.118 (40  epoch)  |      87.805      |   87.805 (10  epoch)   |   61.762    | 62.809 (70  epoch) |   86.761    | 88.827 (20  epoch) |  1.812   | 2.361 (20  epoch)  |    4.133     | 5.414 (20  epoch)  |        2.632         |     3.263 (20  epoch)      |        50.762         |     62.220 (10  epoch)      |         1.338         |      1.665 (20  epoch)      |     2.110     |  2.782 (20  epoch)  |
+|  Parrot  |      4.348      |  19.130 (10  epoch)   |    65.357    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   33.380    | 39.571 (20  epoch) |   62.850    | 62.850 (80  epoch) |  0.844   | 0.865 (50  epoch)  |    1.993     | 2.103 (20  epoch)  |        0.802         |     1.066 (20  epoch)      |        24.877         |     32.870 (20  epoch)      |         0.404         |      0.537 (20  epoch)      |     1.007     |  1.063 (20  epoch)  |
+|   Pig    |     49.412      |  58.824 (60  epoch)   |    76.817    | 79.113 (60  epoch)  |      87.179      |   91.429 (60  epoch)   |   89.960    | 91.892 (70  epoch) |   97.731    | 98.208 (70  epoch) |  12.888  | 15.201 (70  epoch) |    19.912    | 24.563 (70  epoch) |        10.583        |     11.251 (70  epoch)     |        62.189         |     68.076 (10  epoch)      |         5.710         |      6.118 (70  epoch)      |    11.057     | 14.001 (70  epoch)  |
+|  Puppy   |     75.000      |  92.000 (10  epoch)   |    92.235    | 98.297 (10  epoch)  |      92.683      |   95.000 (20  epoch)   |   94.865    | 96.922 (30  epoch) |   98.526    | 99.594 (10  epoch) |  8.589   | 36.284 (10  epoch) |    14.759    | 38.948 (10  epoch) |        5.773         |     10.002 (10  epoch)     |        79.148         |     96.901 (20  epoch)      |         3.055         |      5.877 (10  epoch)      |     7.967     | 24.184 (10  epoch)  |
+| Scorpion |     36.522      |  39.130 (50  epoch)   |    77.873    | 79.424 (60  epoch)  |      90.196      |   90.196 (10  epoch)   |   30.575    | 40.684 (10  epoch) |   73.434    | 79.195 (10  epoch) |  2.805   | 3.662 (10  epoch)  |    6.697     | 9.108 (10  epoch)  |        3.341         |     5.127 (10  epoch)      |        38.743         |     58.899 (10  epoch)      |         1.711         |      2.652 (10  epoch)      |     3.465     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   97.358    | 97.697 (40  epoch) |   99.333    | 99.494 (40  epoch) |  26.982  | 40.165 (10  epoch) |    39.931    | 45.583 (40  epoch) |        15.866        |     18.290 (40  epoch)     |        81.113         |     95.742 (10  epoch)      |         9.184         |     10.897 (40  epoch)      |    24.946     | 29.519 (40  epoch)  |
+| Unicorn  |     51.429      |  58.095 (20  epoch)   |    84.673    | 84.673 (80  epoch)  |      89.362      |   89.362 (10  epoch)   |   57.787    | 61.332 (10  epoch) |   86.570    | 88.425 (10  epoch) |  0.946   | 1.010 (10  epoch)  |    2.239     | 2.785 (10  epoch)  |        1.013         |     1.202 (10  epoch)      |        42.341         |     63.041 (10  epoch)      |         0.511         |      0.607 (10  epoch)      |     1.132     |  1.412 (10  epoch)  |
+|  Whale   |     81.250      |  96.250 (70  epoch)   |    96.040    | 99.383 (70  epoch)  |      95.522      |   98.462 (50  epoch)   |   96.964    | 97.053 (40  epoch) |   99.483    | 99.540 (40  epoch) |  35.278  | 37.020 (40  epoch) |    37.145    | 37.404 (40  epoch) |        13.473        |     13.473 (80  epoch)     |        84.572         |     95.639 (10  epoch)      |         7.880         |      7.880 (80  epoch)      |    22.809     | 23.005 (40  epoch)  |
+|   Avg    |     55.364      |  59.155 (50  epoch)   |    84.585    | 84.585 (80  epoch)  |      91.474      |   91.942 (50  epoch)   |   72.443    | 73.137 (20  epoch) |   89.432    | 89.699 (20  epoch) |  10.622  | 14.185 (10  epoch) |    16.062    | 17.319 (10  epoch) |        6.650         |     6.650 (80  epoch)      |        59.821         |     72.436 (10  epoch)      |         3.670         |      3.670 (80  epoch)      |     9.299     | 10.286 (10  epoch)  |
+2024-05-27 17:51:12,095 - ==> Total time: 0:39:38	 Eta: 0:09:54 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:51:38,451 - ==> Total time: 0:40:04	 Eta: 0:09:24 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:51:56,903 - Train: 81.67% [2450/3000]  [81.7/100.0] [batch_t 0.510 (0.829)] [data_t 0.001] [optim_t 0.509] [lr 0.000100] [cos 0.267 (0.264)]
+2024-05-27 17:52:04,482 - ==> Total time: 0:40:30	 Eta: 0:08:53 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:52:31,000 - ==> Total time: 0:40:57	 Eta: 0:08:23 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:52:42,642 - Train: 83.33% [2500/3000]  [83.3/100.0] [batch_t 0.509 (1.013)] [data_t 0.002] [optim_t 0.508] [lr 0.000100] [cos 0.263 (0.262)]
+2024-05-27 17:52:57,413 - ==> Total time: 0:41:23	 Eta: 0:07:53 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:53:24,043 - Train: 85.00% [2550/3000]  [85.0/100.0] [batch_t 0.516 (0.841)] [data_t 0.001] [optim_t 0.515] [lr 0.000100] [cos 0.260 (0.261)]
+2024-05-27 17:53:24,046 - ==> Total time: 0:41:50	 Eta: 0:07:22 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:53:49,588 - ==> Total time: 0:42:15	 Eta: 0:06:52 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:54:07,164 - Train: 86.67% [2600/3000]  [86.7/100.0] [batch_t 0.518 (0.807)] [data_t 0.001] [optim_t 0.517] [lr 0.000100] [cos 0.260 (0.258)]
+2024-05-27 17:54:14,834 - ==> Total time: 0:42:40	 Eta: 0:06:22 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:54:40,909 - ==> Total time: 0:43:06	 Eta: 0:05:52 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:54:52,315 - Train: 88.33% [2650/3000]  [88.3/100.0] [batch_t 0.518 (0.976)] [data_t 0.001] [optim_t 0.516] [lr 0.000100] [cos 0.249 (0.253)]
+2024-05-27 17:55:06,352 - ==> Total time: 0:43:32	 Eta: 0:05:22 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:55:32,699 - Train: 90.00% [2700/3000]  [90.0/100.0] [batch_t 0.503 (0.832)] [data_t 0.001] [optim_t 0.502] [lr 0.000100] [cos 0.253 (0.253)]
+2024-05-27 17:55:51,203 - Test: 100.00% [17/17] [batch_t 2.398 (1.080)] [cos 0.364 (0.364)]
+2024-05-27 17:55:51,425 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.046 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 17:55:51,606 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.043 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 17:55:51,760 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.036 (mIoU_max_px)	
+2024-05-27 17:55:51,946 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 17:55:52,094 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-27 17:55:52,281 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:55:52,480 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.045 (mIoU_max_px)	
+2024-05-27 17:55:52,671 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-27 17:55:52,853 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.043 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 17:55:53,128 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.062 (mIoU_max_px)	
+2024-05-27 17:55:53,134 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     70.833      |  90.833 (60  epoch)   |    93.075    | 98.239 (60  epoch)  |      90.566      |   96.000 (30  epoch)   |   96.433    | 98.806 (10  epoch) |   98.981    | 99.695 (10  epoch) |  9.383   | 27.951 (10  epoch) |    13.812    | 32.816 (10  epoch) |        4.312         |     5.852 (80  epoch)      |        78.346         |     98.623 (20  epoch)      |         2.262         |      3.136 (80  epoch)      |     7.418     | 19.629 (10  epoch)  |
+|   Bird   |     37.273      |  51.818 (60  epoch)   |    75.340    | 83.695 (60  epoch)  |      89.796      |   89.796 (10  epoch)   |   61.759    | 65.037 (50  epoch) |   89.309    | 90.370 (80  epoch) |  9.371   | 9.371 (90  epoch)  |    21.273    | 21.273 (90  epoch) |        9.360         |     9.360 (90  epoch)      |        58.074         |     63.671 (60  epoch)      |         5.033         |      5.033 (90  epoch)      |    11.902     | 11.902 (90  epoch)  |
+| Elephant |     47.778      |  47.778 (90  epoch)   |    82.795    | 82.795 (90  epoch)  |      87.805      |   87.805 (10  epoch)   |   58.800    | 62.809 (70  epoch) |   86.065    | 88.827 (20  epoch) |  1.865   | 2.361 (20  epoch)  |    4.552     | 5.414 (20  epoch)  |        2.947         |     3.263 (20  epoch)      |        48.299         |     62.220 (10  epoch)      |         1.500         |      1.665 (20  epoch)      |     2.329     |  2.782 (20  epoch)  |
+|  Parrot  |      5.217      |  19.130 (10  epoch)   |    65.719    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   33.308    | 39.571 (20  epoch) |   62.609    | 62.850 (80  epoch) |  0.847   | 0.865 (50  epoch)  |    2.035     | 2.103 (20  epoch)  |        0.906         |     1.066 (20  epoch)      |        27.935         |     32.870 (20  epoch)      |         0.456         |      0.537 (20  epoch)      |     1.028     |  1.063 (20  epoch)  |
+|   Pig    |     57.647      |  58.824 (60  epoch)   |    78.838    | 79.113 (60  epoch)  |      88.889      |   91.429 (60  epoch)   |   91.735    | 91.892 (70  epoch) |   98.102    | 98.208 (70  epoch) |  15.152  | 15.201 (70  epoch) |    23.503    | 24.563 (70  epoch) |        12.019        |     12.019 (90  epoch)     |        56.499         |     68.076 (10  epoch)      |         6.583         |      6.583 (90  epoch)      |    13.317     | 14.001 (70  epoch)  |
+|  Puppy   |     52.000      |  92.000 (10  epoch)   |    81.295    | 98.297 (10  epoch)  |      88.889      |   95.000 (20  epoch)   |   91.214    | 96.922 (30  epoch) |   97.852    | 99.594 (10  epoch) |  4.568   | 36.284 (10  epoch) |    9.999     | 38.948 (10  epoch) |        3.893         |     10.002 (10  epoch)     |        72.440         |     96.901 (20  epoch)      |         2.009         |      5.877 (10  epoch)      |     5.262     | 24.184 (10  epoch)  |
+| Scorpion |     31.304      |  39.130 (50  epoch)   |    75.905    | 79.424 (60  epoch)  |      90.196      |   90.196 (10  epoch)   |   24.757    | 40.684 (10  epoch) |   69.448    | 79.195 (10  epoch) |  2.389   | 3.662 (10  epoch)  |    5.444     | 9.108 (10  epoch)  |        2.713         |     5.127 (10  epoch)      |        34.272         |     58.899 (10  epoch)      |         1.384         |      2.652 (10  epoch)      |     2.798     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   96.241    | 97.697 (40  epoch) |   99.089    | 99.494 (40  epoch) |  21.530  | 40.165 (10  epoch) |    33.217    | 45.583 (40  epoch) |        13.770        |     18.290 (40  epoch)     |        68.944         |     95.742 (10  epoch)      |         7.783         |     10.897 (40  epoch)      |    19.916     | 29.519 (40  epoch)  |
+| Unicorn  |     45.714      |  58.095 (20  epoch)   |    79.298    | 84.673 (80  epoch)  |      89.362      |   89.362 (10  epoch)   |   43.082    | 61.332 (10  epoch) |   80.881    | 88.425 (10  epoch) |  0.680   | 1.010 (10  epoch)  |    1.544     | 2.785 (10  epoch)  |        0.795         |     1.202 (10  epoch)      |        39.704         |     63.041 (10  epoch)      |         0.400         |      0.607 (10  epoch)      |     0.778     |  1.412 (10  epoch)  |
+|  Whale   |     84.375      |  96.250 (70  epoch)   |    95.716    | 99.383 (70  epoch)  |      98.462      |   98.462 (50  epoch)   |   95.472    | 97.053 (40  epoch) |   99.106    | 99.540 (40  epoch) |  22.027  | 37.020 (40  epoch) |    28.186    | 37.404 (40  epoch) |        9.823         |     13.473 (80  epoch)     |        83.057         |     95.639 (10  epoch)      |         5.472         |      7.880 (80  epoch)      |    16.405     | 23.005 (40  epoch)  |
+|   Avg    |     53.214      |  59.155 (50  epoch)   |    82.798    | 84.585 (80  epoch)  |      91.416      |   91.942 (50  epoch)   |   69.280    | 73.137 (20  epoch) |   88.144    | 89.699 (20  epoch) |  8.781   | 14.185 (10  epoch) |    14.356    | 17.319 (10  epoch) |        6.054         |     6.650 (80  epoch)      |        56.757         |     72.436 (10  epoch)      |         3.288         |      3.670 (80  epoch)      |     8.115     | 10.286 (10  epoch)  |
+2024-05-27 17:55:53,261 - ==> Total time: 0:44:19	 Eta: 0:04:55 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:56:21,887 - ==> Total time: 0:44:47	 Eta: 0:04:25 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:56:41,345 - Train: 91.67% [2750/3000]  [91.7/100.0] [batch_t 0.513 (0.891)] [data_t 0.001] [optim_t 0.511] [lr 0.000100] [cos 0.252 (0.251)]
+2024-05-27 17:56:49,573 - ==> Total time: 0:45:15	 Eta: 0:03:56 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:57:17,423 - ==> Total time: 0:45:43	 Eta: 0:03:26 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:57:29,883 - Train: 93.33% [2800/3000]  [93.3/100.0] [batch_t 0.511 (1.096)] [data_t 0.002] [optim_t 0.509] [lr 0.000100] [cos 0.243 (0.250)]
+2024-05-27 17:57:45,369 - ==> Total time: 0:46:11	 Eta: 0:02:56 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:58:13,357 - Train: 95.00% [2850/3000]  [95.0/100.0] [batch_t 0.503 (0.878)] [data_t 0.001] [optim_t 0.502] [lr 0.000100] [cos 0.252 (0.250)]
+2024-05-27 17:58:13,360 - ==> Total time: 0:46:39	 Eta: 0:02:27 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:58:40,760 - ==> Total time: 0:47:06	 Eta: 0:01:57 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:59:00,676 - Train: 96.67% [2900/3000]  [96.7/100.0] [batch_t 0.516 (0.917)] [data_t 0.001] [optim_t 0.515] [lr 0.000100] [cos 0.245 (0.246)]
+2024-05-27 17:59:08,904 - ==> Total time: 0:47:34	 Eta: 0:01:28 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:59:36,301 - ==> Total time: 0:48:02	 Eta: 0:00:58 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 17:59:48,417 - Train: 98.33% [2950/3000]  [98.3/100.0] [batch_t 0.512 (1.069)] [data_t 0.001] [optim_t 0.511] [lr 0.000100] [cos 0.239 (0.242)]
+2024-05-27 18:00:03,488 - ==> Total time: 0:48:29	 Eta: 0:00:29 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 18:00:32,253 - Train: 100.00% [3000/3000]  [100.0/100.0] [batch_t 0.506 (0.860)] [data_t 0.001] [optim_t 0.504] [lr 0.000100] [cos 0.245 (0.242)]
+2024-05-27 18:00:52,697 - Test: 100.00% [17/17] [batch_t 3.703 (1.196)] [cos 0.362 (0.362)]
+2024-05-27 18:00:52,917 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.046 (mIoU_max_px)	
+2024-05-27 18:00:53,100 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-27 18:00:53,255 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-27 18:00:53,449 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.047 (mF1_max_px)	  0.017 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.047 (mIoU_max_px)	
+2024-05-27 18:00:53,601 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.036 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-27 18:00:53,767 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-27 18:00:53,955 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-27 18:00:54,143 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 18:00:54,317 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-27 18:00:54,590 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.061 (mF1_max_px)	  0.022 (mF1_px_0.2_0.8_0.1)	  0.022 (mAcc_px_0.2_0.8_0.1)	  0.022 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-27 18:00:54,595 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     77.500      |  90.833 (60  epoch)   |    94.381    | 98.239 (60  epoch)  |      93.878      |   96.000 (30  epoch)   |   96.804    | 98.806 (10  epoch) |   99.037    | 99.695 (10  epoch) |  8.468   | 27.951 (10  epoch) |    15.337    | 32.816 (10  epoch) |        5.060         |     5.852 (80  epoch)      |        76.800         |     98.623 (20  epoch)      |         2.678         |      3.136 (80  epoch)      |     8.305     | 19.629 (10  epoch)  |
+|   Bird   |     45.455      |  51.818 (60  epoch)   |    82.162    | 83.695 (60  epoch)  |      89.796      |   89.796 (10  epoch)   |   63.223    | 65.037 (50  epoch) |   89.587    | 90.370 (80  epoch) |  6.803   | 9.371 (90  epoch)  |    15.428    | 21.273 (90  epoch) |        8.036         |     9.360 (90  epoch)      |        59.390         |     63.671 (60  epoch)      |         4.252         |      5.033 (90  epoch)      |     8.359     | 11.902 (90  epoch)  |
+| Elephant |     41.111      |  47.778 (90  epoch)   |    80.255    | 82.795 (90  epoch)  |      87.805      |   87.805 (10  epoch)   |   59.584    | 62.809 (70  epoch) |   85.216    | 88.827 (20  epoch) |  1.709   | 2.361 (20  epoch)  |    4.084     | 5.414 (20  epoch)  |        2.595         |     3.263 (20  epoch)      |        46.405         |     62.220 (10  epoch)      |         1.318         |      1.665 (20  epoch)      |     2.084     |  2.782 (20  epoch)  |
+|  Parrot  |      6.957      |  19.130 (10  epoch)   |    66.150    | 73.665 (10  epoch)  |      90.196      |   90.196 (10  epoch)   |   33.483    | 39.571 (20  epoch) |   63.072    | 63.072 (100 epoch) |  0.863   | 0.865 (50  epoch)  |    2.023     | 2.103 (20  epoch)  |        0.840         |     1.066 (20  epoch)      |        23.411         |     32.870 (20  epoch)      |         0.423         |      0.537 (20  epoch)      |     1.022     |  1.063 (20  epoch)  |
+|   Pig    |     61.176      |  61.176 (100 epoch)   |    80.310    | 80.310 (100 epoch)  |      91.429      |   91.429 (60  epoch)   |   90.976    | 91.892 (70  epoch) |   97.975    | 98.208 (70  epoch) |  14.313  | 15.201 (70  epoch) |    23.041    | 24.563 (70  epoch) |        11.347        |     12.019 (90  epoch)     |        56.067         |     68.076 (10  epoch)      |         6.185         |      6.583 (90  epoch)      |    13.020     | 14.001 (70  epoch)  |
+|  Puppy   |     66.000      |  92.000 (10  epoch)   |    87.570    | 98.297 (10  epoch)  |      93.023      |   95.000 (20  epoch)   |   92.381    | 96.922 (30  epoch) |   98.077    | 99.594 (10  epoch) |  4.799   | 36.284 (10  epoch) |    11.178    | 38.948 (10  epoch) |        3.413         |     10.002 (10  epoch)     |        69.936         |     96.901 (20  epoch)      |         1.766         |      5.877 (10  epoch)      |     5.920     | 24.184 (10  epoch)  |
+| Scorpion |     22.609      |  39.130 (50  epoch)   |    73.520    | 79.424 (60  epoch)  |      90.196      |   90.196 (10  epoch)   |   26.492    | 40.684 (10  epoch) |   70.933    | 79.195 (10  epoch) |  2.527   | 3.662 (10  epoch)  |    5.823     | 9.108 (10  epoch)  |        2.968         |     5.127 (10  epoch)      |        35.525         |     58.899 (10  epoch)      |         1.516         |      2.652 (10  epoch)      |     2.999     |  4.771 (10  epoch)  |
+|  Turtle  |     100.000     |  100.000 (30  epoch)  |   100.000    | 100.000 (30  epoch) |     100.000      |  100.000 (30  epoch)   |   96.674    | 97.697 (40  epoch) |   99.212    | 99.494 (40  epoch) |  24.291  | 40.165 (10  epoch) |    38.245    | 45.583 (40  epoch) |        14.475        |     18.290 (40  epoch)     |        67.327         |     95.742 (10  epoch)      |         8.311         |     10.897 (40  epoch)      |    23.644     | 29.519 (40  epoch)  |
+| Unicorn  |     37.143      |  58.095 (20  epoch)   |    77.169    | 84.673 (80  epoch)  |      89.362      |   89.362 (10  epoch)   |   48.429    | 61.332 (10  epoch) |   83.054    | 88.425 (10  epoch) |  0.751   | 1.010 (10  epoch)  |    1.767     | 2.785 (10  epoch)  |        0.853         |     1.202 (10  epoch)      |        41.265         |     63.041 (10  epoch)      |         0.429         |      0.607 (10  epoch)      |     0.891     |  1.412 (10  epoch)  |
+|  Whale   |     88.750      |  96.250 (70  epoch)   |    97.790    | 99.383 (70  epoch)  |      96.970      |   98.462 (50  epoch)   |   96.017    | 97.053 (40  epoch) |   99.321    | 99.540 (40  epoch) |  29.871  | 37.020 (40  epoch) |    32.281    | 37.404 (40  epoch) |        11.582        |     13.473 (80  epoch)     |        82.323         |     95.639 (10  epoch)      |         6.569         |      7.880 (80  epoch)      |    19.247     | 23.005 (40  epoch)  |
+|   Avg    |     54.670      |  59.155 (50  epoch)   |    83.931    | 84.585 (80  epoch)  |      92.265      |   92.265 (100 epoch)   |   70.406    | 73.137 (20  epoch) |   88.548    | 89.699 (20  epoch) |  9.440   | 14.185 (10  epoch) |    14.921    | 17.319 (10  epoch) |        6.117         |     6.650 (80  epoch)      |        55.845         |     72.436 (10  epoch)      |         3.345         |      3.670 (80  epoch)      |     8.549     | 10.286 (10  epoch)  |
+2024-05-27 18:00:54,712 - ==> Total time: 0:49:20	 Eta: 0:00:00 	Logged in 'runs/benchmark/rd++_256_100e/mad_real/RDPTrainer_configs_benchmark_rd++_256_100e_20240527-171133'
+2024-05-27 18:00:56,965 - finish training

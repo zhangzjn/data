@@ -1,0 +1,1063 @@
+2024-05-26 12:11:15,443 - ==> Logging on master GPU: 0
+2024-05-26 12:11:15,444 - ==> Running Trainer: InvADTrainer
+2024-05-26 12:11:15,444 - ==> Using GPU: [0] for Training
+2024-05-26 12:11:15,444 - ==> Building model
+2024-05-26 12:11:16,371 - Loaded  from checkpoint 'model/pretrain/resnet34-43635321.pth'
+2024-05-26 12:11:26,727 - 
+------------------------------------ InvAD ------------------------------------
+| module                                   | #parameters or shape   | #flops       |
+|:-----------------------------------------|:-----------------------|:-------------|
+| model                                    | 17.147M                | 9.283G       |
+|  net_encoder                             |  8.17M                 |  3.955G      |
+|   net_encoder.conv1                      |   9.408K               |   0.154G     |
+|    net_encoder.conv1.weight              |    (64, 3, 7, 7)       |              |
+|   net_encoder.bn1                        |   0.128K               |   2.097M     |
+|    net_encoder.bn1.weight                |    (64,)               |              |
+|    net_encoder.bn1.bias                  |    (64,)               |              |
+|   net_encoder.layer1                     |   0.222M               |   0.909G     |
+|    net_encoder.layer1.0                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.0.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.0.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.0.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.0.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.0.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.0.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.0.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.0.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.0.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.0.bn2.bias       |      (64,)             |              |
+|    net_encoder.layer1.1                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.1.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.1.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.1.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.1.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.1.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.1.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.1.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.1.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.1.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.1.bn2.bias       |      (64,)             |              |
+|    net_encoder.layer1.2                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.2.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.2.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.2.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.2.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.2.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.2.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.2.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.2.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.2.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.2.bn2.bias       |      (64,)             |              |
+|   net_encoder.layer2                     |   1.116M               |   1.143G     |
+|    net_encoder.layer2.0                  |    0.23M               |    0.236G    |
+|     net_encoder.layer2.0.conv1           |     73.728K            |     75.497M  |
+|      net_encoder.layer2.0.conv1.weight   |      (128, 64, 3, 3)   |              |
+|     net_encoder.layer2.0.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.0.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.0.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.0.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.0.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.0.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.0.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.0.bn2.bias       |      (128,)            |              |
+|     net_encoder.layer2.0.downsample      |     8.448K             |     8.651M   |
+|      net_encoder.layer2.0.downsample.0   |      8.192K            |      8.389M  |
+|      net_encoder.layer2.0.downsample.1   |      0.256K            |      0.262M  |
+|    net_encoder.layer2.1                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.1.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.1.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.1.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.1.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.1.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.1.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.1.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.1.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.1.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.1.bn2.bias       |      (128,)            |              |
+|    net_encoder.layer2.2                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.2.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.2.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.2.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.2.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.2.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.2.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.2.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.2.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.2.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.2.bn2.bias       |      (128,)            |              |
+|    net_encoder.layer2.3                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.3.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.3.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.3.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.3.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.3.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.3.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.3.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.3.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.3.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.3.bn2.bias       |      (128,)            |              |
+|   net_encoder.layer3                     |   6.822M               |   1.747G     |
+|    net_encoder.layer3.0                  |    0.919M              |    0.235G    |
+|     net_encoder.layer3.0.conv1           |     0.295M             |     75.497M  |
+|      net_encoder.layer3.0.conv1.weight   |      (256, 128, 3, 3)  |              |
+|     net_encoder.layer3.0.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.0.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.0.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.0.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.0.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.0.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.0.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.0.bn2.bias       |      (256,)            |              |
+|     net_encoder.layer3.0.downsample      |     33.28K             |     8.52M    |
+|      net_encoder.layer3.0.downsample.0   |      32.768K           |      8.389M  |
+|      net_encoder.layer3.0.downsample.1   |      0.512K            |      0.131M  |
+|    net_encoder.layer3.1                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.1.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.1.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.1.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.1.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.1.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.1.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.1.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.1.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.1.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.1.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.2                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.2.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.2.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.2.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.2.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.2.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.2.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.2.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.2.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.2.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.2.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.3                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.3.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.3.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.3.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.3.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.3.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.3.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.3.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.3.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.3.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.3.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.4                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.4.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.4.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.4.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.4.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.4.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.4.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.4.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.4.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.4.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.4.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.5                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.5.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.5.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.5.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.5.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.5.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.5.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.5.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.5.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.5.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.5.bn2.bias       |      (256,)            |              |
+|  net_fuser                               |  0.453M                |  0.314G      |
+|   net_fuser.downsamples                  |   0.198M               |   50.561M    |
+|    net_fuser.downsamples.0               |    65.728K             |    16.81M    |
+|     net_fuser.downsamples.0.conv         |     65.6K              |     16.777M  |
+|      net_fuser.downsamples.0.conv.weight |      (64, 64, 4, 4)    |              |
+|      net_fuser.downsamples.0.conv.bias   |      (64,)             |              |
+|     net_fuser.downsamples.0.norm         |     0.128K             |     32.768K  |
+|      net_fuser.downsamples.0.norm.weight |      (64,)             |              |
+|      net_fuser.downsamples.0.norm.bias   |      (64,)             |              |
+|    net_fuser.downsamples.1               |    65.92K              |    16.843M   |
+|     net_fuser.downsamples.1.conv         |     65.664K            |     16.777M  |
+|      net_fuser.downsamples.1.conv.weight |      (128, 128, 2, 2)  |              |
+|      net_fuser.downsamples.1.conv.bias   |      (128,)            |              |
+|     net_fuser.downsamples.1.norm         |     0.256K             |     65.536K  |
+|      net_fuser.downsamples.1.norm.weight |      (128,)            |              |
+|      net_fuser.downsamples.1.norm.bias   |      (128,)            |              |
+|    net_fuser.downsamples.2               |    66.304K             |    16.908M   |
+|     net_fuser.downsamples.2.conv         |     65.792K            |     16.777M  |
+|      net_fuser.downsamples.2.conv.weight |      (256, 256, 1, 1)  |              |
+|      net_fuser.downsamples.2.conv.bias   |      (256,)            |              |
+|     net_fuser.downsamples.2.norm         |     0.512K             |     0.131M   |
+|      net_fuser.downsamples.2.norm.weight |      (256,)            |              |
+|      net_fuser.downsamples.2.norm.bias   |      (256,)            |              |
+|   net_fuser.conv_cat                     |   28.8K                |   7.373M     |
+|    net_fuser.conv_cat.conv               |    28.672K             |    7.34M     |
+|     net_fuser.conv_cat.conv.weight       |     (64, 448, 1, 1)    |              |
+|    net_fuser.conv_cat.norm               |    0.128K              |    32.768K   |
+|     net_fuser.conv_cat.norm.weight       |     (64,)              |              |
+|     net_fuser.conv_cat.norm.bias         |     (64,)              |              |
+|   net_fuser.conv_bottle.0                |   4.544K               |   1.163M     |
+|    net_fuser.conv_bottle.0.conv1         |    1.024K              |    0.262M    |
+|     net_fuser.conv_bottle.0.conv1.weight |     (16, 64, 1, 1)     |              |
+|    net_fuser.conv_bottle.0.bn1           |    32                  |    8.192K    |
+|     net_fuser.conv_bottle.0.bn1.weight   |     (16,)              |              |
+|     net_fuser.conv_bottle.0.bn1.bias     |     (16,)              |              |
+|    net_fuser.conv_bottle.0.conv2         |    2.304K              |    0.59M     |
+|     net_fuser.conv_bottle.0.conv2.weight |     (16, 16, 3, 3)     |              |
+|    net_fuser.conv_bottle.0.bn2           |    32                  |    8.192K    |
+|     net_fuser.conv_bottle.0.bn2.weight   |     (16,)              |              |
+|     net_fuser.conv_bottle.0.bn2.bias     |     (16,)              |              |
+|    net_fuser.conv_bottle.0.conv3         |    1.024K              |    0.262M    |
+|     net_fuser.conv_bottle.0.conv3.weight |     (64, 16, 1, 1)     |              |
+|    net_fuser.conv_bottle.0.bn3           |    0.128K              |    32.768K   |
+|     net_fuser.conv_bottle.0.bn3.weight   |     (64,)              |              |
+|     net_fuser.conv_bottle.0.bn3.bias     |     (64,)              |              |
+|   net_fuser.convs                        |   0.222M               |   0.255G     |
+|    net_fuser.convs.0                     |    73.856K             |    18.874M   |
+|     net_fuser.convs.0.0                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.0.0.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.0.0.1               |      64                |      0       |
+|     net_fuser.convs.0.1                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.0.1.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.0.1.1               |      64                |      0       |
+|    net_fuser.convs.1                     |    73.856K             |    47.186M   |
+|     net_fuser.convs.1.0                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.1.0.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.1.0.2               |      64                |      0       |
+|     net_fuser.convs.1.1                  |     36.928K            |     37.749M  |
+|      net_fuser.convs.1.1.0               |      36.864K           |      37.749M |
+|      net_fuser.convs.1.1.1               |      64                |      0       |
+|    net_fuser.convs.2                     |    73.856K             |    0.189G    |
+|     net_fuser.convs.2.0                  |     36.928K            |     37.749M  |
+|      net_fuser.convs.2.0.0               |      36.864K           |      37.749M |
+|      net_fuser.convs.2.0.2               |      64                |      0       |
+|     net_fuser.convs.2.1                  |     36.928K            |     0.151G   |
+|      net_fuser.convs.2.1.0               |      36.864K           |      0.151G  |
+|      net_fuser.convs.2.1.1               |      64                |      0       |
+|  net_decoder                             |  8.523M                |  5.014G      |
+|   net_decoder.input                      |   65.536K              |   0          |
+|    net_decoder.input.input               |    (1, 256, 16, 16)    |              |
+|   net_decoder.conv1.0                    |   0.59M                |   0.151G     |
+|    net_decoder.conv1.0.0                 |    0.59M               |    0.151G    |
+|     net_decoder.conv1.0.0.weight         |     (256, 256, 3, 3)   |              |
+|    net_decoder.conv1.0.1                 |    0.256K              |    0         |
+|     net_decoder.conv1.0.1.bias           |     (256,)             |              |
+|   net_decoder.convs_latent               |   0.138M               |   0.248G     |
+|    net_decoder.convs_latent.0            |    46.16K              |    11.796M   |
+|     net_decoder.convs_latent.0.0         |     36.928K            |     9.437M   |
+|      net_decoder.convs_latent.0.0.0      |      36.864K           |      9.437M  |
+|      net_decoder.convs_latent.0.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.0.1         |     9.232K             |     2.359M   |
+|      net_decoder.convs_latent.0.1.0      |      9.216K            |      2.359M  |
+|      net_decoder.convs_latent.0.1.1      |      16                |      0       |
+|    net_decoder.convs_latent.1            |    46.16K              |    47.186M   |
+|     net_decoder.convs_latent.1.0         |     36.928K            |     37.749M  |
+|      net_decoder.convs_latent.1.0.0      |      36.864K           |      37.749M |
+|      net_decoder.convs_latent.1.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.1.1         |     9.232K             |     9.437M   |
+|      net_decoder.convs_latent.1.1.0      |      9.216K            |      9.437M  |
+|      net_decoder.convs_latent.1.1.1      |      16                |      0       |
+|    net_decoder.convs_latent.2            |    46.16K              |    0.189G    |
+|     net_decoder.convs_latent.2.0         |     36.928K            |     0.151G   |
+|      net_decoder.convs_latent.2.0.0      |      36.864K           |      0.151G  |
+|      net_decoder.convs_latent.2.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.2.1         |     9.232K             |     37.749M  |
+|      net_decoder.convs_latent.2.1.0      |      9.216K            |      37.749M |
+|      net_decoder.convs_latent.2.1.1      |      16                |      0       |
+|   net_decoder.convs                      |   7.729M               |   4.615G     |
+|    net_decoder.convs.0                   |    5.577M              |    1.428G    |
+|     net_decoder.convs.0.0                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.0.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.0.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.0.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.1                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.1.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.1.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.1.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.2                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.2.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.2.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.2.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.3                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.3.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.3.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.3.skip.0        |      65.536K           |      16.777M |
+|    net_decoder.convs.1                   |    1.67M               |    1.459G    |
+|     net_decoder.convs.1.0                |     0.513M             |     0.273G   |
+|      net_decoder.convs.1.0.conv1         |      0.295M            |      75.76M  |
+|      net_decoder.convs.1.0.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.0.skip.0        |      32.768K           |      8.389M  |
+|     net_decoder.convs.1.1                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.1.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.1.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.1.skip.0        |      16.384K           |      16.777M |
+|     net_decoder.convs.1.2                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.2.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.2.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.2.skip.0        |      16.384K           |      16.777M |
+|     net_decoder.convs.1.3                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.3.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.3.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.3.skip.0        |      16.384K           |      16.777M |
+|    net_decoder.convs.2                   |    0.483M              |    1.728G    |
+|     net_decoder.convs.2.0                |     0.137M             |     0.312G   |
+|      net_decoder.convs.2.0.conv1         |      73.792K           |      76.022M |
+|      net_decoder.convs.2.0.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.0.skip.0        |      8.192K            |      8.389M  |
+|     net_decoder.convs.2.1                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.1.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.1.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.1.skip.0        |      4.096K            |      16.777M |
+|     net_decoder.convs.2.2                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.2.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.2.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.2.skip.0        |      4.096K            |      16.777M |
+|     net_decoder.convs.2.3                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.3.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.3.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.3.skip.0        |      4.096K            |      16.777M |
+-------------------------------------------------------------------------------
+2024-05-26 12:11:26,730 - ==> Creating optimizer
+2024-05-26 12:11:26,747 - ==> Loading dataset: DefaultAD
+2024-05-26 12:11:26,751 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 300                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.004                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0, 0.99)}
+trainer.name                         : InvADTrainer                        
+trainer.checkpoint                   : runs/benchmark/invad-lite_256_300e/mpdd
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 300                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 4e-05, 'warmup_lr': 4e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 240, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 8100                                
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 5.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 27                                  
+data.test_size                       : 15                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_encoder.name                   : timm_resnet34                       
+model_encoder.kwargs                 : {'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet34-43635321.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_fuser                          : {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}
+model_decoder                        : {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [4, 4, 4]}
+model_disor                          : {'sizes': [64, 32, 16], 'in_chas': [64, 128, 256]}
+model.name                           : invad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_encoder': Namespace(name='timm_resnet34', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet34-43635321.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_fuser': {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}, 'model_decoder': {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [4, 4, 4]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.004                               
+weight_decay                         : 0.0001                              
+uni_am                               : True                                
+use_cos                              : True                                
+pth                                  : model/pretrain/resnet34-43635321.pth
+cfg_path                             : configs.benchmark.invad-lite_256_300e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/invad-lite_256_300e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.invad-lite_256_300e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/invad-lite_256_300e/mpdd data.root=data/mpdd
+task_start_time                      : 3099355.644933222                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115/show_train
+logdir_test                          : runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115/show_test
+2024-05-26 12:11:26,751 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-26 12:11:51,870 - ==> Total time: 0:00:36	 Eta: 3:01:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:11:59,884 - Train: 0.62% [50/8100]  [1.9/300.0] [batch_t 0.225 (0.320)] [data_t 0.001] [optim_t 0.223] [lr 0.004000] [pixel 23.146 (25.786)]
+2024-05-26 12:12:00,850 - ==> Total time: 0:00:45	 Eta: 1:52:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:09,808 - ==> Total time: 0:00:54	 Eta: 1:29:50 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:16,617 - Train: 1.23% [100/8100]  [3.7/300.0] [batch_t 0.192 (0.328)] [data_t 0.002] [optim_t 0.190] [lr 0.004000] [pixel 21.034 (21.874)]
+2024-05-26 12:12:18,700 - ==> Total time: 0:01:03	 Eta: 1:18:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:27,650 - ==> Total time: 0:01:12	 Eta: 1:11:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:33,428 - Train: 1.85% [150/8100]  [5.6/300.0] [batch_t 0.202 (0.346)] [data_t 0.002] [optim_t 0.200] [lr 0.004000] [pixel 20.206 (20.211)]
+2024-05-26 12:12:36,655 - ==> Total time: 0:01:21	 Eta: 1:06:23 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:45,510 - ==> Total time: 0:01:30	 Eta: 1:02:53 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:12:49,999 - Train: 2.47% [200/8100]  [7.4/300.0] [batch_t 0.207 (0.361)] [data_t 0.002] [optim_t 0.205] [lr 0.004000] [pixel 17.811 (19.312)]
+2024-05-26 12:12:54,407 - ==> Total time: 0:01:39	 Eta: 1:00:15 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:03,346 - ==> Total time: 0:01:47	 Eta: 0:58:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:07,296 - Train: 3.09% [250/8100]  [9.3/300.0] [batch_t 0.218 (0.402)] [data_t 0.002] [optim_t 0.216] [lr 0.004000] [pixel 17.820 (18.143)]
+2024-05-26 12:13:13,009 - ==> Total time: 0:01:57	 Eta: 0:56:51 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:22,070 - ==> Total time: 0:02:06	 Eta: 0:55:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:24,323 - Train: 3.70% [300/8100]  [11.1/300.0] [batch_t 0.200 (0.572)] [data_t 0.002] [optim_t 0.198] [lr 0.004000] [pixel 17.839 (17.243)]
+2024-05-26 12:13:31,065 - ==> Total time: 0:02:15	 Eta: 0:54:17 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:39,963 - Train: 4.32% [350/8100]  [13.0/300.0] [batch_t 0.211 (0.320)] [data_t 0.002] [optim_t 0.209] [lr 0.004000] [pixel 18.052 (16.909)]
+2024-05-26 12:13:40,162 - ==> Total time: 0:02:24	 Eta: 0:53:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:49,366 - ==> Total time: 0:02:34	 Eta: 0:52:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:13:57,139 - Train: 4.94% [400/8100]  [14.8/300.0] [batch_t 0.200 (0.320)] [data_t 0.001] [optim_t 0.198] [lr 0.004000] [pixel 15.736 (16.247)]
+2024-05-26 12:13:58,468 - ==> Total time: 0:02:43	 Eta: 0:51:39 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:07,538 - ==> Total time: 0:02:52	 Eta: 0:50:56 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:14,009 - Train: 5.56% [450/8100]  [16.7/300.0] [batch_t 0.078 (0.325)] [data_t 0.002] [optim_t 0.076] [lr 0.004000] [pixel 15.900 (15.890)]
+2024-05-26 12:14:16,716 - ==> Total time: 0:03:01	 Eta: 0:50:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:25,796 - ==> Total time: 0:03:10	 Eta: 0:49:43 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:31,088 - Train: 6.17% [500/8100]  [18.5/300.0] [batch_t 0.143 (0.336)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 16.020 (15.259)]
+2024-05-26 12:14:34,901 - ==> Total time: 0:03:19	 Eta: 0:49:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:44,233 - ==> Total time: 0:03:28	 Eta: 0:48:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:14:48,296 - Train: 6.79% [550/8100]  [20.4/300.0] [batch_t 0.067 (0.352)] [data_t 0.002] [optim_t 0.066] [lr 0.004000] [pixel 14.382 (14.789)]
+2024-05-26 12:14:53,276 - ==> Total time: 0:03:37	 Eta: 0:48:15 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:02,355 - ==> Total time: 0:03:47	 Eta: 0:47:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:06,189 - Train: 7.41% [600/8100]  [22.2/300.0] [batch_t 0.067 (0.407)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 14.864 (14.705)]
+2024-05-26 12:15:12,321 - ==> Total time: 0:03:56	 Eta: 0:47:33 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:21,315 - ==> Total time: 0:04:05	 Eta: 0:47:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:23,326 - Train: 8.02% [650/8100]  [24.1/300.0] [batch_t 0.145 (0.696)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 14.721 (14.071)]
+2024-05-26 12:15:30,369 - ==> Total time: 0:04:15	 Eta: 0:46:45 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:39,063 - Train: 8.64% [700/8100]  [25.9/300.0] [batch_t 0.699 (0.322)] [data_t 0.551] [optim_t 0.148] [lr 0.004000] [pixel 12.995 (13.682)]
+2024-05-26 12:15:39,369 - ==> Total time: 0:04:24	 Eta: 0:46:22 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:48,270 - ==> Total time: 0:04:32	 Eta: 0:45:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:15:55,600 - Train: 9.26% [750/8100]  [27.8/300.0] [batch_t 0.945 (0.326)] [data_t 0.818] [optim_t 0.126] [lr 0.004000] [pixel 13.839 (13.270)]
+2024-05-26 12:15:56,869 - ==> Total time: 0:04:41	 Eta: 0:45:34 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:16:05,878 - ==> Total time: 0:04:50	 Eta: 0:45:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:16:12,551 - Train: 9.88% [800/8100]  [29.6/300.0] [batch_t 0.569 (0.340)] [data_t 0.424] [optim_t 0.145] [lr 0.004000] [pixel 12.061 (13.087)]
+2024-05-26 12:16:26,710 - Test: 100.00% [15/15] [batch_t 6.798 (0.779)] [pixel 21.469 (14.029)]
+2024-05-26 12:16:28,677 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.131 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.133 (mIoU_max_px)	
+2024-05-26 12:16:29,209 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.126 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:16:29,602 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.036 (mIoU_px_0.2_0.8_0.1)	  0.094 (mIoU_max_px)	
+2024-05-26 12:16:29,874 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.069 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.026 (mAcc_px_0.2_0.8_0.1)	  0.025 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-26 12:16:30,635 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.171 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.173 (mIoU_max_px)	
+2024-05-26 12:16:31,332 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.177 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.177 (mIoU_max_px)	
+2024-05-26 12:16:31,337 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     65.226      |  65.226 (30  epoch)   |    77.043    | 77.043 (30  epoch) |      76.423      |   76.423 (30  epoch)   |   83.599    | 83.599 (30  epoch) |   92.500    | 92.500 (30  epoch) |  4.359   | 4.359 (30  epoch)  |    11.518    | 11.518 (30  epoch) |        3.344         |     3.344 (30  epoch)      |        60.502         |     60.502 (30  epoch)      |         1.739         |      1.739 (30  epoch)      |     6.111     |  6.111 (30  epoch)  |
+| bracket_brown |     74.359      |  74.359 (30  epoch)   |    82.123    | 82.123 (30  epoch) |      84.956      |   84.956 (30  epoch)   |   92.423    | 92.423 (30  epoch) |   97.171    | 97.171 (30  epoch) |  8.557   | 8.557 (30  epoch)  |    16.228    | 16.228 (30  epoch) |        8.165         |     8.165 (30  epoch)      |        61.362         |     61.362 (30  epoch)      |         4.342         |      4.342 (30  epoch)      |     8.831     |  8.831 (30  epoch)  |
+| bracket_white |     77.333      |  77.333 (30  epoch)   |    82.440    | 82.440 (30  epoch) |      74.074      |   74.074 (30  epoch)   |   93.212    | 93.212 (30  epoch) |   98.504    | 98.504 (30  epoch) |  5.909   | 5.909 (30  epoch)  |    10.477    | 10.477 (30  epoch) |        2.411         |     2.411 (30  epoch)      |        74.634         |     74.634 (30  epoch)      |         1.242         |      1.242 (30  epoch)      |     5.528     |  5.528 (30  epoch)  |
+|   connector   |     89.048      |  89.048 (30  epoch)   |    73.757    | 73.757 (30  epoch) |      80.000      |   80.000 (30  epoch)   |   92.789    | 92.789 (30  epoch) |   97.792    | 97.792 (30  epoch) |  36.314  | 36.314 (30  epoch) |    41.394    | 41.394 (30  epoch) |        16.110        |     16.110 (30  epoch)     |        69.923         |     69.923 (30  epoch)      |         9.384         |      9.384 (30  epoch)      |    26.099     | 26.099 (30  epoch)  |
+|  metal_plate  |     97.400      |  97.400 (30  epoch)   |    98.915    | 98.915 (30  epoch) |      96.599      |   96.599 (30  epoch)   |   91.759    | 91.759 (30  epoch) |   97.493    | 97.493 (30  epoch) |  79.671  | 79.671 (30  epoch) |    77.580    | 77.580 (30  epoch) |        46.358        |     46.358 (30  epoch)     |        60.192         |     60.192 (30  epoch)      |        33.441         |     33.441 (30  epoch)      |    63.373     | 63.373 (30  epoch)  |
+|     tubes     |     80.707      |  80.707 (30  epoch)   |    91.163    | 91.163 (30  epoch) |      84.058      |   84.058 (30  epoch)   |   90.723    | 90.723 (30  epoch) |   97.514    | 97.514 (30  epoch) |  43.553  | 43.553 (30  epoch) |    47.343    | 47.343 (30  epoch) |        19.146        |     19.146 (30  epoch)     |        73.000         |     73.000 (30  epoch)      |        11.421         |     11.421 (30  epoch)      |    31.012     | 31.012 (30  epoch)  |
+|      Avg      |     80.679      |  80.679 (30  epoch)   |    84.240    | 84.240 (30  epoch) |      82.685      |   82.685 (30  epoch)   |   90.751    | 90.751 (30  epoch) |   96.829    | 96.829 (30  epoch) |  29.727  | 29.727 (30  epoch) |    34.090    | 34.090 (30  epoch) |        15.922        |     15.922 (30  epoch)     |        66.602         |     66.602 (30  epoch)      |        10.261         |     10.261 (30  epoch)      |    23.492     | 23.492 (30  epoch)  |
+2024-05-26 12:16:31,411 - ==> Total time: 0:05:16	 Eta: 0:47:24 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:16:40,434 - ==> Total time: 0:05:25	 Eta: 0:47:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:16:45,621 - Train: 10.49% [850/8100]  [31.5/300.0] [batch_t 0.493 (0.354)] [data_t 0.324] [optim_t 0.169] [lr 0.004000] [pixel 12.955 (12.762)]
+2024-05-26 12:16:49,036 - ==> Total time: 0:05:33	 Eta: 0:46:34 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:16:57,930 - ==> Total time: 0:05:42	 Eta: 0:46:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:01,945 - Train: 11.11% [900/8100]  [33.3/300.0] [batch_t 0.496 (0.391)] [data_t 0.327] [optim_t 0.170] [lr 0.004000] [pixel 11.759 (12.314)]
+2024-05-26 12:17:06,464 - ==> Total time: 0:05:51	 Eta: 0:45:46 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:15,496 - ==> Total time: 0:06:00	 Eta: 0:45:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:18,467 - Train: 11.73% [950/8100]  [35.2/300.0] [batch_t 0.482 (0.476)] [data_t 0.285] [optim_t 0.197] [lr 0.004000] [pixel 12.524 (11.893)]
+2024-05-26 12:17:24,379 - ==> Total time: 0:06:09	 Eta: 0:45:06 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:33,292 - ==> Total time: 0:06:17	 Eta: 0:44:46 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:35,111 - Train: 12.35% [1000/8100]  [37.0/300.0] [batch_t 1.266 (1.266)] [data_t 1.100] [optim_t 0.166] [lr 0.004000] [pixel 11.985 (11.985)]
+2024-05-26 12:17:42,182 - ==> Total time: 0:06:26	 Eta: 0:44:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:50,137 - Train: 12.96% [1050/8100]  [38.9/300.0] [batch_t 0.198 (0.309)] [data_t 0.001] [optim_t 0.197] [lr 0.004000] [pixel 11.597 (11.768)]
+2024-05-26 12:17:51,028 - ==> Total time: 0:06:35	 Eta: 0:44:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:17:59,927 - ==> Total time: 0:06:44	 Eta: 0:43:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:06,343 - Train: 13.58% [1100/8100]  [40.7/300.0] [batch_t 0.071 (0.294)] [data_t 0.002] [optim_t 0.070] [lr 0.004000] [pixel 11.885 (11.513)]
+2024-05-26 12:18:08,787 - ==> Total time: 0:06:53	 Eta: 0:43:31 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:17,754 - ==> Total time: 0:07:02	 Eta: 0:43:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:22,989 - Train: 14.20% [1150/8100]  [42.6/300.0] [batch_t 0.067 (0.291)] [data_t 0.002] [optim_t 0.066] [lr 0.004000] [pixel 11.496 (11.252)]
+2024-05-26 12:18:26,663 - ==> Total time: 0:07:11	 Eta: 0:42:57 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:35,746 - ==> Total time: 0:07:20	 Eta: 0:42:42 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:40,172 - Train: 14.81% [1200/8100]  [44.4/300.0] [batch_t 0.149 (0.319)] [data_t 0.002] [optim_t 0.148] [lr 0.004000] [pixel 10.993 (11.078)]
+2024-05-26 12:18:44,751 - ==> Total time: 0:07:29	 Eta: 0:42:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:53,797 - ==> Total time: 0:07:38	 Eta: 0:42:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:18:57,304 - Train: 15.43% [1250/8100]  [46.3/300.0] [batch_t 0.153 (0.365)] [data_t 0.002] [optim_t 0.151] [lr 0.004000] [pixel 10.640 (10.766)]
+2024-05-26 12:19:02,696 - ==> Total time: 0:07:47	 Eta: 0:41:55 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:11,622 - ==> Total time: 0:07:56	 Eta: 0:41:40 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:14,258 - Train: 16.05% [1300/8100]  [48.1/300.0] [batch_t 0.199 (0.482)] [data_t 0.002] [optim_t 0.197] [lr 0.004000] [pixel 11.097 (10.870)]
+2024-05-26 12:19:20,807 - ==> Total time: 0:08:05	 Eta: 0:41:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:29,682 - Train: 16.67% [1350/8100]  [50.0/300.0] [batch_t 0.202 (0.306)] [data_t 0.002] [optim_t 0.201] [lr 0.004000] [pixel 10.551 (10.412)]
+2024-05-26 12:19:29,685 - ==> Total time: 0:08:14	 Eta: 0:41:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:38,468 - ==> Total time: 0:08:23	 Eta: 0:40:56 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:46,259 - Train: 17.28% [1400/8100]  [51.9/300.0] [batch_t 0.200 (0.315)] [data_t 0.001] [optim_t 0.198] [lr 0.004000] [pixel 9.646 (10.132)]
+2024-05-26 12:19:47,373 - ==> Total time: 0:08:32	 Eta: 0:40:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:19:55,917 - ==> Total time: 0:08:40	 Eta: 0:40:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:02,495 - Train: 17.90% [1450/8100]  [53.7/300.0] [batch_t 0.212 (0.317)] [data_t 0.002] [optim_t 0.210] [lr 0.004000] [pixel 9.676 (10.051)]
+2024-05-26 12:20:04,672 - ==> Total time: 0:08:49	 Eta: 0:40:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:13,327 - ==> Total time: 0:08:57	 Eta: 0:39:56 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:18,849 - Train: 18.52% [1500/8100]  [55.6/300.0] [batch_t 0.182 (0.328)] [data_t 0.002] [optim_t 0.180] [lr 0.004000] [pixel 10.111 (9.855)]
+2024-05-26 12:20:22,071 - ==> Total time: 0:09:06	 Eta: 0:39:42 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:30,845 - ==> Total time: 0:09:15	 Eta: 0:39:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:34,965 - Train: 19.14% [1550/8100]  [57.4/300.0] [batch_t 0.153 (0.324)] [data_t 0.003] [optim_t 0.150] [lr 0.004000] [pixel 10.482 (9.700)]
+2024-05-26 12:20:39,328 - ==> Total time: 0:09:23	 Eta: 0:39:13 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:48,208 - ==> Total time: 0:09:32	 Eta: 0:38:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:20:51,375 - Train: 19.75% [1600/8100]  [59.3/300.0] [batch_t 0.142 (0.373)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 9.244 (9.583)]
+2024-05-26 12:21:01,880 - Test: 100.00% [15/15] [batch_t 0.035 (0.316)] [pixel 19.161 (11.607)]
+2024-05-26 12:21:02,526 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.047 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.047 (mIoU_px_0.2_0.8_0.1)	  0.134 (mIoU_max_px)	
+2024-05-26 12:21:07,268 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-26 12:21:09,856 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.041 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.097 (mIoU_max_px)	
+2024-05-26 12:21:11,900 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 12:21:14,763 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.165 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-26 12:21:15,523 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.171 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.173 (mIoU_max_px)	
+2024-05-26 12:21:15,528 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     70.412      |  70.412 (60  epoch)   |    81.537    | 81.537 (60  epoch) |      76.522      |   76.522 (60  epoch)   |   88.613    | 88.613 (60  epoch) |   94.664    | 94.664 (60  epoch) |  9.262   | 9.262 (60  epoch)  |    19.513    | 19.513 (60  epoch) |        7.353         |     7.353 (60  epoch)      |        55.341         |     60.502 (30  epoch)      |         3.947         |      3.947 (60  epoch)      |    10.811     | 10.811 (60  epoch)  |
+| bracket_brown |     76.471      |  76.471 (60  epoch)   |    85.083    | 85.083 (60  epoch) |      84.404      |   84.956 (30  epoch)   |   91.937    | 92.423 (30  epoch) |   97.685    | 97.685 (60  epoch) |  13.355  | 13.355 (60  epoch) |    21.034    | 21.034 (60  epoch) |        11.022        |     11.022 (60  epoch)     |        52.500         |     61.362 (30  epoch)      |         5.975         |      5.975 (60  epoch)      |    11.753     | 11.753 (60  epoch)  |
+| bracket_white |     86.000      |  86.000 (60  epoch)   |    88.807    | 88.807 (60  epoch) |      80.000      |   80.000 (60  epoch)   |   94.367    | 94.367 (60  epoch) |   99.036    | 99.036 (60  epoch) |  7.057   | 7.057 (60  epoch)  |    11.119    | 11.119 (60  epoch) |        4.792         |     4.792 (60  epoch)      |        62.790         |     74.634 (30  epoch)      |         2.499         |      2.499 (60  epoch)      |     5.887     |  5.887 (60  epoch)  |
+|   connector   |     97.143      |  97.143 (60  epoch)   |    92.687    | 92.687 (60  epoch) |      92.857      |   92.857 (60  epoch)   |   96.459    | 96.459 (60  epoch) |   98.914    | 98.914 (60  epoch) |  60.828  | 60.828 (60  epoch) |    57.692    | 57.692 (60  epoch) |        27.325        |     27.325 (60  epoch)     |        74.493         |     74.493 (60  epoch)      |        17.458         |     17.458 (60  epoch)      |    40.540     | 40.540 (60  epoch)  |
+|  metal_plate  |     99.242      |  99.242 (60  epoch)   |    99.726    | 99.726 (60  epoch) |      97.222      |   97.222 (60  epoch)   |   93.546    | 93.546 (60  epoch) |   98.138    | 98.138 (60  epoch) |  84.392  | 84.392 (60  epoch) |    81.555    | 81.555 (60  epoch) |        47.982        |     47.982 (60  epoch)     |        56.110         |     60.192 (30  epoch)      |        35.874         |     35.874 (60  epoch)      |    68.855     | 68.855 (60  epoch)  |
+|     tubes     |     91.984      |  91.984 (60  epoch)   |    96.682    | 96.682 (60  epoch) |      91.304      |   91.304 (60  epoch)   |   93.708    | 93.708 (60  epoch) |   98.257    | 98.257 (60  epoch) |  57.118  | 57.118 (60  epoch) |    60.249    | 60.249 (60  epoch) |        25.802        |     25.802 (60  epoch)     |        66.265         |     73.000 (30  epoch)      |        16.379         |     16.379 (60  epoch)      |    43.112     | 43.112 (60  epoch)  |
+|      Avg      |     86.875      |  86.875 (60  epoch)   |    90.754    | 90.754 (60  epoch) |      87.052      |   87.052 (60  epoch)   |   93.105    | 93.105 (60  epoch) |   97.782    | 97.782 (60  epoch) |  38.668  | 38.668 (60  epoch) |    41.860    | 41.860 (60  epoch) |        20.713        |     20.713 (60  epoch)     |        61.250         |     66.602 (30  epoch)      |        13.689         |     13.689 (60  epoch)      |    30.160     | 30.160 (60  epoch)  |
+2024-05-26 12:21:15,636 - ==> Total time: 0:10:00	 Eta: 0:40:01 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:21:24,754 - ==> Total time: 0:10:09	 Eta: 0:39:47 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:21:26,966 - Train: 20.37% [1650/8100]  [61.1/300.0] [batch_t 0.200 (0.550)] [data_t 0.002] [optim_t 0.199] [lr 0.004000] [pixel 8.898 (9.211)]
+2024-05-26 12:21:33,515 - ==> Total time: 0:10:18	 Eta: 0:39:32 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:21:42,146 - Train: 20.99% [1700/8100]  [63.0/300.0] [batch_t 0.204 (0.310)] [data_t 0.002] [optim_t 0.202] [lr 0.004000] [pixel 9.643 (9.238)]
+2024-05-26 12:21:42,352 - ==> Total time: 0:10:26	 Eta: 0:39:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:21:51,328 - ==> Total time: 0:10:35	 Eta: 0:39:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:21:59,005 - Train: 21.60% [1750/8100]  [64.8/300.0] [batch_t 0.202 (0.319)] [data_t 0.002] [optim_t 0.201] [lr 0.004000] [pixel 9.637 (9.183)]
+2024-05-26 12:22:00,309 - ==> Total time: 0:10:44	 Eta: 0:38:51 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:09,165 - ==> Total time: 0:10:53	 Eta: 0:38:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:15,691 - Train: 22.22% [1800/8100]  [66.7/300.0] [batch_t 0.208 (0.326)] [data_t 0.002] [optim_t 0.206] [lr 0.004000] [pixel 8.019 (9.102)]
+2024-05-26 12:22:17,970 - ==> Total time: 0:11:02	 Eta: 0:38:24 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:26,855 - ==> Total time: 0:11:11	 Eta: 0:38:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:32,229 - Train: 22.84% [1850/8100]  [68.5/300.0] [batch_t 0.220 (0.341)] [data_t 0.002] [optim_t 0.218] [lr 0.004000] [pixel 8.606 (8.988)]
+2024-05-26 12:22:35,593 - ==> Total time: 0:11:20	 Eta: 0:37:57 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:44,442 - ==> Total time: 0:11:29	 Eta: 0:37:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:22:48,541 - Train: 23.46% [1900/8100]  [70.4/300.0] [batch_t 0.131 (0.351)] [data_t 0.002] [optim_t 0.129] [lr 0.004000] [pixel 9.023 (8.785)]
+2024-05-26 12:22:53,201 - ==> Total time: 0:11:37	 Eta: 0:37:30 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:01,887 - ==> Total time: 0:11:46	 Eta: 0:37:17 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:05,839 - Train: 24.07% [1950/8100]  [72.2/300.0] [batch_t 0.067 (0.383)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.669 (8.585)]
+2024-05-26 12:23:11,638 - ==> Total time: 0:11:56	 Eta: 0:37:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:20,356 - ==> Total time: 0:12:05	 Eta: 0:36:54 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:22,221 - Train: 24.69% [2000/8100]  [74.1/300.0] [batch_t 0.088 (0.652)] [data_t 0.002] [optim_t 0.087] [lr 0.004000] [pixel 9.034 (8.857)]
+2024-05-26 12:23:29,064 - ==> Total time: 0:12:13	 Eta: 0:36:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:37,478 - Train: 25.31% [2050/8100]  [75.9/300.0] [batch_t 0.450 (0.314)] [data_t 0.300] [optim_t 0.149] [lr 0.004000] [pixel 8.579 (8.472)]
+2024-05-26 12:23:37,773 - ==> Total time: 0:12:22	 Eta: 0:36:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:46,478 - ==> Total time: 0:12:31	 Eta: 0:36:15 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:23:53,825 - Train: 25.93% [2100/8100]  [77.8/300.0] [batch_t 0.468 (0.322)] [data_t 0.262] [optim_t 0.206] [lr 0.004000] [pixel 9.604 (8.401)]
+2024-05-26 12:23:55,154 - ==> Total time: 0:12:39	 Eta: 0:36:02 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:03,881 - ==> Total time: 0:12:48	 Eta: 0:35:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:10,304 - Train: 26.54% [2150/8100]  [79.6/300.0] [batch_t 0.440 (0.332)] [data_t 0.243] [optim_t 0.197] [lr 0.004000] [pixel 8.805 (8.265)]
+2024-05-26 12:24:12,763 - ==> Total time: 0:12:57	 Eta: 0:35:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:21,627 - ==> Total time: 0:13:06	 Eta: 0:35:25 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:27,038 - Train: 27.16% [2200/8100]  [81.5/300.0] [batch_t 0.496 (0.353)] [data_t 0.289] [optim_t 0.208] [lr 0.004000] [pixel 9.067 (8.122)]
+2024-05-26 12:24:30,658 - ==> Total time: 0:13:15	 Eta: 0:35:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:39,832 - ==> Total time: 0:13:24	 Eta: 0:35:03 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:43,910 - Train: 27.78% [2250/8100]  [83.3/300.0] [batch_t 0.457 (0.389)] [data_t 0.251] [optim_t 0.207] [lr 0.004000] [pixel 7.795 (8.468)]
+2024-05-26 12:24:48,740 - ==> Total time: 0:13:33	 Eta: 0:34:51 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:24:57,213 - ==> Total time: 0:13:41	 Eta: 0:34:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:25:00,148 - Train: 28.40% [2300/8100]  [85.2/300.0] [batch_t 0.562 (0.470)] [data_t 0.418] [optim_t 0.144] [lr 0.004000] [pixel 7.755 (7.756)]
+2024-05-26 12:25:05,952 - ==> Total time: 0:13:50	 Eta: 0:34:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:25:15,153 - ==> Total time: 0:13:59	 Eta: 0:34:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:25:17,365 - Train: 29.01% [2350/8100]  [87.0/300.0] [batch_t 1.222 (1.222)] [data_t 1.056] [optim_t 0.166] [lr 0.004000] [pixel 7.566 (7.566)]
+2024-05-26 12:25:24,473 - ==> Total time: 0:14:09	 Eta: 0:34:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:25:32,447 - Train: 29.63% [2400/8100]  [88.9/300.0] [batch_t 0.198 (0.309)] [data_t 0.001] [optim_t 0.196] [lr 0.004000] [pixel 8.630 (7.833)]
+2024-05-26 12:25:33,329 - ==> Total time: 0:14:17	 Eta: 0:33:54 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:25:47,076 - Test: 100.00% [15/15] [batch_t 0.036 (0.316)] [pixel 18.465 (10.478)]
+2024-05-26 12:25:50,977 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.146 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.054 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-26 12:25:55,745 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.130 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-26 12:25:58,421 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.096 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.096 (mIoU_max_px)	
+2024-05-26 12:25:58,728 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-26 12:25:59,410 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.174 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 12:26:00,188 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.174 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.177 (mIoU_max_px)	
+2024-05-26 12:26:00,194 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     73.604      |  73.604 (90  epoch)   |    82.457    | 82.457 (90  epoch) |      79.646      |   79.646 (90  epoch)   |   87.786    | 88.613 (60  epoch) |   94.441    | 94.664 (60  epoch) |  9.245   | 9.262 (60  epoch)  |    19.334    | 19.513 (60  epoch) |        7.428         |     7.428 (90  epoch)      |        52.198         |     60.502 (30  epoch)      |         3.971         |      3.971 (90  epoch)      |    10.701     | 10.811 (60  epoch)  |
+| bracket_brown |     87.783      |  87.783 (90  epoch)   |    92.030    | 92.030 (90  epoch) |      90.385      |   90.385 (90  epoch)   |   94.530    | 94.530 (90  epoch) |   98.288    | 98.288 (90  epoch) |  18.346  | 18.346 (90  epoch) |    28.136    | 28.136 (90  epoch) |        11.525        |     11.525 (90  epoch)     |        43.747         |     61.362 (30  epoch)      |         6.423         |      6.423 (90  epoch)      |    16.371     | 16.371 (90  epoch)  |
+| bracket_white |     93.000      |  93.000 (90  epoch)   |    94.483    | 94.483 (90  epoch) |      88.136      |   88.136 (90  epoch)   |   94.710    | 94.710 (90  epoch) |   99.269    | 99.269 (90  epoch) |  7.301   | 7.301 (90  epoch)  |    12.933    | 12.933 (90  epoch) |        5.665         |     5.665 (90  epoch)      |        64.346         |     74.634 (30  epoch)      |         2.970         |      2.970 (90  epoch)      |     6.914     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch) |      96.552      |   96.552 (90  epoch)   |   97.058    | 97.058 (90  epoch) |   99.102    | 99.102 (90  epoch) |  59.074  | 60.828 (60  epoch) |    55.386    | 57.692 (60  epoch) |        29.142        |     29.142 (90  epoch)     |        68.632         |     74.493 (60  epoch)      |        18.480         |     18.480 (90  epoch)      |    38.299     | 40.540 (60  epoch)  |
+|  metal_plate  |     99.296      |  99.296 (90  epoch)   |    99.751    | 99.751 (90  epoch) |      97.183      |   97.222 (60  epoch)   |   94.006    | 94.006 (90  epoch) |   98.352    | 98.352 (90  epoch) |  86.098  | 86.098 (90  epoch) |    83.129    | 83.129 (90  epoch) |        47.618        |     47.982 (60  epoch)     |        53.955         |     60.192 (30  epoch)      |        36.078         |     36.078 (90  epoch)      |    71.129     | 71.129 (90  epoch)  |
+|     tubes     |     92.980      |  92.980 (90  epoch)   |    97.271    | 97.271 (90  epoch) |      90.769      |   91.304 (60  epoch)   |   93.969    | 93.969 (90  epoch) |   98.354    | 98.354 (90  epoch) |  61.291  | 61.291 (90  epoch) |    62.584    | 62.584 (90  epoch) |        29.912        |     29.912 (90  epoch)     |        69.723         |     73.000 (30  epoch)      |        19.446         |     19.446 (90  epoch)      |    45.543     | 45.543 (90  epoch)  |
+|      Avg      |     90.555      |  90.555 (90  epoch)   |    91.572    | 91.572 (90  epoch) |      90.445      |   90.445 (90  epoch)   |   93.676    | 93.676 (90  epoch) |   97.968    | 97.968 (90  epoch) |  40.226  | 40.226 (90  epoch) |    43.583    | 43.583 (90  epoch) |        21.882        |     21.882 (90  epoch)     |        58.767         |     66.602 (30  epoch)      |        14.561         |     14.561 (90  epoch)      |    31.493     | 31.493 (90  epoch)  |
+2024-05-26 12:26:00,276 - ==> Total time: 0:14:44	 Eta: 0:34:24 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:07,194 - Train: 30.25% [2450/8100]  [90.7/300.0] [batch_t 0.146 (0.305)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 7.820 (7.759)]
+2024-05-26 12:26:09,386 - ==> Total time: 0:14:54	 Eta: 0:34:13 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:18,023 - ==> Total time: 0:15:02	 Eta: 0:34:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:24,057 - Train: 30.86% [2500/8100]  [92.6/300.0] [batch_t 0.146 (0.327)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 7.553 (7.814)]
+2024-05-26 12:26:27,310 - ==> Total time: 0:15:11	 Eta: 0:33:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:36,165 - ==> Total time: 0:15:20	 Eta: 0:33:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:41,045 - Train: 31.48% [2550/8100]  [94.4/300.0] [batch_t 0.208 (0.342)] [data_t 0.002] [optim_t 0.206] [lr 0.004000] [pixel 8.528 (7.653)]
+2024-05-26 12:26:45,196 - ==> Total time: 0:15:29	 Eta: 0:33:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:54,176 - ==> Total time: 0:15:38	 Eta: 0:33:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:26:57,468 - Train: 32.10% [2600/8100]  [96.3/300.0] [batch_t 0.079 (0.322)] [data_t 0.002] [optim_t 0.077] [lr 0.004000] [pixel 7.768 (7.923)]
+2024-05-26 12:27:03,157 - ==> Total time: 0:15:47	 Eta: 0:33:03 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:12,386 - ==> Total time: 0:15:57	 Eta: 0:32:52 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:14,483 - Train: 32.72% [2650/8100]  [98.1/300.0] [batch_t 0.100 (0.373)] [data_t 0.002] [optim_t 0.099] [lr 0.004000] [pixel 7.380 (7.677)]
+2024-05-26 12:27:21,346 - ==> Total time: 0:16:05	 Eta: 0:32:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:30,272 - Train: 33.33% [2700/8100]  [100.0/300.0] [batch_t 0.202 (0.309)] [data_t 0.001] [optim_t 0.201] [lr 0.004000] [pixel 7.458 (7.427)]
+2024-05-26 12:27:30,275 - ==> Total time: 0:16:14	 Eta: 0:32:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:39,276 - ==> Total time: 0:16:23	 Eta: 0:32:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:47,085 - Train: 33.95% [2750/8100]  [101.9/300.0] [batch_t 0.204 (0.315)] [data_t 0.001] [optim_t 0.203] [lr 0.004000] [pixel 7.465 (7.487)]
+2024-05-26 12:27:48,170 - ==> Total time: 0:16:32	 Eta: 0:32:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:27:57,075 - ==> Total time: 0:16:41	 Eta: 0:31:55 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:03,620 - Train: 34.57% [2800/8100]  [103.7/300.0] [batch_t 0.211 (0.315)] [data_t 0.002] [optim_t 0.209] [lr 0.004000] [pixel 7.657 (7.190)]
+2024-05-26 12:28:05,929 - ==> Total time: 0:16:50	 Eta: 0:31:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:14,926 - ==> Total time: 0:16:59	 Eta: 0:31:33 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:20,387 - Train: 35.19% [2850/8100]  [105.6/300.0] [batch_t 0.152 (0.322)] [data_t 0.002] [optim_t 0.150] [lr 0.004000] [pixel 7.447 (7.331)]
+2024-05-26 12:28:23,878 - ==> Total time: 0:17:08	 Eta: 0:31:22 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:32,821 - ==> Total time: 0:17:17	 Eta: 0:31:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:37,342 - Train: 35.80% [2900/8100]  [107.4/300.0] [batch_t 0.148 (0.350)] [data_t 0.002] [optim_t 0.147] [lr 0.004000] [pixel 6.603 (7.106)]
+2024-05-26 12:28:41,770 - ==> Total time: 0:17:26	 Eta: 0:31:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:50,823 - ==> Total time: 0:17:35	 Eta: 0:30:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:28:54,223 - Train: 36.42% [2950/8100]  [109.3/300.0] [batch_t 0.212 (0.394)] [data_t 0.002] [optim_t 0.210] [lr 0.004000] [pixel 7.497 (6.859)]
+2024-05-26 12:28:59,811 - ==> Total time: 0:17:44	 Eta: 0:30:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:08,701 - ==> Total time: 0:17:53	 Eta: 0:30:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:10,935 - Train: 37.04% [3000/8100]  [111.1/300.0] [batch_t 0.215 (0.557)] [data_t 0.002] [optim_t 0.214] [lr 0.004000] [pixel 6.805 (6.832)]
+2024-05-26 12:29:17,574 - ==> Total time: 0:18:02	 Eta: 0:30:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:26,327 - Train: 37.65% [3050/8100]  [113.0/300.0] [batch_t 0.221 (0.316)] [data_t 0.002] [optim_t 0.219] [lr 0.004000] [pixel 7.006 (7.078)]
+2024-05-26 12:29:26,529 - ==> Total time: 0:18:11	 Eta: 0:30:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:35,389 - ==> Total time: 0:18:20	 Eta: 0:29:54 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:43,025 - Train: 38.27% [3100/8100]  [114.8/300.0] [batch_t 0.125 (0.317)] [data_t 0.001] [optim_t 0.123] [lr 0.004000] [pixel 6.789 (6.882)]
+2024-05-26 12:29:44,228 - ==> Total time: 0:18:28	 Eta: 0:29:43 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:52,774 - ==> Total time: 0:18:37	 Eta: 0:29:32 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:29:59,110 - Train: 38.89% [3150/8100]  [116.7/300.0] [batch_t 0.168 (0.323)] [data_t 0.002] [optim_t 0.166] [lr 0.004000] [pixel 7.266 (6.826)]
+2024-05-26 12:30:01,645 - ==> Total time: 0:18:46	 Eta: 0:29:21 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:30:10,051 - ==> Total time: 0:18:54	 Eta: 0:29:10 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:30:15,663 - Train: 39.51% [3200/8100]  [118.5/300.0] [batch_t 0.207 (0.342)] [data_t 0.002] [optim_t 0.206] [lr 0.004000] [pixel 6.599 (7.033)]
+2024-05-26 12:30:19,217 - ==> Total time: 0:19:03	 Eta: 0:28:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:30:33,169 - Test: 100.00% [15/15] [batch_t 0.061 (0.328)] [pixel 18.546 (10.183)]
+2024-05-26 12:30:37,260 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.127 (mIoU_max_px)	
+2024-05-26 12:30:42,018 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.048 (mIoU_px_0.2_0.8_0.1)	  0.139 (mIoU_max_px)	
+2024-05-26 12:30:43,210 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.103 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.037 (mIoU_px_0.2_0.8_0.1)	  0.101 (mIoU_max_px)	
+2024-05-26 12:30:43,485 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.025 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 12:30:44,161 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 12:30:44,935 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.176 (mIoU_max_px)	
+2024-05-26 12:30:44,940 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     73.471      |  73.604 (90  epoch)   |    83.603    | 83.603 (120 epoch) |      78.333      |   79.646 (90  epoch)   |   88.133    | 88.613 (60  epoch) |   94.472    | 94.664 (60  epoch) |  9.454   | 9.454 (120 epoch)  |    19.577    | 19.577 (120 epoch) |        7.782         |     7.782 (120 epoch)      |        52.154         |     60.502 (30  epoch)      |         4.170         |      4.170 (120 epoch)      |    10.851     | 10.851 (120 epoch)  |
+| bracket_brown |     91.176      |  91.176 (120 epoch)   |    94.733    | 94.733 (120 epoch) |      91.892      |   91.892 (120 epoch)   |   94.715    | 94.715 (120 epoch) |   98.385    | 98.385 (120 epoch) |  18.683  | 18.683 (120 epoch) |    28.990    | 28.990 (120 epoch) |        12.648        |     12.648 (120 epoch)     |        48.313         |     61.362 (30  epoch)      |         7.079         |      7.079 (120 epoch)      |    16.952     | 16.952 (120 epoch)  |
+| bracket_white |     95.889      |  95.889 (120 epoch)   |    96.705    | 96.705 (120 epoch) |      90.909      |   90.909 (120 epoch)   |   95.123    | 95.123 (120 epoch) |   99.346    | 99.346 (120 epoch) |  8.168   | 8.168 (120 epoch)  |    12.400    | 12.933 (90  epoch) |        6.198         |     6.198 (120 epoch)      |        65.594         |     74.634 (30  epoch)      |         3.260         |      3.260 (120 epoch)      |     6.610     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch) |      96.552      |   96.552 (90  epoch)   |   97.489    | 97.489 (120 epoch) |   99.236    | 99.236 (120 epoch) |  62.061  | 62.061 (120 epoch) |    57.671    | 57.692 (60  epoch) |        31.719        |     31.719 (120 epoch)     |        70.880         |     74.493 (60  epoch)      |        20.485         |     20.485 (120 epoch)      |    40.520     | 40.540 (60  epoch)  |
+|  metal_plate  |     99.946      |  99.946 (120 epoch)   |    99.980    | 99.980 (120 epoch) |      99.301      |   99.301 (120 epoch)   |   94.572    | 94.572 (120 epoch) |   98.604    | 98.604 (120 epoch) |  88.678  | 88.678 (120 epoch) |    84.661    | 84.661 (120 epoch) |        51.170        |     51.170 (120 epoch)     |        56.445         |     60.192 (30  epoch)      |        39.424         |     39.424 (120 epoch)      |    73.403     | 73.403 (120 epoch)  |
+|     tubes     |     92.391      |  92.980 (90  epoch)   |    97.107    | 97.271 (90  epoch) |      91.729      |   91.729 (120 epoch)   |   94.811    | 94.811 (120 epoch) |   98.558    | 98.558 (120 epoch) |  62.443  | 62.443 (120 epoch) |    63.463    | 63.463 (120 epoch) |        30.575        |     30.575 (120 epoch)     |        68.975         |     73.000 (30  epoch)      |        19.957         |     19.957 (120 epoch)      |    46.481     | 46.481 (120 epoch)  |
+|      Avg      |     91.590      |  91.590 (120 epoch)   |    92.595    | 92.595 (120 epoch) |      91.453      |   91.453 (120 epoch)   |   94.141    | 94.141 (120 epoch) |   98.100    | 98.100 (120 epoch) |  41.581  | 41.581 (120 epoch) |    44.461    | 44.461 (120 epoch) |        23.349        |     23.349 (120 epoch)     |        60.393         |     66.602 (30  epoch)      |        15.729         |     15.729 (120 epoch)      |    32.469     | 32.469 (120 epoch)  |
+2024-05-26 12:30:45,022 - ==> Total time: 0:19:29	 Eta: 0:29:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:30:49,492 - Train: 40.12% [3250/8100]  [120.4/300.0] [batch_t 0.220 (0.370)] [data_t 0.002] [optim_t 0.219] [lr 0.004000] [pixel 6.658 (6.703)]
+2024-05-26 12:30:54,132 - ==> Total time: 0:19:38	 Eta: 0:29:03 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:02,784 - ==> Total time: 0:19:47	 Eta: 0:28:52 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:06,169 - Train: 40.74% [3300/8100]  [122.2/300.0] [batch_t 0.210 (0.425)] [data_t 0.002] [optim_t 0.209] [lr 0.004000] [pixel 6.374 (6.559)]
+2024-05-26 12:31:11,938 - ==> Total time: 0:19:56	 Eta: 0:28:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:20,882 - ==> Total time: 0:20:05	 Eta: 0:28:31 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:22,819 - Train: 41.36% [3350/8100]  [124.1/300.0] [batch_t 0.139 (0.629)] [data_t 0.002] [optim_t 0.138] [lr 0.004000] [pixel 6.749 (6.759)]
+2024-05-26 12:31:29,836 - ==> Total time: 0:20:14	 Eta: 0:28:20 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:38,344 - Train: 41.98% [3400/8100]  [125.9/300.0] [batch_t 0.444 (0.311)] [data_t 0.274] [optim_t 0.171] [lr 0.004000] [pixel 6.729 (6.764)]
+2024-05-26 12:31:38,781 - ==> Total time: 0:20:23	 Eta: 0:28:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:47,895 - ==> Total time: 0:20:32	 Eta: 0:27:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:31:55,495 - Train: 42.59% [3450/8100]  [127.8/300.0] [batch_t 0.474 (0.319)] [data_t 0.307] [optim_t 0.167] [lr 0.004000] [pixel 6.170 (6.686)]
+2024-05-26 12:31:57,024 - ==> Total time: 0:20:41	 Eta: 0:27:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:05,871 - ==> Total time: 0:20:50	 Eta: 0:27:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:12,291 - Train: 43.21% [3500/8100]  [129.6/300.0] [batch_t 0.475 (0.330)] [data_t 0.272] [optim_t 0.203] [lr 0.004000] [pixel 7.405 (6.539)]
+2024-05-26 12:32:14,935 - ==> Total time: 0:20:59	 Eta: 0:27:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:23,795 - ==> Total time: 0:21:08	 Eta: 0:27:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:29,039 - Train: 43.83% [3550/8100]  [131.5/300.0] [batch_t 0.558 (0.354)] [data_t 0.343] [optim_t 0.215] [lr 0.004000] [pixel 6.818 (6.690)]
+2024-05-26 12:32:32,750 - ==> Total time: 0:21:17	 Eta: 0:27:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:41,763 - ==> Total time: 0:21:26	 Eta: 0:26:55 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:45,819 - Train: 44.44% [3600/8100]  [133.3/300.0] [batch_t 0.660 (0.387)] [data_t 0.476] [optim_t 0.185] [lr 0.004000] [pixel 7.087 (6.729)]
+2024-05-26 12:32:50,630 - ==> Total time: 0:21:35	 Eta: 0:26:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:32:59,545 - ==> Total time: 0:21:44	 Eta: 0:26:34 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:02,504 - Train: 45.06% [3650/8100]  [135.2/300.0] [batch_t 0.447 (0.462)] [data_t 0.303] [optim_t 0.144] [lr 0.004000] [pixel 5.966 (6.045)]
+2024-05-26 12:33:08,453 - ==> Total time: 0:21:53	 Eta: 0:26:23 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:17,348 - ==> Total time: 0:22:01	 Eta: 0:26:12 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:19,225 - Train: 45.68% [3700/8100]  [137.0/300.0] [batch_t 1.260 (1.260)] [data_t 1.075] [optim_t 0.184] [lr 0.004000] [pixel 6.292 (6.292)]
+2024-05-26 12:33:26,298 - ==> Total time: 0:22:10	 Eta: 0:26:02 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:34,455 - Train: 46.30% [3750/8100]  [138.9/300.0] [batch_t 0.204 (0.313)] [data_t 0.001] [optim_t 0.203] [lr 0.004000] [pixel 7.115 (6.439)]
+2024-05-26 12:33:35,352 - ==> Total time: 0:22:19	 Eta: 0:25:52 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:44,183 - ==> Total time: 0:22:28	 Eta: 0:25:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:33:50,842 - Train: 46.91% [3800/8100]  [140.7/300.0] [batch_t 0.143 (0.297)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 6.012 (6.488)]
+2024-05-26 12:33:53,347 - ==> Total time: 0:22:37	 Eta: 0:25:31 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:02,284 - ==> Total time: 0:22:46	 Eta: 0:25:20 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:08,121 - Train: 47.53% [3850/8100]  [142.6/300.0] [batch_t 0.109 (0.298)] [data_t 0.002] [optim_t 0.107] [lr 0.004000] [pixel 6.576 (6.463)]
+2024-05-26 12:34:11,628 - ==> Total time: 0:22:56	 Eta: 0:25:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:20,365 - ==> Total time: 0:23:05	 Eta: 0:25:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:24,803 - Train: 48.15% [3900/8100]  [144.4/300.0] [batch_t 0.148 (0.321)] [data_t 0.002] [optim_t 0.147] [lr 0.004000] [pixel 6.585 (6.460)]
+2024-05-26 12:34:29,055 - ==> Total time: 0:23:13	 Eta: 0:24:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:37,952 - ==> Total time: 0:23:22	 Eta: 0:24:39 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:41,164 - Train: 48.77% [3950/8100]  [146.3/300.0] [batch_t 0.070 (0.323)] [data_t 0.002] [optim_t 0.068] [lr 0.004000] [pixel 6.220 (6.568)]
+2024-05-26 12:34:46,932 - ==> Total time: 0:23:31	 Eta: 0:24:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:55,992 - ==> Total time: 0:23:40	 Eta: 0:24:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:34:57,973 - Train: 49.38% [4000/8100]  [148.1/300.0] [batch_t 0.067 (0.367)] [data_t 0.002] [optim_t 0.066] [lr 0.004000] [pixel 6.128 (6.548)]
+2024-05-26 12:35:04,824 - ==> Total time: 0:23:49	 Eta: 0:24:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:35:13,905 - Train: 50.00% [4050/8100]  [150.0/300.0] [batch_t 0.202 (0.314)] [data_t 0.001] [optim_t 0.201] [lr 0.004000] [pixel 5.951 (6.209)]
+2024-05-26 12:35:18,915 - Test: 100.00% [15/15] [batch_t 0.067 (0.326)] [pixel 18.569 (9.666)]
+2024-05-26 12:35:23,461 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.155 (mIoU_max_px)	
+2024-05-26 12:35:28,027 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.048 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:35:30,241 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.095 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.096 (mIoU_max_px)	
+2024-05-26 12:35:30,517 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 12:35:31,277 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.171 (mIoU_max_px)	
+2024-05-26 12:35:31,974 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.177 (mIoU_max_px)	
+2024-05-26 12:35:31,980 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     79.521      |  79.521 (150 epoch)   |    86.306    | 86.306 (150 epoch) |      80.357      |   80.357 (150 epoch)   |   89.772    | 89.772 (150 epoch) |   95.393    | 95.393 (150 epoch) |  11.019  | 11.019 (150 epoch) |    20.021    | 20.021 (150 epoch) |        8.705         |     8.705 (150 epoch)      |        51.399         |     60.502 (30  epoch)      |         4.681         |      4.681 (150 epoch)      |    11.124     | 11.124 (150 epoch)  |
+| bracket_brown |     90.875      |  91.176 (120 epoch)   |    94.347    | 94.733 (120 epoch) |      92.727      |   92.727 (150 epoch)   |   94.385    | 94.715 (120 epoch) |   98.331    | 98.385 (120 epoch) |  19.836  | 19.836 (150 epoch) |    30.032    | 30.032 (150 epoch) |        14.347        |     14.347 (150 epoch)     |        50.841         |     61.362 (30  epoch)      |         8.047         |      8.047 (150 epoch)      |    17.669     | 17.669 (150 epoch)  |
+| bracket_white |     95.667      |  95.889 (120 epoch)   |    96.426    | 96.705 (120 epoch) |      89.286      |   90.909 (120 epoch)   |   94.645    | 95.123 (120 epoch) |   99.317    | 99.346 (120 epoch) |  8.399   | 8.399 (150 epoch)  |    12.907    | 12.933 (90  epoch) |        6.697         |     6.697 (150 epoch)      |        62.066         |     74.634 (30  epoch)      |         3.526         |      3.526 (150 epoch)      |     6.899     |  6.914 (90  epoch)  |
+|   connector   |     96.429      |  97.143 (60  epoch)   |    83.025    | 92.687 (60  epoch) |      93.333      |   96.552 (90  epoch)   |   97.871    | 97.871 (150 epoch) |   99.351    | 99.351 (150 epoch) |  64.205  | 64.205 (150 epoch) |    58.974    | 58.974 (150 epoch) |        32.569        |     32.569 (150 epoch)     |        66.157         |     74.493 (60  epoch)      |        21.094         |     21.094 (150 epoch)      |    41.817     | 41.817 (150 epoch)  |
+|  metal_plate  |     99.837      |  99.946 (120 epoch)   |    99.942    | 99.980 (120 epoch) |      98.611      |   99.301 (120 epoch)   |   94.284    | 94.572 (120 epoch) |   98.456    | 98.604 (120 epoch) |  87.098  | 88.678 (120 epoch) |    83.732    | 84.661 (120 epoch) |        50.181        |     51.170 (120 epoch)     |        55.462         |     60.192 (30  epoch)      |        38.425         |     39.424 (120 epoch)      |    72.016     | 73.403 (120 epoch)  |
+|     tubes     |     91.667      |  92.980 (90  epoch)   |    96.961    | 97.271 (90  epoch) |      92.188      |   92.188 (150 epoch)   |   94.373    | 94.811 (120 epoch) |   98.433    | 98.558 (120 epoch) |  61.975  | 62.443 (120 epoch) |    63.340    | 63.463 (120 epoch) |        30.549        |     30.575 (120 epoch)     |        68.778         |     73.000 (30  epoch)      |        19.940         |     19.957 (120 epoch)      |    46.349     | 46.481 (120 epoch)  |
+|      Avg      |     92.333      |  92.333 (150 epoch)   |    92.834    | 92.834 (150 epoch) |      91.084      |   91.453 (120 epoch)   |   94.222    | 94.222 (150 epoch) |   98.214    | 98.214 (150 epoch) |  42.089  | 42.089 (150 epoch) |    44.834    | 44.834 (150 epoch) |        23.841        |     23.841 (150 epoch)     |        59.117         |     66.602 (30  epoch)      |        15.952         |     15.952 (150 epoch)      |    32.646     | 32.646 (150 epoch)  |
+2024-05-26 12:35:32,059 - ==> Total time: 0:24:16	 Eta: 0:24:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:35:40,983 - ==> Total time: 0:24:25	 Eta: 0:24:06 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:35:48,858 - Train: 50.62% [4100/8100]  [151.9/300.0] [batch_t 0.203 (0.315)] [data_t 0.002] [optim_t 0.201] [lr 0.004000] [pixel 5.810 (6.267)]
+2024-05-26 12:35:49,568 - ==> Total time: 0:24:34	 Eta: 0:23:55 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:35:58,498 - ==> Total time: 0:24:43	 Eta: 0:23:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:05,181 - Train: 51.23% [4150/8100]  [153.7/300.0] [batch_t 0.204 (0.320)] [data_t 0.002] [optim_t 0.202] [lr 0.004000] [pixel 6.815 (6.192)]
+2024-05-26 12:36:07,188 - ==> Total time: 0:24:51	 Eta: 0:23:34 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:15,840 - ==> Total time: 0:25:00	 Eta: 0:23:23 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:21,457 - Train: 51.85% [4200/8100]  [155.6/300.0] [batch_t 0.201 (0.333)] [data_t 0.002] [optim_t 0.200] [lr 0.004000] [pixel 6.139 (6.086)]
+2024-05-26 12:36:24,628 - ==> Total time: 0:25:09	 Eta: 0:23:13 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:33,376 - ==> Total time: 0:25:18	 Eta: 0:23:02 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:37,882 - Train: 52.47% [4250/8100]  [157.4/300.0] [batch_t 0.205 (0.356)] [data_t 0.002] [optim_t 0.204] [lr 0.004000] [pixel 5.874 (5.992)]
+2024-05-26 12:36:42,135 - ==> Total time: 0:25:26	 Eta: 0:22:52 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:50,892 - ==> Total time: 0:25:35	 Eta: 0:22:41 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:36:54,292 - Train: 53.09% [4300/8100]  [159.3/300.0] [batch_t 0.203 (0.404)] [data_t 0.002] [optim_t 0.201] [lr 0.004000] [pixel 6.164 (5.985)]
+2024-05-26 12:36:59,768 - ==> Total time: 0:25:44	 Eta: 0:22:31 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:08,508 - ==> Total time: 0:25:53	 Eta: 0:22:20 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:10,862 - Train: 53.70% [4350/8100]  [161.1/300.0] [batch_t 0.201 (0.568)] [data_t 0.002] [optim_t 0.200] [lr 0.004000] [pixel 5.588 (5.909)]
+2024-05-26 12:37:17,289 - ==> Total time: 0:26:01	 Eta: 0:22:10 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:25,904 - Train: 54.32% [4400/8100]  [163.0/300.0] [batch_t 0.146 (0.309)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 6.011 (6.058)]
+2024-05-26 12:37:26,054 - ==> Total time: 0:26:10	 Eta: 0:22:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:34,862 - ==> Total time: 0:26:19	 Eta: 0:21:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:42,332 - Train: 54.94% [4450/8100]  [164.8/300.0] [batch_t 0.132 (0.312)] [data_t 0.001] [optim_t 0.131] [lr 0.004000] [pixel 6.536 (6.059)]
+2024-05-26 12:37:43,650 - ==> Total time: 0:26:28	 Eta: 0:21:39 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:52,472 - ==> Total time: 0:26:37	 Eta: 0:21:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:37:58,838 - Train: 55.56% [4500/8100]  [166.7/300.0] [batch_t 0.134 (0.319)] [data_t 0.002] [optim_t 0.133] [lr 0.004000] [pixel 5.546 (5.989)]
+2024-05-26 12:38:01,018 - ==> Total time: 0:26:45	 Eta: 0:21:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:09,933 - ==> Total time: 0:26:54	 Eta: 0:21:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:15,359 - Train: 56.17% [4550/8100]  [168.5/300.0] [batch_t 0.223 (0.347)] [data_t 0.002] [optim_t 0.221] [lr 0.004000] [pixel 5.774 (5.879)]
+2024-05-26 12:38:18,447 - ==> Total time: 0:27:03	 Eta: 0:20:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:27,241 - ==> Total time: 0:27:11	 Eta: 0:20:47 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:31,575 - Train: 56.79% [4600/8100]  [170.4/300.0] [batch_t 0.204 (0.372)] [data_t 0.002] [optim_t 0.202] [lr 0.004000] [pixel 5.913 (6.010)]
+2024-05-26 12:38:36,004 - ==> Total time: 0:27:20	 Eta: 0:20:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:44,847 - ==> Total time: 0:27:29	 Eta: 0:20:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:38:48,066 - Train: 57.41% [4650/8100]  [172.2/300.0] [batch_t 0.201 (0.438)] [data_t 0.002] [optim_t 0.199] [lr 0.004000] [pixel 6.226 (5.737)]
+2024-05-26 12:38:53,691 - ==> Total time: 0:27:38	 Eta: 0:20:17 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:02,372 - ==> Total time: 0:27:47	 Eta: 0:20:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:04,327 - Train: 58.02% [4700/8100]  [174.1/300.0] [batch_t 0.067 (0.616)] [data_t 0.002] [optim_t 0.066] [lr 0.004000] [pixel 5.840 (5.640)]
+2024-05-26 12:39:11,365 - ==> Total time: 0:27:56	 Eta: 0:19:57 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:19,811 - Train: 58.64% [4750/8100]  [175.9/300.0] [batch_t 0.487 (0.314)] [data_t 0.294] [optim_t 0.193] [lr 0.004000] [pixel 5.836 (5.824)]
+2024-05-26 12:39:20,240 - ==> Total time: 0:28:04	 Eta: 0:19:47 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:29,185 - ==> Total time: 0:28:13	 Eta: 0:19:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:36,555 - Train: 59.26% [4800/8100]  [177.8/300.0] [batch_t 0.483 (0.322)] [data_t 0.277] [optim_t 0.206] [lr 0.004000] [pixel 6.089 (5.821)]
+2024-05-26 12:39:38,067 - ==> Total time: 0:28:22	 Eta: 0:19:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:46,942 - ==> Total time: 0:28:31	 Eta: 0:19:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:39:53,476 - Train: 59.88% [4850/8100]  [179.6/300.0] [batch_t 0.537 (0.337)] [data_t 0.321] [optim_t 0.216] [lr 0.004000] [pixel 6.100 (5.808)]
+2024-05-26 12:40:01,011 - Test: 100.00% [15/15] [batch_t 0.035 (0.318)] [pixel 18.782 (9.633)]
+2024-05-26 12:40:01,647 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-26 12:40:02,205 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.125 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.124 (mIoU_max_px)	
+2024-05-26 12:40:05,424 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.097 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.097 (mIoU_max_px)	
+2024-05-26 12:40:07,058 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.025 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-26 12:40:12,375 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.161 (mIoU_max_px)	
+2024-05-26 12:40:14,632 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.170 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.170 (mIoU_max_px)	
+2024-05-26 12:40:14,637 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     81.582      |  81.582 (180 epoch)   |    87.501    | 87.501 (180 epoch)  |      81.818      |   81.818 (180 epoch)   |   89.603    | 89.772 (150 epoch) |   95.276    | 95.393 (150 epoch) |  7.797   | 11.019 (150 epoch) |    16.874    | 20.021 (150 epoch) |        7.539         |     8.705 (150 epoch)      |        49.794         |     60.502 (30  epoch)      |         4.004         |      4.681 (150 epoch)      |     9.215     | 11.124 (150 epoch)  |
+| bracket_brown |     91.931      |  91.931 (180 epoch)   |    94.761    | 94.761 (180 epoch)  |      92.727      |   92.727 (150 epoch)   |   94.336    | 94.715 (120 epoch) |   98.195    | 98.385 (120 epoch) |  18.979  | 19.836 (150 epoch) |    29.319    | 30.032 (150 epoch) |        13.788        |     14.347 (150 epoch)     |        51.696         |     61.362 (30  epoch)      |         7.705         |      8.047 (150 epoch)      |    17.178     | 17.669 (150 epoch)  |
+| bracket_white |     95.222      |  95.889 (120 epoch)   |    96.127    | 96.705 (120 epoch)  |      88.889      |   90.909 (120 epoch)   |   95.200    | 95.200 (180 epoch) |   99.253    | 99.346 (120 epoch) |  6.377   | 8.399 (150 epoch)  |    11.229    | 12.933 (90  epoch) |        5.649         |     6.697 (150 epoch)      |        63.877         |     74.634 (30  epoch)      |         2.953         |      3.526 (150 epoch)      |     5.949     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch)  |      96.552      |   96.552 (90  epoch)   |   97.869    | 97.871 (150 epoch) |   99.352    | 99.352 (180 epoch) |  64.027  | 64.205 (150 epoch) |    60.180    | 60.180 (180 epoch) |        33.207        |     33.207 (180 epoch)     |        68.294         |     74.493 (60  epoch)      |        21.569         |     21.569 (180 epoch)      |    43.041     | 43.041 (180 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (180 epoch)  |   100.000    | 100.000 (180 epoch) |     100.000      |  100.000 (180 epoch)   |   94.636    | 94.636 (180 epoch) |   98.619    | 98.619 (180 epoch) |  88.855  | 88.855 (180 epoch) |    84.446    | 84.661 (120 epoch) |        52.804        |     52.804 (180 epoch)     |        58.021         |     60.192 (30  epoch)      |        40.722         |     40.722 (180 epoch)      |    73.079     | 73.403 (120 epoch)  |
+|     tubes     |     92.754      |  92.980 (90  epoch)   |    97.374    | 97.374 (180 epoch)  |      93.939      |   93.939 (180 epoch)   |   94.618    | 94.811 (120 epoch) |   98.467    | 98.558 (120 epoch) |  62.212  | 62.443 (120 epoch) |    62.948    | 63.463 (120 epoch) |        30.613        |     30.613 (180 epoch)     |        68.883         |     73.000 (30  epoch)      |        19.980         |     19.980 (180 epoch)      |    45.930     | 46.481 (120 epoch)  |
+|      Avg      |     93.026      |  93.026 (180 epoch)   |    93.201    | 93.201 (180 epoch)  |      92.321      |   92.321 (180 epoch)   |   94.377    | 94.377 (180 epoch) |   98.193    | 98.214 (150 epoch) |  41.375  | 42.089 (150 epoch) |    44.166    | 44.834 (150 epoch) |        23.933        |     23.933 (180 epoch)     |        60.094         |     66.602 (30  epoch)      |        16.155         |     16.155 (180 epoch)      |    32.398     | 32.646 (150 epoch)  |
+2024-05-26 12:40:14,720 - ==> Total time: 0:28:59	 Eta: 0:19:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:40:23,590 - ==> Total time: 0:29:08	 Eta: 0:19:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:40:28,747 - Train: 60.49% [4900/8100]  [181.5/300.0] [batch_t 0.503 (0.355)] [data_t 0.322] [optim_t 0.181] [lr 0.004000] [pixel 5.529 (5.619)]
+2024-05-26 12:40:32,327 - ==> Total time: 0:29:16	 Eta: 0:18:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:40:41,093 - ==> Total time: 0:29:25	 Eta: 0:18:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:40:45,250 - Train: 61.11% [4950/8100]  [183.3/300.0] [batch_t 0.491 (0.392)] [data_t 0.274] [optim_t 0.217] [lr 0.004000] [pixel 5.864 (5.863)]
+2024-05-26 12:40:49,882 - ==> Total time: 0:29:34	 Eta: 0:18:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:40:58,701 - ==> Total time: 0:29:43	 Eta: 0:18:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:01,644 - Train: 61.73% [5000/8100]  [185.2/300.0] [batch_t 0.484 (0.477)] [data_t 0.312] [optim_t 0.173] [lr 0.004000] [pixel 5.477 (5.523)]
+2024-05-26 12:41:07,569 - ==> Total time: 0:29:52	 Eta: 0:18:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:16,383 - ==> Total time: 0:30:01	 Eta: 0:18:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:18,180 - Train: 62.35% [5050/8100]  [187.0/300.0] [batch_t 1.267 (1.267)] [data_t 1.077] [optim_t 0.189] [lr 0.004000] [pixel 5.706 (5.706)]
+2024-05-26 12:41:25,374 - ==> Total time: 0:30:10	 Eta: 0:17:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:33,227 - Train: 62.96% [5100/8100]  [188.9/300.0] [batch_t 0.145 (0.300)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 5.953 (5.792)]
+2024-05-26 12:41:34,331 - ==> Total time: 0:30:18	 Eta: 0:17:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:43,201 - ==> Total time: 0:30:27	 Eta: 0:17:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:41:50,026 - Train: 63.58% [5150/8100]  [190.7/300.0] [batch_t 0.148 (0.310)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 5.543 (5.721)]
+2024-05-26 12:41:52,224 - ==> Total time: 0:30:36	 Eta: 0:17:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:01,069 - ==> Total time: 0:30:45	 Eta: 0:17:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:06,428 - Train: 64.20% [5200/8100]  [192.6/300.0] [batch_t 0.090 (0.299)] [data_t 0.002] [optim_t 0.089] [lr 0.004000] [pixel 5.843 (5.580)]
+2024-05-26 12:42:09,967 - ==> Total time: 0:30:54	 Eta: 0:17:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:18,866 - ==> Total time: 0:31:03	 Eta: 0:16:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:23,171 - Train: 64.81% [5250/8100]  [194.4/300.0] [batch_t 0.119 (0.310)] [data_t 0.002] [optim_t 0.117] [lr 0.004000] [pixel 5.933 (5.717)]
+2024-05-26 12:42:27,749 - ==> Total time: 0:31:12	 Eta: 0:16:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:36,686 - ==> Total time: 0:31:21	 Eta: 0:16:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:40,210 - Train: 65.43% [5300/8100]  [196.3/300.0] [batch_t 0.122 (0.366)] [data_t 0.002] [optim_t 0.120] [lr 0.004000] [pixel 5.190 (5.391)]
+2024-05-26 12:42:45,569 - ==> Total time: 0:31:30	 Eta: 0:16:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:54,646 - ==> Total time: 0:31:39	 Eta: 0:16:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:42:57,182 - Train: 66.05% [5350/8100]  [198.1/300.0] [batch_t 0.204 (0.487)] [data_t 0.002] [optim_t 0.203] [lr 0.004000] [pixel 6.099 (5.628)]
+2024-05-26 12:43:03,644 - ==> Total time: 0:31:48	 Eta: 0:16:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:12,999 - Train: 66.67% [5400/8100]  [200.0/300.0] [batch_t 0.201 (0.310)] [data_t 0.001] [optim_t 0.200] [lr 0.004000] [pixel 5.471 (5.560)]
+2024-05-26 12:43:13,001 - ==> Total time: 0:31:57	 Eta: 0:15:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:21,928 - ==> Total time: 0:32:06	 Eta: 0:15:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:29,658 - Train: 67.28% [5450/8100]  [201.9/300.0] [batch_t 0.172 (0.311)] [data_t 0.001] [optim_t 0.170] [lr 0.004000] [pixel 6.083 (5.620)]
+2024-05-26 12:43:30,691 - ==> Total time: 0:32:15	 Eta: 0:15:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:39,383 - ==> Total time: 0:32:24	 Eta: 0:15:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:46,231 - Train: 67.90% [5500/8100]  [203.7/300.0] [batch_t 0.200 (0.326)] [data_t 0.002] [optim_t 0.198] [lr 0.004000] [pixel 5.268 (5.546)]
+2024-05-26 12:43:48,448 - ==> Total time: 0:32:33	 Eta: 0:15:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:43:57,401 - ==> Total time: 0:32:42	 Eta: 0:15:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:44:03,220 - Train: 68.52% [5550/8100]  [205.6/300.0] [batch_t 0.196 (0.338)] [data_t 0.002] [optim_t 0.194] [lr 0.004000] [pixel 5.574 (5.618)]
+2024-05-26 12:44:06,552 - ==> Total time: 0:32:51	 Eta: 0:14:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:44:15,485 - ==> Total time: 0:33:00	 Eta: 0:14:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:44:19,945 - Train: 69.14% [5600/8100]  [207.4/300.0] [batch_t 0.205 (0.355)] [data_t 0.002] [optim_t 0.204] [lr 0.004000] [pixel 5.423 (5.647)]
+2024-05-26 12:44:24,419 - ==> Total time: 0:33:09	 Eta: 0:14:39 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:44:33,334 - ==> Total time: 0:33:17	 Eta: 0:14:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:44:36,715 - Train: 69.75% [5650/8100]  [209.3/300.0] [batch_t 0.200 (0.403)] [data_t 0.002] [optim_t 0.198] [lr 0.004000] [pixel 5.619 (5.530)]
+2024-05-26 12:44:47,086 - Test: 100.00% [15/15] [batch_t 0.036 (0.317)] [pixel 18.622 (9.425)]
+2024-05-26 12:44:47,721 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-26 12:44:52,319 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.130 (mF1_max_px)	  0.047 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:44:55,302 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.095 (mF1_max_px)	  0.036 (mF1_px_0.2_0.8_0.1)	  0.035 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.096 (mIoU_max_px)	
+2024-05-26 12:44:57,298 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.066 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 12:44:59,808 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-26 12:45:00,498 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.174 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.177 (mIoU_max_px)	
+2024-05-26 12:45:00,503 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     80.785      |  81.582 (180 epoch)   |    87.768    | 87.768 (210 epoch)  |      81.034      |   81.818 (180 epoch)   |   89.570    | 89.772 (150 epoch) |   95.234    | 95.393 (150 epoch) |  9.363   | 11.019 (150 epoch) |    19.007    | 20.021 (150 epoch) |        8.087         |     8.705 (150 epoch)      |        52.144         |     60.502 (30  epoch)      |         4.317         |      4.681 (150 epoch)      |    10.501     | 11.124 (150 epoch)  |
+| bracket_brown |     92.006      |  92.006 (210 epoch)   |    95.183    | 95.183 (210 epoch)  |      91.743      |   92.727 (150 epoch)   |   94.719    | 94.719 (210 epoch) |   98.425    | 98.425 (210 epoch) |  20.529  | 20.529 (210 epoch) |    30.201    | 30.201 (210 epoch) |        15.202        |     15.202 (210 epoch)     |        54.232         |     61.362 (30  epoch)      |         8.557         |      8.557 (210 epoch)      |    17.787     | 17.787 (210 epoch)  |
+| bracket_white |     94.889      |  95.889 (120 epoch)   |    96.310    | 96.705 (120 epoch)  |      89.655      |   90.909 (120 epoch)   |   95.144    | 95.200 (180 epoch) |   99.400    | 99.400 (210 epoch) |  7.310   | 8.399 (150 epoch)  |    12.021    | 12.933 (90  epoch) |        6.159         |     6.697 (150 epoch)      |        63.917         |     74.634 (30  epoch)      |         3.227         |      3.526 (150 epoch)      |     6.395     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch)  |      96.552      |   96.552 (90  epoch)   |   97.901    | 97.901 (210 epoch) |   99.359    | 99.359 (210 epoch) |  62.877  | 64.205 (150 epoch) |    58.618    | 60.180 (180 epoch) |        33.078        |     33.207 (180 epoch)     |        66.297         |     74.493 (60  epoch)      |        21.433         |     21.569 (180 epoch)      |    41.461     | 43.041 (180 epoch)  |
+|  metal_plate  |     99.892      |  100.000 (180 epoch)  |    99.961    | 100.000 (180 epoch) |      99.291      |  100.000 (180 epoch)   |   94.674    | 94.674 (210 epoch) |   98.607    | 98.619 (180 epoch) |  88.687  | 88.855 (180 epoch) |    84.564    | 84.661 (120 epoch) |        52.209        |     52.804 (180 epoch)     |        57.282         |     60.192 (30  epoch)      |        40.185         |     40.722 (180 epoch)      |    73.256     | 73.403 (120 epoch)  |
+|     tubes     |     92.074      |  92.980 (90  epoch)   |    97.001    | 97.374 (180 epoch)  |      90.769      |   93.939 (180 epoch)   |   94.630    | 94.811 (120 epoch) |   98.479    | 98.558 (120 epoch) |  62.610  | 62.610 (210 epoch) |    63.121    | 63.463 (120 epoch) |        30.684        |     30.684 (210 epoch)     |        68.256         |     73.000 (30  epoch)      |        20.018         |     20.018 (210 epoch)      |    46.114     | 46.481 (120 epoch)  |
+|      Avg      |     92.719      |  93.026 (180 epoch)   |    93.277    | 93.277 (210 epoch)  |      91.507      |   92.321 (180 epoch)   |   94.440    | 94.440 (210 epoch) |   98.251    | 98.251 (210 epoch) |  41.896  | 42.089 (150 epoch) |    44.589    | 44.834 (150 epoch) |        24.237        |     24.237 (210 epoch)     |        60.355         |     66.602 (30  epoch)      |        16.289         |     16.289 (210 epoch)      |    32.586     | 32.646 (150 epoch)  |
+2024-05-26 12:45:00,581 - ==> Total time: 0:33:45	 Eta: 0:14:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:09,870 - ==> Total time: 0:33:54	 Eta: 0:14:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:12,117 - Train: 70.37% [5700/8100]  [211.1/300.0] [batch_t 0.201 (0.567)] [data_t 0.002] [optim_t 0.199] [lr 0.004000] [pixel 5.841 (5.570)]
+2024-05-26 12:45:18,597 - ==> Total time: 0:34:03	 Eta: 0:14:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:27,184 - Train: 70.99% [5750/8100]  [213.0/300.0] [batch_t 0.146 (0.308)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 5.245 (5.499)]
+2024-05-26 12:45:27,334 - ==> Total time: 0:34:11	 Eta: 0:13:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:36,034 - ==> Total time: 0:34:20	 Eta: 0:13:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:43,738 - Train: 71.60% [5800/8100]  [214.8/300.0] [batch_t 0.218 (0.319)] [data_t 0.002] [optim_t 0.216] [lr 0.004000] [pixel 5.587 (5.469)]
+2024-05-26 12:45:44,872 - ==> Total time: 0:34:29	 Eta: 0:13:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:45:53,685 - ==> Total time: 0:34:38	 Eta: 0:13:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:00,207 - Train: 72.22% [5850/8100]  [216.7/300.0] [batch_t 0.206 (0.331)] [data_t 0.002] [optim_t 0.204] [lr 0.004000] [pixel 5.125 (5.394)]
+2024-05-26 12:46:02,433 - ==> Total time: 0:34:47	 Eta: 0:13:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:11,613 - ==> Total time: 0:34:56	 Eta: 0:13:08 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:16,945 - Train: 72.84% [5900/8100]  [218.5/300.0] [batch_t 0.209 (0.340)] [data_t 0.002] [optim_t 0.207] [lr 0.004000] [pixel 5.416 (5.403)]
+2024-05-26 12:46:20,341 - ==> Total time: 0:35:04	 Eta: 0:12:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:29,225 - ==> Total time: 0:35:13	 Eta: 0:12:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:33,323 - Train: 73.46% [5950/8100]  [220.4/300.0] [batch_t 0.074 (0.352)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 5.188 (5.328)]
+2024-05-26 12:46:37,974 - ==> Total time: 0:35:22	 Eta: 0:12:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:46,687 - ==> Total time: 0:35:31	 Eta: 0:12:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:46:49,679 - Train: 74.07% [6000/8100]  [222.2/300.0] [batch_t 0.126 (0.394)] [data_t 0.002] [optim_t 0.125] [lr 0.004000] [pixel 5.357 (5.253)]
+2024-05-26 12:46:55,403 - ==> Total time: 0:35:40	 Eta: 0:12:18 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:04,244 - ==> Total time: 0:35:48	 Eta: 0:12:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:06,356 - Train: 74.69% [6050/8100]  [224.1/300.0] [batch_t 0.215 (0.747)] [data_t 0.002] [optim_t 0.213] [lr 0.004000] [pixel 5.267 (5.191)]
+2024-05-26 12:47:13,067 - ==> Total time: 0:35:57	 Eta: 0:11:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:21,595 - Train: 75.31% [6100/8100]  [225.9/300.0] [batch_t 0.444 (0.312)] [data_t 0.296] [optim_t 0.147] [lr 0.004000] [pixel 5.184 (5.264)]
+2024-05-26 12:47:21,891 - ==> Total time: 0:36:06	 Eta: 0:11:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:30,556 - ==> Total time: 0:36:15	 Eta: 0:11:39 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:38,055 - Train: 75.93% [6150/8100]  [227.8/300.0] [batch_t 0.488 (0.321)] [data_t 0.298] [optim_t 0.190] [lr 0.004000] [pixel 6.257 (5.395)]
+2024-05-26 12:47:39,406 - ==> Total time: 0:36:24	 Eta: 0:11:29 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:48,150 - ==> Total time: 0:36:32	 Eta: 0:11:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:47:54,504 - Train: 76.54% [6200/8100]  [229.6/300.0] [batch_t 0.513 (0.336)] [data_t 0.291] [optim_t 0.222] [lr 0.004000] [pixel 5.277 (5.325)]
+2024-05-26 12:47:56,925 - ==> Total time: 0:36:41	 Eta: 0:11:10 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:05,651 - ==> Total time: 0:36:50	 Eta: 0:11:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:10,638 - Train: 77.16% [6250/8100]  [231.5/300.0] [batch_t 0.880 (0.335)] [data_t 0.808] [optim_t 0.072] [lr 0.004000] [pixel 5.216 (5.243)]
+2024-05-26 12:48:14,116 - ==> Total time: 0:36:58	 Eta: 0:10:50 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:23,032 - ==> Total time: 0:37:07	 Eta: 0:10:40 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:27,142 - Train: 77.78% [6300/8100]  [233.3/300.0] [batch_t 0.497 (0.386)] [data_t 0.310] [optim_t 0.188] [lr 0.004000] [pixel 4.938 (5.071)]
+2024-05-26 12:48:32,028 - ==> Total time: 0:37:16	 Eta: 0:10:30 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:40,942 - ==> Total time: 0:37:25	 Eta: 0:10:21 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:43,933 - Train: 78.40% [6350/8100]  [235.2/300.0] [batch_t 0.520 (0.482)] [data_t 0.298] [optim_t 0.222] [lr 0.004000] [pixel 5.399 (5.267)]
+2024-05-26 12:48:49,812 - ==> Total time: 0:37:34	 Eta: 0:10:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:48:58,779 - ==> Total time: 0:37:43	 Eta: 0:10:01 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:49:00,682 - Train: 79.01% [6400/8100]  [237.0/300.0] [batch_t 1.266 (1.266)] [data_t 1.066] [optim_t 0.200] [lr 0.004000] [pixel 4.817 (4.817)]
+2024-05-26 12:49:07,664 - ==> Total time: 0:37:52	 Eta: 0:09:51 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:49:15,598 - Train: 79.63% [6450/8100]  [238.9/300.0] [batch_t 0.207 (0.305)] [data_t 0.001] [optim_t 0.206] [lr 0.004000] [pixel 4.991 (5.181)]
+2024-05-26 12:49:16,411 - ==> Total time: 0:38:01	 Eta: 0:09:42 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:49:30,300 - Test: 100.00% [15/15] [batch_t 0.036 (0.317)] [pixel 19.592 (9.566)]
+2024-05-26 12:49:32,168 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.138 (mF1_max_px)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.048 (mIoU_px_0.2_0.8_0.1)	  0.141 (mIoU_max_px)	
+2024-05-26 12:49:36,383 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.126 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.047 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-26 12:49:39,407 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.094 (mIoU_max_px)	
+2024-05-26 12:49:41,510 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 12:49:42,750 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-26 12:49:43,446 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.177 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.176 (mIoU_max_px)	
+2024-05-26 12:49:43,452 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     81.649      |  81.649 (240 epoch)   |    87.715    | 87.768 (210 epoch)  |      81.739      |   81.818 (180 epoch)   |   90.388    | 90.388 (240 epoch) |   95.764    | 95.764 (240 epoch) |  6.523   | 11.019 (150 epoch) |    15.417    | 20.021 (150 epoch) |        7.236         |     8.705 (150 epoch)      |        46.961         |     60.502 (30  epoch)      |         3.825         |      4.681 (150 epoch)      |     8.352     | 11.124 (150 epoch)  |
+| bracket_brown |     94.570      |  94.570 (240 epoch)   |    96.753    | 96.753 (240 epoch)  |      94.444      |   94.444 (240 epoch)   |   95.766    | 95.766 (240 epoch) |   98.399    | 98.425 (210 epoch) |  19.273  | 20.529 (210 epoch) |    28.865    | 30.201 (210 epoch) |        14.465        |     15.202 (210 epoch)     |        51.103         |     61.362 (30  epoch)      |         8.119         |      8.557 (210 epoch)      |    16.867     | 17.787 (210 epoch)  |
+| bracket_white |     91.667      |  95.889 (120 epoch)   |    93.786    | 96.705 (120 epoch)  |      86.792      |   90.909 (120 epoch)   |   94.975    | 95.200 (180 epoch) |   99.305    | 99.400 (210 epoch) |  6.552   | 8.399 (150 epoch)  |    12.604    | 12.933 (90  epoch) |        5.836         |     6.697 (150 epoch)      |        64.655         |     74.634 (30  epoch)      |         3.058         |      3.526 (150 epoch)      |     6.726     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch)  |      96.552      |   96.552 (90  epoch)   |   97.919    | 97.919 (240 epoch) |   99.366    | 99.366 (240 epoch) |  61.747  | 64.205 (150 epoch) |    57.730    | 60.180 (180 epoch) |        32.349        |     33.207 (180 epoch)     |        63.748         |     74.493 (60  epoch)      |        20.813         |     21.569 (180 epoch)      |    40.578     | 43.041 (180 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (180 epoch)  |   100.000    | 100.000 (180 epoch) |     100.000      |  100.000 (180 epoch)   |   94.394    | 94.674 (210 epoch) |   98.548    | 98.619 (180 epoch) |  87.390  | 88.855 (180 epoch) |    84.376    | 84.661 (120 epoch) |        54.274        |     54.274 (240 epoch)     |        59.179         |     60.192 (30  epoch)      |        41.870         |     41.870 (240 epoch)      |    72.974     | 73.403 (120 epoch)  |
+|     tubes     |     91.893      |  92.980 (90  epoch)   |    96.717    | 97.374 (180 epoch)  |      92.537      |   93.939 (180 epoch)   |   94.487    | 94.811 (120 epoch) |   98.492    | 98.558 (120 epoch) |  64.231  | 64.231 (240 epoch) |    63.950    | 63.950 (240 epoch) |        29.991        |     30.684 (210 epoch)     |        67.853         |     73.000 (30  epoch)      |        19.507         |     20.018 (210 epoch)      |    47.004     | 47.004 (240 epoch)  |
+|      Avg      |     92.741      |  93.026 (180 epoch)   |    93.069    | 93.277 (210 epoch)  |      92.011      |   92.321 (180 epoch)   |   94.655    | 94.655 (240 epoch) |   98.312    | 98.312 (240 epoch) |  40.953  | 42.089 (150 epoch) |    43.823    | 44.834 (150 epoch) |        24.025        |     24.237 (210 epoch)     |        58.917         |     66.602 (30  epoch)      |        16.199         |     16.289 (210 epoch)      |    32.084     | 32.646 (150 epoch)  |
+2024-05-26 12:49:43,545 - ==> Total time: 0:38:28	 Eta: 0:09:37 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:49:50,594 - Train: 80.25% [6500/8100]  [240.7/300.0] [batch_t 0.212 (0.313)] [data_t 0.002] [optim_t 0.210] [lr 0.000400] [pixel 4.826 (4.837)]
+2024-05-26 12:49:52,521 - ==> Total time: 0:38:37	 Eta: 0:09:27 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:01,268 - ==> Total time: 0:38:45	 Eta: 0:09:17 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:08,118 - Train: 80.86% [6550/8100]  [242.6/300.0] [batch_t 0.202 (0.326)] [data_t 0.002] [optim_t 0.200] [lr 0.000400] [pixel 5.002 (4.809)]
+2024-05-26 12:50:11,288 - ==> Total time: 0:38:55	 Eta: 0:09:07 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:20,119 - ==> Total time: 0:39:04	 Eta: 0:08:58 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:24,847 - Train: 81.48% [6600/8100]  [244.4/300.0] [batch_t 0.208 (0.345)] [data_t 0.002] [optim_t 0.206] [lr 0.000400] [pixel 4.357 (4.723)]
+2024-05-26 12:50:29,035 - ==> Total time: 0:39:13	 Eta: 0:08:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:37,999 - ==> Total time: 0:39:22	 Eta: 0:08:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:41,121 - Train: 82.10% [6650/8100]  [246.3/300.0] [batch_t 0.147 (0.313)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 4.536 (4.825)]
+2024-05-26 12:50:46,895 - ==> Total time: 0:39:31	 Eta: 0:08:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:55,805 - ==> Total time: 0:39:40	 Eta: 0:08:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:50:57,873 - Train: 82.72% [6700/8100]  [248.1/300.0] [batch_t 0.084 (0.358)] [data_t 0.002] [optim_t 0.082] [lr 0.000400] [pixel 5.191 (4.778)]
+2024-05-26 12:51:04,717 - ==> Total time: 0:39:49	 Eta: 0:08:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:13,665 - Train: 83.33% [6750/8100]  [250.0/300.0] [batch_t 0.223 (0.310)] [data_t 0.001] [optim_t 0.222] [lr 0.000400] [pixel 4.472 (4.710)]
+2024-05-26 12:51:13,668 - ==> Total time: 0:39:58	 Eta: 0:07:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:22,597 - ==> Total time: 0:40:07	 Eta: 0:07:49 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:30,555 - Train: 83.95% [6800/8100]  [251.9/300.0] [batch_t 0.219 (0.317)] [data_t 0.002] [optim_t 0.217] [lr 0.000400] [pixel 4.697 (4.700)]
+2024-05-26 12:51:31,674 - ==> Total time: 0:40:16	 Eta: 0:07:40 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:40,622 - ==> Total time: 0:40:25	 Eta: 0:07:30 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:47,254 - Train: 84.57% [6850/8100]  [253.7/300.0] [batch_t 0.196 (0.319)] [data_t 0.002] [optim_t 0.194] [lr 0.000400] [pixel 4.920 (4.651)]
+2024-05-26 12:51:49,513 - ==> Total time: 0:40:34	 Eta: 0:07:20 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:51:58,447 - ==> Total time: 0:40:43	 Eta: 0:07:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:03,880 - Train: 85.19% [6900/8100]  [255.6/300.0] [batch_t 0.148 (0.324)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 4.658 (4.631)]
+2024-05-26 12:52:07,409 - ==> Total time: 0:40:52	 Eta: 0:07:01 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:16,363 - ==> Total time: 0:41:01	 Eta: 0:06:51 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:21,150 - Train: 85.80% [6950/8100]  [257.4/300.0] [batch_t 0.170 (0.357)] [data_t 0.002] [optim_t 0.168] [lr 0.000400] [pixel 4.525 (4.772)]
+2024-05-26 12:52:25,725 - ==> Total time: 0:41:10	 Eta: 0:06:42 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:34,541 - ==> Total time: 0:41:19	 Eta: 0:06:32 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:37,908 - Train: 86.42% [7000/8100]  [259.3/300.0] [batch_t 0.210 (0.394)] [data_t 0.002] [optim_t 0.209] [lr 0.000400] [pixel 4.374 (4.766)]
+2024-05-26 12:52:43,269 - ==> Total time: 0:41:27	 Eta: 0:06:22 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:51,957 - ==> Total time: 0:41:36	 Eta: 0:06:13 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:52:54,125 - Train: 87.04% [7050/8100]  [261.1/300.0] [batch_t 0.148 (0.507)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 4.660 (4.811)]
+2024-05-26 12:53:00,677 - ==> Total time: 0:41:45	 Eta: 0:06:03 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:09,398 - Train: 87.65% [7100/8100]  [263.0/300.0] [batch_t 0.206 (0.309)] [data_t 0.002] [optim_t 0.205] [lr 0.000400] [pixel 4.664 (4.652)]
+2024-05-26 12:53:09,608 - ==> Total time: 0:41:54	 Eta: 0:05:53 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:18,529 - ==> Total time: 0:42:03	 Eta: 0:05:44 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:26,108 - Train: 88.27% [7150/8100]  [264.8/300.0] [batch_t 0.227 (0.316)] [data_t 0.026] [optim_t 0.201] [lr 0.000400] [pixel 4.892 (4.649)]
+2024-05-26 12:53:27,441 - ==> Total time: 0:42:12	 Eta: 0:05:34 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:36,318 - ==> Total time: 0:42:20	 Eta: 0:05:24 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:42,734 - Train: 88.89% [7200/8100]  [266.7/300.0] [batch_t 0.198 (0.324)] [data_t 0.002] [optim_t 0.196] [lr 0.000400] [pixel 5.016 (4.627)]
+2024-05-26 12:53:45,200 - ==> Total time: 0:42:29	 Eta: 0:05:15 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:54,043 - ==> Total time: 0:42:38	 Eta: 0:05:05 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:53:59,226 - Train: 89.51% [7250/8100]  [268.5/300.0] [batch_t 0.136 (0.328)] [data_t 0.002] [optim_t 0.135] [lr 0.000400] [pixel 4.530 (4.590)]
+2024-05-26 12:54:02,919 - ==> Total time: 0:42:47	 Eta: 0:04:55 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:54:16,785 - Test: 100.00% [15/15] [batch_t 0.050 (0.316)] [pixel 19.046 (9.196)]
+2024-05-26 12:54:17,349 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-26 12:54:17,867 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.126 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.047 (mIoU_px_0.2_0.8_0.1)	  0.127 (mIoU_max_px)	
+2024-05-26 12:54:20,948 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-26 12:54:22,602 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-26 12:54:27,982 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.162 (mIoU_max_px)	
+2024-05-26 12:54:30,336 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.170 (mIoU_max_px)	
+2024-05-26 12:54:30,342 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     81.582      |  81.649 (240 epoch)   |    87.740    | 87.768 (210 epoch)  |      82.456      |   82.456 (270 epoch)   |   90.392    | 90.392 (270 epoch) |   95.717    | 95.764 (240 epoch) |  7.635   | 11.019 (150 epoch) |    17.449    | 20.021 (150 epoch) |        7.493         |     8.705 (150 epoch)      |        51.976         |     60.502 (30  epoch)      |         3.973         |      4.681 (150 epoch)      |     9.558     | 11.124 (150 epoch)  |
+| bracket_brown |     93.288      |  94.570 (240 epoch)   |    96.058    | 96.753 (240 epoch)  |      92.727      |   94.444 (240 epoch)   |   95.099    | 95.766 (240 epoch) |   98.483    | 98.483 (270 epoch) |  21.328  | 21.328 (270 epoch) |    31.335    | 31.335 (270 epoch) |        15.976        |     15.976 (270 epoch)     |        53.320         |     61.362 (30  epoch)      |         9.037         |      9.037 (270 epoch)      |    18.578     | 18.578 (270 epoch)  |
+| bracket_white |     93.556      |  95.889 (120 epoch)   |    95.211    | 96.705 (120 epoch)  |      88.889      |   90.909 (120 epoch)   |   94.961    | 95.200 (180 epoch) |   99.328    | 99.400 (210 epoch) |  6.750   | 8.399 (150 epoch)  |    11.507    | 12.933 (90  epoch) |        5.868         |     6.697 (150 epoch)      |        63.903         |     74.634 (30  epoch)      |         3.070         |      3.526 (150 epoch)      |     6.105     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch)  |      96.552      |   96.552 (90  epoch)   |   97.916    | 97.919 (240 epoch) |   99.366    | 99.366 (240 epoch) |  61.692  | 64.205 (150 epoch) |    57.743    | 60.180 (180 epoch) |        32.880        |     33.207 (180 epoch)     |        64.564         |     74.493 (60  epoch)      |        21.164         |     21.569 (180 epoch)      |    40.591     | 43.041 (180 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (180 epoch)  |   100.000    | 100.000 (180 epoch) |     100.000      |  100.000 (180 epoch)   |   94.602    | 94.674 (210 epoch) |   98.621    | 98.621 (270 epoch) |  88.859  | 88.859 (270 epoch) |    84.561    | 84.661 (120 epoch) |        53.763        |     54.274 (240 epoch)     |        58.502         |     60.192 (30  epoch)      |        41.536         |     41.870 (240 epoch)      |    73.252     | 73.403 (120 epoch)  |
+|     tubes     |     92.120      |  92.980 (90  epoch)   |    96.981    | 97.374 (180 epoch)  |      90.370      |   93.939 (180 epoch)   |   94.343    | 94.811 (120 epoch) |   98.398    | 98.558 (120 epoch) |  62.553  | 64.231 (240 epoch) |    63.134    | 63.950 (240 epoch) |        30.357        |     30.684 (210 epoch)     |        68.084         |     73.000 (30  epoch)      |        19.776         |     20.018 (210 epoch)      |    46.129     | 47.004 (240 epoch)  |
+|      Avg      |     92.869      |  93.026 (180 epoch)   |    93.239    | 93.277 (210 epoch)  |      91.832      |   92.321 (180 epoch)   |   94.552    | 94.655 (240 epoch) |   98.319    | 98.319 (270 epoch) |  41.470  | 42.089 (150 epoch) |    44.288    | 44.834 (150 epoch) |        24.390        |     24.390 (270 epoch)     |        60.058         |     66.602 (30  epoch)      |        16.426         |     16.426 (270 epoch)      |    32.369     | 32.646 (150 epoch)  |
+2024-05-26 12:54:30,437 - ==> Total time: 0:43:15	 Eta: 0:04:48 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:54:35,028 - Train: 90.12% [7300/8100]  [270.4/300.0] [batch_t 0.215 (0.360)] [data_t 0.002] [optim_t 0.213] [lr 0.000400] [pixel 4.806 (4.608)]
+2024-05-26 12:54:39,519 - ==> Total time: 0:43:24	 Eta: 0:04:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:54:48,264 - ==> Total time: 0:43:32	 Eta: 0:04:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:54:51,369 - Train: 90.74% [7350/8100]  [272.2/300.0] [batch_t 0.072 (0.386)] [data_t 0.002] [optim_t 0.070] [lr 0.000400] [pixel 4.428 (4.582)]
+2024-05-26 12:54:57,220 - ==> Total time: 0:43:41	 Eta: 0:04:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:06,010 - ==> Total time: 0:43:50	 Eta: 0:04:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:08,376 - Train: 91.36% [7400/8100]  [274.1/300.0] [batch_t 0.067 (0.644)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 4.850 (4.629)]
+2024-05-26 12:55:15,293 - ==> Total time: 0:43:59	 Eta: 0:03:59 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:23,731 - Train: 91.98% [7450/8100]  [275.9/300.0] [batch_t 0.570 (0.315)] [data_t 0.426] [optim_t 0.144] [lr 0.000400] [pixel 4.420 (4.611)]
+2024-05-26 12:55:24,108 - ==> Total time: 0:44:08	 Eta: 0:03:50 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:33,018 - ==> Total time: 0:44:17	 Eta: 0:03:40 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:40,326 - Train: 92.59% [7500/8100]  [277.8/300.0] [batch_t 0.436 (0.321)] [data_t 0.291] [optim_t 0.145] [lr 0.000400] [pixel 4.672 (4.586)]
+2024-05-26 12:55:41,883 - ==> Total time: 0:44:26	 Eta: 0:03:31 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:50,923 - ==> Total time: 0:44:35	 Eta: 0:03:21 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:55:57,167 - Train: 93.21% [7550/8100]  [279.6/300.0] [batch_t 0.478 (0.333)] [data_t 0.308] [optim_t 0.170] [lr 0.000400] [pixel 4.525 (4.542)]
+2024-05-26 12:55:59,807 - ==> Total time: 0:44:44	 Eta: 0:03:11 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:08,650 - ==> Total time: 0:44:53	 Eta: 0:03:02 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:13,880 - Train: 93.83% [7600/8100]  [281.5/300.0] [batch_t 0.483 (0.355)] [data_t 0.287] [optim_t 0.196] [lr 0.000400] [pixel 4.617 (4.649)]
+2024-05-26 12:56:17,585 - ==> Total time: 0:45:02	 Eta: 0:02:52 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:26,582 - ==> Total time: 0:45:11	 Eta: 0:02:42 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:30,627 - Train: 94.44% [7650/8100]  [283.3/300.0] [batch_t 0.435 (0.388)] [data_t 0.262] [optim_t 0.173] [lr 0.000400] [pixel 4.339 (4.455)]
+2024-05-26 12:56:35,535 - ==> Total time: 0:45:20	 Eta: 0:02:33 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:44,371 - ==> Total time: 0:45:29	 Eta: 0:02:23 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:56:47,308 - Train: 95.06% [7700/8100]  [285.2/300.0] [batch_t 0.514 (0.476)] [data_t 0.350] [optim_t 0.164] [lr 0.000400] [pixel 4.836 (4.513)]
+2024-05-26 12:56:53,267 - ==> Total time: 0:45:37	 Eta: 0:02:14 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:02,112 - ==> Total time: 0:45:46	 Eta: 0:02:04 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:05,490 - Train: 95.68% [7750/8100]  [287.0/300.0] [batch_t 1.294 (1.294)] [data_t 1.102] [optim_t 0.192] [lr 0.000400] [pixel 4.591 (4.591)]
+2024-05-26 12:57:12,533 - ==> Total time: 0:45:57	 Eta: 0:01:54 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:20,351 - Train: 96.30% [7800/8100]  [288.9/300.0] [batch_t 0.178 (0.301)] [data_t 0.002] [optim_t 0.176] [lr 0.000400] [pixel 4.798 (4.564)]
+2024-05-26 12:57:21,240 - ==> Total time: 0:46:05	 Eta: 0:01:45 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:29,961 - ==> Total time: 0:46:14	 Eta: 0:01:35 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:36,602 - Train: 96.91% [7850/8100]  [290.7/300.0] [batch_t 0.145 (0.304)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 4.354 (4.530)]
+2024-05-26 12:57:38,650 - ==> Total time: 0:46:23	 Eta: 0:01:26 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:47,568 - ==> Total time: 0:46:32	 Eta: 0:01:16 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:57:52,978 - Train: 97.53% [7900/8100]  [292.6/300.0] [batch_t 0.067 (0.292)] [data_t 0.001] [optim_t 0.066] [lr 0.000400] [pixel 4.284 (4.494)]
+2024-05-26 12:57:56,523 - ==> Total time: 0:46:41	 Eta: 0:01:06 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:05,230 - ==> Total time: 0:46:49	 Eta: 0:00:57 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:09,668 - Train: 98.15% [7950/8100]  [294.4/300.0] [batch_t 0.147 (0.324)] [data_t 0.002] [optim_t 0.145] [lr 0.000400] [pixel 4.769 (4.547)]
+2024-05-26 12:58:13,955 - ==> Total time: 0:46:58	 Eta: 0:00:47 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:22,419 - ==> Total time: 0:47:07	 Eta: 0:00:38 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:25,926 - Train: 98.77% [8000/8100]  [296.3/300.0] [batch_t 0.148 (0.358)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 4.880 (4.503)]
+2024-05-26 12:58:31,435 - ==> Total time: 0:47:16	 Eta: 0:00:28 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:40,143 - ==> Total time: 0:47:24	 Eta: 0:00:19 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:42,399 - Train: 99.38% [8050/8100]  [298.1/300.0] [batch_t 0.148 (0.422)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 4.635 (4.702)]
+2024-05-26 12:58:48,591 - ==> Total time: 0:47:33	 Eta: 0:00:09 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:58:57,293 - Train: 100.00% [8100/8100]  [300.0/300.0] [batch_t 0.147 (0.302)] [data_t 0.002] [optim_t 0.145] [lr 0.000400] [pixel 5.036 (4.533)]
+2024-05-26 12:59:02,218 - Test: 100.00% [15/15] [batch_t 0.049 (0.320)] [pixel 19.263 (9.260)]
+2024-05-26 12:59:05,395 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.138 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.140 (mIoU_max_px)	
+2024-05-26 12:59:08,609 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-26 12:59:10,847 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.095 (mF1_max_px)	  0.036 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.095 (mIoU_max_px)	
+2024-05-26 12:59:11,121 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.069 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 12:59:11,788 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-26 12:59:12,481 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.176 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.177 (mIoU_max_px)	
+2024-05-26 12:59:12,486 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     81.250      |  81.649 (240 epoch)   |    87.548    | 87.768 (210 epoch)  |      81.739      |   82.456 (270 epoch)   |   90.582    | 90.582 (300 epoch) |   95.816    | 95.816 (300 epoch) |  7.381   | 11.019 (150 epoch) |    16.184    | 20.021 (150 epoch) |        7.427         |     8.705 (150 epoch)      |        50.704         |     60.502 (30  epoch)      |         3.935         |      4.681 (150 epoch)      |     8.804     | 11.124 (150 epoch)  |
+| bracket_brown |     93.439      |  94.570 (240 epoch)   |    96.181    | 96.753 (240 epoch)  |      92.727      |   94.444 (240 epoch)   |   95.102    | 95.766 (240 epoch) |   98.496    | 98.496 (300 epoch) |  21.381  | 21.381 (300 epoch) |    31.620    | 31.620 (300 epoch) |        15.957        |     15.976 (270 epoch)     |        52.874         |     61.362 (30  epoch)      |         9.034         |      9.037 (270 epoch)      |    18.779     | 18.779 (300 epoch)  |
+| bracket_white |     93.556      |  95.889 (120 epoch)   |    95.131    | 96.705 (120 epoch)  |      87.273      |   90.909 (120 epoch)   |   94.905    | 95.200 (180 epoch) |   99.314    | 99.400 (210 epoch) |  6.810   | 8.399 (150 epoch)  |    10.654    | 12.933 (90  epoch) |        5.590         |     6.697 (150 epoch)      |        64.024         |     74.634 (30  epoch)      |         2.916         |      3.526 (150 epoch)      |     5.626     |  6.914 (90  epoch)  |
+|   connector   |     96.667      |  97.143 (60  epoch)   |    83.441    | 92.687 (60  epoch)  |      96.552      |   96.552 (90  epoch)   |   97.899    | 97.919 (240 epoch) |   99.361    | 99.366 (240 epoch) |  61.530  | 64.205 (150 epoch) |    57.372    | 60.180 (180 epoch) |        33.057        |     33.207 (180 epoch)     |        65.231         |     74.493 (60  epoch)      |        21.259         |     21.569 (180 epoch)      |    40.225     | 43.041 (180 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (180 epoch)  |   100.000    | 100.000 (180 epoch) |     100.000      |  100.000 (180 epoch)   |   94.538    | 94.674 (210 epoch) |   98.625    | 98.625 (300 epoch) |  88.911  | 88.911 (300 epoch) |    84.548    | 84.661 (120 epoch) |        54.467        |     54.467 (300 epoch)     |        59.294         |     60.192 (30  epoch)      |        42.124         |     42.124 (300 epoch)      |    73.233     | 73.403 (120 epoch)  |
+|     tubes     |     91.621      |  92.980 (90  epoch)   |    96.811    | 97.374 (180 epoch)  |      90.076      |   93.939 (180 epoch)   |   94.291    | 94.811 (120 epoch) |   98.388    | 98.558 (120 epoch) |  62.627  | 64.231 (240 epoch) |    62.964    | 63.950 (240 epoch) |        30.084        |     30.684 (210 epoch)     |        67.848         |     73.000 (30  epoch)      |        19.562         |     20.018 (210 epoch)      |    45.947     | 47.004 (240 epoch)  |
+|      Avg      |     92.755      |  93.026 (180 epoch)   |    93.185    | 93.277 (210 epoch)  |      91.395      |   92.321 (180 epoch)   |   94.553    | 94.655 (240 epoch) |   98.333    | 98.333 (300 epoch) |  41.440  | 42.089 (150 epoch) |    43.890    | 44.834 (150 epoch) |        24.431        |     24.431 (300 epoch)     |        59.996         |     66.602 (30  epoch)      |        16.472         |     16.472 (300 epoch)      |    32.102     | 32.646 (150 epoch)  |
+2024-05-26 12:59:12,578 - ==> Total time: 0:47:57	 Eta: 0:00:00 	Logged in 'runs/benchmark/invad-lite_256_300e/mpdd/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240526-121115'
+2024-05-26 12:59:13,319 - finish training

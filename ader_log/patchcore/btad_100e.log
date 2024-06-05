@@ -1,0 +1,133 @@
+2024-05-25 22:23:49,899 - ==> Logging on master GPU: 0
+2024-05-25 22:23:49,900 - ==> Running Trainer: PatchCoreTrainer
+2024-05-25 22:23:49,900 - ==> Using GPU: [0] for Training
+2024-05-25 22:23:49,900 - ==> Building model
+2024-05-25 22:23:56,426 - ==> Creating optimizer
+2024-05-25 22:23:56,441 - ==> Loading dataset: DefaultAD
+2024-05-25 22:23:56,454 - ==> ********** cfg ********** 
+fvcore_is                            : False                               
+fvcore_b                             : 2                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 1                                   
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : PatchCoreTrainer                    
+trainer.checkpoint                   : runs/benchmark/patchcore_256_100e/btad
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 1                                   
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 0, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 1                                   
+trainer.test_per_epoch               : 1                                   
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 2                                   
+trainer.data.batch_size_per_gpu      : 2                                   
+trainer.data.batch_size_test         : 2                                   
+trainer.data.batch_size_per_gpu_test : 2                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 899                                 
+trainer.metric_recorder              : {'mAUROC_sp_max_01': [], 'AUROC_sp_01': [], 'mAUROC_px_01': [], 'mAUPRO_px_01': [], 'mAP_sp_max_01': [], 'mAP_px_01': [], 'mF1_max_sp_max_01': [], 'mF1_px_0.2_0.8_0.1_01': [], 'mAcc_px_0.2_0.8_0.1_01': [], 'mIoU_px_0.2_0.8_0.1_01': [], 'mF1_max_px_01': [], 'mIoU_max_px_01': [], 'mAUROC_sp_max_02': [], 'AUROC_sp_02': [], 'mAUROC_px_02': [], 'mAUPRO_px_02': [], 'mAP_sp_max_02': [], 'mAP_px_02': [], 'mF1_max_sp_max_02': [], 'mF1_px_0.2_0.8_0.1_02': [], 'mAcc_px_0.2_0.8_0.1_02': [], 'mIoU_px_0.2_0.8_0.1_02': [], 'mF1_max_px_02': [], 'mIoU_max_px_02': [], 'mAUROC_sp_max_03': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_03': [], 'AUROC_sp_Avg': [], 'mAUROC_px_03': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_03': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_03': [], 'mAP_sp_max_Avg': [], 'mAP_px_03': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_03': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_03': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_03': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_03': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_03': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_03': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'SumLoss', 'name': 'sum', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/btad                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 899                                 
+data.test_size                       : 371                                 
+data.train_length                    : 1799                                
+data.test_length                     : 741                                 
+model_backbone.name                  : tv_wide_resnet50_2                  
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}
+model.name                           : patchcore                           
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='tv_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}), 'layers_to_extract_from': ('layer2', 'layer3'), 'input_size': (3, 256, 256)}
+seed                                 : 42                                  
+size                                 : 256                                 
+image_size                           : 256                                 
+input_size                           : (3, 256, 256)                       
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 1                                   
+test_per_epoch                       : 1                                   
+batch_train                          : 2                                   
+batch_test_per                       : 2                                   
+lr                                   : 0.001                               
+weight_decay                         : 0.01                                
+layers_to_extract_from               : ('layer2', 'layer3')                
+cfg_path                             : configs.benchmark.patchcore_256_100e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/patchcore_256_100e/btad', 'data.root=data/btad']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.patchcore_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/patchcore_256_100e/btad data.root=data/btad
+task_start_time                      : 3049710.044341783                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 8                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/patchcore_256_100e/btad/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-222349
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/patchcore_256_100e/btad/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-222349/show_train
+logdir_test                          : runs/benchmark/patchcore_256_100e/btad/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-222349/show_test
+2024-05-25 22:23:56,454 - ==> Starting training with 1 nodes x 8 GPUs
+2024-05-25 23:01:40,199 - Test: 13.48% [50/371] [batch_t 18.038 (18.187)]
+2024-05-25 23:16:45,206 - Test: 26.95% [100/371] [batch_t 18.522 (18.144)]
+2024-05-25 23:31:51,371 - Test: 40.43% [150/371] [batch_t 17.878 (18.137)]
+2024-05-25 23:46:55,533 - Test: 53.91% [200/371] [batch_t 17.940 (18.123)]
+2024-05-26 00:02:03,323 - Test: 67.39% [250/371] [batch_t 17.852 (18.130)]
+2024-05-26 00:17:08,792 - Test: 80.86% [300/371] [batch_t 17.945 (18.126)]
+2024-05-26 00:32:15,368 - Test: 94.34% [350/371] [batch_t 17.990 (18.127)]
+2024-05-26 00:38:30,866 - Test: 100.00% [371/371] [batch_t 9.080 (18.113)]
+2024-05-26 00:38:34,244 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.041 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.113 (mF1_max_px)	  0.112 (mIoU_max_px)	
+2024-05-26 00:38:43,295 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.149 (mF1_px_0.2_0.8_0.1)	  0.148 (mAcc_px_0.2_0.8_0.1)	  0.144 (mIoU_px_0.2_0.8_0.1)	  0.415 (mF1_max_px)	  0.414 (mIoU_max_px)	
+2024-05-26 00:38:54,322 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.278 (mF1_px_0.2_0.8_0.1)	  0.277 (mAcc_px_0.2_0.8_0.1)	  0.277 (mIoU_px_0.2_0.8_0.1)	  0.795 (mF1_max_px)	  0.797 (mIoU_max_px)	
+2024-05-26 00:38:54,324 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|   01   |     99.611      |  99.611 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   97.087    | 97.087 (1   epoch) |   75.812    | 75.812 (1   epoch) |    99.846    | 99.846 (1   epoch) |  55.460  | 55.460 (1   epoch) |      98.969      |   98.969 (1   epoch)   |        32.649        |     32.649 (1   epoch)     |        41.974         |     41.974 (1   epoch)      |        20.994         |     20.994 (1   epoch)      |    56.615    | 56.615 (1   epoch) |    39.484     | 39.484 (1   epoch)  |
+|   02   |     83.790      |  83.790 (1   epoch)   |   98.387   | 98.387 (1   epoch)  |   95.995    | 95.995 (1   epoch) |   54.123    | 54.123 (1   epoch) |    97.341    | 97.341 (1   epoch) |  59.348  | 59.348 (1   epoch) |      92.774      |   92.774 (1   epoch)   |        42.809        |     42.809 (1   epoch)     |        66.841         |     66.841 (1   epoch)      |        28.281         |     28.281 (1   epoch)      |    59.827    | 59.827 (1   epoch) |    42.681     | 42.681 (1   epoch)  |
+|   03   |     99.780      |  99.780 (1   epoch)   |   98.780   | 98.780 (1   epoch)  |   99.535    | 99.535 (1   epoch) |   98.046    | 98.046 (1   epoch) |    97.318    | 97.318 (1   epoch) |  50.089  | 50.089 (1   epoch) |      92.063      |   92.063 (1   epoch)   |        28.379        |     28.379 (1   epoch)     |        52.250         |     52.250 (1   epoch)      |        17.355         |     17.355 (1   epoch)      |    48.236    | 48.236 (1   epoch) |    31.783     | 31.783 (1   epoch)  |
+|  Avg   |     94.394      |  94.394 (1   epoch)   |   99.056   | 99.056 (1   epoch)  |   97.539    | 97.539 (1   epoch) |   75.994    | 75.994 (1   epoch) |    98.168    | 98.168 (1   epoch) |  54.966  | 54.966 (1   epoch) |      94.602      |   94.602 (1   epoch)   |        34.612        |     34.612 (1   epoch)     |        53.688         |     53.688 (1   epoch)      |        22.210         |     22.210 (1   epoch)      |    54.893    | 54.893 (1   epoch) |    37.983     | 37.983 (1   epoch)  |
+2024-05-26 00:38:54,582 - ==> Total time: 2:15:04	 Eta: -1 day, 22:52:28 	Logged in 'runs/benchmark/patchcore_256_100e/btad/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-222349'
+2024-05-26 00:38:55,668 - finish training

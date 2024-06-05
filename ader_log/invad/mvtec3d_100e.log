@@ -1,0 +1,1008 @@
+2024-05-23 23:49:01,141 - ==> Logging on master GPU: 0
+2024-05-23 23:49:01,141 - ==> Running Trainer: InvADTrainer
+2024-05-23 23:49:01,141 - ==> Using GPU: [0] for Training
+2024-05-23 23:49:01,141 - ==> Building model
+2024-05-23 23:49:02,107 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_racm-8234f177.pth'
+2024-05-23 23:49:17,256 - 
+------------------------------------ InvAD ------------------------------------
+| module                                   | #parameters or shape    | #flops       |
+|:-----------------------------------------|:------------------------|:-------------|
+| model                                    | 95.631M                 | 45.394G      |
+|  net_encoder                             |  24.863M                |  12.034G     |
+|   net_encoder.conv1                      |   9.408K                |   0.154G     |
+|    net_encoder.conv1.weight              |    (64, 3, 7, 7)        |              |
+|   net_encoder.bn1                        |   0.128K                |   2.097M     |
+|    net_encoder.bn1.weight                |    (64,)                |              |
+|    net_encoder.bn1.bias                  |    (64,)                |              |
+|   net_encoder.layer1                     |   0.634M                |   2.598G     |
+|    net_encoder.layer1.0                  |    0.206M               |    0.845G    |
+|     net_encoder.layer1.0.conv1           |     8.192K              |     33.554M  |
+|      net_encoder.layer1.0.conv1.weight   |      (128, 64, 1, 1)    |              |
+|     net_encoder.layer1.0.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.0.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.0.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.0.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.0.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.0.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.0.bn3.bias       |      (256,)             |              |
+|     net_encoder.layer1.0.downsample      |     16.896K             |     69.206M  |
+|      net_encoder.layer1.0.downsample.0   |      16.384K            |      67.109M |
+|      net_encoder.layer1.0.downsample.1   |      0.512K             |      2.097M  |
+|    net_encoder.layer1.1                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.1.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.1.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.1.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.1.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.1.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.1.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.1.bn3.bias       |      (256,)             |              |
+|    net_encoder.layer1.2                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.2.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.2.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.2.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.2.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.2.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.2.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.2.bn3.bias       |      (256,)             |              |
+|   net_encoder.layer2                     |   3.483M                |   3.769G     |
+|    net_encoder.layer2.0                  |    0.921M               |    1.146G    |
+|     net_encoder.layer2.0.conv1           |     65.536K             |     0.268G   |
+|      net_encoder.layer2.0.conv1.weight   |      (256, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn1             |     0.512K              |     2.097M   |
+|      net_encoder.layer2.0.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.0.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.0.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.0.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.0.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.0.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.0.bn3.bias       |      (512,)             |              |
+|     net_encoder.layer2.0.downsample      |     0.132M              |     0.135G   |
+|      net_encoder.layer2.0.downsample.0   |      0.131M             |      0.134G  |
+|      net_encoder.layer2.0.downsample.1   |      1.024K             |      1.049M  |
+|    net_encoder.layer2.1                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.1.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.1.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.1.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.1.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.1.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.1.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.1.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.2                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.2.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.2.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.2.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.2.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.2.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.2.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.2.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.3                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.3.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.3.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.3.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.3.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.3.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.3.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.3.bn3.bias       |      (512,)             |              |
+|   net_encoder.layer3                     |   20.736M               |   5.511G     |
+|    net_encoder.layer3.0                  |    3.676M               |    1.143G    |
+|     net_encoder.layer3.0.conv1           |     0.262M              |     0.268G   |
+|      net_encoder.layer3.0.conv1.weight   |      (512, 512, 1, 1)   |              |
+|     net_encoder.layer3.0.bn1             |     1.024K              |     1.049M   |
+|      net_encoder.layer3.0.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.0.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.0.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.0.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.0.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.0.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.0.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.0.bn3.bias       |      (1024,)            |              |
+|     net_encoder.layer3.0.downsample      |     0.526M              |     0.135G   |
+|      net_encoder.layer3.0.downsample.0   |      0.524M             |      0.134G  |
+|      net_encoder.layer3.0.downsample.1   |      2.048K             |      0.524M  |
+|    net_encoder.layer3.1                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.1.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.1.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.1.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.1.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.1.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.1.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.1.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.2                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.2.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.2.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.2.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.2.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.2.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.2.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.2.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.3                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.3.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.3.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.3.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.3.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.3.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.3.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.3.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.4                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.4.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.4.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.4.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.4.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.4.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.4.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.4.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.5                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.5.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.5.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.5.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.5.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.5.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.5.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.5.bn3.bias       |      (1024,)            |              |
+|  net_fuser                               |  3.492M                 |  1.092G      |
+|   net_fuser.downsamples                  |   3.151M                |   0.806G     |
+|    net_fuser.downsamples.0               |    1.049M               |    0.269G    |
+|     net_fuser.downsamples.0.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.0.conv.weight |      (256, 256, 4, 4)   |              |
+|      net_fuser.downsamples.0.conv.bias   |      (256,)             |              |
+|     net_fuser.downsamples.0.norm         |     0.512K              |     0.131M   |
+|      net_fuser.downsamples.0.norm.weight |      (256,)             |              |
+|      net_fuser.downsamples.0.norm.bias   |      (256,)             |              |
+|    net_fuser.downsamples.1               |    1.05M                |    0.269G    |
+|     net_fuser.downsamples.1.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.1.conv.weight |      (512, 512, 2, 2)   |              |
+|      net_fuser.downsamples.1.conv.bias   |      (512,)             |              |
+|     net_fuser.downsamples.1.norm         |     1.024K              |     0.262M   |
+|      net_fuser.downsamples.1.norm.weight |      (512,)             |              |
+|      net_fuser.downsamples.1.norm.bias   |      (512,)             |              |
+|    net_fuser.downsamples.2               |    1.052M               |    0.269G    |
+|     net_fuser.downsamples.2.conv         |     1.05M               |     0.268G   |
+|      net_fuser.downsamples.2.conv.weight |      (1024, 1024, 1, 1) |              |
+|      net_fuser.downsamples.2.conv.bias   |      (1024,)            |              |
+|     net_fuser.downsamples.2.norm         |     2.048K              |     0.524M   |
+|      net_fuser.downsamples.2.norm.weight |      (1024,)            |              |
+|      net_fuser.downsamples.2.norm.bias   |      (1024,)            |              |
+|   net_fuser.conv_cat                     |   0.115M                |   29.393M    |
+|    net_fuser.conv_cat.conv               |    0.115M               |    29.36M    |
+|     net_fuser.conv_cat.conv.weight       |     (64, 1792, 1, 1)    |              |
+|    net_fuser.conv_cat.norm               |    0.128K               |    32.768K   |
+|     net_fuser.conv_cat.norm.weight       |     (64,)               |              |
+|     net_fuser.conv_cat.norm.bias         |     (64,)               |              |
+|   net_fuser.conv_bottle.0                |   4.544K                |   1.163M     |
+|    net_fuser.conv_bottle.0.conv1         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv1.weight |     (16, 64, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn1           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn1.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn1.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv2         |    2.304K               |    0.59M     |
+|     net_fuser.conv_bottle.0.conv2.weight |     (16, 16, 3, 3)      |              |
+|    net_fuser.conv_bottle.0.bn2           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn2.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn2.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv3         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv3.weight |     (64, 16, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn3           |    0.128K               |    32.768K   |
+|     net_fuser.conv_bottle.0.bn3.weight   |     (64,)               |              |
+|     net_fuser.conv_bottle.0.bn3.bias     |     (64,)               |              |
+|   net_fuser.convs                        |   0.222M                |   0.255G     |
+|    net_fuser.convs.0                     |    73.856K              |    18.874M   |
+|     net_fuser.convs.0.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.0.1               |      64                 |      0       |
+|     net_fuser.convs.0.1                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.1.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.1.1               |      64                 |      0       |
+|    net_fuser.convs.1                     |    73.856K              |    47.186M   |
+|     net_fuser.convs.1.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.1.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.1.0.2               |      64                 |      0       |
+|     net_fuser.convs.1.1                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.1.1.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.1.1.1               |      64                 |      0       |
+|    net_fuser.convs.2                     |    73.856K              |    0.189G    |
+|     net_fuser.convs.2.0                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.2.0.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.2.0.2               |      64                 |      0       |
+|     net_fuser.convs.2.1                  |     36.928K             |     0.151G   |
+|      net_fuser.convs.2.1.0               |      36.864K            |      0.151G  |
+|      net_fuser.convs.2.1.1               |      64                 |      0       |
+|  net_decoder                             |  67.277M                |  32.268G     |
+|   net_decoder.input                      |   0.262M                |   0          |
+|    net_decoder.input.input               |    (1, 1024, 16, 16)    |              |
+|   net_decoder.conv1.0                    |   9.438M                |   2.416G     |
+|    net_decoder.conv1.0.0                 |    9.437M               |    2.416G    |
+|     net_decoder.conv1.0.0.weight         |     (1024, 1024, 3, 3)  |              |
+|    net_decoder.conv1.0.1                 |    1.024K               |    0         |
+|     net_decoder.conv1.0.1.bias           |     (1024,)             |              |
+|   net_decoder.convs_latent               |   0.138M                |   0.248G     |
+|    net_decoder.convs_latent.0            |    46.16K               |    11.796M   |
+|     net_decoder.convs_latent.0.0         |     36.928K             |     9.437M   |
+|      net_decoder.convs_latent.0.0.0      |      36.864K            |      9.437M  |
+|      net_decoder.convs_latent.0.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.0.1         |     9.232K              |     2.359M   |
+|      net_decoder.convs_latent.0.1.0      |      9.216K             |      2.359M  |
+|      net_decoder.convs_latent.0.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.1            |    46.16K               |    47.186M   |
+|     net_decoder.convs_latent.1.0         |     36.928K             |     37.749M  |
+|      net_decoder.convs_latent.1.0.0      |      36.864K            |      37.749M |
+|      net_decoder.convs_latent.1.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.1.1         |     9.232K              |     9.437M   |
+|      net_decoder.convs_latent.1.1.0      |      9.216K             |      9.437M  |
+|      net_decoder.convs_latent.1.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.2            |    46.16K               |    0.189G    |
+|     net_decoder.convs_latent.2.0         |     36.928K             |     0.151G   |
+|      net_decoder.convs_latent.2.0.0      |      36.864K            |      0.151G  |
+|      net_decoder.convs_latent.2.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.2.1         |     9.232K              |     37.749M  |
+|      net_decoder.convs_latent.2.1.0      |      9.216K             |      37.749M |
+|      net_decoder.convs_latent.2.1.1      |      16                 |      0       |
+|   net_decoder.convs                      |   57.438M               |   29.604G    |
+|    net_decoder.convs.0                   |    41.038M              |    10.507G   |
+|     net_decoder.convs.0.0                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.0.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.skip.0        |      1.049M             |      0.268G  |
+|     net_decoder.convs.0.1                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.1.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.skip.0        |      1.049M             |      0.268G  |
+|    net_decoder.convs.1                   |    13.03M               |    9.319G    |
+|     net_decoder.convs.1.0                |     7.752M              |     3.912G   |
+|      net_decoder.convs.1.0.conv1         |      4.719M             |      1.209G  |
+|      net_decoder.convs.1.0.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.0.skip.0        |      0.524M             |      0.134G  |
+|     net_decoder.convs.1.1                |     5.279M              |     5.406G   |
+|      net_decoder.convs.1.1.conv1         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.skip.0        |      0.262M             |      0.268G  |
+|    net_decoder.convs.2                   |    3.369M               |    9.779G    |
+|     net_decoder.convs.2.0                |     1.975M              |     4.066G   |
+|      net_decoder.convs.2.0.conv1         |      1.18M              |      1.21G   |
+|      net_decoder.convs.2.0.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.0.skip.0        |      0.131M             |      0.134G  |
+|     net_decoder.convs.2.1                |     1.394M              |     5.713G   |
+|      net_decoder.convs.2.1.conv1         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.skip.0        |      65.536K            |      0.268G  |
+-------------------------------------------------------------------------------
+2024-05-23 23:49:17,259 - ==> Creating optimizer
+2024-05-23 23:49:17,275 - ==> Loading dataset: DefaultAD
+2024-05-23 23:49:17,285 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.004                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0, 0.99)}
+trainer.name                         : InvADTrainer                        
+trainer.checkpoint                   : runs/benchmark/invad_256_100e/mvtec3d
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 4e-05, 'warmup_lr': 4e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 9200                                
+trainer.metric_recorder              : {'mAUROC_sp_max_bagel': [], 'mAP_sp_max_bagel': [], 'mF1_max_sp_max_bagel': [], 'mAUPRO_px_bagel': [], 'mAUROC_px_bagel': [], 'mAP_px_bagel': [], 'mF1_max_px_bagel': [], 'mF1_px_0.2_0.8_0.1_bagel': [], 'mAcc_px_0.2_0.8_0.1_bagel': [], 'mIoU_px_0.2_0.8_0.1_bagel': [], 'mIoU_max_px_bagel': [], 'mAUROC_sp_max_cable_gland': [], 'mAP_sp_max_cable_gland': [], 'mF1_max_sp_max_cable_gland': [], 'mAUPRO_px_cable_gland': [], 'mAUROC_px_cable_gland': [], 'mAP_px_cable_gland': [], 'mF1_max_px_cable_gland': [], 'mF1_px_0.2_0.8_0.1_cable_gland': [], 'mAcc_px_0.2_0.8_0.1_cable_gland': [], 'mIoU_px_0.2_0.8_0.1_cable_gland': [], 'mIoU_max_px_cable_gland': [], 'mAUROC_sp_max_carrot': [], 'mAP_sp_max_carrot': [], 'mF1_max_sp_max_carrot': [], 'mAUPRO_px_carrot': [], 'mAUROC_px_carrot': [], 'mAP_px_carrot': [], 'mF1_max_px_carrot': [], 'mF1_px_0.2_0.8_0.1_carrot': [], 'mAcc_px_0.2_0.8_0.1_carrot': [], 'mIoU_px_0.2_0.8_0.1_carrot': [], 'mIoU_max_px_carrot': [], 'mAUROC_sp_max_cookie': [], 'mAP_sp_max_cookie': [], 'mF1_max_sp_max_cookie': [], 'mAUPRO_px_cookie': [], 'mAUROC_px_cookie': [], 'mAP_px_cookie': [], 'mF1_max_px_cookie': [], 'mF1_px_0.2_0.8_0.1_cookie': [], 'mAcc_px_0.2_0.8_0.1_cookie': [], 'mIoU_px_0.2_0.8_0.1_cookie': [], 'mIoU_max_px_cookie': [], 'mAUROC_sp_max_dowel': [], 'mAP_sp_max_dowel': [], 'mF1_max_sp_max_dowel': [], 'mAUPRO_px_dowel': [], 'mAUROC_px_dowel': [], 'mAP_px_dowel': [], 'mF1_max_px_dowel': [], 'mF1_px_0.2_0.8_0.1_dowel': [], 'mAcc_px_0.2_0.8_0.1_dowel': [], 'mIoU_px_0.2_0.8_0.1_dowel': [], 'mIoU_max_px_dowel': [], 'mAUROC_sp_max_foam': [], 'mAP_sp_max_foam': [], 'mF1_max_sp_max_foam': [], 'mAUPRO_px_foam': [], 'mAUROC_px_foam': [], 'mAP_px_foam': [], 'mF1_max_px_foam': [], 'mF1_px_0.2_0.8_0.1_foam': [], 'mAcc_px_0.2_0.8_0.1_foam': [], 'mIoU_px_0.2_0.8_0.1_foam': [], 'mIoU_max_px_foam': [], 'mAUROC_sp_max_peach': [], 'mAP_sp_max_peach': [], 'mF1_max_sp_max_peach': [], 'mAUPRO_px_peach': [], 'mAUROC_px_peach': [], 'mAP_px_peach': [], 'mF1_max_px_peach': [], 'mF1_px_0.2_0.8_0.1_peach': [], 'mAcc_px_0.2_0.8_0.1_peach': [], 'mIoU_px_0.2_0.8_0.1_peach': [], 'mIoU_max_px_peach': [], 'mAUROC_sp_max_potato': [], 'mAP_sp_max_potato': [], 'mF1_max_sp_max_potato': [], 'mAUPRO_px_potato': [], 'mAUROC_px_potato': [], 'mAP_px_potato': [], 'mF1_max_px_potato': [], 'mF1_px_0.2_0.8_0.1_potato': [], 'mAcc_px_0.2_0.8_0.1_potato': [], 'mIoU_px_0.2_0.8_0.1_potato': [], 'mIoU_max_px_potato': [], 'mAUROC_sp_max_rope': [], 'mAP_sp_max_rope': [], 'mF1_max_sp_max_rope': [], 'mAUPRO_px_rope': [], 'mAUROC_px_rope': [], 'mAP_px_rope': [], 'mF1_max_px_rope': [], 'mF1_px_0.2_0.8_0.1_rope': [], 'mAcc_px_0.2_0.8_0.1_rope': [], 'mIoU_px_0.2_0.8_0.1_rope': [], 'mIoU_max_px_rope': [], 'mAUROC_sp_max_tire': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tire': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tire': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tire': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tire': [], 'mAUROC_px_Avg': [], 'mAP_px_tire': [], 'mAP_px_Avg': [], 'mF1_max_px_tire': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tire': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tire': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tire': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tire': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mvtec3d                        
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 92                                  
+data.test_size                       : 38                                  
+data.train_length                    : 2950                                
+data.test_length                     : 1197                                
+model_encoder.name                   : timm_wide_resnet50_2                
+model_encoder.kwargs                 : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_fuser                          : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}
+model_decoder                        : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}
+model_disor                          : {'sizes': [64, 32, 16], 'in_chas': [256, 512, 1024]}
+model.name                           : invad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_encoder': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_fuser': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}, 'model_decoder': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.004                               
+weight_decay                         : 0.0001                              
+uni_am                               : True                                
+use_cos                              : True                                
+cfg_path                             : configs.benchmark.invad_256_100e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/invad_256_100e/mvtec3d', 'data.root=data/mvtec3d']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.invad_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/invad_256_100e/mvtec3d data.root=data/mvtec3d
+task_start_time                      : 2896231.333285345                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901/show_train
+logdir_test                          : runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901/show_test
+2024-05-23 23:49:17,285 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-23 23:49:59,406 - Train: 0.54% [50/9200]  [0.5/100.0] [batch_t 0.281 (0.836)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 6.863 (10.119)]
+2024-05-23 23:50:11,225 - ==> Total time: 0:01:10	 Eta: 1:55:50 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:50:15,771 - Train: 1.09% [100/9200]  [1.1/100.0] [batch_t 0.282 (0.329)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 6.211 (6.374)]
+2024-05-23 23:50:29,851 - Train: 1.63% [150/9200]  [1.6/100.0] [batch_t 0.282 (0.281)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 5.872 (5.918)]
+2024-05-23 23:50:39,439 - ==> Total time: 0:01:38	 Eta: 1:20:22 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:50:46,542 - Train: 2.17% [200/9200]  [2.2/100.0] [batch_t 0.284 (0.318)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 5.437 (5.301)]
+2024-05-23 23:51:00,666 - Train: 2.72% [250/9200]  [2.7/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 5.043 (5.164)]
+2024-05-23 23:51:08,019 - ==> Total time: 0:02:07	 Eta: 1:08:26 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:51:17,808 - Train: 3.26% [300/9200]  [3.3/100.0] [batch_t 0.281 (0.300)] [data_t 0.002] [optim_t 0.279] [lr 0.004000] [pixel 5.401 (4.813)]
+2024-05-23 23:51:31,892 - Train: 3.80% [350/9200]  [3.8/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.279] [lr 0.004000] [pixel 4.645 (4.739)]
+2024-05-23 23:51:36,961 - ==> Total time: 0:02:35	 Eta: 1:02:22 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:51:48,357 - Train: 4.35% [400/9200]  [4.3/100.0] [batch_t 0.282 (0.294)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.558 (4.574)]
+2024-05-23 23:52:02,444 - Train: 4.89% [450/9200]  [4.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.840 (4.478)]
+2024-05-23 23:52:05,265 - ==> Total time: 0:03:04	 Eta: 0:58:20 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:52:19,169 - Train: 5.43% [500/9200]  [5.4/100.0] [batch_t 0.282 (0.292)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.407 (4.315)]
+2024-05-23 23:52:33,272 - Train: 5.98% [550/9200]  [6.0/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 4.224 (4.268)]
+2024-05-23 23:52:33,839 - ==> Total time: 0:03:32	 Eta: 0:55:34 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:52:49,811 - Train: 6.52% [600/9200]  [6.5/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.666 (4.205)]
+2024-05-23 23:53:02,232 - ==> Total time: 0:04:01	 Eta: 0:53:24 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:53:07,584 - Train: 7.07% [650/9200]  [7.1/100.0] [batch_t 0.282 (0.349)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.269 (4.132)]
+2024-05-23 23:53:21,687 - Train: 7.61% [700/9200]  [7.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.184 (4.063)]
+2024-05-23 23:53:31,848 - ==> Total time: 0:04:30	 Eta: 0:51:54 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:53:38,809 - Train: 8.15% [750/9200]  [8.2/100.0] [batch_t 0.282 (0.311)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 4.008 (3.947)]
+2024-05-23 23:53:52,922 - Train: 8.70% [800/9200]  [8.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.974 (3.947)]
+2024-05-23 23:54:00,829 - ==> Total time: 0:04:59	 Eta: 0:50:31 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:54:10,979 - Train: 9.24% [850/9200]  [9.2/100.0] [batch_t 0.283 (0.301)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.921 (3.837)]
+2024-05-23 23:54:25,085 - Train: 9.78% [900/9200]  [9.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.925 (3.827)]
+2024-05-23 23:54:46,961 - Test: 100.00% [38/38] [batch_t 7.064 (0.425)] [pixel 4.211 (3.887)]
+2024-05-23 23:54:47,889 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-23 23:54:48,596 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.180 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.178 (mIoU_max_px)	
+2024-05-23 23:54:49,684 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.274 (mF1_max_px)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.094 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.269 (mIoU_max_px)	
+2024-05-23 23:54:50,562 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.219 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.218 (mIoU_max_px)	
+2024-05-23 23:54:51,433 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.217 (mF1_max_px)	  0.075 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.216 (mIoU_max_px)	
+2024-05-23 23:54:52,096 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.165 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-23 23:54:52,989 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.224 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.078 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.220 (mIoU_max_px)	
+2024-05-23 23:54:53,747 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.189 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-23 23:54:54,403 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-23 23:54:55,143 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-23 23:54:55,149 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     97.572      |  97.572 (10  epoch)   |    99.449    | 99.449 (10  epoch) |      96.089      |   96.089 (10  epoch)   |   97.272    | 97.272 (10  epoch) |   99.369    | 99.369 (10  epoch) |  51.591  | 51.591 (10  epoch) |    54.980    | 54.980 (10  epoch) |        24.792        |     24.792 (10  epoch)     |        65.126         |     65.126 (10  epoch)      |        15.480         |     15.480 (10  epoch)      |    37.912     | 37.912 (10  epoch)  |
+| cable_gland |     60.646      |  60.646 (10  epoch)   |    88.158    | 88.158 (10  epoch) |      89.231      |   89.231 (10  epoch)   |   89.877    | 89.877 (10  epoch) |   96.341    | 96.341 (10  epoch) |  11.646  | 11.646 (10  epoch) |    18.919    | 18.919 (10  epoch) |        8.310         |     8.310 (10  epoch)      |        64.783         |     64.783 (10  epoch)      |         4.445         |      4.445 (10  epoch)      |    10.448     | 10.448 (10  epoch)  |
+|   carrot    |     84.343      |  84.343 (10  epoch)   |    95.973    | 95.973 (10  epoch) |      92.806      |   92.806 (10  epoch)   |   97.327    | 97.327 (10  epoch) |   99.189    | 99.189 (10  epoch) |  26.421  | 26.421 (10  epoch) |    30.357    | 30.357 (10  epoch) |        18.723        |     18.723 (10  epoch)     |        39.074         |     39.074 (10  epoch)      |        10.647         |     10.647 (10  epoch)      |    17.894     | 17.894 (10  epoch)  |
+|   cookie    |     58.148      |  58.148 (10  epoch)   |    84.591    | 84.591 (10  epoch) |      88.034      |   88.034 (10  epoch)   |   92.224    | 92.224 (10  epoch) |   97.894    | 97.894 (10  epoch) |  41.997  | 41.997 (10  epoch) |    43.594    | 43.594 (10  epoch) |        19.389        |     19.389 (10  epoch)     |        59.213         |     59.213 (10  epoch)      |        11.420         |     11.420 (10  epoch)      |    27.872     | 27.872 (10  epoch)  |
+|    dowel    |     87.611      |  87.611 (10  epoch)   |    97.057    | 97.057 (10  epoch) |      90.667      |   90.667 (10  epoch)   |   96.184    | 96.184 (10  epoch) |   99.192    | 99.192 (10  epoch) |  39.932  | 39.932 (10  epoch) |    43.697    | 43.697 (10  epoch) |        18.951        |     18.951 (10  epoch)     |        60.905         |     60.905 (10  epoch)      |        11.181         |     11.181 (10  epoch)      |    27.956     | 27.956 (10  epoch)  |
+|    foam     |     71.000      |  71.000 (10  epoch)   |    92.362    | 92.362 (10  epoch) |      89.385      |   89.385 (10  epoch)   |   69.381    | 69.381 (10  epoch) |   89.127    | 89.127 (10  epoch) |  15.968  | 15.968 (10  epoch) |    30.298    | 30.298 (10  epoch) |        14.513        |     14.513 (10  epoch)     |        33.093         |     33.093 (10  epoch)      |         8.120         |      8.120 (10  epoch)      |    17.854     | 17.854 (10  epoch)  |
+|    peach    |     81.785      |  81.785 (10  epoch)   |    94.743    | 94.743 (10  epoch) |      92.035      |   92.035 (10  epoch)   |   96.238    | 96.238 (10  epoch) |   98.934    | 98.934 (10  epoch) |  32.953  | 32.953 (10  epoch) |    36.465    | 36.465 (10  epoch) |        15.810        |     15.810 (10  epoch)     |        64.724         |     64.724 (10  epoch)      |         9.050         |      9.050 (10  epoch)      |    22.298     | 22.298 (10  epoch)  |
+|   potato    |     62.698      |  62.698 (10  epoch)   |    86.636    | 86.636 (10  epoch) |      89.756      |   89.756 (10  epoch)   |   95.605    | 95.605 (10  epoch) |   98.750    | 98.750 (10  epoch) |  11.364  | 11.364 (10  epoch) |    18.461    | 18.461 (10  epoch) |        9.031         |     9.031 (10  epoch)      |        47.280         |     47.280 (10  epoch)      |         4.839         |      4.839 (10  epoch)      |    10.169     | 10.169 (10  epoch)  |
+|    rope     |     96.150      |  96.150 (10  epoch)   |    98.494    | 98.494 (10  epoch) |      94.118      |   94.118 (10  epoch)   |   97.069    | 97.069 (10  epoch) |   99.631    | 99.631 (10  epoch) |  58.790  | 58.790 (10  epoch) |    57.004    | 57.004 (10  epoch) |        33.945        |     33.945 (10  epoch)     |        50.682         |     50.682 (10  epoch)      |        21.935         |     21.935 (10  epoch)      |    39.865     | 39.865 (10  epoch)  |
+|    tire     |     58.851      |  58.851 (10  epoch)   |    84.503    | 84.503 (10  epoch) |      87.629      |   87.629 (10  epoch)   |   88.647    | 88.647 (10  epoch) |   97.176    | 97.176 (10  epoch) |  7.757   | 7.757 (10  epoch)  |    13.592    | 13.592 (10  epoch) |        6.378         |     6.378 (10  epoch)      |        33.310         |     33.310 (10  epoch)      |         3.347         |      3.347 (10  epoch)      |     7.291     |  7.291 (10  epoch)  |
+|     Avg     |     75.880      |  75.880 (10  epoch)   |    92.197    | 92.197 (10  epoch) |      90.975      |   90.975 (10  epoch)   |   91.982    | 91.982 (10  epoch) |   97.560    | 97.560 (10  epoch) |  29.842  | 29.842 (10  epoch) |    34.737    | 34.737 (10  epoch) |        16.984        |     16.984 (10  epoch)     |        51.819         |     51.819 (10  epoch)      |        10.046         |     10.046 (10  epoch)      |    21.956     | 21.956 (10  epoch)  |
+2024-05-23 23:54:55,206 - ==> Total time: 0:05:54	 Eta: 0:53:07 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:55:06,503 - Train: 10.33% [950/9200]  [10.3/100.0] [batch_t 0.282 (0.305)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.577 (3.862)]
+2024-05-23 23:55:20,598 - Train: 10.87% [1000/9200]  [10.9/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.831 (3.704)]
+2024-05-23 23:55:23,986 - ==> Total time: 0:06:22	 Eta: 0:51:38 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:55:37,289 - Train: 11.41% [1050/9200]  [11.4/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.940 (3.678)]
+2024-05-23 23:55:51,409 - Train: 11.96% [1100/9200]  [12.0/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.917 (3.653)]
+2024-05-23 23:55:52,541 - ==> Total time: 0:06:51	 Eta: 0:50:17 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:56:07,613 - Train: 12.50% [1150/9200]  [12.5/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.539 (3.669)]
+2024-05-23 23:56:20,622 - ==> Total time: 0:07:19	 Eta: 0:49:01 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:56:24,000 - Train: 13.04% [1200/9200]  [13.0/100.0] [batch_t 0.282 (0.369)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.701 (3.562)]
+2024-05-23 23:56:38,113 - Train: 13.59% [1250/9200]  [13.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.374 (3.545)]
+2024-05-23 23:56:48,833 - ==> Total time: 0:07:47	 Eta: 0:47:53 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:56:54,846 - Train: 14.13% [1300/9200]  [14.1/100.0] [batch_t 0.282 (0.311)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.666 (3.535)]
+2024-05-23 23:57:08,953 - Train: 14.67% [1350/9200]  [14.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.544 (3.485)]
+2024-05-23 23:57:17,416 - ==> Total time: 0:08:16	 Eta: 0:46:52 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:57:25,264 - Train: 15.22% [1400/9200]  [15.2/100.0] [batch_t 0.282 (0.300)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.474 (3.489)]
+2024-05-23 23:57:39,373 - Train: 15.76% [1450/9200]  [15.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.318 (3.427)]
+2024-05-23 23:57:45,580 - ==> Total time: 0:08:44	 Eta: 0:45:53 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:57:55,540 - Train: 16.30% [1500/9200]  [16.3/100.0] [batch_t 0.283 (0.295)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.066 (3.387)]
+2024-05-23 23:58:09,679 - Train: 16.85% [1550/9200]  [16.8/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.180 (3.393)]
+2024-05-23 23:58:13,639 - ==> Total time: 0:09:12	 Eta: 0:44:58 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:58:25,888 - Train: 17.39% [1600/9200]  [17.4/100.0] [batch_t 0.282 (0.292)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.370 (3.344)]
+2024-05-23 23:58:39,991 - Train: 17.93% [1650/9200]  [17.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.016 (3.349)]
+2024-05-23 23:58:41,685 - ==> Total time: 0:09:40	 Eta: 0:44:05 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:58:56,482 - Train: 18.48% [1700/9200]  [18.5/100.0] [batch_t 0.283 (0.289)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.300 (3.314)]
+2024-05-23 23:59:10,056 - ==> Total time: 0:10:09	 Eta: 0:43:16 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-23 23:59:12,963 - Train: 19.02% [1750/9200]  [19.0/100.0] [batch_t 0.283 (0.429)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.360 (3.348)]
+2024-05-23 23:59:27,086 - Train: 19.57% [1800/9200]  [19.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.474 (3.262)]
+2024-05-23 23:59:47,442 - Test: 100.00% [38/38] [batch_t 0.087 (0.234)] [pixel 3.865 (3.383)]
+2024-05-23 23:59:48,261 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.179 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-23 23:59:48,958 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.178 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.178 (mIoU_max_px)	
+2024-05-23 23:59:50,043 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.272 (mF1_max_px)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.096 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.268 (mIoU_max_px)	
+2024-05-23 23:59:50,923 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.221 (mIoU_max_px)	
+2024-05-23 23:59:51,799 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.222 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.218 (mIoU_max_px)	
+2024-05-23 23:59:52,451 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.162 (mIoU_max_px)	
+2024-05-23 23:59:53,327 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.220 (mIoU_max_px)	
+2024-05-23 23:59:54,068 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-23 23:59:54,719 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.164 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-23 23:59:55,443 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.185 (mIoU_max_px)	
+2024-05-23 23:59:55,446 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     95.403      |  97.572 (10  epoch)   |    98.876    | 99.449 (10  epoch) |      95.028      |   96.089 (10  epoch)   |   96.297    | 97.272 (10  epoch) |   99.208    | 99.369 (10  epoch) |  46.698  | 51.591 (10  epoch) |    50.606    | 54.980 (10  epoch) |        23.754        |     24.792 (10  epoch)     |        66.240         |     66.240 (20  epoch)      |        14.602         |     15.480 (10  epoch)      |    33.874     | 37.912 (10  epoch)  |
+| cable_gland |     79.146      |  79.146 (20  epoch)   |    93.902    | 93.902 (20  epoch) |      91.398      |   91.398 (20  epoch)   |   96.506    | 96.506 (20  epoch) |   98.670    | 98.670 (20  epoch) |  26.350  | 26.350 (20  epoch) |    33.372    | 33.372 (20  epoch) |        16.188        |     16.188 (20  epoch)     |        50.902         |     64.783 (10  epoch)      |         9.197         |      9.197 (20  epoch)      |    20.028     | 20.028 (20  epoch)  |
+|   carrot    |     86.756      |  86.756 (20  epoch)   |    96.539    | 96.539 (20  epoch) |      92.958      |   92.958 (20  epoch)   |   97.311    | 97.327 (10  epoch) |   99.211    | 99.211 (20  epoch) |  26.245  | 26.421 (10  epoch) |    30.274    | 30.357 (10  epoch) |        19.676        |     19.676 (20  epoch)     |        42.676         |     42.676 (20  epoch)      |        11.202         |     11.202 (20  epoch)      |    17.837     | 17.894 (10  epoch)  |
+|   cookie    |     57.420      |  58.148 (10  epoch)   |    83.857    | 84.591 (10  epoch) |      88.034      |   88.034 (10  epoch)   |   92.399    | 92.399 (20  epoch) |   98.192    | 98.192 (20  epoch) |  45.387  | 45.387 (20  epoch) |    47.385    | 47.385 (20  epoch) |        19.472        |     19.472 (20  epoch)     |        53.003         |     59.213 (10  epoch)      |        11.663         |     11.663 (20  epoch)      |    31.049     | 31.049 (20  epoch)  |
+|    dowel    |     96.006      |  96.006 (20  epoch)   |    99.021    | 99.021 (20  epoch) |      94.884      |   94.884 (20  epoch)   |   97.716    | 97.716 (20  epoch) |   99.501    | 99.501 (20  epoch) |  44.337  | 44.337 (20  epoch) |    46.567    | 46.567 (20  epoch) |        21.933        |     21.933 (20  epoch)     |        48.165         |     60.905 (10  epoch)      |        13.195         |     13.195 (20  epoch)      |    30.350     | 30.350 (20  epoch)  |
+|    foam     |     75.875      |  75.875 (20  epoch)   |    93.599    | 93.599 (20  epoch) |      89.385      |   89.385 (10  epoch)   |   75.086    | 75.086 (20  epoch) |   91.392    | 91.392 (20  epoch) |  16.960  | 16.960 (20  epoch) |    30.531    | 30.531 (20  epoch) |        16.168        |     16.168 (20  epoch)     |        31.706         |     33.093 (10  epoch)      |         9.085         |      9.085 (20  epoch)      |    18.015     | 18.015 (20  epoch)  |
+|    peach    |     84.434      |  84.434 (20  epoch)   |    95.261    | 95.261 (20  epoch) |      92.105      |   92.105 (20  epoch)   |   96.967    | 96.967 (20  epoch) |   99.165    | 99.165 (20  epoch) |  37.214  | 37.214 (20  epoch) |    40.417    | 40.417 (20  epoch) |        16.626        |     16.626 (20  epoch)     |        57.743         |     64.724 (10  epoch)      |         9.626         |      9.626 (20  epoch)      |    25.327     | 25.327 (20  epoch)  |
+|   potato    |     67.490      |  67.490 (20  epoch)   |    89.760    | 89.760 (20  epoch) |      89.756      |   89.756 (10  epoch)   |   96.469    | 96.469 (20  epoch) |   99.046    | 99.046 (20  epoch) |  16.418  | 16.418 (20  epoch) |    23.576    | 23.576 (20  epoch) |        11.365        |     11.365 (20  epoch)     |        52.852         |     52.852 (20  epoch)      |         6.192         |      6.192 (20  epoch)      |    13.363     | 13.363 (20  epoch)  |
+|    rope     |     96.467      |  96.467 (20  epoch)   |    98.625    | 98.625 (20  epoch) |      94.737      |   94.737 (20  epoch)   |   97.029    | 97.069 (10  epoch) |   99.633    | 99.633 (20  epoch) |  58.598  | 58.790 (10  epoch) |    56.885    | 57.004 (10  epoch) |        33.990        |     33.990 (20  epoch)     |        51.263         |     51.263 (20  epoch)      |        21.937         |     21.937 (20  epoch)      |    39.748     | 39.865 (10  epoch)  |
+|    tire     |     55.172      |  58.851 (10  epoch)   |    83.642    | 84.503 (10  epoch) |      87.437      |   87.629 (10  epoch)   |   90.179    | 90.179 (20  epoch) |   97.480    | 97.480 (20  epoch) |  8.984   | 8.984 (20  epoch)  |    15.961    | 15.961 (20  epoch) |        6.805         |     6.805 (20  epoch)      |        37.072         |     37.072 (20  epoch)      |         3.595         |      3.595 (20  epoch)      |     8.673     |  8.673 (20  epoch)  |
+|     Avg     |     79.417      |  79.417 (20  epoch)   |    93.308    | 93.308 (20  epoch) |      91.572      |   91.572 (20  epoch)   |   93.596    | 93.596 (20  epoch) |   98.150    | 98.150 (20  epoch) |  32.719  | 32.719 (20  epoch) |    37.557    | 37.557 (20  epoch) |        18.598        |     18.598 (20  epoch)     |        49.162         |     51.819 (10  epoch)      |        11.029         |     11.029 (20  epoch)      |    23.826     | 23.826 (20  epoch)  |
+2024-05-23 23:59:55,546 - ==> Total time: 0:10:54	 Eta: 0:43:38 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:00:01,432 - Train: 20.11% [1850/9200]  [20.1/100.0] [batch_t 0.282 (0.309)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.344 (3.302)]
+2024-05-24 00:00:15,526 - Train: 20.65% [1900/9200]  [20.7/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.238 (3.233)]
+2024-05-24 00:00:24,550 - ==> Total time: 0:11:23	 Eta: 0:42:51 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:00:31,909 - Train: 21.20% [1950/9200]  [21.2/100.0] [batch_t 0.282 (0.300)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.314 (3.234)]
+2024-05-24 00:00:46,021 - Train: 21.74% [2000/9200]  [21.7/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.215 (3.167)]
+2024-05-24 00:00:52,800 - ==> Total time: 0:11:51	 Eta: 0:42:03 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:01:02,332 - Train: 22.28% [2050/9200]  [22.3/100.0] [batch_t 0.283 (0.295)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.200 (3.172)]
+2024-05-24 00:01:16,475 - Train: 22.83% [2100/9200]  [22.8/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.005 (3.155)]
+2024-05-24 00:01:21,001 - ==> Total time: 0:12:19	 Eta: 0:41:17 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:01:32,622 - Train: 23.37% [2150/9200]  [23.4/100.0] [batch_t 0.282 (0.292)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.985 (3.158)]
+2024-05-24 00:01:46,754 - Train: 23.91% [2200/9200]  [23.9/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.090 (3.124)]
+2024-05-24 00:01:49,015 - ==> Total time: 0:12:48	 Eta: 0:40:32 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:02:02,928 - Train: 24.46% [2250/9200]  [24.5/100.0] [batch_t 0.283 (0.290)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.228 (3.133)]
+2024-05-24 00:02:17,052 - Train: 25.00% [2300/9200]  [25.0/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.118 (3.098)]
+2024-05-24 00:02:17,055 - ==> Total time: 0:13:16	 Eta: 0:39:48 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:02:33,549 - Train: 25.54% [2350/9200]  [25.5/100.0] [batch_t 0.282 (0.289)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.165 (3.073)]
+2024-05-24 00:02:45,422 - ==> Total time: 0:13:44	 Eta: 0:39:06 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:02:49,882 - Train: 26.09% [2400/9200]  [26.1/100.0] [batch_t 0.282 (0.323)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.111 (3.002)]
+2024-05-24 00:03:04,008 - Train: 26.63% [2450/9200]  [26.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.224 (3.066)]
+2024-05-24 00:03:13,602 - ==> Total time: 0:14:12	 Eta: 0:38:25 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:03:20,658 - Train: 27.17% [2500/9200]  [27.2/100.0] [batch_t 0.283 (0.302)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.904 (3.045)]
+2024-05-24 00:03:34,771 - Train: 27.72% [2550/9200]  [27.7/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.249 (3.020)]
+2024-05-24 00:03:42,112 - ==> Total time: 0:14:41	 Eta: 0:37:45 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:03:50,999 - Train: 28.26% [2600/9200]  [28.3/100.0] [batch_t 0.282 (0.296)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.937 (3.013)]
+2024-05-24 00:04:05,119 - Train: 28.80% [2650/9200]  [28.8/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 3.248 (2.991)]
+2024-05-24 00:04:10,211 - ==> Total time: 0:15:09	 Eta: 0:37:05 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:04:21,579 - Train: 29.35% [2700/9200]  [29.3/100.0] [batch_t 0.284 (0.294)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 3.033 (2.977)]
+2024-05-24 00:04:35,712 - Train: 29.89% [2750/9200]  [29.9/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.933 (2.968)]
+2024-05-24 00:04:47,560 - Test: 100.00% [38/38] [batch_t 0.085 (0.234)] [pixel 3.500 (3.181)]
+2024-05-24 00:04:48,373 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-24 00:04:49,089 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.180 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.179 (mIoU_max_px)	
+2024-05-24 00:04:50,168 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.271 (mF1_max_px)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.094 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.270 (mIoU_max_px)	
+2024-05-24 00:04:51,047 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.220 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.219 (mIoU_max_px)	
+2024-05-24 00:04:51,916 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.218 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.217 (mIoU_max_px)	
+2024-05-24 00:04:52,580 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.165 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-24 00:04:53,473 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.224 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.221 (mIoU_max_px)	
+2024-05-24 00:04:54,231 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-24 00:04:54,897 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.173 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:04:55,634 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-24 00:04:55,639 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     94.215      |  97.572 (10  epoch)   |    98.528    | 99.449 (10  epoch) |      94.915      |   96.089 (10  epoch)   |   95.848    | 97.272 (10  epoch) |   99.186    | 99.369 (10  epoch) |  46.360  | 51.591 (10  epoch) |    49.863    | 54.980 (10  epoch) |        23.852        |     24.792 (10  epoch)     |        66.306         |     66.306 (30  epoch)      |        14.641         |     15.480 (10  epoch)      |    33.212     | 37.912 (10  epoch)  |
+| cable_gland |     87.685      |  87.685 (30  epoch)   |    96.758    | 96.758 (30  epoch) |      92.553      |   92.553 (30  epoch)   |   97.772    | 97.772 (30  epoch) |   99.153    | 99.153 (30  epoch) |  32.538  | 32.538 (30  epoch) |    40.703    | 40.703 (30  epoch) |        19.065        |     19.065 (30  epoch)     |        46.549         |     64.783 (10  epoch)      |        11.124         |     11.124 (30  epoch)      |    25.552     | 25.552 (30  epoch)  |
+|   carrot    |     88.159      |  88.159 (30  epoch)   |    96.916    | 96.916 (30  epoch) |      93.571      |   93.571 (30  epoch)   |   97.643    | 97.643 (30  epoch) |   99.300    | 99.300 (30  epoch) |  25.944  | 26.421 (10  epoch) |    30.448    | 30.448 (30  epoch) |        19.242        |     19.676 (20  epoch)     |        43.130         |     43.130 (30  epoch)      |        10.931         |     11.202 (20  epoch)      |    17.958     | 17.958 (30  epoch)  |
+|   cookie    |     59.951      |  59.951 (30  epoch)   |    85.526    | 85.526 (30  epoch) |      88.034      |   88.034 (10  epoch)   |   91.997    | 92.399 (20  epoch) |   98.313    | 98.313 (30  epoch) |  49.287  | 49.287 (30  epoch) |    50.026    | 50.026 (30  epoch) |        20.119        |     20.119 (30  epoch)     |        49.727         |     59.213 (10  epoch)      |        12.218         |     12.218 (30  epoch)      |    33.356     | 33.356 (30  epoch)  |
+|    dowel    |     97.522      |  97.522 (30  epoch)   |    99.413    | 99.413 (30  epoch) |      96.190      |   96.190 (30  epoch)   |   98.226    | 98.226 (30  epoch) |   99.600    | 99.600 (30  epoch) |  47.091  | 47.091 (30  epoch) |    48.032    | 48.032 (30  epoch) |        26.833        |     26.833 (30  epoch)     |        52.305         |     60.905 (10  epoch)      |        16.317         |     16.317 (30  epoch)      |    31.606     | 31.606 (30  epoch)  |
+|    foam     |     80.562      |  80.562 (30  epoch)   |    95.029    | 95.029 (30  epoch) |      89.888      |   89.888 (30  epoch)   |   77.375    | 77.375 (30  epoch) |   92.302    | 92.302 (30  epoch) |  17.611  | 17.611 (30  epoch) |    31.240    | 31.240 (30  epoch) |        17.101        |     17.101 (30  epoch)     |        33.449         |     33.449 (30  epoch)      |         9.637         |      9.637 (30  epoch)      |    18.512     | 18.512 (30  epoch)  |
+|    peach    |     87.736      |  87.736 (30  epoch)   |    96.288    | 96.288 (30  epoch) |      93.088      |   93.088 (30  epoch)   |   97.076    | 97.076 (30  epoch) |   99.221    | 99.221 (30  epoch) |  37.388  | 37.388 (30  epoch) |    41.726    | 41.726 (30  epoch) |        16.582        |     16.626 (20  epoch)     |        55.225         |     64.724 (10  epoch)      |         9.641         |      9.641 (30  epoch)      |    26.363     | 26.363 (30  epoch)  |
+|   potato    |     66.650      |  67.490 (20  epoch)   |    90.204    | 90.204 (30  epoch) |      89.756      |   89.756 (10  epoch)   |   96.601    | 96.601 (30  epoch) |   99.096    | 99.096 (30  epoch) |  16.020  | 16.418 (20  epoch) |    23.425    | 23.576 (20  epoch) |        11.554        |     11.554 (30  epoch)     |        57.880         |     57.880 (30  epoch)      |         6.308         |      6.308 (30  epoch)      |    13.266     | 13.363 (20  epoch)  |
+|    rope     |     97.147      |  97.147 (30  epoch)   |    98.832    | 98.832 (30  epoch) |      94.118      |   94.737 (20  epoch)   |   97.314    | 97.314 (30  epoch) |   99.654    | 99.654 (30  epoch) |  59.754  | 59.754 (30  epoch) |    58.145    | 58.145 (30  epoch) |        34.339        |     34.339 (30  epoch)     |        52.792         |     52.792 (30  epoch)      |        22.261         |     22.261 (30  epoch)      |    40.989     | 40.989 (30  epoch)  |
+|    tire     |     64.368      |  64.368 (30  epoch)   |    86.758    | 86.758 (30  epoch) |      88.325      |   88.325 (30  epoch)   |   93.589    | 93.589 (30  epoch) |   98.536    | 98.536 (30  epoch) |  13.947  | 13.947 (30  epoch) |    21.927    | 21.927 (30  epoch) |        8.959         |     8.959 (30  epoch)      |        33.938         |     37.072 (20  epoch)      |         4.852         |      4.852 (30  epoch)      |    12.313     | 12.313 (30  epoch)  |
+|     Avg     |     82.400      |  82.400 (30  epoch)   |    94.425    | 94.425 (30  epoch) |      92.044      |   92.044 (30  epoch)   |   94.344    | 94.344 (30  epoch) |   98.436    | 98.436 (30  epoch) |  34.594  | 34.594 (30  epoch) |    39.554    | 39.554 (30  epoch) |        19.764        |     19.764 (30  epoch)     |        49.130         |     51.819 (10  epoch)      |        11.793         |     11.793 (30  epoch)      |    25.313     | 25.313 (30  epoch)  |
+2024-05-24 00:04:55,750 - ==> Total time: 0:15:54	 Eta: 0:37:07 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:05:09,577 - Train: 30.43% [2800/9200]  [30.4/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 3.005 (2.985)]
+2024-05-24 00:05:23,691 - Train: 30.98% [2850/9200]  [31.0/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.860 (2.933)]
+2024-05-24 00:05:24,258 - ==> Total time: 0:16:23	 Eta: 0:36:28 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:05:40,252 - Train: 31.52% [2900/9200]  [31.5/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.969 (2.927)]
+2024-05-24 00:05:52,677 - ==> Total time: 0:16:51	 Eta: 0:35:49 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:05:56,675 - Train: 32.07% [2950/9200]  [32.1/100.0] [batch_t 0.282 (0.353)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.885 (2.902)]
+2024-05-24 00:06:10,809 - Train: 32.61% [3000/9200]  [32.6/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.864 (2.901)]
+2024-05-24 00:06:20,985 - ==> Total time: 0:17:19	 Eta: 0:35:11 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:06:26,997 - Train: 33.15% [3050/9200]  [33.2/100.0] [batch_t 0.282 (0.305)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.822 (2.900)]
+2024-05-24 00:06:41,135 - Train: 33.70% [3100/9200]  [33.7/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.944 (2.901)]
+2024-05-24 00:06:49,053 - ==> Total time: 0:17:48	 Eta: 0:34:33 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:06:57,416 - Train: 34.24% [3150/9200]  [34.2/100.0] [batch_t 0.282 (0.298)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.674 (2.888)]
+2024-05-24 00:07:11,557 - Train: 34.78% [3200/9200]  [34.8/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.699 (2.877)]
+2024-05-24 00:07:17,214 - ==> Total time: 0:18:16	 Eta: 0:33:55 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:07:27,937 - Train: 35.33% [3250/9200]  [35.3/100.0] [batch_t 0.283 (0.294)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.975 (2.872)]
+2024-05-24 00:07:42,068 - Train: 35.87% [3300/9200]  [35.9/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.800 (2.830)]
+2024-05-24 00:07:45,460 - ==> Total time: 0:18:44	 Eta: 0:33:19 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:07:58,408 - Train: 36.41% [3350/9200]  [36.4/100.0] [batch_t 0.282 (0.292)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 3.038 (2.842)]
+2024-05-24 00:08:12,548 - Train: 36.96% [3400/9200]  [37.0/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.824 (2.825)]
+2024-05-24 00:08:13,682 - ==> Total time: 0:19:12	 Eta: 0:32:42 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:08:28,876 - Train: 37.50% [3450/9200]  [37.5/100.0] [batch_t 0.283 (0.289)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 3.086 (2.799)]
+2024-05-24 00:08:41,867 - ==> Total time: 0:19:40	 Eta: 0:32:06 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:08:45,514 - Train: 38.04% [3500/9200]  [38.0/100.0] [batch_t 0.283 (0.365)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.751 (2.732)]
+2024-05-24 00:08:59,633 - Train: 38.59% [3550/9200]  [38.6/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.696 (2.796)]
+2024-05-24 00:09:10,349 - ==> Total time: 0:20:09	 Eta: 0:31:31 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:09:16,022 - Train: 39.13% [3600/9200]  [39.1/100.0] [batch_t 0.282 (0.308)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.882 (2.745)]
+2024-05-24 00:09:30,124 - Train: 39.67% [3650/9200]  [39.7/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.719 (2.782)]
+2024-05-24 00:09:47,758 - Test: 100.00% [38/38] [batch_t 0.087 (0.237)] [pixel 3.244 (3.058)]
+2024-05-24 00:09:48,579 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.189 (mIoU_max_px)	
+2024-05-24 00:09:49,305 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.181 (mIoU_max_px)	
+2024-05-24 00:09:50,427 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.286 (mF1_max_px)	  0.097 (mF1_px_0.2_0.8_0.1)	  0.098 (mAcc_px_0.2_0.8_0.1)	  0.097 (mIoU_px_0.2_0.8_0.1)	  0.280 (mIoU_max_px)	
+2024-05-24 00:09:51,340 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.233 (mF1_max_px)	  0.079 (mF1_px_0.2_0.8_0.1)	  0.079 (mAcc_px_0.2_0.8_0.1)	  0.080 (mIoU_px_0.2_0.8_0.1)	  0.226 (mIoU_max_px)	
+2024-05-24 00:09:52,244 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.227 (mF1_max_px)	  0.081 (mF1_px_0.2_0.8_0.1)	  0.079 (mAcc_px_0.2_0.8_0.1)	  0.079 (mIoU_px_0.2_0.8_0.1)	  0.224 (mIoU_max_px)	
+2024-05-24 00:09:52,918 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-24 00:09:53,842 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.231 (mF1_max_px)	  0.080 (mF1_px_0.2_0.8_0.1)	  0.080 (mAcc_px_0.2_0.8_0.1)	  0.080 (mIoU_px_0.2_0.8_0.1)	  0.231 (mIoU_max_px)	
+2024-05-24 00:09:54,617 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.195 (mF1_max_px)	  0.069 (mF1_px_0.2_0.8_0.1)	  0.069 (mAcc_px_0.2_0.8_0.1)	  0.069 (mIoU_px_0.2_0.8_0.1)	  0.195 (mIoU_max_px)	
+2024-05-24 00:09:55,288 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.170 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-24 00:09:56,038 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-24 00:09:56,044 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     91.736      |  97.572 (10  epoch)   |    97.896    | 99.449 (10  epoch) |      93.567      |   96.089 (10  epoch)   |   92.691    | 97.272 (10  epoch) |   98.672    | 99.369 (10  epoch) |  40.718  | 51.591 (10  epoch) |    46.506    | 54.980 (10  epoch) |        19.846        |     24.792 (10  epoch)     |        66.780         |     66.780 (40  epoch)      |        11.893         |     15.480 (10  epoch)      |    30.298     | 37.912 (10  epoch)  |
+| cable_gland |     92.009      |  92.009 (40  epoch)   |    97.990    | 97.990 (40  epoch) |      93.103      |   93.103 (40  epoch)   |   98.322    | 98.322 (40  epoch) |   99.352    | 99.352 (40  epoch) |  37.395  | 37.395 (40  epoch) |    44.854    | 44.854 (40  epoch) |        21.876        |     21.876 (40  epoch)     |        46.764         |     64.783 (10  epoch)      |        13.045         |     13.045 (40  epoch)      |    28.911     | 28.911 (40  epoch)  |
+|   carrot    |     89.366      |  89.366 (40  epoch)   |    97.250    | 97.250 (40  epoch) |      94.074      |   94.074 (40  epoch)   |   97.681    | 97.681 (40  epoch) |   99.321    | 99.321 (40  epoch) |  26.448  | 26.448 (40  epoch) |    31.555    | 31.555 (40  epoch) |        19.310        |     19.676 (20  epoch)     |        44.768         |     44.768 (40  epoch)      |        11.001         |     11.202 (20  epoch)      |    18.733     | 18.733 (40  epoch)  |
+|   cookie    |     61.859      |  61.859 (40  epoch)   |    87.111    | 87.111 (40  epoch) |      88.034      |   88.034 (10  epoch)   |   91.837    | 92.399 (20  epoch) |   98.239    | 98.313 (30  epoch) |  48.417  | 49.287 (30  epoch) |    48.401    | 50.026 (30  epoch) |        19.716        |     20.119 (30  epoch)     |        49.130         |     59.213 (10  epoch)      |        11.884         |     12.218 (30  epoch)      |    31.927     | 33.356 (30  epoch)  |
+|    dowel    |     99.001      |  99.001 (40  epoch)   |    99.759    | 99.759 (40  epoch) |      97.143      |   97.143 (40  epoch)   |   98.323    | 98.323 (40  epoch) |   99.627    | 99.627 (40  epoch) |  46.478  | 47.091 (30  epoch) |    47.014    | 48.032 (30  epoch) |        27.208        |     27.208 (40  epoch)     |        47.848         |     60.905 (10  epoch)      |        16.548         |     16.548 (40  epoch)      |    30.731     | 31.606 (30  epoch)  |
+|    foam     |     83.312      |  83.312 (40  epoch)   |    95.922    | 95.922 (40  epoch) |      89.385      |   89.888 (30  epoch)   |   79.345    | 79.345 (40  epoch) |   93.051    | 93.051 (40  epoch) |  18.254  | 18.254 (40  epoch) |    31.462    | 31.462 (40  epoch) |        17.437        |     17.437 (40  epoch)     |        32.527         |     33.449 (30  epoch)      |         9.843         |      9.843 (40  epoch)      |    18.667     | 18.667 (40  epoch)  |
+|    peach    |     87.155      |  87.736 (30  epoch)   |    96.204    | 96.288 (30  epoch) |      92.174      |   93.088 (30  epoch)   |   96.469    | 97.076 (30  epoch) |   99.092    | 99.221 (30  epoch) |  34.930  | 37.388 (30  epoch) |    38.761    | 41.726 (30  epoch) |        15.825        |     16.626 (20  epoch)     |        53.345         |     64.724 (10  epoch)      |         9.130         |      9.641 (30  epoch)      |    24.040     | 26.363 (30  epoch)  |
+|   potato    |     69.368      |  69.368 (40  epoch)   |    91.274    | 91.274 (40  epoch) |      90.000      |   90.000 (40  epoch)   |   96.212    | 96.601 (30  epoch) |   99.042    | 99.096 (30  epoch) |  13.122  | 16.418 (20  epoch) |    22.288    | 23.576 (20  epoch) |        11.971        |     11.971 (40  epoch)     |        66.527         |     66.527 (40  epoch)      |         6.504         |      6.504 (40  epoch)      |    12.542     | 13.363 (20  epoch)  |
+|    rope     |     96.784      |  97.147 (30  epoch)   |    98.744    | 98.832 (30  epoch) |      93.939      |   94.737 (20  epoch)   |   97.268    | 97.314 (30  epoch) |   99.648    | 99.654 (30  epoch) |  59.132  | 59.754 (30  epoch) |    57.958    | 58.145 (30  epoch) |        33.668        |     34.339 (30  epoch)     |        52.719         |     52.792 (30  epoch)      |        21.776         |     22.261 (30  epoch)      |    40.804     | 40.989 (30  epoch)  |
+|    tire     |     70.575      |  70.575 (40  epoch)   |    88.545    | 88.545 (40  epoch) |      88.421      |   88.421 (40  epoch)   |   94.958    | 94.958 (40  epoch) |   98.877    | 98.877 (40  epoch) |  18.699  | 18.699 (40  epoch) |    27.079    | 27.079 (40  epoch) |        11.585        |     11.585 (40  epoch)     |        35.504         |     37.072 (20  epoch)      |         6.398         |      6.398 (40  epoch)      |    15.660     | 15.660 (40  epoch)  |
+|     Avg     |     84.116      |  84.116 (40  epoch)   |    95.069    | 95.069 (40  epoch) |      91.984      |   92.044 (30  epoch)   |   94.311    | 94.344 (30  epoch) |   98.492    | 98.492 (40  epoch) |  34.359  | 34.594 (30  epoch) |    39.588    | 39.588 (40  epoch) |        19.844        |     19.844 (40  epoch)     |        49.591         |     51.819 (10  epoch)      |        11.802         |     11.802 (40  epoch)      |    25.231     | 25.313 (30  epoch)  |
+2024-05-24 00:09:56,168 - ==> Total time: 0:20:55	 Eta: 0:31:22 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:10:04,597 - Train: 40.22% [3700/9200]  [40.2/100.0] [batch_t 0.282 (0.298)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.727 (2.771)]
+2024-05-24 00:10:18,695 - Train: 40.76% [3750/9200]  [40.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.868 (2.765)]
+2024-05-24 00:10:24,902 - ==> Total time: 0:21:23	 Eta: 0:30:47 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:10:34,853 - Train: 41.30% [3800/9200]  [41.3/100.0] [batch_t 0.282 (0.294)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.874 (2.757)]
+2024-05-24 00:10:48,981 - Train: 41.85% [3850/9200]  [41.8/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.582 (2.742)]
+2024-05-24 00:10:52,937 - ==> Total time: 0:21:51	 Eta: 0:30:11 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:11:05,126 - Train: 42.39% [3900/9200]  [42.4/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.890 (2.737)]
+2024-05-24 00:11:19,255 - Train: 42.93% [3950/9200]  [42.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.644 (2.732)]
+2024-05-24 00:11:20,952 - ==> Total time: 0:22:19	 Eta: 0:29:36 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:11:35,587 - Train: 43.48% [4000/9200]  [43.5/100.0] [batch_t 0.284 (0.290)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.694 (2.730)]
+2024-05-24 00:11:49,163 - ==> Total time: 0:22:48	 Eta: 0:29:01 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:11:51,848 - Train: 44.02% [4050/9200]  [44.0/100.0] [batch_t 0.282 (0.446)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.710 (2.759)]
+2024-05-24 00:12:05,983 - Train: 44.57% [4100/9200]  [44.6/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.771 (2.708)]
+2024-05-24 00:12:17,294 - ==> Total time: 0:23:16	 Eta: 0:28:26 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:12:22,221 - Train: 45.11% [4150/9200]  [45.1/100.0] [batch_t 0.282 (0.311)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.574 (2.711)]
+2024-05-24 00:12:36,356 - Train: 45.65% [4200/9200]  [45.7/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.580 (2.696)]
+2024-05-24 00:12:45,417 - ==> Total time: 0:23:44	 Eta: 0:27:52 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:12:52,637 - Train: 46.20% [4250/9200]  [46.2/100.0] [batch_t 0.283 (0.305)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.758 (2.657)]
+2024-05-24 00:13:06,794 - Train: 46.74% [4300/9200]  [46.7/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.632 (2.682)]
+2024-05-24 00:13:13,585 - ==> Total time: 0:24:12	 Eta: 0:27:18 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:13:23,575 - Train: 47.28% [4350/9200]  [47.3/100.0] [batch_t 0.283 (0.296)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.481 (2.658)]
+2024-05-24 00:13:37,745 - Train: 47.83% [4400/9200]  [47.8/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.492 (2.678)]
+2024-05-24 00:13:42,277 - ==> Total time: 0:24:41	 Eta: 0:26:44 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:13:53,929 - Train: 48.37% [4450/9200]  [48.4/100.0] [batch_t 0.283 (0.293)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.617 (2.667)]
+2024-05-24 00:14:08,093 - Train: 48.91% [4500/9200]  [48.9/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.709 (2.647)]
+2024-05-24 00:14:10,362 - ==> Total time: 0:25:09	 Eta: 0:26:10 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:14:24,328 - Train: 49.46% [4550/9200]  [49.5/100.0] [batch_t 0.284 (0.290)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.419 (2.632)]
+2024-05-24 00:14:38,483 - Train: 50.00% [4600/9200]  [50.0/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.498 (2.653)]
+2024-05-24 00:14:47,566 - Test: 100.00% [38/38] [batch_t 0.086 (0.235)] [pixel 3.051 (2.882)]
+2024-05-24 00:14:48,397 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.188 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-24 00:14:49,126 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-24 00:14:50,218 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.276 (mF1_max_px)	  0.096 (mF1_px_0.2_0.8_0.1)	  0.096 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.270 (mIoU_max_px)	
+2024-05-24 00:14:51,096 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.220 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.218 (mIoU_max_px)	
+2024-05-24 00:14:51,966 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.218 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.216 (mIoU_max_px)	
+2024-05-24 00:14:52,641 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-24 00:14:53,531 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.223 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.221 (mIoU_max_px)	
+2024-05-24 00:14:54,301 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.196 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.195 (mIoU_max_px)	
+2024-05-24 00:14:54,963 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:14:55,716 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.192 (mIoU_max_px)	
+2024-05-24 00:14:55,721 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     95.919      |  97.572 (10  epoch)   |    98.941    | 99.449 (10  epoch) |      96.552      |   96.552 (50  epoch)   |   95.954    | 97.272 (10  epoch) |   99.217    | 99.369 (10  epoch) |  47.211  | 51.591 (10  epoch) |    50.962    | 54.980 (10  epoch) |        24.356        |     24.792 (10  epoch)     |        62.962         |     66.780 (40  epoch)      |        15.019         |     15.480 (10  epoch)      |    34.194     | 37.912 (10  epoch)  |
+| cable_gland |     93.924      |  93.924 (50  epoch)   |    98.509    | 98.509 (50  epoch) |      94.253      |   94.253 (50  epoch)   |   98.668    | 98.668 (50  epoch) |   99.496    | 99.496 (50  epoch) |  40.295  | 40.295 (50  epoch) |    48.055    | 48.055 (50  epoch) |        24.539        |     24.539 (50  epoch)     |        50.340         |     64.783 (10  epoch)      |        14.858         |     14.858 (50  epoch)      |    31.626     | 31.626 (50  epoch)  |
+|   carrot    |     90.264      |  90.264 (50  epoch)   |    97.505    | 97.505 (50  epoch) |      94.382      |   94.382 (50  epoch)   |   97.786    | 97.786 (50  epoch) |   99.356    | 99.356 (50  epoch) |  26.341  | 26.448 (40  epoch) |    31.818    | 31.818 (50  epoch) |        18.979        |     19.676 (20  epoch)     |        40.080         |     44.768 (40  epoch)      |        10.788         |     11.202 (20  epoch)      |    18.919     | 18.919 (50  epoch)  |
+|   cookie    |     65.881      |  65.881 (50  epoch)   |    88.693    | 88.693 (50  epoch) |      88.034      |   88.034 (10  epoch)   |   92.612    | 92.612 (50  epoch) |   98.407    | 98.407 (50  epoch) |  50.090  | 50.090 (50  epoch) |    50.560    | 50.560 (50  epoch) |        21.066        |     21.066 (50  epoch)     |        50.898         |     59.213 (10  epoch)      |        12.810         |     12.810 (50  epoch)      |    33.833     | 33.833 (50  epoch)  |
+|    dowel    |     99.260      |  99.260 (50  epoch)   |    99.823    | 99.823 (50  epoch) |      97.630      |   97.630 (50  epoch)   |   98.426    | 98.426 (50  epoch) |   99.647    | 99.647 (50  epoch) |  47.072  | 47.091 (30  epoch) |    46.829    | 48.032 (30  epoch) |        28.369        |     28.369 (50  epoch)     |        48.975         |     60.905 (10  epoch)      |        17.302         |     17.302 (50  epoch)      |    30.573     | 31.606 (30  epoch)  |
+|    foam     |     82.312      |  83.312 (40  epoch)   |    95.607    | 95.922 (40  epoch) |      90.395      |   90.395 (50  epoch)   |   80.760    | 80.760 (50  epoch) |   93.722    | 93.722 (50  epoch) |  18.466  | 18.466 (50  epoch) |    31.219    | 31.462 (40  epoch) |        17.803        |     17.803 (50  epoch)     |        31.595         |     33.449 (30  epoch)      |        10.050         |     10.050 (50  epoch)      |    18.497     | 18.667 (40  epoch)  |
+|    peach    |     90.639      |  90.639 (50  epoch)   |    97.318    | 97.318 (50  epoch) |      94.495      |   94.495 (50  epoch)   |   97.413    | 97.413 (50  epoch) |   99.314    | 99.314 (50  epoch) |  40.424  | 40.424 (50  epoch) |    44.018    | 44.018 (50  epoch) |        17.998        |     17.998 (50  epoch)     |        54.039         |     64.724 (10  epoch)      |        10.654         |     10.654 (50  epoch)      |    28.220     | 28.220 (50  epoch)  |
+|   potato    |     66.453      |  69.368 (40  epoch)   |    90.352    | 91.274 (40  epoch) |      90.640      |   90.640 (50  epoch)   |   96.508    | 96.601 (30  epoch) |   99.096    | 99.096 (50  epoch) |  16.835  | 16.835 (50  epoch) |    24.471    | 24.471 (50  epoch) |        12.654        |     12.654 (50  epoch)     |        59.294         |     66.527 (40  epoch)      |         6.936         |      6.936 (50  epoch)      |    13.941     | 13.941 (50  epoch)  |
+|    rope     |     97.781      |  97.781 (50  epoch)   |    99.110    | 99.110 (50  epoch) |      95.714      |   95.714 (50  epoch)   |   97.513    | 97.513 (50  epoch) |   99.653    | 99.654 (30  epoch) |  58.057  | 59.754 (30  epoch) |    57.797    | 58.145 (30  epoch) |        33.406        |     34.339 (30  epoch)     |        52.948         |     52.948 (50  epoch)      |        21.587         |     22.261 (30  epoch)      |    40.644     | 40.989 (30  epoch)  |
+|    tire     |     78.253      |  78.253 (50  epoch)   |    92.799    | 92.799 (50  epoch) |      88.398      |   88.421 (40  epoch)   |   96.570    | 96.570 (50  epoch) |   99.272    | 99.272 (50  epoch) |  24.887  | 24.887 (50  epoch) |    34.083    | 34.083 (50  epoch) |        14.041        |     14.041 (50  epoch)     |        36.064         |     37.072 (20  epoch)      |         7.957         |      7.957 (50  epoch)      |    20.542     | 20.542 (50  epoch)  |
+|     Avg     |     86.069      |  86.069 (50  epoch)   |    95.866    | 95.866 (50  epoch) |      93.049      |   93.049 (50  epoch)   |   95.221    | 95.221 (50  epoch) |   98.718    | 98.718 (50  epoch) |  36.968  | 36.968 (50  epoch) |    41.981    | 41.981 (50  epoch) |        21.321        |     21.321 (50  epoch)     |        48.720         |     51.819 (10  epoch)      |        12.796         |     12.796 (50  epoch)      |    27.099     | 27.099 (50  epoch)  |
+2024-05-24 00:14:55,837 - ==> Total time: 0:25:54	 Eta: 0:25:54 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:15:12,330 - Train: 50.54% [4650/9200]  [50.5/100.0] [batch_t 0.282 (0.289)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.741 (2.610)]
+2024-05-24 00:15:24,191 - ==> Total time: 0:26:23	 Eta: 0:25:21 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:15:28,591 - Train: 51.09% [4700/9200]  [51.1/100.0] [batch_t 0.283 (0.322)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.674 (2.654)]
+2024-05-24 00:15:42,720 - Train: 51.63% [4750/9200]  [51.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.597 (2.613)]
+2024-05-24 00:15:52,329 - ==> Total time: 0:26:51	 Eta: 0:24:47 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:15:59,244 - Train: 52.17% [4800/9200]  [52.2/100.0] [batch_t 0.282 (0.303)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.589 (2.565)]
+2024-05-24 00:16:13,380 - Train: 52.72% [4850/9200]  [52.7/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.659 (2.596)]
+2024-05-24 00:16:20,731 - ==> Total time: 0:27:19	 Eta: 0:24:14 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:16:29,523 - Train: 53.26% [4900/9200]  [53.3/100.0] [batch_t 0.282 (0.296)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.483 (2.586)]
+2024-05-24 00:16:43,643 - Train: 53.80% [4950/9200]  [53.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.727 (2.583)]
+2024-05-24 00:16:48,729 - ==> Total time: 0:27:47	 Eta: 0:23:40 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:16:59,868 - Train: 54.35% [5000/9200]  [54.3/100.0] [batch_t 0.282 (0.293)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.455 (2.549)]
+2024-05-24 00:17:13,991 - Train: 54.89% [5050/9200]  [54.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.564 (2.574)]
+2024-05-24 00:17:16,818 - ==> Total time: 0:28:15	 Eta: 0:23:07 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:17:30,132 - Train: 55.43% [5100/9200]  [55.4/100.0] [batch_t 0.283 (0.290)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.556 (2.531)]
+2024-05-24 00:17:44,268 - Train: 55.98% [5150/9200]  [56.0/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.594 (2.563)]
+2024-05-24 00:17:44,836 - ==> Total time: 0:28:43	 Eta: 0:22:34 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:18:00,729 - Train: 56.52% [5200/9200]  [56.5/100.0] [batch_t 0.281 (0.289)] [data_t 0.002] [optim_t 0.279] [lr 0.004000] [pixel 2.607 (2.521)]
+2024-05-24 00:18:13,143 - ==> Total time: 0:29:12	 Eta: 0:22:01 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:18:16,884 - Train: 57.07% [5250/9200]  [57.1/100.0] [batch_t 0.281 (0.335)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.470 (2.507)]
+2024-05-24 00:18:30,980 - Train: 57.61% [5300/9200]  [57.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.558 (2.522)]
+2024-05-24 00:18:41,136 - ==> Total time: 0:29:40	 Eta: 0:21:29 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:18:47,145 - Train: 58.15% [5350/9200]  [58.2/100.0] [batch_t 0.282 (0.307)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.446 (2.529)]
+2024-05-24 00:19:01,245 - Train: 58.70% [5400/9200]  [58.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.433 (2.507)]
+2024-05-24 00:19:09,143 - ==> Total time: 0:30:08	 Eta: 0:20:56 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:19:17,830 - Train: 59.24% [5450/9200]  [59.2/100.0] [batch_t 0.282 (0.296)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.472 (2.462)]
+2024-05-24 00:19:31,916 - Train: 59.78% [5500/9200]  [59.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.716 (2.504)]
+2024-05-24 00:19:46,553 - Test: 100.00% [38/38] [batch_t 0.087 (0.233)] [pixel 2.939 (2.816)]
+2024-05-24 00:19:47,367 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-24 00:19:48,085 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.181 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-24 00:19:49,182 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.277 (mF1_max_px)	  0.096 (mF1_px_0.2_0.8_0.1)	  0.097 (mAcc_px_0.2_0.8_0.1)	  0.095 (mIoU_px_0.2_0.8_0.1)	  0.274 (mIoU_max_px)	
+2024-05-24 00:19:50,070 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.222 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.078 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.223 (mIoU_max_px)	
+2024-05-24 00:19:50,953 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.219 (mIoU_max_px)	
+2024-05-24 00:19:51,621 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:19:52,528 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.229 (mF1_max_px)	  0.078 (mF1_px_0.2_0.8_0.1)	  0.079 (mAcc_px_0.2_0.8_0.1)	  0.079 (mIoU_px_0.2_0.8_0.1)	  0.225 (mIoU_max_px)	
+2024-05-24 00:19:53,284 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-24 00:19:53,947 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-24 00:19:54,688 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.188 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-24 00:19:54,693 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     93.853      |  97.572 (10  epoch)   |    98.412    | 99.449 (10  epoch) |      94.118      |   96.552 (50  epoch)   |   95.395    | 97.272 (10  epoch) |   99.168    | 99.369 (10  epoch) |  46.033  | 51.591 (10  epoch) |    49.566    | 54.980 (10  epoch) |        23.966        |     24.792 (10  epoch)     |        65.022         |     66.780 (40  epoch)      |        14.724         |     15.480 (10  epoch)      |    32.948     | 37.912 (10  epoch)  |
+| cable_gland |     92.830      |  93.924 (50  epoch)   |    98.163    | 98.509 (50  epoch) |      93.714      |   94.253 (50  epoch)   |   98.389    | 98.668 (50  epoch) |   99.379    | 99.496 (50  epoch) |  36.794  | 40.295 (50  epoch) |    43.226    | 48.055 (50  epoch) |        21.831        |     24.539 (50  epoch)     |        47.350         |     64.783 (10  epoch)      |        12.951         |     14.858 (50  epoch)      |    27.572     | 31.626 (50  epoch)  |
+|   carrot    |     89.871      |  90.264 (50  epoch)   |    97.326    | 97.505 (50  epoch) |      94.585      |   94.585 (60  epoch)   |   97.725    | 97.786 (50  epoch) |   99.336    | 99.356 (50  epoch) |  25.714  | 26.448 (40  epoch) |    31.176    | 31.818 (50  epoch) |        18.875        |     19.676 (20  epoch)     |        39.480         |     44.768 (40  epoch)      |        10.712         |     11.202 (20  epoch)      |    18.466     | 18.919 (50  epoch)  |
+|   cookie    |     64.182      |  65.881 (50  epoch)   |    88.470    | 88.693 (50  epoch) |      88.034      |   88.034 (10  epoch)   |   92.757    | 92.757 (60  epoch) |   98.366    | 98.407 (50  epoch) |  48.378  | 50.090 (50  epoch) |    49.662    | 50.560 (50  epoch) |        20.648        |     21.066 (50  epoch)     |        51.782         |     59.213 (10  epoch)      |        12.480         |     12.810 (50  epoch)      |    33.034     | 33.833 (50  epoch)  |
+|    dowel    |     98.854      |  99.260 (50  epoch)   |    99.740    | 99.823 (50  epoch) |      98.039      |   98.039 (60  epoch)   |   98.442    | 98.442 (60  epoch) |   99.657    | 99.657 (60  epoch) |  48.178  | 48.178 (60  epoch) |    48.595    | 48.595 (60  epoch) |        29.005        |     29.005 (60  epoch)     |        48.933         |     60.905 (10  epoch)      |        17.757         |     17.757 (60  epoch)      |    32.096     | 32.096 (60  epoch)  |
+|    foam     |     79.312      |  83.312 (40  epoch)   |    94.853    | 95.922 (40  epoch) |      89.385      |   90.395 (50  epoch)   |   79.124    | 80.760 (50  epoch) |   93.090    | 93.722 (50  epoch) |  18.046  | 18.466 (50  epoch) |    30.688    | 31.462 (40  epoch) |        17.255        |     17.803 (50  epoch)     |        32.287         |     33.449 (30  epoch)      |         9.718         |     10.050 (50  epoch)      |    18.125     | 18.667 (40  epoch)  |
+|    peach    |     89.804      |  90.639 (50  epoch)   |    96.948    | 97.318 (50  epoch) |      93.519      |   94.495 (50  epoch)   |   97.163    | 97.413 (50  epoch) |   99.286    | 99.314 (50  epoch) |  40.253  | 40.424 (50  epoch) |    44.464    | 44.464 (60  epoch) |        17.505        |     17.998 (50  epoch)     |        52.287         |     64.724 (10  epoch)      |        10.338         |     10.654 (50  epoch)      |    28.587     | 28.587 (60  epoch)  |
+|   potato    |     65.464      |  69.368 (40  epoch)   |    89.968    | 91.274 (40  epoch) |      90.640      |   90.640 (50  epoch)   |   96.401    | 96.601 (30  epoch) |   99.077    | 99.096 (50  epoch) |  15.808  | 16.835 (50  epoch) |    23.466    | 24.471 (50  epoch) |        12.421        |     12.654 (50  epoch)     |        62.518         |     66.527 (40  epoch)      |         6.797         |      6.936 (50  epoch)      |    13.292     | 13.941 (50  epoch)  |
+|    rope     |     96.422      |  97.781 (50  epoch)   |    98.618    | 99.110 (50  epoch) |      94.030      |   95.714 (50  epoch)   |   96.854    | 97.513 (50  epoch) |   99.603    | 99.654 (30  epoch) |  58.049  | 59.754 (30  epoch) |    57.961    | 58.145 (30  epoch) |        33.912        |     34.339 (30  epoch)     |        50.769         |     52.948 (50  epoch)      |        21.940         |     22.261 (30  epoch)      |    40.806     | 40.989 (30  epoch)  |
+|    tire     |     77.471      |  78.253 (50  epoch)   |    92.573    | 92.799 (50  epoch) |      89.231      |   89.231 (60  epoch)   |   96.418    | 96.570 (50  epoch) |   99.254    | 99.272 (50  epoch) |  25.443  | 25.443 (60  epoch) |    34.994    | 34.994 (60  epoch) |        14.099        |     14.099 (60  epoch)     |        32.756         |     37.072 (20  epoch)      |         8.055         |      8.055 (60  epoch)      |    21.208     | 21.208 (60  epoch)  |
+|     Avg     |     84.806      |  86.069 (50  epoch)   |    95.507    | 95.866 (50  epoch) |      92.530      |   93.049 (50  epoch)   |   94.867    | 95.221 (50  epoch) |   98.622    | 98.718 (50  epoch) |  36.270  | 36.968 (50  epoch) |    41.380    | 41.981 (50  epoch) |        20.952        |     21.321 (50  epoch)     |        48.318         |     51.819 (10  epoch)      |        12.547         |     12.796 (50  epoch)      |    26.614     | 27.099 (50  epoch)  |
+2024-05-24 00:19:54,800 - ==> Total time: 0:30:53	 Eta: 0:20:35 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:20:05,796 - Train: 60.33% [5550/9200]  [60.3/100.0] [batch_t 0.282 (0.294)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.486 (2.470)]
+2024-05-24 00:20:19,893 - Train: 60.87% [5600/9200]  [60.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.407 (2.508)]
+2024-05-24 00:20:23,281 - ==> Total time: 0:31:22	 Eta: 0:20:03 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:20:36,062 - Train: 61.41% [5650/9200]  [61.4/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.322 (2.431)]
+2024-05-24 00:20:50,139 - Train: 61.96% [5700/9200]  [62.0/100.0] [batch_t 0.281 (0.281)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.459 (2.498)]
+2024-05-24 00:20:51,269 - ==> Total time: 0:31:50	 Eta: 0:19:30 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:21:06,209 - Train: 62.50% [5750/9200]  [62.5/100.0] [batch_t 0.281 (0.288)] [data_t 0.002] [optim_t 0.279] [lr 0.004000] [pixel 2.386 (2.464)]
+2024-05-24 00:21:19,170 - ==> Total time: 0:32:18	 Eta: 0:18:58 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:21:22,356 - Train: 63.04% [5800/9200]  [63.0/100.0] [batch_t 0.282 (0.364)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.523 (2.475)]
+2024-05-24 00:21:36,460 - Train: 63.59% [5850/9200]  [63.6/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.279] [lr 0.004000] [pixel 2.434 (2.434)]
+2024-05-24 00:21:47,184 - ==> Total time: 0:32:46	 Eta: 0:18:25 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:21:52,602 - Train: 64.13% [5900/9200]  [64.1/100.0] [batch_t 0.282 (0.307)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.464 (2.442)]
+2024-05-24 00:22:06,714 - Train: 64.67% [5950/9200]  [64.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.529 (2.432)]
+2024-05-24 00:22:15,179 - ==> Total time: 0:33:14	 Eta: 0:17:53 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:22:22,897 - Train: 65.22% [6000/9200]  [65.2/100.0] [batch_t 0.282 (0.301)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.284 (2.444)]
+2024-05-24 00:22:36,998 - Train: 65.76% [6050/9200]  [65.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.357 (2.436)]
+2024-05-24 00:22:43,203 - ==> Total time: 0:33:42	 Eta: 0:17:21 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:22:53,150 - Train: 66.30% [6100/9200]  [66.3/100.0] [batch_t 0.282 (0.294)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.452 (2.406)]
+2024-05-24 00:23:07,255 - Train: 66.85% [6150/9200]  [66.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.425 (2.430)]
+2024-05-24 00:23:11,205 - ==> Total time: 0:34:10	 Eta: 0:16:49 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:23:23,464 - Train: 67.39% [6200/9200]  [67.4/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.310 (2.437)]
+2024-05-24 00:23:37,574 - Train: 67.93% [6250/9200]  [67.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.365 (2.405)]
+2024-05-24 00:23:39,270 - ==> Total time: 0:34:38	 Eta: 0:16:18 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:23:53,854 - Train: 68.48% [6300/9200]  [68.5/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.341 (2.400)]
+2024-05-24 00:24:07,397 - ==> Total time: 0:35:06	 Eta: 0:15:46 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:24:10,060 - Train: 69.02% [6350/9200]  [69.0/100.0] [batch_t 0.282 (0.450)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.376 (2.368)]
+2024-05-24 00:24:24,176 - Train: 69.57% [6400/9200]  [69.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.233 (2.384)]
+2024-05-24 00:24:44,424 - Test: 100.00% [38/38] [batch_t 0.086 (0.233)] [pixel 2.838 (2.762)]
+2024-05-24 00:24:45,234 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-24 00:24:45,945 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.179 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-24 00:24:47,028 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.273 (mF1_max_px)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.094 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.270 (mIoU_max_px)	
+2024-05-24 00:24:47,908 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.219 (mIoU_max_px)	
+2024-05-24 00:24:48,790 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.218 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.078 (mAcc_px_0.2_0.8_0.1)	  0.078 (mIoU_px_0.2_0.8_0.1)	  0.222 (mIoU_max_px)	
+2024-05-24 00:24:49,455 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.165 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-24 00:24:50,349 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.225 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.078 (mAcc_px_0.2_0.8_0.1)	  0.078 (mIoU_px_0.2_0.8_0.1)	  0.221 (mIoU_max_px)	
+2024-05-24 00:24:51,107 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-24 00:24:51,765 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:24:52,512 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-24 00:24:52,517 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     96.023      |  97.572 (10  epoch)   |    99.031    | 99.449 (10  epoch) |      95.402      |   96.552 (50  epoch)   |   95.738    | 97.272 (10  epoch) |   99.212    | 99.369 (10  epoch) |  46.811  | 51.591 (10  epoch) |    50.609    | 54.980 (10  epoch) |        24.565        |     24.792 (10  epoch)     |        63.104         |     66.780 (40  epoch)      |        15.122         |     15.480 (10  epoch)      |    33.877     | 37.912 (10  epoch)  |
+| cable_gland |     95.402      |  95.402 (70  epoch)   |    98.874    | 98.874 (70  epoch) |      96.045      |   96.045 (70  epoch)   |   98.777    | 98.777 (70  epoch) |   99.540    | 99.540 (70  epoch) |  40.482  | 40.482 (70  epoch) |    47.704    | 48.055 (50  epoch) |        24.445        |     24.539 (50  epoch)     |        47.977         |     64.783 (10  epoch)      |        14.765         |     14.858 (50  epoch)      |    31.324     | 31.626 (50  epoch)  |
+|   carrot    |     90.488      |  90.488 (70  epoch)   |    97.625    | 97.625 (70  epoch) |      94.928      |   94.928 (70  epoch)   |   97.523    | 97.786 (50  epoch) |   99.282    | 99.356 (50  epoch) |  24.379  | 26.448 (40  epoch) |    30.214    | 31.818 (50  epoch) |        18.028        |     19.676 (20  epoch)     |        39.115         |     44.768 (40  epoch)      |        10.189         |     11.202 (20  epoch)      |    17.795     | 18.919 (50  epoch)  |
+|   cookie    |     64.043      |  65.881 (50  epoch)   |    88.760    | 88.760 (70  epoch) |      88.034      |   88.034 (10  epoch)   |   92.540    | 92.757 (60  epoch) |   98.409    | 98.409 (70  epoch) |  49.361  | 50.090 (50  epoch) |    50.105    | 50.560 (50  epoch) |        21.291        |     21.291 (70  epoch)     |        52.605         |     59.213 (10  epoch)      |        12.895         |     12.895 (70  epoch)      |    33.427     | 33.833 (50  epoch)  |
+|    dowel    |     99.038      |  99.260 (50  epoch)   |    99.774    | 99.823 (50  epoch) |      98.058      |   98.058 (70  epoch)   |   98.644    | 98.644 (70  epoch) |   99.689    | 99.689 (70  epoch) |  49.740  | 49.740 (70  epoch) |    48.441    | 48.595 (60  epoch) |        30.717        |     30.717 (70  epoch)     |        51.837         |     60.905 (10  epoch)      |        18.913         |     18.913 (70  epoch)      |    31.962     | 32.096 (60  epoch)  |
+|    foam     |     82.813      |  83.312 (40  epoch)   |    95.715    | 95.922 (40  epoch) |      90.698      |   90.698 (70  epoch)   |   80.404    | 80.760 (50  epoch) |   93.607    | 93.722 (50  epoch) |  18.591  | 18.591 (70  epoch) |    31.039    | 31.462 (40  epoch) |        17.702        |     17.803 (50  epoch)     |        31.892         |     33.449 (30  epoch)      |         9.989         |     10.050 (50  epoch)      |    18.370     | 18.667 (40  epoch)  |
+|    peach    |     89.804      |  90.639 (50  epoch)   |    97.050    | 97.318 (50  epoch) |      94.495      |   94.495 (50  epoch)   |   97.204    | 97.413 (50  epoch) |   99.292    | 99.314 (50  epoch) |  40.621  | 40.621 (70  epoch) |    44.960    | 44.960 (70  epoch) |        18.036        |     18.036 (70  epoch)     |        53.402         |     64.724 (10  epoch)      |        10.680         |     10.680 (70  epoch)      |    28.999     | 28.999 (70  epoch)  |
+|   potato    |     66.502      |  69.368 (40  epoch)   |    89.966    | 91.274 (40  epoch) |      90.640      |   90.640 (50  epoch)   |   96.350    | 96.601 (30  epoch) |   99.075    | 99.096 (50  epoch) |  16.339  | 16.835 (50  epoch) |    23.597    | 24.471 (50  epoch) |        12.223        |     12.654 (50  epoch)     |        60.547         |     66.527 (40  epoch)      |         6.685         |      6.936 (50  epoch)      |    13.377     | 13.941 (50  epoch)  |
+|    rope     |     96.558      |  97.781 (50  epoch)   |    98.669    | 99.110 (50  epoch) |      94.286      |   95.714 (50  epoch)   |   97.068    | 97.513 (50  epoch) |   99.615    | 99.654 (30  epoch) |  57.035  | 59.754 (30  epoch) |    58.202    | 58.202 (70  epoch) |        32.811        |     34.339 (30  epoch)     |        46.900         |     52.948 (50  epoch)      |        21.214         |     22.261 (30  epoch)      |    41.046     | 41.046 (70  epoch)  |
+|    tire     |     83.264      |  83.264 (70  epoch)   |    94.786    | 94.786 (70  epoch) |      89.691      |   89.691 (70  epoch)   |   97.300    | 97.300 (70  epoch) |   99.437    | 99.437 (70  epoch) |  28.307  | 28.307 (70  epoch) |    37.376    | 37.376 (70  epoch) |        15.619        |     15.619 (70  epoch)     |        34.082         |     37.072 (20  epoch)      |         9.015         |      9.015 (70  epoch)      |    22.983     | 22.983 (70  epoch)  |
+|     Avg     |     86.394      |  86.394 (70  epoch)   |    96.025    | 96.025 (70  epoch) |      93.228      |   93.228 (70  epoch)   |   95.155    | 95.221 (50  epoch) |   98.716    | 98.718 (50  epoch) |  37.167  | 37.167 (70  epoch) |    42.225    | 42.225 (70  epoch) |        21.544        |     21.544 (70  epoch)     |        48.146         |     51.819 (10  epoch)      |        12.947         |     12.947 (70  epoch)      |    27.316     | 27.316 (70  epoch)  |
+2024-05-24 00:24:52,616 - ==> Total time: 0:35:51	 Eta: 0:15:22 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:24:57,874 - Train: 70.11% [6450/9200]  [70.1/100.0] [batch_t 0.281 (0.316)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.328 (2.378)]
+2024-05-24 00:25:11,968 - Train: 70.65% [6500/9200]  [70.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.453 (2.384)]
+2024-05-24 00:25:21,000 - ==> Total time: 0:36:19	 Eta: 0:14:50 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:25:28,138 - Train: 71.20% [6550/9200]  [71.2/100.0] [batch_t 0.282 (0.304)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.349 (2.364)]
+2024-05-24 00:25:42,264 - Train: 71.74% [6600/9200]  [71.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.386 (2.388)]
+2024-05-24 00:25:49,051 - ==> Total time: 0:36:48	 Eta: 0:14:18 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:25:58,390 - Train: 72.28% [6650/9200]  [72.3/100.0] [batch_t 0.282 (0.293)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.435 (2.374)]
+2024-05-24 00:26:12,524 - Train: 72.83% [6700/9200]  [72.8/100.0] [batch_t 0.282 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.401 (2.368)]
+2024-05-24 00:26:17,045 - ==> Total time: 0:37:16	 Eta: 0:13:47 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:26:28,621 - Train: 73.37% [6750/9200]  [73.4/100.0] [batch_t 0.282 (0.292)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.304 (2.364)]
+2024-05-24 00:26:42,723 - Train: 73.91% [6800/9200]  [73.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.523 (2.366)]
+2024-05-24 00:26:44,982 - ==> Total time: 0:37:43	 Eta: 0:13:15 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:26:58,839 - Train: 74.46% [6850/9200]  [74.5/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.355 (2.340)]
+2024-05-24 00:27:12,950 - Train: 75.00% [6900/9200]  [75.0/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.273 (2.358)]
+2024-05-24 00:27:12,952 - ==> Total time: 0:38:11	 Eta: 0:12:43 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:27:29,037 - Train: 75.54% [6950/9200]  [75.5/100.0] [batch_t 0.282 (0.289)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.384 (2.346)]
+2024-05-24 00:27:40,892 - ==> Total time: 0:38:39	 Eta: 0:12:12 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:27:45,228 - Train: 76.09% [7000/9200]  [76.1/100.0] [batch_t 0.283 (0.328)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.340 (2.316)]
+2024-05-24 00:27:59,328 - Train: 76.63% [7050/9200]  [76.6/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.395 (2.331)]
+2024-05-24 00:28:08,912 - ==> Total time: 0:39:07	 Eta: 0:11:41 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:28:15,711 - Train: 77.17% [7100/9200]  [77.2/100.0] [batch_t 0.283 (0.306)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.268 (2.324)]
+2024-05-24 00:28:29,823 - Train: 77.72% [7150/9200]  [77.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.313 (2.331)]
+2024-05-24 00:28:37,159 - ==> Total time: 0:39:36	 Eta: 0:11:10 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:28:46,089 - Train: 78.26% [7200/9200]  [78.3/100.0] [batch_t 0.283 (0.299)] [data_t 0.002] [optim_t 0.281] [lr 0.004000] [pixel 2.307 (2.326)]
+2024-05-24 00:29:00,207 - Train: 78.80% [7250/9200]  [78.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.217 (2.315)]
+2024-05-24 00:29:05,288 - ==> Total time: 0:40:04	 Eta: 0:10:39 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:29:16,570 - Train: 79.35% [7300/9200]  [79.3/100.0] [batch_t 0.282 (0.293)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.312 (2.315)]
+2024-05-24 00:29:30,679 - Train: 79.89% [7350/9200]  [79.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.004000] [pixel 2.523 (2.333)]
+2024-05-24 00:29:42,443 - Test: 100.00% [38/38] [batch_t 0.086 (0.232)] [pixel 2.762 (2.691)]
+2024-05-24 00:29:43,268 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-24 00:29:43,980 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.180 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-24 00:29:45,072 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.276 (mF1_max_px)	  0.095 (mF1_px_0.2_0.8_0.1)	  0.095 (mAcc_px_0.2_0.8_0.1)	  0.095 (mIoU_px_0.2_0.8_0.1)	  0.272 (mIoU_max_px)	
+2024-05-24 00:29:45,966 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.227 (mF1_max_px)	  0.079 (mF1_px_0.2_0.8_0.1)	  0.080 (mAcc_px_0.2_0.8_0.1)	  0.078 (mIoU_px_0.2_0.8_0.1)	  0.221 (mIoU_max_px)	
+2024-05-24 00:29:46,845 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.220 (mIoU_max_px)	
+2024-05-24 00:29:47,509 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-24 00:29:48,421 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.228 (mF1_max_px)	  0.080 (mF1_px_0.2_0.8_0.1)	  0.080 (mAcc_px_0.2_0.8_0.1)	  0.080 (mIoU_px_0.2_0.8_0.1)	  0.227 (mIoU_max_px)	
+2024-05-24 00:29:49,177 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-24 00:29:49,836 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:29:50,576 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.189 (mIoU_max_px)	
+2024-05-24 00:29:50,581 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     94.835      |  97.572 (10  epoch)   |    98.724    | 99.449 (10  epoch) |      94.382      |   96.552 (50  epoch)   |   95.190    | 97.272 (10  epoch) |   99.130    | 99.369 (10  epoch) |  45.352  | 51.591 (10  epoch) |    49.537    | 54.980 (10  epoch) |        24.285        |     24.792 (10  epoch)     |        63.034         |     66.780 (40  epoch)      |        14.876         |     15.480 (10  epoch)      |    32.923     | 37.912 (10  epoch)  |
+| cable_gland |     95.293      |  95.402 (70  epoch)   |    98.824    | 98.874 (70  epoch) |      95.455      |   96.045 (70  epoch)   |   98.733    | 98.777 (70  epoch) |   99.527    | 99.540 (70  epoch) |  40.071  | 40.482 (70  epoch) |    46.827    | 48.055 (50  epoch) |        23.945        |     24.539 (50  epoch)     |        45.344         |     64.783 (10  epoch)      |        14.447         |     14.858 (50  epoch)      |    30.571     | 31.626 (50  epoch)  |
+|   carrot    |     89.731      |  90.488 (70  epoch)   |    97.494    | 97.625 (70  epoch) |      94.286      |   94.928 (70  epoch)   |   97.561    | 97.786 (50  epoch) |   99.308    | 99.356 (50  epoch) |  25.255  | 26.448 (40  epoch) |    30.304    | 31.818 (50  epoch) |        19.003        |     19.676 (20  epoch)     |        40.272         |     44.768 (40  epoch)      |        10.784         |     11.202 (20  epoch)      |    17.857     | 18.919 (50  epoch)  |
+|   cookie    |     63.800      |  65.881 (50  epoch)   |    88.623    | 88.760 (70  epoch) |      88.034      |   88.034 (10  epoch)   |   92.965    | 92.965 (80  epoch) |   98.442    | 98.442 (80  epoch) |  49.477  | 50.090 (50  epoch) |    50.246    | 50.560 (50  epoch) |        21.163        |     21.291 (70  epoch)     |        53.040         |     59.213 (10  epoch)      |        12.828         |     12.895 (70  epoch)      |    33.553     | 33.833 (50  epoch)  |
+|    dowel    |     99.075      |  99.260 (50  epoch)   |    99.793    | 99.823 (50  epoch) |      98.551      |   98.551 (80  epoch)   |   98.464    | 98.644 (70  epoch) |   99.662    | 99.689 (70  epoch) |  48.988  | 49.740 (70  epoch) |    48.749    | 48.749 (80  epoch) |        29.212        |     30.717 (70  epoch)     |        46.947         |     60.905 (10  epoch)      |        17.989         |     18.913 (70  epoch)      |    32.231     | 32.231 (80  epoch)  |
+|    foam     |     82.562      |  83.312 (40  epoch)   |    95.581    | 95.922 (40  epoch) |      89.888      |   90.698 (70  epoch)   |   80.397    | 80.760 (50  epoch) |   93.579    | 93.722 (50  epoch) |  18.698  | 18.698 (80  epoch) |    30.903    | 31.462 (40  epoch) |        17.607        |     17.803 (50  epoch)     |        30.974         |     33.449 (30  epoch)      |         9.933         |     10.050 (50  epoch)      |    18.275     | 18.667 (40  epoch)  |
+|    peach    |     90.058      |  90.639 (50  epoch)   |    97.180    | 97.318 (50  epoch) |      93.088      |   94.495 (50  epoch)   |   96.881    | 97.413 (50  epoch) |   99.233    | 99.314 (50  epoch) |  40.205  | 40.621 (70  epoch) |    45.332    | 45.332 (80  epoch) |        16.736        |     18.036 (70  epoch)     |        48.805         |     64.724 (10  epoch)      |         9.875         |     10.680 (70  epoch)      |    29.309     | 29.309 (80  epoch)  |
+|   potato    |     64.180      |  69.368 (40  epoch)   |    89.606    | 91.274 (40  epoch) |      90.099      |   90.640 (50  epoch)   |   96.381    | 96.601 (30  epoch) |   99.079    | 99.096 (50  epoch) |  16.525  | 16.835 (50  epoch) |    23.853    | 24.471 (50  epoch) |        12.763        |     12.763 (80  epoch)     |        62.908         |     66.527 (40  epoch)      |         6.990         |      6.990 (80  epoch)      |    13.542     | 13.941 (50  epoch)  |
+|    rope     |     96.241      |  97.781 (50  epoch)   |    98.553    | 99.110 (50  epoch) |      94.203      |   95.714 (50  epoch)   |   97.242    | 97.513 (50  epoch) |   99.623    | 99.654 (30  epoch) |  57.323  | 59.754 (30  epoch) |    58.192    | 58.202 (70  epoch) |        32.515        |     34.339 (30  epoch)     |        46.410         |     52.948 (50  epoch)      |        21.004         |     22.261 (30  epoch)      |    41.035     | 41.046 (70  epoch)  |
+|    tire     |     83.264      |  83.264 (70  epoch)   |    94.766    | 94.786 (70  epoch) |      89.617      |   89.691 (70  epoch)   |   97.135    | 97.300 (70  epoch) |   99.409    | 99.437 (70  epoch) |  27.896  | 28.307 (70  epoch) |    36.818    | 37.376 (70  epoch) |        15.335        |     15.619 (70  epoch)     |        33.664         |     37.072 (20  epoch)      |         8.846         |      9.015 (70  epoch)      |    22.562     | 22.983 (70  epoch)  |
+|     Avg     |     85.904      |  86.394 (70  epoch)   |    95.914    | 96.025 (70  epoch) |      92.760      |   93.228 (70  epoch)   |   95.095    | 95.221 (50  epoch) |   98.699    | 98.718 (50  epoch) |  36.979  | 37.167 (70  epoch) |    42.076    | 42.225 (70  epoch) |        21.257        |     21.544 (70  epoch)     |        47.140         |     51.819 (10  epoch)      |        12.757         |     12.947 (70  epoch)      |    27.186     | 27.316 (70  epoch)  |
+2024-05-24 00:29:50,677 - ==> Total time: 0:40:49	 Eta: 0:10:12 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:30:04,501 - Train: 80.43% [7400/9200]  [80.4/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.196 (2.229)]
+2024-05-24 00:30:18,800 - Train: 80.98% [7450/9200]  [81.0/100.0] [batch_t 0.282 (0.286)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.066 (2.214)]
+2024-05-24 00:30:19,367 - ==> Total time: 0:41:18	 Eta: 0:09:41 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:30:35,013 - Train: 81.52% [7500/9200]  [81.5/100.0] [batch_t 0.283 (0.289)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.296 (2.212)]
+2024-05-24 00:30:47,449 - ==> Total time: 0:41:46	 Eta: 0:09:10 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:30:51,373 - Train: 82.07% [7550/9200]  [82.1/100.0] [batch_t 0.282 (0.344)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.137 (2.162)]
+2024-05-24 00:31:05,498 - Train: 82.61% [7600/9200]  [82.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.164 (2.203)]
+2024-05-24 00:31:15,653 - ==> Total time: 0:42:14	 Eta: 0:08:39 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:31:21,934 - Train: 83.15% [7650/9200]  [83.2/100.0] [batch_t 0.283 (0.308)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.134 (2.225)]
+2024-05-24 00:31:36,070 - Train: 83.70% [7700/9200]  [83.7/100.0] [batch_t 0.283 (0.283)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.210 (2.195)]
+2024-05-24 00:31:43,987 - ==> Total time: 0:42:42	 Eta: 0:08:08 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:31:52,367 - Train: 84.24% [7750/9200]  [84.2/100.0] [batch_t 0.283 (0.297)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.098 (2.204)]
+2024-05-24 00:32:06,496 - Train: 84.78% [7800/9200]  [84.8/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.109 (2.199)]
+2024-05-24 00:32:12,140 - ==> Total time: 0:43:11	 Eta: 0:07:37 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:32:23,265 - Train: 85.33% [7850/9200]  [85.3/100.0] [batch_t 0.283 (0.294)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.203 (2.209)]
+2024-05-24 00:32:37,390 - Train: 85.87% [7900/9200]  [85.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.122 (2.192)]
+2024-05-24 00:32:40,775 - ==> Total time: 0:43:39	 Eta: 0:07:06 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:32:53,757 - Train: 86.41% [7950/9200]  [86.4/100.0] [batch_t 0.282 (0.291)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.295 (2.194)]
+2024-05-24 00:33:07,865 - Train: 86.96% [8000/9200]  [87.0/100.0] [batch_t 0.282 (0.282)] [data_t 0.001] [optim_t 0.281] [lr 0.000400] [pixel 2.011 (2.186)]
+2024-05-24 00:33:08,996 - ==> Total time: 0:44:07	 Eta: 0:06:35 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:33:24,177 - Train: 87.50% [8050/9200]  [87.5/100.0] [batch_t 0.282 (0.289)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.172 (2.174)]
+2024-05-24 00:33:37,149 - ==> Total time: 0:44:36	 Eta: 0:06:04 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:33:40,628 - Train: 88.04% [8100/9200]  [88.0/100.0] [batch_t 0.282 (0.358)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.162 (2.158)]
+2024-05-24 00:33:54,731 - Train: 88.59% [8150/9200]  [88.6/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.124 (2.174)]
+2024-05-24 00:34:05,444 - ==> Total time: 0:45:04	 Eta: 0:05:34 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:34:11,326 - Train: 89.13% [8200/9200]  [89.1/100.0] [batch_t 0.283 (0.309)] [data_t 0.002] [optim_t 0.282] [lr 0.000400] [pixel 2.225 (2.218)]
+2024-05-24 00:34:25,426 - Train: 89.67% [8250/9200]  [89.7/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.170 (2.183)]
+2024-05-24 00:34:42,897 - Test: 100.00% [38/38] [batch_t 0.088 (0.233)] [pixel 2.716 (2.637)]
+2024-05-24 00:34:43,709 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-24 00:34:44,420 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.179 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.179 (mIoU_max_px)	
+2024-05-24 00:34:45,537 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.281 (mF1_max_px)	  0.097 (mF1_px_0.2_0.8_0.1)	  0.097 (mAcc_px_0.2_0.8_0.1)	  0.097 (mIoU_px_0.2_0.8_0.1)	  0.281 (mIoU_max_px)	
+2024-05-24 00:34:46,448 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.228 (mF1_max_px)	  0.080 (mF1_px_0.2_0.8_0.1)	  0.080 (mAcc_px_0.2_0.8_0.1)	  0.079 (mIoU_px_0.2_0.8_0.1)	  0.228 (mIoU_max_px)	
+2024-05-24 00:34:47,349 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.225 (mF1_max_px)	  0.078 (mF1_px_0.2_0.8_0.1)	  0.079 (mAcc_px_0.2_0.8_0.1)	  0.079 (mIoU_px_0.2_0.8_0.1)	  0.226 (mIoU_max_px)	
+2024-05-24 00:34:48,029 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-24 00:34:48,953 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.234 (mF1_max_px)	  0.080 (mF1_px_0.2_0.8_0.1)	  0.080 (mAcc_px_0.2_0.8_0.1)	  0.080 (mIoU_px_0.2_0.8_0.1)	  0.229 (mIoU_max_px)	
+2024-05-24 00:34:49,712 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-24 00:34:50,377 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mIoU_max_px)	
+2024-05-24 00:34:51,118 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-24 00:34:51,124 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     95.506      |  97.572 (10  epoch)   |    98.894    | 99.449 (10  epoch) |      94.186      |   96.552 (50  epoch)   |   95.160    | 97.272 (10  epoch) |   99.134    | 99.369 (10  epoch) |  45.530  | 51.591 (10  epoch) |    49.739    | 54.980 (10  epoch) |        24.314        |     24.792 (10  epoch)     |        61.783         |     66.780 (40  epoch)      |        14.888         |     15.480 (10  epoch)      |    33.102     | 37.912 (10  epoch)  |
+| cable_gland |     96.388      |  96.388 (90  epoch)   |    99.087    | 99.087 (90  epoch) |      96.000      |   96.045 (70  epoch)   |   98.773    | 98.777 (70  epoch) |   99.542    | 99.542 (90  epoch) |  40.341  | 40.482 (70  epoch) |    46.936    | 48.055 (50  epoch) |        24.495        |     24.539 (50  epoch)     |        45.389         |     64.783 (10  epoch)      |        14.795         |     14.858 (50  epoch)      |    30.664     | 31.626 (50  epoch)  |
+|   carrot    |     90.348      |  90.488 (70  epoch)   |    97.553    | 97.625 (70  epoch) |      94.545      |   94.928 (70  epoch)   |   97.571    | 97.786 (50  epoch) |   99.310    | 99.356 (50  epoch) |  24.934  | 26.448 (40  epoch) |    30.032    | 31.818 (50  epoch) |        18.633        |     19.676 (20  epoch)     |        37.009         |     44.768 (40  epoch)      |        10.547         |     11.202 (20  epoch)      |    17.669     | 18.919 (50  epoch)  |
+|   cookie    |     63.592      |  65.881 (50  epoch)   |    88.689    | 88.760 (70  epoch) |      88.034      |   88.034 (10  epoch)   |   92.705    | 92.965 (80  epoch) |   98.407    | 98.442 (80  epoch) |  49.222  | 50.090 (50  epoch) |    49.826    | 50.560 (50  epoch) |        21.620        |     21.620 (90  epoch)     |        53.657         |     59.213 (10  epoch)      |        13.086         |     13.086 (90  epoch)      |    33.179     | 33.833 (50  epoch)  |
+|    dowel    |     99.297      |  99.297 (90  epoch)   |    99.840    | 99.840 (90  epoch) |      98.551      |   98.551 (80  epoch)   |   98.544    | 98.644 (70  epoch) |   99.675    | 99.689 (70  epoch) |  49.276  | 49.740 (70  epoch) |    48.624    | 48.749 (80  epoch) |        29.872        |     30.717 (70  epoch)     |        47.346         |     60.905 (10  epoch)      |        18.422         |     18.913 (70  epoch)      |    32.121     | 32.231 (80  epoch)  |
+|    foam     |     83.312      |  83.312 (40  epoch)   |    95.803    | 95.922 (40  epoch) |      90.588      |   90.698 (70  epoch)   |   80.780    | 80.780 (90  epoch) |   93.691    | 93.722 (50  epoch) |  18.756  | 18.756 (90  epoch) |    30.974    | 31.462 (40  epoch) |        17.812        |     17.812 (90  epoch)     |        31.291         |     33.449 (30  epoch)      |        10.050         |     10.050 (90  epoch)      |    18.325     | 18.667 (40  epoch)  |
+|    peach    |     90.493      |  90.639 (50  epoch)   |    97.299    | 97.318 (50  epoch) |      93.636      |   94.495 (50  epoch)   |   97.160    | 97.413 (50  epoch) |   99.296    | 99.314 (50  epoch) |  41.132  | 41.132 (90  epoch) |    46.523    | 46.523 (90  epoch) |        18.079        |     18.079 (90  epoch)     |        51.999         |     64.724 (10  epoch)      |        10.731         |     10.731 (90  epoch)      |    30.313     | 30.313 (90  epoch)  |
+|   potato    |     66.206      |  69.368 (40  epoch)   |    90.208    | 91.274 (40  epoch) |      90.196      |   90.640 (50  epoch)   |   96.423    | 96.601 (30  epoch) |   99.100    | 99.100 (90  epoch) |  17.570  | 17.570 (90  epoch) |    24.656    | 24.656 (90  epoch) |        13.027        |     13.027 (90  epoch)     |        60.769         |     66.527 (40  epoch)      |         7.150         |      7.150 (90  epoch)      |    14.062     | 14.062 (90  epoch)  |
+|    rope     |     96.920      |  97.781 (50  epoch)   |    98.796    | 99.110 (50  epoch) |      95.588      |   95.714 (50  epoch)   |   97.171    | 97.513 (50  epoch) |   99.628    | 99.654 (30  epoch) |  57.797  | 59.754 (30  epoch) |    58.899    | 58.899 (90  epoch) |        32.975        |     34.339 (30  epoch)     |        47.426         |     52.948 (50  epoch)      |        21.360         |     22.261 (30  epoch)      |    41.742     | 41.742 (90  epoch)  |
+|    tire     |     85.195      |  85.195 (90  epoch)   |    95.395    | 95.395 (90  epoch) |      90.110      |   90.110 (90  epoch)   |   97.404    | 97.404 (90  epoch) |   99.460    | 99.460 (90  epoch) |  28.920  | 28.920 (90  epoch) |    37.736    | 37.736 (90  epoch) |        16.029        |     16.029 (90  epoch)     |        34.151         |     37.072 (20  epoch)      |         9.285         |      9.285 (90  epoch)      |    23.256     | 23.256 (90  epoch)  |
+|     Avg     |     86.726      |  86.726 (90  epoch)   |    96.156    | 96.156 (90  epoch) |      93.144      |   93.228 (70  epoch)   |   95.169    | 95.221 (50  epoch) |   98.724    | 98.724 (90  epoch) |  37.348  | 37.348 (90  epoch) |    42.394    | 42.394 (90  epoch) |        21.686        |     21.686 (90  epoch)     |        47.082         |     51.819 (10  epoch)      |        13.031         |     13.031 (90  epoch)      |    27.443     | 27.443 (90  epoch)  |
+2024-05-24 00:34:51,249 - ==> Total time: 0:45:50	 Eta: 0:05:05 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:34:59,447 - Train: 90.22% [8300/9200]  [90.2/100.0] [batch_t 0.281 (0.297)] [data_t 0.002] [optim_t 0.279] [lr 0.000400] [pixel 2.226 (2.179)]
+2024-05-24 00:35:13,535 - Train: 90.76% [8350/9200]  [90.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.326 (2.174)]
+2024-05-24 00:35:19,740 - ==> Total time: 0:46:18	 Eta: 0:04:34 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:35:29,788 - Train: 91.30% [8400/9200]  [91.3/100.0] [batch_t 0.283 (0.293)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.122 (2.176)]
+2024-05-24 00:35:43,913 - Train: 91.85% [8450/9200]  [91.8/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.134 (2.178)]
+2024-05-24 00:35:47,870 - ==> Total time: 0:46:46	 Eta: 0:04:04 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:36:00,250 - Train: 92.39% [8500/9200]  [92.4/100.0] [batch_t 0.283 (0.292)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.299 (2.179)]
+2024-05-24 00:36:14,356 - Train: 92.93% [8550/9200]  [92.9/100.0] [batch_t 0.283 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.080 (2.170)]
+2024-05-24 00:36:16,052 - ==> Total time: 0:47:15	 Eta: 0:03:33 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:36:30,647 - Train: 93.48% [8600/9200]  [93.5/100.0] [batch_t 0.281 (0.290)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.049 (2.180)]
+2024-05-24 00:36:44,187 - ==> Total time: 0:47:43	 Eta: 0:03:02 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:36:46,910 - Train: 94.02% [8650/9200]  [94.0/100.0] [batch_t 0.282 (0.456)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.213 (2.181)]
+2024-05-24 00:37:01,022 - Train: 94.57% [8700/9200]  [94.6/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.238 (2.165)]
+2024-05-24 00:37:12,301 - ==> Total time: 0:48:11	 Eta: 0:02:32 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:37:17,409 - Train: 95.11% [8750/9200]  [95.1/100.0] [batch_t 0.283 (0.317)] [data_t 0.002] [optim_t 0.282] [lr 0.000400] [pixel 2.123 (2.162)]
+2024-05-24 00:37:31,512 - Train: 95.65% [8800/9200]  [95.7/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.190 (2.162)]
+2024-05-24 00:37:40,532 - ==> Total time: 0:48:39	 Eta: 0:02:01 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:37:47,741 - Train: 96.20% [8850/9200]  [96.2/100.0] [batch_t 0.282 (0.300)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.125 (2.143)]
+2024-05-24 00:38:01,834 - Train: 96.74% [8900/9200]  [96.7/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.165 (2.167)]
+2024-05-24 00:38:08,605 - ==> Total time: 0:49:07	 Eta: 0:01:31 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:38:18,049 - Train: 97.28% [8950/9200]  [97.3/100.0] [batch_t 0.282 (0.295)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.168 (2.130)]
+2024-05-24 00:38:32,157 - Train: 97.83% [9000/9200]  [97.8/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.222 (2.175)]
+2024-05-24 00:38:36,674 - ==> Total time: 0:49:35	 Eta: 0:01:00 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:38:48,449 - Train: 98.37% [9050/9200]  [98.4/100.0] [batch_t 0.282 (0.293)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.109 (2.184)]
+2024-05-24 00:39:02,550 - Train: 98.91% [9100/9200]  [98.9/100.0] [batch_t 0.282 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.260 (2.146)]
+2024-05-24 00:39:04,807 - ==> Total time: 0:50:03	 Eta: 0:00:30 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:39:18,889 - Train: 99.46% [9150/9200]  [99.5/100.0] [batch_t 0.282 (0.290)] [data_t 0.002] [optim_t 0.281] [lr 0.000400] [pixel 2.151 (2.139)]
+2024-05-24 00:39:32,981 - Train: 100.00% [9200/9200]  [100.0/100.0] [batch_t 0.281 (0.282)] [data_t 0.002] [optim_t 0.280] [lr 0.000400] [pixel 2.130 (2.175)]
+2024-05-24 00:39:42,028 - Test: 100.00% [38/38] [batch_t 0.086 (0.234)] [pixel 2.707 (2.633)]
+2024-05-24 00:39:42,849 - ==> Metric Time for bagel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.186 (mIoU_max_px)	
+2024-05-24 00:39:43,564 - ==> Metric Time for cable_gland    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.181 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-24 00:39:44,646 - ==> Metric Time for carrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.273 (mF1_max_px)	  0.094 (mF1_px_0.2_0.8_0.1)	  0.094 (mAcc_px_0.2_0.8_0.1)	  0.094 (mIoU_px_0.2_0.8_0.1)	  0.270 (mIoU_max_px)	
+2024-05-24 00:39:45,525 - ==> Metric Time for cookie         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.220 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.219 (mIoU_max_px)	
+2024-05-24 00:39:46,400 - ==> Metric Time for dowel          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.221 (mF1_max_px)	  0.076 (mF1_px_0.2_0.8_0.1)	  0.076 (mAcc_px_0.2_0.8_0.1)	  0.076 (mIoU_px_0.2_0.8_0.1)	  0.217 (mIoU_max_px)	
+2024-05-24 00:39:47,068 - ==> Metric Time for foam           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.165 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-24 00:39:47,965 - ==> Metric Time for peach          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.224 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.078 (mAcc_px_0.2_0.8_0.1)	  0.078 (mIoU_px_0.2_0.8_0.1)	  0.224 (mIoU_max_px)	
+2024-05-24 00:39:48,726 - ==> Metric Time for potato         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-24 00:39:49,390 - ==> Metric Time for rope           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-24 00:39:50,132 - ==> Metric Time for tire           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.188 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.189 (mIoU_max_px)	
+2024-05-24 00:39:50,137 - 
+|    Name     |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-----------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    bagel    |     95.300      |  97.572 (10  epoch)   |    98.818    | 99.449 (10  epoch) |      94.624      |   96.552 (50  epoch)   |   95.035    | 97.272 (10  epoch) |   99.122    | 99.369 (10  epoch) |  45.358  | 51.591 (10  epoch) |    49.571    | 54.980 (10  epoch) |        24.368        |     24.792 (10  epoch)     |        61.647         |     66.780 (40  epoch)      |        14.919         |     15.480 (10  epoch)      |    32.953     | 37.912 (10  epoch)  |
+| cable_gland |     96.606      |  96.606 (100 epoch)   |    99.141    | 99.141 (100 epoch) |      96.552      |   96.552 (100 epoch)   |   98.800    | 98.800 (100 epoch) |   99.553    | 99.553 (100 epoch) |  40.582  | 40.582 (100 epoch) |    47.142    | 48.055 (50  epoch) |        24.650        |     24.650 (100 epoch)     |        45.288         |     64.783 (10  epoch)      |        14.900         |     14.900 (100 epoch)      |    30.840     | 31.626 (50  epoch)  |
+|   carrot    |     90.544      |  90.544 (100 epoch)   |    97.630    | 97.630 (100 epoch) |      94.545      |   94.928 (70  epoch)   |   97.581    | 97.786 (50  epoch) |   99.314    | 99.356 (50  epoch) |  24.913  | 26.448 (40  epoch) |    30.090    | 31.818 (50  epoch) |        18.598        |     19.676 (20  epoch)     |        36.590         |     44.768 (40  epoch)      |        10.525         |     11.202 (20  epoch)      |    17.709     | 18.919 (50  epoch)  |
+|   cookie    |     63.454      |  65.881 (50  epoch)   |    88.514    | 88.760 (70  epoch) |      88.034      |   88.034 (10  epoch)   |   92.547    | 92.965 (80  epoch) |   98.377    | 98.442 (80  epoch) |  48.804  | 50.090 (50  epoch) |    49.290    | 50.560 (50  epoch) |        21.598        |     21.620 (90  epoch)     |        53.748         |     59.213 (10  epoch)      |        13.048         |     13.086 (90  epoch)      |    32.705     | 33.833 (50  epoch)  |
+|    dowel    |     99.297      |  99.297 (100 epoch)   |    99.841    | 99.841 (100 epoch) |      98.551      |   98.551 (80  epoch)   |   98.551    | 98.644 (70  epoch) |   99.678    | 99.689 (70  epoch) |  49.454  | 49.740 (70  epoch) |    48.638    | 48.749 (80  epoch) |        30.120        |     30.717 (70  epoch)     |        47.541         |     60.905 (10  epoch)      |        18.595         |     18.913 (70  epoch)      |    32.134     | 32.231 (80  epoch)  |
+|    foam     |     83.500      |  83.500 (100 epoch)   |    95.847    | 95.922 (40  epoch) |      91.228      |   91.228 (100 epoch)   |   81.099    | 81.099 (100 epoch) |   93.848    | 93.848 (100 epoch) |  18.790  | 18.790 (100 epoch) |    30.967    | 31.462 (40  epoch) |        17.755        |     17.812 (90  epoch)     |        31.309         |     33.449 (30  epoch)      |        10.016         |     10.050 (90  epoch)      |    18.320     | 18.667 (40  epoch)  |
+|    peach    |     90.385      |  90.639 (50  epoch)   |    97.268    | 97.318 (50  epoch) |      94.064      |   94.495 (50  epoch)   |   97.147    | 97.413 (50  epoch) |   99.295    | 99.314 (50  epoch) |  41.290  | 41.290 (100 epoch) |    46.487    | 46.523 (90  epoch) |        18.218        |     18.218 (100 epoch)     |        52.364         |     64.724 (10  epoch)      |        10.814         |     10.814 (100 epoch)      |    30.282     | 30.313 (90  epoch)  |
+|   potato    |     66.947      |  69.368 (40  epoch)   |    90.439    | 91.274 (40  epoch) |      90.196      |   90.640 (50  epoch)   |   96.427    | 96.601 (30  epoch) |   99.105    | 99.105 (100 epoch) |  17.771  | 17.771 (100 epoch) |    24.783    | 24.783 (100 epoch) |        13.240        |     13.240 (100 epoch)     |        62.123         |     66.527 (40  epoch)      |         7.277         |      7.277 (100 epoch)      |    14.144     | 14.144 (100 epoch)  |
+|    rope     |     97.011      |  97.781 (50  epoch)   |    98.804    | 99.110 (50  epoch) |      94.891      |   95.714 (50  epoch)   |   97.138    | 97.513 (50  epoch) |   99.628    | 99.654 (30  epoch) |  57.794  | 59.754 (30  epoch) |    58.859    | 58.899 (90  epoch) |        32.978        |     34.339 (30  epoch)     |        47.442         |     52.948 (50  epoch)      |        21.367         |     22.261 (30  epoch)      |    41.702     | 41.742 (90  epoch)  |
+|    tire     |     86.207      |  86.207 (100 epoch)   |    95.757    | 95.757 (100 epoch) |      89.947      |   90.110 (90  epoch)   |   97.457    | 97.457 (100 epoch) |   99.473    | 99.473 (100 epoch) |  29.330  | 29.330 (100 epoch) |    38.233    | 38.233 (100 epoch) |        16.321        |     16.321 (100 epoch)     |        34.340         |     37.072 (20  epoch)      |         9.470         |      9.470 (100 epoch)      |    23.634     | 23.634 (100 epoch)  |
+|     Avg     |     86.925      |  86.925 (100 epoch)   |    96.206    | 96.206 (100 epoch) |      93.263      |   93.263 (100 epoch)   |   95.178    | 95.221 (50  epoch) |   98.739    | 98.739 (100 epoch) |  37.408  | 37.408 (100 epoch) |    42.406    | 42.406 (100 epoch) |        21.785        |     21.785 (100 epoch)     |        47.239         |     51.819 (10  epoch)      |        13.093         |     13.093 (100 epoch)      |    27.442     | 27.443 (90  epoch)  |
+2024-05-24 00:39:50,245 - ==> Total time: 0:50:49	 Eta: 0:00:00 	Logged in 'runs/benchmark/invad_256_100e/mvtec3d/InvADTrainer_configs_benchmark_invad_256_100e_20240523-234901'
+2024-05-24 00:39:52,336 - finish training

@@ -1,0 +1,1177 @@
+2024-05-25 15:51:45,203 - ==> Logging on master GPU: 0
+2024-05-25 15:51:45,203 - ==> Running Trainer: InvADTrainer
+2024-05-25 15:51:45,203 - ==> Using GPU: [0] for Training
+2024-05-25 15:51:45,203 - ==> Building model
+2024-05-25 15:51:46,598 - Loaded  from checkpoint 'model/pretrain/resnet34-43635321.pth'
+2024-05-25 15:51:53,558 - 
+------------------------------------ InvAD ------------------------------------
+| module                                   | #parameters or shape   | #flops       |
+|:-----------------------------------------|:-----------------------|:-------------|
+| model                                    | 17.147M                | 9.283G       |
+|  net_encoder                             |  8.17M                 |  3.955G      |
+|   net_encoder.conv1                      |   9.408K               |   0.154G     |
+|    net_encoder.conv1.weight              |    (64, 3, 7, 7)       |              |
+|   net_encoder.bn1                        |   0.128K               |   2.097M     |
+|    net_encoder.bn1.weight                |    (64,)               |              |
+|    net_encoder.bn1.bias                  |    (64,)               |              |
+|   net_encoder.layer1                     |   0.222M               |   0.909G     |
+|    net_encoder.layer1.0                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.0.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.0.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.0.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.0.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.0.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.0.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.0.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.0.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.0.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.0.bn2.bias       |      (64,)             |              |
+|    net_encoder.layer1.1                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.1.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.1.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.1.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.1.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.1.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.1.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.1.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.1.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.1.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.1.bn2.bias       |      (64,)             |              |
+|    net_encoder.layer1.2                  |    73.984K             |    0.303G    |
+|     net_encoder.layer1.2.conv1           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.2.conv1.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.2.bn1             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.2.bn1.weight     |      (64,)             |              |
+|      net_encoder.layer1.2.bn1.bias       |      (64,)             |              |
+|     net_encoder.layer1.2.conv2           |     36.864K            |     0.151G   |
+|      net_encoder.layer1.2.conv2.weight   |      (64, 64, 3, 3)    |              |
+|     net_encoder.layer1.2.bn2             |     0.128K             |     0.524M   |
+|      net_encoder.layer1.2.bn2.weight     |      (64,)             |              |
+|      net_encoder.layer1.2.bn2.bias       |      (64,)             |              |
+|   net_encoder.layer2                     |   1.116M               |   1.143G     |
+|    net_encoder.layer2.0                  |    0.23M               |    0.236G    |
+|     net_encoder.layer2.0.conv1           |     73.728K            |     75.497M  |
+|      net_encoder.layer2.0.conv1.weight   |      (128, 64, 3, 3)   |              |
+|     net_encoder.layer2.0.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.0.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.0.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.0.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.0.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.0.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.0.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.0.bn2.bias       |      (128,)            |              |
+|     net_encoder.layer2.0.downsample      |     8.448K             |     8.651M   |
+|      net_encoder.layer2.0.downsample.0   |      8.192K            |      8.389M  |
+|      net_encoder.layer2.0.downsample.1   |      0.256K            |      0.262M  |
+|    net_encoder.layer2.1                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.1.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.1.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.1.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.1.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.1.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.1.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.1.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.1.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.1.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.1.bn2.bias       |      (128,)            |              |
+|    net_encoder.layer2.2                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.2.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.2.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.2.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.2.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.2.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.2.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.2.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.2.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.2.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.2.bn2.bias       |      (128,)            |              |
+|    net_encoder.layer2.3                  |    0.295M              |    0.303G    |
+|     net_encoder.layer2.3.conv1           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.3.conv1.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.3.bn1             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.3.bn1.weight     |      (128,)            |              |
+|      net_encoder.layer2.3.bn1.bias       |      (128,)            |              |
+|     net_encoder.layer2.3.conv2           |     0.147M             |     0.151G   |
+|      net_encoder.layer2.3.conv2.weight   |      (128, 128, 3, 3)  |              |
+|     net_encoder.layer2.3.bn2             |     0.256K             |     0.262M   |
+|      net_encoder.layer2.3.bn2.weight     |      (128,)            |              |
+|      net_encoder.layer2.3.bn2.bias       |      (128,)            |              |
+|   net_encoder.layer3                     |   6.822M               |   1.747G     |
+|    net_encoder.layer3.0                  |    0.919M              |    0.235G    |
+|     net_encoder.layer3.0.conv1           |     0.295M             |     75.497M  |
+|      net_encoder.layer3.0.conv1.weight   |      (256, 128, 3, 3)  |              |
+|     net_encoder.layer3.0.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.0.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.0.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.0.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.0.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.0.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.0.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.0.bn2.bias       |      (256,)            |              |
+|     net_encoder.layer3.0.downsample      |     33.28K             |     8.52M    |
+|      net_encoder.layer3.0.downsample.0   |      32.768K           |      8.389M  |
+|      net_encoder.layer3.0.downsample.1   |      0.512K            |      0.131M  |
+|    net_encoder.layer3.1                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.1.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.1.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.1.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.1.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.1.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.1.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.1.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.1.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.1.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.1.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.2                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.2.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.2.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.2.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.2.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.2.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.2.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.2.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.2.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.2.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.2.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.3                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.3.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.3.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.3.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.3.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.3.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.3.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.3.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.3.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.3.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.3.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.4                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.4.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.4.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.4.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.4.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.4.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.4.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.4.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.4.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.4.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.4.bn2.bias       |      (256,)            |              |
+|    net_encoder.layer3.5                  |    1.181M              |    0.302G    |
+|     net_encoder.layer3.5.conv1           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.5.conv1.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.5.bn1             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.5.bn1.weight     |      (256,)            |              |
+|      net_encoder.layer3.5.bn1.bias       |      (256,)            |              |
+|     net_encoder.layer3.5.conv2           |     0.59M              |     0.151G   |
+|      net_encoder.layer3.5.conv2.weight   |      (256, 256, 3, 3)  |              |
+|     net_encoder.layer3.5.bn2             |     0.512K             |     0.131M   |
+|      net_encoder.layer3.5.bn2.weight     |      (256,)            |              |
+|      net_encoder.layer3.5.bn2.bias       |      (256,)            |              |
+|  net_fuser                               |  0.453M                |  0.314G      |
+|   net_fuser.downsamples                  |   0.198M               |   50.561M    |
+|    net_fuser.downsamples.0               |    65.728K             |    16.81M    |
+|     net_fuser.downsamples.0.conv         |     65.6K              |     16.777M  |
+|      net_fuser.downsamples.0.conv.weight |      (64, 64, 4, 4)    |              |
+|      net_fuser.downsamples.0.conv.bias   |      (64,)             |              |
+|     net_fuser.downsamples.0.norm         |     0.128K             |     32.768K  |
+|      net_fuser.downsamples.0.norm.weight |      (64,)             |              |
+|      net_fuser.downsamples.0.norm.bias   |      (64,)             |              |
+|    net_fuser.downsamples.1               |    65.92K              |    16.843M   |
+|     net_fuser.downsamples.1.conv         |     65.664K            |     16.777M  |
+|      net_fuser.downsamples.1.conv.weight |      (128, 128, 2, 2)  |              |
+|      net_fuser.downsamples.1.conv.bias   |      (128,)            |              |
+|     net_fuser.downsamples.1.norm         |     0.256K             |     65.536K  |
+|      net_fuser.downsamples.1.norm.weight |      (128,)            |              |
+|      net_fuser.downsamples.1.norm.bias   |      (128,)            |              |
+|    net_fuser.downsamples.2               |    66.304K             |    16.908M   |
+|     net_fuser.downsamples.2.conv         |     65.792K            |     16.777M  |
+|      net_fuser.downsamples.2.conv.weight |      (256, 256, 1, 1)  |              |
+|      net_fuser.downsamples.2.conv.bias   |      (256,)            |              |
+|     net_fuser.downsamples.2.norm         |     0.512K             |     0.131M   |
+|      net_fuser.downsamples.2.norm.weight |      (256,)            |              |
+|      net_fuser.downsamples.2.norm.bias   |      (256,)            |              |
+|   net_fuser.conv_cat                     |   28.8K                |   7.373M     |
+|    net_fuser.conv_cat.conv               |    28.672K             |    7.34M     |
+|     net_fuser.conv_cat.conv.weight       |     (64, 448, 1, 1)    |              |
+|    net_fuser.conv_cat.norm               |    0.128K              |    32.768K   |
+|     net_fuser.conv_cat.norm.weight       |     (64,)              |              |
+|     net_fuser.conv_cat.norm.bias         |     (64,)              |              |
+|   net_fuser.conv_bottle.0                |   4.544K               |   1.163M     |
+|    net_fuser.conv_bottle.0.conv1         |    1.024K              |    0.262M    |
+|     net_fuser.conv_bottle.0.conv1.weight |     (16, 64, 1, 1)     |              |
+|    net_fuser.conv_bottle.0.bn1           |    32                  |    8.192K    |
+|     net_fuser.conv_bottle.0.bn1.weight   |     (16,)              |              |
+|     net_fuser.conv_bottle.0.bn1.bias     |     (16,)              |              |
+|    net_fuser.conv_bottle.0.conv2         |    2.304K              |    0.59M     |
+|     net_fuser.conv_bottle.0.conv2.weight |     (16, 16, 3, 3)     |              |
+|    net_fuser.conv_bottle.0.bn2           |    32                  |    8.192K    |
+|     net_fuser.conv_bottle.0.bn2.weight   |     (16,)              |              |
+|     net_fuser.conv_bottle.0.bn2.bias     |     (16,)              |              |
+|    net_fuser.conv_bottle.0.conv3         |    1.024K              |    0.262M    |
+|     net_fuser.conv_bottle.0.conv3.weight |     (64, 16, 1, 1)     |              |
+|    net_fuser.conv_bottle.0.bn3           |    0.128K              |    32.768K   |
+|     net_fuser.conv_bottle.0.bn3.weight   |     (64,)              |              |
+|     net_fuser.conv_bottle.0.bn3.bias     |     (64,)              |              |
+|   net_fuser.convs                        |   0.222M               |   0.255G     |
+|    net_fuser.convs.0                     |    73.856K             |    18.874M   |
+|     net_fuser.convs.0.0                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.0.0.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.0.0.1               |      64                |      0       |
+|     net_fuser.convs.0.1                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.0.1.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.0.1.1               |      64                |      0       |
+|    net_fuser.convs.1                     |    73.856K             |    47.186M   |
+|     net_fuser.convs.1.0                  |     36.928K            |     9.437M   |
+|      net_fuser.convs.1.0.0               |      36.864K           |      9.437M  |
+|      net_fuser.convs.1.0.2               |      64                |      0       |
+|     net_fuser.convs.1.1                  |     36.928K            |     37.749M  |
+|      net_fuser.convs.1.1.0               |      36.864K           |      37.749M |
+|      net_fuser.convs.1.1.1               |      64                |      0       |
+|    net_fuser.convs.2                     |    73.856K             |    0.189G    |
+|     net_fuser.convs.2.0                  |     36.928K            |     37.749M  |
+|      net_fuser.convs.2.0.0               |      36.864K           |      37.749M |
+|      net_fuser.convs.2.0.2               |      64                |      0       |
+|     net_fuser.convs.2.1                  |     36.928K            |     0.151G   |
+|      net_fuser.convs.2.1.0               |      36.864K           |      0.151G  |
+|      net_fuser.convs.2.1.1               |      64                |      0       |
+|  net_decoder                             |  8.523M                |  5.014G      |
+|   net_decoder.input                      |   65.536K              |   0          |
+|    net_decoder.input.input               |    (1, 256, 16, 16)    |              |
+|   net_decoder.conv1.0                    |   0.59M                |   0.151G     |
+|    net_decoder.conv1.0.0                 |    0.59M               |    0.151G    |
+|     net_decoder.conv1.0.0.weight         |     (256, 256, 3, 3)   |              |
+|    net_decoder.conv1.0.1                 |    0.256K              |    0         |
+|     net_decoder.conv1.0.1.bias           |     (256,)             |              |
+|   net_decoder.convs_latent               |   0.138M               |   0.248G     |
+|    net_decoder.convs_latent.0            |    46.16K              |    11.796M   |
+|     net_decoder.convs_latent.0.0         |     36.928K            |     9.437M   |
+|      net_decoder.convs_latent.0.0.0      |      36.864K           |      9.437M  |
+|      net_decoder.convs_latent.0.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.0.1         |     9.232K             |     2.359M   |
+|      net_decoder.convs_latent.0.1.0      |      9.216K            |      2.359M  |
+|      net_decoder.convs_latent.0.1.1      |      16                |      0       |
+|    net_decoder.convs_latent.1            |    46.16K              |    47.186M   |
+|     net_decoder.convs_latent.1.0         |     36.928K            |     37.749M  |
+|      net_decoder.convs_latent.1.0.0      |      36.864K           |      37.749M |
+|      net_decoder.convs_latent.1.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.1.1         |     9.232K             |     9.437M   |
+|      net_decoder.convs_latent.1.1.0      |      9.216K            |      9.437M  |
+|      net_decoder.convs_latent.1.1.1      |      16                |      0       |
+|    net_decoder.convs_latent.2            |    46.16K              |    0.189G    |
+|     net_decoder.convs_latent.2.0         |     36.928K            |     0.151G   |
+|      net_decoder.convs_latent.2.0.0      |      36.864K           |      0.151G  |
+|      net_decoder.convs_latent.2.0.1      |      64                |      0       |
+|     net_decoder.convs_latent.2.1         |     9.232K             |     37.749M  |
+|      net_decoder.convs_latent.2.1.0      |      9.216K            |      37.749M |
+|      net_decoder.convs_latent.2.1.1      |      16                |      0       |
+|   net_decoder.convs                      |   7.729M               |   4.615G     |
+|    net_decoder.convs.0                   |    5.577M              |    1.428G    |
+|     net_decoder.convs.0.0                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.0.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.0.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.0.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.1                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.1.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.1.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.1.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.2                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.2.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.2.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.2.skip.0        |      65.536K           |      16.777M |
+|     net_decoder.convs.0.3                |     1.394M             |     0.357G   |
+|      net_decoder.convs.0.3.conv1         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.3.conv2         |      0.664M            |      0.17G   |
+|      net_decoder.convs.0.3.skip.0        |      65.536K           |      16.777M |
+|    net_decoder.convs.1                   |    1.67M               |    1.459G    |
+|     net_decoder.convs.1.0                |     0.513M             |     0.273G   |
+|      net_decoder.convs.1.0.conv1         |      0.295M            |      75.76M  |
+|      net_decoder.convs.1.0.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.0.skip.0        |      32.768K           |      8.389M  |
+|     net_decoder.convs.1.1                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.1.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.1.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.1.skip.0        |      16.384K           |      16.777M |
+|     net_decoder.convs.1.2                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.2.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.2.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.2.skip.0        |      16.384K           |      16.777M |
+|     net_decoder.convs.1.3                |     0.386M             |     0.395G   |
+|      net_decoder.convs.1.3.conv1         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.3.conv2         |      0.185M            |      0.189G  |
+|      net_decoder.convs.1.3.skip.0        |      16.384K           |      16.777M |
+|    net_decoder.convs.2                   |    0.483M              |    1.728G    |
+|     net_decoder.convs.2.0                |     0.137M             |     0.312G   |
+|      net_decoder.convs.2.0.conv1         |      73.792K           |      76.022M |
+|      net_decoder.convs.2.0.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.0.skip.0        |      8.192K            |      8.389M  |
+|     net_decoder.convs.2.1                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.1.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.1.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.1.skip.0        |      4.096K            |      16.777M |
+|     net_decoder.convs.2.2                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.2.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.2.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.2.skip.0        |      4.096K            |      16.777M |
+|     net_decoder.convs.2.3                |     0.115M             |     0.472G   |
+|      net_decoder.convs.2.3.conv1         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.3.conv2         |      55.488K           |      0.228G  |
+|      net_decoder.convs.2.3.skip.0        |      4.096K            |      16.777M |
+-------------------------------------------------------------------------------
+2024-05-25 15:51:53,559 - ==> Creating optimizer
+2024-05-25 15:51:53,576 - ==> Loading dataset: DefaultAD
+2024-05-25 15:51:53,582 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 300                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.004                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0, 0.99)}
+trainer.name                         : InvADTrainer                        
+trainer.checkpoint                   : runs/benchmark/invad-lite_256_300e/btad
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 300                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 4e-05, 'warmup_lr': 4e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 240, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 16800                               
+trainer.metric_recorder              : {'mAUROC_sp_max_01': [], 'mAP_sp_max_01': [], 'mF1_max_sp_max_01': [], 'mAUPRO_px_01': [], 'mAUROC_px_01': [], 'mAP_px_01': [], 'mF1_max_px_01': [], 'mF1_px_0.2_0.8_0.1_01': [], 'mAcc_px_0.2_0.8_0.1_01': [], 'mIoU_px_0.2_0.8_0.1_01': [], 'mIoU_max_px_01': [], 'mAUROC_sp_max_02': [], 'mAP_sp_max_02': [], 'mF1_max_sp_max_02': [], 'mAUPRO_px_02': [], 'mAUROC_px_02': [], 'mAP_px_02': [], 'mF1_max_px_02': [], 'mF1_px_0.2_0.8_0.1_02': [], 'mAcc_px_0.2_0.8_0.1_02': [], 'mIoU_px_0.2_0.8_0.1_02': [], 'mIoU_max_px_02': [], 'mAUROC_sp_max_03': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_03': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_03': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_03': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_03': [], 'mAUROC_px_Avg': [], 'mAP_px_03': [], 'mAP_px_Avg': [], 'mF1_max_px_03': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_03': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_03': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_03': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_03': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 5.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/btad                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 56                                  
+data.test_size                       : 24                                  
+data.train_length                    : 1799                                
+data.test_length                     : 741                                 
+model_encoder.name                   : timm_resnet34                       
+model_encoder.kwargs                 : {'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet34-43635321.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_fuser                          : {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}
+model_decoder                        : {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [4, 4, 4]}
+model_disor                          : {'sizes': [64, 32, 16], 'in_chas': [64, 128, 256]}
+model.name                           : invad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_encoder': Namespace(name='timm_resnet34', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet34-43635321.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_fuser': {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}, 'model_decoder': {'in_chas': [64, 128, 256], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [4, 4, 4]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.004                               
+weight_decay                         : 0.0001                              
+uni_am                               : True                                
+use_cos                              : True                                
+pth                                  : model/pretrain/resnet34-43635321.pth
+cfg_path                             : configs.benchmark.invad-lite_256_300e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/invad-lite_256_300e/btad', 'data.root=data/btad']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.invad-lite_256_300e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/invad-lite_256_300e/btad data.root=data/btad
+task_start_time                      : 3026185.396491669                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145/show_train
+logdir_test                          : runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145/show_test
+2024-05-25 15:51:53,582 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-25 15:52:15,836 - Train: 0.30% [50/16800]  [0.9/300.0] [batch_t 0.144 (0.441)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 29.309 (41.968)]
+2024-05-25 15:52:16,723 - ==> Total time: 0:00:31	 Eta: 2:37:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:52:23,539 - Train: 0.60% [100/16800]  [1.8/300.0] [batch_t 0.066 (0.143)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 23.263 (27.244)]
+2024-05-25 15:52:24,681 - ==> Total time: 0:00:39	 Eta: 1:38:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:52:31,027 - Train: 0.89% [150/16800]  [2.7/300.0] [batch_t 0.146 (0.152)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 23.341 (22.788)]
+2024-05-25 15:52:32,739 - ==> Total time: 0:00:47	 Eta: 1:18:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:52:38,247 - Train: 1.19% [200/16800]  [3.6/300.0] [batch_t 0.144 (0.153)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 19.133 (20.194)]
+2024-05-25 15:52:41,314 - ==> Total time: 0:00:56	 Eta: 1:09:19 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:52:46,151 - Train: 1.49% [250/16800]  [4.5/300.0] [batch_t 0.145 (0.157)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 19.044 (18.842)]
+2024-05-25 15:52:50,354 - ==> Total time: 0:01:05	 Eta: 1:04:09 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:52:54,355 - Train: 1.79% [300/16800]  [5.4/300.0] [batch_t 0.142 (0.157)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 17.150 (17.003)]
+2024-05-25 15:52:59,544 - ==> Total time: 0:01:14	 Eta: 1:00:47 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:02,195 - Train: 2.08% [350/16800]  [6.2/300.0] [batch_t 0.145 (0.147)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 17.062 (16.278)]
+2024-05-25 15:53:08,255 - ==> Total time: 0:01:23	 Eta: 0:58:00 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:09,833 - Train: 2.38% [400/16800]  [7.1/300.0] [batch_t 0.071 (0.123)] [data_t 0.002] [optim_t 0.069] [lr 0.004000] [pixel 15.420 (15.641)]
+2024-05-25 15:53:16,771 - ==> Total time: 0:01:31	 Eta: 0:55:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:17,890 - Train: 2.68% [450/16800]  [8.0/300.0] [batch_t 0.144 (0.287)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 15.605 (15.273)]
+2024-05-25 15:53:24,201 - Train: 2.98% [500/16800]  [8.9/300.0] [batch_t 0.142 (0.126)] [data_t 0.001] [optim_t 0.140] [lr 0.004000] [pixel 14.322 (14.974)]
+2024-05-25 15:53:24,783 - ==> Total time: 0:01:39	 Eta: 0:53:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:31,432 - Train: 3.27% [550/16800]  [9.8/300.0] [batch_t 0.143 (0.130)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 13.523 (14.485)]
+2024-05-25 15:53:32,873 - ==> Total time: 0:01:47	 Eta: 0:52:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:38,214 - Train: 3.57% [600/16800]  [10.7/300.0] [batch_t 0.144 (0.120)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 14.352 (14.083)]
+2024-05-25 15:53:40,528 - ==> Total time: 0:01:55	 Eta: 0:50:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:45,466 - Train: 3.87% [650/16800]  [11.6/300.0] [batch_t 0.066 (0.129)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 13.459 (13.606)]
+2024-05-25 15:53:48,417 - ==> Total time: 0:02:03	 Eta: 0:49:19 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:53:53,262 - Train: 4.17% [700/16800]  [12.5/300.0] [batch_t 0.145 (0.153)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 13.170 (13.303)]
+2024-05-25 15:53:56,372 - ==> Total time: 0:02:11	 Eta: 0:48:17 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:00,432 - Train: 4.46% [750/16800]  [13.4/300.0] [batch_t 0.144 (0.159)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 12.754 (13.012)]
+2024-05-25 15:54:03,807 - ==> Total time: 0:02:18	 Eta: 0:47:13 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:07,483 - Train: 4.76% [800/16800]  [14.3/300.0] [batch_t 0.144 (0.134)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 12.384 (12.681)]
+2024-05-25 15:54:13,240 - ==> Total time: 0:02:28	 Eta: 0:46:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:14,959 - Train: 5.06% [850/16800]  [15.2/300.0] [batch_t 0.129 (0.112)] [data_t 0.064] [optim_t 0.065] [lr 0.004000] [pixel 13.461 (12.485)]
+2024-05-25 15:54:21,216 - ==> Total time: 0:02:36	 Eta: 0:46:10 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:22,566 - Train: 5.36% [900/16800]  [16.1/300.0] [batch_t 0.144 (0.197)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 12.080 (12.059)]
+2024-05-25 15:54:28,798 - Train: 5.65% [950/16800]  [17.0/300.0] [batch_t 0.144 (0.125)] [data_t 0.001] [optim_t 0.142] [lr 0.004000] [pixel 11.693 (12.236)]
+2024-05-25 15:54:29,089 - ==> Total time: 0:02:43	 Eta: 0:45:29 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:36,133 - Train: 5.95% [1000/16800]  [17.9/300.0] [batch_t 0.146 (0.128)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 11.778 (12.089)]
+2024-05-25 15:54:37,295 - ==> Total time: 0:02:52	 Eta: 0:44:57 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:43,272 - Train: 6.25% [1050/16800]  [18.8/300.0] [batch_t 0.142 (0.126)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 11.648 (11.864)]
+2024-05-25 15:54:45,288 - ==> Total time: 0:03:00	 Eta: 0:44:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:50,491 - Train: 6.55% [1100/16800]  [19.6/300.0] [batch_t 0.067 (0.129)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 12.483 (11.786)]
+2024-05-25 15:54:53,029 - ==> Total time: 0:03:07	 Eta: 0:43:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:54:58,196 - Train: 6.85% [1150/16800]  [20.5/300.0] [batch_t 0.144 (0.154)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 11.569 (11.442)]
+2024-05-25 15:55:00,659 - ==> Total time: 0:03:15	 Eta: 0:43:18 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:05,282 - Train: 7.14% [1200/16800]  [21.4/300.0] [batch_t 0.143 (0.158)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 11.156 (11.374)]
+2024-05-25 15:55:08,943 - ==> Total time: 0:03:23	 Eta: 0:42:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:12,357 - Train: 7.44% [1250/16800]  [22.3/300.0] [batch_t 0.143 (0.159)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 11.459 (11.301)]
+2024-05-25 15:55:17,279 - ==> Total time: 0:03:32	 Eta: 0:42:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:19,885 - Train: 7.74% [1300/16800]  [23.2/300.0] [batch_t 0.146 (0.170)] [data_t 0.002] [optim_t 0.145] [lr 0.004000] [pixel 11.217 (11.243)]
+2024-05-25 15:55:26,101 - ==> Total time: 0:03:40	 Eta: 0:42:21 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:27,777 - Train: 8.04% [1350/16800]  [24.1/300.0] [batch_t 0.139 (0.191)] [data_t 0.002] [optim_t 0.137] [lr 0.004000] [pixel 10.839 (10.928)]
+2024-05-25 15:55:34,998 - Train: 8.33% [1400/16800]  [25.0/300.0] [batch_t 0.143 (0.144)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 11.419 (11.047)]
+2024-05-25 15:55:35,001 - ==> Total time: 0:03:49	 Eta: 0:42:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:42,921 - Train: 8.63% [1450/16800]  [25.9/300.0] [batch_t 0.144 (0.146)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 10.905 (10.976)]
+2024-05-25 15:55:43,787 - ==> Total time: 0:03:58	 Eta: 0:41:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:50,211 - Train: 8.93% [1500/16800]  [26.8/300.0] [batch_t 0.144 (0.132)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 10.567 (10.853)]
+2024-05-25 15:55:51,939 - ==> Total time: 0:04:06	 Eta: 0:41:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:55:57,253 - Train: 9.23% [1550/16800]  [27.7/300.0] [batch_t 0.145 (0.126)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 10.941 (10.800)]
+2024-05-25 15:55:59,841 - ==> Total time: 0:04:14	 Eta: 0:41:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:03,734 - Train: 9.52% [1600/16800]  [28.6/300.0] [batch_t 0.066 (0.100)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 10.592 (10.667)]
+2024-05-25 15:56:05,805 - ==> Total time: 0:04:20	 Eta: 0:40:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:08,824 - Train: 9.82% [1650/16800]  [29.5/300.0] [batch_t 0.115 (0.092)] [data_t 0.041] [optim_t 0.073] [lr 0.004000] [pixel 10.436 (10.552)]
+2024-05-25 15:56:15,493 - Test: 100.00% [24/24] [batch_t 0.937 (0.175)] [pixel 11.901 (12.466)]
+2024-05-25 15:56:16,246 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.118 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.041 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-25 15:56:17,920 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.396 (mF1_max_px)	  0.138 (mF1_px_0.2_0.8_0.1)	  0.138 (mAcc_px_0.2_0.8_0.1)	  0.138 (mIoU_px_0.2_0.8_0.1)	  0.396 (mIoU_max_px)	
+2024-05-25 15:56:20,903 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.790 (mF1_max_px)	  0.274 (mF1_px_0.2_0.8_0.1)	  0.270 (mAcc_px_0.2_0.8_0.1)	  0.273 (mIoU_px_0.2_0.8_0.1)	  0.787 (mIoU_max_px)	
+2024-05-25 15:56:20,908 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     97.668      |  97.668 (30  epoch)   |    99.170    | 99.170 (30  epoch) |      95.918      |   95.918 (30  epoch)   |   76.871    | 76.871 (30  epoch) |   97.140    | 97.140 (30  epoch) |  57.326  | 57.326 (30  epoch) |    60.064    | 60.064 (30  epoch) |        34.705        |     34.705 (30  epoch)     |        51.014         |     51.014 (30  epoch)      |        22.545         |     22.545 (30  epoch)      |    42.922     | 42.922 (30  epoch)  |
+|   02   |     78.246      |  78.246 (30  epoch)   |    96.394    | 96.394 (30  epoch) |      92.774      |   92.774 (30  epoch)   |   59.461    | 59.461 (30  epoch) |   96.190    | 96.190 (30  epoch) |  55.090  | 55.090 (30  epoch) |    59.932    | 59.932 (30  epoch) |        37.624        |     37.624 (30  epoch)     |        64.570         |     64.570 (30  epoch)      |        24.681         |     24.681 (30  epoch)      |    42.788     | 42.788 (30  epoch)  |
+|   03   |     99.670      |  99.670 (30  epoch)   |    96.141    | 96.141 (30  epoch) |      90.625      |   90.625 (30  epoch)   |   97.343    | 97.343 (30  epoch) |   99.391    | 99.391 (30  epoch) |  50.400  | 50.400 (30  epoch) |    49.213    | 49.213 (30  epoch) |        25.098        |     25.098 (30  epoch)     |        67.560         |     67.560 (30  epoch)      |        15.418         |     15.418 (30  epoch)      |    32.637     | 32.637 (30  epoch)  |
+|  Avg   |     91.861      |  91.861 (30  epoch)   |    97.235    | 97.235 (30  epoch) |      93.106      |   93.106 (30  epoch)   |   77.891    | 77.891 (30  epoch) |   97.574    | 97.574 (30  epoch) |  54.272  | 54.272 (30  epoch) |    56.403    | 56.403 (30  epoch) |        32.476        |     32.476 (30  epoch)     |        61.048         |     61.048 (30  epoch)      |        20.881         |     20.881 (30  epoch)      |    39.449     | 39.449 (30  epoch)  |
+2024-05-25 15:56:20,975 - ==> Total time: 0:04:35	 Eta: 0:41:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:24,984 - Train: 10.12% [1700/16800]  [30.4/300.0] [batch_t 0.066 (0.161)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 10.405 (10.550)]
+2024-05-25 15:56:30,035 - ==> Total time: 0:04:44	 Eta: 0:41:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:32,964 - Train: 10.42% [1750/16800]  [31.2/300.0] [batch_t 0.120 (0.168)] [data_t 0.002] [optim_t 0.118] [lr 0.004000] [pixel 10.255 (10.673)]
+2024-05-25 15:56:37,952 - ==> Total time: 0:04:52	 Eta: 0:40:52 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:39,945 - Train: 10.71% [1800/16800]  [32.1/300.0] [batch_t 0.143 (0.174)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 10.080 (10.473)]
+2024-05-25 15:56:45,715 - ==> Total time: 0:05:00	 Eta: 0:40:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:56:46,850 - Train: 11.01% [1850/16800]  [33.0/300.0] [batch_t 0.143 (0.260)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 10.289 (10.309)]
+2024-05-25 15:56:52,942 - Train: 11.31% [1900/16800]  [33.9/300.0] [batch_t 0.143 (0.122)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 10.351 (10.269)]
+2024-05-25 15:56:53,516 - ==> Total time: 0:05:08	 Eta: 0:40:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:00,225 - Train: 11.61% [1950/16800]  [34.8/300.0] [batch_t 0.066 (0.132)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 10.051 (10.206)]
+2024-05-25 15:57:01,459 - ==> Total time: 0:05:16	 Eta: 0:39:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:09,246 - Train: 11.90% [2000/16800]  [35.7/300.0] [batch_t 0.144 (0.127)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 11.221 (10.199)]
+2024-05-25 15:57:11,552 - ==> Total time: 0:05:26	 Eta: 0:39:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:16,232 - Train: 12.20% [2050/16800]  [36.6/300.0] [batch_t 0.143 (0.120)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 10.071 (10.003)]
+2024-05-25 15:57:19,405 - ==> Total time: 0:05:34	 Eta: 0:39:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:23,983 - Train: 12.50% [2100/16800]  [37.5/300.0] [batch_t 0.067 (0.123)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 9.844 (10.008)]
+2024-05-25 15:57:27,689 - ==> Total time: 0:05:42	 Eta: 0:39:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:31,764 - Train: 12.80% [2150/16800]  [38.4/300.0] [batch_t 0.142 (0.156)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 9.934 (10.026)]
+2024-05-25 15:57:35,579 - ==> Total time: 0:05:50	 Eta: 0:39:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:38,795 - Train: 13.10% [2200/16800]  [39.3/300.0] [batch_t 0.144 (0.162)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 10.183 (9.799)]
+2024-05-25 15:57:43,475 - ==> Total time: 0:05:58	 Eta: 0:38:49 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:45,761 - Train: 13.39% [2250/16800]  [40.2/300.0] [batch_t 0.143 (0.172)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 10.075 (10.100)]
+2024-05-25 15:57:51,378 - ==> Total time: 0:06:06	 Eta: 0:38:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:57:52,792 - Train: 13.69% [2300/16800]  [41.1/300.0] [batch_t 0.145 (0.206)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 9.931 (9.876)]
+2024-05-25 15:57:59,305 - Train: 13.99% [2350/16800]  [42.0/300.0] [batch_t 0.066 (0.130)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 9.967 (9.861)]
+2024-05-25 15:57:59,440 - ==> Total time: 0:06:14	 Eta: 0:38:19 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:07,518 - Train: 14.29% [2400/16800]  [42.9/300.0] [batch_t 0.145 (0.151)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 9.754 (9.731)]
+2024-05-25 15:58:08,414 - ==> Total time: 0:06:23	 Eta: 0:38:10 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:15,385 - Train: 14.58% [2450/16800]  [43.8/300.0] [batch_t 0.144 (0.151)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 9.613 (9.612)]
+2024-05-25 15:58:17,406 - ==> Total time: 0:06:32	 Eta: 0:38:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:23,205 - Train: 14.88% [2500/16800]  [44.6/300.0] [batch_t 0.143 (0.145)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 9.746 (9.664)]
+2024-05-25 15:58:26,092 - ==> Total time: 0:06:40	 Eta: 0:37:52 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:30,465 - Train: 15.18% [2550/16800]  [45.5/300.0] [batch_t 0.143 (0.124)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 9.450 (9.663)]
+2024-05-25 15:58:34,204 - ==> Total time: 0:06:49	 Eta: 0:37:38 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:37,324 - Train: 15.48% [2600/16800]  [46.4/300.0] [batch_t 0.144 (0.097)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 9.667 (9.534)]
+2024-05-25 15:58:41,932 - ==> Total time: 0:06:56	 Eta: 0:37:23 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:45,001 - Train: 15.77% [2650/16800]  [47.3/300.0] [batch_t 0.066 (0.134)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 9.606 (9.585)]
+2024-05-25 15:58:49,577 - ==> Total time: 0:07:04	 Eta: 0:37:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:52,338 - Train: 16.07% [2700/16800]  [48.2/300.0] [batch_t 0.143 (0.165)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 9.511 (9.391)]
+2024-05-25 15:58:57,522 - ==> Total time: 0:07:12	 Eta: 0:36:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:58:59,259 - Train: 16.37% [2750/16800]  [49.1/300.0] [batch_t 0.146 (0.191)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 9.394 (9.596)]
+2024-05-25 15:59:04,315 - Train: 16.67% [2800/16800]  [50.0/300.0] [batch_t 0.067 (0.101)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 9.842 (9.366)]
+2024-05-25 15:59:04,317 - ==> Total time: 0:07:19	 Eta: 0:36:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:13,473 - Train: 16.96% [2850/16800]  [50.9/300.0] [batch_t 0.145 (0.149)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 9.320 (9.374)]
+2024-05-25 15:59:14,347 - ==> Total time: 0:07:29	 Eta: 0:36:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:21,793 - Train: 17.26% [2900/16800]  [51.8/300.0] [batch_t 0.144 (0.150)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 9.325 (9.309)]
+2024-05-25 15:59:23,531 - ==> Total time: 0:07:38	 Eta: 0:36:26 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:29,023 - Train: 17.56% [2950/16800]  [52.7/300.0] [batch_t 0.144 (0.129)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.927 (9.372)]
+2024-05-25 15:59:31,622 - ==> Total time: 0:07:46	 Eta: 0:36:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:36,094 - Train: 17.86% [3000/16800]  [53.6/300.0] [batch_t 0.134 (0.118)] [data_t 0.002] [optim_t 0.133] [lr 0.004000] [pixel 9.171 (9.285)]
+2024-05-25 15:59:39,557 - ==> Total time: 0:07:54	 Eta: 0:36:01 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:42,925 - Train: 18.15% [3050/16800]  [54.5/300.0] [batch_t 0.069 (0.099)] [data_t 0.002] [optim_t 0.067] [lr 0.004000] [pixel 9.488 (9.307)]
+2024-05-25 15:59:47,246 - ==> Total time: 0:08:02	 Eta: 0:35:47 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:50,924 - Train: 18.45% [3100/16800]  [55.4/300.0] [batch_t 0.096 (0.154)] [data_t 0.002] [optim_t 0.095] [lr 0.004000] [pixel 8.841 (9.126)]
+2024-05-25 15:59:55,131 - ==> Total time: 0:08:10	 Eta: 0:35:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 15:59:58,051 - Train: 18.75% [3150/16800]  [56.2/300.0] [batch_t 0.144 (0.166)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 9.022 (9.037)]
+2024-05-25 16:00:03,036 - ==> Total time: 0:08:17	 Eta: 0:35:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:06,516 - Train: 19.05% [3200/16800]  [57.1/300.0] [batch_t 0.145 (0.179)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 9.529 (9.172)]
+2024-05-25 16:00:12,031 - ==> Total time: 0:08:26	 Eta: 0:35:15 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:13,164 - Train: 19.35% [3250/16800]  [58.0/300.0] [batch_t 0.144 (0.279)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.923 (8.945)]
+2024-05-25 16:00:19,252 - Train: 19.64% [3300/16800]  [58.9/300.0] [batch_t 0.144 (0.122)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 8.855 (9.075)]
+2024-05-25 16:00:19,829 - ==> Total time: 0:08:34	 Eta: 0:35:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:26,297 - Train: 19.94% [3350/16800]  [59.8/300.0] [batch_t 0.144 (0.126)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 9.205 (9.055)]
+2024-05-25 16:00:32,168 - Test: 100.00% [24/24] [batch_t 0.025 (0.179)] [pixel 10.317 (10.954)]
+2024-05-25 16:00:32,709 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-25 16:00:35,888 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.413 (mF1_max_px)	  0.143 (mF1_px_0.2_0.8_0.1)	  0.148 (mAcc_px_0.2_0.8_0.1)	  0.144 (mIoU_px_0.2_0.8_0.1)	  0.415 (mIoU_max_px)	
+2024-05-25 16:00:40,359 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.804 (mF1_max_px)	  0.277 (mF1_px_0.2_0.8_0.1)	  0.278 (mAcc_px_0.2_0.8_0.1)	  0.279 (mIoU_px_0.2_0.8_0.1)	  0.801 (mIoU_max_px)	
+2024-05-25 16:00:40,362 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     97.570      |  97.668 (30  epoch)   |    99.126    | 99.170 (30  epoch) |      95.833      |   95.918 (30  epoch)   |   77.248    | 77.248 (60  epoch) |   97.197    | 97.197 (60  epoch) |  57.542  | 57.542 (60  epoch) |    60.014    | 60.064 (30  epoch) |        34.204        |     34.705 (30  epoch)     |        48.490         |     51.014 (30  epoch)      |        22.275         |     22.545 (30  epoch)      |    42.871     | 42.922 (30  epoch)  |
+|   02   |     81.472      |  81.472 (60  epoch)   |    96.956    | 96.956 (60  epoch) |      92.774      |   92.774 (30  epoch)   |   60.055    | 60.055 (60  epoch) |   96.448    | 96.448 (60  epoch) |  58.726  | 58.726 (60  epoch) |    61.068    | 61.068 (60  epoch) |        41.249        |     41.249 (60  epoch)     |        68.263         |     68.263 (60  epoch)      |        27.294         |     27.294 (60  epoch)      |    43.955     | 43.955 (60  epoch)  |
+|   03   |     99.780      |  99.780 (60  epoch)   |    97.628    | 97.628 (60  epoch) |      92.063      |   92.063 (60  epoch)   |   98.240    | 98.240 (60  epoch) |   99.596    | 99.596 (60  epoch) |  56.140  | 56.140 (60  epoch) |    54.712    | 54.712 (60  epoch) |        28.368        |     28.368 (60  epoch)     |        64.937         |     67.560 (30  epoch)      |        17.799         |     17.799 (60  epoch)      |    37.658     | 37.658 (60  epoch)  |
+|  Avg   |     92.941      |  92.941 (60  epoch)   |    97.903    | 97.903 (60  epoch) |      93.557      |   93.557 (60  epoch)   |   78.514    | 78.514 (60  epoch) |   97.747    | 97.747 (60  epoch) |  57.470  | 57.470 (60  epoch) |    58.598    | 58.598 (60  epoch) |        34.607        |     34.607 (60  epoch)     |        60.563         |     61.048 (30  epoch)      |        22.456         |     22.456 (60  epoch)      |    41.495     | 41.495 (60  epoch)  |
+2024-05-25 16:00:40,448 - ==> Total time: 0:08:55	 Eta: 0:35:41 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:44,446 - Train: 20.24% [3400/16800]  [60.7/300.0] [batch_t 0.073 (0.082)] [data_t 0.002] [optim_t 0.071] [lr 0.004000] [pixel 8.797 (8.986)]
+2024-05-25 16:00:45,619 - ==> Total time: 0:09:00	 Eta: 0:35:17 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:49,217 - Train: 20.54% [3450/16800]  [61.6/300.0] [batch_t 0.073 (0.088)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 8.720 (8.908)]
+2024-05-25 16:00:50,851 - ==> Total time: 0:09:05	 Eta: 0:34:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:00:53,859 - Train: 20.83% [3500/16800]  [62.5/300.0] [batch_t 0.066 (0.081)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 8.878 (9.000)]
+2024-05-25 16:00:56,196 - ==> Total time: 0:09:11	 Eta: 0:34:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:00,342 - Train: 21.13% [3550/16800]  [63.4/300.0] [batch_t 0.143 (0.156)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.575 (8.929)]
+2024-05-25 16:01:04,262 - ==> Total time: 0:09:19	 Eta: 0:34:21 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:08,237 - Train: 21.43% [3600/16800]  [64.3/300.0] [batch_t 0.147 (0.163)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 9.051 (8.840)]
+2024-05-25 16:01:13,984 - ==> Total time: 0:09:28	 Eta: 0:34:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:16,694 - Train: 21.73% [3650/16800]  [65.2/300.0] [batch_t 0.145 (0.170)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.977 (8.893)]
+2024-05-25 16:01:23,293 - ==> Total time: 0:09:38	 Eta: 0:34:09 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:24,392 - Train: 22.02% [3700/16800]  [66.1/300.0] [batch_t 0.066 (0.122)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.885 (8.874)]
+2024-05-25 16:01:31,373 - Train: 22.32% [3750/16800]  [67.0/300.0] [batch_t 0.144 (0.140)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.804 (8.832)]
+2024-05-25 16:01:31,662 - ==> Total time: 0:09:46	 Eta: 0:33:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:38,562 - Train: 22.62% [3800/16800]  [67.9/300.0] [batch_t 0.143 (0.132)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 8.648 (8.907)]
+2024-05-25 16:01:39,717 - ==> Total time: 0:09:54	 Eta: 0:33:48 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:45,355 - Train: 22.92% [3850/16800]  [68.8/300.0] [batch_t 0.145 (0.117)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.719 (8.732)]
+2024-05-25 16:01:47,370 - ==> Total time: 0:10:02	 Eta: 0:33:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:52,385 - Train: 23.21% [3900/16800]  [69.6/300.0] [batch_t 0.144 (0.124)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.844 (8.772)]
+2024-05-25 16:01:55,270 - ==> Total time: 0:10:10	 Eta: 0:33:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:01:59,745 - Train: 23.51% [3950/16800]  [70.5/300.0] [batch_t 0.066 (0.129)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.635 (8.728)]
+2024-05-25 16:02:02,880 - ==> Total time: 0:10:17	 Eta: 0:33:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:07,611 - Train: 23.81% [4000/16800]  [71.4/300.0] [batch_t 0.066 (0.113)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 9.062 (8.691)]
+2024-05-25 16:02:11,765 - ==> Total time: 0:10:26	 Eta: 0:33:04 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:15,237 - Train: 24.11% [4050/16800]  [72.3/300.0] [batch_t 0.143 (0.159)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.340 (8.637)]
+2024-05-25 16:02:19,571 - ==> Total time: 0:10:34	 Eta: 0:32:52 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:22,448 - Train: 24.40% [4100/16800]  [73.2/300.0] [batch_t 0.144 (0.170)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.487 (8.567)]
+2024-05-25 16:02:27,631 - ==> Total time: 0:10:42	 Eta: 0:32:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:29,362 - Train: 24.70% [4150/16800]  [74.1/300.0] [batch_t 0.144 (0.187)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.623 (8.632)]
+2024-05-25 16:02:35,556 - Train: 25.00% [4200/16800]  [75.0/300.0] [batch_t 0.144 (0.124)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 8.173 (8.658)]
+2024-05-25 16:02:35,558 - ==> Total time: 0:10:50	 Eta: 0:32:31 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:42,956 - Train: 25.30% [4250/16800]  [75.9/300.0] [batch_t 0.066 (0.136)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 8.462 (8.565)]
+2024-05-25 16:02:43,511 - ==> Total time: 0:10:58	 Eta: 0:32:20 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:50,663 - Train: 25.60% [4300/16800]  [76.8/300.0] [batch_t 0.145 (0.150)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 9.100 (8.611)]
+2024-05-25 16:02:51,751 - ==> Total time: 0:11:06	 Eta: 0:32:10 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:02:58,157 - Train: 25.89% [4350/16800]  [77.7/300.0] [batch_t 0.144 (0.152)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.934 (8.552)]
+2024-05-25 16:03:00,616 - ==> Total time: 0:11:15	 Eta: 0:32:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:06,106 - Train: 26.19% [4400/16800]  [78.6/300.0] [batch_t 0.143 (0.152)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 8.331 (8.496)]
+2024-05-25 16:03:09,571 - ==> Total time: 0:11:24	 Eta: 0:31:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:13,892 - Train: 26.49% [4450/16800]  [79.5/300.0] [batch_t 0.144 (0.141)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.260 (8.456)]
+2024-05-25 16:03:18,215 - ==> Total time: 0:11:33	 Eta: 0:31:46 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:21,217 - Train: 26.79% [4500/16800]  [80.4/300.0] [batch_t 0.144 (0.114)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.655 (8.537)]
+2024-05-25 16:03:26,402 - ==> Total time: 0:11:41	 Eta: 0:31:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:28,565 - Train: 27.08% [4550/16800]  [81.2/300.0] [batch_t 0.066 (0.104)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.145 (8.406)]
+2024-05-25 16:03:34,464 - ==> Total time: 0:11:49	 Eta: 0:31:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:36,556 - Train: 27.38% [4600/16800]  [82.1/300.0] [batch_t 0.066 (0.168)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.244 (8.382)]
+2024-05-25 16:03:42,508 - ==> Total time: 0:11:57	 Eta: 0:31:15 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:43,725 - Train: 27.68% [4650/16800]  [83.0/300.0] [batch_t 0.146 (0.297)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 8.387 (8.451)]
+2024-05-25 16:03:49,845 - Train: 27.98% [4700/16800]  [83.9/300.0] [batch_t 0.147 (0.122)] [data_t 0.002] [optim_t 0.145] [lr 0.004000] [pixel 8.757 (8.434)]
+2024-05-25 16:03:50,424 - ==> Total time: 0:12:05	 Eta: 0:31:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:03:56,453 - Train: 28.27% [4750/16800]  [84.8/300.0] [batch_t 0.146 (0.115)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 8.088 (8.413)]
+2024-05-25 16:03:57,894 - ==> Total time: 0:12:12	 Eta: 0:30:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:03,921 - Train: 28.57% [4800/16800]  [85.7/300.0] [batch_t 0.067 (0.135)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.263 (8.411)]
+2024-05-25 16:04:05,417 - ==> Total time: 0:12:20	 Eta: 0:30:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:11,199 - Train: 28.87% [4850/16800]  [86.6/300.0] [batch_t 0.142 (0.152)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 8.525 (8.330)]
+2024-05-25 16:04:13,419 - ==> Total time: 0:12:28	 Eta: 0:30:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:18,492 - Train: 29.17% [4900/16800]  [87.5/300.0] [batch_t 0.144 (0.154)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.190 (8.393)]
+2024-05-25 16:04:21,790 - ==> Total time: 0:12:36	 Eta: 0:30:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:25,802 - Train: 29.46% [4950/16800]  [88.4/300.0] [batch_t 0.141 (0.156)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 8.180 (8.317)]
+2024-05-25 16:04:30,449 - ==> Total time: 0:12:45	 Eta: 0:30:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:33,640 - Train: 29.76% [5000/16800]  [89.3/300.0] [batch_t 0.143 (0.156)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.458 (8.253)]
+2024-05-25 16:04:43,648 - Test: 100.00% [24/24] [batch_t 0.034 (0.166)] [pixel 10.307 (10.619)]
+2024-05-25 16:04:45,945 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.129 (mIoU_max_px)	
+2024-05-25 16:04:47,999 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.490 (mF1_max_px)	  0.170 (mF1_px_0.2_0.8_0.1)	  0.182 (mAcc_px_0.2_0.8_0.1)	  0.168 (mIoU_px_0.2_0.8_0.1)	  0.492 (mIoU_max_px)	
+2024-05-25 16:04:54,862 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.980 (mF1_max_px)	  0.333 (mF1_px_0.2_0.8_0.1)	  0.335 (mAcc_px_0.2_0.8_0.1)	  0.337 (mIoU_px_0.2_0.8_0.1)	  0.972 (mIoU_max_px)	
+2024-05-25 16:04:54,866 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     97.570      |  97.668 (30  epoch)   |    99.151    | 99.170 (30  epoch) |      95.833      |   95.918 (30  epoch)   |   77.279    | 77.279 (90  epoch) |   97.286    | 97.286 (90  epoch) |  58.346  | 58.346 (90  epoch) |    60.505    | 60.505 (90  epoch) |        34.604        |     34.705 (30  epoch)     |        48.567         |     51.014 (30  epoch)      |        22.633         |     22.633 (90  epoch)      |    43.374     | 43.374 (90  epoch)  |
+|   02   |     83.385      |  83.385 (90  epoch)   |    97.286    | 97.286 (90  epoch) |      92.958      |   92.958 (90  epoch)   |   59.764    | 60.055 (60  epoch) |   96.441    | 96.448 (60  epoch) |  59.355  | 59.355 (90  epoch) |    61.001    | 61.068 (60  epoch) |        41.446        |     41.446 (90  epoch)     |        67.266         |     68.263 (60  epoch)      |        27.453         |     27.453 (90  epoch)      |    43.886     | 43.955 (60  epoch)  |
+|   03   |     99.788      |  99.788 (90  epoch)   |    97.358    | 97.628 (60  epoch) |      92.308      |   92.308 (90  epoch)   |   98.317    | 98.317 (90  epoch) |   99.607    | 99.607 (90  epoch) |  56.049  | 56.140 (60  epoch) |    55.757    | 55.757 (90  epoch) |        26.652        |     28.368 (60  epoch)     |        60.053         |     67.560 (30  epoch)      |        16.702         |     17.799 (60  epoch)      |    38.654     | 38.654 (90  epoch)  |
+|  Avg   |     93.581      |  93.581 (90  epoch)   |    97.932    | 97.932 (90  epoch) |      93.700      |   93.700 (90  epoch)   |   78.453    | 78.514 (60  epoch) |   97.778    | 97.778 (90  epoch) |  57.917  | 57.917 (90  epoch) |    59.087    | 59.087 (90  epoch) |        34.234        |     34.607 (60  epoch)     |        58.629         |     61.048 (30  epoch)      |        22.263         |     22.456 (60  epoch)      |    41.971     | 41.971 (90  epoch)  |
+2024-05-25 16:04:54,947 - ==> Total time: 0:13:09	 Eta: 0:30:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:04:57,553 - Train: 30.06% [5050/16800]  [90.2/300.0] [batch_t 0.146 (0.175)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 8.044 (8.181)]
+2024-05-25 16:05:03,211 - ==> Total time: 0:13:18	 Eta: 0:30:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:05,835 - Train: 30.36% [5100/16800]  [91.1/300.0] [batch_t 0.066 (0.138)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.191 (8.143)]
+2024-05-25 16:05:12,171 - Train: 30.65% [5150/16800]  [92.0/300.0] [batch_t 0.143 (0.127)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 8.214 (8.272)]
+2024-05-25 16:05:12,463 - ==> Total time: 0:13:27	 Eta: 0:30:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:17,957 - Train: 30.95% [5200/16800]  [92.9/300.0] [batch_t 0.092 (0.102)] [data_t 0.002] [optim_t 0.091] [lr 0.004000] [pixel 8.159 (8.256)]
+2024-05-25 16:05:18,681 - ==> Total time: 0:13:33	 Eta: 0:30:10 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:22,795 - Train: 31.25% [5250/16800]  [93.8/300.0] [batch_t 0.073 (0.082)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 7.917 (8.268)]
+2024-05-25 16:05:23,834 - ==> Total time: 0:13:38	 Eta: 0:29:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:27,363 - Train: 31.55% [5300/16800]  [94.6/300.0] [batch_t 0.073 (0.080)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 8.375 (8.267)]
+2024-05-25 16:05:28,852 - ==> Total time: 0:13:43	 Eta: 0:29:37 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:31,922 - Train: 31.85% [5350/16800]  [95.5/300.0] [batch_t 0.066 (0.081)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 8.355 (8.286)]
+2024-05-25 16:05:34,423 - ==> Total time: 0:13:49	 Eta: 0:29:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:38,985 - Train: 32.14% [5400/16800]  [96.4/300.0] [batch_t 0.144 (0.155)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.390 (8.123)]
+2024-05-25 16:05:42,383 - ==> Total time: 0:13:57	 Eta: 0:29:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:45,890 - Train: 32.44% [5450/16800]  [97.3/300.0] [batch_t 0.145 (0.157)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.343 (8.117)]
+2024-05-25 16:05:50,557 - ==> Total time: 0:14:05	 Eta: 0:29:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:05:53,274 - Train: 32.74% [5500/16800]  [98.2/300.0] [batch_t 0.145 (0.165)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.332 (8.180)]
+2024-05-25 16:05:59,114 - ==> Total time: 0:14:14	 Eta: 0:28:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:01,288 - Train: 33.04% [5550/16800]  [99.1/300.0] [batch_t 0.143 (0.186)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 8.300 (8.115)]
+2024-05-25 16:06:08,054 - Train: 33.33% [5600/16800]  [100.0/300.0] [batch_t 0.066 (0.135)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 7.938 (8.111)]
+2024-05-25 16:06:08,057 - ==> Total time: 0:14:22	 Eta: 0:28:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:16,316 - Train: 33.63% [5650/16800]  [100.9/300.0] [batch_t 0.142 (0.149)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.840 (8.108)]
+2024-05-25 16:06:17,176 - ==> Total time: 0:14:32	 Eta: 0:28:38 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:24,382 - Train: 33.93% [5700/16800]  [101.8/300.0] [batch_t 0.143 (0.150)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 8.050 (8.148)]
+2024-05-25 16:06:26,107 - ==> Total time: 0:14:41	 Eta: 0:28:30 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:32,274 - Train: 34.23% [5750/16800]  [102.7/300.0] [batch_t 0.145 (0.144)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 8.006 (8.060)]
+2024-05-25 16:06:34,865 - ==> Total time: 0:14:49	 Eta: 0:28:21 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:40,040 - Train: 34.52% [5800/16800]  [103.6/300.0] [batch_t 0.143 (0.138)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.072 (8.055)]
+2024-05-25 16:06:43,501 - ==> Total time: 0:14:58	 Eta: 0:28:13 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:47,140 - Train: 34.82% [5850/16800]  [104.5/300.0] [batch_t 0.145 (0.115)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 7.821 (8.033)]
+2024-05-25 16:06:51,460 - ==> Total time: 0:15:06	 Eta: 0:28:03 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:06:54,368 - Train: 35.12% [5900/16800]  [105.4/300.0] [batch_t 0.143 (0.103)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.962 (8.007)]
+2024-05-25 16:06:59,556 - ==> Total time: 0:15:14	 Eta: 0:27:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:02,162 - Train: 35.42% [5950/16800]  [106.2/300.0] [batch_t 0.066 (0.128)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 8.113 (8.163)]
+2024-05-25 16:07:05,452 - ==> Total time: 0:15:20	 Eta: 0:27:40 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:07,508 - Train: 35.71% [6000/16800]  [107.1/300.0] [batch_t 0.148 (0.176)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 7.905 (7.891)]
+2024-05-25 16:07:13,360 - ==> Total time: 0:15:28	 Eta: 0:27:30 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:14,574 - Train: 36.01% [6050/16800]  [108.0/300.0] [batch_t 0.144 (0.264)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.884 (8.174)]
+2024-05-25 16:07:21,467 - Train: 36.31% [6100/16800]  [108.9/300.0] [batch_t 0.066 (0.138)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 8.004 (8.005)]
+2024-05-25 16:07:21,735 - ==> Total time: 0:15:36	 Eta: 0:27:21 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:29,313 - Train: 36.61% [6150/16800]  [109.8/300.0] [batch_t 0.143 (0.151)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.842 (7.976)]
+2024-05-25 16:07:30,640 - ==> Total time: 0:15:45	 Eta: 0:27:13 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:37,285 - Train: 36.90% [6200/16800]  [110.7/300.0] [batch_t 0.143 (0.150)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.108 (7.968)]
+2024-05-25 16:07:39,591 - ==> Total time: 0:15:54	 Eta: 0:27:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:45,156 - Train: 37.20% [6250/16800]  [111.6/300.0] [batch_t 0.144 (0.136)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.982 (7.918)]
+2024-05-25 16:07:48,319 - ==> Total time: 0:16:03	 Eta: 0:26:56 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:51,810 - Train: 37.50% [6300/16800]  [112.5/300.0] [batch_t 0.139 (0.102)] [data_t 0.002] [optim_t 0.138] [lr 0.004000] [pixel 7.943 (7.932)]
+2024-05-25 16:07:55,847 - ==> Total time: 0:16:10	 Eta: 0:26:46 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:07:59,161 - Train: 37.80% [6350/16800]  [113.4/300.0] [batch_t 0.067 (0.123)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.738 (7.887)]
+2024-05-25 16:08:03,805 - ==> Total time: 0:16:18	 Eta: 0:26:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:07,146 - Train: 38.10% [6400/16800]  [114.3/300.0] [batch_t 0.084 (0.155)] [data_t 0.002] [optim_t 0.083] [lr 0.004000] [pixel 7.872 (7.779)]
+2024-05-25 16:08:11,915 - ==> Total time: 0:16:26	 Eta: 0:26:27 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:14,279 - Train: 38.39% [6450/16800]  [115.2/300.0] [batch_t 0.143 (0.176)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 8.128 (7.997)]
+2024-05-25 16:08:19,866 - ==> Total time: 0:16:34	 Eta: 0:26:17 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:21,254 - Train: 38.69% [6500/16800]  [116.1/300.0] [batch_t 0.144 (0.187)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.693 (7.938)]
+2024-05-25 16:08:26,984 - Train: 38.99% [6550/16800]  [117.0/300.0] [batch_t 0.144 (0.115)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.875 (7.862)]
+2024-05-25 16:08:27,281 - ==> Total time: 0:16:42	 Eta: 0:26:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:34,451 - Train: 39.29% [6600/16800]  [117.9/300.0] [batch_t 0.066 (0.134)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.669 (7.850)]
+2024-05-25 16:08:34,986 - ==> Total time: 0:16:49	 Eta: 0:25:57 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:41,979 - Train: 39.58% [6650/16800]  [118.8/300.0] [batch_t 0.142 (0.150)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 7.951 (7.811)]
+2024-05-25 16:08:43,565 - ==> Total time: 0:16:58	 Eta: 0:25:49 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:08:49,687 - Train: 39.88% [6700/16800]  [119.6/300.0] [batch_t 0.144 (0.152)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.177 (7.819)]
+2024-05-25 16:08:56,777 - Test: 100.00% [24/24] [batch_t 0.033 (0.170)] [pixel 9.744 (10.053)]
+2024-05-25 16:08:58,964 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.113 (mIoU_max_px)	
+2024-05-25 16:09:00,663 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.413 (mF1_max_px)	  0.143 (mF1_px_0.2_0.8_0.1)	  0.143 (mAcc_px_0.2_0.8_0.1)	  0.144 (mIoU_px_0.2_0.8_0.1)	  0.415 (mIoU_max_px)	
+2024-05-25 16:09:07,363 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.814 (mF1_max_px)	  0.285 (mF1_px_0.2_0.8_0.1)	  0.350 (mAcc_px_0.2_0.8_0.1)	  0.358 (mIoU_px_0.2_0.8_0.1)	  0.986 (mIoU_max_px)	
+2024-05-25 16:09:07,366 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     97.959      |  97.959 (120 epoch)   |    99.309    | 99.309 (120 epoch) |      96.970      |   96.970 (120 epoch)   |   77.226    | 77.279 (90  epoch) |   97.299    | 97.299 (120 epoch) |  58.362  | 58.362 (120 epoch) |    60.504    | 60.505 (90  epoch) |        34.467        |     34.705 (30  epoch)     |        48.474         |     51.014 (30  epoch)      |        22.548         |     22.633 (90  epoch)      |    43.374     | 43.374 (90  epoch)  |
+|   02   |     84.390      |  84.390 (120 epoch)   |    97.473    | 97.473 (120 epoch) |      92.991      |   92.991 (120 epoch)   |   59.668    | 60.055 (60  epoch) |   96.396    | 96.448 (60  epoch) |  58.762  | 59.355 (90  epoch) |    60.438    | 61.068 (60  epoch) |        41.558        |     41.558 (120 epoch)     |        67.841         |     68.263 (60  epoch)      |        27.472         |     27.472 (120 epoch)      |    43.305     | 43.955 (60  epoch)  |
+|   03   |     99.772      |  99.788 (90  epoch)   |    96.974    | 97.628 (60  epoch) |      95.238      |   95.238 (120 epoch)   |   98.351    | 98.351 (120 epoch) |   99.609    | 99.609 (120 epoch) |  55.177  | 56.140 (60  epoch) |    54.931    | 55.757 (90  epoch) |        27.256        |     28.368 (60  epoch)     |        61.983         |     67.560 (30  epoch)      |        17.088         |     17.799 (60  epoch)      |    37.865     | 38.654 (90  epoch)  |
+|  Avg   |     94.040      |  94.040 (120 epoch)   |    97.919    | 97.932 (90  epoch) |      95.066      |   95.066 (120 epoch)   |   78.415    | 78.514 (60  epoch) |   97.768    | 97.778 (90  epoch) |  57.434  | 57.917 (90  epoch) |    58.624    | 59.087 (90  epoch) |        34.427        |     34.607 (60  epoch)     |        59.433         |     61.048 (30  epoch)      |        22.369         |     22.456 (60  epoch)      |    41.515     | 41.971 (90  epoch)  |
+2024-05-25 16:09:07,489 - ==> Total time: 0:17:22	 Eta: 0:26:03 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:12,720 - Train: 40.18% [6750/16800]  [120.5/300.0] [batch_t 0.096 (0.149)] [data_t 0.001] [optim_t 0.094] [lr 0.004000] [pixel 7.813 (7.823)]
+2024-05-25 16:09:15,393 - ==> Total time: 0:17:30	 Eta: 0:25:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:19,743 - Train: 40.48% [6800/16800]  [121.4/300.0] [batch_t 0.144 (0.156)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.801 (7.802)]
+2024-05-25 16:09:23,212 - ==> Total time: 0:17:38	 Eta: 0:25:43 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:26,710 - Train: 40.77% [6850/16800]  [122.3/300.0] [batch_t 0.144 (0.158)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 7.854 (7.867)]
+2024-05-25 16:09:31,194 - ==> Total time: 0:17:46	 Eta: 0:25:34 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:33,918 - Train: 41.07% [6900/16800]  [123.2/300.0] [batch_t 0.144 (0.167)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.862 (7.903)]
+2024-05-25 16:09:39,557 - ==> Total time: 0:17:54	 Eta: 0:25:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:41,525 - Train: 41.37% [6950/16800]  [124.1/300.0] [batch_t 0.144 (0.176)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.724 (7.729)]
+2024-05-25 16:09:48,705 - Train: 41.67% [7000/16800]  [125.0/300.0] [batch_t 0.129 (0.144)] [data_t 0.001] [optim_t 0.128] [lr 0.004000] [pixel 8.170 (7.777)]
+2024-05-25 16:09:48,707 - ==> Total time: 0:18:03	 Eta: 0:25:17 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:09:56,753 - Train: 41.96% [7050/16800]  [125.9/300.0] [batch_t 0.143 (0.148)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 7.879 (7.759)]
+2024-05-25 16:09:57,621 - ==> Total time: 0:18:12	 Eta: 0:25:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:02,309 - Train: 42.26% [7100/16800]  [126.8/300.0] [batch_t 0.090 (0.093)] [data_t 0.002] [optim_t 0.088] [lr 0.004000] [pixel 7.609 (7.734)]
+2024-05-25 16:10:03,173 - ==> Total time: 0:18:18	 Eta: 0:24:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:08,340 - Train: 42.56% [7150/16800]  [127.7/300.0] [batch_t 0.073 (0.083)] [data_t 0.002] [optim_t 0.071] [lr 0.004000] [pixel 7.478 (7.755)]
+2024-05-25 16:10:09,680 - ==> Total time: 0:18:24	 Eta: 0:24:44 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:13,295 - Train: 42.86% [7200/16800]  [128.6/300.0] [batch_t 0.066 (0.084)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.803 (7.796)]
+2024-05-25 16:10:15,990 - ==> Total time: 0:18:30	 Eta: 0:24:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:20,732 - Train: 43.15% [7250/16800]  [129.5/300.0] [batch_t 0.144 (0.154)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.581 (7.636)]
+2024-05-25 16:10:24,102 - ==> Total time: 0:18:38	 Eta: 0:24:23 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:28,219 - Train: 43.45% [7300/16800]  [130.4/300.0] [batch_t 0.144 (0.158)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.717 (7.799)]
+2024-05-25 16:10:32,216 - ==> Total time: 0:18:47	 Eta: 0:24:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:35,137 - Train: 43.75% [7350/16800]  [131.2/300.0] [batch_t 0.144 (0.166)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.670 (7.661)]
+2024-05-25 16:10:40,142 - ==> Total time: 0:18:55	 Eta: 0:24:04 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:42,241 - Train: 44.05% [7400/16800]  [132.1/300.0] [batch_t 0.143 (0.178)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.908 (7.579)]
+2024-05-25 16:10:48,826 - ==> Total time: 0:19:03	 Eta: 0:23:56 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:10:50,001 - Train: 44.35% [7450/16800]  [133.0/300.0] [batch_t 0.144 (0.261)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.693 (7.710)]
+2024-05-25 16:10:57,184 - Train: 44.64% [7500/16800]  [133.9/300.0] [batch_t 0.143 (0.144)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.898 (7.669)]
+2024-05-25 16:10:57,764 - ==> Total time: 0:19:12	 Eta: 0:23:47 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:05,189 - Train: 44.94% [7550/16800]  [134.8/300.0] [batch_t 0.144 (0.147)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.860 (7.650)]
+2024-05-25 16:11:06,629 - ==> Total time: 0:19:21	 Eta: 0:23:39 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:13,293 - Train: 45.24% [7600/16800]  [135.7/300.0] [batch_t 0.143 (0.143)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.441 (7.678)]
+2024-05-25 16:11:15,605 - ==> Total time: 0:19:30	 Eta: 0:23:31 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:20,990 - Train: 45.54% [7650/16800]  [136.6/300.0] [batch_t 0.144 (0.141)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.391 (7.613)]
+2024-05-25 16:11:24,154 - ==> Total time: 0:19:39	 Eta: 0:23:22 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:28,879 - Train: 45.83% [7700/16800]  [137.5/300.0] [batch_t 0.144 (0.127)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.516 (7.662)]
+2024-05-25 16:11:32,900 - ==> Total time: 0:19:47	 Eta: 0:23:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:35,487 - Train: 46.13% [7750/16800]  [138.4/300.0] [batch_t 0.066 (0.092)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.645 (7.559)]
+2024-05-25 16:11:40,326 - ==> Total time: 0:19:55	 Eta: 0:23:04 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:43,433 - Train: 46.43% [7800/16800]  [139.3/300.0] [batch_t 0.067 (0.132)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.218 (7.560)]
+2024-05-25 16:11:48,148 - ==> Total time: 0:20:03	 Eta: 0:22:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:50,441 - Train: 46.73% [7850/16800]  [140.2/300.0] [batch_t 0.144 (0.169)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.816 (7.552)]
+2024-05-25 16:11:56,050 - ==> Total time: 0:20:10	 Eta: 0:22:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:11:57,615 - Train: 47.02% [7900/16800]  [141.1/300.0] [batch_t 0.144 (0.215)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.347 (7.470)]
+2024-05-25 16:12:03,805 - Train: 47.32% [7950/16800]  [142.0/300.0] [batch_t 0.144 (0.124)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 8.031 (7.551)]
+2024-05-25 16:12:04,114 - ==> Total time: 0:20:19	 Eta: 0:22:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:11,756 - Train: 47.62% [8000/16800]  [142.9/300.0] [batch_t 0.145 (0.131)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.425 (7.568)]
+2024-05-25 16:12:12,910 - ==> Total time: 0:20:27	 Eta: 0:22:28 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:18,725 - Train: 47.92% [8050/16800]  [143.8/300.0] [batch_t 0.121 (0.125)] [data_t 0.002] [optim_t 0.120] [lr 0.004000] [pixel 7.482 (7.597)]
+2024-05-25 16:12:20,736 - ==> Total time: 0:20:35	 Eta: 0:22:18 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:26,673 - Train: 48.21% [8100/16800]  [144.6/300.0] [batch_t 0.079 (0.149)] [data_t 0.002] [optim_t 0.078] [lr 0.004000] [pixel 7.549 (7.512)]
+2024-05-25 16:12:28,431 - ==> Total time: 0:20:43	 Eta: 0:22:09 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:33,636 - Train: 48.51% [8150/16800]  [145.5/300.0] [batch_t 0.144 (0.153)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.740 (7.560)]
+2024-05-25 16:12:36,406 - ==> Total time: 0:20:51	 Eta: 0:21:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:40,719 - Train: 48.81% [8200/16800]  [146.4/300.0] [batch_t 0.147 (0.156)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 7.159 (7.496)]
+2024-05-25 16:12:45,054 - ==> Total time: 0:20:59	 Eta: 0:21:51 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:48,548 - Train: 49.11% [8250/16800]  [147.3/300.0] [batch_t 0.142 (0.159)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 7.658 (7.428)]
+2024-05-25 16:12:54,009 - ==> Total time: 0:21:08	 Eta: 0:21:43 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:12:56,103 - Train: 49.40% [8300/16800]  [148.2/300.0] [batch_t 0.145 (0.126)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.305 (7.496)]
+2024-05-25 16:13:02,420 - ==> Total time: 0:21:17	 Eta: 0:21:34 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:13:05,788 - Train: 49.70% [8350/16800]  [149.1/300.0] [batch_t 0.081 (0.125)] [data_t 0.002] [optim_t 0.080] [lr 0.004000] [pixel 7.584 (7.664)]
+2024-05-25 16:13:12,976 - Train: 50.00% [8400/16800]  [150.0/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.142] [lr 0.004000] [pixel 7.657 (7.505)]
+2024-05-25 16:13:16,889 - Test: 100.00% [24/24] [batch_t 0.032 (0.158)] [pixel 9.118 (9.625)]
+2024-05-25 16:13:19,037 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-25 16:13:21,393 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.409 (mF1_max_px)	  0.142 (mF1_px_0.2_0.8_0.1)	  0.142 (mAcc_px_0.2_0.8_0.1)	  0.141 (mIoU_px_0.2_0.8_0.1)	  0.405 (mIoU_max_px)	
+2024-05-25 16:13:27,981 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.771 (mF1_max_px)	  0.265 (mF1_px_0.2_0.8_0.1)	  0.262 (mAcc_px_0.2_0.8_0.1)	  0.268 (mIoU_px_0.2_0.8_0.1)	  0.754 (mIoU_max_px)	
+2024-05-25 16:13:27,984 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.251      |  98.251 (150 epoch)   |    99.356    | 99.356 (150 epoch) |      96.842      |   96.970 (120 epoch)   |   77.298    | 77.298 (150 epoch) |   97.293    | 97.299 (120 epoch) |  58.121  | 58.362 (120 epoch) |    60.675    | 60.675 (150 epoch) |        35.257        |     35.257 (150 epoch)     |        50.761         |     51.014 (30  epoch)      |        23.040         |     23.040 (150 epoch)      |    43.550     | 43.550 (150 epoch)  |
+|   02   |     85.703      |  85.703 (150 epoch)   |    97.692    | 97.692 (150 epoch) |      92.958      |   92.991 (120 epoch)   |   59.209    | 60.055 (60  epoch) |   96.335    | 96.448 (60  epoch) |  58.453  | 59.355 (90  epoch) |    60.045    | 61.068 (60  epoch) |        41.244        |     41.558 (120 epoch)     |        66.828         |     68.263 (60  epoch)      |        27.230         |     27.472 (120 epoch)      |    42.903     | 43.955 (60  epoch)  |
+|   03   |     99.756      |  99.788 (90  epoch)   |    97.086    | 97.628 (60  epoch) |      95.082      |   95.238 (120 epoch)   |   98.460    | 98.460 (150 epoch) |   99.620    | 99.620 (150 epoch) |  52.384  | 56.140 (60  epoch) |    53.109    | 55.757 (90  epoch) |        27.373        |     28.368 (60  epoch)     |        63.556         |     67.560 (30  epoch)      |        17.034         |     17.799 (60  epoch)      |    36.156     | 38.654 (90  epoch)  |
+|  Avg   |     94.570      |  94.570 (150 epoch)   |    98.045    | 98.045 (150 epoch) |      94.961      |   95.066 (120 epoch)   |   78.323    | 78.514 (60  epoch) |   97.749    | 97.778 (90  epoch) |  56.319  | 57.917 (90  epoch) |    57.943    | 59.087 (90  epoch) |        34.625        |     34.625 (150 epoch)     |        60.382         |     61.048 (30  epoch)      |        22.435         |     22.456 (60  epoch)      |    40.869     | 41.971 (90  epoch)  |
+2024-05-25 16:13:28,079 - ==> Total time: 0:21:42	 Eta: 0:21:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:13:35,458 - Train: 50.30% [8450/16800]  [150.9/300.0] [batch_t 0.142 (0.130)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 7.198 (7.424)]
+2024-05-25 16:13:36,323 - ==> Total time: 0:21:51	 Eta: 0:21:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:13:42,673 - Train: 50.60% [8500/16800]  [151.8/300.0] [batch_t 0.066 (0.130)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.358 (7.494)]
+2024-05-25 16:13:44,245 - ==> Total time: 0:21:59	 Eta: 0:21:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:13:50,624 - Train: 50.89% [8550/16800]  [152.7/300.0] [batch_t 0.066 (0.142)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.373 (7.416)]
+2024-05-25 16:13:52,471 - ==> Total time: 0:22:07	 Eta: 0:21:15 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:13:57,892 - Train: 51.19% [8600/16800]  [153.6/300.0] [batch_t 0.144 (0.153)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.601 (7.450)]
+2024-05-25 16:14:00,238 - ==> Total time: 0:22:15	 Eta: 0:21:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:04,838 - Train: 51.49% [8650/16800]  [154.5/300.0] [batch_t 0.148 (0.154)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 7.438 (7.413)]
+2024-05-25 16:14:09,147 - ==> Total time: 0:22:24	 Eta: 0:20:57 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:13,217 - Train: 51.79% [8700/16800]  [155.4/300.0] [batch_t 0.142 (0.155)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 7.447 (7.489)]
+2024-05-25 16:14:18,391 - ==> Total time: 0:22:33	 Eta: 0:20:49 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:20,851 - Train: 52.08% [8750/16800]  [156.2/300.0] [batch_t 0.144 (0.135)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.509 (7.374)]
+2024-05-25 16:14:26,893 - ==> Total time: 0:22:41	 Eta: 0:20:40 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:28,294 - Train: 52.38% [8800/16800]  [157.1/300.0] [batch_t 0.066 (0.105)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 7.505 (7.334)]
+2024-05-25 16:14:34,907 - ==> Total time: 0:22:49	 Eta: 0:20:31 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:36,243 - Train: 52.68% [8850/16800]  [158.0/300.0] [batch_t 0.144 (0.257)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.348 (7.438)]
+2024-05-25 16:14:40,529 - Train: 52.98% [8900/16800]  [158.9/300.0] [batch_t 0.095 (0.086)] [data_t 0.001] [optim_t 0.093] [lr 0.004000] [pixel 7.359 (7.376)]
+2024-05-25 16:14:40,878 - ==> Total time: 0:22:55	 Eta: 0:20:20 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:45,105 - Train: 53.27% [8950/16800]  [159.8/300.0] [batch_t 0.073 (0.080)] [data_t 0.001] [optim_t 0.072] [lr 0.004000] [pixel 7.623 (7.378)]
+2024-05-25 16:14:45,838 - ==> Total time: 0:23:00	 Eta: 0:20:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:49,727 - Train: 53.57% [9000/16800]  [160.7/300.0] [batch_t 0.073 (0.080)] [data_t 0.002] [optim_t 0.071] [lr 0.004000] [pixel 7.369 (7.436)]
+2024-05-25 16:14:50,902 - ==> Total time: 0:23:05	 Eta: 0:19:56 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:14:54,286 - Train: 53.87% [9050/16800]  [161.6/300.0] [batch_t 0.066 (0.084)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 7.281 (7.270)]
+2024-05-25 16:14:56,272 - ==> Total time: 0:23:11	 Eta: 0:19:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:01,122 - Train: 54.17% [9100/16800]  [162.5/300.0] [batch_t 0.143 (0.150)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.523 (7.334)]
+2024-05-25 16:15:04,318 - ==> Total time: 0:23:19	 Eta: 0:19:36 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:08,967 - Train: 54.46% [9150/16800]  [163.4/300.0] [batch_t 0.143 (0.155)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.488 (7.352)]
+2024-05-25 16:15:13,194 - ==> Total time: 0:23:28	 Eta: 0:19:27 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:16,393 - Train: 54.76% [9200/16800]  [164.3/300.0] [batch_t 0.144 (0.160)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.459 (7.282)]
+2024-05-25 16:15:22,026 - ==> Total time: 0:23:36	 Eta: 0:19:19 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:24,357 - Train: 55.06% [9250/16800]  [165.2/300.0] [batch_t 0.144 (0.173)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.525 (7.346)]
+2024-05-25 16:15:30,950 - ==> Total time: 0:23:45	 Eta: 0:19:10 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:32,230 - Train: 55.36% [9300/16800]  [166.1/300.0] [batch_t 0.138 (0.163)] [data_t 0.002] [optim_t 0.136] [lr 0.004000] [pixel 7.260 (7.168)]
+2024-05-25 16:15:39,412 - Train: 55.65% [9350/16800]  [167.0/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 7.302 (7.308)]
+2024-05-25 16:15:39,701 - ==> Total time: 0:23:54	 Eta: 0:19:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:47,441 - Train: 55.95% [9400/16800]  [167.9/300.0] [batch_t 0.143 (0.144)] [data_t 0.001] [optim_t 0.141] [lr 0.004000] [pixel 7.110 (7.299)]
+2024-05-25 16:15:48,593 - ==> Total time: 0:24:03	 Eta: 0:18:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:15:54,510 - Train: 56.25% [9450/16800]  [168.8/300.0] [batch_t 0.143 (0.127)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.099 (7.274)]
+2024-05-25 16:15:56,527 - ==> Total time: 0:24:11	 Eta: 0:18:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:01,617 - Train: 56.55% [9500/16800]  [169.6/300.0] [batch_t 0.144 (0.125)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.346 (7.262)]
+2024-05-25 16:16:04,490 - ==> Total time: 0:24:19	 Eta: 0:18:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:09,482 - Train: 56.85% [9550/16800]  [170.5/300.0] [batch_t 0.145 (0.115)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 7.311 (7.259)]
+2024-05-25 16:16:13,212 - ==> Total time: 0:24:28	 Eta: 0:18:27 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:16,464 - Train: 57.14% [9600/16800]  [171.4/300.0] [batch_t 0.144 (0.114)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.064 (7.205)]
+2024-05-25 16:16:21,073 - ==> Total time: 0:24:35	 Eta: 0:18:18 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:24,308 - Train: 57.44% [9650/16800]  [172.3/300.0] [batch_t 0.066 (0.148)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.138 (7.244)]
+2024-05-25 16:16:28,428 - ==> Total time: 0:24:43	 Eta: 0:18:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:31,009 - Train: 57.74% [9700/16800]  [173.2/300.0] [batch_t 0.142 (0.171)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 7.218 (7.199)]
+2024-05-25 16:16:35,848 - ==> Total time: 0:24:50	 Eta: 0:17:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:37,645 - Train: 58.04% [9750/16800]  [174.1/300.0] [batch_t 0.143 (0.191)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.179 (7.182)]
+2024-05-25 16:16:43,681 - Train: 58.33% [9800/16800]  [175.0/300.0] [batch_t 0.129 (0.121)] [data_t 0.001] [optim_t 0.128] [lr 0.004000] [pixel 7.260 (7.206)]
+2024-05-25 16:16:43,683 - ==> Total time: 0:24:58	 Eta: 0:17:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:51,621 - Train: 58.63% [9850/16800]  [175.9/300.0] [batch_t 0.066 (0.148)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 7.435 (7.235)]
+2024-05-25 16:16:52,022 - ==> Total time: 0:25:06	 Eta: 0:17:41 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:16:59,158 - Train: 58.93% [9900/16800]  [176.8/300.0] [batch_t 0.144 (0.150)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.275 (7.165)]
+2024-05-25 16:17:00,834 - ==> Total time: 0:25:15	 Eta: 0:17:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:05,243 - Train: 59.23% [9950/16800]  [177.7/300.0] [batch_t 0.144 (0.096)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.392 (7.155)]
+2024-05-25 16:17:07,836 - ==> Total time: 0:25:22	 Eta: 0:17:23 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:12,538 - Train: 59.52% [10000/16800]  [178.6/300.0] [batch_t 0.066 (0.130)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.853 (7.162)]
+2024-05-25 16:17:15,657 - ==> Total time: 0:25:30	 Eta: 0:17:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:20,403 - Train: 59.82% [10050/16800]  [179.5/300.0] [batch_t 0.144 (0.154)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.086 (7.173)]
+2024-05-25 16:17:27,762 - Test: 100.00% [24/24] [batch_t 0.034 (0.166)] [pixel 8.890 (9.452)]
+2024-05-25 16:17:28,359 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.115 (mF1_max_px)	  0.041 (mF1_px_0.2_0.8_0.1)	  0.041 (mAcc_px_0.2_0.8_0.1)	  0.042 (mIoU_px_0.2_0.8_0.1)	  0.113 (mIoU_max_px)	
+2024-05-25 16:17:30,621 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.410 (mF1_max_px)	  0.143 (mF1_px_0.2_0.8_0.1)	  0.142 (mAcc_px_0.2_0.8_0.1)	  0.142 (mIoU_px_0.2_0.8_0.1)	  0.411 (mIoU_max_px)	
+2024-05-25 16:17:36,267 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.822 (mF1_max_px)	  0.288 (mF1_px_0.2_0.8_0.1)	  0.281 (mAcc_px_0.2_0.8_0.1)	  0.284 (mIoU_px_0.2_0.8_0.1)	  0.979 (mIoU_max_px)	
+2024-05-25 16:17:36,271 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.154      |  98.251 (150 epoch)   |    99.330    | 99.356 (150 epoch) |      96.842      |   96.970 (120 epoch)   |   76.763    | 77.298 (150 epoch) |   97.238    | 97.299 (120 epoch) |  57.865  | 58.362 (120 epoch) |    60.097    | 60.675 (150 epoch) |        34.177        |     35.257 (150 epoch)     |        49.172         |     51.014 (30  epoch)      |        22.306         |     23.040 (150 epoch)      |    42.957     | 43.550 (150 epoch)  |
+|   02   |     85.622      |  85.703 (150 epoch)   |    97.672    | 97.692 (150 epoch) |      92.774      |   92.991 (120 epoch)   |   59.373    | 60.055 (60  epoch) |   96.410    | 96.448 (60  epoch) |  59.757  | 59.757 (180 epoch) |    60.656    | 61.068 (60  epoch) |        41.765        |     41.765 (180 epoch)     |        67.679         |     68.263 (60  epoch)      |        27.622         |     27.622 (180 epoch)      |    43.530     | 43.955 (60  epoch)  |
+|   03   |     99.772      |  99.788 (90  epoch)   |    96.817    | 97.628 (60  epoch) |      93.548      |   95.238 (120 epoch)   |   98.406    | 98.460 (150 epoch) |   99.604    | 99.620 (150 epoch) |  51.769  | 56.140 (60  epoch) |    52.790    | 55.757 (90  epoch) |        26.726        |     28.368 (60  epoch)     |        61.023         |     67.560 (30  epoch)      |        16.563         |     17.799 (60  epoch)      |    35.860     | 38.654 (90  epoch)  |
+|  Avg   |     94.516      |  94.570 (150 epoch)   |    97.940    | 98.045 (150 epoch) |      94.388      |   95.066 (120 epoch)   |   78.181    | 78.514 (60  epoch) |   97.751    | 97.778 (90  epoch) |  56.464  | 57.917 (90  epoch) |    57.848    | 59.087 (90  epoch) |        34.223        |     34.625 (150 epoch)     |        59.291         |     61.048 (30  epoch)      |        22.164         |     22.456 (60  epoch)      |    40.782     | 41.971 (90  epoch)  |
+2024-05-25 16:17:36,355 - ==> Total time: 0:25:51	 Eta: 0:17:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:40,073 - Train: 60.12% [10100/16800]  [180.4/300.0] [batch_t 0.066 (0.132)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 7.221 (7.165)]
+2024-05-25 16:17:43,786 - ==> Total time: 0:25:58	 Eta: 0:17:04 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:46,741 - Train: 60.42% [10150/16800]  [181.2/300.0] [batch_t 0.144 (0.163)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.031 (7.196)]
+2024-05-25 16:17:51,350 - ==> Total time: 0:26:06	 Eta: 0:16:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:17:53,349 - Train: 60.71% [10200/16800]  [182.1/300.0] [batch_t 0.145 (0.171)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.934 (7.106)]
+2024-05-25 16:17:59,302 - ==> Total time: 0:26:14	 Eta: 0:16:46 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:00,469 - Train: 61.01% [10250/16800]  [183.0/300.0] [batch_t 0.145 (0.267)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.284 (7.137)]
+2024-05-25 16:18:07,616 - Train: 61.31% [10300/16800]  [183.9/300.0] [batch_t 0.103 (0.143)] [data_t 0.001] [optim_t 0.102] [lr 0.004000] [pixel 6.957 (7.143)]
+2024-05-25 16:18:07,883 - ==> Total time: 0:26:22	 Eta: 0:16:37 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:15,327 - Train: 61.61% [10350/16800]  [184.8/300.0] [batch_t 0.143 (0.148)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 8.211 (7.220)]
+2024-05-25 16:18:16,767 - ==> Total time: 0:26:31	 Eta: 0:16:29 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:23,242 - Train: 61.90% [10400/16800]  [185.7/300.0] [batch_t 0.143 (0.146)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.058 (7.055)]
+2024-05-25 16:18:25,550 - ==> Total time: 0:26:40	 Eta: 0:16:20 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:31,144 - Train: 62.20% [10450/16800]  [186.6/300.0] [batch_t 0.144 (0.137)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.277 (7.125)]
+2024-05-25 16:18:34,322 - ==> Total time: 0:26:49	 Eta: 0:16:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:38,281 - Train: 62.50% [10500/16800]  [187.5/300.0] [batch_t 0.146 (0.114)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 7.386 (7.150)]
+2024-05-25 16:18:42,310 - ==> Total time: 0:26:57	 Eta: 0:16:03 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:45,331 - Train: 62.80% [10550/16800]  [188.4/300.0] [batch_t 0.066 (0.109)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.818 (6.999)]
+2024-05-25 16:18:49,487 - ==> Total time: 0:27:04	 Eta: 0:15:54 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:52,904 - Train: 63.10% [10600/16800]  [189.3/300.0] [batch_t 0.144 (0.164)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.058 (7.110)]
+2024-05-25 16:18:57,646 - ==> Total time: 0:27:12	 Eta: 0:15:45 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:18:59,990 - Train: 63.39% [10650/16800]  [190.2/300.0] [batch_t 0.144 (0.169)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.000 (7.037)]
+2024-05-25 16:19:04,363 - ==> Total time: 0:27:19	 Eta: 0:15:35 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:05,882 - Train: 63.69% [10700/16800]  [191.1/300.0] [batch_t 0.142 (0.208)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 6.925 (7.049)]
+2024-05-25 16:19:13,065 - Train: 63.99% [10750/16800]  [192.0/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.142] [lr 0.004000] [pixel 7.257 (7.061)]
+2024-05-25 16:19:13,358 - ==> Total time: 0:27:28	 Eta: 0:15:27 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:21,193 - Train: 64.29% [10800/16800]  [192.9/300.0] [batch_t 0.142 (0.147)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 7.000 (7.003)]
+2024-05-25 16:19:22,347 - ==> Total time: 0:27:37	 Eta: 0:15:18 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:27,096 - Train: 64.58% [10850/16800]  [193.8/300.0] [batch_t 0.076 (0.096)] [data_t 0.002] [optim_t 0.075] [lr 0.004000] [pixel 6.969 (7.082)]
+2024-05-25 16:19:28,097 - ==> Total time: 0:27:42	 Eta: 0:15:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:31,720 - Train: 64.88% [10900/16800]  [194.6/300.0] [batch_t 0.074 (0.083)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 7.238 (7.082)]
+2024-05-25 16:19:33,186 - ==> Total time: 0:27:48	 Eta: 0:14:58 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:36,443 - Train: 65.18% [10950/16800]  [195.5/300.0] [batch_t 0.073 (0.083)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 6.825 (7.006)]
+2024-05-25 16:19:38,391 - ==> Total time: 0:27:53	 Eta: 0:14:47 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:41,019 - Train: 65.48% [11000/16800]  [196.4/300.0] [batch_t 0.066 (0.083)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.962 (6.949)]
+2024-05-25 16:19:43,930 - ==> Total time: 0:27:58	 Eta: 0:14:37 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:47,596 - Train: 65.77% [11050/16800]  [197.3/300.0] [batch_t 0.144 (0.158)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.982 (7.008)]
+2024-05-25 16:19:51,995 - ==> Total time: 0:28:06	 Eta: 0:14:29 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:19:54,655 - Train: 66.07% [11100/16800]  [198.2/300.0] [batch_t 0.146 (0.168)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 6.787 (6.975)]
+2024-05-25 16:20:00,094 - ==> Total time: 0:28:14	 Eta: 0:14:20 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:02,087 - Train: 66.37% [11150/16800]  [199.1/300.0] [batch_t 0.143 (0.186)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 6.996 (7.072)]
+2024-05-25 16:20:08,647 - Train: 66.67% [11200/16800]  [200.0/300.0] [batch_t 0.066 (0.131)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 6.777 (6.988)]
+2024-05-25 16:20:08,650 - ==> Total time: 0:28:23	 Eta: 0:14:11 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:16,814 - Train: 66.96% [11250/16800]  [200.9/300.0] [batch_t 0.143 (0.149)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.028 (6.996)]
+2024-05-25 16:20:17,559 - ==> Total time: 0:28:32	 Eta: 0:14:03 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:24,793 - Train: 67.26% [11300/16800]  [201.8/300.0] [batch_t 0.143 (0.149)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.282 (6.937)]
+2024-05-25 16:20:26,518 - ==> Total time: 0:28:41	 Eta: 0:13:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:32,436 - Train: 67.56% [11350/16800]  [202.7/300.0] [batch_t 0.143 (0.140)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.035 (6.981)]
+2024-05-25 16:20:35,026 - ==> Total time: 0:28:49	 Eta: 0:13:46 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:40,334 - Train: 67.86% [11400/16800]  [203.6/300.0] [batch_t 0.148 (0.134)] [data_t 0.002] [optim_t 0.146] [lr 0.004000] [pixel 6.937 (7.006)]
+2024-05-25 16:20:43,784 - ==> Total time: 0:28:58	 Eta: 0:13:38 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:46,847 - Train: 68.15% [11450/16800]  [204.5/300.0] [batch_t 0.145 (0.095)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 7.373 (6.980)]
+2024-05-25 16:20:51,177 - ==> Total time: 0:29:06	 Eta: 0:13:29 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:20:54,549 - Train: 68.45% [11500/16800]  [205.4/300.0] [batch_t 0.066 (0.122)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 7.021 (6.879)]
+2024-05-25 16:20:59,125 - ==> Total time: 0:29:14	 Eta: 0:13:20 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:02,029 - Train: 68.75% [11550/16800]  [206.2/300.0] [batch_t 0.143 (0.159)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.799 (6.817)]
+2024-05-25 16:21:06,080 - ==> Total time: 0:29:20	 Eta: 0:13:11 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:08,327 - Train: 69.05% [11600/16800]  [207.1/300.0] [batch_t 0.145 (0.176)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 6.989 (6.928)]
+2024-05-25 16:21:14,152 - ==> Total time: 0:29:29	 Eta: 0:13:02 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:15,328 - Train: 69.35% [11650/16800]  [208.0/300.0] [batch_t 0.144 (0.272)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.848 (6.714)]
+2024-05-25 16:21:21,828 - Train: 69.64% [11700/16800]  [208.9/300.0] [batch_t 0.066 (0.130)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 6.963 (6.922)]
+2024-05-25 16:21:22,096 - ==> Total time: 0:29:36	 Eta: 0:12:53 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:29,656 - Train: 69.94% [11750/16800]  [209.8/300.0] [batch_t 0.144 (0.148)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.933 (6.948)]
+2024-05-25 16:21:34,826 - Test: 100.00% [24/24] [batch_t 0.032 (0.169)] [pixel 9.105 (9.553)]
+2024-05-25 16:21:37,142 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.042 (mF1_px_0.2_0.8_0.1)	  0.042 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.115 (mIoU_max_px)	
+2024-05-25 16:21:38,965 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.440 (mF1_max_px)	  0.158 (mF1_px_0.2_0.8_0.1)	  0.155 (mAcc_px_0.2_0.8_0.1)	  0.151 (mIoU_px_0.2_0.8_0.1)	  0.447 (mIoU_max_px)	
+2024-05-25 16:21:45,240 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.830 (mF1_max_px)	  0.286 (mF1_px_0.2_0.8_0.1)	  0.287 (mAcc_px_0.2_0.8_0.1)	  0.288 (mIoU_px_0.2_0.8_0.1)	  0.823 (mIoU_max_px)	
+2024-05-25 16:21:45,244 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.348      |  98.348 (210 epoch)   |    99.456    | 99.456 (210 epoch) |      97.959      |   97.959 (210 epoch)   |   76.898    | 77.298 (150 epoch) |   97.275    | 97.299 (120 epoch) |  57.920  | 58.362 (120 epoch) |    60.422    | 60.675 (150 epoch) |        36.577        |     36.577 (210 epoch)     |        54.206         |     54.206 (210 epoch)      |        23.851         |     23.851 (210 epoch)      |    43.289     | 43.550 (150 epoch)  |
+|   02   |     85.379      |  85.703 (150 epoch)   |    97.661    | 97.692 (150 epoch) |      92.774      |   92.991 (120 epoch)   |   58.718    | 60.055 (60  epoch) |   96.382    | 96.448 (60  epoch) |  59.599  | 59.757 (180 epoch) |    60.898    | 61.068 (60  epoch) |        42.520        |     42.520 (210 epoch)     |        69.137         |     69.137 (210 epoch)      |        28.110         |     28.110 (210 epoch)      |    43.779     | 43.955 (60  epoch)  |
+|   03   |     99.764      |  99.788 (90  epoch)   |    96.540    | 97.628 (60  epoch) |      92.308      |   95.238 (120 epoch)   |   98.291    | 98.460 (150 epoch) |   99.571    | 99.620 (150 epoch) |  50.071  | 56.140 (60  epoch) |    50.887    | 55.757 (90  epoch) |        26.442        |     28.368 (60  epoch)     |        62.460         |     67.560 (30  epoch)      |        16.289         |     17.799 (60  epoch)      |    34.127     | 38.654 (90  epoch)  |
+|  Avg   |     94.497      |  94.570 (150 epoch)   |    97.886    | 98.045 (150 epoch) |      94.347      |   95.066 (120 epoch)   |   77.969    | 78.514 (60  epoch) |   97.743    | 97.778 (90  epoch) |  55.863  | 57.917 (90  epoch) |    57.402    | 59.087 (90  epoch) |        35.180        |     35.180 (210 epoch)     |        61.934         |     61.934 (210 epoch)      |        22.750         |     22.750 (210 epoch)      |    40.398     | 41.971 (90  epoch)  |
+2024-05-25 16:21:45,357 - ==> Total time: 0:30:00	 Eta: 0:12:51 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:50,927 - Train: 70.24% [11800/16800]  [210.7/300.0] [batch_t 0.066 (0.117)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.818 (6.887)]
+2024-05-25 16:21:53,193 - ==> Total time: 0:30:08	 Eta: 0:12:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:21:58,927 - Train: 70.54% [11850/16800]  [211.6/300.0] [batch_t 0.121 (0.151)] [data_t 0.002] [optim_t 0.119] [lr 0.004000] [pixel 7.394 (6.884)]
+2024-05-25 16:22:01,153 - ==> Total time: 0:30:16	 Eta: 0:12:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:05,998 - Train: 70.83% [11900/16800]  [212.5/300.0] [batch_t 0.144 (0.153)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.920 (7.004)]
+2024-05-25 16:22:08,952 - ==> Total time: 0:30:23	 Eta: 0:12:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:12,948 - Train: 71.13% [11950/16800]  [213.4/300.0] [batch_t 0.145 (0.155)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.704 (6.791)]
+2024-05-25 16:22:17,186 - ==> Total time: 0:30:32	 Eta: 0:12:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:20,410 - Train: 71.43% [12000/16800]  [214.3/300.0] [batch_t 0.143 (0.158)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.679 (6.893)]
+2024-05-25 16:22:25,899 - ==> Total time: 0:30:40	 Eta: 0:12:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:28,539 - Train: 71.73% [12050/16800]  [215.2/300.0] [batch_t 0.142 (0.173)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 6.628 (6.924)]
+2024-05-25 16:22:35,179 - ==> Total time: 0:30:50	 Eta: 0:11:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:37,271 - Train: 72.02% [12100/16800]  [216.1/300.0] [batch_t 0.145 (0.200)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.501 (6.851)]
+2024-05-25 16:22:44,479 - Train: 72.32% [12150/16800]  [217.0/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.143] [lr 0.004000] [pixel 6.812 (6.838)]
+2024-05-25 16:22:44,768 - ==> Total time: 0:30:59	 Eta: 0:11:51 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:51,557 - Train: 72.62% [12200/16800]  [217.9/300.0] [batch_t 0.146 (0.129)] [data_t 0.002] [optim_t 0.145] [lr 0.004000] [pixel 6.805 (6.867)]
+2024-05-25 16:22:52,708 - ==> Total time: 0:31:07	 Eta: 0:11:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:22:58,097 - Train: 72.92% [12250/16800]  [218.8/300.0] [batch_t 0.141 (0.114)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 6.988 (6.807)]
+2024-05-25 16:23:00,112 - ==> Total time: 0:31:15	 Eta: 0:11:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:05,307 - Train: 73.21% [12300/16800]  [219.6/300.0] [batch_t 0.144 (0.118)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 7.420 (6.818)]
+2024-05-25 16:23:08,197 - ==> Total time: 0:31:23	 Eta: 0:11:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:12,944 - Train: 73.51% [12350/16800]  [220.5/300.0] [batch_t 0.066 (0.139)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.817 (6.778)]
+2024-05-25 16:23:15,846 - ==> Total time: 0:31:30	 Eta: 0:11:15 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:20,386 - Train: 73.81% [12400/16800]  [221.4/300.0] [batch_t 0.144 (0.155)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.947 (6.812)]
+2024-05-25 16:23:23,602 - ==> Total time: 0:31:38	 Eta: 0:11:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:27,062 - Train: 74.11% [12450/16800]  [222.3/300.0] [batch_t 0.145 (0.156)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.425 (6.804)]
+2024-05-25 16:23:31,511 - ==> Total time: 0:31:46	 Eta: 0:10:58 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:34,125 - Train: 74.40% [12500/16800]  [223.2/300.0] [batch_t 0.143 (0.163)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 7.176 (6.775)]
+2024-05-25 16:23:40,157 - ==> Total time: 0:31:55	 Eta: 0:10:49 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:42,541 - Train: 74.70% [12550/16800]  [224.1/300.0] [batch_t 0.147 (0.174)] [data_t 0.002] [optim_t 0.145] [lr 0.004000] [pixel 6.825 (6.860)]
+2024-05-25 16:23:49,655 - Train: 75.00% [12600/16800]  [225.0/300.0] [batch_t 0.066 (0.142)] [data_t 0.001] [optim_t 0.065] [lr 0.004000] [pixel 6.618 (6.779)]
+2024-05-25 16:23:49,657 - ==> Total time: 0:32:04	 Eta: 0:10:41 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:23:57,702 - Train: 75.30% [12650/16800]  [225.9/300.0] [batch_t 0.144 (0.148)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.962 (6.759)]
+2024-05-25 16:23:58,569 - ==> Total time: 0:32:13	 Eta: 0:10:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:05,322 - Train: 75.60% [12700/16800]  [226.8/300.0] [batch_t 0.140 (0.139)] [data_t 0.002] [optim_t 0.139] [lr 0.004000] [pixel 6.742 (6.782)]
+2024-05-25 16:24:07,059 - ==> Total time: 0:32:21	 Eta: 0:10:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:11,257 - Train: 75.89% [12750/16800]  [227.7/300.0] [batch_t 0.089 (0.093)] [data_t 0.002] [optim_t 0.087] [lr 0.004000] [pixel 6.795 (6.788)]
+2024-05-25 16:24:12,731 - ==> Total time: 0:32:27	 Eta: 0:10:15 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:15,965 - Train: 76.19% [12800/16800]  [228.6/300.0] [batch_t 0.073 (0.083)] [data_t 0.002] [optim_t 0.072] [lr 0.004000] [pixel 6.914 (6.744)]
+2024-05-25 16:24:17,813 - ==> Total time: 0:32:32	 Eta: 0:10:05 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:20,734 - Train: 76.49% [12850/16800]  [229.5/300.0] [batch_t 0.067 (0.083)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.784 (6.777)]
+2024-05-25 16:24:22,934 - ==> Total time: 0:32:37	 Eta: 0:09:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:25,265 - Train: 76.79% [12900/16800]  [230.4/300.0] [batch_t 0.066 (0.088)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.689 (6.726)]
+2024-05-25 16:24:28,163 - ==> Total time: 0:32:43	 Eta: 0:09:46 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:31,037 - Train: 77.08% [12950/16800]  [231.2/300.0] [batch_t 0.142 (0.162)] [data_t 0.002] [optim_t 0.140] [lr 0.004000] [pixel 6.916 (6.692)]
+2024-05-25 16:24:36,207 - ==> Total time: 0:32:51	 Eta: 0:09:37 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:38,374 - Train: 77.38% [13000/16800]  [232.1/300.0] [batch_t 0.145 (0.180)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.822 (6.783)]
+2024-05-25 16:24:45,306 - ==> Total time: 0:33:00	 Eta: 0:09:29 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:24:46,901 - Train: 77.68% [13050/16800]  [233.0/300.0] [batch_t 0.146 (0.276)] [data_t 0.002] [optim_t 0.144] [lr 0.004000] [pixel 6.638 (6.688)]
+2024-05-25 16:24:54,112 - Train: 77.98% [13100/16800]  [233.9/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.142] [lr 0.004000] [pixel 6.823 (6.736)]
+2024-05-25 16:24:54,688 - ==> Total time: 0:33:09	 Eta: 0:09:21 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:01,474 - Train: 78.27% [13150/16800]  [234.8/300.0] [batch_t 0.145 (0.130)] [data_t 0.002] [optim_t 0.143] [lr 0.004000] [pixel 6.632 (6.719)]
+2024-05-25 16:25:02,921 - ==> Total time: 0:33:17	 Eta: 0:09:12 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:10,663 - Train: 78.57% [13200/16800]  [235.7/300.0] [batch_t 0.144 (0.149)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.781 (6.697)]
+2024-05-25 16:25:12,971 - ==> Total time: 0:33:27	 Eta: 0:09:04 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:18,310 - Train: 78.87% [13250/16800]  [236.6/300.0] [batch_t 0.143 (0.137)] [data_t 0.002] [optim_t 0.141] [lr 0.004000] [pixel 6.617 (6.737)]
+2024-05-25 16:25:21,484 - ==> Total time: 0:33:36	 Eta: 0:08:55 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:25,974 - Train: 79.17% [13300/16800]  [237.5/300.0] [batch_t 0.144 (0.130)] [data_t 0.002] [optim_t 0.142] [lr 0.004000] [pixel 6.508 (6.649)]
+2024-05-25 16:25:30,008 - ==> Total time: 0:33:44	 Eta: 0:08:47 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:33,411 - Train: 79.46% [13350/16800]  [238.4/300.0] [batch_t 0.147 (0.107)] [data_t 0.002] [optim_t 0.145] [lr 0.004000] [pixel 6.915 (6.663)]
+2024-05-25 16:25:38,308 - ==> Total time: 0:33:53	 Eta: 0:08:38 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:25:40,856 - Train: 79.76% [13400/16800]  [239.3/300.0] [batch_t 0.067 (0.120)] [data_t 0.002] [optim_t 0.065] [lr 0.004000] [pixel 6.573 (6.538)]
+2024-05-25 16:25:49,373 - Test: 100.00% [24/24] [batch_t 0.025 (0.155)] [pixel 9.139 (9.655)]
+2024-05-25 16:25:50,831 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-25 16:25:55,658 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.421 (mF1_max_px)	  0.145 (mF1_px_0.2_0.8_0.1)	  0.146 (mAcc_px_0.2_0.8_0.1)	  0.146 (mIoU_px_0.2_0.8_0.1)	  0.419 (mIoU_max_px)	
+2024-05-25 16:26:02,386 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.815 (mF1_max_px)	  0.281 (mF1_px_0.2_0.8_0.1)	  0.282 (mAcc_px_0.2_0.8_0.1)	  0.282 (mIoU_px_0.2_0.8_0.1)	  0.804 (mIoU_max_px)	
+2024-05-25 16:26:02,389 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.251      |  98.348 (210 epoch)   |    99.382    | 99.456 (210 epoch) |      96.970      |   97.959 (210 epoch)   |   76.064    | 77.298 (150 epoch) |   97.145    | 97.299 (120 epoch) |  56.852  | 58.362 (120 epoch) |    59.784    | 60.675 (150 epoch) |        35.392        |     36.577 (210 epoch)     |        53.020         |     54.206 (210 epoch)      |        22.981         |     23.851 (210 epoch)      |    42.637     | 43.550 (150 epoch)  |
+|   02   |     84.876      |  85.703 (150 epoch)   |    97.569    | 97.692 (150 epoch) |      92.774      |   92.991 (120 epoch)   |   58.536    | 60.055 (60  epoch) |   96.427    | 96.448 (60  epoch) |  60.653  | 60.653 (240 epoch) |    61.094    | 61.094 (240 epoch) |        42.137        |     42.520 (210 epoch)     |        67.865         |     69.137 (210 epoch)      |        27.901         |     28.110 (210 epoch)      |    43.983     | 43.983 (240 epoch)  |
+|   03   |     99.811      |  99.811 (240 epoch)   |    97.177    | 97.628 (60  epoch) |      93.939      |   95.238 (120 epoch)   |   98.209    | 98.460 (150 epoch) |   99.557    | 99.620 (150 epoch) |  50.791  | 56.140 (60  epoch) |    51.854    | 55.757 (90  epoch) |        26.165        |     28.368 (60  epoch)     |        60.680         |     67.560 (30  epoch)      |        16.152         |     17.799 (60  epoch)      |    35.002     | 38.654 (90  epoch)  |
+|  Avg   |     94.313      |  94.570 (150 epoch)   |    98.042    | 98.045 (150 epoch) |      94.561      |   95.066 (120 epoch)   |   77.603    | 78.514 (60  epoch) |   97.710    | 97.778 (90  epoch) |  56.099  | 57.917 (90  epoch) |    57.577    | 59.087 (90  epoch) |        34.565        |     35.180 (210 epoch)     |        60.522         |     61.934 (210 epoch)      |        22.345         |     22.750 (210 epoch)      |    40.541     | 41.971 (90  epoch)  |
+2024-05-25 16:26:02,482 - ==> Total time: 0:34:17	 Eta: 0:08:34 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:06,027 - Train: 80.06% [13450/16800]  [240.2/300.0] [batch_t 0.143 (0.169)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.520 (6.466)]
+2024-05-25 16:26:11,488 - ==> Total time: 0:34:26	 Eta: 0:08:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:13,144 - Train: 80.36% [13500/16800]  [241.1/300.0] [batch_t 0.142 (0.203)] [data_t 0.002] [optim_t 0.140] [lr 0.000400] [pixel 6.322 (6.270)]
+2024-05-25 16:26:19,015 - Train: 80.65% [13550/16800]  [242.0/300.0] [batch_t 0.144 (0.117)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.212 (6.264)]
+2024-05-25 16:26:19,306 - ==> Total time: 0:34:34	 Eta: 0:08:17 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:26,239 - Train: 80.95% [13600/16800]  [242.9/300.0] [batch_t 0.143 (0.128)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.244 (6.257)]
+2024-05-25 16:26:27,392 - ==> Total time: 0:34:42	 Eta: 0:08:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:33,564 - Train: 81.25% [13650/16800]  [243.8/300.0] [batch_t 0.066 (0.128)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.447 (6.228)]
+2024-05-25 16:26:35,424 - ==> Total time: 0:34:50	 Eta: 0:07:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:41,521 - Train: 81.55% [13700/16800]  [244.6/300.0] [batch_t 0.066 (0.143)] [data_t 0.002] [optim_t 0.064] [lr 0.000400] [pixel 6.341 (6.249)]
+2024-05-25 16:26:43,718 - ==> Total time: 0:34:58	 Eta: 0:07:51 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:48,840 - Train: 81.85% [13750/16800]  [245.5/300.0] [batch_t 0.144 (0.150)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.394 (6.243)]
+2024-05-25 16:26:51,236 - ==> Total time: 0:35:06	 Eta: 0:07:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:26:55,670 - Train: 82.14% [13800/16800]  [246.4/300.0] [batch_t 0.143 (0.157)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.169 (6.241)]
+2024-05-25 16:26:59,693 - ==> Total time: 0:35:14	 Eta: 0:07:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:03,114 - Train: 82.44% [13850/16800]  [247.3/300.0] [batch_t 0.143 (0.157)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.168 (6.217)]
+2024-05-25 16:27:08,445 - ==> Total time: 0:35:23	 Eta: 0:07:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:11,142 - Train: 82.74% [13900/16800]  [248.2/300.0] [batch_t 0.142 (0.169)] [data_t 0.002] [optim_t 0.140] [lr 0.000400] [pixel 6.167 (6.128)]
+2024-05-25 16:27:17,471 - ==> Total time: 0:35:32	 Eta: 0:07:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:19,007 - Train: 83.04% [13950/16800]  [249.1/300.0] [batch_t 0.143 (0.145)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.176 (6.247)]
+2024-05-25 16:27:26,194 - Train: 83.33% [14000/16800]  [250.0/300.0] [batch_t 0.144 (0.144)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 5.963 (6.201)]
+2024-05-25 16:27:26,196 - ==> Total time: 0:35:41	 Eta: 0:07:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:33,674 - Train: 83.63% [14050/16800]  [250.9/300.0] [batch_t 0.144 (0.137)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.176 (6.210)]
+2024-05-25 16:27:34,537 - ==> Total time: 0:35:49	 Eta: 0:06:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:40,498 - Train: 83.93% [14100/16800]  [251.8/300.0] [batch_t 0.148 (0.121)] [data_t 0.002] [optim_t 0.146] [lr 0.000400] [pixel 6.160 (6.186)]
+2024-05-25 16:27:42,231 - ==> Total time: 0:35:57	 Eta: 0:06:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:47,759 - Train: 84.23% [14150/16800]  [252.7/300.0] [batch_t 0.143 (0.126)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.496 (6.188)]
+2024-05-25 16:27:50,353 - ==> Total time: 0:36:05	 Eta: 0:06:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:27:55,244 - Train: 84.52% [14200/16800]  [253.6/300.0] [batch_t 0.144 (0.121)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.390 (6.176)]
+2024-05-25 16:27:58,705 - ==> Total time: 0:36:13	 Eta: 0:06:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:02,420 - Train: 84.82% [14250/16800]  [254.5/300.0] [batch_t 0.066 (0.120)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.029 (6.162)]
+2024-05-25 16:28:04,491 - ==> Total time: 0:36:19	 Eta: 0:06:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:08,384 - Train: 85.12% [14300/16800]  [255.4/300.0] [batch_t 0.146 (0.156)] [data_t 0.002] [optim_t 0.144] [lr 0.000400] [pixel 6.288 (6.148)]
+2024-05-25 16:28:13,366 - ==> Total time: 0:36:28	 Eta: 0:06:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:16,343 - Train: 85.42% [14350/16800]  [256.2/300.0] [batch_t 0.146 (0.160)] [data_t 0.002] [optim_t 0.144] [lr 0.000400] [pixel 6.104 (6.151)]
+2024-05-25 16:28:22,394 - ==> Total time: 0:36:37	 Eta: 0:06:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:24,261 - Train: 85.71% [14400/16800]  [257.1/300.0] [batch_t 0.139 (0.151)] [data_t 0.002] [optim_t 0.137] [lr 0.000400] [pixel 6.248 (6.116)]
+2024-05-25 16:28:31,182 - ==> Total time: 0:36:46	 Eta: 0:05:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:32,182 - Train: 86.01% [14450/16800]  [258.0/300.0] [batch_t 0.066 (0.189)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.048 (6.052)]
+2024-05-25 16:28:38,905 - Train: 86.31% [14500/16800]  [258.9/300.0] [batch_t 0.143 (0.134)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 6.150 (6.171)]
+2024-05-25 16:28:39,479 - ==> Total time: 0:36:54	 Eta: 0:05:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:45,438 - Train: 86.61% [14550/16800]  [259.8/300.0] [batch_t 0.144 (0.115)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.210 (6.154)]
+2024-05-25 16:28:46,886 - ==> Total time: 0:37:01	 Eta: 0:05:41 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:52,127 - Train: 86.90% [14600/16800]  [260.7/300.0] [batch_t 0.089 (0.112)] [data_t 0.002] [optim_t 0.088] [lr 0.000400] [pixel 6.168 (6.170)]
+2024-05-25 16:28:53,584 - ==> Total time: 0:37:08	 Eta: 0:05:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:28:57,042 - Train: 87.20% [14650/16800]  [261.6/300.0] [batch_t 0.073 (0.081)] [data_t 0.001] [optim_t 0.072] [lr 0.000400] [pixel 6.037 (6.164)]
+2024-05-25 16:28:58,769 - ==> Total time: 0:37:13	 Eta: 0:05:23 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:01,814 - Train: 87.50% [14700/16800]  [262.5/300.0] [batch_t 0.074 (0.087)] [data_t 0.002] [optim_t 0.072] [lr 0.000400] [pixel 6.292 (6.128)]
+2024-05-25 16:29:03,893 - ==> Total time: 0:37:18	 Eta: 0:05:14 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:06,437 - Train: 87.80% [14750/16800]  [263.4/300.0] [batch_t 0.066 (0.087)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.172 (6.149)]
+2024-05-25 16:29:09,301 - ==> Total time: 0:37:24	 Eta: 0:05:06 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:12,449 - Train: 88.10% [14800/16800]  [264.3/300.0] [batch_t 0.143 (0.157)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.206 (6.128)]
+2024-05-25 16:29:17,186 - ==> Total time: 0:37:32	 Eta: 0:04:57 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:19,535 - Train: 88.39% [14850/16800]  [265.2/300.0] [batch_t 0.144 (0.166)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.075 (6.096)]
+2024-05-25 16:29:25,972 - ==> Total time: 0:37:40	 Eta: 0:04:48 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:27,546 - Train: 88.69% [14900/16800]  [266.1/300.0] [batch_t 0.142 (0.212)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.236 (6.154)]
+2024-05-25 16:29:34,743 - Train: 88.99% [14950/16800]  [267.0/300.0] [batch_t 0.143 (0.144)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 6.107 (6.131)]
+2024-05-25 16:29:35,035 - ==> Total time: 0:37:49	 Eta: 0:04:40 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:42,301 - Train: 89.29% [15000/16800]  [267.9/300.0] [batch_t 0.142 (0.137)] [data_t 0.002] [optim_t 0.140] [lr 0.000400] [pixel 5.896 (6.133)]
+2024-05-25 16:29:43,451 - ==> Total time: 0:37:58	 Eta: 0:04:32 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:49,519 - Train: 89.58% [15050/16800]  [268.8/300.0] [batch_t 0.143 (0.129)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.199 (6.128)]
+2024-05-25 16:29:51,541 - ==> Total time: 0:38:06	 Eta: 0:04:23 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:29:56,687 - Train: 89.88% [15100/16800]  [269.6/300.0] [batch_t 0.142 (0.119)] [data_t 0.002] [optim_t 0.140] [lr 0.000400] [pixel 6.367 (6.129)]
+2024-05-25 16:30:03,054 - Test: 100.00% [24/24] [batch_t 0.024 (0.139)] [pixel 9.001 (9.397)]
+2024-05-25 16:30:03,600 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.109 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.041 (mAcc_px_0.2_0.8_0.1)	  0.042 (mIoU_px_0.2_0.8_0.1)	  0.109 (mIoU_max_px)	
+2024-05-25 16:30:05,283 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.414 (mF1_max_px)	  0.145 (mF1_px_0.2_0.8_0.1)	  0.140 (mAcc_px_0.2_0.8_0.1)	  0.141 (mIoU_px_0.2_0.8_0.1)	  0.409 (mIoU_max_px)	
+2024-05-25 16:30:11,761 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.768 (mF1_max_px)	  0.264 (mF1_px_0.2_0.8_0.1)	  0.265 (mAcc_px_0.2_0.8_0.1)	  0.265 (mIoU_px_0.2_0.8_0.1)	  0.758 (mIoU_max_px)	
+2024-05-25 16:30:11,764 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.251      |  98.348 (210 epoch)   |    99.398    | 99.456 (210 epoch) |      96.970      |   97.959 (210 epoch)   |   75.719    | 77.298 (150 epoch) |   97.116    | 97.299 (120 epoch) |  56.985  | 58.362 (120 epoch) |    59.757    | 60.675 (150 epoch) |        35.852        |     36.577 (210 epoch)     |        52.557         |     54.206 (210 epoch)      |        23.275         |     23.851 (210 epoch)      |    42.609     | 43.550 (150 epoch)  |
+|   02   |     84.600      |  85.703 (150 epoch)   |    97.524    | 97.692 (150 epoch) |      92.774      |   92.991 (120 epoch)   |   58.569    | 60.055 (60  epoch) |   96.376    | 96.448 (60  epoch) |  59.693  | 60.653 (240 epoch) |    60.774    | 61.094 (240 epoch) |        42.279        |     42.520 (210 epoch)     |        68.403         |     69.137 (210 epoch)      |        27.967         |     28.110 (210 epoch)      |    43.651     | 43.983 (240 epoch)  |
+|   03   |     99.795      |  99.811 (240 epoch)   |    96.905    | 97.628 (60  epoch) |      93.548      |   95.238 (120 epoch)   |   98.266    | 98.460 (150 epoch) |   99.569    | 99.620 (150 epoch) |  50.862  | 56.140 (60  epoch) |    51.219    | 55.757 (90  epoch) |        26.662        |     28.368 (60  epoch)     |        62.065         |     67.560 (30  epoch)      |        16.460         |     17.799 (60  epoch)      |    34.426     | 38.654 (90  epoch)  |
+|  Avg   |     94.216      |  94.570 (150 epoch)   |    97.942    | 98.045 (150 epoch) |      94.431      |   95.066 (120 epoch)   |   77.518    | 78.514 (60  epoch) |   97.687    | 97.778 (90  epoch) |  55.847  | 57.917 (90  epoch) |    57.250    | 59.087 (90  epoch) |        34.931        |     35.180 (210 epoch)     |        61.008         |     61.934 (210 epoch)      |        22.567         |     22.750 (210 epoch)      |    40.229     | 41.971 (90  epoch)  |
+2024-05-25 16:30:11,871 - ==> Total time: 0:38:26	 Eta: 0:04:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:30:16,679 - Train: 90.18% [15150/16800]  [270.5/300.0] [batch_t 0.067 (0.136)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.288 (6.131)]
+2024-05-25 16:30:19,752 - ==> Total time: 0:38:34	 Eta: 0:04:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:30:24,063 - Train: 90.48% [15200/16800]  [271.4/300.0] [batch_t 0.143 (0.157)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.042 (6.107)]
+2024-05-25 16:30:26,794 - ==> Total time: 0:38:41	 Eta: 0:03:58 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:30:30,541 - Train: 90.77% [15250/16800]  [272.3/300.0] [batch_t 0.144 (0.159)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.210 (6.107)]
+2024-05-25 16:30:35,287 - ==> Total time: 0:38:50	 Eta: 0:03:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:30:38,453 - Train: 91.07% [15300/16800]  [273.2/300.0] [batch_t 0.145 (0.168)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.166 (6.077)]
+2024-05-25 16:30:44,204 - ==> Total time: 0:38:59	 Eta: 0:03:41 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:30:45,869 - Train: 91.37% [15350/16800]  [274.1/300.0] [batch_t 0.143 (0.181)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.049 (6.142)]
+2024-05-25 16:30:53,049 - Train: 91.67% [15400/16800]  [275.0/300.0] [batch_t 0.136 (0.144)] [data_t 0.001] [optim_t 0.135] [lr 0.000400] [pixel 6.114 (6.102)]
+2024-05-25 16:30:53,051 - ==> Total time: 0:39:07	 Eta: 0:03:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:01,120 - Train: 91.96% [15450/16800]  [275.9/300.0] [batch_t 0.144 (0.149)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 6.031 (6.098)]
+2024-05-25 16:31:01,985 - ==> Total time: 0:39:16	 Eta: 0:03:24 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:10,719 - Train: 92.26% [15500/16800]  [276.8/300.0] [batch_t 0.143 (0.151)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 5.976 (6.090)]
+2024-05-25 16:31:12,447 - ==> Total time: 0:39:27	 Eta: 0:03:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:18,209 - Train: 92.56% [15550/16800]  [277.7/300.0] [batch_t 0.144 (0.137)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.204 (6.077)]
+2024-05-25 16:31:20,808 - ==> Total time: 0:39:35	 Eta: 0:03:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:26,267 - Train: 92.86% [15600/16800]  [278.6/300.0] [batch_t 0.144 (0.136)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.118 (6.080)]
+2024-05-25 16:31:29,728 - ==> Total time: 0:39:44	 Eta: 0:02:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:32,743 - Train: 93.15% [15650/16800]  [279.5/300.0] [batch_t 0.145 (0.093)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 5.935 (6.082)]
+2024-05-25 16:31:37,063 - ==> Total time: 0:39:51	 Eta: 0:02:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:40,423 - Train: 93.45% [15700/16800]  [280.4/300.0] [batch_t 0.066 (0.135)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.121 (6.084)]
+2024-05-25 16:31:44,995 - ==> Total time: 0:39:59	 Eta: 0:02:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:47,829 - Train: 93.75% [15750/16800]  [281.2/300.0] [batch_t 0.144 (0.162)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.042 (6.097)]
+2024-05-25 16:31:52,756 - ==> Total time: 0:40:07	 Eta: 0:02:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:31:54,894 - Train: 94.05% [15800/16800]  [282.1/300.0] [batch_t 0.144 (0.183)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 5.887 (6.069)]
+2024-05-25 16:32:00,607 - ==> Total time: 0:40:15	 Eta: 0:02:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:02,294 - Train: 94.35% [15850/16800]  [283.0/300.0] [batch_t 0.143 (0.293)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 5.984 (6.056)]
+2024-05-25 16:32:07,873 - Train: 94.64% [15900/16800]  [283.9/300.0] [batch_t 0.144 (0.111)] [data_t 0.001] [optim_t 0.142] [lr 0.000400] [pixel 6.087 (6.073)]
+2024-05-25 16:32:08,447 - ==> Total time: 0:40:23	 Eta: 0:02:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:15,648 - Train: 94.94% [15950/16800]  [284.8/300.0] [batch_t 0.066 (0.143)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 5.892 (6.071)]
+2024-05-25 16:32:16,314 - ==> Total time: 0:40:31	 Eta: 0:02:07 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:23,013 - Train: 95.24% [16000/16800]  [285.7/300.0] [batch_t 0.145 (0.152)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.084 (6.056)]
+2024-05-25 16:32:25,318 - ==> Total time: 0:40:40	 Eta: 0:01:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:31,492 - Train: 95.54% [16050/16800]  [286.6/300.0] [batch_t 0.144 (0.148)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 5.815 (6.065)]
+2024-05-25 16:32:34,657 - ==> Total time: 0:40:49	 Eta: 0:01:50 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:39,173 - Train: 95.83% [16100/16800]  [287.5/300.0] [batch_t 0.144 (0.140)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.082 (6.077)]
+2024-05-25 16:32:43,212 - ==> Total time: 0:40:58	 Eta: 0:01:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:46,605 - Train: 96.13% [16150/16800]  [288.4/300.0] [batch_t 0.143 (0.126)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.004 (6.051)]
+2024-05-25 16:32:51,492 - ==> Total time: 0:41:06	 Eta: 0:01:33 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:32:53,617 - Train: 96.43% [16200/16800]  [289.3/300.0] [batch_t 0.066 (0.094)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 5.932 (6.080)]
+2024-05-25 16:32:59,207 - ==> Total time: 0:41:14	 Eta: 0:01:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:01,485 - Train: 96.73% [16250/16800]  [290.2/300.0] [batch_t 0.144 (0.169)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 6.073 (6.089)]
+2024-05-25 16:33:04,965 - ==> Total time: 0:41:19	 Eta: 0:01:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:06,749 - Train: 97.02% [16300/16800]  [291.1/300.0] [batch_t 0.144 (0.209)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.211 (6.055)]
+2024-05-25 16:33:13,082 - Train: 97.32% [16350/16800]  [292.0/300.0] [batch_t 0.066 (0.127)] [data_t 0.001] [optim_t 0.065] [lr 0.000400] [pixel 6.141 (6.054)]
+2024-05-25 16:33:13,296 - ==> Total time: 0:41:28	 Eta: 0:01:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:21,071 - Train: 97.62% [16400/16800]  [292.9/300.0] [batch_t 0.066 (0.149)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 6.032 (6.055)]
+2024-05-25 16:33:21,606 - ==> Total time: 0:41:36	 Eta: 0:00:59 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:28,631 - Train: 97.92% [16450/16800]  [293.8/300.0] [batch_t 0.144 (0.148)] [data_t 0.002] [optim_t 0.142] [lr 0.000400] [pixel 5.947 (6.048)]
+2024-05-25 16:33:30,376 - ==> Total time: 0:41:45	 Eta: 0:00:51 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:37,020 - Train: 98.21% [16500/16800]  [294.6/300.0] [batch_t 0.145 (0.150)] [data_t 0.002] [optim_t 0.143] [lr 0.000400] [pixel 6.139 (6.045)]
+2024-05-25 16:33:39,905 - ==> Total time: 0:41:54	 Eta: 0:00:42 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:43,539 - Train: 98.51% [16550/16800]  [295.5/300.0] [batch_t 0.090 (0.099)] [data_t 0.002] [optim_t 0.089] [lr 0.000400] [pixel 6.056 (6.060)]
+2024-05-25 16:33:45,552 - ==> Total time: 0:42:00	 Eta: 0:00:34 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:48,617 - Train: 98.81% [16600/16800]  [296.4/300.0] [batch_t 0.074 (0.088)] [data_t 0.002] [optim_t 0.072] [lr 0.000400] [pixel 5.932 (6.041)]
+2024-05-25 16:33:50,971 - ==> Total time: 0:42:05	 Eta: 0:00:25 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:53,486 - Train: 99.11% [16650/16800]  [297.3/300.0] [batch_t 0.067 (0.084)] [data_t 0.002] [optim_t 0.066] [lr 0.000400] [pixel 6.001 (6.037)]
+2024-05-25 16:33:56,335 - ==> Total time: 0:42:11	 Eta: 0:00:16 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:33:58,016 - Train: 99.40% [16700/16800]  [298.2/300.0] [batch_t 0.066 (0.090)] [data_t 0.002] [optim_t 0.065] [lr 0.000400] [pixel 5.985 (6.006)]
+2024-05-25 16:34:02,051 - ==> Total time: 0:42:16	 Eta: 0:00:08 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:34:05,859 - Train: 99.70% [16750/16800]  [299.1/300.0] [batch_t 0.143 (0.180)] [data_t 0.002] [optim_t 0.141] [lr 0.000400] [pixel 6.009 (6.035)]
+2024-05-25 16:34:11,779 - Train: 100.00% [16800/16800]  [300.0/300.0] [batch_t 0.144 (0.118)] [data_t 0.001] [optim_t 0.143] [lr 0.000400] [pixel 6.023 (6.029)]
+2024-05-25 16:34:15,602 - Test: 100.00% [24/24] [batch_t 0.033 (0.153)] [pixel 9.119 (9.488)]
+2024-05-25 16:34:17,887 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-25 16:34:21,607 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.439 (mF1_max_px)	  0.152 (mF1_px_0.2_0.8_0.1)	  0.148 (mAcc_px_0.2_0.8_0.1)	  0.150 (mIoU_px_0.2_0.8_0.1)	  0.433 (mIoU_max_px)	
+2024-05-25 16:34:28,241 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.823 (mF1_max_px)	  0.286 (mF1_px_0.2_0.8_0.1)	  0.285 (mAcc_px_0.2_0.8_0.1)	  0.287 (mIoU_px_0.2_0.8_0.1)	  0.828 (mIoU_max_px)	
+2024-05-25 16:34:28,244 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     98.154      |  98.348 (210 epoch)   |    99.359    | 99.456 (210 epoch) |      96.907      |   97.959 (210 epoch)   |   75.409    | 77.298 (150 epoch) |   97.073    | 97.299 (120 epoch) |  56.707  | 58.362 (120 epoch) |    59.450    | 60.675 (150 epoch) |        35.837        |     36.577 (210 epoch)     |        52.639         |     54.206 (210 epoch)      |        23.231         |     23.851 (210 epoch)      |    42.298     | 43.550 (150 epoch)  |
+|   02   |     84.600      |  85.703 (150 epoch)   |    97.521    | 97.692 (150 epoch) |      92.774      |   92.991 (120 epoch)   |   58.451    | 60.055 (60  epoch) |   96.376    | 96.448 (60  epoch) |  59.760  | 60.653 (240 epoch) |    60.671    | 61.094 (240 epoch) |        41.888        |     42.520 (210 epoch)     |        67.703         |     69.137 (210 epoch)      |        27.714         |     28.110 (210 epoch)      |    43.545     | 43.983 (240 epoch)  |
+|   03   |     99.788      |  99.811 (240 epoch)   |    96.768    | 97.628 (60  epoch) |      93.548      |   95.238 (120 epoch)   |   98.226    | 98.460 (150 epoch) |   99.561    | 99.620 (150 epoch) |  50.703  | 56.140 (60  epoch) |    50.952    | 55.757 (90  epoch) |        26.554        |     28.368 (60  epoch)     |        62.266         |     67.560 (30  epoch)      |        16.388         |     17.799 (60  epoch)      |    34.185     | 38.654 (90  epoch)  |
+|  Avg   |     94.181      |  94.570 (150 epoch)   |    97.883    | 98.045 (150 epoch) |      94.410      |   95.066 (120 epoch)   |   77.362    | 78.514 (60  epoch) |   97.670    | 97.778 (90  epoch) |  55.724  | 57.917 (90  epoch) |    57.024    | 59.087 (90  epoch) |        34.760        |     35.180 (210 epoch)     |        60.870         |     61.934 (210 epoch)      |        22.444         |     22.750 (210 epoch)      |    40.009     | 41.971 (90  epoch)  |
+2024-05-25 16:34:28,358 - ==> Total time: 0:42:43	 Eta: 0:00:00 	Logged in 'runs/benchmark/invad-lite_256_300e/btad/InvADTrainer_configs_benchmark_invad-lite_256_300e_20240525-155145'
+2024-05-25 16:34:29,277 - finish training

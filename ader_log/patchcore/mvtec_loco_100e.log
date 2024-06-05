@@ -1,0 +1,145 @@
+2024-05-27 17:25:58,699 - ==> Logging on master GPU: 0
+2024-05-27 17:25:58,700 - ==> Running Trainer: PatchCoreTrainer
+2024-05-27 17:25:58,700 - ==> Using GPU: [0] for Training
+2024-05-27 17:25:58,700 - ==> Building model
+2024-05-27 17:26:05,101 - ==> Creating optimizer
+2024-05-27 17:26:05,747 - ==> Loading dataset: DefaultAD
+2024-05-27 17:26:05,755 - ==> ********** cfg ********** 
+fvcore_is                            : False                               
+fvcore_b                             : 2                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 1                                   
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : PatchCoreTrainer                    
+trainer.checkpoint                   : runs/benchmark/patchcore_256_100e/mvtec_loco
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 1                                   
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 0, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 1                                   
+trainer.test_per_epoch               : 1                                   
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 2                                   
+trainer.data.batch_size_per_gpu      : 2                                   
+trainer.data.batch_size_test         : 2                                   
+trainer.data.batch_size_per_gpu_test : 2                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 1041                                
+trainer.metric_recorder              : {'mAUROC_sp_max_breakfast_box': [], 'AUROC_sp_breakfast_box': [], 'mAUROC_px_breakfast_box': [], 'mAUPRO_px_breakfast_box': [], 'mAP_sp_max_breakfast_box': [], 'mAP_px_breakfast_box': [], 'mF1_max_sp_max_breakfast_box': [], 'mF1_px_0.2_0.8_0.1_breakfast_box': [], 'mAcc_px_0.2_0.8_0.1_breakfast_box': [], 'mIoU_px_0.2_0.8_0.1_breakfast_box': [], 'mF1_max_px_breakfast_box': [], 'mIoU_max_px_breakfast_box': [], 'mAUROC_sp_max_juice_bottle': [], 'AUROC_sp_juice_bottle': [], 'mAUROC_px_juice_bottle': [], 'mAUPRO_px_juice_bottle': [], 'mAP_sp_max_juice_bottle': [], 'mAP_px_juice_bottle': [], 'mF1_max_sp_max_juice_bottle': [], 'mF1_px_0.2_0.8_0.1_juice_bottle': [], 'mAcc_px_0.2_0.8_0.1_juice_bottle': [], 'mIoU_px_0.2_0.8_0.1_juice_bottle': [], 'mF1_max_px_juice_bottle': [], 'mIoU_max_px_juice_bottle': [], 'mAUROC_sp_max_pushpins': [], 'AUROC_sp_pushpins': [], 'mAUROC_px_pushpins': [], 'mAUPRO_px_pushpins': [], 'mAP_sp_max_pushpins': [], 'mAP_px_pushpins': [], 'mF1_max_sp_max_pushpins': [], 'mF1_px_0.2_0.8_0.1_pushpins': [], 'mAcc_px_0.2_0.8_0.1_pushpins': [], 'mIoU_px_0.2_0.8_0.1_pushpins': [], 'mF1_max_px_pushpins': [], 'mIoU_max_px_pushpins': [], 'mAUROC_sp_max_screw_bag': [], 'AUROC_sp_screw_bag': [], 'mAUROC_px_screw_bag': [], 'mAUPRO_px_screw_bag': [], 'mAP_sp_max_screw_bag': [], 'mAP_px_screw_bag': [], 'mF1_max_sp_max_screw_bag': [], 'mF1_px_0.2_0.8_0.1_screw_bag': [], 'mAcc_px_0.2_0.8_0.1_screw_bag': [], 'mIoU_px_0.2_0.8_0.1_screw_bag': [], 'mF1_max_px_screw_bag': [], 'mIoU_max_px_screw_bag': [], 'mAUROC_sp_max_splicing_connectors': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_splicing_connectors': [], 'AUROC_sp_Avg': [], 'mAUROC_px_splicing_connectors': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_splicing_connectors': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_splicing_connectors': [], 'mAP_sp_max_Avg': [], 'mAP_px_splicing_connectors': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_splicing_connectors': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_splicing_connectors': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_splicing_connectors': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_splicing_connectors': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_splicing_connectors': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_splicing_connectors': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'SumLoss', 'name': 'sum', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mvtec_loco                     
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 1041                                
+data.test_size                       : 784                                 
+data.train_length                    : 2083                                
+data.test_length                     : 1568                                
+model_backbone.name                  : tv_wide_resnet50_2                  
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}
+model.name                           : patchcore                           
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='tv_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}), 'layers_to_extract_from': ('layer2', 'layer3'), 'input_size': (3, 256, 256)}
+seed                                 : 42                                  
+size                                 : 256                                 
+image_size                           : 256                                 
+input_size                           : (3, 256, 256)                       
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 1                                   
+test_per_epoch                       : 1                                   
+batch_train                          : 2                                   
+batch_test_per                       : 2                                   
+lr                                   : 0.001                               
+weight_decay                         : 0.01                                
+layers_to_extract_from               : ('layer2', 'layer3')                
+cfg_path                             : configs.benchmark.patchcore_256_100e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/patchcore_256_100e/mvtec_loco', 'data.root=data/mvtec_loco']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.patchcore_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/patchcore_256_100e/mvtec_loco data.root=data/mvtec_loco
+task_start_time                      : 3130599.923956432                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/patchcore_256_100e/mvtec_loco/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240527-172558
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/patchcore_256_100e/mvtec_loco/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240527-172558/show_train
+logdir_test                          : runs/benchmark/patchcore_256_100e/mvtec_loco/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240527-172558/show_test
+2024-05-27 17:26:05,755 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-27 17:55:47,185 - Test: 6.38% [50/784] [batch_t 20.493 (20.569)]
+2024-05-27 18:12:51,529 - Test: 12.76% [100/784] [batch_t 20.458 (20.528)]
+2024-05-27 18:29:57,236 - Test: 19.13% [150/784] [batch_t 20.287 (20.523)]
+2024-05-27 18:47:02,297 - Test: 25.51% [200/784] [batch_t 20.554 (20.518)]
+2024-05-27 19:04:09,752 - Test: 31.89% [250/784] [batch_t 20.375 (20.524)]
+2024-05-27 19:21:16,152 - Test: 38.27% [300/784] [batch_t 20.555 (20.525)]
+2024-05-27 19:38:40,479 - Test: 44.64% [350/784] [batch_t 20.862 (20.576)]
+2024-05-27 19:56:14,835 - Test: 51.02% [400/784] [batch_t 21.701 (20.640)]
+2024-05-27 20:13:47,747 - Test: 57.40% [450/784] [batch_t 21.184 (20.687)]
+2024-05-27 20:31:01,454 - Test: 63.78% [500/784] [batch_t 20.388 (20.685)]
+2024-05-27 20:48:08,290 - Test: 70.15% [550/784] [batch_t 20.602 (20.672)]
+2024-05-27 21:05:14,229 - Test: 76.53% [600/784] [batch_t 20.526 (20.659)]
+2024-05-27 21:22:17,771 - Test: 82.91% [650/784] [batch_t 20.360 (20.645)]
+2024-05-27 21:39:22,319 - Test: 89.29% [700/784] [batch_t 20.772 (20.634)]
+2024-05-27 21:56:29,223 - Test: 95.66% [750/784] [batch_t 20.481 (20.627)]
+2024-05-27 22:08:07,202 - Test: 100.00% [784/784] [batch_t 20.437 (20.623)]
+2024-05-27 22:08:11,662 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.174 (mF1_px_0.2_0.8_0.1)	  0.171 (mAcc_px_0.2_0.8_0.1)	  0.170 (mIoU_px_0.2_0.8_0.1)	  0.494 (mF1_max_px)	  0.494 (mIoU_max_px)	
+2024-05-27 22:08:15,782 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.210 (mAcc_px_0.2_0.8_0.1)	  0.211 (mIoU_px_0.2_0.8_0.1)	  0.608 (mF1_max_px)	  0.605 (mIoU_max_px)	
+2024-05-27 22:08:23,229 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.199 (mF1_px_0.2_0.8_0.1)	  0.198 (mAcc_px_0.2_0.8_0.1)	  0.197 (mIoU_px_0.2_0.8_0.1)	  0.568 (mF1_max_px)	  0.570 (mIoU_max_px)	
+2024-05-27 22:08:28,936 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.218 (mF1_px_0.2_0.8_0.1)	  0.217 (mAcc_px_0.2_0.8_0.1)	  0.219 (mIoU_px_0.2_0.8_0.1)	  0.627 (mF1_max_px)	  0.626 (mIoU_max_px)	
+2024-05-27 22:08:37,716 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.199 (mF1_px_0.2_0.8_0.1)	  0.202 (mAcc_px_0.2_0.8_0.1)	  0.198 (mIoU_px_0.2_0.8_0.1)	  0.576 (mF1_max_px)	  0.572 (mIoU_max_px)	
+2024-05-27 22:08:37,718 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.117      |  77.117 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   89.394    | 89.394 (1   epoch) |   76.137    | 76.137 (1   epoch) |    88.357    | 88.357 (1   epoch) |  55.400  | 55.400 (1   epoch) |      77.982      |   77.982 (1   epoch)   |        31.684        |     31.684 (1   epoch)     |        42.473         |     42.473 (1   epoch)      |        19.504         |     19.504 (1   epoch)      |    49.346    | 49.346 (1   epoch) |    32.755     | 32.755 (1   epoch)  |
+|    juice_bottle     |     95.186      |  95.186 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   89.911    | 89.911 (1   epoch) |   87.066    | 87.066 (1   epoch) |    98.336    | 98.336 (1   epoch) |  56.248  | 56.248 (1   epoch) |      94.118      |   94.118 (1   epoch)   |        24.354        |     24.354 (1   epoch)     |        20.463         |     20.463 (1   epoch)      |        15.940         |     15.940 (1   epoch)      |    57.796    | 57.796 (1   epoch) |    40.643     | 40.643 (1   epoch)  |
+|      pushpins       |     74.347      |  74.347 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   56.052    | 56.052 (1   epoch) |   63.625    | 63.625 (1   epoch) |    82.801    | 82.801 (1   epoch) |  3.085   | 3.085 (1   epoch)  |      72.727      |   72.727 (1   epoch)   |        3.566         |     3.566 (1   epoch)      |         6.697         |      6.697 (1   epoch)      |         1.831         |      1.831 (1   epoch)      |    7.508     | 7.508 (1   epoch)  |     3.900     |  3.900 (1   epoch)  |
+|      screw_bag      |     70.147      |  70.147 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   72.092    | 72.092 (1   epoch) |   62.057    | 62.057 (1   epoch) |    82.751    | 82.751 (1   epoch) |  13.110  | 13.110 (1   epoch) |      78.214      |   78.214 (1   epoch)   |        6.301         |     6.301 (1   epoch)      |        13.372         |     13.372 (1   epoch)      |         3.430         |      3.430 (1   epoch)      |    21.999    | 21.999 (1   epoch) |    12.359     | 12.359 (1   epoch)  |
+| splicing_connectors |     85.588      |  85.588 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   68.093    | 68.093 (1   epoch) |   60.826    | 60.826 (1   epoch) |    92.858    | 92.858 (1   epoch) |  21.493  | 21.493 (1   epoch) |      84.384      |   84.384 (1   epoch)   |        7.288         |     7.288 (1   epoch)      |         4.765         |      4.765 (1   epoch)      |         3.953         |      3.953 (1   epoch)      |    22.302    | 22.302 (1   epoch) |    12.551     | 12.551 (1   epoch)  |
+|         Avg         |     80.477      |  80.477 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   75.108    | 75.108 (1   epoch) |   69.942    | 69.942 (1   epoch) |    89.021    | 89.021 (1   epoch) |  29.867  | 29.867 (1   epoch) |      81.485      |   81.485 (1   epoch)   |        14.639        |     14.639 (1   epoch)     |        17.554         |     17.554 (1   epoch)      |         8.931         |      8.931 (1   epoch)      |    31.790    | 31.790 (1   epoch) |    20.442     | 20.442 (1   epoch)  |
+2024-05-27 22:08:38,059 - ==> Total time: 4:42:39	 Eta: -1 day, 21:38:41 	Logged in 'runs/benchmark/patchcore_256_100e/mvtec_loco/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240527-172558'
+2024-05-27 22:08:39,315 - finish training

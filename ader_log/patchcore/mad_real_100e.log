@@ -1,0 +1,142 @@
+2024-05-25 20:56:44,476 - ==> Logging on master GPU: 0
+2024-05-25 20:56:44,476 - ==> Running Trainer: PatchCoreTrainer
+2024-05-25 20:56:44,476 - ==> Using GPU: [0] for Training
+2024-05-25 20:56:44,476 - ==> Building model
+2024-05-25 20:56:51,164 - ==> Creating optimizer
+2024-05-25 20:56:51,383 - ==> Loading dataset: DefaultAD
+2024-05-25 20:56:51,386 - ==> ********** cfg ********** 
+fvcore_is                            : False                               
+fvcore_b                             : 2                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 1                                   
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : PatchCoreTrainer                    
+trainer.checkpoint                   : runs/benchmark/patchcore_256_100e/mad_real
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 1                                   
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 0, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 1                                   
+trainer.test_per_epoch               : 1                                   
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 2                                   
+trainer.data.batch_size_per_gpu      : 2                                   
+trainer.data.batch_size_test         : 2                                   
+trainer.data.batch_size_per_gpu_test : 2                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 245                                 
+trainer.metric_recorder              : {'mAUROC_sp_max_Bear': [], 'AUROC_sp_Bear': [], 'mAUROC_px_Bear': [], 'mAUPRO_px_Bear': [], 'mAP_sp_max_Bear': [], 'mAP_px_Bear': [], 'mF1_max_sp_max_Bear': [], 'mF1_px_0.2_0.8_0.1_Bear': [], 'mAcc_px_0.2_0.8_0.1_Bear': [], 'mIoU_px_0.2_0.8_0.1_Bear': [], 'mF1_max_px_Bear': [], 'mIoU_max_px_Bear': [], 'mAUROC_sp_max_Bird': [], 'AUROC_sp_Bird': [], 'mAUROC_px_Bird': [], 'mAUPRO_px_Bird': [], 'mAP_sp_max_Bird': [], 'mAP_px_Bird': [], 'mF1_max_sp_max_Bird': [], 'mF1_px_0.2_0.8_0.1_Bird': [], 'mAcc_px_0.2_0.8_0.1_Bird': [], 'mIoU_px_0.2_0.8_0.1_Bird': [], 'mF1_max_px_Bird': [], 'mIoU_max_px_Bird': [], 'mAUROC_sp_max_Elephant': [], 'AUROC_sp_Elephant': [], 'mAUROC_px_Elephant': [], 'mAUPRO_px_Elephant': [], 'mAP_sp_max_Elephant': [], 'mAP_px_Elephant': [], 'mF1_max_sp_max_Elephant': [], 'mF1_px_0.2_0.8_0.1_Elephant': [], 'mAcc_px_0.2_0.8_0.1_Elephant': [], 'mIoU_px_0.2_0.8_0.1_Elephant': [], 'mF1_max_px_Elephant': [], 'mIoU_max_px_Elephant': [], 'mAUROC_sp_max_Parrot': [], 'AUROC_sp_Parrot': [], 'mAUROC_px_Parrot': [], 'mAUPRO_px_Parrot': [], 'mAP_sp_max_Parrot': [], 'mAP_px_Parrot': [], 'mF1_max_sp_max_Parrot': [], 'mF1_px_0.2_0.8_0.1_Parrot': [], 'mAcc_px_0.2_0.8_0.1_Parrot': [], 'mIoU_px_0.2_0.8_0.1_Parrot': [], 'mF1_max_px_Parrot': [], 'mIoU_max_px_Parrot': [], 'mAUROC_sp_max_Pig': [], 'AUROC_sp_Pig': [], 'mAUROC_px_Pig': [], 'mAUPRO_px_Pig': [], 'mAP_sp_max_Pig': [], 'mAP_px_Pig': [], 'mF1_max_sp_max_Pig': [], 'mF1_px_0.2_0.8_0.1_Pig': [], 'mAcc_px_0.2_0.8_0.1_Pig': [], 'mIoU_px_0.2_0.8_0.1_Pig': [], 'mF1_max_px_Pig': [], 'mIoU_max_px_Pig': [], 'mAUROC_sp_max_Puppy': [], 'AUROC_sp_Puppy': [], 'mAUROC_px_Puppy': [], 'mAUPRO_px_Puppy': [], 'mAP_sp_max_Puppy': [], 'mAP_px_Puppy': [], 'mF1_max_sp_max_Puppy': [], 'mF1_px_0.2_0.8_0.1_Puppy': [], 'mAcc_px_0.2_0.8_0.1_Puppy': [], 'mIoU_px_0.2_0.8_0.1_Puppy': [], 'mF1_max_px_Puppy': [], 'mIoU_max_px_Puppy': [], 'mAUROC_sp_max_Scorpion': [], 'AUROC_sp_Scorpion': [], 'mAUROC_px_Scorpion': [], 'mAUPRO_px_Scorpion': [], 'mAP_sp_max_Scorpion': [], 'mAP_px_Scorpion': [], 'mF1_max_sp_max_Scorpion': [], 'mF1_px_0.2_0.8_0.1_Scorpion': [], 'mAcc_px_0.2_0.8_0.1_Scorpion': [], 'mIoU_px_0.2_0.8_0.1_Scorpion': [], 'mF1_max_px_Scorpion': [], 'mIoU_max_px_Scorpion': [], 'mAUROC_sp_max_Turtle': [], 'AUROC_sp_Turtle': [], 'mAUROC_px_Turtle': [], 'mAUPRO_px_Turtle': [], 'mAP_sp_max_Turtle': [], 'mAP_px_Turtle': [], 'mF1_max_sp_max_Turtle': [], 'mF1_px_0.2_0.8_0.1_Turtle': [], 'mAcc_px_0.2_0.8_0.1_Turtle': [], 'mIoU_px_0.2_0.8_0.1_Turtle': [], 'mF1_max_px_Turtle': [], 'mIoU_max_px_Turtle': [], 'mAUROC_sp_max_Unicorn': [], 'AUROC_sp_Unicorn': [], 'mAUROC_px_Unicorn': [], 'mAUPRO_px_Unicorn': [], 'mAP_sp_max_Unicorn': [], 'mAP_px_Unicorn': [], 'mF1_max_sp_max_Unicorn': [], 'mF1_px_0.2_0.8_0.1_Unicorn': [], 'mAcc_px_0.2_0.8_0.1_Unicorn': [], 'mIoU_px_0.2_0.8_0.1_Unicorn': [], 'mF1_max_px_Unicorn': [], 'mIoU_max_px_Unicorn': [], 'mAUROC_sp_max_Whale': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_Whale': [], 'AUROC_sp_Avg': [], 'mAUROC_px_Whale': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_Whale': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_Whale': [], 'mAP_sp_max_Avg': [], 'mAP_px_Whale': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_Whale': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_Whale': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_Whale': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_Whale': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_Whale': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_Whale': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'SumLoss', 'name': 'sum', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mad_real                       
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 245                                 
+data.test_size                       : 136                                 
+data.train_length                    : 490                                 
+data.test_length                     : 271                                 
+model_backbone.name                  : tv_wide_resnet50_2                  
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}
+model.name                           : patchcore                           
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='tv_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False}), 'layers_to_extract_from': ('layer2', 'layer3'), 'input_size': (3, 256, 256)}
+seed                                 : 42                                  
+size                                 : 256                                 
+image_size                           : 256                                 
+input_size                           : (3, 256, 256)                       
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 1                                   
+test_per_epoch                       : 1                                   
+batch_train                          : 2                                   
+batch_test_per                       : 2                                   
+lr                                   : 0.001                               
+weight_decay                         : 0.01                                
+layers_to_extract_from               : ('layer2', 'layer3')                
+cfg_path                             : configs.benchmark.patchcore_256_100e
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/patchcore_256_100e/mad_real', 'data.root=data/mad_real']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.patchcore_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/patchcore_256_100e/mad_real data.root=data/mad_real
+task_start_time                      : 3044484.665086454                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/patchcore_256_100e/mad_real/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205644
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/patchcore_256_100e/mad_real/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205644/show_train
+logdir_test                          : runs/benchmark/patchcore_256_100e/mad_real/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205644/show_test
+2024-05-25 20:56:51,386 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-25 21:02:09,721 - Test: 36.76% [50/136] [batch_t 4.906 (4.976)]
+2024-05-25 21:06:22,384 - Test: 73.53% [100/136] [batch_t 4.997 (5.015)]
+2024-05-25 21:09:20,830 - Test: 100.00% [136/136] [batch_t 2.637 (4.999)]
+2024-05-25 21:09:21,207 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mF1_max_px)	  0.043 (mIoU_max_px)	
+2024-05-25 21:09:21,371 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mF1_max_px)	  0.040 (mIoU_max_px)	
+2024-05-25 21:09:21,511 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mF1_max_px)	  0.034 (mIoU_max_px)	
+2024-05-25 21:09:21,685 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mF1_max_px)	  0.042 (mIoU_max_px)	
+2024-05-25 21:09:21,819 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mF1_max_px)	  0.033 (mIoU_max_px)	
+2024-05-25 21:09:21,975 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mF1_max_px)	  0.037 (mIoU_max_px)	
+2024-05-25 21:09:22,144 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mF1_max_px)	  0.041 (mIoU_max_px)	
+2024-05-25 21:09:22,313 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mF1_max_px)	  0.039 (mIoU_max_px)	
+2024-05-25 21:09:22,470 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mF1_max_px)	  0.039 (mIoU_max_px)	
+2024-05-25 21:09:22,708 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.020 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mF1_max_px)	  0.055 (mIoU_max_px)	
+2024-05-25 21:09:22,711 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|   Bear   |     84.167      |  84.167 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   99.645    | 99.645 (1   epoch) |   98.585    | 98.585 (1   epoch) |    96.763    | 96.763 (1   epoch)  |  17.650  | 17.650 (1   epoch) |      91.667      |   91.667 (1   epoch)   |        11.259        |     11.259 (1   epoch)     |        84.913         |     84.913 (1   epoch)      |         6.323         |      6.323 (1   epoch)      |    29.488    | 29.488 (1   epoch) |    17.294     | 17.294 (1   epoch)  |
+|   Bird   |     71.818      |  71.818 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   96.447    | 96.447 (1   epoch) |   84.232    | 84.232 (1   epoch) |    92.551    | 92.551 (1   epoch)  |  32.166  | 32.166 (1   epoch) |      93.617      |   93.617 (1   epoch)   |        21.108        |     21.108 (1   epoch)     |        65.412         |     65.412 (1   epoch)      |        12.413         |     12.413 (1   epoch)      |    39.688    | 39.688 (1   epoch) |    24.757     | 24.757 (1   epoch)  |
+| Elephant |     27.778      |  27.778 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   93.693    | 93.693 (1   epoch) |   78.768    | 78.768 (1   epoch) |    69.496    | 69.496 (1   epoch)  |  11.106  | 11.106 (1   epoch) |      87.805      |   87.805 (1   epoch)   |        10.433        |     10.433 (1   epoch)     |        47.835         |     47.835 (1   epoch)      |         5.601         |      5.601 (1   epoch)      |    18.312    | 18.312 (1   epoch) |    10.079     | 10.079 (1   epoch)  |
+|  Parrot  |      5.217      |   5.217 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   81.705    | 81.705 (1   epoch) |   64.032    | 64.032 (1   epoch) |    66.154    | 66.154 (1   epoch)  |  2.091   | 2.091 (1   epoch)  |      90.196      |   90.196 (1   epoch)   |        2.338         |     2.338 (1   epoch)      |        30.931         |     30.931 (1   epoch)      |         1.193         |      1.193 (1   epoch)      |    5.129     | 5.129 (1   epoch)  |     2.632     |  2.632 (1   epoch)  |
+|   Pig    |     56.471      |  56.471 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   98.498    | 98.498 (1   epoch) |   89.680    | 89.680 (1   epoch) |    78.809    | 78.809 (1   epoch)  |  19.887  | 19.887 (1   epoch) |      89.474      |   89.474 (1   epoch)   |        18.208        |     18.208 (1   epoch)     |        64.867         |     64.867 (1   epoch)      |        10.288         |     10.288 (1   epoch)      |    28.681    | 28.681 (1   epoch) |    16.741     | 16.741 (1   epoch)  |
+|  Puppy   |     100.000     |  100.000 (1   epoch)  |  100.000   | 100.000 (1   epoch) |   99.169    | 99.169 (1   epoch) |   92.133    | 92.133 (1   epoch) |   100.000    | 100.000 (1   epoch) |  13.369  | 13.369 (1   epoch) |     100.000      |  100.000 (1   epoch)   |        10.529        |     10.529 (1   epoch)     |        79.364         |     79.364 (1   epoch)      |         5.770         |      5.770 (1   epoch)      |    25.091    | 25.091 (1   epoch) |    14.345     | 14.345 (1   epoch)  |
+| Scorpion |     13.043      |  13.043 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   88.199    | 88.199 (1   epoch) |   61.578    | 61.578 (1   epoch) |    70.695    | 70.695 (1   epoch)  |  8.804   | 8.804 (1   epoch)  |      90.196      |   90.196 (1   epoch)   |        9.886         |     9.886 (1   epoch)      |        54.093         |     54.093 (1   epoch)      |         5.286         |      5.286 (1   epoch)      |    17.002    | 17.002 (1   epoch) |     9.291     |  9.291 (1   epoch)  |
+|  Turtle  |     100.000     |  100.000 (1   epoch)  |  100.000   | 100.000 (1   epoch) |   99.540    | 99.540 (1   epoch) |   97.921    | 97.921 (1   epoch) |   100.000    | 100.000 (1   epoch) |  43.141  | 43.141 (1   epoch) |     100.000      |  100.000 (1   epoch)   |        23.574        |     23.574 (1   epoch)     |        88.531         |     88.531 (1   epoch)      |        14.306         |     14.306 (1   epoch)      |    48.420    | 48.420 (1   epoch) |    31.944     | 31.944 (1   epoch)  |
+| Unicorn  |     43.810      |  43.810 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   97.346    | 97.346 (1   epoch) |   90.299    | 90.299 (1   epoch) |    74.051    | 74.051 (1   epoch)  |  6.776   | 6.776 (1   epoch)  |      93.333      |   93.333 (1   epoch)   |        7.277         |     7.277 (1   epoch)      |        64.802         |     64.802 (1   epoch)      |         3.837         |      3.837 (1   epoch)      |    14.063    | 14.063 (1   epoch) |     7.563     |  7.563 (1   epoch)  |
+|  Whale   |     95.000      |  95.000 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   99.721    | 99.721 (1   epoch) |   97.838    | 97.838 (1   epoch) |    99.147    | 99.147 (1   epoch)  |  46.840  | 46.840 (1   epoch) |      98.462      |   98.462 (1   epoch)   |        17.378        |     17.378 (1   epoch)     |        92.371         |     92.371 (1   epoch)      |        10.451         |     10.451 (1   epoch)      |    47.360    | 47.360 (1   epoch) |    31.027     | 31.027 (1   epoch)  |
+|   Avg    |     59.730      |  59.730 (1   epoch)   |  100.000   | 100.000 (1   epoch) |   95.396    | 95.396 (1   epoch) |   85.507    | 85.507 (1   epoch) |    84.767    | 84.767 (1   epoch)  |  20.183  | 20.183 (1   epoch) |      93.475      |   93.475 (1   epoch)   |        13.199        |     13.199 (1   epoch)     |        67.312         |     67.312 (1   epoch)      |         7.547         |      7.547 (1   epoch)      |    27.323    | 27.323 (1   epoch) |    16.567     | 16.567 (1   epoch)  |
+2024-05-25 21:09:22,814 - ==> Total time: 0:12:38	 Eta: -1 day, 23:53:41 	Logged in 'runs/benchmark/patchcore_256_100e/mad_real/PatchCoreTrainer_configs_benchmark_patchcore_256_100e_20240525-205644'
+2024-05-25 21:09:23,999 - finish training

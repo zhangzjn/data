@@ -1,0 +1,936 @@
+2024-05-27 17:24:32,980 - ==> Logging on master GPU: 0
+2024-05-27 17:24:32,980 - ==> Running Trainer: UniADTrainer
+2024-05-27 17:24:32,980 - ==> Using GPU: [0] for Training
+2024-05-27 17:24:32,980 - ==> Building model
+2024-05-27 17:24:33,787 - Loaded  from checkpoint 'model/pretrain/tf_efficientnet_b4_aa-818f208c.pth'
+2024-05-27 17:24:37,268 - 
+------------------------------------ UniAD ------------------------------------
+| module                                             | #parameters or shape   | #flops       |
+|:---------------------------------------------------|:-----------------------|:-------------|
+| model                                              | 24.522M                | 3.364G       |
+|  net_backbone                                      |  16.742M               |  1.241G      |
+|   net_backbone.conv_stem                           |   1.296K               |   21.234M    |
+|    net_backbone.conv_stem.weight                   |    (48, 3, 3, 3)       |              |
+|   net_backbone.bn1                                 |   96                   |   1.573M     |
+|    net_backbone.bn1.weight                         |    (48,)               |              |
+|    net_backbone.bn1.bias                           |    (48,)               |              |
+|   net_backbone.blocks                              |   16.741M              |   1.218G     |
+|    net_backbone.blocks.0                           |    4.146K              |    42.862M   |
+|     net_backbone.blocks.0.0                        |     2.94K              |     28.313M  |
+|      net_backbone.blocks.0.0.conv_dw               |      0.432K            |      7.078M  |
+|      net_backbone.blocks.0.0.bn1                   |      96                |      1.573M  |
+|      net_backbone.blocks.0.0.se                    |      1.212K            |      1.152K  |
+|      net_backbone.blocks.0.0.conv_pw               |      1.152K            |      18.874M |
+|      net_backbone.blocks.0.0.bn2                   |      48                |      0.786M  |
+|     net_backbone.blocks.0.1                        |     1.206K             |     14.549M  |
+|      net_backbone.blocks.0.1.conv_dw               |      0.216K            |      3.539M  |
+|      net_backbone.blocks.0.1.bn1                   |      48                |      0.786M  |
+|      net_backbone.blocks.0.1.se                    |      0.318K            |      0.288K  |
+|      net_backbone.blocks.0.1.conv_pw               |      0.576K            |      9.437M  |
+|      net_backbone.blocks.0.1.bn2                   |      48                |      0.786M  |
+|    net_backbone.blocks.1                           |    66.238K             |    0.269G    |
+|     net_backbone.blocks.1.0                        |     11.878K            |     86.968M  |
+|      net_backbone.blocks.1.0.conv_pw               |      3.456K            |      56.623M |
+|      net_backbone.blocks.1.0.bn1                   |      0.288K            |      4.719M  |
+|      net_backbone.blocks.1.0.conv_dw               |      1.296K            |      5.308M  |
+|      net_backbone.blocks.1.0.bn2                   |      0.288K            |      1.18M   |
+|      net_backbone.blocks.1.0.se                    |      1.878K            |      1.728K  |
+|      net_backbone.blocks.1.0.conv_pwl              |      4.608K            |      18.874M |
+|      net_backbone.blocks.1.0.bn3                   |      64                |      0.262M  |
+|     net_backbone.blocks.1.1                        |     18.12K             |     60.82M   |
+|      net_backbone.blocks.1.1.conv_pw               |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.1.bn1                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.1.conv_dw               |      1.728K            |      7.078M  |
+|      net_backbone.blocks.1.1.bn2                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.1.se                    |      3.272K            |      3.072K  |
+|      net_backbone.blocks.1.1.conv_pwl              |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.1.bn3                   |      64                |      0.262M  |
+|     net_backbone.blocks.1.2                        |     18.12K             |     60.82M   |
+|      net_backbone.blocks.1.2.conv_pw               |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.2.bn1                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.2.conv_dw               |      1.728K            |      7.078M  |
+|      net_backbone.blocks.1.2.bn2                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.2.se                    |      3.272K            |      3.072K  |
+|      net_backbone.blocks.1.2.conv_pwl              |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.2.bn3                   |      64                |      0.262M  |
+|     net_backbone.blocks.1.3                        |     18.12K             |     60.82M   |
+|      net_backbone.blocks.1.3.conv_pw               |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.3.bn1                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.3.conv_dw               |      1.728K            |      7.078M  |
+|      net_backbone.blocks.1.3.bn2                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.1.3.se                    |      3.272K            |      3.072K  |
+|      net_backbone.blocks.1.3.conv_pwl              |      6.144K            |      25.166M |
+|      net_backbone.blocks.1.3.bn3                   |      64                |      0.262M  |
+|    net_backbone.blocks.2                           |    0.198M              |    0.189G    |
+|     net_backbone.blocks.2.0                        |     25.848K            |     43.175M  |
+|      net_backbone.blocks.2.0.conv_pw               |      6.144K            |      25.166M |
+|      net_backbone.blocks.2.0.bn1                   |      0.384K            |      1.573M  |
+|      net_backbone.blocks.2.0.conv_dw               |      4.8K              |      4.915M  |
+|      net_backbone.blocks.2.0.bn2                   |      0.384K            |      0.393M  |
+|      net_backbone.blocks.2.0.se                    |      3.272K            |      3.072K  |
+|      net_backbone.blocks.2.0.conv_pwl              |      10.752K           |      11.01M  |
+|      net_backbone.blocks.2.0.bn3                   |      0.112K            |      0.115M  |
+|     net_backbone.blocks.2.1                        |     57.246K            |     48.637M  |
+|      net_backbone.blocks.2.1.conv_pw               |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.1.bn1                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.1.conv_dw               |      8.4K              |      8.602M  |
+|      net_backbone.blocks.2.1.bn2                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.1.se                    |      9.758K            |      9.408K  |
+|      net_backbone.blocks.2.1.conv_pwl              |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.1.bn3                   |      0.112K            |      0.115M  |
+|     net_backbone.blocks.2.2                        |     57.246K            |     48.637M  |
+|      net_backbone.blocks.2.2.conv_pw               |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.2.bn1                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.2.conv_dw               |      8.4K              |      8.602M  |
+|      net_backbone.blocks.2.2.bn2                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.2.se                    |      9.758K            |      9.408K  |
+|      net_backbone.blocks.2.2.conv_pwl              |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.2.bn3                   |      0.112K            |      0.115M  |
+|     net_backbone.blocks.2.3                        |     57.246K            |     48.637M  |
+|      net_backbone.blocks.2.3.conv_pw               |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.3.bn1                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.3.conv_dw               |      8.4K              |      8.602M  |
+|      net_backbone.blocks.2.3.bn2                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.2.3.se                    |      9.758K            |      9.408K  |
+|      net_backbone.blocks.2.3.conv_pwl              |      18.816K           |      19.268M |
+|      net_backbone.blocks.2.3.bn3                   |      0.112K            |      0.115M  |
+|    net_backbone.blocks.3                           |    1.06M               |    0.235G    |
+|     net_backbone.blocks.3.0                        |     70.798K            |     30.602M  |
+|      net_backbone.blocks.3.0.conv_pw               |      18.816K           |      19.268M |
+|      net_backbone.blocks.3.0.bn1                   |      0.672K            |      0.688M  |
+|      net_backbone.blocks.3.0.conv_dw               |      3.024K            |      0.774M  |
+|      net_backbone.blocks.3.0.bn2                   |      0.672K            |      0.172M  |
+|      net_backbone.blocks.3.0.se                    |      9.758K            |      9.408K  |
+|      net_backbone.blocks.3.0.conv_pwl              |      37.632K           |      9.634M  |
+|      net_backbone.blocks.3.0.bn3                   |      0.224K            |      57.344K |
+|     net_backbone.blocks.3.1                        |     0.198M             |     40.867M  |
+|      net_backbone.blocks.3.1.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.1.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.1.conv_dw               |      6.048K            |      1.548M  |
+|      net_backbone.blocks.3.1.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.1.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.3.1.conv_pwl              |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.1.bn3                   |      0.224K            |      57.344K |
+|     net_backbone.blocks.3.2                        |     0.198M             |     40.867M  |
+|      net_backbone.blocks.3.2.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.2.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.2.conv_dw               |      6.048K            |      1.548M  |
+|      net_backbone.blocks.3.2.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.2.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.3.2.conv_pwl              |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.2.bn3                   |      0.224K            |      57.344K |
+|     net_backbone.blocks.3.3                        |     0.198M             |     40.867M  |
+|      net_backbone.blocks.3.3.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.3.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.3.conv_dw               |      6.048K            |      1.548M  |
+|      net_backbone.blocks.3.3.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.3.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.3.3.conv_pwl              |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.3.bn3                   |      0.224K            |      57.344K |
+|     net_backbone.blocks.3.4                        |     0.198M             |     40.867M  |
+|      net_backbone.blocks.3.4.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.4.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.4.conv_dw               |      6.048K            |      1.548M  |
+|      net_backbone.blocks.3.4.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.4.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.3.4.conv_pwl              |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.4.bn3                   |      0.224K            |      57.344K |
+|     net_backbone.blocks.3.5                        |     0.198M             |     40.867M  |
+|      net_backbone.blocks.3.5.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.5.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.5.conv_dw               |      6.048K            |      1.548M  |
+|      net_backbone.blocks.3.5.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.3.5.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.3.5.conv_pwl              |      75.264K           |      19.268M |
+|      net_backbone.blocks.3.5.bn3                   |      0.224K            |      57.344K |
+|    net_backbone.blocks.4                           |    2.307M              |    0.482G    |
+|     net_backbone.blocks.4.0                        |     0.241M             |     51.901M  |
+|      net_backbone.blocks.4.0.conv_pw               |      75.264K           |      19.268M |
+|      net_backbone.blocks.4.0.bn1                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.4.0.conv_dw               |      16.8K             |      4.301M  |
+|      net_backbone.blocks.4.0.bn2                   |      1.344K            |      0.344M  |
+|      net_backbone.blocks.4.0.se                    |      38.332K           |      37.632K |
+|      net_backbone.blocks.4.0.conv_pwl              |      0.108M            |      27.525M |
+|      net_backbone.blocks.4.0.bn3                   |      0.32K             |      81.92K  |
+|     net_backbone.blocks.4.1                        |     0.413M             |     85.929M  |
+|      net_backbone.blocks.4.1.conv_pw               |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.1.bn1                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.1.conv_dw               |      24K               |      6.144M  |
+|      net_backbone.blocks.4.1.bn2                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.1.se                    |      77.8K             |      76.8K   |
+|      net_backbone.blocks.4.1.conv_pwl              |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.1.bn3                   |      0.32K             |      81.92K  |
+|     net_backbone.blocks.4.2                        |     0.413M             |     85.929M  |
+|      net_backbone.blocks.4.2.conv_pw               |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.2.bn1                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.2.conv_dw               |      24K               |      6.144M  |
+|      net_backbone.blocks.4.2.bn2                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.2.se                    |      77.8K             |      76.8K   |
+|      net_backbone.blocks.4.2.conv_pwl              |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.2.bn3                   |      0.32K             |      81.92K  |
+|     net_backbone.blocks.4.3                        |     0.413M             |     85.929M  |
+|      net_backbone.blocks.4.3.conv_pw               |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.3.bn1                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.3.conv_dw               |      24K               |      6.144M  |
+|      net_backbone.blocks.4.3.bn2                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.3.se                    |      77.8K             |      76.8K   |
+|      net_backbone.blocks.4.3.conv_pwl              |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.3.bn3                   |      0.32K             |      81.92K  |
+|     net_backbone.blocks.4.4                        |     0.413M             |     85.929M  |
+|      net_backbone.blocks.4.4.conv_pw               |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.4.bn1                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.4.conv_dw               |      24K               |      6.144M  |
+|      net_backbone.blocks.4.4.bn2                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.4.se                    |      77.8K             |      76.8K   |
+|      net_backbone.blocks.4.4.conv_pwl              |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.4.bn3                   |      0.32K             |      81.92K  |
+|     net_backbone.blocks.4.5                        |     0.413M             |     85.929M  |
+|      net_backbone.blocks.4.5.conv_pw               |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.5.bn1                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.5.conv_dw               |      24K               |      6.144M  |
+|      net_backbone.blocks.4.5.bn2                   |      1.92K             |      0.492M  |
+|      net_backbone.blocks.4.5.se                    |      77.8K             |      76.8K   |
+|      net_backbone.blocks.4.5.conv_pwl              |      0.154M            |      39.322M |
+|      net_backbone.blocks.4.5.bn3                   |      0.32K             |      81.92K  |
+|    net_backbone.blocks.5                           |    8.636M              |              |
+|     net_backbone.blocks.5.0                        |     0.521M             |              |
+|      net_backbone.blocks.5.0.conv_pw               |      0.154M            |              |
+|      net_backbone.blocks.5.0.bn1                   |      1.92K             |              |
+|      net_backbone.blocks.5.0.conv_dw               |      24K               |              |
+|      net_backbone.blocks.5.0.bn2                   |      1.92K             |              |
+|      net_backbone.blocks.5.0.se                    |      77.8K             |              |
+|      net_backbone.blocks.5.0.conv_pwl              |      0.261M            |              |
+|      net_backbone.blocks.5.0.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.1                        |     1.159M             |              |
+|      net_backbone.blocks.5.1.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.1.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.1.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.1.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.1.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.1.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.1.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.2                        |     1.159M             |              |
+|      net_backbone.blocks.5.2.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.2.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.2.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.2.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.2.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.2.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.2.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.3                        |     1.159M             |              |
+|      net_backbone.blocks.5.3.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.3.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.3.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.3.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.3.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.3.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.3.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.4                        |     1.159M             |              |
+|      net_backbone.blocks.5.4.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.4.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.4.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.4.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.4.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.4.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.4.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.5                        |     1.159M             |              |
+|      net_backbone.blocks.5.5.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.5.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.5.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.5.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.5.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.5.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.5.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.6                        |     1.159M             |              |
+|      net_backbone.blocks.5.6.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.6.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.6.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.6.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.6.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.6.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.6.bn3                   |      0.544K            |              |
+|     net_backbone.blocks.5.7                        |     1.159M             |              |
+|      net_backbone.blocks.5.7.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.5.7.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.5.7.conv_dw               |      40.8K             |              |
+|      net_backbone.blocks.5.7.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.5.7.se                    |      0.224M            |              |
+|      net_backbone.blocks.5.7.conv_pwl              |      0.444M            |              |
+|      net_backbone.blocks.5.7.bn3                   |      0.544K            |              |
+|    net_backbone.blocks.6                           |    4.47M               |              |
+|     net_backbone.blocks.6.0                        |     1.421M             |              |
+|      net_backbone.blocks.6.0.conv_pw               |      0.444M            |              |
+|      net_backbone.blocks.6.0.bn1                   |      3.264K            |              |
+|      net_backbone.blocks.6.0.conv_dw               |      14.688K           |              |
+|      net_backbone.blocks.6.0.bn2                   |      3.264K            |              |
+|      net_backbone.blocks.6.0.se                    |      0.224M            |              |
+|      net_backbone.blocks.6.0.conv_pwl              |      0.731M            |              |
+|      net_backbone.blocks.6.0.bn3                   |      0.896K            |              |
+|     net_backbone.blocks.6.1                        |     3.049M             |              |
+|      net_backbone.blocks.6.1.conv_pw               |      1.204M            |              |
+|      net_backbone.blocks.6.1.bn1                   |      5.376K            |              |
+|      net_backbone.blocks.6.1.conv_dw               |      24.192K           |              |
+|      net_backbone.blocks.6.1.bn2                   |      5.376K            |              |
+|      net_backbone.blocks.6.1.se                    |      0.605M            |              |
+|      net_backbone.blocks.6.1.conv_pwl              |      1.204M            |              |
+|      net_backbone.blocks.6.1.bn3                   |      0.896K            |              |
+|  net_ad                                            |  7.779M                |  2.123G      |
+|   net_ad.pos_embed                                 |   4.096K               |   0          |
+|    net_ad.pos_embed.row_embed                      |    2.048K              |    0         |
+|     net_ad.pos_embed.row_embed.weight              |     (16, 128)          |              |
+|    net_ad.pos_embed.col_embed                      |    2.048K              |    0         |
+|     net_ad.pos_embed.col_embed.weight              |     (16, 128)          |              |
+|   net_ad.transformer                               |   7.635M               |   2.087G     |
+|    net_ad.transformer.encoder.layers               |    3.159M              |    0.875G    |
+|     net_ad.transformer.encoder.layers.0            |     0.79M              |     0.219G   |
+|      net_ad.transformer.encoder.layers.0.self_attn |      0.263M            |      83.886M |
+|      net_ad.transformer.encoder.layers.0.linear1   |      0.263M            |      67.109M |
+|      net_ad.transformer.encoder.layers.0.linear2   |      0.262M            |      67.109M |
+|      net_ad.transformer.encoder.layers.0.norm1     |      0.512K            |      0.328M  |
+|      net_ad.transformer.encoder.layers.0.norm2     |      0.512K            |      0.328M  |
+|     net_ad.transformer.encoder.layers.1            |     0.79M              |     0.219G   |
+|      net_ad.transformer.encoder.layers.1.self_attn |      0.263M            |      83.886M |
+|      net_ad.transformer.encoder.layers.1.linear1   |      0.263M            |      67.109M |
+|      net_ad.transformer.encoder.layers.1.linear2   |      0.262M            |      67.109M |
+|      net_ad.transformer.encoder.layers.1.norm1     |      0.512K            |      0.328M  |
+|      net_ad.transformer.encoder.layers.1.norm2     |      0.512K            |      0.328M  |
+|     net_ad.transformer.encoder.layers.2            |     0.79M              |     0.219G   |
+|      net_ad.transformer.encoder.layers.2.self_attn |      0.263M            |      83.886M |
+|      net_ad.transformer.encoder.layers.2.linear1   |      0.263M            |      67.109M |
+|      net_ad.transformer.encoder.layers.2.linear2   |      0.262M            |      67.109M |
+|      net_ad.transformer.encoder.layers.2.norm1     |      0.512K            |      0.328M  |
+|      net_ad.transformer.encoder.layers.2.norm2     |      0.512K            |      0.328M  |
+|     net_ad.transformer.encoder.layers.3            |     0.79M              |     0.219G   |
+|      net_ad.transformer.encoder.layers.3.self_attn |      0.263M            |      83.886M |
+|      net_ad.transformer.encoder.layers.3.linear1   |      0.263M            |      67.109M |
+|      net_ad.transformer.encoder.layers.3.linear2   |      0.262M            |      67.109M |
+|      net_ad.transformer.encoder.layers.3.norm1     |      0.512K            |      0.328M  |
+|      net_ad.transformer.encoder.layers.3.norm2     |      0.512K            |      0.328M  |
+|    net_ad.transformer.decoder                      |    4.476M              |    1.212G    |
+|     net_ad.transformer.decoder.layers              |     4.476M             |     1.212G   |
+|      net_ad.transformer.decoder.layers.0           |      1.119M            |      0.303G  |
+|      net_ad.transformer.decoder.layers.1           |      1.119M            |      0.303G  |
+|      net_ad.transformer.decoder.layers.2           |      1.119M            |      0.303G  |
+|      net_ad.transformer.decoder.layers.3           |      1.119M            |      0.303G  |
+|     net_ad.transformer.decoder.norm                |     0.512K             |     0.328M   |
+|      net_ad.transformer.decoder.norm.weight        |      (256,)            |              |
+|      net_ad.transformer.decoder.norm.bias          |      (256,)            |              |
+|   net_ad.input_proj                                |   69.888K              |   17.826M    |
+|    net_ad.input_proj.weight                        |    (256, 272)          |              |
+|    net_ad.input_proj.bias                          |    (256,)              |              |
+|   net_ad.output_proj                               |   69.904K              |   17.826M    |
+|    net_ad.output_proj.weight                       |    (272, 256)          |              |
+|    net_ad.output_proj.bias                         |    (272,)              |              |
+|   net_ad.upsample                                  |                        |   0.262M     |
+|  net_merge                                         |                        |  0.279M      |
+-------------------------------------------------------------------------------
+2024-05-27 17:24:37,271 - ==> Creating optimizer
+2024-05-27 17:24:37,288 - ==> Loading dataset: DefaultAD
+2024-05-27 17:24:37,291 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.0001                              
+optim.kwargs                         : {'name': 'adamw', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0001, 'amsgrad': False}
+trainer.name                         : UniADTrainer                        
+trainer.checkpoint                   : runs/benchmark/uniad_256_100e/mpdd  
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-06, 'warmup_lr': 1.0000000000000001e-07, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 8                                   
+trainer.data.batch_size_per_gpu      : 8                                   
+trainer.data.batch_size_test         : 8                                   
+trainer.data.batch_size_per_gpu_test : 8                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 11100                               
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 111                                 
+data.test_size                       : 58                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_backbone.name                  : timm_tf_efficientnet_b4             
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/tf_efficientnet_b4_aa-818f208c.pth', 'strict': False, 'hf': None, 'features_only': True, 'out_indices': [0, 1, 2, 3]}
+model_decoder                        : {'inplanes': [24, 32, 56, 160], 'outplanes': [272], 'instrides': [16], 'feature_size': [16, 16], 'neighbor_size': [8, 8]}
+model.name                           : uniad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='timm_tf_efficientnet_b4', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/tf_efficientnet_b4_aa-818f208c.pth', 'strict': False, 'hf': None, 'features_only': True, 'out_indices': [0, 1, 2, 3]}), 'model_decoder': {'inplanes': [24, 32, 56, 160], 'outplanes': [272], 'instrides': [16], 'feature_size': [16, 16], 'neighbor_size': [8, 8]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 8                                   
+batch_test_per                       : 8                                   
+lr                                   : 0.0001                              
+weight_decay                         : 0.0001                              
+cfg_path                             : configs.benchmark.uniad_256_100e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/uniad_256_100e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.uniad_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/uniad_256_100e/mpdd data.root=data/mpdd
+task_start_time                      : 3130514.182676986                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432/show_train
+logdir_test                          : runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432/show_test
+2024-05-27 17:24:37,292 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-27 17:24:43,264 - Train: 0.45% [50/11100]  [0.5/100.0] [batch_t 0.131 (0.112)] [data_t 0.100] [optim_t 0.031] [lr 0.000100] [pixel 28.219 (30.510)]
+2024-05-27 17:24:46,684 - Train: 0.90% [100/11100]  [0.9/100.0] [batch_t 0.029 (0.068)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 27.276 (27.379)]
+2024-05-27 17:24:47,480 - ==> Total time: 0:00:14	 Eta: 0:24:05 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:24:50,859 - Train: 1.35% [150/11100]  [1.4/100.0] [batch_t 0.029 (0.073)] [data_t 0.000] [optim_t 0.028] [lr 0.000100] [pixel 24.566 (25.786)]
+2024-05-27 17:24:54,405 - Train: 1.80% [200/11100]  [1.8/100.0] [batch_t 0.188 (0.071)] [data_t 0.156] [optim_t 0.032] [lr 0.000100] [pixel 24.606 (25.198)]
+2024-05-27 17:24:55,851 - ==> Total time: 0:00:22	 Eta: 0:18:45 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:24:58,437 - Train: 2.25% [250/11100]  [2.3/100.0] [batch_t 0.029 (0.072)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 24.558 (24.681)]
+2024-05-27 17:25:01,919 - Train: 2.70% [300/11100]  [2.7/100.0] [batch_t 0.030 (0.070)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 24.052 (24.510)]
+2024-05-27 17:25:04,157 - ==> Total time: 0:00:31	 Eta: 0:16:51 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:07,706 - Train: 3.15% [350/11100]  [3.2/100.0] [batch_t 0.185 (0.080)] [data_t 0.153] [optim_t 0.032] [lr 0.000100] [pixel 23.816 (23.909)]
+2024-05-27 17:25:11,099 - Train: 3.60% [400/11100]  [3.6/100.0] [batch_t 0.030 (0.068)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 25.412 (23.352)]
+2024-05-27 17:25:14,145 - ==> Total time: 0:00:41	 Eta: 0:16:30 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:15,383 - Train: 4.05% [450/11100]  [4.1/100.0] [batch_t 0.032 (0.102)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 21.485 (21.768)]
+2024-05-27 17:25:18,746 - Train: 4.50% [500/11100]  [4.5/100.0] [batch_t 0.029 (0.067)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 21.714 (22.229)]
+2024-05-27 17:25:22,338 - Train: 4.95% [550/11100]  [5.0/100.0] [batch_t 0.032 (0.072)] [data_t 0.000] [optim_t 0.032] [lr 0.000100] [pixel 21.790 (21.685)]
+2024-05-27 17:25:22,661 - ==> Total time: 0:00:49	 Eta: 0:15:45 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:26,658 - Train: 5.41% [600/11100]  [5.4/100.0] [batch_t 0.179 (0.073)] [data_t 0.145] [optim_t 0.033] [lr 0.000100] [pixel 21.722 (21.181)]
+2024-05-27 17:25:30,013 - Train: 5.86% [650/11100]  [5.9/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 20.854 (21.037)]
+2024-05-27 17:25:31,109 - ==> Total time: 0:00:58	 Eta: 0:15:12 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:34,338 - Train: 6.31% [700/11100]  [6.3/100.0] [batch_t 0.031 (0.074)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 22.161 (20.618)]
+2024-05-27 17:25:37,692 - Train: 6.76% [750/11100]  [6.8/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.031] [lr 0.000100] [pixel 18.972 (20.205)]
+2024-05-27 17:25:39,593 - ==> Total time: 0:01:06	 Eta: 0:14:46 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:42,009 - Train: 7.21% [800/11100]  [7.2/100.0] [batch_t 0.031 (0.074)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 19.293 (19.949)]
+2024-05-27 17:25:45,512 - Train: 7.66% [850/11100]  [7.7/100.0] [batch_t 0.154 (0.070)] [data_t 0.120] [optim_t 0.034] [lr 0.000100] [pixel 22.025 (19.522)]
+2024-05-27 17:25:48,127 - ==> Total time: 0:01:15	 Eta: 0:14:25 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:49,736 - Train: 8.11% [900/11100]  [8.1/100.0] [batch_t 0.031 (0.078)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 19.258 (18.906)]
+2024-05-27 17:25:53,219 - Train: 8.56% [950/11100]  [8.6/100.0] [batch_t 0.036 (0.070)] [data_t 0.000] [optim_t 0.035] [lr 0.000100] [pixel 18.528 (19.026)]
+2024-05-27 17:25:56,562 - ==> Total time: 0:01:23	 Eta: 0:14:06 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:25:57,510 - Train: 9.01% [1000/11100]  [9.0/100.0] [batch_t 0.258 (0.258)] [data_t 0.212] [optim_t 0.047] [lr 0.000100] [pixel 20.533 (20.533)]
+2024-05-27 17:26:00,874 - Train: 9.46% [1050/11100]  [9.5/100.0] [batch_t 0.035 (0.067)] [data_t 0.001] [optim_t 0.034] [lr 0.000100] [pixel 19.525 (18.616)]
+2024-05-27 17:26:04,327 - Train: 9.91% [1100/11100]  [9.9/100.0] [batch_t 0.134 (0.069)] [data_t 0.098] [optim_t 0.036] [lr 0.000100] [pixel 20.204 (18.474)]
+2024-05-27 17:26:09,688 - Test: 86.21% [50/58] [batch_t 0.018 (0.077)] [pixel 22.328 (18.433)]
+2024-05-27 17:26:11,491 - Test: 100.00% [58/58] [batch_t 1.251 (0.097)] [pixel 25.759 (19.186)]
+2024-05-27 17:26:12,439 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.133 (mIoU_max_px)	
+2024-05-27 17:26:13,155 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.130 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-27 17:26:13,690 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.094 (mIoU_max_px)	
+2024-05-27 17:26:14,061 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-27 17:26:15,147 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.164 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.164 (mIoU_max_px)	
+2024-05-27 17:26:16,089 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.180 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.181 (mIoU_max_px)	
+2024-05-27 17:26:16,097 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     51.330      |  51.330 (10  epoch)   |    61.176    | 61.176 (10  epoch) |      75.806      |   75.806 (10  epoch)   |   65.105    | 65.105 (10  epoch) |   90.529    | 90.529 (10  epoch) |  0.478   | 0.478 (10  epoch)  |    1.113     | 1.113 (10  epoch)  |        0.633         |     0.633 (10  epoch)      |        58.951         |     58.951 (10  epoch)      |         0.318         |      0.318 (10  epoch)      |     0.560     |  0.560 (10  epoch)  |
+| bracket_brown |     58.824      |  58.824 (10  epoch)   |    68.356    | 68.356 (10  epoch) |      80.315      |   80.315 (10  epoch)   |   86.344    | 86.344 (10  epoch) |   95.488    | 95.488 (10  epoch) |  6.029   | 6.029 (10  epoch)  |    10.780    | 10.780 (10  epoch) |        5.897         |     5.897 (10  epoch)      |        55.409         |     55.409 (10  epoch)      |         3.071         |      3.071 (10  epoch)      |     5.697     |  5.697 (10  epoch)  |
+| bracket_white |     42.667      |  42.667 (10  epoch)   |    44.162    | 44.162 (10  epoch) |      68.235      |   68.235 (10  epoch)   |   68.102    | 68.102 (10  epoch) |   92.512    | 92.512 (10  epoch) |  0.175   | 0.175 (10  epoch)  |    0.437     | 0.437 (10  epoch)  |        0.203         |     0.203 (10  epoch)      |        51.791         |     51.791 (10  epoch)      |         0.102         |      0.102 (10  epoch)      |     0.219     |  0.219 (10  epoch)  |
+|   connector   |     49.048      |  49.048 (10  epoch)   |    43.447    | 43.447 (10  epoch) |      49.123      |   49.123 (10  epoch)   |   75.872    | 75.872 (10  epoch) |   92.899    | 92.899 (10  epoch) |  5.917   | 5.917 (10  epoch)  |    7.555     | 7.555 (10  epoch)  |        5.086         |     5.086 (10  epoch)      |        52.026         |     52.026 (10  epoch)      |         2.622         |      2.622 (10  epoch)      |     3.926     |  3.926 (10  epoch)  |
+|  metal_plate  |     36.782      |  36.782 (10  epoch)   |    69.047    | 69.047 (10  epoch) |      84.524      |   84.524 (10  epoch)   |   47.833    | 47.833 (10  epoch) |   81.911    | 81.911 (10  epoch) |  24.791  | 24.791 (10  epoch) |    43.409    | 43.409 (10  epoch) |        20.434        |     20.434 (10  epoch)     |        43.343         |     43.343 (10  epoch)      |        12.391         |     12.391 (10  epoch)      |    27.721     | 27.721 (10  epoch)  |
+|     tubes     |     55.072      |  55.072 (10  epoch)   |    76.864    | 76.864 (10  epoch) |      81.657      |   81.657 (10  epoch)   |   63.440    | 63.440 (10  epoch) |   89.092    | 89.092 (10  epoch) |  4.912   | 4.912 (10  epoch)  |    8.044     | 8.044 (10  epoch)  |        4.931         |     4.931 (10  epoch)      |        44.486         |     44.486 (10  epoch)      |         2.543         |      2.543 (10  epoch)      |     4.191     |  4.191 (10  epoch)  |
+|      Avg      |     48.954      |  48.954 (10  epoch)   |    60.509    | 60.509 (10  epoch) |      73.277      |   73.277 (10  epoch)   |   67.782    | 67.782 (10  epoch) |   90.405    | 90.405 (10  epoch) |  7.051   | 7.051 (10  epoch)  |    11.890    | 11.890 (10  epoch) |        6.197         |     6.197 (10  epoch)      |        51.001         |     51.001 (10  epoch)      |         3.508         |      3.508 (10  epoch)      |     7.052     |  7.052 (10  epoch)  |
+2024-05-27 17:26:16,432 - ==> Total time: 0:01:43	 Eta: 0:15:31 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:26:20,241 - Train: 10.36% [1150/11100]  [10.4/100.0] [batch_t 0.032 (0.072)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 18.503 (18.246)]
+2024-05-27 17:26:23,724 - Train: 10.81% [1200/11100]  [10.8/100.0] [batch_t 0.070 (0.070)] [data_t 0.038] [optim_t 0.032] [lr 0.000100] [pixel 17.230 (18.091)]
+2024-05-27 17:26:25,169 - ==> Total time: 0:01:52	 Eta: 0:15:08 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:26:28,543 - Train: 11.26% [1250/11100]  [11.3/100.0] [batch_t 0.193 (0.076)] [data_t 0.159] [optim_t 0.034] [lr 0.000100] [pixel 16.519 (18.042)]
+2024-05-27 17:26:31,910 - Train: 11.71% [1300/11100]  [11.7/100.0] [batch_t 0.031 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 17.001 (17.823)]
+2024-05-27 17:26:34,102 - ==> Total time: 0:02:01	 Eta: 0:14:48 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:26:36,451 - Train: 12.16% [1350/11100]  [12.2/100.0] [batch_t 0.032 (0.077)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 17.999 (17.926)]
+2024-05-27 17:26:39,838 - Train: 12.61% [1400/11100]  [12.6/100.0] [batch_t 0.032 (0.068)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 17.201 (17.390)]
+2024-05-27 17:26:42,828 - ==> Total time: 0:02:09	 Eta: 0:14:29 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:26:44,343 - Train: 13.06% [1450/11100]  [13.1/100.0] [batch_t 0.031 (0.081)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 15.138 (17.830)]
+2024-05-27 17:26:47,902 - Train: 13.51% [1500/11100]  [13.5/100.0] [batch_t 0.191 (0.071)] [data_t 0.158] [optim_t 0.033] [lr 0.000100] [pixel 17.399 (17.041)]
+2024-05-27 17:26:51,279 - Train: 13.96% [1550/11100]  [14.0/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 17.374 (17.277)]
+2024-05-27 17:26:51,557 - ==> Total time: 0:02:18	 Eta: 0:14:11 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:26:55,858 - Train: 14.41% [1600/11100]  [14.4/100.0] [batch_t 0.032 (0.071)] [data_t 0.000] [optim_t 0.031] [lr 0.000100] [pixel 16.835 (16.824)]
+2024-05-27 17:26:59,204 - Train: 14.86% [1650/11100]  [14.9/100.0] [batch_t 0.031 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 18.113 (17.039)]
+2024-05-27 17:27:00,270 - ==> Total time: 0:02:27	 Eta: 0:13:55 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:04,048 - Train: 15.32% [1700/11100]  [15.3/100.0] [batch_t 0.031 (0.072)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 16.978 (16.487)]
+2024-05-27 17:27:07,552 - Train: 15.77% [1750/11100]  [15.8/100.0] [batch_t 0.178 (0.070)] [data_t 0.145] [optim_t 0.033] [lr 0.000100] [pixel 18.008 (16.875)]
+2024-05-27 17:27:09,282 - ==> Total time: 0:02:36	 Eta: 0:13:41 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:11,870 - Train: 16.22% [1800/11100]  [16.2/100.0] [batch_t 0.033 (0.074)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 17.455 (16.708)]
+2024-05-27 17:27:15,421 - Train: 16.67% [1850/11100]  [16.7/100.0] [batch_t 0.031 (0.071)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 16.660 (16.566)]
+2024-05-27 17:27:17,975 - ==> Total time: 0:02:45	 Eta: 0:13:26 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:19,734 - Train: 17.12% [1900/11100]  [17.1/100.0] [batch_t 0.183 (0.081)] [data_t 0.148] [optim_t 0.035] [lr 0.000100] [pixel 17.050 (16.617)]
+2024-05-27 17:27:23,111 - Train: 17.57% [1950/11100]  [17.6/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 15.846 (16.226)]
+2024-05-27 17:27:26,424 - ==> Total time: 0:02:53	 Eta: 0:13:10 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:27,428 - Train: 18.02% [2000/11100]  [18.0/100.0] [batch_t 0.032 (0.151)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 15.117 (15.175)]
+2024-05-27 17:27:30,762 - Train: 18.47% [2050/11100]  [18.5/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 17.672 (16.104)]
+2024-05-27 17:27:34,290 - Train: 18.92% [2100/11100]  [18.9/100.0] [batch_t 0.031 (0.070)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 14.798 (15.964)]
+2024-05-27 17:27:34,855 - ==> Total time: 0:03:01	 Eta: 0:12:55 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:38,549 - Train: 19.37% [2150/11100]  [19.4/100.0] [batch_t 0.179 (0.073)] [data_t 0.144] [optim_t 0.035] [lr 0.000100] [pixel 15.673 (15.963)]
+2024-05-27 17:27:41,895 - Train: 19.82% [2200/11100]  [19.8/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 15.101 (15.868)]
+2024-05-27 17:27:47,141 - Test: 86.21% [50/58] [batch_t 0.020 (0.074)] [pixel 21.013 (16.281)]
+2024-05-27 17:27:47,701 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 25.997 (17.202)]
+2024-05-27 17:27:48,472 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-27 17:27:49,169 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.124 (mIoU_max_px)	
+2024-05-27 17:27:49,681 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-27 17:27:50,046 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.065 (mIoU_max_px)	
+2024-05-27 17:27:50,961 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.176 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.178 (mIoU_max_px)	
+2024-05-27 17:27:51,882 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.179 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.173 (mIoU_max_px)	
+2024-05-27 17:27:51,892 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.973      |  59.973 (20  epoch)   |    71.754    | 71.754 (20  epoch) |      75.410      |   75.806 (10  epoch)   |   69.864    | 69.864 (20  epoch) |   91.250    | 91.250 (20  epoch) |  0.493   | 0.493 (20  epoch)  |    1.064     | 1.113 (10  epoch)  |        0.547         |     0.633 (10  epoch)      |        61.047         |     61.047 (20  epoch)      |         0.274         |      0.318 (10  epoch)      |     0.535     |  0.560 (10  epoch)  |
+| bracket_brown |     65.762      |  65.762 (20  epoch)   |    75.222    | 75.222 (20  epoch) |      79.688      |   80.315 (10  epoch)   |   87.022    | 87.022 (20  epoch) |   95.940    | 95.940 (20  epoch) |  7.081   | 7.081 (20  epoch)  |    13.172    | 13.172 (20  epoch) |        6.614         |     6.614 (20  epoch)      |        61.177         |     61.177 (20  epoch)      |         3.466         |      3.466 (20  epoch)      |     7.050     |  7.050 (20  epoch)  |
+| bracket_white |     44.667      |  44.667 (20  epoch)   |    49.412    | 49.412 (20  epoch) |      66.667      |   68.235 (10  epoch)   |   73.541    | 73.541 (20  epoch) |   93.723    | 93.723 (20  epoch) |  0.216   | 0.216 (20  epoch)  |    0.511     | 0.511 (20  epoch)  |        0.253         |     0.253 (20  epoch)      |        53.159         |     53.159 (20  epoch)      |         0.127         |      0.127 (20  epoch)      |     0.256     |  0.256 (20  epoch)  |
+|   connector   |     46.905      |  49.048 (10  epoch)   |    43.638    | 43.638 (20  epoch) |      49.123      |   49.123 (10  epoch)   |   78.255    | 78.255 (20  epoch) |   93.633    | 93.633 (20  epoch) |  5.233   | 5.917 (10  epoch)  |    8.519     | 8.519 (20  epoch)  |        5.258         |     5.258 (20  epoch)      |        60.392         |     60.392 (20  epoch)      |         2.715         |      2.715 (20  epoch)      |     4.449     |  4.449 (20  epoch)  |
+|  metal_plate  |     36.891      |  36.891 (20  epoch)   |    68.679    | 69.047 (10  epoch) |      84.524      |   84.524 (10  epoch)   |   53.843    | 53.843 (20  epoch) |   84.380    | 84.380 (20  epoch) |  27.650  | 27.650 (20  epoch) |    47.037    | 47.037 (20  epoch) |        23.761        |     23.761 (20  epoch)     |        49.406         |     49.406 (20  epoch)      |        14.602         |     14.602 (20  epoch)      |    30.750     | 30.750 (20  epoch)  |
+|     tubes     |     66.304      |  66.304 (20  epoch)   |    81.968    | 81.968 (20  epoch) |      81.928      |   81.928 (20  epoch)   |   68.786    | 68.786 (20  epoch) |   90.818    | 90.818 (20  epoch) |  7.552   | 7.552 (20  epoch)  |    12.205    | 12.205 (20  epoch) |        6.001         |     6.001 (20  epoch)      |        46.498         |     46.498 (20  epoch)      |         3.128         |      3.128 (20  epoch)      |     6.499     |  6.499 (20  epoch)  |
+|      Avg      |     53.417      |  53.417 (20  epoch)   |    65.112    | 65.112 (20  epoch) |      72.890      |   73.277 (10  epoch)   |   71.885    | 71.885 (20  epoch) |   91.624    | 91.624 (20  epoch) |  8.037   | 8.037 (20  epoch)  |    13.751    | 13.751 (20  epoch) |        7.072         |     7.072 (20  epoch)      |        55.280         |     55.280 (20  epoch)      |         4.052         |      4.052 (20  epoch)      |     8.257     |  8.257 (20  epoch)  |
+2024-05-27 17:27:51,967 - ==> Total time: 0:03:19	 Eta: 0:13:16 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:27:55,194 - Train: 20.27% [2250/11100]  [20.3/100.0] [batch_t 0.032 (0.074)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 14.574 (15.926)]
+2024-05-27 17:27:58,534 - Train: 20.72% [2300/11100]  [20.7/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 15.382 (15.694)]
+2024-05-27 17:28:00,700 - ==> Total time: 0:03:27	 Eta: 0:13:01 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:03,117 - Train: 21.17% [2350/11100]  [21.2/100.0] [batch_t 0.031 (0.074)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 15.662 (15.299)]
+2024-05-27 17:28:06,632 - Train: 21.62% [2400/11100]  [21.6/100.0] [batch_t 0.182 (0.070)] [data_t 0.149] [optim_t 0.033] [lr 0.000100] [pixel 14.561 (15.584)]
+2024-05-27 17:28:09,444 - ==> Total time: 0:03:36	 Eta: 0:12:47 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:10,743 - Train: 22.07% [2450/11100]  [22.1/100.0] [batch_t 0.031 (0.074)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 13.989 (15.237)]
+2024-05-27 17:28:14,226 - Train: 22.52% [2500/11100]  [22.5/100.0] [batch_t 0.035 (0.070)] [data_t 0.004] [optim_t 0.031] [lr 0.000100] [pixel 15.509 (15.336)]
+2024-05-27 17:28:17,597 - Train: 22.97% [2550/11100]  [23.0/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 16.551 (15.260)]
+2024-05-27 17:28:17,839 - ==> Total time: 0:03:44	 Eta: 0:12:33 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:21,882 - Train: 23.42% [2600/11100]  [23.4/100.0] [batch_t 0.031 (0.071)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 12.884 (14.976)]
+2024-05-27 17:28:26,369 - Train: 23.87% [2650/11100]  [23.9/100.0] [batch_t 0.186 (0.090)] [data_t 0.153] [optim_t 0.033] [lr 0.000100] [pixel 15.311 (15.248)]
+2024-05-27 17:28:28,787 - ==> Total time: 0:03:55	 Eta: 0:12:27 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:32,313 - Train: 24.32% [2700/11100]  [24.3/100.0] [batch_t 0.031 (0.071)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 15.269 (15.062)]
+2024-05-27 17:28:35,813 - Train: 24.77% [2750/11100]  [24.8/100.0] [batch_t 0.032 (0.070)] [data_t 0.000] [optim_t 0.031] [lr 0.000100] [pixel 14.885 (14.866)]
+2024-05-27 17:28:37,502 - ==> Total time: 0:04:04	 Eta: 0:12:13 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:40,415 - Train: 25.23% [2800/11100]  [25.2/100.0] [batch_t 0.184 (0.077)] [data_t 0.151] [optim_t 0.033] [lr 0.000100] [pixel 15.756 (14.775)]
+2024-05-27 17:28:43,815 - Train: 25.68% [2850/11100]  [25.7/100.0] [batch_t 0.031 (0.068)] [data_t 0.000] [optim_t 0.031] [lr 0.000100] [pixel 14.279 (14.909)]
+2024-05-27 17:28:46,278 - ==> Total time: 0:04:13	 Eta: 0:12:01 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:48,209 - Train: 26.13% [2900/11100]  [26.1/100.0] [batch_t 0.031 (0.079)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 14.964 (14.734)]
+2024-05-27 17:28:51,587 - Train: 26.58% [2950/11100]  [26.6/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 13.948 (14.671)]
+2024-05-27 17:28:54,881 - ==> Total time: 0:04:22	 Eta: 0:11:48 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:28:55,885 - Train: 27.03% [3000/11100]  [27.0/100.0] [batch_t 0.031 (0.111)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 13.441 (14.434)]
+2024-05-27 17:28:59,349 - Train: 27.48% [3050/11100]  [27.5/100.0] [batch_t 0.170 (0.069)] [data_t 0.137] [optim_t 0.034] [lr 0.000100] [pixel 16.153 (14.653)]
+2024-05-27 17:29:02,724 - Train: 27.93% [3100/11100]  [27.9/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 15.979 (14.572)]
+2024-05-27 17:29:03,274 - ==> Total time: 0:04:30	 Eta: 0:11:35 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:29:08,485 - Train: 28.38% [3150/11100]  [28.4/100.0] [batch_t 0.035 (0.071)] [data_t 0.000] [optim_t 0.034] [lr 0.000100] [pixel 16.049 (14.535)]
+2024-05-27 17:29:11,901 - Train: 28.83% [3200/11100]  [28.8/100.0] [batch_t 0.074 (0.068)] [data_t 0.039] [optim_t 0.035] [lr 0.000100] [pixel 15.077 (14.304)]
+2024-05-27 17:29:13,212 - ==> Total time: 0:04:40	 Eta: 0:11:26 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:29:16,186 - Train: 29.28% [3250/11100]  [29.3/100.0] [batch_t 0.034 (0.072)] [data_t 0.001] [optim_t 0.033] [lr 0.000100] [pixel 15.840 (14.358)]
+2024-05-27 17:29:19,664 - Train: 29.73% [3300/11100]  [29.7/100.0] [batch_t 0.168 (0.069)] [data_t 0.131] [optim_t 0.037] [lr 0.000100] [pixel 14.244 (14.161)]
+2024-05-27 17:29:25,516 - Test: 86.21% [50/58] [batch_t 0.020 (0.074)] [pixel 19.751 (14.945)]
+2024-05-27 17:29:26,081 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 25.095 (15.882)]
+2024-05-27 17:29:26,859 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-27 17:29:27,552 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.126 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.043 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-27 17:29:28,071 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.035 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.094 (mIoU_max_px)	
+2024-05-27 17:29:28,438 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-27 17:29:29,341 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.170 (mIoU_max_px)	
+2024-05-27 17:29:30,253 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.172 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.172 (mIoU_max_px)	
+2024-05-27 17:29:30,265 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     60.904      |  60.904 (30  epoch)   |    74.055    | 74.055 (30  epoch) |      75.200      |   75.806 (10  epoch)   |   70.302    | 70.302 (30  epoch) |   90.694    | 91.250 (20  epoch) |  0.439   | 0.493 (20  epoch)  |    0.996     | 1.113 (10  epoch)  |        0.479         |     0.633 (10  epoch)      |        56.670         |     61.047 (20  epoch)      |         0.240         |      0.318 (10  epoch)      |     0.500     |  0.560 (10  epoch)  |
+| bracket_brown |     75.339      |  75.339 (30  epoch)   |    84.052    | 84.052 (30  epoch) |      82.051      |   82.051 (30  epoch)   |   87.755    | 87.755 (30  epoch) |   96.385    | 96.385 (30  epoch) |  8.696   | 8.696 (30  epoch)  |    15.131    | 15.131 (30  epoch) |        7.534         |     7.534 (30  epoch)      |        64.526         |     64.526 (30  epoch)      |         3.974         |      3.974 (30  epoch)      |     8.185     |  8.185 (30  epoch)  |
+| bracket_white |     49.889      |  49.889 (30  epoch)   |    55.295    | 55.295 (30  epoch) |      66.667      |   68.235 (10  epoch)   |   77.125    | 77.125 (30  epoch) |   94.372    | 94.372 (30  epoch) |  0.243   | 0.243 (30  epoch)  |    0.596     | 0.596 (30  epoch)  |        0.299         |     0.299 (30  epoch)      |        56.110         |     56.110 (30  epoch)      |         0.150         |      0.150 (30  epoch)      |     0.299     |  0.299 (30  epoch)  |
+|   connector   |     66.667      |  66.667 (30  epoch)   |    58.855    | 58.855 (30  epoch) |      55.556      |   55.556 (30  epoch)   |   81.091    | 81.091 (30  epoch) |   94.489    | 94.489 (30  epoch) |  8.750   | 8.750 (30  epoch)  |    13.071    | 13.071 (30  epoch) |        7.324         |     7.324 (30  epoch)      |        59.938         |     60.392 (20  epoch)      |         3.842         |      3.842 (30  epoch)      |     6.992     |  6.992 (30  epoch)  |
+|  metal_plate  |     38.245      |  38.245 (30  epoch)   |    68.757    | 69.047 (10  epoch) |      84.524      |   84.524 (10  epoch)   |   58.736    | 58.736 (30  epoch) |   85.902    | 85.902 (30  epoch) |  30.036  | 30.036 (30  epoch) |    48.848    | 48.848 (30  epoch) |        24.132        |     24.132 (30  epoch)     |        49.188         |     49.406 (20  epoch)      |        14.970         |     14.970 (30  epoch)      |    32.317     | 32.317 (30  epoch)  |
+|     tubes     |     63.179      |  66.304 (20  epoch)   |    80.232    | 81.968 (20  epoch) |      81.290      |   81.928 (20  epoch)   |   70.299    | 70.299 (30  epoch) |   91.177    | 91.177 (30  epoch) |  7.247   | 7.552 (20  epoch)  |    12.146    | 12.205 (20  epoch) |        6.218         |     6.218 (30  epoch)      |        46.899         |     46.899 (30  epoch)      |         3.242         |      3.242 (30  epoch)      |     6.466     |  6.499 (20  epoch)  |
+|      Avg      |     59.037      |  59.037 (30  epoch)   |    70.208    | 70.208 (30  epoch) |      74.215      |   74.215 (30  epoch)   |   74.218    | 74.218 (30  epoch) |   92.170    | 92.170 (30  epoch) |  9.235   | 9.235 (30  epoch)  |    15.131    | 15.131 (30  epoch) |        7.664         |     7.664 (30  epoch)      |        55.555         |     55.555 (30  epoch)      |         4.403         |      4.403 (30  epoch)      |     9.127     |  9.127 (30  epoch)  |
+2024-05-27 17:29:30,391 - ==> Total time: 0:04:57	 Eta: 0:11:34 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:29:33,075 - Train: 30.18% [3350/11100]  [30.2/100.0] [batch_t 0.034 (0.071)] [data_t 0.000] [optim_t 0.033] [lr 0.000100] [pixel 12.949 (14.347)]
+2024-05-27 17:29:36,582 - Train: 30.63% [3400/11100]  [30.6/100.0] [batch_t 0.035 (0.070)] [data_t 0.001] [optim_t 0.034] [lr 0.000100] [pixel 14.777 (13.938)]
+2024-05-27 17:29:39,354 - ==> Total time: 0:05:06	 Eta: 0:11:22 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:29:41,291 - Train: 31.08% [3450/11100]  [31.1/100.0] [batch_t 0.186 (0.086)] [data_t 0.151] [optim_t 0.034] [lr 0.000100] [pixel 12.284 (14.373)]
+2024-05-27 17:29:44,665 - Train: 31.53% [3500/11100]  [31.5/100.0] [batch_t 0.031 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 14.196 (13.980)]
+2024-05-27 17:29:48,172 - Train: 31.98% [3550/11100]  [32.0/100.0] [batch_t 0.182 (0.070)] [data_t 0.149] [optim_t 0.033] [lr 0.000100] [pixel 15.323 (14.036)]
+2024-05-27 17:29:48,237 - ==> Total time: 0:05:15	 Eta: 0:11:10 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:29:52,284 - Train: 32.43% [3600/11100]  [32.4/100.0] [batch_t 0.033 (0.069)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 15.851 (13.973)]
+2024-05-27 17:29:55,781 - Train: 32.88% [3650/11100]  [32.9/100.0] [batch_t 0.033 (0.070)] [data_t 0.000] [optim_t 0.032] [lr 0.000100] [pixel 14.561 (13.857)]
+2024-05-27 17:29:56,639 - ==> Total time: 0:05:23	 Eta: 0:10:57 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:00,265 - Train: 33.33% [3700/11100]  [33.3/100.0] [batch_t 0.181 (0.073)] [data_t 0.148] [optim_t 0.032] [lr 0.000100] [pixel 13.573 (13.924)]
+2024-05-27 17:30:03,640 - Train: 33.78% [3750/11100]  [33.8/100.0] [batch_t 0.031 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 13.005 (13.842)]
+2024-05-27 17:30:05,313 - ==> Total time: 0:05:32	 Eta: 0:10:45 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:08,455 - Train: 34.23% [3800/11100]  [34.2/100.0] [batch_t 0.031 (0.073)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 12.063 (13.330)]
+2024-05-27 17:30:11,785 - Train: 34.68% [3850/11100]  [34.7/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 13.678 (13.861)]
+2024-05-27 17:30:14,209 - ==> Total time: 0:05:41	 Eta: 0:10:33 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:16,474 - Train: 35.14% [3900/11100]  [35.1/100.0] [batch_t 0.031 (0.075)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 12.237 (13.262)]
+2024-05-27 17:30:19,957 - Train: 35.59% [3950/11100]  [35.6/100.0] [batch_t 0.176 (0.070)] [data_t 0.143] [optim_t 0.034] [lr 0.000100] [pixel 15.065 (13.857)]
+2024-05-27 17:30:23,058 - ==> Total time: 0:05:50	 Eta: 0:10:22 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:24,171 - Train: 36.04% [4000/11100]  [36.0/100.0] [batch_t 0.033 (0.083)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 12.395 (13.455)]
+2024-05-27 17:30:27,629 - Train: 36.49% [4050/11100]  [36.5/100.0] [batch_t 0.050 (0.069)] [data_t 0.016] [optim_t 0.034] [lr 0.000100] [pixel 13.995 (13.360)]
+2024-05-27 17:30:30,994 - Train: 36.94% [4100/11100]  [36.9/100.0] [batch_t 0.032 (0.067)] [data_t 0.000] [optim_t 0.031] [lr 0.000100] [pixel 11.929 (13.611)]
+2024-05-27 17:30:31,514 - ==> Total time: 0:05:58	 Eta: 0:10:10 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:35,306 - Train: 37.39% [4150/11100]  [37.4/100.0] [batch_t 0.031 (0.071)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 14.813 (13.525)]
+2024-05-27 17:30:38,817 - Train: 37.84% [4200/11100]  [37.8/100.0] [batch_t 0.190 (0.070)] [data_t 0.158] [optim_t 0.032] [lr 0.000100] [pixel 10.648 (13.232)]
+2024-05-27 17:30:39,974 - ==> Total time: 0:06:07	 Eta: 0:09:58 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:43,019 - Train: 38.29% [4250/11100]  [38.3/100.0] [batch_t 0.031 (0.071)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 15.190 (13.481)]
+2024-05-27 17:30:46,513 - Train: 38.74% [4300/11100]  [38.7/100.0] [batch_t 0.031 (0.070)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 14.569 (13.144)]
+2024-05-27 17:30:48,428 - ==> Total time: 0:06:15	 Eta: 0:09:47 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:30:50,730 - Train: 39.19% [4350/11100]  [39.2/100.0] [batch_t 0.180 (0.077)] [data_t 0.146] [optim_t 0.034] [lr 0.000100] [pixel 13.178 (13.865)]
+2024-05-27 17:30:54,084 - Train: 39.64% [4400/11100]  [39.6/100.0] [batch_t 0.031 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 12.718 (13.062)]
+2024-05-27 17:31:00,857 - Test: 86.21% [50/58] [batch_t 0.020 (0.075)] [pixel 19.083 (14.299)]
+2024-05-27 17:31:01,422 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 25.282 (15.274)]
+2024-05-27 17:31:02,196 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.130 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-27 17:31:02,902 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-27 17:31:03,418 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mIoU_max_px)	
+2024-05-27 17:31:03,790 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.070 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-27 17:31:04,700 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.172 (mIoU_max_px)	
+2024-05-27 17:31:05,624 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-27 17:31:05,636 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     56.649      |  60.904 (30  epoch)   |    72.998    | 74.055 (30  epoch) |      75.200      |   75.806 (10  epoch)   |   75.074    | 75.074 (40  epoch) |   92.130    | 92.130 (40  epoch) |  0.549   | 0.549 (40  epoch)  |    1.261     | 1.261 (40  epoch)  |        0.556         |     0.633 (10  epoch)      |        53.150         |     61.047 (20  epoch)      |         0.279         |      0.318 (10  epoch)      |     0.634     |  0.634 (40  epoch)  |
+| bracket_brown |     84.389      |  84.389 (40  epoch)   |    91.123    | 91.123 (40  epoch) |      87.037      |   87.037 (40  epoch)   |   89.214    | 89.214 (40  epoch) |   96.884    | 96.884 (40  epoch) |  11.170  | 11.170 (40  epoch) |    18.350    | 18.350 (40  epoch) |        8.547         |     8.547 (40  epoch)      |        65.560         |     65.560 (40  epoch)      |         4.564         |      4.564 (40  epoch)      |    10.102     | 10.102 (40  epoch)  |
+| bracket_white |     51.667      |  51.667 (40  epoch)   |    54.398    | 55.295 (30  epoch) |      66.667      |   68.235 (10  epoch)   |   79.956    | 79.956 (40  epoch) |   95.252    | 95.252 (40  epoch) |  0.314   | 0.314 (40  epoch)  |    0.744     | 0.744 (40  epoch)  |        0.403         |     0.403 (40  epoch)      |        60.805         |     60.805 (40  epoch)      |         0.202         |      0.202 (40  epoch)      |     0.373     |  0.373 (40  epoch)  |
+|   connector   |     75.714      |  75.714 (40  epoch)   |    71.992    | 71.992 (40  epoch) |      66.667      |   66.667 (40  epoch)   |   80.281    | 81.091 (30  epoch) |   94.193    | 94.489 (30  epoch) |  12.249  | 12.249 (40  epoch) |    16.984    | 16.984 (40  epoch) |        8.552         |     8.552 (40  epoch)      |        49.537         |     60.392 (20  epoch)      |         4.537         |      4.537 (40  epoch)      |     9.280     |  9.280 (40  epoch)  |
+|  metal_plate  |     42.254      |  42.254 (40  epoch)   |    70.636    | 70.636 (40  epoch) |      84.524      |   84.524 (10  epoch)   |   63.000    | 63.000 (40  epoch) |   87.257    | 87.257 (40  epoch) |  32.427  | 32.427 (40  epoch) |    50.785    | 50.785 (40  epoch) |        24.600        |     24.600 (40  epoch)     |        48.715         |     49.406 (20  epoch)      |        15.393         |     15.393 (40  epoch)      |    34.035     | 34.035 (40  epoch)  |
+|     tubes     |     68.886      |  68.886 (40  epoch)   |    83.448    | 83.448 (40  epoch) |      82.119      |   82.119 (40  epoch)   |   70.825    | 70.825 (40  epoch) |   91.379    | 91.379 (40  epoch) |  8.117   | 8.117 (40  epoch)  |    13.124    | 13.124 (40  epoch) |        6.504         |     6.504 (40  epoch)      |        47.879         |     47.879 (40  epoch)      |         3.400         |      3.400 (40  epoch)      |     7.023     |  7.023 (40  epoch)  |
+|      Avg      |     63.260      |  63.260 (40  epoch)   |    74.099    | 74.099 (40  epoch) |      77.036      |   77.036 (40  epoch)   |   76.392    | 76.392 (40  epoch) |   92.849    | 92.849 (40  epoch) |  10.804  | 10.804 (40  epoch) |    16.875    | 16.875 (40  epoch) |        8.194         |     8.194 (40  epoch)      |        54.274         |     55.555 (30  epoch)      |         4.729         |      4.729 (40  epoch)      |    10.241     | 10.241 (40  epoch)  |
+2024-05-27 17:31:05,739 - ==> Total time: 0:06:32	 Eta: 0:09:49 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:08,033 - Train: 40.09% [4450/11100]  [40.1/100.0] [batch_t 0.035 (0.080)] [data_t 0.004] [optim_t 0.030] [lr 0.000100] [pixel 12.156 (13.416)]
+2024-05-27 17:31:11,395 - Train: 40.54% [4500/11100]  [40.5/100.0] [batch_t 0.031 (0.067)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 13.262 (13.113)]
+2024-05-27 17:31:14,892 - Train: 40.99% [4550/11100]  [41.0/100.0] [batch_t 0.072 (0.070)] [data_t 0.041] [optim_t 0.031] [lr 0.000100] [pixel 13.147 (13.088)]
+2024-05-27 17:31:14,925 - ==> Total time: 0:06:42	 Eta: 0:09:38 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:19,584 - Train: 41.44% [4600/11100]  [41.4/100.0] [batch_t 0.183 (0.077)] [data_t 0.151] [optim_t 0.032] [lr 0.000100] [pixel 12.137 (13.067)]
+2024-05-27 17:31:22,967 - Train: 41.89% [4650/11100]  [41.9/100.0] [batch_t 0.030 (0.068)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 13.716 (12.969)]
+2024-05-27 17:31:23,784 - ==> Total time: 0:06:50	 Eta: 0:09:27 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:27,253 - Train: 42.34% [4700/11100]  [42.3/100.0] [batch_t 0.033 (0.072)] [data_t 0.001] [optim_t 0.033] [lr 0.000100] [pixel 12.552 (12.900)]
+2024-05-27 17:31:30,621 - Train: 42.79% [4750/11100]  [42.8/100.0] [batch_t 0.034 (0.067)] [data_t 0.001] [optim_t 0.033] [lr 0.000100] [pixel 14.311 (13.106)]
+2024-05-27 17:31:32,255 - ==> Total time: 0:06:59	 Eta: 0:09:15 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:35,121 - Train: 43.24% [4800/11100]  [43.2/100.0] [batch_t 0.029 (0.073)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.762 (12.677)]
+2024-05-27 17:31:38,658 - Train: 43.69% [4850/11100]  [43.7/100.0] [batch_t 0.190 (0.071)] [data_t 0.157] [optim_t 0.033] [lr 0.000100] [pixel 12.246 (13.004)]
+2024-05-27 17:31:40,913 - ==> Total time: 0:07:08	 Eta: 0:09:04 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:43,030 - Train: 44.14% [4900/11100]  [44.1/100.0] [batch_t 0.031 (0.073)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 13.951 (12.545)]
+2024-05-27 17:31:46,542 - Train: 44.59% [4950/11100]  [44.6/100.0] [batch_t 0.031 (0.070)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 11.579 (13.040)]
+2024-05-27 17:31:49,609 - ==> Total time: 0:07:16	 Eta: 0:08:53 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:31:50,846 - Train: 45.05% [5000/11100]  [45.0/100.0] [batch_t 0.170 (0.103)] [data_t 0.137] [optim_t 0.033] [lr 0.000100] [pixel 13.304 (12.751)]
+2024-05-27 17:31:54,189 - Train: 45.50% [5050/11100]  [45.5/100.0] [batch_t 0.030 (0.067)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 15.171 (12.737)]
+2024-05-27 17:31:57,674 - Train: 45.95% [5100/11100]  [45.9/100.0] [batch_t 0.168 (0.070)] [data_t 0.136] [optim_t 0.032] [lr 0.000100] [pixel 12.364 (12.602)]
+2024-05-27 17:31:58,021 - ==> Total time: 0:07:25	 Eta: 0:08:42 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:01,993 - Train: 46.40% [5150/11100]  [46.4/100.0] [batch_t 0.029 (0.070)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.055 (12.684)]
+2024-05-27 17:32:05,509 - Train: 46.85% [5200/11100]  [46.8/100.0] [batch_t 0.031 (0.070)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 12.458 (12.561)]
+2024-05-27 17:32:06,638 - ==> Total time: 0:07:33	 Eta: 0:08:31 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:09,770 - Train: 47.30% [5250/11100]  [47.3/100.0] [batch_t 0.189 (0.074)] [data_t 0.157] [optim_t 0.033] [lr 0.000100] [pixel 13.957 (12.850)]
+2024-05-27 17:32:13,121 - Train: 47.75% [5300/11100]  [47.7/100.0] [batch_t 0.030 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 12.769 (12.495)]
+2024-05-27 17:32:15,044 - ==> Total time: 0:07:42	 Eta: 0:08:20 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:17,434 - Train: 48.20% [5350/11100]  [48.2/100.0] [batch_t 0.029 (0.075)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 12.086 (12.406)]
+2024-05-27 17:32:20,790 - Train: 48.65% [5400/11100]  [48.6/100.0] [batch_t 0.028 (0.067)] [data_t 0.000] [optim_t 0.027] [lr 0.000100] [pixel 13.129 (12.543)]
+2024-05-27 17:32:23,532 - ==> Total time: 0:07:50	 Eta: 0:08:09 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:25,087 - Train: 49.10% [5450/11100]  [49.1/100.0] [batch_t 0.028 (0.076)] [data_t 0.001] [optim_t 0.027] [lr 0.000100] [pixel 10.793 (12.427)]
+2024-05-27 17:32:28,624 - Train: 49.55% [5500/11100]  [49.5/100.0] [batch_t 0.201 (0.071)] [data_t 0.171] [optim_t 0.030] [lr 0.000100] [pixel 10.586 (12.333)]
+2024-05-27 17:32:31,975 - Train: 50.00% [5550/11100]  [50.0/100.0] [batch_t 0.028 (0.067)] [data_t 0.000] [optim_t 0.027] [lr 0.000100] [pixel 12.926 (12.536)]
+2024-05-27 17:32:35,855 - Test: 86.21% [50/58] [batch_t 0.021 (0.075)] [pixel 18.590 (13.461)]
+2024-05-27 17:32:36,420 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 24.877 (14.479)]
+2024-05-27 17:32:37,193 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-27 17:32:37,879 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.123 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.043 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.123 (mIoU_max_px)	
+2024-05-27 17:32:38,388 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-27 17:32:38,751 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-27 17:32:39,615 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.159 (mF1_max_px)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.158 (mIoU_max_px)	
+2024-05-27 17:32:40,505 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.165 (mIoU_max_px)	
+2024-05-27 17:32:40,514 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     66.356      |  66.356 (50  epoch)   |    78.553    | 78.553 (50  epoch) |      75.200      |   75.806 (10  epoch)   |   75.998    | 75.998 (50  epoch) |   92.123    | 92.130 (40  epoch) |  0.562   | 0.562 (50  epoch)  |    1.290     | 1.290 (50  epoch)  |        0.532         |     0.633 (10  epoch)      |        47.739         |     61.047 (20  epoch)      |         0.267         |      0.318 (10  epoch)      |     0.649     |  0.649 (50  epoch)  |
+| bracket_brown |     86.576      |  86.576 (50  epoch)   |    92.116    | 92.116 (50  epoch) |      90.909      |   90.909 (50  epoch)   |   89.454    | 89.454 (50  epoch) |   97.390    | 97.390 (50  epoch) |  15.907  | 15.907 (50  epoch) |    23.454    | 23.454 (50  epoch) |        10.030        |     10.030 (50  epoch)     |        66.583         |     66.583 (50  epoch)      |         5.454         |      5.454 (50  epoch)      |    13.285     | 13.285 (50  epoch)  |
+| bracket_white |     54.111      |  54.111 (50  epoch)   |    60.813    | 60.813 (50  epoch) |      66.667      |   68.235 (10  epoch)   |   80.317    | 80.317 (50  epoch) |   95.426    | 95.426 (50  epoch) |  0.304   | 0.314 (40  epoch)  |    0.694     | 0.744 (40  epoch)  |        0.376         |     0.403 (40  epoch)      |        55.855         |     60.805 (40  epoch)      |         0.189         |      0.202 (40  epoch)      |     0.348     |  0.373 (40  epoch)  |
+|   connector   |     75.238      |  75.714 (40  epoch)   |    64.725    | 71.992 (40  epoch) |      64.516      |   66.667 (40  epoch)   |   82.801    | 82.801 (50  epoch) |   94.916    | 94.916 (50  epoch) |  13.768  | 13.768 (50  epoch) |    18.173    | 18.173 (50  epoch) |        8.932         |     8.932 (50  epoch)      |        48.400         |     60.392 (20  epoch)      |         4.760         |      4.760 (50  epoch)      |     9.995     |  9.995 (50  epoch)  |
+|  metal_plate  |     42.470      |  42.470 (50  epoch)   |    69.519    | 70.636 (40  epoch) |      84.524      |   84.524 (10  epoch)   |   67.228    | 67.228 (50  epoch) |   88.620    | 88.620 (50  epoch) |  35.587  | 35.587 (50  epoch) |    52.939    | 52.939 (50  epoch) |        25.132        |     25.132 (50  epoch)     |        48.037         |     49.406 (20  epoch)      |        15.874         |     15.874 (50  epoch)      |    35.998     | 35.998 (50  epoch)  |
+|     tubes     |     63.813      |  68.886 (40  epoch)   |    80.193    | 83.448 (40  epoch) |      81.657      |   82.119 (40  epoch)   |   71.836    | 71.836 (50  epoch) |   91.685    | 91.685 (50  epoch) |  8.356   | 8.356 (50  epoch)  |    13.419    | 13.419 (50  epoch) |        6.501         |     6.504 (40  epoch)      |        47.718         |     47.879 (40  epoch)      |         3.406         |      3.406 (50  epoch)      |     7.192     |  7.192 (50  epoch)  |
+|      Avg      |     64.761      |  64.761 (50  epoch)   |    74.320    | 74.320 (50  epoch) |      77.245      |   77.245 (50  epoch)   |   77.939    | 77.939 (50  epoch) |   93.360    | 93.360 (50  epoch) |  12.414  | 12.414 (50  epoch) |    18.328    | 18.328 (50  epoch) |        8.584         |     8.584 (50  epoch)      |        52.389         |     55.555 (30  epoch)      |         4.992         |      4.992 (50  epoch)      |    11.245     | 11.245 (50  epoch)  |
+2024-05-27 17:32:40,607 - ==> Total time: 0:08:07	 Eta: 0:08:07 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:45,468 - Train: 50.45% [5600/11100]  [50.5/100.0] [batch_t 0.028 (0.072)] [data_t 0.001] [optim_t 0.028] [lr 0.000100] [pixel 11.610 (12.314)]
+2024-05-27 17:32:48,831 - Train: 50.90% [5650/11100]  [50.9/100.0] [batch_t 0.028 (0.067)] [data_t 0.000] [optim_t 0.027] [lr 0.000100] [pixel 12.402 (12.457)]
+2024-05-27 17:32:49,640 - ==> Total time: 0:08:16	 Eta: 0:07:57 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:32:53,151 - Train: 51.35% [5700/11100]  [51.4/100.0] [batch_t 0.029 (0.072)] [data_t 0.000] [optim_t 0.028] [lr 0.000100] [pixel 12.606 (12.663)]
+2024-05-27 17:32:56,690 - Train: 51.80% [5750/11100]  [51.8/100.0] [batch_t 0.189 (0.071)] [data_t 0.158] [optim_t 0.031] [lr 0.000100] [pixel 11.466 (12.091)]
+2024-05-27 17:32:58,147 - ==> Total time: 0:08:25	 Eta: 0:07:46 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:00,833 - Train: 52.25% [5800/11100]  [52.3/100.0] [batch_t 0.030 (0.071)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 9.957 (12.190)]
+2024-05-27 17:33:04,340 - Train: 52.70% [5850/11100]  [52.7/100.0] [batch_t 0.046 (0.070)] [data_t 0.016] [optim_t 0.029] [lr 0.000100] [pixel 13.536 (12.324)]
+2024-05-27 17:33:06,564 - ==> Total time: 0:08:33	 Eta: 0:07:35 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:08,744 - Train: 53.15% [5900/11100]  [53.2/100.0] [batch_t 0.185 (0.089)] [data_t 0.153] [optim_t 0.032] [lr 0.000100] [pixel 13.188 (12.596)]
+2024-05-27 17:33:12,122 - Train: 53.60% [5950/11100]  [53.6/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.589 (12.151)]
+2024-05-27 17:33:15,179 - ==> Total time: 0:08:42	 Eta: 0:07:24 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:16,944 - Train: 54.05% [6000/11100]  [54.1/100.0] [batch_t 0.030 (0.096)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.449 (11.431)]
+2024-05-27 17:33:20,310 - Train: 54.50% [6050/11100]  [54.5/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.473 (12.242)]
+2024-05-27 17:33:23,805 - Train: 54.95% [6100/11100]  [55.0/100.0] [batch_t 0.030 (0.070)] [data_t 0.000] [optim_t 0.030] [lr 0.000100] [pixel 10.957 (12.109)]
+2024-05-27 17:33:24,113 - ==> Total time: 0:08:51	 Eta: 0:07:14 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:28,074 - Train: 55.41% [6150/11100]  [55.4/100.0] [batch_t 0.188 (0.073)] [data_t 0.157] [optim_t 0.031] [lr 0.000100] [pixel 11.514 (12.339)]
+2024-05-27 17:33:31,430 - Train: 55.86% [6200/11100]  [55.9/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 9.273 (11.804)]
+2024-05-27 17:33:32,532 - ==> Total time: 0:08:59	 Eta: 0:07:04 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:35,690 - Train: 56.31% [6250/11100]  [56.3/100.0] [batch_t 0.029 (0.073)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.396 (12.194)]
+2024-05-27 17:33:39,024 - Train: 56.76% [6300/11100]  [56.8/100.0] [batch_t 0.028 (0.067)] [data_t 0.001] [optim_t 0.028] [lr 0.000100] [pixel 12.967 (12.017)]
+2024-05-27 17:33:40,920 - ==> Total time: 0:09:08	 Eta: 0:06:53 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:43,341 - Train: 57.21% [6350/11100]  [57.2/100.0] [batch_t 0.030 (0.074)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.269 (12.015)]
+2024-05-27 17:33:46,883 - Train: 57.66% [6400/11100]  [57.7/100.0] [batch_t 0.190 (0.071)] [data_t 0.159] [optim_t 0.030] [lr 0.000100] [pixel 12.179 (12.076)]
+2024-05-27 17:33:49,442 - ==> Total time: 0:09:16	 Eta: 0:06:43 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:51,097 - Train: 58.11% [6450/11100]  [58.1/100.0] [batch_t 0.028 (0.075)] [data_t 0.000] [optim_t 0.028] [lr 0.000100] [pixel 11.923 (11.275)]
+2024-05-27 17:33:54,588 - Train: 58.56% [6500/11100]  [58.6/100.0] [batch_t 0.028 (0.070)] [data_t 0.000] [optim_t 0.028] [lr 0.000100] [pixel 11.706 (11.940)]
+2024-05-27 17:33:57,896 - ==> Total time: 0:09:25	 Eta: 0:06:32 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:33:58,900 - Train: 59.01% [6550/11100]  [59.0/100.0] [batch_t 0.269 (0.269)] [data_t 0.228] [optim_t 0.041] [lr 0.000100] [pixel 12.627 (12.627)]
+2024-05-27 17:34:02,291 - Train: 59.46% [6600/11100]  [59.5/100.0] [batch_t 0.028 (0.068)] [data_t 0.001] [optim_t 0.027] [lr 0.000100] [pixel 13.187 (11.749)]
+2024-05-27 17:34:05,823 - Train: 59.91% [6650/11100]  [59.9/100.0] [batch_t 0.195 (0.071)] [data_t 0.165] [optim_t 0.030] [lr 0.000100] [pixel 11.855 (11.877)]
+2024-05-27 17:34:10,582 - Test: 86.21% [50/58] [batch_t 0.020 (0.075)] [pixel 18.190 (13.031)]
+2024-05-27 17:34:11,149 - Test: 100.00% [58/58] [batch_t 0.015 (0.075)] [pixel 24.937 (14.078)]
+2024-05-27 17:34:11,918 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.132 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-27 17:34:12,609 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.125 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.122 (mIoU_max_px)	
+2024-05-27 17:34:13,124 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mIoU_max_px)	
+2024-05-27 17:34:13,488 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-27 17:34:14,357 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.055 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.158 (mIoU_max_px)	
+2024-05-27 17:34:15,255 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-27 17:34:15,264 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     72.074      |  72.074 (60  epoch)   |    81.897    | 81.897 (60  epoch) |      76.667      |   76.667 (60  epoch)   |   77.911    | 77.911 (60  epoch) |   92.919    | 92.919 (60  epoch) |  0.622   | 0.622 (60  epoch)  |    1.483     | 1.483 (60  epoch)  |        0.551         |     0.633 (10  epoch)      |        45.829         |     61.047 (20  epoch)      |         0.277         |      0.318 (10  epoch)      |     0.747     |  0.747 (60  epoch)  |
+| bracket_brown |     91.026      |  91.026 (60  epoch)   |    94.669    | 94.669 (60  epoch) |      91.743      |   91.743 (60  epoch)   |   90.063    | 90.063 (60  epoch) |   97.613    | 97.613 (60  epoch) |  17.151  | 17.151 (60  epoch) |    25.630    | 25.630 (60  epoch) |        10.444        |     10.444 (60  epoch)     |        63.008         |     66.583 (50  epoch)      |         5.716         |      5.716 (60  epoch)      |    14.699     | 14.699 (60  epoch)  |
+| bracket_white |     60.667      |  60.667 (60  epoch)   |    64.053    | 64.053 (60  epoch) |      67.416      |   68.235 (10  epoch)   |   80.622    | 80.622 (60  epoch) |   95.329    | 95.426 (50  epoch) |  0.329   | 0.329 (60  epoch)  |    0.773     | 0.773 (60  epoch)  |        0.431         |     0.431 (60  epoch)      |        56.834         |     60.805 (40  epoch)      |         0.216         |      0.216 (60  epoch)      |     0.388     |  0.388 (60  epoch)  |
+|   connector   |     67.143      |  75.714 (40  epoch)   |    50.832    | 71.992 (40  epoch) |      57.778      |   66.667 (40  epoch)   |   83.052    | 83.052 (60  epoch) |   94.974    | 94.974 (60  epoch) |  9.575   | 13.768 (50  epoch) |    15.487    | 18.173 (50  epoch) |        7.957         |     8.932 (50  epoch)      |        55.790         |     60.392 (20  epoch)      |         4.207         |      4.760 (50  epoch)      |     8.394     |  9.995 (50  epoch)  |
+|  metal_plate  |     42.524      |  42.524 (60  epoch)   |    70.507    | 70.636 (40  epoch) |      84.524      |   84.524 (10  epoch)   |   69.499    | 69.499 (60  epoch) |   89.379    | 89.379 (60  epoch) |  37.459  | 37.459 (60  epoch) |    54.068    | 54.068 (60  epoch) |        25.556        |     25.556 (60  epoch)     |        47.906         |     49.406 (20  epoch)      |        16.226         |     16.226 (60  epoch)      |    37.050     | 37.050 (60  epoch)  |
+|     tubes     |     70.018      |  70.018 (60  epoch)   |    83.157    | 83.448 (40  epoch) |      82.667      |   82.667 (60  epoch)   |   71.974    | 71.974 (60  epoch) |   91.735    | 91.735 (60  epoch) |  8.788   | 8.788 (60  epoch)  |    13.804    | 13.804 (60  epoch) |        6.620         |     6.620 (60  epoch)      |        47.987         |     47.987 (60  epoch)      |         3.471         |      3.471 (60  epoch)      |     7.414     |  7.414 (60  epoch)  |
+|      Avg      |     67.242      |  67.242 (60  epoch)   |    74.186    | 74.320 (50  epoch) |      76.799      |   77.245 (50  epoch)   |   78.853    | 78.853 (60  epoch) |   93.658    | 93.658 (60  epoch) |  12.321  | 12.414 (50  epoch) |    18.541    | 18.541 (60  epoch) |        8.593         |     8.593 (60  epoch)      |        52.893         |     55.555 (30  epoch)      |         5.019         |      5.019 (60  epoch)      |    11.449     | 11.449 (60  epoch)  |
+2024-05-27 17:34:15,342 - ==> Total time: 0:09:42	 Eta: 0:06:28 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:34:25,977 - Train: 60.36% [6700/11100]  [60.4/100.0] [batch_t 0.029 (0.070)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 12.170 (11.960)]
+2024-05-27 17:34:29,506 - Train: 60.81% [6750/11100]  [60.8/100.0] [batch_t 0.030 (0.070)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 11.083 (11.625)]
+2024-05-27 17:34:30,909 - ==> Total time: 0:09:58	 Eta: 0:06:22 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:34:33,860 - Train: 61.26% [6800/11100]  [61.3/100.0] [batch_t 0.167 (0.074)] [data_t 0.134] [optim_t 0.032] [lr 0.000100] [pixel 16.604 (12.008)]
+2024-05-27 17:34:37,263 - Train: 61.71% [6850/11100]  [61.7/100.0] [batch_t 0.031 (0.068)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 11.462 (11.676)]
+2024-05-27 17:34:39,477 - ==> Total time: 0:10:06	 Eta: 0:06:11 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:34:41,883 - Train: 62.16% [6900/11100]  [62.2/100.0] [batch_t 0.030 (0.076)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 12.193 (11.719)]
+2024-05-27 17:34:45,212 - Train: 62.61% [6950/11100]  [62.6/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.312 (11.737)]
+2024-05-27 17:34:48,201 - ==> Total time: 0:10:15	 Eta: 0:06:01 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:34:49,491 - Train: 63.06% [7000/11100]  [63.1/100.0] [batch_t 0.029 (0.084)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 11.762 (11.199)]
+2024-05-27 17:34:53,048 - Train: 63.51% [7050/11100]  [63.5/100.0] [batch_t 0.188 (0.071)] [data_t 0.157] [optim_t 0.031] [lr 0.000100] [pixel 13.724 (11.616)]
+2024-05-27 17:34:56,417 - Train: 63.96% [7100/11100]  [64.0/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.041 (11.616)]
+2024-05-27 17:34:56,690 - ==> Total time: 0:10:23	 Eta: 0:05:50 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:00,684 - Train: 64.41% [7150/11100]  [64.4/100.0] [batch_t 0.029 (0.072)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 10.717 (11.711)]
+2024-05-27 17:35:04,045 - Train: 64.86% [7200/11100]  [64.9/100.0] [batch_t 0.029 (0.067)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 10.183 (11.466)]
+2024-05-27 17:35:05,117 - ==> Total time: 0:10:32	 Eta: 0:05:40 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:08,638 - Train: 65.32% [7250/11100]  [65.3/100.0] [batch_t 0.029 (0.077)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.842 (11.284)]
+2024-05-27 17:35:12,168 - Train: 65.77% [7300/11100]  [65.8/100.0] [batch_t 0.182 (0.071)] [data_t 0.151] [optim_t 0.031] [lr 0.000100] [pixel 9.436 (11.597)]
+2024-05-27 17:35:13,868 - ==> Total time: 0:10:40	 Eta: 0:05:30 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:16,544 - Train: 66.22% [7350/11100]  [66.2/100.0] [batch_t 0.029 (0.071)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.729 (11.619)]
+2024-05-27 17:35:20,055 - Train: 66.67% [7400/11100]  [66.7/100.0] [batch_t 0.042 (0.070)] [data_t 0.012] [optim_t 0.030] [lr 0.000100] [pixel 12.524 (11.414)]
+2024-05-27 17:35:22,568 - ==> Total time: 0:10:49	 Eta: 0:05:19 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:24,343 - Train: 67.12% [7450/11100]  [67.1/100.0] [batch_t 0.189 (0.084)] [data_t 0.157] [optim_t 0.032] [lr 0.000100] [pixel 10.758 (11.421)]
+2024-05-27 17:35:27,723 - Train: 67.57% [7500/11100]  [67.6/100.0] [batch_t 0.029 (0.068)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.971 (11.658)]
+2024-05-27 17:35:31,040 - ==> Total time: 0:10:58	 Eta: 0:05:09 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:32,041 - Train: 68.02% [7550/11100]  [68.0/100.0] [batch_t 0.030 (0.139)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 11.039 (10.238)]
+2024-05-27 17:35:35,377 - Train: 68.47% [7600/11100]  [68.5/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.627 (11.347)]
+2024-05-27 17:35:38,846 - Train: 68.92% [7650/11100]  [68.9/100.0] [batch_t 0.030 (0.069)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 10.811 (11.396)]
+2024-05-27 17:35:39,457 - ==> Total time: 0:11:06	 Eta: 0:04:59 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:43,281 - Train: 69.37% [7700/11100]  [69.4/100.0] [batch_t 0.187 (0.073)] [data_t 0.156] [optim_t 0.031] [lr 0.000100] [pixel 10.581 (11.306)]
+2024-05-27 17:35:46,649 - Train: 69.82% [7750/11100]  [69.8/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 10.879 (11.382)]
+2024-05-27 17:35:51,930 - Test: 86.21% [50/58] [batch_t 0.022 (0.075)] [pixel 18.263 (12.603)]
+2024-05-27 17:35:52,490 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 24.985 (13.710)]
+2024-05-27 17:35:53,267 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.132 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-27 17:35:53,959 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.122 (mIoU_max_px)	
+2024-05-27 17:35:54,476 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.032 (mIoU_px_0.2_0.8_0.1)	  0.095 (mIoU_max_px)	
+2024-05-27 17:35:54,841 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-27 17:35:55,716 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.055 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.164 (mIoU_max_px)	
+2024-05-27 17:35:56,642 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.173 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.172 (mIoU_max_px)	
+2024-05-27 17:35:56,648 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     68.484      |  72.074 (60  epoch)   |    79.710    | 81.897 (60  epoch) |      75.410      |   76.667 (60  epoch)   |   78.011    | 78.011 (70  epoch) |   92.617    | 92.919 (60  epoch) |  0.605   | 0.622 (60  epoch)  |    1.479     | 1.483 (60  epoch)  |        0.563         |     0.633 (10  epoch)      |        44.919         |     61.047 (20  epoch)      |         0.283         |      0.318 (10  epoch)      |     0.745     |  0.747 (60  epoch)  |
+| bracket_brown |     92.006      |  92.006 (70  epoch)   |    95.631    | 95.631 (70  epoch) |      93.578      |   93.578 (70  epoch)   |   90.081    | 90.081 (70  epoch) |   97.697    | 97.697 (70  epoch) |  18.677  | 18.677 (70  epoch) |    27.370    | 27.370 (70  epoch) |        10.690        |     10.690 (70  epoch)     |        63.280         |     66.583 (50  epoch)      |         5.883         |      5.883 (70  epoch)      |    15.855     | 15.855 (70  epoch)  |
+| bracket_white |     60.889      |  60.889 (70  epoch)   |    64.446    | 64.446 (70  epoch) |      67.532      |   68.235 (10  epoch)   |   79.999    | 80.622 (60  epoch) |   95.126    | 95.426 (50  epoch) |  0.306   | 0.329 (60  epoch)  |    0.735     | 0.773 (60  epoch)  |        0.408         |     0.431 (60  epoch)      |        52.850         |     60.805 (40  epoch)      |         0.205         |      0.216 (60  epoch)      |     0.369     |  0.388 (60  epoch)  |
+|   connector   |     69.762      |  75.714 (40  epoch)   |    51.745    | 71.992 (40  epoch) |      59.459      |   66.667 (40  epoch)   |   83.188    | 83.188 (70  epoch) |   95.009    | 95.009 (70  epoch) |  9.405   | 13.768 (50  epoch) |    16.199    | 18.173 (50  epoch) |        7.943         |     8.932 (50  epoch)      |        54.732         |     60.392 (20  epoch)      |         4.204         |      4.760 (50  epoch)      |     8.814     |  9.995 (50  epoch)  |
+|  metal_plate  |     45.937      |  45.937 (70  epoch)   |    73.678    | 73.678 (70  epoch) |      84.848      |   84.848 (70  epoch)   |   71.210    | 71.210 (70  epoch) |   89.846    | 89.846 (70  epoch) |  38.531  | 38.531 (70  epoch) |    55.163    | 55.163 (70  epoch) |        25.722        |     25.722 (70  epoch)     |        47.330         |     49.406 (20  epoch)      |        16.394         |     16.394 (70  epoch)      |    38.086     | 38.086 (70  epoch)  |
+|     tubes     |     62.002      |  70.018 (60  epoch)   |    79.610    | 83.448 (40  epoch) |      82.635      |   82.667 (60  epoch)   |   70.989    | 71.974 (60  epoch) |   91.449    | 91.735 (60  epoch) |  9.194   | 9.194 (70  epoch)  |    14.587    | 14.587 (70  epoch) |        6.549         |     6.620 (60  epoch)      |        47.290         |     47.987 (60  epoch)      |         3.437         |      3.471 (60  epoch)      |     7.867     |  7.867 (70  epoch)  |
+|      Avg      |     66.513      |  67.242 (60  epoch)   |    74.137    | 74.320 (50  epoch) |      77.244      |   77.245 (50  epoch)   |   78.913    | 78.913 (70  epoch) |   93.624    | 93.658 (60  epoch) |  12.786  | 12.786 (70  epoch) |    19.256    | 19.256 (70  epoch) |        8.646         |     8.646 (70  epoch)      |        51.734         |     55.555 (30  epoch)      |         5.068         |      5.068 (70  epoch)      |    11.956     | 11.956 (70  epoch)  |
+2024-05-27 17:35:56,732 - ==> Total time: 0:11:23	 Eta: 0:04:53 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:35:59,849 - Train: 70.27% [7800/11100]  [70.3/100.0] [batch_t 0.030 (0.073)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.157 (11.430)]
+2024-05-27 17:36:03,193 - Train: 70.72% [7850/11100]  [70.7/100.0] [batch_t 0.030 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 10.783 (11.133)]
+2024-05-27 17:36:05,345 - ==> Total time: 0:11:32	 Eta: 0:04:42 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:07,889 - Train: 71.17% [7900/11100]  [71.2/100.0] [batch_t 0.029 (0.074)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 9.146 (11.439)]
+2024-05-27 17:36:11,435 - Train: 71.62% [7950/11100]  [71.6/100.0] [batch_t 0.190 (0.071)] [data_t 0.159] [optim_t 0.031] [lr 0.000100] [pixel 8.658 (11.147)]
+2024-05-27 17:36:14,254 - ==> Total time: 0:11:41	 Eta: 0:04:32 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:15,706 - Train: 72.07% [8000/11100]  [72.1/100.0] [batch_t 0.029 (0.079)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 9.805 (11.176)]
+2024-05-27 17:36:19,229 - Train: 72.52% [8050/11100]  [72.5/100.0] [batch_t 0.030 (0.070)] [data_t 0.001] [optim_t 0.030] [lr 0.000100] [pixel 9.431 (11.153)]
+2024-05-27 17:36:22,549 - Train: 72.97% [8100/11100]  [73.0/100.0] [batch_t 0.030 (0.066)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 10.122 (11.258)]
+2024-05-27 17:36:22,800 - ==> Total time: 0:11:49	 Eta: 0:04:22 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:26,920 - Train: 73.42% [8150/11100]  [73.4/100.0] [batch_t 0.033 (0.071)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 10.854 (11.132)]
+2024-05-27 17:36:30,414 - Train: 73.87% [8200/11100]  [73.9/100.0] [batch_t 0.188 (0.070)] [data_t 0.155] [optim_t 0.033] [lr 0.000100] [pixel 12.085 (11.233)]
+2024-05-27 17:36:31,298 - ==> Total time: 0:11:58	 Eta: 0:04:12 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:34,501 - Train: 74.32% [8250/11100]  [74.3/100.0] [batch_t 0.030 (0.071)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 10.904 (11.187)]
+2024-05-27 17:36:38,002 - Train: 74.77% [8300/11100]  [74.8/100.0] [batch_t 0.056 (0.070)] [data_t 0.025] [optim_t 0.030] [lr 0.000100] [pixel 9.651 (11.237)]
+2024-05-27 17:36:39,660 - ==> Total time: 0:12:06	 Eta: 0:04:02 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:42,295 - Train: 75.23% [8350/11100]  [75.2/100.0] [batch_t 0.190 (0.077)] [data_t 0.158] [optim_t 0.032] [lr 0.000100] [pixel 10.007 (10.570)]
+2024-05-27 17:36:45,649 - Train: 75.68% [8400/11100]  [75.7/100.0] [batch_t 0.032 (0.067)] [data_t 0.001] [optim_t 0.031] [lr 0.000100] [pixel 10.591 (11.194)]
+2024-05-27 17:36:48,114 - ==> Total time: 0:12:15	 Eta: 0:03:52 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:49,965 - Train: 76.13% [8450/11100]  [76.1/100.0] [batch_t 0.032 (0.081)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [pixel 8.993 (11.175)]
+2024-05-27 17:36:53,304 - Train: 76.58% [8500/11100]  [76.6/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 10.301 (10.920)]
+2024-05-27 17:36:56,542 - ==> Total time: 0:12:23	 Eta: 0:03:42 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:36:57,587 - Train: 77.03% [8550/11100]  [77.0/100.0] [batch_t 0.029 (0.110)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.241 (11.473)]
+2024-05-27 17:37:01,116 - Train: 77.48% [8600/11100]  [77.5/100.0] [batch_t 0.181 (0.070)] [data_t 0.149] [optim_t 0.032] [lr 0.000100] [pixel 11.865 (10.909)]
+2024-05-27 17:37:04,515 - Train: 77.93% [8650/11100]  [77.9/100.0] [batch_t 0.030 (0.068)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 12.060 (10.971)]
+2024-05-27 17:37:05,057 - ==> Total time: 0:12:32	 Eta: 0:03:32 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:37:09,199 - Train: 78.38% [8700/11100]  [78.4/100.0] [batch_t 0.029 (0.074)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 9.631 (10.890)]
+2024-05-27 17:37:12,571 - Train: 78.83% [8750/11100]  [78.8/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000100] [pixel 11.938 (11.092)]
+2024-05-27 17:37:13,904 - ==> Total time: 0:12:41	 Eta: 0:03:22 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:37:16,814 - Train: 79.28% [8800/11100]  [79.3/100.0] [batch_t 0.029 (0.073)] [data_t 0.001] [optim_t 0.029] [lr 0.000100] [pixel 9.442 (10.749)]
+2024-05-27 17:37:20,347 - Train: 79.73% [8850/11100]  [79.7/100.0] [batch_t 0.164 (0.071)] [data_t 0.133] [optim_t 0.031] [lr 0.000100] [pixel 9.227 (10.950)]
+2024-05-27 17:37:26,819 - Test: 86.21% [50/58] [batch_t 0.018 (0.075)] [pixel 17.789 (12.298)]
+2024-05-27 17:37:27,386 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 24.813 (13.396)]
+2024-05-27 17:37:28,161 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-27 17:37:28,849 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.124 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.043 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.122 (mIoU_max_px)	
+2024-05-27 17:37:29,358 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.032 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-27 17:37:29,725 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-27 17:37:30,594 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.163 (mF1_max_px)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.160 (mIoU_max_px)	
+2024-05-27 17:37:31,490 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-27 17:37:31,496 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     77.194      |  77.194 (80  epoch)   |    84.845    | 84.845 (80  epoch) |      78.182      |   78.182 (80  epoch)   |   79.375    | 79.375 (80  epoch) |   93.093    | 93.093 (80  epoch) |  0.642   | 0.642 (80  epoch)  |    1.583     | 1.583 (80  epoch)  |        0.573         |     0.633 (10  epoch)      |        44.557         |     61.047 (20  epoch)      |         0.288         |      0.318 (10  epoch)      |     0.798     |  0.798 (80  epoch)  |
+| bracket_brown |     94.118      |  94.118 (80  epoch)   |    96.987    | 96.987 (80  epoch) |      93.578      |   93.578 (70  epoch)   |   89.962    | 90.081 (70  epoch) |   97.821    | 97.821 (80  epoch) |  22.740  | 22.740 (80  epoch) |    31.210    | 31.210 (80  epoch) |        12.516        |     12.516 (80  epoch)     |        66.877         |     66.877 (80  epoch)      |         7.023         |      7.023 (80  epoch)      |    18.490     | 18.490 (80  epoch)  |
+| bracket_white |     66.778      |  66.778 (80  epoch)   |    69.122    | 69.122 (80  epoch) |      69.565      |   69.565 (80  epoch)   |   78.995    | 80.622 (60  epoch) |   94.718    | 95.426 (50  epoch) |  0.303   | 0.329 (60  epoch)  |    0.738     | 0.773 (60  epoch)  |        0.433         |     0.433 (80  epoch)      |        55.547         |     60.805 (40  epoch)      |         0.217         |      0.217 (80  epoch)      |     0.370     |  0.388 (60  epoch)  |
+|   connector   |     67.619      |  75.714 (40  epoch)   |    50.471    | 71.992 (40  epoch) |      57.778      |   66.667 (40  epoch)   |   83.958    | 83.958 (80  epoch) |   95.224    | 95.224 (80  epoch) |  8.164   | 13.768 (50  epoch) |    14.841    | 18.173 (50  epoch) |        7.359         |     8.932 (50  epoch)      |        55.801         |     60.392 (20  epoch)      |         3.878         |      4.760 (50  epoch)      |     8.015     |  9.995 (50  epoch)  |
+|  metal_plate  |     46.262      |  46.262 (80  epoch)   |    73.217    | 73.678 (70  epoch) |      85.030      |   85.030 (80  epoch)   |   72.321    | 72.321 (80  epoch) |   90.207    | 90.207 (80  epoch) |  40.001  | 40.001 (80  epoch) |    55.677    | 55.677 (80  epoch) |        25.685        |     25.722 (70  epoch)     |        46.758         |     49.406 (20  epoch)      |        16.394         |     16.394 (70  epoch)      |    38.578     | 38.578 (80  epoch)  |
+|     tubes     |     67.482      |  70.018 (60  epoch)   |    82.563    | 83.448 (40  epoch) |      82.635      |   82.667 (60  epoch)   |   71.688    | 71.974 (60  epoch) |   91.594    | 91.735 (60  epoch) |  8.870   | 9.194 (70  epoch)  |    13.765    | 14.587 (70  epoch) |        6.598         |     6.620 (60  epoch)      |        47.261         |     47.987 (60  epoch)      |         3.460         |      3.471 (60  epoch)      |     7.391     |  7.867 (70  epoch)  |
+|      Avg      |     69.909      |  69.909 (80  epoch)   |    76.201    | 76.201 (80  epoch) |      77.795      |   77.795 (80  epoch)   |   79.383    | 79.383 (80  epoch) |   93.776    | 93.776 (80  epoch) |  13.453  | 13.453 (80  epoch) |    19.636    | 19.636 (80  epoch) |        8.861         |     8.861 (80  epoch)      |        52.800         |     55.555 (30  epoch)      |         5.210         |      5.210 (80  epoch)      |    12.274     | 12.274 (80  epoch)  |
+2024-05-27 17:37:31,561 - ==> Total time: 0:12:58	 Eta: 0:03:14 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:37:33,879 - Train: 80.18% [8900/11100]  [80.2/100.0] [batch_t 0.029 (0.072)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 11.307 (10.817)]
+2024-05-27 17:37:37,424 - Train: 80.63% [8950/11100]  [80.6/100.0] [batch_t 0.077 (0.071)] [data_t 0.047] [optim_t 0.031] [lr 0.000010] [pixel 8.976 (10.540)]
+2024-05-27 17:37:40,181 - ==> Total time: 0:13:07	 Eta: 0:03:04 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:37:41,649 - Train: 81.08% [9000/11100]  [81.1/100.0] [batch_t 0.186 (0.091)] [data_t 0.154] [optim_t 0.032] [lr 0.000010] [pixel 12.004 (10.357)]
+2024-05-27 17:37:45,022 - Train: 81.53% [9050/11100]  [81.5/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 10.484 (10.687)]
+2024-05-27 17:37:48,496 - Train: 81.98% [9100/11100]  [82.0/100.0] [batch_t 0.189 (0.069)] [data_t 0.158] [optim_t 0.031] [lr 0.000010] [pixel 8.238 (10.852)]
+2024-05-27 17:37:48,558 - ==> Total time: 0:13:15	 Eta: 0:02:54 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:37:52,562 - Train: 82.43% [9150/11100]  [82.4/100.0] [batch_t 0.029 (0.070)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 9.476 (10.711)]
+2024-05-27 17:37:56,091 - Train: 82.88% [9200/11100]  [82.9/100.0] [batch_t 0.029 (0.070)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 10.105 (10.762)]
+2024-05-27 17:37:56,952 - ==> Total time: 0:13:24	 Eta: 0:02:44 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:00,321 - Train: 83.33% [9250/11100]  [83.3/100.0] [batch_t 0.187 (0.074)] [data_t 0.156] [optim_t 0.031] [lr 0.000010] [pixel 10.362 (10.610)]
+2024-05-27 17:38:03,678 - Train: 83.78% [9300/11100]  [83.8/100.0] [batch_t 0.041 (0.067)] [data_t 0.011] [optim_t 0.029] [lr 0.000010] [pixel 11.075 (10.805)]
+2024-05-27 17:38:05,338 - ==> Total time: 0:13:32	 Eta: 0:02:34 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:08,052 - Train: 84.23% [9350/11100]  [84.2/100.0] [batch_t 0.030 (0.077)] [data_t 0.001] [optim_t 0.030] [lr 0.000010] [pixel 9.358 (10.425)]
+2024-05-27 17:38:11,453 - Train: 84.68% [9400/11100]  [84.7/100.0] [batch_t 0.126 (0.068)] [data_t 0.095] [optim_t 0.031] [lr 0.000010] [pixel 10.456 (11.063)]
+2024-05-27 17:38:13,807 - ==> Total time: 0:13:40	 Eta: 0:02:24 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:15,614 - Train: 85.14% [9450/11100]  [85.1/100.0] [batch_t 0.030 (0.076)] [data_t 0.001] [optim_t 0.030] [lr 0.000010] [pixel 10.786 (10.944)]
+2024-05-27 17:38:19,117 - Train: 85.59% [9500/11100]  [85.6/100.0] [batch_t 0.189 (0.070)] [data_t 0.158] [optim_t 0.031] [lr 0.000010] [pixel 10.034 (10.676)]
+2024-05-27 17:38:22,200 - ==> Total time: 0:13:49	 Eta: 0:02:15 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:23,215 - Train: 86.04% [9550/11100]  [86.0/100.0] [batch_t 0.030 (0.097)] [data_t 0.001] [optim_t 0.030] [lr 0.000010] [pixel 10.999 (11.095)]
+2024-05-27 17:38:26,701 - Train: 86.49% [9600/11100]  [86.5/100.0] [batch_t 0.037 (0.070)] [data_t 0.001] [optim_t 0.036] [lr 0.000010] [pixel 12.951 (10.814)]
+2024-05-27 17:38:30,063 - Train: 86.94% [9650/11100]  [86.9/100.0] [batch_t 0.030 (0.067)] [data_t 0.001] [optim_t 0.030] [lr 0.000010] [pixel 10.176 (10.626)]
+2024-05-27 17:38:30,590 - ==> Total time: 0:13:57	 Eta: 0:02:05 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:34,313 - Train: 87.39% [9700/11100]  [87.4/100.0] [batch_t 0.030 (0.071)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 10.543 (10.822)]
+2024-05-27 17:38:37,769 - Train: 87.84% [9750/11100]  [87.8/100.0] [batch_t 0.128 (0.069)] [data_t 0.097] [optim_t 0.032] [lr 0.000010] [pixel 10.612 (10.607)]
+2024-05-27 17:38:38,981 - ==> Total time: 0:14:06	 Eta: 0:01:55 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:41,924 - Train: 88.29% [9800/11100]  [88.3/100.0] [batch_t 0.033 (0.072)] [data_t 0.001] [optim_t 0.033] [lr 0.000010] [pixel 10.302 (10.866)]
+2024-05-27 17:38:45,400 - Train: 88.74% [9850/11100]  [88.7/100.0] [batch_t 0.032 (0.069)] [data_t 0.001] [optim_t 0.032] [lr 0.000010] [pixel 9.299 (10.641)]
+2024-05-27 17:38:47,349 - ==> Total time: 0:14:14	 Eta: 0:01:45 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:38:49,820 - Train: 89.19% [9900/11100]  [89.2/100.0] [batch_t 0.184 (0.079)] [data_t 0.151] [optim_t 0.033] [lr 0.000010] [pixel 9.992 (10.424)]
+2024-05-27 17:38:53,183 - Train: 89.64% [9950/11100]  [89.6/100.0] [batch_t 0.029 (0.067)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 12.594 (10.640)]
+2024-05-27 17:39:00,089 - Test: 86.21% [50/58] [batch_t 0.020 (0.074)] [pixel 17.698 (12.124)]
+2024-05-27 17:39:00,652 - Test: 100.00% [58/58] [batch_t 0.015 (0.074)] [pixel 24.894 (13.248)]
+2024-05-27 17:39:01,428 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.134 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.047 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-27 17:39:02,130 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.126 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-27 17:39:02,646 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.094 (mIoU_max_px)	
+2024-05-27 17:39:03,018 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.025 (mAcc_px_0.2_0.8_0.1)	  0.025 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-27 17:39:03,903 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.170 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.163 (mIoU_max_px)	
+2024-05-27 17:39:04,814 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-27 17:39:04,820 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     77.128      |  77.194 (80  epoch)   |    84.716    | 84.845 (80  epoch) |      79.612      |   79.612 (90  epoch)   |   79.427    | 79.427 (90  epoch) |   93.064    | 93.093 (80  epoch) |  0.648   | 0.648 (90  epoch)  |    1.592     | 1.592 (90  epoch)  |        0.591         |     0.633 (10  epoch)      |        43.720         |     61.047 (20  epoch)      |         0.297         |      0.318 (10  epoch)      |     0.802     |  0.802 (90  epoch)  |
+| bracket_brown |     91.780      |  94.118 (80  epoch)   |    95.285    | 96.987 (80  epoch) |      92.727      |   93.578 (70  epoch)   |   90.719    | 90.719 (90  epoch) |   97.969    | 97.969 (90  epoch) |  24.235  | 24.235 (90  epoch) |    32.618    | 32.618 (90  epoch) |        12.344        |     12.516 (80  epoch)     |        62.752         |     66.877 (80  epoch)      |         6.938         |      7.023 (80  epoch)      |    19.487     | 19.487 (90  epoch)  |
+| bracket_white |     62.556      |  66.778 (80  epoch)   |    65.548    | 69.122 (80  epoch) |      71.053      |   71.053 (90  epoch)   |   79.962    | 80.622 (60  epoch) |   95.005    | 95.426 (50  epoch) |  0.332   | 0.332 (90  epoch)  |    0.786     | 0.786 (90  epoch)  |        0.484         |     0.484 (90  epoch)      |        55.345         |     60.805 (40  epoch)      |         0.243         |      0.243 (90  epoch)      |     0.395     |  0.395 (90  epoch)  |
+|   connector   |     70.238      |  75.714 (40  epoch)   |    50.646    | 71.992 (40  epoch) |      60.000      |   66.667 (40  epoch)   |   83.919    | 83.958 (80  epoch) |   95.212    | 95.224 (80  epoch) |  7.713   | 13.768 (50  epoch) |    15.016    | 18.173 (50  epoch) |        6.398         |     8.932 (50  epoch)      |        51.590         |     60.392 (20  epoch)      |         3.376         |      4.760 (50  epoch)      |     8.117     |  9.995 (50  epoch)  |
+|  metal_plate  |     47.941      |  47.941 (90  epoch)   |    73.962    | 73.962 (90  epoch) |      85.542      |   85.542 (90  epoch)   |   73.355    | 73.355 (90  epoch) |   90.578    | 90.578 (90  epoch) |  40.992  | 40.992 (90  epoch) |    56.657    | 56.657 (90  epoch) |        25.919        |     25.919 (90  epoch)     |        46.424         |     49.406 (20  epoch)      |        16.615         |     16.615 (90  epoch)      |    39.525     | 39.525 (90  epoch)  |
+|     tubes     |     70.290      |  70.290 (90  epoch)   |    83.496    | 83.496 (90  epoch) |      82.635      |   82.667 (60  epoch)   |   71.034    | 71.974 (60  epoch) |   91.433    | 91.735 (60  epoch) |  8.535   | 9.194 (70  epoch)  |    13.578    | 14.587 (70  epoch) |        6.504         |     6.620 (60  epoch)      |        46.830         |     47.987 (60  epoch)      |         3.408         |      3.471 (60  epoch)      |     7.283     |  7.867 (70  epoch)  |
+|      Avg      |     69.989      |  69.989 (90  epoch)   |    75.609    | 76.201 (80  epoch) |      78.595      |   78.595 (90  epoch)   |   79.736    | 79.736 (90  epoch) |   93.877    | 93.877 (90  epoch) |  13.742  | 13.742 (90  epoch) |    20.041    | 20.041 (90  epoch) |        8.707         |     8.861 (80  epoch)      |        51.110         |     55.555 (30  epoch)      |         5.146         |      5.210 (80  epoch)      |    12.602     | 12.602 (90  epoch)  |
+2024-05-27 17:39:04,895 - ==> Total time: 0:14:32	 Eta: 0:01:36 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:07,335 - Train: 90.09% [10000/11100]  [90.1/100.0] [batch_t 0.030 (0.086)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 11.113 (10.006)]
+2024-05-27 17:39:10,679 - Train: 90.54% [10050/11100]  [90.5/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 12.753 (10.763)]
+2024-05-27 17:39:14,198 - Train: 90.99% [10100/11100]  [91.0/100.0] [batch_t 0.081 (0.070)] [data_t 0.049] [optim_t 0.032] [lr 0.000010] [pixel 12.193 (10.711)]
+2024-05-27 17:39:14,233 - ==> Total time: 0:14:41	 Eta: 0:01:27 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:18,458 - Train: 91.44% [10150/11100]  [91.4/100.0] [batch_t 0.186 (0.072)] [data_t 0.156] [optim_t 0.029] [lr 0.000010] [pixel 10.972 (10.776)]
+2024-05-27 17:39:21,812 - Train: 91.89% [10200/11100]  [91.9/100.0] [batch_t 0.029 (0.067)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 9.276 (10.384)]
+2024-05-27 17:39:22,626 - ==> Total time: 0:14:49	 Eta: 0:01:17 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:26,255 - Train: 92.34% [10250/11100]  [92.3/100.0] [batch_t 0.036 (0.072)] [data_t 0.001] [optim_t 0.035] [lr 0.000010] [pixel 11.279 (10.593)]
+2024-05-27 17:39:29,657 - Train: 92.79% [10300/11100]  [92.8/100.0] [batch_t 0.028 (0.068)] [data_t 0.000] [optim_t 0.027] [lr 0.000010] [pixel 9.121 (10.719)]
+2024-05-27 17:39:31,275 - ==> Total time: 0:14:58	 Eta: 0:01:07 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:33,928 - Train: 93.24% [10350/11100]  [93.2/100.0] [batch_t 0.028 (0.073)] [data_t 0.000] [optim_t 0.027] [lr 0.000010] [pixel 9.751 (10.697)]
+2024-05-27 17:39:37,453 - Train: 93.69% [10400/11100]  [93.7/100.0] [batch_t 0.200 (0.070)] [data_t 0.165] [optim_t 0.034] [lr 0.000010] [pixel 9.621 (10.698)]
+2024-05-27 17:39:39,695 - ==> Total time: 0:15:06	 Eta: 0:00:57 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:41,605 - Train: 94.14% [10450/11100]  [94.1/100.0] [batch_t 0.028 (0.074)] [data_t 0.001] [optim_t 0.027] [lr 0.000010] [pixel 11.326 (10.706)]
+2024-05-27 17:39:45,149 - Train: 94.59% [10500/11100]  [94.6/100.0] [batch_t 0.028 (0.071)] [data_t 0.000] [optim_t 0.027] [lr 0.000010] [pixel 11.943 (10.521)]
+2024-05-27 17:39:48,261 - ==> Total time: 0:15:15	 Eta: 0:00:48 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:39:49,454 - Train: 95.05% [10550/11100]  [95.0/100.0] [batch_t 0.180 (0.103)] [data_t 0.151] [optim_t 0.030] [lr 0.000010] [pixel 9.374 (10.078)]
+2024-05-27 17:39:52,829 - Train: 95.50% [10600/11100]  [95.5/100.0] [batch_t 0.028 (0.067)] [data_t 0.000] [optim_t 0.027] [lr 0.000010] [pixel 10.749 (10.579)]
+2024-05-27 17:39:56,322 - Train: 95.95% [10650/11100]  [95.9/100.0] [batch_t 0.197 (0.070)] [data_t 0.167] [optim_t 0.030] [lr 0.000010] [pixel 11.069 (10.838)]
+2024-05-27 17:39:56,655 - ==> Total time: 0:15:23	 Eta: 0:00:38 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:40:00,515 - Train: 96.40% [10700/11100]  [96.4/100.0] [batch_t 0.029 (0.069)] [data_t 0.000] [optim_t 0.028] [lr 0.000010] [pixel 10.744 (10.666)]
+2024-05-27 17:40:04,021 - Train: 96.85% [10750/11100]  [96.8/100.0] [batch_t 0.031 (0.070)] [data_t 0.001] [optim_t 0.030] [lr 0.000010] [pixel 11.225 (10.480)]
+2024-05-27 17:40:05,148 - ==> Total time: 0:15:32	 Eta: 0:00:28 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:40:08,849 - Train: 97.30% [10800/11100]  [97.3/100.0] [batch_t 0.192 (0.075)] [data_t 0.161] [optim_t 0.031] [lr 0.000010] [pixel 9.525 (10.679)]
+2024-05-27 17:40:12,221 - Train: 97.75% [10850/11100]  [97.7/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 8.891 (10.571)]
+2024-05-27 17:40:14,151 - ==> Total time: 0:15:41	 Eta: 0:00:19 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:40:16,533 - Train: 98.20% [10900/11100]  [98.2/100.0] [batch_t 0.030 (0.077)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 10.680 (10.488)]
+2024-05-27 17:40:19,894 - Train: 98.65% [10950/11100]  [98.6/100.0] [batch_t 0.029 (0.067)] [data_t 0.001] [optim_t 0.029] [lr 0.000010] [pixel 10.307 (10.744)]
+2024-05-27 17:40:22,625 - ==> Total time: 0:15:49	 Eta: 0:00:09 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:40:24,288 - Train: 99.10% [11000/11100]  [99.1/100.0] [batch_t 0.029 (0.081)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 10.149 (10.799)]
+2024-05-27 17:40:27,775 - Train: 99.55% [11050/11100]  [99.5/100.0] [batch_t 0.184 (0.070)] [data_t 0.152] [optim_t 0.032] [lr 0.000010] [pixel 11.125 (10.581)]
+2024-05-27 17:40:31,144 - Train: 100.00% [11100/11100]  [100.0/100.0] [batch_t 0.029 (0.067)] [data_t 0.000] [optim_t 0.029] [lr 0.000010] [pixel 9.069 (10.617)]
+2024-05-27 17:40:35,169 - Test: 86.21% [50/58] [batch_t 0.019 (0.075)] [pixel 17.651 (12.075)]
+2024-05-27 17:40:35,740 - Test: 100.00% [58/58] [batch_t 0.016 (0.074)] [pixel 24.763 (13.196)]
+2024-05-27 17:40:36,497 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-27 17:40:37,181 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.123 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.043 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.121 (mIoU_max_px)	
+2024-05-27 17:40:37,688 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.092 (mF1_max_px)	  0.032 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.032 (mIoU_px_0.2_0.8_0.1)	  0.091 (mIoU_max_px)	
+2024-05-27 17:40:38,059 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.072 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-27 17:40:38,924 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.159 (mIoU_max_px)	
+2024-05-27 17:40:39,814 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-27 17:40:39,821 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     78.125      |  78.125 (100 epoch)   |    84.892    | 84.892 (100 epoch) |      79.245      |   79.612 (90  epoch)   |   79.224    | 79.427 (90  epoch) |   93.038    | 93.093 (80  epoch) |  0.642   | 0.648 (90  epoch)  |    1.550     | 1.592 (90  epoch)  |        0.584         |     0.633 (10  epoch)      |        42.959         |     61.047 (20  epoch)      |         0.294         |      0.318 (10  epoch)      |     0.781     |  0.802 (90  epoch)  |
+| bracket_brown |     91.403      |  94.118 (80  epoch)   |    95.033    | 96.987 (80  epoch) |      92.727      |   93.578 (70  epoch)   |   90.676    | 90.719 (90  epoch) |   97.965    | 97.969 (90  epoch) |  23.933  | 24.235 (90  epoch) |    31.986    | 32.618 (90  epoch) |        12.112        |     12.516 (80  epoch)     |        61.354         |     66.877 (80  epoch)      |         6.807         |      7.023 (80  epoch)      |    19.038     | 19.487 (90  epoch)  |
+| bracket_white |     63.556      |  66.778 (80  epoch)   |    67.149    | 69.122 (80  epoch) |      69.565      |   71.053 (90  epoch)   |   79.616    | 80.622 (60  epoch) |   94.966    | 95.426 (50  epoch) |  0.333   | 0.333 (100 epoch)  |    0.790     | 0.790 (100 epoch)  |        0.492         |     0.492 (100 epoch)      |        55.533         |     60.805 (40  epoch)      |         0.247         |      0.247 (100 epoch)      |     0.397     |  0.397 (100 epoch)  |
+|   connector   |     69.762      |  75.714 (40  epoch)   |    49.886    | 71.992 (40  epoch) |      58.537      |   66.667 (40  epoch)   |   83.873    | 83.958 (80  epoch) |   95.197    | 95.224 (80  epoch) |  7.623   | 13.768 (50  epoch) |    14.931    | 18.173 (50  epoch) |        6.428         |     8.932 (50  epoch)      |        52.722         |     60.392 (20  epoch)      |         3.388         |      4.760 (50  epoch)      |     8.068     |  9.995 (50  epoch)  |
+|  metal_plate  |     47.508      |  47.941 (90  epoch)   |    74.267    | 74.267 (100 epoch) |      85.030      |   85.542 (90  epoch)   |   73.623    | 73.623 (100 epoch) |   90.662    | 90.662 (100 epoch) |  41.195  | 41.195 (100 epoch) |    56.890    | 56.890 (100 epoch) |        25.921        |     25.921 (100 epoch)     |        46.347         |     49.406 (20  epoch)      |        16.629         |     16.629 (100 epoch)      |    39.752     | 39.752 (100 epoch)  |
+|     tubes     |     72.464      |  72.464 (100 epoch)   |    84.823    | 84.823 (100 epoch) |      83.099      |   83.099 (100 epoch)   |   71.052    | 71.974 (60  epoch) |   91.446    | 91.735 (60  epoch) |  8.641   | 9.194 (70  epoch)  |    13.516    | 14.587 (70  epoch) |        6.508         |     6.620 (60  epoch)      |        46.625         |     47.987 (60  epoch)      |         3.410         |      3.471 (60  epoch)      |     7.248     |  7.867 (70  epoch)  |
+|      Avg      |     70.470      |  70.470 (100 epoch)   |    76.008    | 76.201 (80  epoch) |      78.034      |   78.595 (90  epoch)   |   79.677    | 79.736 (90  epoch) |   93.879    | 93.879 (100 epoch) |  13.728  | 13.742 (90  epoch) |    19.944    | 20.041 (90  epoch) |        8.674         |     8.861 (80  epoch)      |        50.923         |     55.555 (30  epoch)      |         5.129         |      5.210 (80  epoch)      |    12.547     | 12.602 (90  epoch)  |
+2024-05-27 17:40:39,901 - ==> Total time: 0:16:07	 Eta: 0:00:00 	Logged in 'runs/benchmark/uniad_256_100e/mpdd/UniADTrainer_configs_benchmark_uniad_256_100e_20240527-172432'
+2024-05-27 17:40:40,741 - finish training

@@ -1,0 +1,1011 @@
+2024-05-27 16:02:25,283 - ==> Logging on master GPU: 0
+2024-05-27 16:02:25,284 - ==> Running Trainer: RDTrainer
+2024-05-27 16:02:25,284 - ==> Using GPU: [0] for Training
+2024-05-27 16:02:25,284 - ==> Building model
+2024-05-27 16:02:26,148 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_racm-8234f177.pth'
+2024-05-27 16:02:30,687 - 
+------------------------------------ RD ------------------------------------
+| module                               | #parameters or shape   | #flops       |
+|:-------------------------------------|:-----------------------|:-------------|
+| model                                | 80.61M                 | 28.435G      |
+|  net_t                               |  24.863M               |  12.034G     |
+|   net_t.conv1                        |   9.408K               |   0.154G     |
+|    net_t.conv1.weight                |    (64, 3, 7, 7)       |              |
+|   net_t.bn1                          |   0.128K               |   2.097M     |
+|    net_t.bn1.weight                  |    (64,)               |              |
+|    net_t.bn1.bias                    |    (64,)               |              |
+|   net_t.layer1                       |   0.634M               |   2.598G     |
+|    net_t.layer1.0                    |    0.206M              |    0.845G    |
+|     net_t.layer1.0.conv1             |     8.192K             |     33.554M  |
+|      net_t.layer1.0.conv1.weight     |      (128, 64, 1, 1)   |              |
+|     net_t.layer1.0.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.0.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.0.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.0.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.0.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.0.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.0.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.0.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.0.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.0.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.0.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.0.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.0.bn3.bias         |      (256,)            |              |
+|     net_t.layer1.0.downsample        |     16.896K            |     69.206M  |
+|      net_t.layer1.0.downsample.0     |      16.384K           |      67.109M |
+|      net_t.layer1.0.downsample.1     |      0.512K            |      2.097M  |
+|    net_t.layer1.1                    |    0.214M              |    0.877G    |
+|     net_t.layer1.1.conv1             |     32.768K            |     0.134G   |
+|      net_t.layer1.1.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_t.layer1.1.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.1.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.1.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.1.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.1.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.1.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.1.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.1.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.1.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.1.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.1.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.1.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.1.bn3.bias         |      (256,)            |              |
+|    net_t.layer1.2                    |    0.214M              |    0.877G    |
+|     net_t.layer1.2.conv1             |     32.768K            |     0.134G   |
+|      net_t.layer1.2.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_t.layer1.2.bn1               |     0.256K             |     1.049M   |
+|      net_t.layer1.2.bn1.weight       |      (128,)            |              |
+|      net_t.layer1.2.bn1.bias         |      (128,)            |              |
+|     net_t.layer1.2.conv2             |     0.147M             |     0.604G   |
+|      net_t.layer1.2.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_t.layer1.2.bn2               |     0.256K             |     1.049M   |
+|      net_t.layer1.2.bn2.weight       |      (128,)            |              |
+|      net_t.layer1.2.bn2.bias         |      (128,)            |              |
+|     net_t.layer1.2.conv3             |     32.768K            |     0.134G   |
+|      net_t.layer1.2.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_t.layer1.2.bn3               |     0.512K             |     2.097M   |
+|      net_t.layer1.2.bn3.weight       |      (256,)            |              |
+|      net_t.layer1.2.bn3.bias         |      (256,)            |              |
+|   net_t.layer2                       |   3.483M               |   3.769G     |
+|    net_t.layer2.0                    |    0.921M              |    1.146G    |
+|     net_t.layer2.0.conv1             |     65.536K            |     0.268G   |
+|      net_t.layer2.0.conv1.weight     |      (256, 256, 1, 1)  |              |
+|     net_t.layer2.0.bn1               |     0.512K             |     2.097M   |
+|      net_t.layer2.0.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.0.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.0.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.0.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.0.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.0.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.0.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.0.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.0.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.0.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.0.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.0.bn3.bias         |      (512,)            |              |
+|     net_t.layer2.0.downsample        |     0.132M             |     0.135G   |
+|      net_t.layer2.0.downsample.0     |      0.131M            |      0.134G  |
+|      net_t.layer2.0.downsample.1     |      1.024K            |      1.049M  |
+|    net_t.layer2.1                    |    0.854M              |    0.875G    |
+|     net_t.layer2.1.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.1.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.1.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.1.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.1.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.1.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.1.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.1.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.1.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.1.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.1.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.1.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.1.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.1.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.1.bn3.bias         |      (512,)            |              |
+|    net_t.layer2.2                    |    0.854M              |    0.875G    |
+|     net_t.layer2.2.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.2.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.2.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.2.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.2.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.2.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.2.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.2.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.2.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.2.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.2.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.2.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.2.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.2.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.2.bn3.bias         |      (512,)            |              |
+|    net_t.layer2.3                    |    0.854M              |    0.875G    |
+|     net_t.layer2.3.conv1             |     0.131M             |     0.134G   |
+|      net_t.layer2.3.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_t.layer2.3.bn1               |     0.512K             |     0.524M   |
+|      net_t.layer2.3.bn1.weight       |      (256,)            |              |
+|      net_t.layer2.3.bn1.bias         |      (256,)            |              |
+|     net_t.layer2.3.conv2             |     0.59M              |     0.604G   |
+|      net_t.layer2.3.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_t.layer2.3.bn2               |     0.512K             |     0.524M   |
+|      net_t.layer2.3.bn2.weight       |      (256,)            |              |
+|      net_t.layer2.3.bn2.bias         |      (256,)            |              |
+|     net_t.layer2.3.conv3             |     0.131M             |     0.134G   |
+|      net_t.layer2.3.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_t.layer2.3.bn3               |     1.024K             |     1.049M   |
+|      net_t.layer2.3.bn3.weight       |      (512,)            |              |
+|      net_t.layer2.3.bn3.bias         |      (512,)            |              |
+|   net_t.layer3                       |   20.736M              |   5.511G     |
+|    net_t.layer3.0                    |    3.676M              |    1.143G    |
+|     net_t.layer3.0.conv1             |     0.262M             |     0.268G   |
+|      net_t.layer3.0.conv1.weight     |      (512, 512, 1, 1)  |              |
+|     net_t.layer3.0.bn1               |     1.024K             |     1.049M   |
+|      net_t.layer3.0.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.0.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.0.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.0.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.0.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.0.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.0.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.0.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.0.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.0.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.0.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.0.bn3.bias         |      (1024,)           |              |
+|     net_t.layer3.0.downsample        |     0.526M             |     0.135G   |
+|      net_t.layer3.0.downsample.0     |      0.524M            |      0.134G  |
+|      net_t.layer3.0.downsample.1     |      2.048K            |      0.524M  |
+|    net_t.layer3.1                    |    3.412M              |    0.873G    |
+|     net_t.layer3.1.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.1.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.1.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.1.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.1.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.1.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.1.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.1.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.1.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.1.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.1.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.1.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.1.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.1.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.1.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.2                    |    3.412M              |    0.873G    |
+|     net_t.layer3.2.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.2.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.2.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.2.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.2.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.2.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.2.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.2.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.2.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.2.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.2.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.2.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.2.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.2.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.2.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.3                    |    3.412M              |    0.873G    |
+|     net_t.layer3.3.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.3.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.3.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.3.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.3.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.3.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.3.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.3.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.3.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.3.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.3.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.3.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.3.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.3.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.3.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.4                    |    3.412M              |    0.873G    |
+|     net_t.layer3.4.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.4.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.4.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.4.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.4.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.4.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.4.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.4.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.4.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.4.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.4.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.4.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.4.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.4.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.4.bn3.bias         |      (1024,)           |              |
+|    net_t.layer3.5                    |    3.412M              |    0.873G    |
+|     net_t.layer3.5.conv1             |     0.524M             |     0.134G   |
+|      net_t.layer3.5.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_t.layer3.5.bn1               |     1.024K             |     0.262M   |
+|      net_t.layer3.5.bn1.weight       |      (512,)            |              |
+|      net_t.layer3.5.bn1.bias         |      (512,)            |              |
+|     net_t.layer3.5.conv2             |     2.359M             |     0.604G   |
+|      net_t.layer3.5.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_t.layer3.5.bn2               |     1.024K             |     0.262M   |
+|      net_t.layer3.5.bn2.weight       |      (512,)            |              |
+|      net_t.layer3.5.bn2.bias         |      (512,)            |              |
+|     net_t.layer3.5.conv3             |     0.524M             |     0.134G   |
+|      net_t.layer3.5.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_t.layer3.5.bn3               |     2.048K             |     0.524M   |
+|      net_t.layer3.5.bn3.weight       |      (1024,)           |              |
+|      net_t.layer3.5.bn3.bias         |      (1024,)           |              |
+|  mff_oce                             |  30.83M                |  5.221G      |
+|   mff_oce.bn_layer                   |   20.208M              |   1.595G     |
+|    mff_oce.bn_layer.0                |    11.282M             |    1.024G    |
+|     mff_oce.bn_layer.0.conv1         |     1.573M             |     0.403G   |
+|      mff_oce.bn_layer.0.conv1.weight |      (512, 3072, 1, 1) |              |
+|     mff_oce.bn_layer.0.bn1           |     1.024K             |     0.262M   |
+|      mff_oce.bn_layer.0.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.0.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.0.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.0.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.0.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.0.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.0.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.0.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.0.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.0.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.0.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.0.bn3.bias     |      (2048,)           |              |
+|     mff_oce.bn_layer.0.downsample    |     6.296M             |     0.403G   |
+|      mff_oce.bn_layer.0.downsample.0 |      6.291M            |      0.403G  |
+|      mff_oce.bn_layer.0.downsample.1 |      4.096K            |      0.262M  |
+|    mff_oce.bn_layer.1                |    4.463M              |    0.286G    |
+|     mff_oce.bn_layer.1.conv1         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.1.conv1.weight |      (512, 2048, 1, 1) |              |
+|     mff_oce.bn_layer.1.bn1           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.1.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.1.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.1.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.1.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.1.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.1.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.1.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.1.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.1.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.1.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.1.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.1.bn3.bias     |      (2048,)           |              |
+|    mff_oce.bn_layer.2                |    4.463M              |    0.286G    |
+|     mff_oce.bn_layer.2.conv1         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.2.conv1.weight |      (512, 2048, 1, 1) |              |
+|     mff_oce.bn_layer.2.bn1           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.2.bn1.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.2.bn1.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.2.conv2         |     2.359M             |     0.151G   |
+|      mff_oce.bn_layer.2.conv2.weight |      (512, 512, 3, 3)  |              |
+|     mff_oce.bn_layer.2.bn2           |     1.024K             |     65.536K  |
+|      mff_oce.bn_layer.2.bn2.weight   |      (512,)            |              |
+|      mff_oce.bn_layer.2.bn2.bias     |      (512,)            |              |
+|     mff_oce.bn_layer.2.conv3         |     1.049M             |     67.109M  |
+|      mff_oce.bn_layer.2.conv3.weight |      (2048, 512, 1, 1) |              |
+|     mff_oce.bn_layer.2.bn3           |     4.096K             |     0.262M   |
+|      mff_oce.bn_layer.2.bn3.weight   |      (2048,)           |              |
+|      mff_oce.bn_layer.2.bn3.bias     |      (2048,)           |              |
+|   mff_oce.conv1                      |   1.18M                |   1.208G     |
+|    mff_oce.conv1.weight              |    (512, 256, 3, 3)    |              |
+|   mff_oce.bn1                        |   1.024K               |   1.049M     |
+|    mff_oce.bn1.weight                |    (512,)              |              |
+|    mff_oce.bn1.bias                  |    (512,)              |              |
+|   mff_oce.conv2                      |   4.719M               |   1.208G     |
+|    mff_oce.conv2.weight              |    (1024, 512, 3, 3)   |              |
+|   mff_oce.bn2                        |   2.048K               |   0.524M     |
+|    mff_oce.bn2.weight                |    (1024,)             |              |
+|    mff_oce.bn2.bias                  |    (1024,)             |              |
+|   mff_oce.conv3                      |   4.719M               |   1.208G     |
+|    mff_oce.conv3.weight              |    (1024, 512, 3, 3)   |              |
+|   mff_oce.bn3                        |   2.048K               |   0.524M     |
+|    mff_oce.bn3.weight                |    (1024,)             |              |
+|    mff_oce.bn3.bias                  |    (1024,)             |              |
+|  net_s                               |  24.918M               |  11.179G     |
+|   net_s.layer1                       |   17.84M               |   2.554G     |
+|    net_s.layer1.0                    |    11.016M             |    0.807G    |
+|     net_s.layer1.0.conv1             |     1.049M             |     67.109M  |
+|      net_s.layer1.0.conv1.weight     |      (512, 2048, 1, 1) |              |
+|     net_s.layer1.0.bn1               |     1.024K             |     65.536K  |
+|      net_s.layer1.0.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.0.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.0.conv2             |     1.049M             |     67.109M  |
+|      net_s.layer1.0.conv2.weight     |      (512, 512, 2, 2)  |              |
+|     net_s.layer1.0.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.0.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.0.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.0.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.0.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.0.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.0.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.0.bn3.bias         |      (1024,)           |              |
+|     net_s.layer1.0.upsample          |     8.391M             |     0.537G   |
+|      net_s.layer1.0.upsample.0       |      8.389M            |      0.537G  |
+|      net_s.layer1.0.upsample.1       |      2.048K            |      0.524M  |
+|    net_s.layer1.1                    |    3.412M              |    0.873G    |
+|     net_s.layer1.1.conv1             |     0.524M             |     0.134G   |
+|      net_s.layer1.1.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_s.layer1.1.bn1               |     1.024K             |     0.262M   |
+|      net_s.layer1.1.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.1.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.1.conv2             |     2.359M             |     0.604G   |
+|      net_s.layer1.1.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_s.layer1.1.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.1.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.1.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.1.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.1.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.1.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.1.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.1.bn3.bias         |      (1024,)           |              |
+|    net_s.layer1.2                    |    3.412M              |    0.873G    |
+|     net_s.layer1.2.conv1             |     0.524M             |     0.134G   |
+|      net_s.layer1.2.conv1.weight     |      (512, 1024, 1, 1) |              |
+|     net_s.layer1.2.bn1               |     1.024K             |     0.262M   |
+|      net_s.layer1.2.bn1.weight       |      (512,)            |              |
+|      net_s.layer1.2.bn1.bias         |      (512,)            |              |
+|     net_s.layer1.2.conv2             |     2.359M             |     0.604G   |
+|      net_s.layer1.2.conv2.weight     |      (512, 512, 3, 3)  |              |
+|     net_s.layer1.2.bn2               |     1.024K             |     0.262M   |
+|      net_s.layer1.2.bn2.weight       |      (512,)            |              |
+|      net_s.layer1.2.bn2.bias         |      (512,)            |              |
+|     net_s.layer1.2.conv3             |     0.524M             |     0.134G   |
+|      net_s.layer1.2.conv3.weight     |      (1024, 512, 1, 1) |              |
+|     net_s.layer1.2.bn3               |     2.048K             |     0.524M   |
+|      net_s.layer1.2.bn3.weight       |      (1024,)           |              |
+|      net_s.layer1.2.bn3.bias         |      (1024,)           |              |
+|   net_s.layer2                       |   5.318M               |   3.432G     |
+|    net_s.layer2.0                    |    2.756M              |    0.808G    |
+|     net_s.layer2.0.conv1             |     0.262M             |     67.109M  |
+|      net_s.layer2.0.conv1.weight     |      (256, 1024, 1, 1) |              |
+|     net_s.layer2.0.bn1               |     0.512K             |     0.131M   |
+|      net_s.layer2.0.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.0.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.0.conv2             |     0.262M             |     67.109M  |
+|      net_s.layer2.0.conv2.weight     |      (256, 256, 2, 2)  |              |
+|     net_s.layer2.0.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.0.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.0.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.0.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.0.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.0.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.0.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.0.bn3.bias         |      (512,)            |              |
+|     net_s.layer2.0.upsample          |     2.098M             |     0.538G   |
+|      net_s.layer2.0.upsample.0       |      2.097M            |      0.537G  |
+|      net_s.layer2.0.upsample.1       |      1.024K            |      1.049M  |
+|    net_s.layer2.1                    |    0.854M              |    0.875G    |
+|     net_s.layer2.1.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.1.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.1.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.1.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.1.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.1.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.1.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.1.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.1.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.1.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.1.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.1.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.1.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.1.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.1.bn3.bias         |      (512,)            |              |
+|    net_s.layer2.2                    |    0.854M              |    0.875G    |
+|     net_s.layer2.2.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.2.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.2.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.2.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.2.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.2.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.2.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.2.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.2.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.2.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.2.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.2.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.2.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.2.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.2.bn3.bias         |      (512,)            |              |
+|    net_s.layer2.3                    |    0.854M              |    0.875G    |
+|     net_s.layer2.3.conv1             |     0.131M             |     0.134G   |
+|      net_s.layer2.3.conv1.weight     |      (256, 512, 1, 1)  |              |
+|     net_s.layer2.3.bn1               |     0.512K             |     0.524M   |
+|      net_s.layer2.3.bn1.weight       |      (256,)            |              |
+|      net_s.layer2.3.bn1.bias         |      (256,)            |              |
+|     net_s.layer2.3.conv2             |     0.59M              |     0.604G   |
+|      net_s.layer2.3.conv2.weight     |      (256, 256, 3, 3)  |              |
+|     net_s.layer2.3.bn2               |     0.512K             |     0.524M   |
+|      net_s.layer2.3.bn2.weight       |      (256,)            |              |
+|      net_s.layer2.3.bn2.bias         |      (256,)            |              |
+|     net_s.layer2.3.conv3             |     0.131M             |     0.134G   |
+|      net_s.layer2.3.conv3.weight     |      (512, 256, 1, 1)  |              |
+|     net_s.layer2.3.bn3               |     1.024K             |     1.049M   |
+|      net_s.layer2.3.bn3.weight       |      (512,)            |              |
+|      net_s.layer2.3.bn3.bias         |      (512,)            |              |
+|   net_s.layer3                       |   1.76M                |   5.194G     |
+|    net_s.layer3.0                    |    0.69M               |    0.811G    |
+|     net_s.layer3.0.conv1             |     65.536K            |     67.109M  |
+|      net_s.layer3.0.conv1.weight     |      (128, 512, 1, 1)  |              |
+|     net_s.layer3.0.bn1               |     0.256K             |     0.262M   |
+|      net_s.layer3.0.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.0.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.0.conv2             |     65.536K            |     67.109M  |
+|      net_s.layer3.0.conv2.weight     |      (128, 128, 2, 2)  |              |
+|     net_s.layer3.0.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.0.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.0.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.0.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.0.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.0.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.0.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.0.bn3.bias         |      (256,)            |              |
+|     net_s.layer3.0.upsample          |     0.525M             |     0.539G   |
+|      net_s.layer3.0.upsample.0       |      0.524M            |      0.537G  |
+|      net_s.layer3.0.upsample.1       |      0.512K            |      2.097M  |
+|    net_s.layer3.1                    |    0.214M              |    0.877G    |
+|     net_s.layer3.1.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.1.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.1.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.1.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.1.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.1.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.1.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.1.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.1.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.1.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.1.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.1.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.1.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.1.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.1.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.2                    |    0.214M              |    0.877G    |
+|     net_s.layer3.2.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.2.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.2.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.2.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.2.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.2.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.2.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.2.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.2.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.2.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.2.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.2.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.2.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.2.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.2.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.3                    |    0.214M              |    0.877G    |
+|     net_s.layer3.3.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.3.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.3.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.3.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.3.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.3.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.3.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.3.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.3.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.3.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.3.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.3.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.3.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.3.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.3.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.4                    |    0.214M              |    0.877G    |
+|     net_s.layer3.4.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.4.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.4.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.4.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.4.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.4.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.4.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.4.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.4.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.4.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.4.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.4.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.4.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.4.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.4.bn3.bias         |      (256,)            |              |
+|    net_s.layer3.5                    |    0.214M              |    0.877G    |
+|     net_s.layer3.5.conv1             |     32.768K            |     0.134G   |
+|      net_s.layer3.5.conv1.weight     |      (128, 256, 1, 1)  |              |
+|     net_s.layer3.5.bn1               |     0.256K             |     1.049M   |
+|      net_s.layer3.5.bn1.weight       |      (128,)            |              |
+|      net_s.layer3.5.bn1.bias         |      (128,)            |              |
+|     net_s.layer3.5.conv2             |     0.147M             |     0.604G   |
+|      net_s.layer3.5.conv2.weight     |      (128, 128, 3, 3)  |              |
+|     net_s.layer3.5.bn2               |     0.256K             |     1.049M   |
+|      net_s.layer3.5.bn2.weight       |      (128,)            |              |
+|      net_s.layer3.5.bn2.bias         |      (128,)            |              |
+|     net_s.layer3.5.conv3             |     32.768K            |     0.134G   |
+|      net_s.layer3.5.conv3.weight     |      (256, 128, 1, 1)  |              |
+|     net_s.layer3.5.bn3               |     0.512K             |     2.097M   |
+|      net_s.layer3.5.bn3.weight       |      (256,)            |              |
+|      net_s.layer3.5.bn3.bias         |      (256,)            |              |
+----------------------------------------------------------------------------
+2024-05-27 16:02:30,690 - ==> Creating optimizer
+2024-05-27 16:02:30,706 - ==> Loading dataset: DefaultAD
+2024-05-27 16:02:30,710 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+trainer.name                         : RDTrainer                           
+trainer.checkpoint                   : runs/benchmark/rd_256_100e/mpdd     
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 5e-05, 'warmup_lr': 5e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 16                                  
+trainer.data.batch_size_per_gpu      : 16                                  
+trainer.data.batch_size_test         : 16                                  
+trainer.data.batch_size_per_gpu_test : 16                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 5500                                
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.train_size                      : 55                                  
+data.test_size                       : 29                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_t.name                         : timm_wide_resnet50_2                
+model_t.kwargs                       : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_s.name                         : de_wide_resnet50_2                  
+model_s.kwargs                       : {'pretrained': False, 'checkpoint_path': '', 'strict': False}
+model.name                           : rd                                  
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_t': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_s': Namespace(name='de_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': '', 'strict': False})}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 16                                  
+batch_test_per                       : 16                                  
+lr                                   : 0.005                               
+weight_decay                         : 0.05                                
+cfg_path                             : configs.benchmark.rd_256_100e       
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/rd_256_100e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.rd_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/rd_256_100e/mpdd data.root=data/mpdd
+task_start_time                      : 3125586.468892924                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225/show_train
+logdir_test                          : runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225/show_test
+2024-05-27 16:02:30,710 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-27 16:02:42,877 - Train: 0.91% [50/5500]  [0.9/100.0] [batch_t 0.063 (0.237)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.622 (0.878)]
+2024-05-27 16:02:43,807 - ==> Total time: 0:00:18	 Eta: 0:30:45 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:02:51,835 - Train: 1.82% [100/5500]  [1.8/100.0] [batch_t 0.364 (0.148)] [data_t 0.302] [optim_t 0.062] [lr 0.005000] [cos 0.425 (0.522)]
+2024-05-27 16:02:53,057 - ==> Total time: 0:00:27	 Eta: 0:22:46 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:00,573 - Train: 2.73% [150/5500]  [2.7/100.0] [batch_t 0.063 (0.143)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.367 (0.395)]
+2024-05-27 16:03:02,704 - ==> Total time: 0:00:37	 Eta: 0:20:13 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:09,612 - Train: 3.64% [200/5500]  [3.6/100.0] [batch_t 0.063 (0.146)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.316 (0.348)]
+2024-05-27 16:03:12,357 - ==> Total time: 0:00:47	 Eta: 0:18:52 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:18,562 - Train: 4.55% [250/5500]  [4.5/100.0] [batch_t 0.063 (0.151)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.291 (0.297)]
+2024-05-27 16:03:21,950 - ==> Total time: 0:00:56	 Eta: 0:17:58 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:27,463 - Train: 5.45% [300/5500]  [5.5/100.0] [batch_t 0.359 (0.156)] [data_t 0.298] [optim_t 0.062] [lr 0.005000] [cos 0.262 (0.271)]
+2024-05-27 16:03:31,496 - ==> Total time: 0:01:06	 Eta: 0:17:19 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:36,120 - Train: 6.36% [350/5500]  [6.4/100.0] [batch_t 0.063 (0.150)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.255 (0.243)]
+2024-05-27 16:03:41,001 - ==> Total time: 0:01:15	 Eta: 0:16:47 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:45,061 - Train: 7.27% [400/5500]  [7.3/100.0] [batch_t 0.063 (0.157)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.224 (0.233)]
+2024-05-27 16:03:50,575 - ==> Total time: 0:01:25	 Eta: 0:16:22 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:03:54,257 - Train: 8.18% [450/5500]  [8.2/100.0] [batch_t 0.063 (0.177)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.209 (0.216)]
+2024-05-27 16:04:00,366 - ==> Total time: 0:01:35	 Eta: 0:16:02 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:04:04,442 - Train: 9.09% [500/5500]  [9.1/100.0] [batch_t 0.360 (0.233)] [data_t 0.298] [optim_t 0.062] [lr 0.005000] [cos 0.198 (0.208)]
+2024-05-27 16:04:11,239 - Train: 10.00% [550/5500]  [10.0/100.0] [batch_t 0.062 (0.136)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.186 (0.200)]
+2024-05-27 16:04:17,766 - Test: 100.00% [29/29] [batch_t 2.219 (0.222)] [cos 0.359 (0.246)]
+2024-05-27 16:04:18,448 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.146 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-27 16:04:19,034 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.141 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.142 (mIoU_max_px)	
+2024-05-27 16:04:19,473 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.109 (mIoU_max_px)	
+2024-05-27 16:04:19,770 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.075 (mIoU_max_px)	
+2024-05-27 16:04:20,508 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.182 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.179 (mIoU_max_px)	
+2024-05-27 16:04:21,262 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-27 16:04:21,265 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     79.189      |  79.189 (10  epoch)   |    82.520    | 82.520 (10  epoch)  |      84.615      |   84.615 (10  epoch)   |   91.223    | 91.223 (10  epoch) |   96.652    | 96.652 (10  epoch) |  3.574   | 3.574 (10  epoch)  |    10.195    | 10.195 (10  epoch) |        3.710         |     3.710 (10  epoch)      |        66.293         |     66.293 (10  epoch)      |         1.918         |      1.918 (10  epoch)      |     5.371     |  5.371 (10  epoch)  |
+| bracket_brown |     79.864      |  79.864 (10  epoch)   |    86.614    | 86.614 (10  epoch)  |      85.981      |   85.981 (10  epoch)   |   93.609    | 93.609 (10  epoch) |   96.756    | 96.756 (10  epoch) |  11.483  | 11.483 (10  epoch) |    17.948    | 17.948 (10  epoch) |        9.389         |     9.389 (10  epoch)      |        51.277         |     51.277 (10  epoch)      |         5.034         |      5.034 (10  epoch)      |     9.859     |  9.859 (10  epoch)  |
+| bracket_white |     90.111      |  90.111 (10  epoch)   |    90.019    | 90.019 (10  epoch)  |      87.500      |   87.500 (10  epoch)   |   93.236    | 93.236 (10  epoch) |   98.499    | 98.499 (10  epoch) |  1.109   | 1.109 (10  epoch)  |    3.193     | 3.193 (10  epoch)  |        1.376         |     1.376 (10  epoch)      |        68.451         |     68.451 (10  epoch)      |         0.695         |      0.695 (10  epoch)      |     1.622     |  1.622 (10  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   94.642    | 94.642 (10  epoch) |   98.372    | 98.372 (10  epoch) |  50.874  | 50.874 (10  epoch) |    48.261    | 48.261 (10  epoch) |        21.977        |     21.977 (10  epoch)     |        68.019         |     68.019 (10  epoch)      |        13.245         |     13.245 (10  epoch)      |    31.805     | 31.805 (10  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.352    | 96.352 (10  epoch) |   99.053    | 99.053 (10  epoch) |  92.015  | 92.015 (10  epoch) |    87.009    | 87.009 (10  epoch) |        52.532        |     52.532 (10  epoch)     |        61.773         |     61.773 (10  epoch)      |        40.673         |     40.673 (10  epoch)      |    77.006     | 77.006 (10  epoch)  |
+|     tubes     |     74.049      |  74.049 (10  epoch)   |    88.223    | 88.223 (10  epoch)  |      81.633      |   81.633 (10  epoch)   |   92.433    | 92.433 (10  epoch) |   98.058    | 98.058 (10  epoch) |  45.624  | 45.624 (10  epoch) |    46.909    | 46.909 (10  epoch) |        20.768        |     20.768 (10  epoch)     |        75.175         |     75.175 (10  epoch)      |        12.331         |     12.331 (10  epoch)      |    30.642     | 30.642 (10  epoch)  |
+|      Avg      |     87.202      |  87.202 (10  epoch)   |    91.229    | 91.229 (10  epoch)  |      89.955      |   89.955 (10  epoch)   |   93.582    | 93.582 (10  epoch) |   97.898    | 97.898 (10  epoch) |  34.113  | 34.113 (10  epoch) |    35.586    | 35.586 (10  epoch) |        18.292        |     18.292 (10  epoch)     |        65.165         |     65.165 (10  epoch)      |        12.316         |     12.316 (10  epoch)      |    26.051     | 26.051 (10  epoch)  |
+2024-05-27 16:04:21,319 - ==> Total time: 0:01:56	 Eta: 0:17:25 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:04:30,658 - Train: 10.91% [600/5500]  [10.9/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.187 (0.191)]
+2024-05-27 16:04:31,267 - ==> Total time: 0:02:06	 Eta: 0:17:00 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:04:39,798 - Train: 11.82% [650/5500]  [11.8/100.0] [batch_t 0.357 (0.148)] [data_t 0.295] [optim_t 0.062] [lr 0.005000] [cos 0.178 (0.183)]
+2024-05-27 16:04:40,998 - ==> Total time: 0:02:15	 Eta: 0:16:36 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:04:48,550 - Train: 12.73% [700/5500]  [12.7/100.0] [batch_t 0.063 (0.143)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.172 (0.189)]
+2024-05-27 16:04:50,680 - ==> Total time: 0:02:25	 Eta: 0:16:13 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:04:57,854 - Train: 13.64% [750/5500]  [13.6/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.207 (0.170)]
+2024-05-27 16:05:00,597 - ==> Total time: 0:02:35	 Eta: 0:15:54 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:08,520 - Train: 14.55% [800/5500]  [14.5/100.0] [batch_t 0.063 (0.152)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.174 (0.168)]
+2024-05-27 16:05:11,917 - ==> Total time: 0:02:46	 Eta: 0:15:44 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:17,427 - Train: 15.45% [850/5500]  [15.5/100.0] [batch_t 0.355 (0.158)] [data_t 0.293] [optim_t 0.062] [lr 0.005000] [cos 0.163 (0.160)]
+2024-05-27 16:05:21,429 - ==> Total time: 0:02:56	 Eta: 0:15:25 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:25,916 - Train: 16.36% [900/5500]  [16.4/100.0] [batch_t 0.063 (0.148)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.155 (0.156)]
+2024-05-27 16:05:30,793 - ==> Total time: 0:03:05	 Eta: 0:15:06 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:35,273 - Train: 17.27% [950/5500]  [17.3/100.0] [batch_t 0.063 (0.157)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.141 (0.154)]
+2024-05-27 16:05:40,863 - ==> Total time: 0:03:15	 Eta: 0:14:51 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:44,561 - Train: 18.18% [1000/5500]  [18.2/100.0] [batch_t 0.063 (0.170)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.153 (0.152)]
+2024-05-27 16:05:50,647 - ==> Total time: 0:03:25	 Eta: 0:14:35 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:05:53,812 - Train: 19.09% [1050/5500]  [19.1/100.0] [batch_t 0.366 (0.226)] [data_t 0.304] [optim_t 0.062] [lr 0.005000] [cos 0.142 (0.147)]
+2024-05-27 16:06:00,525 - Train: 20.00% [1100/5500]  [20.0/100.0] [batch_t 0.063 (0.134)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.143 (0.148)]
+2024-05-27 16:06:05,014 - Test: 100.00% [29/29] [batch_t 0.161 (0.151)] [cos 0.306 (0.206)]
+2024-05-27 16:06:05,648 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-27 16:06:06,237 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 16:06:06,680 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 16:06:06,986 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-27 16:06:07,729 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.180 (mIoU_max_px)	
+2024-05-27 16:06:08,491 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-27 16:06:08,494 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     80.851      |  80.851 (20  epoch)   |    85.048    | 85.048 (20  epoch)  |      84.000      |   84.615 (10  epoch)   |   93.001    | 93.001 (20  epoch) |   97.539    | 97.539 (20  epoch) |  5.376   | 5.376 (20  epoch)  |    11.088    | 11.088 (20  epoch) |        4.487         |     4.487 (20  epoch)      |        69.183         |     69.183 (20  epoch)      |         2.334         |      2.334 (20  epoch)      |     5.869     |  5.869 (20  epoch)  |
+| bracket_brown |     83.258      |  83.258 (20  epoch)   |    89.789    | 89.789 (20  epoch)  |      87.931      |   87.931 (20  epoch)   |   93.965    | 93.965 (20  epoch) |   96.432    | 96.756 (10  epoch) |  12.134  | 12.134 (20  epoch) |    20.051    | 20.051 (20  epoch) |        10.481        |     10.481 (20  epoch)     |        55.257         |     55.257 (20  epoch)      |         5.659         |      5.659 (20  epoch)      |    11.142     | 11.142 (20  epoch)  |
+| bracket_white |     86.222      |  90.111 (10  epoch)   |    87.116    | 90.019 (10  epoch)  |      83.333      |   87.500 (10  epoch)   |   94.512    | 94.512 (20  epoch) |   98.821    | 98.821 (20  epoch) |  1.855   | 1.855 (20  epoch)  |    6.570     | 6.570 (20  epoch)  |        1.824         |     1.824 (20  epoch)      |        55.506         |     68.451 (10  epoch)      |         0.927         |      0.927 (20  epoch)      |     3.397     |  3.397 (20  epoch)  |
+|   connector   |     99.762      |  100.000 (10  epoch)  |    99.524    | 100.000 (10  epoch) |      96.552      |  100.000 (10  epoch)   |   96.364    | 96.364 (20  epoch) |   98.893    | 98.893 (20  epoch) |  59.963  | 59.963 (20  epoch) |    56.439    | 56.439 (20  epoch) |        26.297        |     26.297 (20  epoch)     |        62.369         |     68.019 (10  epoch)      |        16.484         |     16.484 (20  epoch)      |    39.313     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.610    | 96.610 (20  epoch) |   99.124    | 99.124 (20  epoch) |  92.499  | 92.499 (20  epoch) |    87.662    | 87.662 (20  epoch) |        51.657        |     52.532 (10  epoch)     |        58.554         |     61.773 (10  epoch)      |        40.349         |     40.673 (10  epoch)      |    78.034     | 78.034 (20  epoch)  |
+|     tubes     |     72.736      |  74.049 (10  epoch)   |    86.358    | 88.223 (10  epoch)  |      82.432      |   82.432 (20  epoch)   |   94.768    | 94.768 (20  epoch) |   98.629    | 98.629 (20  epoch) |  53.309  | 53.309 (20  epoch) |    54.188    | 54.188 (20  epoch) |        25.373        |     25.373 (20  epoch)     |        70.021         |     75.175 (10  epoch)      |        15.659         |     15.659 (20  epoch)      |    37.163     | 37.163 (20  epoch)  |
+|      Avg      |     87.138      |  87.202 (10  epoch)   |    91.306    | 91.306 (20  epoch)  |      89.041      |   89.955 (10  epoch)   |   94.870    | 94.870 (20  epoch) |   98.240    | 98.240 (20  epoch) |  37.523  | 37.523 (20  epoch) |    39.333    | 39.333 (20  epoch) |        20.020        |     20.020 (20  epoch)     |        61.815         |     65.165 (10  epoch)      |        13.569         |     13.569 (20  epoch)      |    29.153     | 29.153 (20  epoch)  |
+2024-05-27 16:06:08,576 - ==> Total time: 0:03:43	 Eta: 0:14:53 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:06:17,972 - Train: 20.91% [1150/5500]  [20.9/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.157 (0.144)]
+2024-05-27 16:06:18,578 - ==> Total time: 0:03:53	 Eta: 0:14:38 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:06:26,815 - Train: 21.82% [1200/5500]  [21.8/100.0] [batch_t 0.359 (0.148)] [data_t 0.297] [optim_t 0.062] [lr 0.005000] [cos 0.144 (0.164)]
+2024-05-27 16:06:28,065 - ==> Total time: 0:04:02	 Eta: 0:14:21 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:06:35,486 - Train: 22.73% [1250/5500]  [22.7/100.0] [batch_t 0.063 (0.143)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.128 (0.140)]
+2024-05-27 16:06:37,618 - ==> Total time: 0:04:12	 Eta: 0:14:05 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:06:44,764 - Train: 23.64% [1300/5500]  [23.6/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.139 (0.139)]
+2024-05-27 16:06:47,506 - ==> Total time: 0:04:22	 Eta: 0:13:50 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:06:53,982 - Train: 24.55% [1350/5500]  [24.5/100.0] [batch_t 0.063 (0.151)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.138 (0.137)]
+2024-05-27 16:06:57,368 - ==> Total time: 0:04:32	 Eta: 0:13:36 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:07:02,966 - Train: 25.45% [1400/5500]  [25.5/100.0] [batch_t 0.344 (0.155)] [data_t 0.282] [optim_t 0.062] [lr 0.005000] [cos 0.139 (0.135)]
+2024-05-27 16:07:06,937 - ==> Total time: 0:04:41	 Eta: 0:13:21 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:07:11,444 - Train: 26.36% [1450/5500]  [26.4/100.0] [batch_t 0.063 (0.148)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.124 (0.129)]
+2024-05-27 16:07:16,367 - ==> Total time: 0:04:51	 Eta: 0:13:07 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:07:20,381 - Train: 27.27% [1500/5500]  [27.3/100.0] [batch_t 0.063 (0.156)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.125 (0.127)]
+2024-05-27 16:07:25,868 - ==> Total time: 0:05:00	 Eta: 0:12:53 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:07:30,056 - Train: 28.18% [1550/5500]  [28.2/100.0] [batch_t 0.063 (0.171)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.123 (0.131)]
+2024-05-27 16:07:36,205 - ==> Total time: 0:05:11	 Eta: 0:12:41 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:07:39,150 - Train: 29.09% [1600/5500]  [29.1/100.0] [batch_t 0.362 (0.225)] [data_t 0.300] [optim_t 0.062] [lr 0.005000] [cos 0.124 (0.131)]
+2024-05-27 16:07:45,910 - Train: 30.00% [1650/5500]  [30.0/100.0] [batch_t 0.063 (0.135)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.128 (0.127)]
+2024-05-27 16:07:50,698 - Test: 100.00% [29/29] [batch_t 0.157 (0.151)] [cos 0.287 (0.194)]
+2024-05-27 16:07:51,341 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.054 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-27 16:07:51,936 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 16:07:52,388 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.115 (mF1_max_px)	  0.041 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-27 16:07:52,706 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.082 (mF1_max_px)	  0.029 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.078 (mIoU_max_px)	
+2024-05-27 16:07:53,452 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.182 (mIoU_max_px)	
+2024-05-27 16:07:54,211 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-27 16:07:54,214 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     83.178      |  83.178 (30  epoch)   |    88.328    | 88.328 (30  epoch)  |      82.456      |   84.615 (10  epoch)   |   93.446    | 93.446 (30  epoch) |   97.462    | 97.539 (20  epoch) |  5.509   | 5.509 (30  epoch)  |    10.865    | 11.088 (20  epoch) |        5.176         |     5.176 (30  epoch)      |        61.904         |     69.183 (20  epoch)      |         2.696         |      2.696 (30  epoch)      |     5.744     |  5.869 (20  epoch)  |
+| bracket_brown |     80.241      |  83.258 (20  epoch)   |    84.998    | 89.789 (20  epoch)  |      90.090      |   90.090 (30  epoch)   |   93.561    | 93.965 (20  epoch) |   96.375    | 96.756 (10  epoch) |  12.521  | 12.521 (30  epoch) |    21.117    | 21.117 (30  epoch) |        10.589        |     10.589 (30  epoch)     |        54.385         |     55.257 (20  epoch)      |         5.743         |      5.743 (30  epoch)      |    11.805     | 11.805 (30  epoch)  |
+| bracket_white |     87.889      |  90.111 (10  epoch)   |    89.694    | 90.019 (10  epoch)  |      82.353      |   87.500 (10  epoch)   |   94.952    | 94.952 (30  epoch) |   99.008    | 99.008 (30  epoch) |  3.418   | 3.418 (30  epoch)  |    10.380    | 10.380 (30  epoch) |        3.788         |     3.788 (30  epoch)      |        67.029         |     68.451 (10  epoch)      |         1.958         |      1.958 (30  epoch)      |     5.474     |  5.474 (30  epoch)  |
+|   connector   |     99.524      |  100.000 (10  epoch)  |    99.107    | 100.000 (10  epoch) |      96.296      |  100.000 (10  epoch)   |   96.947    | 96.947 (30  epoch) |   99.071    | 99.071 (30  epoch) |  58.300  | 59.963 (20  epoch) |    54.650    | 56.439 (20  epoch) |        27.246        |     27.246 (30  epoch)     |        65.388         |     68.019 (10  epoch)      |        16.998         |     16.998 (30  epoch)      |    37.599     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.732    | 96.732 (30  epoch) |   99.141    | 99.141 (30  epoch) |  92.650  | 92.650 (30  epoch) |    88.122    | 88.122 (30  epoch) |        49.781        |     52.532 (10  epoch)     |        54.943         |     61.773 (10  epoch)      |        39.050         |     40.673 (10  epoch)      |    78.766     | 78.766 (30  epoch)  |
+|     tubes     |     86.639      |  86.639 (30  epoch)   |    94.463    | 94.463 (30  epoch)  |      86.486      |   86.486 (30  epoch)   |   95.612    | 95.612 (30  epoch) |   98.887    | 98.887 (30  epoch) |  64.502  | 64.502 (30  epoch) |    60.970    | 60.970 (30  epoch) |        28.758        |     28.758 (30  epoch)     |        72.179         |     75.175 (10  epoch)      |        18.452         |     18.452 (30  epoch)      |    43.854     | 43.854 (30  epoch)  |
+|      Avg      |     89.579      |  89.579 (30  epoch)   |    92.765    | 92.765 (30  epoch)  |      89.614      |   89.955 (10  epoch)   |   95.208    | 95.208 (30  epoch) |   98.324    | 98.324 (30  epoch) |  39.483  | 39.483 (30  epoch) |    41.017    | 41.017 (30  epoch) |        20.890        |     20.890 (30  epoch)     |        62.638         |     65.165 (10  epoch)      |        14.150         |     14.150 (30  epoch)      |    30.540     | 30.540 (30  epoch)  |
+2024-05-27 16:07:54,281 - ==> Total time: 0:05:29	 Eta: 0:12:47 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:03,599 - Train: 30.91% [1700/5500]  [30.9/100.0] [batch_t 0.092 (0.145)] [data_t 0.030] [optim_t 0.062] [lr 0.005000] [cos 0.127 (0.123)]
+2024-05-27 16:08:04,224 - ==> Total time: 0:05:39	 Eta: 0:12:34 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:13,079 - Train: 31.82% [1750/5500]  [31.8/100.0] [batch_t 0.357 (0.147)] [data_t 0.295] [optim_t 0.062] [lr 0.005000] [cos 0.122 (0.123)]
+2024-05-27 16:08:14,307 - ==> Total time: 0:05:49	 Eta: 0:12:21 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:21,848 - Train: 32.73% [1800/5500]  [32.7/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.111 (0.125)]
+2024-05-27 16:08:24,025 - ==> Total time: 0:05:58	 Eta: 0:12:08 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:30,899 - Train: 33.64% [1850/5500]  [33.6/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.122 (0.119)]
+2024-05-27 16:08:33,677 - ==> Total time: 0:06:08	 Eta: 0:11:55 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:40,230 - Train: 34.55% [1900/5500]  [34.5/100.0] [batch_t 0.063 (0.156)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.114 (0.119)]
+2024-05-27 16:08:43,612 - ==> Total time: 0:06:18	 Eta: 0:11:42 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:49,306 - Train: 35.45% [1950/5500]  [35.5/100.0] [batch_t 0.357 (0.156)] [data_t 0.295] [optim_t 0.062] [lr 0.005000] [cos 0.113 (0.120)]
+2024-05-27 16:08:53,299 - ==> Total time: 0:06:28	 Eta: 0:11:30 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:08:58,075 - Train: 36.36% [2000/5500]  [36.4/100.0] [batch_t 0.063 (0.150)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.128 (0.119)]
+2024-05-27 16:09:02,955 - ==> Total time: 0:06:37	 Eta: 0:11:17 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:09:07,238 - Train: 37.27% [2050/5500]  [37.3/100.0] [batch_t 0.063 (0.159)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.118 (0.114)]
+2024-05-27 16:09:12,756 - ==> Total time: 0:06:47	 Eta: 0:11:05 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:09:16,377 - Train: 38.18% [2100/5500]  [38.2/100.0] [batch_t 0.063 (0.175)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.120 (0.112)]
+2024-05-27 16:09:22,502 - ==> Total time: 0:06:57	 Eta: 0:10:52 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:09:25,344 - Train: 39.09% [2150/5500]  [39.1/100.0] [batch_t 0.356 (0.225)] [data_t 0.294] [optim_t 0.062] [lr 0.005000] [cos 0.117 (0.120)]
+2024-05-27 16:09:32,150 - Train: 40.00% [2200/5500]  [40.0/100.0] [batch_t 0.063 (0.136)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.107 (0.115)]
+2024-05-27 16:09:36,693 - Test: 100.00% [29/29] [batch_t 0.166 (0.151)] [cos 0.285 (0.188)]
+2024-05-27 16:09:37,325 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 16:09:37,914 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.142 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 16:09:38,359 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 16:09:38,674 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.080 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.029 (mIoU_px_0.2_0.8_0.1)	  0.080 (mIoU_max_px)	
+2024-05-27 16:09:39,421 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-27 16:09:40,187 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.192 (mIoU_max_px)	
+2024-05-27 16:09:40,190 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     80.984      |  83.178 (30  epoch)   |    87.038    | 88.328 (30  epoch)  |      82.456      |   84.615 (10  epoch)   |   93.862    | 93.862 (40  epoch) |   97.824    | 97.824 (40  epoch) |  6.673   | 6.673 (40  epoch)  |    11.361    | 11.361 (40  epoch) |        5.568         |     5.568 (40  epoch)      |        62.268         |     69.183 (20  epoch)      |         2.910         |      2.910 (40  epoch)      |     6.023     |  6.023 (40  epoch)  |
+| bracket_brown |     85.520      |  85.520 (40  epoch)   |    90.507    | 90.507 (40  epoch)  |      90.909      |   90.909 (40  epoch)   |   94.526    | 94.526 (40  epoch) |   96.646    | 96.756 (10  epoch) |  14.747  | 14.747 (40  epoch) |    22.937    | 22.937 (40  epoch) |        10.916        |     10.916 (40  epoch)     |        48.807         |     55.257 (20  epoch)      |         5.975         |      5.975 (40  epoch)      |    12.954     | 12.954 (40  epoch)  |
+| bracket_white |     84.111      |  90.111 (10  epoch)   |    85.474    | 90.019 (10  epoch)  |      83.871      |   87.500 (10  epoch)   |   94.441    | 94.952 (30  epoch) |   98.882    | 99.008 (30  epoch) |  2.385   | 3.418 (30  epoch)  |    8.110     | 10.380 (30  epoch) |        2.924         |     3.788 (30  epoch)      |        64.064         |     68.451 (10  epoch)      |         1.497         |      1.958 (30  epoch)      |     4.226     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.648    | 96.947 (30  epoch) |   98.980    | 99.071 (30  epoch) |  58.540  | 59.963 (20  epoch) |    52.873    | 56.439 (20  epoch) |        28.531        |     28.531 (40  epoch)     |        66.239         |     68.019 (10  epoch)      |        17.867         |     17.867 (40  epoch)      |    35.937     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.658    | 96.732 (30  epoch) |   99.130    | 99.141 (30  epoch) |  92.610  | 92.650 (30  epoch) |    87.961    | 88.122 (30  epoch) |        50.199        |     52.532 (10  epoch)     |        55.902         |     61.773 (10  epoch)      |        39.354         |     40.673 (10  epoch)      |    78.509     | 78.766 (30  epoch)  |
+|     tubes     |     86.005      |  86.639 (30  epoch)   |    93.976    | 94.463 (30  epoch)  |      88.732      |   88.732 (40  epoch)   |   95.604    | 95.612 (30  epoch) |   98.882    | 98.887 (30  epoch) |  62.949  | 64.502 (30  epoch) |    60.806    | 60.970 (30  epoch) |        27.875        |     28.758 (30  epoch)     |        69.446         |     75.175 (10  epoch)      |        17.751         |     18.452 (30  epoch)      |    43.684     | 43.854 (30  epoch)  |
+|      Avg      |     89.437      |  89.579 (30  epoch)   |    92.833    | 92.833 (40  epoch)  |      90.995      |   90.995 (40  epoch)   |   95.290    | 95.290 (40  epoch) |   98.391    | 98.391 (40  epoch) |  39.651  | 39.651 (40  epoch) |    40.675    | 41.017 (30  epoch) |        21.002        |     21.002 (40  epoch)     |        61.121         |     65.165 (10  epoch)      |        14.226         |     14.226 (40  epoch)      |    30.222     | 30.540 (30  epoch)  |
+2024-05-27 16:09:40,257 - ==> Total time: 0:07:15	 Eta: 0:10:52 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:09:49,483 - Train: 40.91% [2250/5500]  [40.9/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.113 (0.114)]
+2024-05-27 16:09:50,092 - ==> Total time: 0:07:24	 Eta: 0:10:40 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:09:58,277 - Train: 41.82% [2300/5500]  [41.8/100.0] [batch_t 0.361 (0.147)] [data_t 0.299] [optim_t 0.062] [lr 0.005000] [cos 0.119 (0.112)]
+2024-05-27 16:09:59,498 - ==> Total time: 0:07:34	 Eta: 0:10:27 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:07,054 - Train: 42.73% [2350/5500]  [42.7/100.0] [batch_t 0.063 (0.144)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.116 (0.112)]
+2024-05-27 16:10:09,215 - ==> Total time: 0:07:44	 Eta: 0:10:15 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:15,946 - Train: 43.64% [2400/5500]  [43.6/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.126 (0.113)]
+2024-05-27 16:10:18,730 - ==> Total time: 0:07:53	 Eta: 0:10:02 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:25,363 - Train: 44.55% [2450/5500]  [44.5/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.113 (0.111)]
+2024-05-27 16:10:28,687 - ==> Total time: 0:08:03	 Eta: 0:09:50 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:34,436 - Train: 45.45% [2500/5500]  [45.5/100.0] [batch_t 0.347 (0.151)] [data_t 0.286] [optim_t 0.062] [lr 0.005000] [cos 0.106 (0.111)]
+2024-05-27 16:10:38,402 - ==> Total time: 0:08:13	 Eta: 0:09:39 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:42,880 - Train: 46.36% [2550/5500]  [46.4/100.0] [batch_t 0.063 (0.146)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.110 (0.108)]
+2024-05-27 16:10:47,720 - ==> Total time: 0:08:22	 Eta: 0:09:26 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:10:51,686 - Train: 47.27% [2600/5500]  [47.3/100.0] [batch_t 0.063 (0.155)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.106 (0.109)]
+2024-05-27 16:10:57,180 - ==> Total time: 0:08:32	 Eta: 0:09:14 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:11:00,545 - Train: 48.18% [2650/5500]  [48.2/100.0] [batch_t 0.063 (0.174)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.116 (0.108)]
+2024-05-27 16:11:06,667 - ==> Total time: 0:08:41	 Eta: 0:09:02 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:11:09,684 - Train: 49.09% [2700/5500]  [49.1/100.0] [batch_t 0.363 (0.216)] [data_t 0.301] [optim_t 0.062] [lr 0.005000] [cos 0.097 (0.104)]
+2024-05-27 16:11:16,368 - Train: 50.00% [2750/5500]  [50.0/100.0] [batch_t 0.063 (0.134)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.111 (0.107)]
+2024-05-27 16:11:20,884 - Test: 100.00% [29/29] [batch_t 0.159 (0.150)] [cos 0.285 (0.184)]
+2024-05-27 16:11:21,536 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.151 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.148 (mIoU_max_px)	
+2024-05-27 16:11:22,139 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.145 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-27 16:11:22,595 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 16:11:22,904 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.076 (mIoU_max_px)	
+2024-05-27 16:11:23,659 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.187 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-27 16:11:24,435 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.193 (mIoU_max_px)	
+2024-05-27 16:11:24,438 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     83.444      |  83.444 (50  epoch)   |    87.088    | 88.328 (30  epoch)  |      83.636      |   84.615 (10  epoch)   |   93.462    | 93.862 (40  epoch) |   97.483    | 97.824 (40  epoch) |  5.671   | 6.673 (40  epoch)  |    9.867     | 11.361 (40  epoch) |        4.740         |     5.568 (40  epoch)      |        65.529         |     69.183 (20  epoch)      |         2.462         |      2.910 (40  epoch)      |     5.189     |  6.023 (40  epoch)  |
+| bracket_brown |     84.917      |  85.520 (40  epoch)   |    90.449    | 90.507 (40  epoch)  |      91.071      |   91.071 (50  epoch)   |   94.869    | 94.869 (50  epoch) |   97.162    | 97.162 (50  epoch) |  14.770  | 14.770 (50  epoch) |    23.655    | 23.655 (50  epoch) |        11.216        |     11.216 (50  epoch)     |        52.948         |     55.257 (20  epoch)      |         6.160         |      6.160 (50  epoch)      |    13.414     | 13.414 (50  epoch)  |
+| bracket_white |     86.889      |  90.111 (10  epoch)   |    84.814    | 90.019 (10  epoch)  |      86.154      |   87.500 (10  epoch)   |   93.664    | 94.952 (30  epoch) |   98.752    | 99.008 (30  epoch) |  1.552   | 3.418 (30  epoch)  |    4.519     | 10.380 (30  epoch) |        1.796         |     3.788 (30  epoch)      |        54.983         |     68.451 (10  epoch)      |         0.910         |      1.958 (30  epoch)      |     2.312     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.975    | 96.975 (50  epoch) |   99.082    | 99.082 (50  epoch) |  59.274  | 59.963 (20  epoch) |    54.616    | 56.439 (20  epoch) |        28.276        |     28.531 (40  epoch)     |        63.399         |     68.019 (10  epoch)      |        17.733         |     17.867 (40  epoch)      |    37.566     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.645    | 96.732 (30  epoch) |   99.142    | 99.142 (50  epoch) |  92.801  | 92.801 (50  epoch) |    88.106    | 88.122 (30  epoch) |        49.644        |     52.532 (10  epoch)     |        54.613         |     61.773 (10  epoch)      |        38.925         |     40.673 (10  epoch)      |    78.740     | 78.766 (30  epoch)  |
+|     tubes     |     90.444      |  90.444 (50  epoch)   |    96.482    | 96.482 (50  epoch)  |      90.647      |   90.647 (50  epoch)   |   95.850    | 95.850 (50  epoch) |   98.976    | 98.976 (50  epoch) |  66.631  | 66.631 (50  epoch) |    63.293    | 63.293 (50  epoch) |        29.524        |     29.524 (50  epoch)     |        74.226         |     75.175 (10  epoch)      |        19.094         |     19.094 (50  epoch)      |    46.299     | 46.299 (50  epoch)  |
+|      Avg      |     90.949      |  90.949 (50  epoch)   |    93.139    | 93.139 (50  epoch)  |      91.918      |   91.918 (50  epoch)   |   95.244    | 95.290 (40  epoch) |   98.433    | 98.433 (50  epoch) |  40.117  | 40.117 (50  epoch) |    40.676    | 41.017 (30  epoch) |        20.866        |     21.002 (40  epoch)     |        60.950         |     65.165 (10  epoch)      |        14.214         |     14.226 (40  epoch)      |    30.587     | 30.587 (50  epoch)  |
+2024-05-27 16:11:24,547 - ==> Total time: 0:08:59	 Eta: 0:08:59 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:11:33,887 - Train: 50.91% [2800/5500]  [50.9/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.100 (0.116)]
+2024-05-27 16:11:34,499 - ==> Total time: 0:09:09	 Eta: 0:08:47 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:11:43,100 - Train: 51.82% [2850/5500]  [51.8/100.0] [batch_t 0.366 (0.145)] [data_t 0.304] [optim_t 0.062] [lr 0.005000] [cos 0.098 (0.105)]
+2024-05-27 16:11:44,315 - ==> Total time: 0:09:19	 Eta: 0:08:36 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:11:51,654 - Train: 52.73% [2900/5500]  [52.7/100.0] [batch_t 0.063 (0.142)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.105 (0.104)]
+2024-05-27 16:11:53,768 - ==> Total time: 0:09:28	 Eta: 0:08:24 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:00,471 - Train: 53.64% [2950/5500]  [53.6/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.112 (0.106)]
+2024-05-27 16:12:03,228 - ==> Total time: 0:09:38	 Eta: 0:08:12 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:09,290 - Train: 54.55% [3000/5500]  [54.5/100.0] [batch_t 0.063 (0.149)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.103 (0.105)]
+2024-05-27 16:12:12,619 - ==> Total time: 0:09:47	 Eta: 0:08:00 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:18,217 - Train: 55.45% [3050/5500]  [55.5/100.0] [batch_t 0.369 (0.155)] [data_t 0.307] [optim_t 0.062] [lr 0.005000] [cos 0.106 (0.104)]
+2024-05-27 16:12:22,216 - ==> Total time: 0:09:57	 Eta: 0:07:49 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:27,172 - Train: 56.36% [3100/5500]  [56.4/100.0] [batch_t 0.063 (0.149)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.104 (0.105)]
+2024-05-27 16:12:32,091 - ==> Total time: 0:10:06	 Eta: 0:07:37 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:36,096 - Train: 57.27% [3150/5500]  [57.3/100.0] [batch_t 0.063 (0.155)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.097 (0.100)]
+2024-05-27 16:12:41,641 - ==> Total time: 0:10:16	 Eta: 0:07:26 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:44,966 - Train: 58.18% [3200/5500]  [58.2/100.0] [batch_t 0.063 (0.174)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.099 (0.101)]
+2024-05-27 16:12:51,121 - ==> Total time: 0:10:25	 Eta: 0:07:14 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:12:53,953 - Train: 59.09% [3250/5500]  [59.1/100.0] [batch_t 0.363 (0.224)] [data_t 0.301] [optim_t 0.062] [lr 0.005000] [cos 0.105 (0.104)]
+2024-05-27 16:13:00,649 - Train: 60.00% [3300/5500]  [60.0/100.0] [batch_t 0.063 (0.134)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.101 (0.102)]
+2024-05-27 16:13:05,198 - Test: 100.00% [29/29] [batch_t 0.162 (0.152)] [cos 0.276 (0.179)]
+2024-05-27 16:13:05,852 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 16:13:06,436 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.142 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 16:13:06,871 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.038 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-27 16:13:07,182 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.078 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.079 (mIoU_max_px)	
+2024-05-27 16:13:07,931 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.182 (mIoU_max_px)	
+2024-05-27 16:13:08,690 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-27 16:13:08,693 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     83.311      |  83.444 (50  epoch)   |    87.867    | 88.328 (30  epoch)  |      84.444      |   84.615 (10  epoch)   |   94.129    | 94.129 (60  epoch) |   97.728    | 97.824 (40  epoch) |  6.481   | 6.673 (40  epoch)  |    12.804    | 12.804 (60  epoch) |        6.515         |     6.515 (60  epoch)      |        57.156         |     69.183 (20  epoch)      |         3.422         |      3.422 (60  epoch)      |     6.840     |  6.840 (60  epoch)  |
+| bracket_brown |     82.428      |  85.520 (40  epoch)   |    86.504    | 90.507 (40  epoch)  |      91.892      |   91.892 (60  epoch)   |   94.228    | 94.869 (50  epoch) |   96.616    | 97.162 (50  epoch) |  13.245  | 14.770 (50  epoch) |    22.740    | 23.655 (50  epoch) |        10.306        |     11.216 (50  epoch)     |        48.108         |     55.257 (20  epoch)      |         5.629         |      6.160 (50  epoch)      |    12.829     | 13.414 (50  epoch)  |
+| bracket_white |     88.111      |  90.111 (10  epoch)   |    89.213    | 90.019 (10  epoch)  |      87.097      |   87.500 (10  epoch)   |   94.374    | 94.952 (30  epoch) |   98.865    | 99.008 (30  epoch) |  2.042   | 3.418 (30  epoch)  |    6.513     | 10.380 (30  epoch) |        2.571         |     3.788 (30  epoch)      |        59.490         |     68.451 (10  epoch)      |         1.314         |      1.958 (30  epoch)      |     3.366     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   97.041    | 97.041 (60  epoch) |   99.099    | 99.099 (60  epoch) |  57.178  | 59.963 (20  epoch) |    54.078    | 56.439 (20  epoch) |        28.493        |     28.531 (40  epoch)     |        63.329         |     68.019 (10  epoch)      |        17.869         |     17.869 (60  epoch)      |    37.060     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.812    | 96.812 (60  epoch) |   99.226    | 99.226 (60  epoch) |  93.701  | 93.701 (60  epoch) |    88.729    | 88.729 (60  epoch) |        50.315        |     52.532 (10  epoch)     |        54.437         |     61.773 (10  epoch)      |        39.850         |     40.673 (10  epoch)      |    79.741     | 79.741 (60  epoch)  |
+|     tubes     |     88.179      |  90.444 (50  epoch)   |    95.472    | 96.482 (50  epoch)  |      88.372      |   90.647 (50  epoch)   |   96.001    | 96.001 (60  epoch) |   98.985    | 98.985 (60  epoch) |  64.783  | 66.631 (50  epoch) |    62.281    | 63.293 (50  epoch) |        28.327        |     29.524 (50  epoch)     |        68.273         |     75.175 (10  epoch)      |        18.157         |     19.094 (50  epoch)      |    45.224     | 46.299 (50  epoch)  |
+|      Avg      |     90.338      |  90.949 (50  epoch)   |    93.176    | 93.176 (60  epoch)  |      91.968      |   91.968 (60  epoch)   |   95.431    | 95.431 (60  epoch) |   98.420    | 98.433 (50  epoch) |  39.572  | 40.117 (50  epoch) |    41.191    | 41.191 (60  epoch) |        21.088        |     21.088 (60  epoch)     |        58.465         |     65.165 (10  epoch)      |        14.374         |     14.374 (60  epoch)      |    30.843     | 30.843 (60  epoch)  |
+2024-05-27 16:13:08,748 - ==> Total time: 0:10:43	 Eta: 0:07:09 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:13:17,987 - Train: 60.91% [3350/5500]  [60.9/100.0] [batch_t 0.063 (0.144)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.112 (0.102)]
+2024-05-27 16:13:18,605 - ==> Total time: 0:10:53	 Eta: 0:06:57 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:13:27,300 - Train: 61.82% [3400/5500]  [61.8/100.0] [batch_t 0.364 (0.149)] [data_t 0.302] [optim_t 0.062] [lr 0.005000] [cos 0.107 (0.100)]
+2024-05-27 16:13:28,550 - ==> Total time: 0:11:03	 Eta: 0:06:46 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:13:35,947 - Train: 62.73% [3450/5500]  [62.7/100.0] [batch_t 0.063 (0.142)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.111 (0.099)]
+2024-05-27 16:13:38,094 - ==> Total time: 0:11:12	 Eta: 0:06:35 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:13:44,759 - Train: 63.64% [3500/5500]  [63.6/100.0] [batch_t 0.063 (0.146)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.092 (0.099)]
+2024-05-27 16:13:47,508 - ==> Total time: 0:11:22	 Eta: 0:06:23 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:13:53,647 - Train: 64.55% [3550/5500]  [64.5/100.0] [batch_t 0.063 (0.150)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.095 (0.098)]
+2024-05-27 16:13:57,017 - ==> Total time: 0:11:31	 Eta: 0:06:12 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:14:02,504 - Train: 65.45% [3600/5500]  [65.5/100.0] [batch_t 0.360 (0.156)] [data_t 0.298] [optim_t 0.062] [lr 0.005000] [cos 0.097 (0.101)]
+2024-05-27 16:14:06,488 - ==> Total time: 0:11:41	 Eta: 0:06:01 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:14:12,411 - Train: 66.36% [3650/5500]  [66.4/100.0] [batch_t 0.063 (0.148)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.094 (0.102)]
+2024-05-27 16:14:17,311 - ==> Total time: 0:11:52	 Eta: 0:05:50 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:14:21,276 - Train: 67.27% [3700/5500]  [67.3/100.0] [batch_t 0.063 (0.158)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.101 (0.096)]
+2024-05-27 16:14:26,761 - ==> Total time: 0:12:01	 Eta: 0:05:39 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:14:30,054 - Train: 68.18% [3750/5500]  [68.2/100.0] [batch_t 0.063 (0.174)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.092 (0.099)]
+2024-05-27 16:14:36,114 - ==> Total time: 0:12:10	 Eta: 0:05:28 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:14:38,781 - Train: 69.09% [3800/5500]  [69.1/100.0] [batch_t 0.358 (0.222)] [data_t 0.296] [optim_t 0.062] [lr 0.005000] [cos 0.094 (0.092)]
+2024-05-27 16:14:45,523 - Train: 70.00% [3850/5500]  [70.0/100.0] [batch_t 0.063 (0.135)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.104 (0.097)]
+2024-05-27 16:14:50,151 - Test: 100.00% [29/29] [batch_t 0.170 (0.156)] [cos 0.275 (0.179)]
+2024-05-27 16:14:50,780 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.145 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-27 16:14:51,369 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.142 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.142 (mIoU_max_px)	
+2024-05-27 16:14:51,808 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-27 16:14:52,111 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-27 16:14:52,860 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-27 16:14:53,622 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-27 16:14:53,625 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     82.779      |  83.444 (50  epoch)   |    88.503    | 88.503 (70  epoch)  |      81.739      |   84.615 (10  epoch)   |   93.948    | 94.129 (60  epoch) |   97.765    | 97.824 (40  epoch) |  6.517   | 6.673 (40  epoch)  |    13.269    | 13.269 (70  epoch) |        6.099         |     6.515 (60  epoch)      |        59.997         |     69.183 (20  epoch)      |         3.200         |      3.422 (60  epoch)      |     7.106     |  7.106 (70  epoch)  |
+| bracket_brown |     85.143      |  85.520 (40  epoch)   |    89.954    | 90.507 (40  epoch)  |      91.892      |   91.892 (60  epoch)   |   93.971    | 94.869 (50  epoch) |   96.404    | 97.162 (50  epoch) |  13.597  | 14.770 (50  epoch) |    22.752    | 23.655 (50  epoch) |        10.402        |     11.216 (50  epoch)     |        48.547         |     55.257 (20  epoch)      |         5.672         |      6.160 (50  epoch)      |    12.836     | 13.414 (50  epoch)  |
+| bracket_white |     86.778      |  90.111 (10  epoch)   |    87.558    | 90.019 (10  epoch)  |      85.246      |   87.500 (10  epoch)   |   94.665    | 94.952 (30  epoch) |   98.951    | 99.008 (30  epoch) |  2.280   | 3.418 (30  epoch)  |    7.124     | 10.380 (30  epoch) |        2.748         |     3.788 (30  epoch)      |        63.635         |     68.451 (10  epoch)      |         1.406         |      1.958 (30  epoch)      |     3.694     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   97.419    | 97.419 (70  epoch) |   99.215    | 99.215 (70  epoch) |  61.044  | 61.044 (70  epoch) |    56.208    | 56.439 (20  epoch) |        28.611        |     28.611 (70  epoch)     |        59.192         |     68.019 (10  epoch)      |        18.154         |     18.154 (70  epoch)      |    39.090     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.655    | 96.812 (60  epoch) |   99.167    | 99.226 (60  epoch) |  93.053  | 93.701 (60  epoch) |    88.384    | 88.729 (60  epoch) |        49.597        |     52.532 (10  epoch)     |        54.393         |     61.773 (10  epoch)      |        39.048         |     40.673 (10  epoch)      |    79.185     | 79.741 (60  epoch)  |
+|     tubes     |     91.214      |  91.214 (70  epoch)   |    96.660    | 96.660 (70  epoch)  |      91.729      |   91.729 (70  epoch)   |   95.895    | 96.001 (60  epoch) |   98.964    | 98.985 (60  epoch) |  68.098  | 68.098 (70  epoch) |    65.142    | 65.142 (70  epoch) |        29.731        |     29.731 (70  epoch)     |        68.223         |     75.175 (10  epoch)      |        19.316         |     19.316 (70  epoch)      |    48.304     | 48.304 (70  epoch)  |
+|      Avg      |     90.986      |  90.986 (70  epoch)   |    93.779    | 93.779 (70  epoch)  |      91.768      |   91.968 (60  epoch)   |   95.425    | 95.431 (60  epoch) |   98.411    | 98.433 (50  epoch) |  40.765  | 40.765 (70  epoch) |    42.146    | 42.146 (70  epoch) |        21.198        |     21.198 (70  epoch)     |        58.998         |     65.165 (10  epoch)      |        14.466         |     14.466 (70  epoch)      |    31.702     | 31.702 (70  epoch)  |
+2024-05-27 16:14:53,708 - ==> Total time: 0:12:28	 Eta: 0:05:20 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:03,096 - Train: 70.91% [3900/5500]  [70.9/100.0] [batch_t 0.063 (0.148)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.096 (0.097)]
+2024-05-27 16:15:03,708 - ==> Total time: 0:12:38	 Eta: 0:05:09 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:12,496 - Train: 71.82% [3950/5500]  [71.8/100.0] [batch_t 0.367 (0.153)] [data_t 0.306] [optim_t 0.062] [lr 0.005000] [cos 0.101 (0.097)]
+2024-05-27 16:15:13,727 - ==> Total time: 0:12:48	 Eta: 0:04:58 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:21,412 - Train: 72.73% [4000/5500]  [72.7/100.0] [batch_t 0.063 (0.144)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.097 (0.097)]
+2024-05-27 16:15:23,567 - ==> Total time: 0:12:58	 Eta: 0:04:47 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:30,205 - Train: 73.64% [4050/5500]  [73.6/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.095 (0.097)]
+2024-05-27 16:15:32,962 - ==> Total time: 0:13:07	 Eta: 0:04:36 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:39,014 - Train: 74.55% [4100/5500]  [74.5/100.0] [batch_t 0.063 (0.149)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.094 (0.094)]
+2024-05-27 16:15:42,385 - ==> Total time: 0:13:17	 Eta: 0:04:25 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:47,984 - Train: 75.45% [4150/5500]  [75.5/100.0] [batch_t 0.369 (0.156)] [data_t 0.308] [optim_t 0.062] [lr 0.005000] [cos 0.095 (0.094)]
+2024-05-27 16:15:51,982 - ==> Total time: 0:13:26	 Eta: 0:04:14 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:15:56,620 - Train: 76.36% [4200/5500]  [76.4/100.0] [batch_t 0.063 (0.149)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.096 (0.093)]
+2024-05-27 16:16:01,472 - ==> Total time: 0:13:36	 Eta: 0:04:03 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:16:06,169 - Train: 77.27% [4250/5500]  [77.3/100.0] [batch_t 0.063 (0.156)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.090 (0.095)]
+2024-05-27 16:16:11,678 - ==> Total time: 0:13:46	 Eta: 0:03:53 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:16:15,142 - Train: 78.18% [4300/5500]  [78.2/100.0] [batch_t 0.063 (0.173)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.100 (0.095)]
+2024-05-27 16:16:21,231 - ==> Total time: 0:13:56	 Eta: 0:03:42 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:16:24,041 - Train: 79.09% [4350/5500]  [79.1/100.0] [batch_t 0.364 (0.224)] [data_t 0.302] [optim_t 0.062] [lr 0.005000] [cos 0.094 (0.091)]
+2024-05-27 16:16:30,785 - Train: 80.00% [4400/5500]  [80.0/100.0] [batch_t 0.063 (0.135)] [data_t 0.001] [optim_t 0.062] [lr 0.005000] [cos 0.096 (0.093)]
+2024-05-27 16:16:35,327 - Test: 100.00% [29/29] [batch_t 0.155 (0.152)] [cos 0.276 (0.175)]
+2024-05-27 16:16:35,992 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.153 (mF1_max_px)	  0.053 (mF1_px_0.2_0.8_0.1)	  0.053 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.154 (mIoU_max_px)	
+2024-05-27 16:16:36,603 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-27 16:16:37,056 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-27 16:16:37,365 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.076 (mIoU_max_px)	
+2024-05-27 16:16:38,123 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.185 (mIoU_max_px)	
+2024-05-27 16:16:38,911 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.198 (mF1_max_px)	  0.069 (mF1_px_0.2_0.8_0.1)	  0.069 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.195 (mIoU_max_px)	
+2024-05-27 16:16:38,914 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     84.973      |  84.973 (80  epoch)   |    88.311    | 88.503 (70  epoch)  |      85.437      |   85.437 (80  epoch)   |   93.920    | 94.129 (60  epoch) |   97.678    | 97.824 (40  epoch) |  6.199   | 6.673 (40  epoch)  |    12.488    | 13.269 (70  epoch) |        6.351         |     6.515 (60  epoch)      |        58.859         |     69.183 (20  epoch)      |         3.336         |      3.422 (60  epoch)      |     6.660     |  7.106 (70  epoch)  |
+| bracket_brown |     85.370      |  85.520 (40  epoch)   |    89.291    | 90.507 (40  epoch)  |      92.727      |   92.727 (80  epoch)   |   94.223    | 94.869 (50  epoch) |   96.404    | 97.162 (50  epoch) |  12.585  | 14.770 (50  epoch) |    21.232    | 23.655 (50  epoch) |        10.838        |     11.216 (50  epoch)     |        52.722         |     55.257 (20  epoch)      |         5.880         |      6.160 (50  epoch)      |    11.877     | 13.414 (50  epoch)  |
+| bracket_white |     84.778      |  90.111 (10  epoch)   |    85.711    | 90.019 (10  epoch)  |      83.333      |   87.500 (10  epoch)   |   95.071    | 95.071 (80  epoch) |   98.973    | 99.008 (30  epoch) |  2.209   | 3.418 (30  epoch)  |    6.342     | 10.380 (30  epoch) |        2.498         |     3.788 (30  epoch)      |        62.522         |     68.451 (10  epoch)      |         1.276         |      1.958 (30  epoch)      |     3.275     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   97.368    | 97.419 (70  epoch) |   99.196    | 99.215 (70  epoch) |  60.888  | 61.044 (70  epoch) |    56.435    | 56.439 (20  epoch) |        30.631        |     30.631 (80  epoch)     |        65.534         |     68.019 (10  epoch)      |        19.479         |     19.479 (80  epoch)      |    39.310     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.729    | 96.812 (60  epoch) |   99.182    | 99.226 (60  epoch) |  93.366  | 93.701 (60  epoch) |    88.240    | 88.729 (60  epoch) |        48.770        |     52.532 (10  epoch)     |        52.654         |     61.773 (10  epoch)      |        38.468         |     40.673 (10  epoch)      |    78.954     | 79.741 (60  epoch)  |
+|     tubes     |     87.092      |  91.214 (70  epoch)   |    94.834    | 96.660 (70  epoch)  |      86.154      |   91.729 (70  epoch)   |   95.737    | 96.001 (60  epoch) |   98.920    | 98.985 (60  epoch) |  64.154  | 68.098 (70  epoch) |    62.173    | 65.142 (70  epoch) |        28.663        |     29.731 (70  epoch)     |        70.280         |     75.175 (10  epoch)      |        18.411         |     19.316 (70  epoch)      |    45.109     | 48.304 (70  epoch)  |
+|      Avg      |     90.369      |  90.986 (70  epoch)   |    93.024    | 93.779 (70  epoch)  |      91.275      |   91.968 (60  epoch)   |   95.508    | 95.508 (80  epoch) |   98.392    | 98.433 (50  epoch) |  39.900  | 40.765 (70  epoch) |    41.152    | 42.146 (70  epoch) |        21.292        |     21.292 (80  epoch)     |        60.428         |     65.165 (10  epoch)      |        14.475         |     14.475 (80  epoch)      |    30.864     | 31.702 (70  epoch)  |
+2024-05-27 16:16:39,029 - ==> Total time: 0:14:13	 Eta: 0:03:33 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:16:48,161 - Train: 80.91% [4450/5500]  [80.9/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.092 (0.084)]
+2024-05-27 16:16:48,775 - ==> Total time: 0:14:23	 Eta: 0:03:22 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:16:58,384 - Train: 81.82% [4500/5500]  [81.8/100.0] [batch_t 0.358 (0.145)] [data_t 0.296] [optim_t 0.062] [lr 0.000500] [cos 0.077 (0.082)]
+2024-05-27 16:16:59,608 - ==> Total time: 0:14:34	 Eta: 0:03:11 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:07,342 - Train: 82.73% [4550/5500]  [82.7/100.0] [batch_t 0.063 (0.142)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.080 (0.081)]
+2024-05-27 16:17:09,501 - ==> Total time: 0:14:44	 Eta: 0:03:01 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:16,232 - Train: 83.64% [4600/5500]  [83.6/100.0] [batch_t 0.063 (0.146)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.080 (0.081)]
+2024-05-27 16:17:18,976 - ==> Total time: 0:14:53	 Eta: 0:02:50 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:24,985 - Train: 84.55% [4650/5500]  [84.5/100.0] [batch_t 0.063 (0.148)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.078 (0.081)]
+2024-05-27 16:17:28,338 - ==> Total time: 0:15:03	 Eta: 0:02:39 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:33,933 - Train: 85.45% [4700/5500]  [85.5/100.0] [batch_t 0.364 (0.156)] [data_t 0.302] [optim_t 0.062] [lr 0.000500] [cos 0.080 (0.081)]
+2024-05-27 16:17:37,869 - ==> Total time: 0:15:12	 Eta: 0:02:28 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:42,374 - Train: 86.36% [4750/5500]  [86.4/100.0] [batch_t 0.063 (0.146)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.077 (0.080)]
+2024-05-27 16:17:47,238 - ==> Total time: 0:15:22	 Eta: 0:02:17 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:51,155 - Train: 87.27% [4800/5500]  [87.3/100.0] [batch_t 0.063 (0.155)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.082 (0.081)]
+2024-05-27 16:17:56,640 - ==> Total time: 0:15:31	 Eta: 0:02:07 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:17:59,989 - Train: 88.18% [4850/5500]  [88.2/100.0] [batch_t 0.063 (0.174)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.082 (0.078)]
+2024-05-27 16:18:06,061 - ==> Total time: 0:15:40	 Eta: 0:01:56 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:18:08,715 - Train: 89.09% [4900/5500]  [89.1/100.0] [batch_t 0.366 (0.224)] [data_t 0.304] [optim_t 0.062] [lr 0.000500] [cos 0.080 (0.080)]
+2024-05-27 16:18:15,506 - Train: 90.00% [4950/5500]  [90.0/100.0] [batch_t 0.063 (0.136)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.072 (0.080)]
+2024-05-27 16:18:20,025 - Test: 100.00% [29/29] [batch_t 0.154 (0.151)] [cos 0.263 (0.165)]
+2024-05-27 16:18:20,691 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 16:18:21,304 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.151 (mIoU_max_px)	
+2024-05-27 16:18:21,769 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.121 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-27 16:18:22,092 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.082 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.030 (mIoU_px_0.2_0.8_0.1)	  0.080 (mIoU_max_px)	
+2024-05-27 16:18:22,858 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.182 (mIoU_max_px)	
+2024-05-27 16:18:23,632 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-27 16:18:23,635 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     84.309      |  84.973 (80  epoch)   |    88.665    | 88.665 (90  epoch)  |      82.353      |   85.437 (80  epoch)   |   94.025    | 94.129 (60  epoch) |   97.708    | 97.824 (40  epoch) |  6.642   | 6.673 (40  epoch)  |    12.937    | 13.269 (70  epoch) |        6.398         |     6.515 (60  epoch)      |        59.316         |     69.183 (20  epoch)      |         3.358         |      3.422 (60  epoch)      |     6.916     |  7.106 (70  epoch)  |
+| bracket_brown |     86.350      |  86.350 (90  epoch)   |    89.651    | 90.507 (40  epoch)  |      92.727      |   92.727 (80  epoch)   |   93.919    | 94.869 (50  epoch) |   95.954    | 97.162 (50  epoch) |  13.018  | 14.770 (50  epoch) |    22.874    | 23.655 (50  epoch) |        10.993        |     11.216 (50  epoch)     |        51.451         |     55.257 (20  epoch)      |         5.995         |      6.160 (50  epoch)      |    12.914     | 13.414 (50  epoch)  |
+| bracket_white |     85.889      |  90.111 (10  epoch)   |    87.074    | 90.019 (10  epoch)  |      81.356      |   87.500 (10  epoch)   |   95.090    | 95.090 (90  epoch) |   98.998    | 99.008 (30  epoch) |  2.276   | 3.418 (30  epoch)  |    6.560     | 10.380 (30  epoch) |        2.565         |     3.788 (30  epoch)      |        57.492         |     68.451 (10  epoch)      |         1.313         |      1.958 (30  epoch)      |     3.391     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   97.471    | 97.471 (90  epoch) |   99.230    | 99.230 (90  epoch) |  61.219  | 61.219 (90  epoch) |    55.862    | 56.439 (20  epoch) |        31.304        |     31.304 (90  epoch)     |        63.664         |     68.019 (10  epoch)      |        19.914         |     19.914 (90  epoch)      |    38.756     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.753    | 96.812 (60  epoch) |   99.171    | 99.226 (60  epoch) |  93.091  | 93.701 (60  epoch) |    88.054    | 88.729 (60  epoch) |        48.683        |     52.532 (10  epoch)     |        52.112         |     61.773 (10  epoch)      |        38.424         |     40.673 (10  epoch)      |    78.658     | 79.741 (60  epoch)  |
+|     tubes     |     91.938      |  91.938 (90  epoch)   |    97.135    | 97.135 (90  epoch)  |      92.086      |   92.086 (90  epoch)   |   96.013    | 96.013 (90  epoch) |   98.997    | 98.997 (90  epoch) |  67.551  | 68.098 (70  epoch) |    65.899    | 65.899 (90  epoch) |        30.271        |     30.271 (90  epoch)     |        68.946         |     75.175 (10  epoch)      |        19.760         |     19.760 (90  epoch)      |    49.141     | 49.141 (90  epoch)  |
+|      Avg      |     91.414      |  91.414 (90  epoch)   |    93.754    | 93.779 (70  epoch)  |      91.420      |   91.968 (60  epoch)   |   95.545    | 95.545 (90  epoch) |   98.343    | 98.433 (50  epoch) |  40.633  | 40.765 (70  epoch) |    42.031    | 42.146 (70  epoch) |        21.702        |     21.702 (90  epoch)     |        58.830         |     65.165 (10  epoch)      |        14.794         |     14.794 (90  epoch)      |    31.629     | 31.702 (70  epoch)  |
+2024-05-27 16:18:23,753 - ==> Total time: 0:15:58	 Eta: 0:01:46 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:18:33,676 - Train: 90.91% [5000/5500]  [90.9/100.0] [batch_t 0.063 (0.144)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.073 (0.079)]
+2024-05-27 16:18:34,276 - ==> Total time: 0:16:09	 Eta: 0:01:35 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:18:42,907 - Train: 91.82% [5050/5500]  [91.8/100.0] [batch_t 0.363 (0.144)] [data_t 0.301] [optim_t 0.062] [lr 0.000500] [cos 0.076 (0.079)]
+2024-05-27 16:18:44,133 - ==> Total time: 0:16:18	 Eta: 0:01:25 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:18:51,488 - Train: 92.73% [5100/5500]  [92.7/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.074 (0.079)]
+2024-05-27 16:18:53,607 - ==> Total time: 0:16:28	 Eta: 0:01:14 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:00,265 - Train: 93.64% [5150/5500]  [93.6/100.0] [batch_t 0.063 (0.145)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.075 (0.078)]
+2024-05-27 16:19:03,007 - ==> Total time: 0:16:37	 Eta: 0:01:03 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:09,247 - Train: 94.55% [5200/5500]  [94.5/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.078 (0.078)]
+2024-05-27 16:19:12,584 - ==> Total time: 0:16:47	 Eta: 0:00:53 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:18,309 - Train: 95.45% [5250/5500]  [95.5/100.0] [batch_t 0.370 (0.154)] [data_t 0.308] [optim_t 0.062] [lr 0.000500] [cos 0.076 (0.078)]
+2024-05-27 16:19:22,282 - ==> Total time: 0:16:57	 Eta: 0:00:42 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:26,738 - Train: 96.36% [5300/5500]  [96.4/100.0] [batch_t 0.063 (0.147)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.078 (0.077)]
+2024-05-27 16:19:31,636 - ==> Total time: 0:17:06	 Eta: 0:00:31 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:35,466 - Train: 97.27% [5350/5500]  [97.3/100.0] [batch_t 0.063 (0.154)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.073 (0.077)]
+2024-05-27 16:19:40,915 - ==> Total time: 0:17:15	 Eta: 0:00:21 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:44,140 - Train: 98.18% [5400/5500]  [98.2/100.0] [batch_t 0.063 (0.172)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.074 (0.076)]
+2024-05-27 16:19:50,176 - ==> Total time: 0:17:25	 Eta: 0:00:10 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:19:52,754 - Train: 99.09% [5450/5500]  [99.1/100.0] [batch_t 0.350 (0.219)] [data_t 0.288] [optim_t 0.062] [lr 0.000500] [cos 0.080 (0.080)]
+2024-05-27 16:19:59,459 - Train: 100.00% [5500/5500]  [100.0/100.0] [batch_t 0.063 (0.134)] [data_t 0.001] [optim_t 0.062] [lr 0.000500] [cos 0.081 (0.078)]
+2024-05-27 16:20:03,949 - Test: 100.00% [29/29] [batch_t 0.161 (0.151)] [cos 0.264 (0.165)]
+2024-05-27 16:20:04,602 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.151 (mIoU_max_px)	
+2024-05-27 16:20:05,203 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 16:20:05,652 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.110 (mIoU_max_px)	
+2024-05-27 16:20:05,962 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.077 (mIoU_max_px)	
+2024-05-27 16:20:06,719 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-27 16:20:07,486 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-27 16:20:07,489 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     84.176      |  84.973 (80  epoch)   |    88.296    | 88.665 (90  epoch)  |      83.146      |   85.437 (80  epoch)   |   94.052    | 94.129 (60  epoch) |   97.732    | 97.824 (40  epoch) |  6.591   | 6.673 (40  epoch)  |    12.684    | 13.269 (70  epoch) |        6.457         |     6.515 (60  epoch)      |        58.272         |     69.183 (20  epoch)      |         3.387         |      3.422 (60  epoch)      |     6.772     |  7.106 (70  epoch)  |
+| bracket_brown |     86.199      |  86.350 (90  epoch)   |    89.592    | 90.507 (40  epoch)  |      92.727      |   92.727 (80  epoch)   |   93.936    | 94.869 (50  epoch) |   96.004    | 97.162 (50  epoch) |  13.099  | 14.770 (50  epoch) |    23.099    | 23.655 (50  epoch) |        11.086        |     11.216 (50  epoch)     |        51.657         |     55.257 (20  epoch)      |         6.046         |      6.160 (50  epoch)      |    13.058     | 13.414 (50  epoch)  |
+| bracket_white |     85.333      |  90.111 (10  epoch)   |    86.453    | 90.019 (10  epoch)  |      81.356      |   87.500 (10  epoch)   |   95.160    | 95.160 (100 epoch) |   99.009    | 99.009 (100 epoch) |  2.265   | 3.418 (30  epoch)  |    6.361     | 10.380 (30  epoch) |        2.499         |     3.788 (30  epoch)      |        57.854         |     68.451 (10  epoch)      |         1.278         |      1.958 (30  epoch)      |     3.285     |  5.474 (30  epoch)  |
+|   connector   |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   97.452    | 97.471 (90  epoch) |   99.225    | 99.230 (90  epoch) |  60.601  | 61.219 (90  epoch) |    55.459    | 56.439 (20  epoch) |        31.434        |     31.434 (100 epoch)     |        64.591         |     68.019 (10  epoch)      |        19.988         |     19.988 (100 epoch)      |    38.369     | 39.313 (20  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (10  epoch)  |   100.000    | 100.000 (10  epoch) |     100.000      |  100.000 (10  epoch)   |   96.719    | 96.812 (60  epoch) |   99.147    | 99.226 (60  epoch) |  92.898  | 93.701 (60  epoch) |    87.711    | 88.729 (60  epoch) |        48.029        |     52.532 (10  epoch)     |        51.492         |     61.773 (10  epoch)      |        37.820         |     40.673 (10  epoch)      |    78.112     | 79.741 (60  epoch)  |
+|     tubes     |     91.938      |  91.938 (90  epoch)   |    97.127    | 97.135 (90  epoch)  |      93.333      |   93.333 (100 epoch)   |   95.961    | 96.013 (90  epoch) |   98.986    | 98.997 (90  epoch) |  67.053  | 68.098 (70  epoch) |    65.599    | 65.899 (90  epoch) |        30.123        |     30.271 (90  epoch)     |        69.446         |     75.175 (10  epoch)      |        19.623         |     19.760 (90  epoch)      |    48.808     | 49.141 (90  epoch)  |
+|      Avg      |     91.274      |  91.414 (90  epoch)   |    93.578    | 93.779 (70  epoch)  |      91.760      |   91.968 (60  epoch)   |   95.547    | 95.547 (100 epoch) |   98.350    | 98.433 (50  epoch) |  40.418  | 40.765 (70  epoch) |    41.819    | 42.146 (70  epoch) |        21.605        |     21.702 (90  epoch)     |        58.885         |     65.165 (10  epoch)      |        14.691         |     14.794 (90  epoch)      |    31.401     | 31.702 (70  epoch)  |
+2024-05-27 16:20:07,599 - ==> Total time: 0:17:42	 Eta: 0:00:00 	Logged in 'runs/benchmark/rd_256_100e/mpdd/RDTrainer_configs_benchmark_rd_256_100e_20240527-160225'
+2024-05-27 16:20:10,011 - finish training

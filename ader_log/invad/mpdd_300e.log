@@ -1,0 +1,1106 @@
+2024-05-26 12:11:09,062 - ==> Logging on master GPU: 0
+2024-05-26 12:11:09,062 - ==> Running Trainer: InvADTrainer
+2024-05-26 12:11:09,062 - ==> Using GPU: [0] for Training
+2024-05-26 12:11:09,062 - ==> Building model
+2024-05-26 12:11:09,998 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_racm-8234f177.pth'
+2024-05-26 12:11:15,416 - 
+------------------------------------ InvAD ------------------------------------
+| module                                   | #parameters or shape    | #flops       |
+|:-----------------------------------------|:------------------------|:-------------|
+| model                                    | 95.631M                 | 45.394G      |
+|  net_encoder                             |  24.863M                |  12.034G     |
+|   net_encoder.conv1                      |   9.408K                |   0.154G     |
+|    net_encoder.conv1.weight              |    (64, 3, 7, 7)        |              |
+|   net_encoder.bn1                        |   0.128K                |   2.097M     |
+|    net_encoder.bn1.weight                |    (64,)                |              |
+|    net_encoder.bn1.bias                  |    (64,)                |              |
+|   net_encoder.layer1                     |   0.634M                |   2.598G     |
+|    net_encoder.layer1.0                  |    0.206M               |    0.845G    |
+|     net_encoder.layer1.0.conv1           |     8.192K              |     33.554M  |
+|      net_encoder.layer1.0.conv1.weight   |      (128, 64, 1, 1)    |              |
+|     net_encoder.layer1.0.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.0.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.0.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.0.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.0.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.0.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.0.bn3.bias       |      (256,)             |              |
+|     net_encoder.layer1.0.downsample      |     16.896K             |     69.206M  |
+|      net_encoder.layer1.0.downsample.0   |      16.384K            |      67.109M |
+|      net_encoder.layer1.0.downsample.1   |      0.512K             |      2.097M  |
+|    net_encoder.layer1.1                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.1.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.1.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.1.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.1.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.1.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.1.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.1.bn3.bias       |      (256,)             |              |
+|    net_encoder.layer1.2                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.2.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.2.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.2.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.2.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.2.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.2.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.2.bn3.bias       |      (256,)             |              |
+|   net_encoder.layer2                     |   3.483M                |   3.769G     |
+|    net_encoder.layer2.0                  |    0.921M               |    1.146G    |
+|     net_encoder.layer2.0.conv1           |     65.536K             |     0.268G   |
+|      net_encoder.layer2.0.conv1.weight   |      (256, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn1             |     0.512K              |     2.097M   |
+|      net_encoder.layer2.0.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.0.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.0.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.0.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.0.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.0.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.0.bn3.bias       |      (512,)             |              |
+|     net_encoder.layer2.0.downsample      |     0.132M              |     0.135G   |
+|      net_encoder.layer2.0.downsample.0   |      0.131M             |      0.134G  |
+|      net_encoder.layer2.0.downsample.1   |      1.024K             |      1.049M  |
+|    net_encoder.layer2.1                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.1.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.1.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.1.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.1.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.1.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.1.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.1.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.2                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.2.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.2.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.2.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.2.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.2.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.2.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.2.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.3                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.3.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.3.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.3.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.3.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.3.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.3.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.3.bn3.bias       |      (512,)             |              |
+|   net_encoder.layer3                     |   20.736M               |   5.511G     |
+|    net_encoder.layer3.0                  |    3.676M               |    1.143G    |
+|     net_encoder.layer3.0.conv1           |     0.262M              |     0.268G   |
+|      net_encoder.layer3.0.conv1.weight   |      (512, 512, 1, 1)   |              |
+|     net_encoder.layer3.0.bn1             |     1.024K              |     1.049M   |
+|      net_encoder.layer3.0.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.0.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.0.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.0.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.0.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.0.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.0.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.0.bn3.bias       |      (1024,)            |              |
+|     net_encoder.layer3.0.downsample      |     0.526M              |     0.135G   |
+|      net_encoder.layer3.0.downsample.0   |      0.524M             |      0.134G  |
+|      net_encoder.layer3.0.downsample.1   |      2.048K             |      0.524M  |
+|    net_encoder.layer3.1                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.1.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.1.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.1.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.1.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.1.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.1.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.1.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.2                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.2.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.2.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.2.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.2.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.2.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.2.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.2.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.3                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.3.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.3.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.3.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.3.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.3.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.3.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.3.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.4                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.4.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.4.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.4.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.4.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.4.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.4.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.4.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.5                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.5.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.5.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.5.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.5.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.5.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.5.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.5.bn3.bias       |      (1024,)            |              |
+|  net_fuser                               |  3.492M                 |  1.092G      |
+|   net_fuser.downsamples                  |   3.151M                |   0.806G     |
+|    net_fuser.downsamples.0               |    1.049M               |    0.269G    |
+|     net_fuser.downsamples.0.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.0.conv.weight |      (256, 256, 4, 4)   |              |
+|      net_fuser.downsamples.0.conv.bias   |      (256,)             |              |
+|     net_fuser.downsamples.0.norm         |     0.512K              |     0.131M   |
+|      net_fuser.downsamples.0.norm.weight |      (256,)             |              |
+|      net_fuser.downsamples.0.norm.bias   |      (256,)             |              |
+|    net_fuser.downsamples.1               |    1.05M                |    0.269G    |
+|     net_fuser.downsamples.1.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.1.conv.weight |      (512, 512, 2, 2)   |              |
+|      net_fuser.downsamples.1.conv.bias   |      (512,)             |              |
+|     net_fuser.downsamples.1.norm         |     1.024K              |     0.262M   |
+|      net_fuser.downsamples.1.norm.weight |      (512,)             |              |
+|      net_fuser.downsamples.1.norm.bias   |      (512,)             |              |
+|    net_fuser.downsamples.2               |    1.052M               |    0.269G    |
+|     net_fuser.downsamples.2.conv         |     1.05M               |     0.268G   |
+|      net_fuser.downsamples.2.conv.weight |      (1024, 1024, 1, 1) |              |
+|      net_fuser.downsamples.2.conv.bias   |      (1024,)            |              |
+|     net_fuser.downsamples.2.norm         |     2.048K              |     0.524M   |
+|      net_fuser.downsamples.2.norm.weight |      (1024,)            |              |
+|      net_fuser.downsamples.2.norm.bias   |      (1024,)            |              |
+|   net_fuser.conv_cat                     |   0.115M                |   29.393M    |
+|    net_fuser.conv_cat.conv               |    0.115M               |    29.36M    |
+|     net_fuser.conv_cat.conv.weight       |     (64, 1792, 1, 1)    |              |
+|    net_fuser.conv_cat.norm               |    0.128K               |    32.768K   |
+|     net_fuser.conv_cat.norm.weight       |     (64,)               |              |
+|     net_fuser.conv_cat.norm.bias         |     (64,)               |              |
+|   net_fuser.conv_bottle.0                |   4.544K                |   1.163M     |
+|    net_fuser.conv_bottle.0.conv1         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv1.weight |     (16, 64, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn1           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn1.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn1.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv2         |    2.304K               |    0.59M     |
+|     net_fuser.conv_bottle.0.conv2.weight |     (16, 16, 3, 3)      |              |
+|    net_fuser.conv_bottle.0.bn2           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn2.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn2.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv3         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv3.weight |     (64, 16, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn3           |    0.128K               |    32.768K   |
+|     net_fuser.conv_bottle.0.bn3.weight   |     (64,)               |              |
+|     net_fuser.conv_bottle.0.bn3.bias     |     (64,)               |              |
+|   net_fuser.convs                        |   0.222M                |   0.255G     |
+|    net_fuser.convs.0                     |    73.856K              |    18.874M   |
+|     net_fuser.convs.0.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.0.1               |      64                 |      0       |
+|     net_fuser.convs.0.1                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.1.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.1.1               |      64                 |      0       |
+|    net_fuser.convs.1                     |    73.856K              |    47.186M   |
+|     net_fuser.convs.1.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.1.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.1.0.2               |      64                 |      0       |
+|     net_fuser.convs.1.1                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.1.1.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.1.1.1               |      64                 |      0       |
+|    net_fuser.convs.2                     |    73.856K              |    0.189G    |
+|     net_fuser.convs.2.0                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.2.0.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.2.0.2               |      64                 |      0       |
+|     net_fuser.convs.2.1                  |     36.928K             |     0.151G   |
+|      net_fuser.convs.2.1.0               |      36.864K            |      0.151G  |
+|      net_fuser.convs.2.1.1               |      64                 |      0       |
+|  net_decoder                             |  67.277M                |  32.268G     |
+|   net_decoder.input                      |   0.262M                |   0          |
+|    net_decoder.input.input               |    (1, 1024, 16, 16)    |              |
+|   net_decoder.conv1.0                    |   9.438M                |   2.416G     |
+|    net_decoder.conv1.0.0                 |    9.437M               |    2.416G    |
+|     net_decoder.conv1.0.0.weight         |     (1024, 1024, 3, 3)  |              |
+|    net_decoder.conv1.0.1                 |    1.024K               |    0         |
+|     net_decoder.conv1.0.1.bias           |     (1024,)             |              |
+|   net_decoder.convs_latent               |   0.138M                |   0.248G     |
+|    net_decoder.convs_latent.0            |    46.16K               |    11.796M   |
+|     net_decoder.convs_latent.0.0         |     36.928K             |     9.437M   |
+|      net_decoder.convs_latent.0.0.0      |      36.864K            |      9.437M  |
+|      net_decoder.convs_latent.0.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.0.1         |     9.232K              |     2.359M   |
+|      net_decoder.convs_latent.0.1.0      |      9.216K             |      2.359M  |
+|      net_decoder.convs_latent.0.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.1            |    46.16K               |    47.186M   |
+|     net_decoder.convs_latent.1.0         |     36.928K             |     37.749M  |
+|      net_decoder.convs_latent.1.0.0      |      36.864K            |      37.749M |
+|      net_decoder.convs_latent.1.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.1.1         |     9.232K              |     9.437M   |
+|      net_decoder.convs_latent.1.1.0      |      9.216K             |      9.437M  |
+|      net_decoder.convs_latent.1.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.2            |    46.16K               |    0.189G    |
+|     net_decoder.convs_latent.2.0         |     36.928K             |     0.151G   |
+|      net_decoder.convs_latent.2.0.0      |      36.864K            |      0.151G  |
+|      net_decoder.convs_latent.2.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.2.1         |     9.232K              |     37.749M  |
+|      net_decoder.convs_latent.2.1.0      |      9.216K             |      37.749M |
+|      net_decoder.convs_latent.2.1.1      |      16                 |      0       |
+|   net_decoder.convs                      |   57.438M               |   29.604G    |
+|    net_decoder.convs.0                   |    41.038M              |    10.507G   |
+|     net_decoder.convs.0.0                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.0.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.skip.0        |      1.049M             |      0.268G  |
+|     net_decoder.convs.0.1                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.1.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.skip.0        |      1.049M             |      0.268G  |
+|    net_decoder.convs.1                   |    13.03M               |    9.319G    |
+|     net_decoder.convs.1.0                |     7.752M              |     3.912G   |
+|      net_decoder.convs.1.0.conv1         |      4.719M             |      1.209G  |
+|      net_decoder.convs.1.0.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.0.skip.0        |      0.524M             |      0.134G  |
+|     net_decoder.convs.1.1                |     5.279M              |     5.406G   |
+|      net_decoder.convs.1.1.conv1         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.skip.0        |      0.262M             |      0.268G  |
+|    net_decoder.convs.2                   |    3.369M               |    9.779G    |
+|     net_decoder.convs.2.0                |     1.975M              |     4.066G   |
+|      net_decoder.convs.2.0.conv1         |      1.18M              |      1.21G   |
+|      net_decoder.convs.2.0.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.0.skip.0        |      0.131M             |      0.134G  |
+|     net_decoder.convs.2.1                |     1.394M              |     5.713G   |
+|      net_decoder.convs.2.1.conv1         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.skip.0        |      65.536K            |      0.268G  |
+-------------------------------------------------------------------------------
+2024-05-26 12:11:15,418 - ==> Creating optimizer
+2024-05-26 12:11:15,434 - ==> Loading dataset: DefaultAD
+2024-05-26 12:11:15,438 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 300                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.004                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0, 0.99)}
+trainer.name                         : InvADTrainer                        
+trainer.checkpoint                   : runs/benchmark/invad_256_300e/mpdd  
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 300                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 4e-05, 'warmup_lr': 4e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 240, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 8100                                
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 27                                  
+data.test_size                       : 15                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_encoder.name                   : timm_wide_resnet50_2                
+model_encoder.kwargs                 : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_fuser                          : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}
+model_decoder                        : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}
+model_disor                          : {'sizes': [64, 32, 16], 'in_chas': [256, 512, 1024]}
+model.name                           : invad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_encoder': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_racm-8234f177.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_fuser': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}, 'model_decoder': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.004                               
+weight_decay                         : 0.0001                              
+uni_am                               : True                                
+use_cos                              : True                                
+cfg_path                             : configs.benchmark.invad_256_300e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/invad_256_300e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.invad_256_300e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/invad_256_300e/mpdd data.root=data/mpdd
+task_start_time                      : 3099349.269354884                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108/show_train
+logdir_test                          : runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108/show_test
+2024-05-26 12:11:15,438 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-26 12:11:46,721 - ==> Total time: 0:00:37	 Eta: 3:08:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:12:01,927 - Train: 0.62% [50/8100]  [1.9/300.0] [batch_t 0.375 (0.578)] [data_t 0.002] [optim_t 0.373] [lr 0.004000] [pixel 10.544 (11.066)]
+2024-05-26 12:12:04,300 - ==> Total time: 0:00:55	 Eta: 2:17:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:12:22,011 - ==> Total time: 0:01:13	 Eta: 2:00:30 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:12:35,986 - Train: 1.23% [100/8100]  [3.7/300.0] [batch_t 0.612 (0.616)] [data_t 0.002] [optim_t 0.610] [lr 0.004000] [pixel 9.372 (9.409)]
+2024-05-26 12:12:39,753 - ==> Total time: 0:01:30	 Eta: 1:51:57 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:12:58,099 - ==> Total time: 0:01:49	 Eta: 1:47:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:13:09,577 - Train: 1.85% [150/8100]  [5.6/300.0] [batch_t 0.738 (0.612)] [data_t 0.002] [optim_t 0.737] [lr 0.004000] [pixel 8.913 (8.905)]
+2024-05-26 12:13:16,049 - ==> Total time: 0:02:07	 Eta: 1:43:46 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:13:34,608 - ==> Total time: 0:02:25	 Eta: 1:41:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:13:43,829 - Train: 2.47% [200/8100]  [7.4/300.0] [batch_t 0.807 (0.646)] [data_t 0.002] [optim_t 0.805] [lr 0.004000] [pixel 8.171 (8.164)]
+2024-05-26 12:13:52,978 - ==> Total time: 0:02:43	 Eta: 1:39:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:14:11,337 - ==> Total time: 0:03:02	 Eta: 1:38:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:14:18,394 - Train: 3.09% [250/8100]  [9.3/300.0] [batch_t 0.448 (0.690)] [data_t 0.002] [optim_t 0.447] [lr 0.004000] [pixel 7.736 (7.753)]
+2024-05-26 12:14:30,342 - ==> Total time: 0:03:21	 Eta: 1:37:19 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:14:48,188 - ==> Total time: 0:03:39	 Eta: 1:35:59 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:14:53,484 - Train: 3.70% [300/8100]  [11.1/300.0] [batch_t 0.716 (1.020)] [data_t 0.002] [optim_t 0.714] [lr 0.004000] [pixel 7.358 (7.375)]
+2024-05-26 12:15:06,051 - ==> Total time: 0:03:57	 Eta: 1:34:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:15:23,920 - Train: 4.32% [350/8100]  [13.0/300.0] [batch_t 0.285 (0.602)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 7.154 (7.224)]
+2024-05-26 12:15:24,557 - ==> Total time: 0:04:15	 Eta: 1:34:02 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:15:40,275 - ==> Total time: 0:04:31	 Eta: 1:32:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:15:52,373 - Train: 4.94% [400/8100]  [14.8/300.0] [batch_t 0.444 (0.463)] [data_t 0.002] [optim_t 0.442] [lr 0.004000] [pixel 6.642 (6.894)]
+2024-05-26 12:15:54,302 - ==> Total time: 0:04:45	 Eta: 1:30:21 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:16:12,920 - ==> Total time: 0:05:03	 Eta: 1:29:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:16:24,126 - Train: 5.56% [450/8100]  [16.7/300.0] [batch_t 0.447 (0.512)] [data_t 0.002] [optim_t 0.445] [lr 0.004000] [pixel 6.414 (6.641)]
+2024-05-26 12:16:28,199 - ==> Total time: 0:05:19	 Eta: 1:28:34 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:16:46,882 - ==> Total time: 0:05:37	 Eta: 1:28:13 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:16:58,251 - Train: 6.17% [500/8100]  [18.5/300.0] [batch_t 0.520 (0.670)] [data_t 0.002] [optim_t 0.519] [lr 0.004000] [pixel 6.964 (6.479)]
+2024-05-26 12:17:05,734 - ==> Total time: 0:05:56	 Eta: 1:27:56 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:17:24,728 - ==> Total time: 0:06:15	 Eta: 1:27:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:17:33,678 - Train: 6.79% [550/8100]  [20.4/300.0] [batch_t 0.446 (0.687)] [data_t 0.002] [optim_t 0.444] [lr 0.004000] [pixel 6.376 (6.360)]
+2024-05-26 12:17:43,282 - ==> Total time: 0:06:34	 Eta: 1:27:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:18:01,509 - ==> Total time: 0:06:52	 Eta: 1:26:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:18:09,686 - Train: 7.41% [600/8100]  [22.2/300.0] [batch_t 0.396 (0.727)] [data_t 0.002] [optim_t 0.395] [lr 0.004000] [pixel 6.088 (6.016)]
+2024-05-26 12:18:21,919 - ==> Total time: 0:07:12	 Eta: 1:26:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:18:40,428 - ==> Total time: 0:07:31	 Eta: 1:26:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:18:44,763 - Train: 8.02% [650/8100]  [24.1/300.0] [batch_t 0.715 (1.119)] [data_t 0.002] [optim_t 0.713] [lr 0.004000] [pixel 5.952 (5.749)]
+2024-05-26 12:18:58,653 - ==> Total time: 0:07:49	 Eta: 1:26:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:19:15,500 - Train: 8.64% [700/8100]  [25.9/300.0] [batch_t 0.285 (0.589)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 5.711 (5.641)]
+2024-05-26 12:19:16,719 - ==> Total time: 0:08:07	 Eta: 1:25:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:19:35,063 - ==> Total time: 0:08:26	 Eta: 1:25:17 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:19:49,723 - Train: 9.26% [750/8100]  [27.8/300.0] [batch_t 0.748 (0.604)] [data_t 0.002] [optim_t 0.747] [lr 0.004000] [pixel 5.480 (5.499)]
+2024-05-26 12:19:53,111 - ==> Total time: 0:08:44	 Eta: 1:24:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:20:11,762 - ==> Total time: 0:09:02	 Eta: 1:24:32 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:20:22,832 - Train: 9.88% [800/8100]  [29.6/300.0] [batch_t 0.324 (0.542)] [data_t 0.002] [optim_t 0.322] [lr 0.004000] [pixel 5.500 (5.457)]
+2024-05-26 12:20:35,196 - Test: 100.00% [15/15] [batch_t 3.093 (0.546)] [pixel 8.187 (5.906)]
+2024-05-26 12:20:36,571 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-26 12:20:37,094 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.127 (mIoU_max_px)	
+2024-05-26 12:20:37,558 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.102 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.035 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.101 (mIoU_max_px)	
+2024-05-26 12:20:37,891 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 12:20:38,932 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-26 12:20:39,979 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.171 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 12:20:39,984 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     66.955      |  66.955 (30  epoch)   |    79.509    | 79.509 (30  epoch) |      75.806      |   75.806 (30  epoch)   |   91.828    | 91.828 (30  epoch) |   96.565    | 96.565 (30  epoch) |  3.651   | 3.651 (30  epoch)  |    10.768    | 10.768 (30  epoch) |        3.855         |     3.855 (30  epoch)      |        51.078         |     51.078 (30  epoch)      |         2.000         |      2.000 (30  epoch)      |     5.690     |  5.690 (30  epoch)  |
+| bracket_brown |     80.468      |  80.468 (30  epoch)   |    87.680    | 87.680 (30  epoch) |      87.500      |   87.500 (30  epoch)   |   91.084    | 91.084 (30  epoch) |   96.189    | 96.189 (30  epoch) |  12.415  | 12.415 (30  epoch) |    21.198    | 21.198 (30  epoch) |        9.930         |     9.930 (30  epoch)      |        52.889         |     52.889 (30  epoch)      |         5.334         |      5.334 (30  epoch)      |    11.856     | 11.856 (30  epoch)  |
+| bracket_white |     81.000      |  81.000 (30  epoch)   |    74.945    | 74.945 (30  epoch) |      81.356      |   81.356 (30  epoch)   |   89.243    | 89.243 (30  epoch) |   97.769    | 97.769 (30  epoch) |  3.186   | 3.186 (30  epoch)  |    8.986     | 8.986 (30  epoch)  |        1.969         |     1.969 (30  epoch)      |        75.788         |     75.788 (30  epoch)      |         1.009         |      1.009 (30  epoch)      |     4.705     |  4.705 (30  epoch)  |
+|   connector   |     94.524      |  94.524 (30  epoch)   |    83.466    | 83.466 (30  epoch) |      85.714      |   85.714 (30  epoch)   |   93.169    | 93.169 (30  epoch) |   97.942    | 97.942 (30  epoch) |  46.916  | 46.916 (30  epoch) |    48.959    | 48.959 (30  epoch) |        20.360        |     20.360 (30  epoch)     |        74.425         |     74.425 (30  epoch)      |        12.353         |     12.353 (30  epoch)      |    32.415     | 32.415 (30  epoch)  |
+|  metal_plate  |     98.267      |  98.267 (30  epoch)   |    99.350    | 99.350 (30  epoch) |      97.222      |   97.222 (30  epoch)   |   94.624    | 94.624 (30  epoch) |   98.564    | 98.564 (30  epoch) |  87.901  | 87.901 (30  epoch) |    83.915    | 83.915 (30  epoch) |        50.126        |     50.126 (30  epoch)     |        60.372         |     60.372 (30  epoch)      |        37.904         |     37.904 (30  epoch)      |    72.287     | 72.287 (30  epoch)  |
+|     tubes     |     92.255      |  92.255 (30  epoch)   |    97.207    | 97.207 (30  epoch) |      93.431      |   93.431 (30  epoch)   |   96.468    | 96.468 (30  epoch) |   99.077    | 99.077 (30  epoch) |  63.749  | 63.749 (30  epoch) |    62.295    | 62.295 (30  epoch) |        25.918        |     25.918 (30  epoch)     |        72.044         |     72.044 (30  epoch)      |        16.638         |     16.638 (30  epoch)      |    45.238     | 45.238 (30  epoch)  |
+|      Avg      |     85.578      |  85.578 (30  epoch)   |    87.026    | 87.026 (30  epoch) |      86.838      |   86.838 (30  epoch)   |   92.736    | 92.736 (30  epoch) |   97.684    | 97.684 (30  epoch) |  36.303  | 36.303 (30  epoch) |    39.353    | 39.353 (30  epoch) |        18.693        |     18.693 (30  epoch)     |        64.433         |     64.433 (30  epoch)      |        12.540         |     12.540 (30  epoch)      |    28.698     | 28.698 (30  epoch)  |
+2024-05-26 12:20:40,027 - ==> Total time: 0:09:31	 Eta: 1:25:39 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:20:59,031 - ==> Total time: 0:09:50	 Eta: 1:25:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:21:08,131 - Train: 10.49% [850/8100]  [31.5/300.0] [batch_t 0.382 (0.528)] [data_t 0.002] [optim_t 0.380] [lr 0.004000] [pixel 5.202 (5.257)]
+2024-05-26 12:21:14,185 - ==> Total time: 0:10:05	 Eta: 1:24:28 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:21:33,801 - ==> Total time: 0:10:24	 Eta: 1:24:15 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:21:42,575 - Train: 11.11% [900/8100]  [33.3/300.0] [batch_t 0.622 (0.763)] [data_t 0.002] [optim_t 0.620] [lr 0.004000] [pixel 5.035 (5.142)]
+2024-05-26 12:21:52,227 - ==> Total time: 0:10:43	 Eta: 1:23:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:22:10,504 - ==> Total time: 0:11:01	 Eta: 1:23:28 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:22:16,372 - Train: 11.73% [950/8100]  [35.2/300.0] [batch_t 0.558 (0.822)] [data_t 0.002] [optim_t 0.556] [lr 0.004000] [pixel 4.886 (4.923)]
+2024-05-26 12:22:28,346 - ==> Total time: 0:11:19	 Eta: 1:23:02 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:22:46,102 - ==> Total time: 0:11:37	 Eta: 1:22:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:22:49,388 - Train: 12.35% [1000/8100]  [37.0/300.0] [batch_t 1.529 (1.529)] [data_t 1.085] [optim_t 0.444] [lr 0.004000] [pixel 4.955 (4.955)]
+2024-05-26 12:23:03,456 - ==> Total time: 0:11:54	 Eta: 1:22:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:23:20,751 - Train: 12.96% [1050/8100]  [38.9/300.0] [batch_t 0.287 (0.636)] [data_t 0.002] [optim_t 0.286] [lr 0.004000] [pixel 4.622 (4.844)]
+2024-05-26 12:23:22,070 - ==> Total time: 0:12:13	 Eta: 1:21:46 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:23:40,609 - ==> Total time: 0:12:31	 Eta: 1:21:25 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:23:55,658 - Train: 13.58% [1100/8100]  [40.7/300.0] [batch_t 0.287 (0.619)] [data_t 0.002] [optim_t 0.286] [lr 0.004000] [pixel 5.072 (4.790)]
+2024-05-26 12:23:59,887 - ==> Total time: 0:12:50	 Eta: 1:21:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:24:17,834 - ==> Total time: 0:13:08	 Eta: 1:20:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:24:29,822 - Train: 14.20% [1150/8100]  [42.6/300.0] [batch_t 0.624 (0.633)] [data_t 0.002] [optim_t 0.623] [lr 0.004000] [pixel 4.688 (4.605)]
+2024-05-26 12:24:35,791 - ==> Total time: 0:13:26	 Eta: 1:20:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:24:54,646 - ==> Total time: 0:13:45	 Eta: 1:20:03 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:25:02,559 - Train: 14.81% [1200/8100]  [44.4/300.0] [batch_t 0.487 (0.520)] [data_t 0.002] [optim_t 0.486] [lr 0.004000] [pixel 4.516 (4.631)]
+2024-05-26 12:25:08,583 - ==> Total time: 0:13:59	 Eta: 1:19:17 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:25:26,248 - ==> Total time: 0:14:17	 Eta: 1:18:53 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:25:33,764 - Train: 15.43% [1250/8100]  [46.3/300.0] [batch_t 0.409 (0.699)] [data_t 0.002] [optim_t 0.407] [lr 0.004000] [pixel 4.471 (4.485)]
+2024-05-26 12:25:44,255 - ==> Total time: 0:14:35	 Eta: 1:18:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:25:58,370 - ==> Total time: 0:14:49	 Eta: 1:17:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:26:04,158 - Train: 16.05% [1300/8100]  [48.1/300.0] [batch_t 0.804 (0.904)] [data_t 0.002] [optim_t 0.802] [lr 0.004000] [pixel 4.379 (4.413)]
+2024-05-26 12:26:17,462 - ==> Total time: 0:15:08	 Eta: 1:17:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:26:36,644 - Train: 16.67% [1350/8100]  [50.0/300.0] [batch_t 0.426 (0.622)] [data_t 0.002] [optim_t 0.424] [lr 0.004000] [pixel 4.372 (4.324)]
+2024-05-26 12:26:36,647 - ==> Total time: 0:15:27	 Eta: 1:17:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:26:54,805 - ==> Total time: 0:15:45	 Eta: 1:16:57 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:27:10,703 - Train: 17.28% [1400/8100]  [51.9/300.0] [batch_t 0.622 (0.607)] [data_t 0.002] [optim_t 0.620] [lr 0.004000] [pixel 4.535 (4.261)]
+2024-05-26 12:27:13,157 - ==> Total time: 0:16:04	 Eta: 1:16:38 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:27:31,303 - ==> Total time: 0:16:22	 Eta: 1:16:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:27:44,849 - Train: 17.90% [1450/8100]  [53.7/300.0] [batch_t 0.605 (0.619)] [data_t 0.002] [optim_t 0.604] [lr 0.004000] [pixel 4.247 (4.246)]
+2024-05-26 12:27:49,421 - ==> Total time: 0:16:40	 Eta: 1:15:57 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:28:07,150 - ==> Total time: 0:16:58	 Eta: 1:15:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:28:18,669 - Train: 18.52% [1500/8100]  [55.6/300.0] [batch_t 0.761 (0.654)] [data_t 0.002] [optim_t 0.759] [lr 0.004000] [pixel 4.303 (4.140)]
+2024-05-26 12:28:25,374 - ==> Total time: 0:17:16	 Eta: 1:15:15 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:28:43,169 - ==> Total time: 0:17:34	 Eta: 1:14:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:28:52,450 - Train: 19.14% [1550/8100]  [57.4/300.0] [batch_t 0.424 (0.642)] [data_t 0.002] [optim_t 0.422] [lr 0.004000] [pixel 4.010 (4.010)]
+2024-05-26 12:29:01,855 - ==> Total time: 0:17:52	 Eta: 1:14:36 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:29:22,183 - ==> Total time: 0:18:13	 Eta: 1:14:25 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:29:28,975 - Train: 19.75% [1600/8100]  [59.3/300.0] [batch_t 0.830 (0.671)] [data_t 0.002] [optim_t 0.828] [lr 0.004000] [pixel 4.213 (4.004)]
+2024-05-26 12:29:45,737 - Test: 100.00% [15/15] [batch_t 0.067 (0.356)] [pixel 7.412 (4.967)]
+2024-05-26 12:29:46,465 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.135 (mF1_max_px)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-26 12:29:47,004 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.135 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:29:47,619 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.037 (mF1_px_0.2_0.8_0.1)	  0.036 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.099 (mIoU_max_px)	
+2024-05-26 12:29:47,889 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.026 (mIoU_px_0.2_0.8_0.1)	  0.068 (mIoU_max_px)	
+2024-05-26 12:29:48,937 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-26 12:29:49,619 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.171 (mIoU_max_px)	
+2024-05-26 12:29:49,625 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     79.455      |  79.455 (60  epoch)   |    87.583    | 87.583 (60  epoch)  |      79.630      |   79.630 (60  epoch)   |   93.469    | 93.469 (60  epoch) |   97.285    | 97.285 (60  epoch) |  4.864   | 4.864 (60  epoch)  |    12.607    | 12.607 (60  epoch) |        5.227         |     5.227 (60  epoch)      |        48.899         |     51.078 (30  epoch)      |         2.729         |      2.729 (60  epoch)      |     6.727     |  6.727 (60  epoch)  |
+| bracket_brown |     84.465      |  84.465 (60  epoch)   |    89.857    | 89.857 (60  epoch)  |      89.474      |   89.474 (60  epoch)   |   90.725    | 91.084 (30  epoch) |   94.652    | 96.189 (30  epoch) |  8.549   | 12.415 (30  epoch) |    17.400    | 21.198 (30  epoch) |        8.394         |     9.930 (30  epoch)      |        48.508         |     52.889 (30  epoch)      |         4.447         |      5.334 (30  epoch)      |     9.529     | 11.856 (30  epoch)  |
+| bracket_white |     90.889      |  90.889 (60  epoch)   |    92.954    | 92.954 (60  epoch)  |      87.273      |   87.273 (60  epoch)   |   92.189    | 92.189 (60  epoch) |   98.449    | 98.449 (60  epoch) |  5.415   | 5.415 (60  epoch)  |    14.921    | 14.921 (60  epoch) |        3.312         |     3.312 (60  epoch)      |        76.459         |     76.459 (60  epoch)      |         1.729         |      1.729 (60  epoch)      |     8.062     |  8.062 (60  epoch)  |
+|   connector   |     97.143      |  97.143 (60  epoch)   |    89.394    | 89.394 (60  epoch)  |      96.552      |   96.552 (60  epoch)   |   94.614    | 94.614 (60  epoch) |   98.360    | 98.360 (60  epoch) |  53.867  | 53.867 (60  epoch) |    52.114    | 52.114 (60  epoch) |        24.992        |     24.992 (60  epoch)     |        67.298         |     74.425 (30  epoch)      |        15.441         |     15.441 (60  epoch)      |    35.239     | 35.239 (60  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.488    | 95.488 (60  epoch) |   98.859    | 98.859 (60  epoch) |  90.875  | 90.875 (60  epoch) |    85.626    | 85.626 (60  epoch) |        52.941        |     52.941 (60  epoch)     |        59.887         |     60.372 (30  epoch)      |        40.959         |     40.959 (60  epoch)      |    74.864     | 74.864 (60  epoch)  |
+|     tubes     |     92.844      |  92.844 (60  epoch)   |    97.509    | 97.509 (60  epoch)  |      93.939      |   93.939 (60  epoch)   |   96.644    | 96.644 (60  epoch) |   99.134    | 99.134 (60  epoch) |  68.638  | 68.638 (60  epoch) |    67.103    | 67.103 (60  epoch) |        30.416        |     30.416 (60  epoch)     |        70.016         |     72.044 (30  epoch)      |        19.992         |     19.992 (60  epoch)      |    50.493     | 50.493 (60  epoch)  |
+|      Avg      |     90.799      |  90.799 (60  epoch)   |    92.883    | 92.883 (60  epoch)  |      91.145      |   91.145 (60  epoch)   |   93.855    | 93.855 (60  epoch) |   97.790    | 97.790 (60  epoch) |  38.701  | 38.701 (60  epoch) |    41.628    | 41.628 (60  epoch) |        20.881        |     20.881 (60  epoch)     |        61.844         |     64.433 (30  epoch)      |        14.216         |     14.216 (60  epoch)      |    30.819     | 30.819 (60  epoch)  |
+2024-05-26 12:29:49,701 - ==> Total time: 0:18:40	 Eta: 1:14:42 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:30:09,085 - ==> Total time: 0:19:00	 Eta: 1:14:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:30:14,021 - Train: 20.37% [1650/8100]  [61.1/300.0] [batch_t 0.669 (0.961)] [data_t 0.002] [optim_t 0.667] [lr 0.004000] [pixel 3.933 (3.900)]
+2024-05-26 12:30:28,112 - ==> Total time: 0:19:19	 Eta: 1:14:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:30:42,522 - Train: 20.99% [1700/8100]  [63.0/300.0] [batch_t 0.324 (0.482)] [data_t 0.002] [optim_t 0.322] [lr 0.004000] [pixel 4.022 (3.914)]
+2024-05-26 12:30:42,850 - ==> Total time: 0:19:33	 Eta: 1:13:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:31:01,283 - ==> Total time: 0:19:52	 Eta: 1:13:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:31:17,773 - Train: 21.60% [1750/8100]  [64.8/300.0] [batch_t 0.437 (0.640)] [data_t 0.002] [optim_t 0.436] [lr 0.004000] [pixel 3.800 (3.831)]
+2024-05-26 12:31:20,816 - ==> Total time: 0:20:11	 Eta: 1:13:01 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:31:39,582 - ==> Total time: 0:20:30	 Eta: 1:12:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:31:52,970 - Train: 22.22% [1800/8100]  [66.7/300.0] [batch_t 0.286 (0.608)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 3.932 (3.892)]
+2024-05-26 12:31:58,352 - ==> Total time: 0:20:49	 Eta: 1:12:24 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:32:16,459 - ==> Total time: 0:21:07	 Eta: 1:12:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:32:27,472 - Train: 22.84% [1850/8100]  [68.5/300.0] [batch_t 0.410 (0.656)] [data_t 0.002] [optim_t 0.408] [lr 0.004000] [pixel 3.924 (3.775)]
+2024-05-26 12:32:35,155 - ==> Total time: 0:21:26	 Eta: 1:11:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:32:53,636 - ==> Total time: 0:21:44	 Eta: 1:11:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:33:02,253 - Train: 23.46% [1900/8100]  [70.4/300.0] [batch_t 0.444 (0.674)] [data_t 0.002] [optim_t 0.442] [lr 0.004000] [pixel 3.503 (3.678)]
+2024-05-26 12:33:11,925 - ==> Total time: 0:22:02	 Eta: 1:11:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:33:30,168 - ==> Total time: 0:22:21	 Eta: 1:10:47 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:33:36,332 - Train: 24.07% [1950/8100]  [72.2/300.0] [batch_t 0.391 (0.718)] [data_t 0.002] [optim_t 0.389] [lr 0.004000] [pixel 3.830 (3.608)]
+2024-05-26 12:33:48,137 - ==> Total time: 0:22:39	 Eta: 1:10:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:34:05,695 - ==> Total time: 0:22:56	 Eta: 1:10:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:34:10,181 - Train: 24.69% [2000/8100]  [74.1/300.0] [batch_t 0.550 (1.102)] [data_t 0.002] [optim_t 0.548] [lr 0.004000] [pixel 3.688 (3.641)]
+2024-05-26 12:34:21,419 - ==> Total time: 0:23:12	 Eta: 1:09:37 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:34:36,440 - Train: 25.31% [2050/8100]  [75.9/300.0] [batch_t 0.597 (0.530)] [data_t 0.002] [optim_t 0.595] [lr 0.004000] [pixel 3.815 (3.594)]
+2024-05-26 12:34:37,925 - ==> Total time: 0:23:28	 Eta: 1:09:12 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:34:56,836 - ==> Total time: 0:23:47	 Eta: 1:08:55 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:35:12,378 - Train: 25.93% [2100/8100]  [77.8/300.0] [batch_t 0.554 (0.640)] [data_t 0.002] [optim_t 0.552] [lr 0.004000] [pixel 3.312 (3.591)]
+2024-05-26 12:35:15,144 - ==> Total time: 0:24:06	 Eta: 1:08:36 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:35:29,881 - ==> Total time: 0:24:20	 Eta: 1:08:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:35:42,355 - Train: 26.54% [2150/8100]  [79.6/300.0] [batch_t 0.421 (0.628)] [data_t 0.002] [optim_t 0.419] [lr 0.004000] [pixel 3.526 (3.480)]
+2024-05-26 12:35:49,091 - ==> Total time: 0:24:40	 Eta: 1:07:50 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:36:08,251 - ==> Total time: 0:24:59	 Eta: 1:07:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:36:18,537 - Train: 27.16% [2200/8100]  [81.5/300.0] [batch_t 0.761 (0.656)] [data_t 0.002] [optim_t 0.759] [lr 0.004000] [pixel 3.466 (3.508)]
+2024-05-26 12:36:26,516 - ==> Total time: 0:25:17	 Eta: 1:07:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:36:45,168 - ==> Total time: 0:25:36	 Eta: 1:06:56 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:36:52,449 - Train: 27.78% [2250/8100]  [83.3/300.0] [batch_t 0.455 (0.614)] [data_t 0.002] [optim_t 0.454] [lr 0.004000] [pixel 3.676 (3.479)]
+2024-05-26 12:37:03,321 - ==> Total time: 0:25:54	 Eta: 1:06:36 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:37:21,655 - ==> Total time: 0:26:12	 Eta: 1:06:17 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:37:26,781 - Train: 28.40% [2300/8100]  [85.2/300.0] [batch_t 0.375 (0.690)] [data_t 0.002] [optim_t 0.373] [lr 0.004000] [pixel 3.501 (3.562)]
+2024-05-26 12:37:39,883 - ==> Total time: 0:26:30	 Eta: 1:05:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:37:58,505 - ==> Total time: 0:26:49	 Eta: 1:05:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:38:01,705 - Train: 29.01% [2350/8100]  [87.0/300.0] [batch_t 1.460 (1.460)] [data_t 1.087] [optim_t 0.373] [lr 0.004000] [pixel 3.209 (3.209)]
+2024-05-26 12:38:17,617 - ==> Total time: 0:27:08	 Eta: 1:05:23 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:38:35,258 - Train: 29.63% [2400/8100]  [88.9/300.0] [batch_t 0.812 (0.657)] [data_t 0.002] [optim_t 0.810] [lr 0.004000] [pixel 3.490 (3.313)]
+2024-05-26 12:38:36,370 - ==> Total time: 0:27:27	 Eta: 1:05:05 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:39:00,286 - Test: 100.00% [15/15] [batch_t 0.126 (0.371)] [pixel 6.906 (4.408)]
+2024-05-26 12:39:00,863 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.127 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:39:01,560 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.124 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.124 (mIoU_max_px)	
+2024-05-26 12:39:02,029 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-26 12:39:02,294 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 12:39:02,983 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.160 (mF1_max_px)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.161 (mIoU_max_px)	
+2024-05-26 12:39:03,647 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.168 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-26 12:39:03,652 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     79.854      |  79.854 (90  epoch)   |    89.032    | 89.032 (90  epoch)  |      81.481      |   81.481 (90  epoch)   |   94.590    | 94.590 (90  epoch) |   97.775    | 97.775 (90  epoch) |  7.162   | 7.162 (90  epoch)  |    15.542    | 15.542 (90  epoch) |        7.409         |     7.409 (90  epoch)      |        54.241         |     54.241 (90  epoch)      |         3.929         |      3.929 (90  epoch)      |     8.426     |  8.426 (90  epoch)  |
+| bracket_brown |     93.062      |  93.062 (90  epoch)   |    95.679    | 95.679 (90  epoch)  |      94.340      |   94.340 (90  epoch)   |   91.513    | 91.513 (90  epoch) |   95.742    | 96.189 (30  epoch) |  15.643  | 15.643 (90  epoch) |    24.932    | 24.932 (90  epoch) |        11.747        |     11.747 (90  epoch)     |        47.392         |     52.889 (30  epoch)      |         6.416         |      6.416 (90  epoch)      |    14.242     | 14.242 (90  epoch)  |
+| bracket_white |     91.556      |  91.556 (90  epoch)   |    93.829    | 93.829 (90  epoch)  |      88.136      |   88.136 (90  epoch)   |   93.138    | 93.138 (90  epoch) |   98.797    | 98.797 (90  epoch) |  6.955   | 6.955 (90  epoch)  |    16.468    | 16.468 (90  epoch) |        4.653         |     4.653 (90  epoch)      |        76.834         |     76.834 (90  epoch)      |         2.461         |      2.461 (90  epoch)      |     8.973     |  8.973 (90  epoch)  |
+|   connector   |     98.333      |  98.333 (90  epoch)   |    95.712    | 95.712 (90  epoch)  |      96.552      |   96.552 (60  epoch)   |   96.575    | 96.575 (90  epoch) |   98.962    | 98.962 (90  epoch) |  63.171  | 63.171 (90  epoch) |    60.847    | 60.847 (90  epoch) |        31.756        |     31.756 (90  epoch)     |        64.844         |     74.425 (30  epoch)      |        20.562         |     20.562 (90  epoch)      |    43.726     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.608    | 95.608 (90  epoch) |   98.905    | 98.905 (90  epoch) |  91.019  | 91.019 (90  epoch) |    85.910    | 85.910 (90  epoch) |        52.969        |     52.969 (90  epoch)     |        59.192         |     60.372 (30  epoch)      |        41.146         |     41.146 (90  epoch)      |    75.300     | 75.300 (90  epoch)  |
+|     tubes     |     95.290      |  95.290 (90  epoch)   |    98.281    | 98.281 (90  epoch)  |      94.656      |   94.656 (90  epoch)   |   97.532    | 97.532 (90  epoch) |   99.360    | 99.360 (90  epoch) |  74.307  | 74.307 (90  epoch) |    71.072    | 71.072 (90  epoch) |        33.811        |     33.811 (90  epoch)     |        65.867         |     72.044 (30  epoch)      |        22.870         |     22.870 (90  epoch)      |    55.125     | 55.125 (90  epoch)  |
+|      Avg      |     93.016      |  93.016 (90  epoch)   |    95.422    | 95.422 (90  epoch)  |      92.527      |   92.527 (90  epoch)   |   94.826    | 94.826 (90  epoch) |   98.257    | 98.257 (90  epoch) |  43.043  | 43.043 (90  epoch) |    45.795    | 45.795 (90  epoch) |        23.724        |     23.724 (90  epoch)     |        61.395         |     64.433 (30  epoch)      |        16.231         |     16.231 (90  epoch)      |    34.299     | 34.299 (90  epoch)  |
+2024-05-26 12:39:03,731 - ==> Total time: 0:27:54	 Eta: 1:05:07 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:39:20,338 - Train: 30.25% [2450/8100]  [90.7/300.0] [batch_t 0.756 (0.660)] [data_t 0.002] [optim_t 0.754] [lr 0.004000] [pixel 3.332 (3.300)]
+2024-05-26 12:39:23,538 - ==> Total time: 0:28:14	 Eta: 1:04:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:39:41,811 - ==> Total time: 0:28:32	 Eta: 1:04:32 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:39:53,805 - Train: 30.86% [2500/8100]  [92.6/300.0] [batch_t 0.658 (0.626)] [data_t 0.002] [optim_t 0.656] [lr 0.004000] [pixel 3.304 (3.249)]
+2024-05-26 12:39:59,372 - ==> Total time: 0:28:50	 Eta: 1:04:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:40:14,035 - ==> Total time: 0:29:05	 Eta: 1:03:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:40:24,001 - Train: 31.48% [2550/8100]  [94.4/300.0] [batch_t 0.376 (0.673)] [data_t 0.002] [optim_t 0.374] [lr 0.004000] [pixel 3.359 (3.233)]
+2024-05-26 12:40:32,748 - ==> Total time: 0:29:23	 Eta: 1:03:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:40:50,939 - ==> Total time: 0:29:41	 Eta: 1:03:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:40:58,717 - Train: 32.10% [2600/8100]  [96.3/300.0] [batch_t 0.572 (0.713)] [data_t 0.002] [optim_t 0.571] [lr 0.004000] [pixel 3.192 (3.177)]
+2024-05-26 12:41:09,172 - ==> Total time: 0:30:00	 Eta: 1:02:47 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:41:27,118 - ==> Total time: 0:30:18	 Eta: 1:02:27 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:41:32,469 - Train: 32.72% [2650/8100]  [98.1/300.0] [batch_t 0.575 (0.867)] [data_t 0.002] [optim_t 0.573] [lr 0.004000] [pixel 3.196 (3.169)]
+2024-05-26 12:41:45,241 - ==> Total time: 0:30:36	 Eta: 1:02:08 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:42:03,602 - Train: 33.33% [2700/8100]  [100.0/300.0] [batch_t 0.824 (0.601)] [data_t 0.002] [optim_t 0.823] [lr 0.004000] [pixel 3.265 (3.151)]
+2024-05-26 12:42:03,605 - ==> Total time: 0:30:54	 Eta: 1:01:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:42:21,467 - ==> Total time: 0:31:12	 Eta: 1:01:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:42:37,690 - Train: 33.95% [2750/8100]  [101.9/300.0] [batch_t 0.453 (0.610)] [data_t 0.002] [optim_t 0.451] [lr 0.004000] [pixel 2.970 (3.163)]
+2024-05-26 12:42:40,053 - ==> Total time: 0:31:31	 Eta: 1:01:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:42:58,479 - ==> Total time: 0:31:49	 Eta: 1:00:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:43:12,310 - Train: 34.57% [2800/8100]  [103.7/300.0] [batch_t 0.659 (0.624)] [data_t 0.002] [optim_t 0.657] [lr 0.004000] [pixel 3.192 (3.119)]
+2024-05-26 12:43:16,906 - ==> Total time: 0:32:07	 Eta: 1:00:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:43:33,214 - ==> Total time: 0:32:24	 Eta: 1:00:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:43:42,097 - Train: 35.19% [2850/8100]  [105.6/300.0] [batch_t 0.286 (0.459)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 3.165 (3.043)]
+2024-05-26 12:43:49,301 - ==> Total time: 0:32:40	 Eta: 0:59:47 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:44:08,112 - ==> Total time: 0:32:59	 Eta: 0:59:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:44:17,251 - Train: 35.80% [2900/8100]  [107.4/300.0] [batch_t 0.364 (0.658)] [data_t 0.002] [optim_t 0.362] [lr 0.004000] [pixel 3.290 (3.250)]
+2024-05-26 12:44:26,421 - ==> Total time: 0:33:17	 Eta: 0:59:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:44:44,407 - ==> Total time: 0:33:35	 Eta: 0:58:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:44:50,515 - Train: 36.42% [2950/8100]  [109.3/300.0] [batch_t 0.439 (0.600)] [data_t 0.002] [optim_t 0.438] [lr 0.004000] [pixel 3.050 (2.936)]
+2024-05-26 12:44:59,141 - ==> Total time: 0:33:50	 Eta: 0:58:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:45:18,988 - ==> Total time: 0:34:10	 Eta: 0:58:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:45:23,592 - Train: 37.04% [3000/8100]  [111.1/300.0] [batch_t 0.619 (0.923)] [data_t 0.002] [optim_t 0.617] [lr 0.004000] [pixel 2.862 (2.889)]
+2024-05-26 12:45:37,222 - ==> Total time: 0:34:28	 Eta: 0:57:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:45:54,972 - Train: 37.65% [3050/8100]  [113.0/300.0] [batch_t 0.470 (0.612)] [data_t 0.002] [optim_t 0.468] [lr 0.004000] [pixel 2.942 (2.991)]
+2024-05-26 12:45:55,359 - ==> Total time: 0:34:46	 Eta: 0:57:32 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:46:12,754 - ==> Total time: 0:35:03	 Eta: 0:57:12 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:46:28,756 - Train: 38.27% [3100/8100]  [114.8/300.0] [batch_t 0.327 (0.645)] [data_t 0.002] [optim_t 0.326] [lr 0.004000] [pixel 3.146 (2.973)]
+2024-05-26 12:46:30,887 - ==> Total time: 0:35:21	 Eta: 0:56:53 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:46:49,320 - ==> Total time: 0:35:40	 Eta: 0:56:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:47:02,656 - Train: 38.89% [3150/8100]  [116.7/300.0] [batch_t 0.571 (0.638)] [data_t 0.002] [optim_t 0.569] [lr 0.004000] [pixel 2.860 (2.983)]
+2024-05-26 12:47:07,134 - ==> Total time: 0:35:58	 Eta: 0:56:15 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:47:25,265 - ==> Total time: 0:36:16	 Eta: 0:55:56 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:47:35,774 - Train: 39.51% [3200/8100]  [118.5/300.0] [batch_t 0.572 (0.624)] [data_t 0.002] [optim_t 0.570] [lr 0.004000] [pixel 2.799 (2.915)]
+2024-05-26 12:47:43,156 - ==> Total time: 0:36:34	 Eta: 0:55:37 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:48:08,386 - Test: 100.00% [15/15] [batch_t 0.078 (0.380)] [pixel 6.937 (4.212)]
+2024-05-26 12:48:09,219 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.129 (mIoU_max_px)	
+2024-05-26 12:48:09,747 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.124 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:48:10,230 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.096 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.095 (mIoU_max_px)	
+2024-05-26 12:48:10,496 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 12:48:11,489 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.161 (mF1_max_px)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.162 (mIoU_max_px)	
+2024-05-26 12:48:12,161 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.171 (mF1_max_px)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.171 (mIoU_max_px)	
+2024-05-26 12:48:12,164 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     84.774      |  84.774 (120 epoch)   |    91.627    | 91.627 (120 epoch)  |      81.553      |   81.553 (120 epoch)   |   95.345    | 95.345 (120 epoch) |   97.944    | 97.944 (120 epoch) |  7.474   | 7.474 (120 epoch)  |    15.875    | 15.875 (120 epoch) |        8.118         |     8.118 (120 epoch)      |        58.878         |     58.878 (120 epoch)      |         4.321         |      4.321 (120 epoch)      |     8.622     |  8.622 (120 epoch)  |
+| bracket_brown |     94.947      |  94.947 (120 epoch)   |    96.695    | 96.695 (120 epoch)  |      95.327      |   95.327 (120 epoch)   |   90.727    | 91.513 (90  epoch) |   95.259    | 96.189 (30  epoch) |  16.009  | 16.009 (120 epoch) |    24.808    | 24.932 (90  epoch) |        11.424        |     11.747 (90  epoch)     |        45.160         |     52.889 (30  epoch)      |         6.237         |      6.416 (90  epoch)      |    14.161     | 14.242 (90  epoch)  |
+| bracket_white |     94.556      |  94.556 (120 epoch)   |    95.877    | 95.877 (120 epoch)  |      90.909      |   90.909 (120 epoch)   |   94.367    | 94.367 (120 epoch) |   99.153    | 99.153 (120 epoch) |  9.150   | 9.150 (120 epoch)  |    19.139    | 19.139 (120 epoch) |        6.171         |     6.171 (120 epoch)      |        76.405         |     76.834 (90  epoch)      |         3.315         |      3.315 (120 epoch)      |    10.582     | 10.582 (120 epoch)  |
+|   connector   |     98.095      |  98.333 (90  epoch)   |    94.819    | 95.712 (90  epoch)  |      96.552      |   96.552 (60  epoch)   |   96.316    | 96.575 (90  epoch) |   98.879    | 98.962 (90  epoch) |  58.583  | 63.171 (90  epoch) |    55.713    | 60.847 (90  epoch) |        30.965        |     31.756 (90  epoch)     |        63.547         |     74.425 (30  epoch)      |        19.658         |     20.562 (90  epoch)      |    38.612     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   96.096    | 96.096 (120 epoch) |   99.071    | 99.071 (120 epoch) |  92.624  | 92.624 (120 epoch) |    87.011    | 87.011 (120 epoch) |        54.646        |     54.646 (120 epoch)     |        59.633         |     60.372 (30  epoch)      |        42.960         |     42.960 (120 epoch)      |    77.008     | 77.008 (120 epoch)  |
+|     tubes     |     96.014      |  96.014 (120 epoch)   |    98.467    | 98.467 (120 epoch)  |      94.656      |   94.656 (90  epoch)   |   97.519    | 97.532 (90  epoch) |   99.367    | 99.367 (120 epoch) |  73.101  | 74.307 (90  epoch) |    69.547    | 71.072 (90  epoch) |        34.139        |     34.139 (120 epoch)     |        68.142         |     72.044 (30  epoch)      |        23.030         |     23.030 (120 epoch)      |    53.312     | 55.125 (90  epoch)  |
+|      Avg      |     94.731      |  94.731 (120 epoch)   |    96.247    | 96.247 (120 epoch)  |      93.166      |   93.166 (120 epoch)   |   95.062    | 95.062 (120 epoch) |   98.279    | 98.279 (120 epoch) |  42.823  | 43.043 (90  epoch) |    45.349    | 45.795 (90  epoch) |        24.244        |     24.244 (120 epoch)     |        61.961         |     64.433 (30  epoch)      |        16.587         |     16.587 (120 epoch)      |    33.716     | 34.299 (90  epoch)  |
+2024-05-26 12:48:12,239 - ==> Total time: 0:37:03	 Eta: 0:55:34 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:48:22,428 - Train: 40.12% [3250/8100]  [120.4/300.0] [batch_t 0.570 (0.764)] [data_t 0.002] [optim_t 0.569] [lr 0.004000] [pixel 2.819 (2.842)]
+2024-05-26 12:48:32,272 - ==> Total time: 0:37:23	 Eta: 0:55:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:48:50,996 - ==> Total time: 0:37:42	 Eta: 0:55:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:48:57,993 - Train: 40.74% [3300/8100]  [122.2/300.0] [batch_t 0.801 (0.820)] [data_t 0.002] [optim_t 0.799] [lr 0.004000] [pixel 2.783 (2.910)]
+2024-05-26 12:49:09,073 - ==> Total time: 0:38:00	 Eta: 0:54:41 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:49:27,095 - ==> Total time: 0:38:18	 Eta: 0:54:21 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:49:31,306 - Train: 41.36% [3350/8100]  [124.1/300.0] [batch_t 0.458 (0.984)] [data_t 0.002] [optim_t 0.456] [lr 0.004000] [pixel 2.864 (2.837)]
+2024-05-26 12:49:42,109 - ==> Total time: 0:38:33	 Eta: 0:53:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:50:00,422 - Train: 41.98% [3400/8100]  [125.9/300.0] [batch_t 0.500 (0.654)] [data_t 0.002] [optim_t 0.498] [lr 0.004000] [pixel 2.778 (2.806)]
+2024-05-26 12:50:01,344 - ==> Total time: 0:38:52	 Eta: 0:53:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:50:20,738 - ==> Total time: 0:39:11	 Eta: 0:53:23 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:50:35,816 - Train: 42.59% [3450/8100]  [127.8/300.0] [batch_t 0.558 (0.636)] [data_t 0.002] [optim_t 0.556] [lr 0.004000] [pixel 2.796 (2.825)]
+2024-05-26 12:50:39,031 - ==> Total time: 0:39:30	 Eta: 0:53:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:50:57,195 - ==> Total time: 0:39:48	 Eta: 0:52:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:51:09,440 - Train: 43.21% [3500/8100]  [129.6/300.0] [batch_t 0.831 (0.599)] [data_t 0.002] [optim_t 0.829] [lr 0.004000] [pixel 2.767 (2.784)]
+2024-05-26 12:51:14,849 - ==> Total time: 0:40:05	 Eta: 0:52:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:51:33,075 - ==> Total time: 0:40:24	 Eta: 0:52:07 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:51:43,382 - Train: 43.83% [3550/8100]  [131.5/300.0] [batch_t 0.645 (0.637)] [data_t 0.002] [optim_t 0.643] [lr 0.004000] [pixel 2.828 (2.869)]
+2024-05-26 12:51:51,610 - ==> Total time: 0:40:42	 Eta: 0:51:48 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:52:09,700 - ==> Total time: 0:41:00	 Eta: 0:51:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:52:17,547 - Train: 44.44% [3600/8100]  [133.3/300.0] [batch_t 0.390 (0.646)] [data_t 0.002] [optim_t 0.388] [lr 0.004000] [pixel 2.780 (2.697)]
+2024-05-26 12:52:27,766 - ==> Total time: 0:41:18	 Eta: 0:51:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:52:44,799 - ==> Total time: 0:41:35	 Eta: 0:50:50 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:52:49,564 - Train: 45.06% [3650/8100]  [135.2/300.0] [batch_t 0.424 (0.603)] [data_t 0.002] [optim_t 0.422] [lr 0.004000] [pixel 2.824 (2.757)]
+2024-05-26 12:53:00,418 - ==> Total time: 0:41:51	 Eta: 0:50:28 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:53:20,696 - ==> Total time: 0:42:11	 Eta: 0:50:12 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:53:24,617 - Train: 45.68% [3700/8100]  [137.0/300.0] [batch_t 1.535 (1.535)] [data_t 1.080] [optim_t 0.455] [lr 0.004000] [pixel 2.650 (2.650)]
+2024-05-26 12:53:39,482 - ==> Total time: 0:42:30	 Eta: 0:49:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:53:56,159 - Train: 46.30% [3750/8100]  [138.9/300.0] [batch_t 0.526 (0.619)] [data_t 0.002] [optim_t 0.525] [lr 0.004000] [pixel 2.507 (2.737)]
+2024-05-26 12:53:57,741 - ==> Total time: 0:42:48	 Eta: 0:49:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:54:15,048 - ==> Total time: 0:43:06	 Eta: 0:49:15 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:54:26,528 - Train: 46.91% [3800/8100]  [140.7/300.0] [batch_t 0.439 (0.484)] [data_t 0.002] [optim_t 0.437] [lr 0.004000] [pixel 2.811 (2.681)]
+2024-05-26 12:54:29,738 - ==> Total time: 0:43:20	 Eta: 0:48:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:54:48,844 - ==> Total time: 0:43:39	 Eta: 0:48:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:55:01,117 - Train: 47.53% [3850/8100]  [142.6/300.0] [batch_t 0.646 (0.642)] [data_t 0.002] [optim_t 0.644] [lr 0.004000] [pixel 2.601 (2.627)]
+2024-05-26 12:55:07,250 - ==> Total time: 0:43:58	 Eta: 0:48:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:55:25,830 - ==> Total time: 0:44:16	 Eta: 0:47:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:55:35,754 - Train: 48.15% [3900/8100]  [144.4/300.0] [batch_t 0.650 (0.643)] [data_t 0.002] [optim_t 0.648] [lr 0.004000] [pixel 2.633 (2.630)]
+2024-05-26 12:55:44,615 - ==> Total time: 0:44:35	 Eta: 0:47:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:56:02,086 - ==> Total time: 0:44:53	 Eta: 0:47:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:56:09,869 - Train: 48.77% [3950/8100]  [146.3/300.0] [batch_t 0.424 (0.615)] [data_t 0.002] [optim_t 0.422] [lr 0.004000] [pixel 2.571 (2.661)]
+2024-05-26 12:56:21,030 - ==> Total time: 0:45:12	 Eta: 0:47:02 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:56:39,338 - ==> Total time: 0:45:30	 Eta: 0:46:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:56:44,713 - Train: 49.38% [4000/8100]  [148.1/300.0] [batch_t 0.537 (0.893)] [data_t 0.002] [optim_t 0.535] [lr 0.004000] [pixel 2.630 (2.731)]
+2024-05-26 12:56:58,175 - ==> Total time: 0:45:49	 Eta: 0:46:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:57:16,018 - Train: 50.00% [4050/8100]  [150.0/300.0] [batch_t 0.799 (0.589)] [data_t 0.002] [optim_t 0.798] [lr 0.004000] [pixel 2.573 (2.614)]
+2024-05-26 12:57:21,893 - Test: 100.00% [15/15] [batch_t 0.067 (0.382)] [pixel 6.900 (4.133)]
+2024-05-26 12:57:22,458 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.131 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-26 12:57:22,980 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-26 12:57:23,614 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.095 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.101 (mIoU_max_px)	
+2024-05-26 12:57:23,883 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 12:57:24,819 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.164 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.164 (mIoU_max_px)	
+2024-05-26 12:57:25,492 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.170 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 12:57:25,498 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     84.508      |  84.774 (120 epoch)   |    91.435    | 91.627 (120 epoch)  |      81.739      |   81.739 (150 epoch)   |   95.078    | 95.345 (120 epoch) |   97.839    | 97.944 (120 epoch) |  8.157   | 8.157 (150 epoch)  |    17.322    | 17.322 (150 epoch) |        8.383         |     8.383 (150 epoch)      |        59.519         |     59.519 (150 epoch)      |         4.475         |      4.475 (150 epoch)      |     9.482     |  9.482 (150 epoch)  |
+| bracket_brown |     96.229      |  96.229 (150 epoch)   |    97.471    | 97.471 (150 epoch)  |      98.077      |   98.077 (150 epoch)   |   92.216    | 92.216 (150 epoch) |   96.110    | 96.189 (30  epoch) |  20.305  | 20.305 (150 epoch) |    30.629    | 30.629 (150 epoch) |        13.738        |     13.738 (150 epoch)     |        45.419         |     52.889 (30  epoch)      |         7.657         |      7.657 (150 epoch)      |    18.084     | 18.084 (150 epoch)  |
+| bracket_white |     94.667      |  94.667 (150 epoch)   |    95.310    | 95.877 (120 epoch)  |      88.889      |   90.909 (120 epoch)   |   93.607    | 94.367 (120 epoch) |   99.055    | 99.153 (120 epoch) |  8.030   | 9.150 (120 epoch)  |    17.541    | 19.139 (120 epoch) |        5.981         |     6.171 (120 epoch)      |        75.493         |     76.834 (90  epoch)      |         3.194         |      3.315 (120 epoch)      |     9.614     | 10.582 (120 epoch)  |
+|   connector   |     98.571      |  98.571 (150 epoch)   |    96.505    | 96.505 (150 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.007    | 97.007 (150 epoch) |   99.094    | 99.094 (150 epoch) |  63.368  | 63.368 (150 epoch) |    59.599    | 60.847 (90  epoch) |        33.468        |     33.468 (150 epoch)     |        65.996         |     74.425 (30  epoch)      |        21.686         |     21.686 (150 epoch)      |    42.449     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.828    | 96.096 (120 epoch) |   99.003    | 99.071 (120 epoch) |  91.863  | 92.624 (120 epoch) |    86.792    | 87.011 (120 epoch) |        54.085        |     54.646 (120 epoch)     |        59.027         |     60.372 (30  epoch)      |        42.393         |     42.960 (120 epoch)      |    76.666     | 77.008 (120 epoch)  |
+|     tubes     |     95.924      |  96.014 (120 epoch)   |    98.420    | 98.467 (120 epoch)  |      95.455      |   95.455 (150 epoch)   |   97.786    | 97.786 (150 epoch) |   99.416    | 99.416 (150 epoch) |  75.240  | 75.240 (150 epoch) |    70.189    | 71.072 (90  epoch) |        35.651        |     35.651 (150 epoch)     |        69.158         |     72.044 (30  epoch)      |        24.210         |     24.210 (150 epoch)      |    54.070     | 55.125 (90  epoch)  |
+|      Avg      |     94.983      |  94.983 (150 epoch)   |    96.523    | 96.523 (150 epoch)  |      93.452      |   93.452 (150 epoch)   |   95.253    | 95.253 (150 epoch) |   98.419    | 98.419 (150 epoch) |  44.494  | 44.494 (150 epoch) |    47.012    | 47.012 (150 epoch) |        25.218        |     25.218 (150 epoch)     |        62.435         |     64.433 (30  epoch)      |        17.269         |     17.269 (150 epoch)      |    35.061     | 35.061 (150 epoch)  |
+2024-05-26 12:57:25,567 - ==> Total time: 0:46:16	 Eta: 0:46:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:57:39,269 - ==> Total time: 0:46:30	 Eta: 0:45:53 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:57:50,746 - Train: 50.62% [4100/8100]  [151.9/300.0] [batch_t 0.419 (0.420)] [data_t 0.002] [optim_t 0.418] [lr 0.004000] [pixel 2.862 (2.620)]
+2024-05-26 12:57:52,392 - ==> Total time: 0:46:43	 Eta: 0:45:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:58:06,217 - ==> Total time: 0:46:57	 Eta: 0:45:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:58:16,359 - Train: 51.23% [4150/8100]  [153.7/300.0] [batch_t 0.449 (0.438)] [data_t 0.002] [optim_t 0.447] [lr 0.004000] [pixel 2.681 (2.596)]
+2024-05-26 12:58:19,603 - ==> Total time: 0:47:10	 Eta: 0:44:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:58:32,686 - ==> Total time: 0:47:23	 Eta: 0:44:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:58:41,264 - Train: 51.85% [4200/8100]  [155.6/300.0] [batch_t 0.286 (0.436)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.757 (2.607)]
+2024-05-26 12:58:45,970 - ==> Total time: 0:47:36	 Eta: 0:43:57 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:58:58,781 - ==> Total time: 0:47:49	 Eta: 0:43:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:59:05,555 - Train: 52.47% [4250/8100]  [157.4/300.0] [batch_t 0.302 (0.417)] [data_t 0.002] [optim_t 0.301] [lr 0.004000] [pixel 2.482 (2.547)]
+2024-05-26 12:59:10,657 - ==> Total time: 0:48:01	 Eta: 0:43:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:59:21,131 - ==> Total time: 0:48:12	 Eta: 0:42:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:59:26,441 - Train: 53.09% [4300/8100]  [159.3/300.0] [batch_t 0.286 (0.439)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.512 (2.577)]
+2024-05-26 12:59:32,165 - ==> Total time: 0:48:23	 Eta: 0:42:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:59:42,902 - ==> Total time: 0:48:33	 Eta: 0:41:55 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 12:59:46,590 - Train: 53.70% [4350/8100]  [161.1/300.0] [batch_t 0.285 (0.652)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.412 (2.544)]
+2024-05-26 12:59:53,442 - ==> Total time: 0:48:44	 Eta: 0:41:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:03,687 - Train: 54.32% [4400/8100]  [163.0/300.0] [batch_t 0.287 (0.327)] [data_t 0.001] [optim_t 0.285] [lr 0.004000] [pixel 2.540 (2.505)]
+2024-05-26 13:00:03,976 - ==> Total time: 0:48:54	 Eta: 0:41:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:14,494 - ==> Total time: 0:49:05	 Eta: 0:40:42 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:24,132 - Train: 54.94% [4450/8100]  [164.8/300.0] [batch_t 0.286 (0.334)] [data_t 0.002] [optim_t 0.285] [lr 0.004000] [pixel 2.564 (2.525)]
+2024-05-26 13:00:25,569 - ==> Total time: 0:49:16	 Eta: 0:40:19 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:36,026 - ==> Total time: 0:49:27	 Eta: 0:39:55 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:44,035 - Train: 55.56% [4500/8100]  [166.7/300.0] [batch_t 0.286 (0.345)] [data_t 0.002] [optim_t 0.285] [lr 0.004000] [pixel 2.452 (2.467)]
+2024-05-26 13:00:46,615 - ==> Total time: 0:49:37	 Eta: 0:39:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:00:57,104 - ==> Total time: 0:49:48	 Eta: 0:39:07 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:01:04,147 - Train: 56.17% [4550/8100]  [168.5/300.0] [batch_t 0.285 (0.364)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.406 (2.478)]
+2024-05-26 13:01:07,864 - ==> Total time: 0:49:58	 Eta: 0:38:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:01:18,647 - ==> Total time: 0:50:09	 Eta: 0:38:21 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:01:24,994 - Train: 56.79% [4600/8100]  [170.4/300.0] [batch_t 0.286 (0.390)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.363 (2.451)]
+2024-05-26 13:01:29,854 - ==> Total time: 0:50:20	 Eta: 0:37:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:01:40,473 - ==> Total time: 0:50:31	 Eta: 0:37:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:01:45,062 - Train: 57.41% [4650/8100]  [172.2/300.0] [batch_t 0.285 (0.464)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.518 (2.535)]
+2024-05-26 13:01:51,066 - ==> Total time: 0:50:42	 Eta: 0:37:13 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:01,732 - ==> Total time: 0:50:52	 Eta: 0:36:50 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:06,503 - Train: 58.02% [4700/8100]  [174.1/300.0] [batch_t 0.285 (0.837)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.485 (2.449)]
+2024-05-26 13:02:13,623 - ==> Total time: 0:51:04	 Eta: 0:36:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:23,943 - Train: 58.64% [4750/8100]  [175.9/300.0] [batch_t 0.285 (0.329)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.395 (2.429)]
+2024-05-26 13:02:24,515 - ==> Total time: 0:51:15	 Eta: 0:36:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:35,018 - ==> Total time: 0:51:26	 Eta: 0:35:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:43,784 - Train: 59.26% [4800/8100]  [177.8/300.0] [batch_t 0.285 (0.335)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.498 (2.448)]
+2024-05-26 13:02:45,496 - ==> Total time: 0:51:36	 Eta: 0:35:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:02:56,110 - ==> Total time: 0:51:47	 Eta: 0:35:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:03:03,811 - Train: 59.88% [4850/8100]  [179.6/300.0] [batch_t 0.284 (0.348)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.465 (2.402)]
+2024-05-26 13:03:11,789 - Test: 100.00% [15/15] [batch_t 0.066 (0.335)] [pixel 6.913 (4.039)]
+2024-05-26 13:03:12,337 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.127 (mIoU_max_px)	
+2024-05-26 13:03:12,840 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.122 (mF1_max_px)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.043 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.123 (mIoU_max_px)	
+2024-05-26 13:03:13,215 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.093 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mIoU_max_px)	
+2024-05-26 13:03:13,485 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.071 (mIoU_max_px)	
+2024-05-26 13:03:14,129 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.161 (mIoU_max_px)	
+2024-05-26 13:03:14,793 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 13:03:14,797 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     90.691      |  90.691 (180 epoch)   |    94.523    | 94.523 (180 epoch)  |      86.667      |   86.667 (180 epoch)   |   96.251    | 96.251 (180 epoch) |   98.477    | 98.477 (180 epoch) |  9.171   | 9.171 (180 epoch)  |    16.440    | 17.322 (150 epoch) |        8.596         |     8.596 (180 epoch)      |        62.173         |     62.173 (180 epoch)      |         4.592         |      4.592 (180 epoch)      |     8.956     |  9.482 (150 epoch)  |
+| bracket_brown |     96.757      |  96.757 (180 epoch)   |    97.944    | 97.944 (180 epoch)  |      97.143      |   98.077 (150 epoch)   |   92.000    | 92.216 (150 epoch) |   96.560    | 96.560 (180 epoch) |  19.541  | 20.305 (150 epoch) |    30.320    | 30.629 (150 epoch) |        14.299        |     14.299 (180 epoch)     |        48.510         |     52.889 (30  epoch)      |         7.973         |      7.973 (180 epoch)      |    17.869     | 18.084 (150 epoch)  |
+| bracket_white |     96.333      |  96.333 (180 epoch)   |    97.466    | 97.466 (180 epoch)  |      92.857      |   92.857 (180 epoch)   |   94.625    | 94.625 (180 epoch) |   99.259    | 99.259 (180 epoch) |  12.282  | 12.282 (180 epoch) |    21.676    | 21.676 (180 epoch) |        6.206         |     6.206 (180 epoch)      |        79.423         |     79.423 (180 epoch)      |         3.335         |      3.335 (180 epoch)      |    12.156     | 12.156 (180 epoch)  |
+|   connector   |     97.381      |  98.571 (150 epoch)   |    91.179    | 96.505 (150 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.207    | 97.207 (180 epoch) |   99.155    | 99.155 (180 epoch) |  61.173  | 63.368 (150 epoch) |    58.530    | 60.847 (90  epoch) |        34.447        |     34.447 (180 epoch)     |        65.954         |     74.425 (30  epoch)      |        22.311         |     22.311 (180 epoch)      |    41.373     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.723    | 96.096 (120 epoch) |   99.001    | 99.071 (120 epoch) |  91.959  | 92.624 (120 epoch) |    86.796    | 87.011 (120 epoch) |        55.277        |     55.277 (180 epoch)     |        60.764         |     60.764 (180 epoch)      |        43.295         |     43.295 (180 epoch)      |    76.672     | 77.008 (120 epoch)  |
+|     tubes     |     96.830      |  96.830 (180 epoch)   |    98.725    | 98.725 (180 epoch)  |      94.737      |   95.455 (150 epoch)   |   97.767    | 97.786 (150 epoch) |   99.418    | 99.418 (180 epoch) |  74.460  | 75.240 (150 epoch) |    69.945    | 71.072 (90  epoch) |        34.520        |     35.651 (150 epoch)     |        67.831         |     72.044 (30  epoch)      |        23.384         |     24.210 (150 epoch)      |    53.781     | 55.125 (90  epoch)  |
+|      Avg      |     96.332      |  96.332 (180 epoch)   |    96.639    | 96.639 (180 epoch)  |      94.659      |   94.659 (180 epoch)   |   95.595    | 95.595 (180 epoch) |   98.645    | 98.645 (180 epoch) |  44.764  | 44.764 (180 epoch) |    47.285    | 47.285 (180 epoch) |        25.558        |     25.558 (180 epoch)     |        64.109         |     64.433 (30  epoch)      |        17.482         |     17.482 (180 epoch)      |    35.134     | 35.134 (180 epoch)  |
+2024-05-26 13:03:14,872 - ==> Total time: 0:52:05	 Eta: 0:34:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:03:26,050 - ==> Total time: 0:52:17	 Eta: 0:34:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:03:32,616 - Train: 60.49% [4900/8100]  [181.5/300.0] [batch_t 0.285 (0.367)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.383 (2.362)]
+2024-05-26 13:03:36,610 - ==> Total time: 0:52:27	 Eta: 0:34:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:03:47,311 - ==> Total time: 0:52:38	 Eta: 0:33:39 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:03:52,702 - Train: 61.11% [4950/8100]  [183.3/300.0] [batch_t 0.284 (0.404)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.498 (2.373)]
+2024-05-26 13:03:57,828 - ==> Total time: 0:52:48	 Eta: 0:33:17 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:04:08,307 - ==> Total time: 0:52:59	 Eta: 0:32:56 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:04:12,521 - Train: 61.73% [5000/8100]  [185.2/300.0] [batch_t 0.286 (0.501)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.587 (2.452)]
+2024-05-26 13:04:18,801 - ==> Total time: 0:53:09	 Eta: 0:32:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:04:29,348 - ==> Total time: 0:53:20	 Eta: 0:32:13 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:04:32,445 - Train: 62.35% [5050/8100]  [187.0/300.0] [batch_t 1.346 (1.346)] [data_t 1.062] [optim_t 0.283] [lr 0.004000] [pixel 2.269 (2.269)]
+2024-05-26 13:04:39,859 - ==> Total time: 0:53:30	 Eta: 0:31:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:04:49,611 - Train: 62.96% [5100/8100]  [188.9/300.0] [batch_t 0.285 (0.330)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.436 (2.373)]
+2024-05-26 13:04:50,470 - ==> Total time: 0:53:41	 Eta: 0:31:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:00,938 - ==> Total time: 0:53:51	 Eta: 0:31:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:10,098 - Train: 63.58% [5150/8100]  [190.7/300.0] [batch_t 0.286 (0.338)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.310 (2.348)]
+2024-05-26 13:05:12,101 - ==> Total time: 0:54:03	 Eta: 0:30:50 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:22,681 - ==> Total time: 0:54:13	 Eta: 0:30:30 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:30,130 - Train: 64.20% [5200/8100]  [192.6/300.0] [batch_t 0.285 (0.353)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.291 (2.356)]
+2024-05-26 13:05:33,272 - ==> Total time: 0:54:24	 Eta: 0:30:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:44,246 - ==> Total time: 0:54:35	 Eta: 0:29:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:05:50,490 - Train: 64.81% [5250/8100]  [194.4/300.0] [batch_t 0.285 (0.375)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.247 (2.324)]
+2024-05-26 13:05:54,773 - ==> Total time: 0:54:45	 Eta: 0:29:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:05,328 - ==> Total time: 0:54:56	 Eta: 0:29:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:10,498 - Train: 65.43% [5300/8100]  [196.3/300.0] [batch_t 0.285 (0.420)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.230 (2.362)]
+2024-05-26 13:06:15,930 - ==> Total time: 0:55:06	 Eta: 0:28:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:26,651 - ==> Total time: 0:55:17	 Eta: 0:28:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:30,740 - Train: 66.05% [5350/8100]  [198.1/300.0] [batch_t 0.285 (0.558)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.287 (2.316)]
+2024-05-26 13:06:37,317 - ==> Total time: 0:55:28	 Eta: 0:28:09 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:47,954 - Train: 66.67% [5400/8100]  [200.0/300.0] [batch_t 0.284 (0.325)] [data_t 0.001] [optim_t 0.283] [lr 0.004000] [pixel 2.197 (2.393)]
+2024-05-26 13:06:47,957 - ==> Total time: 0:55:38	 Eta: 0:27:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:06:58,539 - ==> Total time: 0:55:49	 Eta: 0:27:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:07:07,964 - Train: 67.28% [5450/8100]  [201.9/300.0] [batch_t 0.284 (0.331)] [data_t 0.001] [optim_t 0.283] [lr 0.004000] [pixel 2.319 (2.278)]
+2024-05-26 13:07:09,108 - ==> Total time: 0:56:00	 Eta: 0:27:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:07:19,653 - ==> Total time: 0:56:10	 Eta: 0:26:50 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:07:27,908 - Train: 67.90% [5500/8100]  [203.7/300.0] [batch_t 0.284 (0.342)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.229 (2.255)]
+2024-05-26 13:07:30,189 - ==> Total time: 0:56:21	 Eta: 0:26:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:07:41,127 - ==> Total time: 0:56:32	 Eta: 0:26:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:07:48,226 - Train: 68.52% [5550/8100]  [205.6/300.0] [batch_t 0.284 (0.357)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.250 (2.297)]
+2024-05-26 13:07:51,647 - ==> Total time: 0:56:42	 Eta: 0:25:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:02,143 - ==> Total time: 0:56:53	 Eta: 0:25:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:08,286 - Train: 69.14% [5600/8100]  [207.4/300.0] [batch_t 0.284 (0.380)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.472 (2.226)]
+2024-05-26 13:08:12,843 - ==> Total time: 0:57:03	 Eta: 0:25:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:23,671 - ==> Total time: 0:57:14	 Eta: 0:24:55 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:28,644 - Train: 69.75% [5650/8100]  [209.3/300.0] [batch_t 0.286 (0.459)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.184 (2.310)]
+2024-05-26 13:08:39,456 - Test: 100.00% [15/15] [batch_t 0.066 (0.333)] [pixel 6.990 (4.050)]
+2024-05-26 13:08:40,007 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.129 (mIoU_max_px)	
+2024-05-26 13:08:40,521 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.125 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-26 13:08:40,906 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.094 (mF1_max_px)	  0.035 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.093 (mIoU_max_px)	
+2024-05-26 13:08:41,172 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.067 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 13:08:41,817 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.162 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.162 (mIoU_max_px)	
+2024-05-26 13:08:42,480 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.166 (mIoU_max_px)	
+2024-05-26 13:08:42,485 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     89.096      |  90.691 (180 epoch)   |    93.627    | 94.523 (180 epoch)  |      83.636      |   86.667 (180 epoch)   |   96.001    | 96.251 (180 epoch) |   98.395    | 98.477 (180 epoch) |  8.216   | 9.171 (180 epoch)  |    15.427    | 17.322 (150 epoch) |        8.236         |     8.596 (180 epoch)      |        61.133         |     62.173 (180 epoch)      |         4.382         |      4.592 (180 epoch)      |     8.358     |  9.482 (150 epoch)  |
+| bracket_brown |     96.833      |  96.833 (210 epoch)   |    98.030    | 98.030 (210 epoch)  |      98.077      |   98.077 (150 epoch)   |   92.903    | 92.903 (210 epoch) |   96.558    | 96.560 (180 epoch) |  19.830  | 20.305 (150 epoch) |    30.685    | 30.685 (210 epoch) |        14.446        |     14.446 (210 epoch)     |        48.156         |     52.889 (30  epoch)      |         8.068         |      8.068 (210 epoch)      |    18.123     | 18.123 (210 epoch)  |
+| bracket_white |     95.667      |  96.333 (180 epoch)   |    96.521    | 97.466 (180 epoch)  |      91.803      |   92.857 (180 epoch)   |   93.798    | 94.625 (180 epoch) |   99.108    | 99.259 (180 epoch) |  6.745   | 12.282 (180 epoch) |    16.393    | 21.676 (180 epoch) |        5.634         |     6.206 (180 epoch)      |        75.922         |     79.423 (180 epoch)      |         2.994         |      3.335 (180 epoch)      |     8.928     | 12.156 (180 epoch)  |
+|   connector   |     98.810      |  98.810 (210 epoch)   |    97.220    | 97.220 (210 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.401    | 97.401 (210 epoch) |   99.213    | 99.213 (210 epoch) |  63.789  | 63.789 (210 epoch) |    58.902    | 60.847 (90  epoch) |        35.464        |     35.464 (210 epoch)     |        65.956         |     74.425 (30  epoch)      |        23.088         |     23.088 (210 epoch)      |    41.745     | 43.726 (90  epoch)  |
+|  metal_plate  |     99.946      |  100.000 (60  epoch)  |    99.980    | 100.000 (60  epoch) |      99.301      |  100.000 (60  epoch)   |   95.830    | 96.096 (120 epoch) |   99.001    | 99.071 (120 epoch) |  91.882  | 92.624 (120 epoch) |    86.833    | 87.011 (120 epoch) |        55.217        |     55.277 (180 epoch)     |        60.834         |     60.834 (210 epoch)      |        43.198         |     43.295 (180 epoch)      |    76.730     | 77.008 (120 epoch)  |
+|     tubes     |     96.875      |  96.875 (210 epoch)   |    98.719    | 98.725 (180 epoch)  |      95.455      |   95.455 (150 epoch)   |   97.552    | 97.786 (150 epoch) |   99.360    | 99.418 (180 epoch) |  74.192  | 75.240 (150 epoch) |    69.184    | 71.072 (90  epoch) |        34.292        |     35.651 (150 epoch)     |        68.750         |     72.044 (30  epoch)      |        23.162         |     24.210 (150 epoch)      |    52.887     | 55.125 (90  epoch)  |
+|      Avg      |     96.204      |  96.332 (180 epoch)   |    97.350    | 97.350 (210 epoch)  |      94.137      |   94.659 (180 epoch)   |   95.581    | 95.595 (180 epoch) |   98.606    | 98.645 (180 epoch) |  44.109  | 44.764 (180 epoch) |    46.237    | 47.285 (180 epoch) |        25.548        |     25.558 (180 epoch)     |        63.458         |     64.433 (30  epoch)      |        17.482         |     17.482 (180 epoch)      |    34.462     | 35.134 (180 epoch)  |
+2024-05-26 13:08:42,577 - ==> Total time: 0:57:33	 Eta: 0:24:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:53,993 - ==> Total time: 0:57:45	 Eta: 0:24:21 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:08:57,715 - Train: 70.37% [5700/8100]  [211.1/300.0] [batch_t 0.284 (0.635)] [data_t 0.002] [optim_t 0.282] [lr 0.004000] [pixel 2.279 (2.301)]
+2024-05-26 13:09:04,556 - ==> Total time: 0:57:55	 Eta: 0:24:02 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:09:14,950 - Train: 70.99% [5750/8100]  [213.0/300.0] [batch_t 0.285 (0.326)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.186 (2.220)]
+2024-05-26 13:09:15,239 - ==> Total time: 0:58:06	 Eta: 0:23:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:09:25,770 - ==> Total time: 0:58:16	 Eta: 0:23:25 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:09:34,882 - Train: 71.60% [5800/8100]  [214.8/300.0] [batch_t 0.287 (0.335)] [data_t 0.002] [optim_t 0.285] [lr 0.004000] [pixel 2.277 (2.223)]
+2024-05-26 13:09:36,314 - ==> Total time: 0:58:27	 Eta: 0:23:06 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:09:46,788 - ==> Total time: 0:58:37	 Eta: 0:22:48 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:09:54,691 - Train: 72.22% [5850/8100]  [216.7/300.0] [batch_t 0.286 (0.346)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.230 (2.229)]
+2024-05-26 13:09:57,260 - ==> Total time: 0:58:48	 Eta: 0:22:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:07,687 - ==> Total time: 0:58:58	 Eta: 0:22:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:14,927 - Train: 72.84% [5900/8100]  [218.5/300.0] [batch_t 0.286 (0.361)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.094 (2.178)]
+2024-05-26 13:10:18,640 - ==> Total time: 0:59:09	 Eta: 0:21:52 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:29,135 - ==> Total time: 0:59:20	 Eta: 0:21:34 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:34,823 - Train: 73.46% [5950/8100]  [220.4/300.0] [batch_t 0.285 (0.392)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.342 (2.227)]
+2024-05-26 13:10:39,670 - ==> Total time: 0:59:30	 Eta: 0:21:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:50,279 - ==> Total time: 0:59:41	 Eta: 0:20:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:10:54,864 - Train: 74.07% [6000/8100]  [222.2/300.0] [batch_t 0.286 (0.460)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.149 (2.164)]
+2024-05-26 13:11:00,859 - ==> Total time: 0:59:51	 Eta: 0:20:40 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:11:12,185 - ==> Total time: 1:00:03	 Eta: 0:20:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:11:15,508 - Train: 74.69% [6050/8100]  [224.1/300.0] [batch_t 0.285 (0.810)] [data_t 0.002] [optim_t 0.283] [lr 0.004000] [pixel 2.264 (2.289)]
+2024-05-26 13:11:22,647 - ==> Total time: 1:00:13	 Eta: 0:20:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:11:32,722 - Train: 75.31% [6100/8100]  [225.9/300.0] [batch_t 0.285 (0.327)] [data_t 0.001] [optim_t 0.284] [lr 0.004000] [pixel 2.186 (2.183)]
+2024-05-26 13:11:33,296 - ==> Total time: 1:00:24	 Eta: 0:19:46 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:11:43,924 - ==> Total time: 1:00:34	 Eta: 0:19:28 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:11:52,710 - Train: 75.93% [6150/8100]  [227.8/300.0] [batch_t 0.286 (0.336)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.216 (2.172)]
+2024-05-26 13:11:54,428 - ==> Total time: 1:00:45	 Eta: 0:19:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:05,037 - ==> Total time: 1:00:56	 Eta: 0:18:53 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:12,806 - Train: 76.54% [6200/8100]  [229.6/300.0] [batch_t 0.286 (0.350)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.268 (2.169)]
+2024-05-26 13:12:15,664 - ==> Total time: 1:01:06	 Eta: 0:18:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:26,319 - ==> Total time: 1:01:17	 Eta: 0:18:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:33,066 - Train: 77.16% [6250/8100]  [231.5/300.0] [batch_t 0.287 (0.368)] [data_t 0.002] [optim_t 0.285] [lr 0.004000] [pixel 2.286 (2.204)]
+2024-05-26 13:12:37,072 - ==> Total time: 1:01:28	 Eta: 0:18:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:47,659 - ==> Total time: 1:01:38	 Eta: 0:17:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:12:53,078 - Train: 77.78% [6300/8100]  [233.3/300.0] [batch_t 0.286 (0.406)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.026 (2.123)]
+2024-05-26 13:12:58,218 - ==> Total time: 1:01:49	 Eta: 0:17:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:13:08,813 - ==> Total time: 1:01:59	 Eta: 0:17:08 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:13:13,151 - Train: 78.40% [6350/8100]  [235.2/300.0] [batch_t 0.285 (0.506)] [data_t 0.002] [optim_t 0.284] [lr 0.004000] [pixel 2.151 (2.124)]
+2024-05-26 13:13:19,441 - ==> Total time: 1:02:10	 Eta: 0:16:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:13:30,254 - ==> Total time: 1:02:21	 Eta: 0:16:34 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:13:33,669 - Train: 79.01% [6400/8100]  [237.0/300.0] [batch_t 1.390 (1.390)] [data_t 1.107] [optim_t 0.283] [lr 0.004000] [pixel 2.185 (2.185)]
+2024-05-26 13:13:41,097 - ==> Total time: 1:02:32	 Eta: 0:16:17 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:13:50,631 - Train: 79.63% [6450/8100]  [238.9/300.0] [batch_t 0.286 (0.330)] [data_t 0.001] [optim_t 0.285] [lr 0.004000] [pixel 2.207 (2.122)]
+2024-05-26 13:13:51,492 - ==> Total time: 1:02:42	 Eta: 0:16:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:07,711 - Test: 100.00% [15/15] [batch_t 0.066 (0.334)] [pixel 7.192 (3.996)]
+2024-05-26 13:14:08,278 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.131 (mF1_max_px)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.135 (mIoU_max_px)	
+2024-05-26 13:14:08,803 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.135 (mIoU_max_px)	
+2024-05-26 13:14:09,189 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.098 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.095 (mIoU_max_px)	
+2024-05-26 13:14:09,461 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.069 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.072 (mIoU_max_px)	
+2024-05-26 13:14:10,128 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-26 13:14:10,815 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.175 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.175 (mIoU_max_px)	
+2024-05-26 13:14:10,819 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     87.699      |  90.691 (180 epoch)   |    92.858    | 94.523 (180 epoch)  |      82.353      |   86.667 (180 epoch)   |   95.477    | 96.251 (180 epoch) |   98.056    | 98.477 (180 epoch) |  10.220  | 10.220 (240 epoch) |    17.825    | 17.825 (240 epoch) |        9.024         |     9.024 (240 epoch)      |        59.468         |     62.173 (180 epoch)      |         4.838         |      4.838 (240 epoch)      |     9.784     |  9.784 (240 epoch)  |
+| bracket_brown |     95.626      |  96.833 (210 epoch)   |    97.311    | 98.030 (210 epoch)  |      95.327      |   98.077 (150 epoch)   |   92.559    | 92.903 (210 epoch) |   96.706    | 96.706 (240 epoch) |  20.786  | 20.786 (240 epoch) |    30.513    | 30.685 (210 epoch) |        14.699        |     14.699 (240 epoch)     |        45.076         |     52.889 (30  epoch)      |         8.201         |      8.201 (240 epoch)      |    18.003     | 18.123 (210 epoch)  |
+| bracket_white |     95.556      |  96.333 (180 epoch)   |    97.120    | 97.466 (180 epoch)  |      94.737      |   94.737 (240 epoch)   |   94.613    | 94.625 (180 epoch) |   99.312    | 99.312 (240 epoch) |  10.371  | 12.282 (180 epoch) |    19.322    | 21.676 (180 epoch) |        5.958         |     6.206 (180 epoch)      |        79.249         |     79.423 (180 epoch)      |         3.181         |      3.335 (180 epoch)      |    10.694     | 12.156 (180 epoch)  |
+|   connector   |     97.857      |  98.810 (210 epoch)   |    93.798    | 97.220 (210 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.367    | 97.401 (210 epoch) |   99.205    | 99.213 (210 epoch) |  63.050  | 63.789 (210 epoch) |    58.964    | 60.847 (90  epoch) |        35.437        |     35.464 (210 epoch)     |        66.799         |     74.425 (30  epoch)      |        23.042         |     23.088 (210 epoch)      |    41.808     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.882    | 96.096 (120 epoch) |   99.043    | 99.071 (120 epoch) |  92.421  | 92.624 (120 epoch) |    87.089    | 87.089 (240 epoch) |        56.592        |     56.592 (240 epoch)     |        61.404         |     61.404 (240 epoch)      |        44.552         |     44.552 (240 epoch)      |    77.130     | 77.130 (240 epoch)  |
+|     tubes     |     97.645      |  97.645 (240 epoch)   |    99.044    | 99.044 (240 epoch)  |      95.522      |   95.522 (240 epoch)   |   97.761    | 97.786 (150 epoch) |   99.407    | 99.418 (180 epoch) |  75.724  | 75.724 (240 epoch) |    70.825    | 71.072 (90  epoch) |        34.404        |     35.651 (150 epoch)     |        67.062         |     72.044 (30  epoch)      |        23.419         |     24.210 (150 epoch)      |    54.829     | 55.125 (90  epoch)  |
+|      Avg      |     95.731      |  96.332 (180 epoch)   |    96.688    | 97.350 (210 epoch)  |      94.082      |   94.659 (180 epoch)   |   95.610    | 95.610 (240 epoch) |   98.621    | 98.645 (180 epoch) |  45.429  | 45.429 (240 epoch) |    47.423    | 47.423 (240 epoch) |        26.019        |     26.019 (240 epoch)     |        63.176         |     64.433 (30  epoch)      |        17.872         |     17.872 (240 epoch)      |    35.375     | 35.375 (240 epoch)  |
+2024-05-26 13:14:10,902 - ==> Total time: 1:03:01	 Eta: 0:15:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:19,744 - Train: 80.25% [6500/8100]  [240.7/300.0] [batch_t 0.286 (0.339)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 2.054 (1.995)]
+2024-05-26 13:14:21,747 - ==> Total time: 1:03:12	 Eta: 0:15:28 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:32,193 - ==> Total time: 1:03:23	 Eta: 0:15:11 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:39,620 - Train: 80.86% [6550/8100]  [242.6/300.0] [batch_t 0.286 (0.357)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.956 (1.965)]
+2024-05-26 13:14:42,767 - ==> Total time: 1:03:33	 Eta: 0:14:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:53,193 - ==> Total time: 1:03:44	 Eta: 0:14:37 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:14:59,553 - Train: 81.48% [6600/8100]  [244.4/300.0] [batch_t 0.287 (0.377)] [data_t 0.002] [optim_t 0.285] [lr 0.000400] [pixel 2.047 (1.962)]
+2024-05-26 13:15:03,843 - ==> Total time: 1:03:54	 Eta: 0:14:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:15:14,680 - ==> Total time: 1:04:05	 Eta: 0:14:04 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:15:19,793 - Train: 82.10% [6650/8100]  [246.3/300.0] [batch_t 0.285 (0.418)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.892 (1.945)]
+2024-05-26 13:15:25,226 - ==> Total time: 1:04:16	 Eta: 0:13:47 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:15:35,680 - ==> Total time: 1:04:26	 Eta: 0:13:30 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:15:39,820 - Train: 82.72% [6700/8100]  [248.1/300.0] [batch_t 0.285 (0.556)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.996 (1.984)]
+2024-05-26 13:15:46,391 - ==> Total time: 1:04:37	 Eta: 0:13:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:15:57,009 - Train: 83.33% [6750/8100]  [250.0/300.0] [batch_t 0.285 (0.327)] [data_t 0.001] [optim_t 0.284] [lr 0.000400] [pixel 1.976 (1.948)]
+2024-05-26 13:15:57,011 - ==> Total time: 1:04:48	 Eta: 0:12:57 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:07,388 - ==> Total time: 1:04:58	 Eta: 0:12:41 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:16,988 - Train: 83.95% [6800/8100]  [251.9/300.0] [batch_t 0.285 (0.333)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 2.040 (1.944)]
+2024-05-26 13:16:18,134 - ==> Total time: 1:05:09	 Eta: 0:12:24 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:28,634 - ==> Total time: 1:05:19	 Eta: 0:12:08 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:36,827 - Train: 84.57% [6850/8100]  [253.7/300.0] [batch_t 0.284 (0.342)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.997 (1.942)]
+2024-05-26 13:16:39,109 - ==> Total time: 1:05:30	 Eta: 0:11:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:49,557 - ==> Total time: 1:05:40	 Eta: 0:11:35 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:16:57,283 - Train: 85.19% [6900/8100]  [255.6/300.0] [batch_t 0.285 (0.356)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.941 (1.936)]
+2024-05-26 13:17:00,705 - ==> Total time: 1:05:51	 Eta: 0:11:19 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:12,195 - ==> Total time: 1:06:03	 Eta: 0:11:03 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:18,089 - Train: 85.80% [6950/8100]  [257.4/300.0] [batch_t 0.285 (0.383)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.938 (1.942)]
+2024-05-26 13:17:22,656 - ==> Total time: 1:06:13	 Eta: 0:10:46 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:33,088 - ==> Total time: 1:06:24	 Eta: 0:10:30 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:37,976 - Train: 86.42% [7000/8100]  [259.3/300.0] [batch_t 0.286 (0.437)] [data_t 0.002] [optim_t 0.285] [lr 0.000400] [pixel 1.893 (1.914)]
+2024-05-26 13:17:43,691 - ==> Total time: 1:06:34	 Eta: 0:10:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:54,378 - ==> Total time: 1:06:45	 Eta: 0:09:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:17:58,012 - Train: 87.04% [7050/8100]  [261.1/300.0] [batch_t 0.285 (0.647)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.892 (1.902)]
+2024-05-26 13:18:04,874 - ==> Total time: 1:06:55	 Eta: 0:09:42 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:18:15,204 - Train: 87.65% [7100/8100]  [263.0/300.0] [batch_t 0.285 (0.328)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.951 (1.918)]
+2024-05-26 13:18:15,493 - ==> Total time: 1:07:06	 Eta: 0:09:26 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:18:25,979 - ==> Total time: 1:07:16	 Eta: 0:09:10 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:18:35,022 - Train: 88.27% [7150/8100]  [264.8/300.0] [batch_t 0.285 (0.333)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.989 (1.916)]
+2024-05-26 13:18:36,455 - ==> Total time: 1:07:27	 Eta: 0:08:54 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:18:47,071 - ==> Total time: 1:07:38	 Eta: 0:08:38 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:18:54,922 - Train: 88.89% [7200/8100]  [266.7/300.0] [batch_t 0.286 (0.345)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.966 (1.921)]
+2024-05-26 13:18:57,497 - ==> Total time: 1:07:48	 Eta: 0:08:22 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:19:07,943 - ==> Total time: 1:07:58	 Eta: 0:08:07 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:19:14,641 - Train: 89.51% [7250/8100]  [268.5/300.0] [batch_t 0.286 (0.361)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.911 (1.908)]
+2024-05-26 13:19:18,357 - ==> Total time: 1:08:09	 Eta: 0:07:51 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:19:33,926 - Test: 100.00% [15/15] [batch_t 0.066 (0.334)] [pixel 7.108 (3.893)]
+2024-05-26 13:19:34,479 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-26 13:19:34,991 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.125 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mIoU_max_px)	
+2024-05-26 13:19:35,386 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.098 (mF1_max_px)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.035 (mAcc_px_0.2_0.8_0.1)	  0.036 (mIoU_px_0.2_0.8_0.1)	  0.099 (mIoU_max_px)	
+2024-05-26 13:19:35,656 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.069 (mF1_max_px)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.067 (mIoU_max_px)	
+2024-05-26 13:19:36,304 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.163 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.162 (mIoU_max_px)	
+2024-05-26 13:19:36,967 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.167 (mF1_max_px)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mIoU_max_px)	
+2024-05-26 13:19:36,974 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     87.766      |  90.691 (180 epoch)   |    92.995    | 94.523 (180 epoch)  |      82.692      |   86.667 (180 epoch)   |   95.441    | 96.251 (180 epoch) |   98.100    | 98.477 (180 epoch) |  8.261   | 10.220 (240 epoch) |    14.992    | 17.825 (240 epoch) |        8.338         |     9.024 (240 epoch)      |        59.258         |     62.173 (180 epoch)      |         4.435         |      4.838 (240 epoch)      |     8.104     |  9.784 (240 epoch)  |
+| bracket_brown |     96.833      |  96.833 (210 epoch)   |    98.045    | 98.045 (270 epoch)  |      98.077      |   98.077 (150 epoch)   |   91.229    | 92.903 (210 epoch) |   96.147    | 96.706 (240 epoch) |  18.640  | 20.786 (240 epoch) |    29.296    | 30.685 (210 epoch) |        13.604        |     14.699 (240 epoch)     |        46.729         |     52.889 (30  epoch)      |         7.553         |      8.201 (240 epoch)      |    17.162     | 18.123 (210 epoch)  |
+| bracket_white |     95.889      |  96.333 (180 epoch)   |    97.043    | 97.466 (180 epoch)  |      93.103      |   94.737 (240 epoch)   |   94.567    | 94.625 (180 epoch) |   99.250    | 99.312 (240 epoch) |  10.734  | 12.282 (180 epoch) |    21.454    | 21.676 (180 epoch) |        6.248         |     6.248 (270 epoch)      |        79.007         |     79.423 (180 epoch)      |         3.359         |      3.359 (270 epoch)      |    12.016     | 12.156 (180 epoch)  |
+|   connector   |     98.571      |  98.810 (210 epoch)   |    96.505    | 97.220 (210 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.320    | 97.401 (210 epoch) |   99.191    | 99.213 (210 epoch) |  62.750  | 63.789 (210 epoch) |    58.221    | 60.847 (90  epoch) |        35.492        |     35.492 (270 epoch)     |        66.481         |     74.425 (30  epoch)      |        23.046         |     23.088 (210 epoch)      |    41.064     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.734    | 96.096 (120 epoch) |   98.983    | 99.071 (120 epoch) |  91.702  | 92.624 (120 epoch) |    86.652    | 87.089 (240 epoch) |        55.642        |     56.592 (240 epoch)     |        60.729         |     61.404 (240 epoch)      |        43.592         |     44.552 (240 epoch)      |    76.448     | 77.130 (240 epoch)  |
+|     tubes     |     96.694      |  97.645 (240 epoch)   |    98.682    | 99.044 (240 epoch)  |      95.455      |   95.522 (240 epoch)   |   97.472    | 97.786 (150 epoch) |   99.342    | 99.418 (180 epoch) |  73.408  | 75.724 (240 epoch) |    69.272    | 71.072 (90  epoch) |        34.400        |     35.651 (150 epoch)     |        70.626         |     72.044 (30  epoch)      |        23.177         |     24.210 (150 epoch)      |    52.990     | 55.125 (90  epoch)  |
+|      Avg      |     95.959      |  96.332 (180 epoch)   |    97.212    | 97.350 (210 epoch)  |      94.313      |   94.659 (180 epoch)   |   95.294    | 95.610 (240 epoch) |   98.502    | 98.645 (180 epoch) |  44.249  | 45.429 (240 epoch) |    46.648    | 47.423 (240 epoch) |        25.621        |     26.019 (240 epoch)     |        63.805         |     64.433 (30  epoch)      |        17.527         |     17.872 (240 epoch)      |    34.630     | 35.375 (240 epoch)  |
+2024-05-26 13:19:37,073 - ==> Total time: 1:08:28	 Eta: 0:07:36 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:19:43,270 - Train: 90.12% [7300/8100]  [270.4/300.0] [batch_t 0.286 (0.390)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.857 (1.911)]
+2024-05-26 13:19:48,129 - ==> Total time: 1:08:39	 Eta: 0:07:20 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:19:58,782 - ==> Total time: 1:08:49	 Eta: 0:07:05 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:20:03,356 - Train: 90.74% [7350/8100]  [272.2/300.0] [batch_t 0.284 (0.465)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.990 (1.907)]
+2024-05-26 13:20:09,362 - ==> Total time: 1:09:00	 Eta: 0:06:49 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:20:20,004 - ==> Total time: 1:09:11	 Eta: 0:06:33 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:20:23,417 - Train: 91.36% [7400/8100]  [274.1/300.0] [batch_t 0.285 (0.830)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.985 (1.959)]
+2024-05-26 13:20:30,542 - ==> Total time: 1:09:21	 Eta: 0:06:18 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:20:40,493 - Train: 91.98% [7450/8100]  [275.9/300.0] [batch_t 0.285 (0.327)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.798 (1.895)]
+2024-05-26 13:20:41,065 - ==> Total time: 1:09:32	 Eta: 0:06:02 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:20:51,724 - ==> Total time: 1:09:42	 Eta: 0:05:47 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:00,746 - Train: 92.59% [7500/8100]  [277.8/300.0] [batch_t 0.284 (0.336)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 2.040 (1.906)]
+2024-05-26 13:21:02,459 - ==> Total time: 1:09:53	 Eta: 0:05:31 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:13,224 - ==> Total time: 1:10:04	 Eta: 0:05:16 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:21,007 - Train: 93.21% [7550/8100]  [279.6/300.0] [batch_t 0.285 (0.350)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.856 (1.905)]
+2024-05-26 13:21:23,858 - ==> Total time: 1:10:14	 Eta: 0:05:01 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:34,829 - ==> Total time: 1:10:25	 Eta: 0:04:45 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:41,498 - Train: 93.83% [7600/8100]  [281.5/300.0] [batch_t 0.285 (0.365)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.951 (1.891)]
+2024-05-26 13:21:45,488 - ==> Total time: 1:10:36	 Eta: 0:04:30 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:21:55,906 - ==> Total time: 1:10:46	 Eta: 0:04:15 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:01,205 - Train: 94.44% [7650/8100]  [283.3/300.0] [batch_t 0.285 (0.407)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.810 (1.872)]
+2024-05-26 13:22:06,340 - ==> Total time: 1:10:57	 Eta: 0:03:59 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:16,814 - ==> Total time: 1:11:07	 Eta: 0:03:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:21,092 - Train: 95.06% [7700/8100]  [285.2/300.0] [batch_t 0.285 (0.498)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 2.006 (1.885)]
+2024-05-26 13:22:27,359 - ==> Total time: 1:11:18	 Eta: 0:03:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:37,955 - ==> Total time: 1:11:28	 Eta: 0:03:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:41,590 - Train: 95.68% [7750/8100]  [287.0/300.0] [batch_t 1.355 (1.355)] [data_t 1.073] [optim_t 0.282] [lr 0.000400] [pixel 1.805 (1.805)]
+2024-05-26 13:22:49,009 - ==> Total time: 1:11:40	 Eta: 0:02:59 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:22:58,658 - Train: 96.30% [7800/8100]  [288.9/300.0] [batch_t 0.285 (0.330)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.858 (1.883)]
+2024-05-26 13:22:59,517 - ==> Total time: 1:11:50	 Eta: 0:02:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:10,090 - ==> Total time: 1:12:01	 Eta: 0:02:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:18,573 - Train: 96.91% [7850/8100]  [290.7/300.0] [batch_t 0.285 (0.339)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.822 (1.878)]
+2024-05-26 13:23:20,572 - ==> Total time: 1:12:11	 Eta: 0:02:13 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:31,200 - ==> Total time: 1:12:22	 Eta: 0:01:58 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:38,647 - Train: 97.53% [7900/8100]  [292.6/300.0] [batch_t 0.285 (0.354)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.808 (1.879)]
+2024-05-26 13:23:41,786 - ==> Total time: 1:12:32	 Eta: 0:01:43 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:52,361 - ==> Total time: 1:12:43	 Eta: 0:01:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:23:58,894 - Train: 98.15% [7950/8100]  [294.4/300.0] [batch_t 0.285 (0.377)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.839 (1.885)]
+2024-05-26 13:24:03,175 - ==> Total time: 1:12:54	 Eta: 0:01:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:24:14,310 - ==> Total time: 1:13:05	 Eta: 0:00:59 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:24:19,373 - Train: 98.77% [8000/8100]  [296.3/300.0] [batch_t 0.285 (0.418)] [data_t 0.002] [optim_t 0.283] [lr 0.000400] [pixel 1.889 (1.871)]
+2024-05-26 13:24:24,795 - ==> Total time: 1:13:15	 Eta: 0:00:44 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:24:35,509 - ==> Total time: 1:13:26	 Eta: 0:00:29 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:24:39,547 - Train: 99.38% [8050/8100]  [298.1/300.0] [batch_t 0.286 (0.551)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.834 (1.876)]
+2024-05-26 13:24:46,117 - ==> Total time: 1:13:37	 Eta: 0:00:14 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:24:56,825 - Train: 100.00% [8100/8100]  [300.0/300.0] [batch_t 0.285 (0.324)] [data_t 0.002] [optim_t 0.284] [lr 0.000400] [pixel 1.849 (1.868)]
+2024-05-26 13:25:01,929 - Test: 100.00% [15/15] [batch_t 0.066 (0.332)] [pixel 7.171 (3.903)]
+2024-05-26 13:25:02,479 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.129 (mIoU_max_px)	
+2024-05-26 13:25:02,993 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.124 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mIoU_max_px)	
+2024-05-26 13:25:03,376 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.095 (mF1_max_px)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mIoU_max_px)	
+2024-05-26 13:25:03,644 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.068 (mF1_max_px)	  0.023 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mIoU_max_px)	
+2024-05-26 13:25:04,295 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.166 (mF1_max_px)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.163 (mIoU_max_px)	
+2024-05-26 13:25:04,964 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.169 (mF1_max_px)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.169 (mIoU_max_px)	
+2024-05-26 13:25:04,971 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     88.165      |  90.691 (180 epoch)   |    93.195    | 94.523 (180 epoch)  |      83.810      |   86.667 (180 epoch)   |   95.463    | 96.251 (180 epoch) |   98.117    | 98.477 (180 epoch) |  8.234   | 10.220 (240 epoch) |    14.996    | 17.825 (240 epoch) |        8.493         |     9.024 (240 epoch)      |        58.186         |     62.173 (180 epoch)      |         4.520         |      4.838 (240 epoch)      |     8.106     |  9.784 (240 epoch)  |
+| bracket_brown |     96.833      |  96.833 (210 epoch)   |    98.045    | 98.045 (270 epoch)  |      98.077      |   98.077 (150 epoch)   |   91.389    | 92.903 (210 epoch) |   96.256    | 96.706 (240 epoch) |  18.692  | 20.786 (240 epoch) |    29.399    | 30.685 (210 epoch) |        13.539        |     14.699 (240 epoch)     |        46.305         |     52.889 (30  epoch)      |         7.518         |      8.201 (240 epoch)      |    17.233     | 18.123 (210 epoch)  |
+| bracket_white |     95.778      |  96.333 (180 epoch)   |    96.870    | 97.466 (180 epoch)  |      93.103      |   94.737 (240 epoch)   |   94.659    | 94.659 (300 epoch) |   99.254    | 99.312 (240 epoch) |  10.673  | 12.282 (180 epoch) |    20.876    | 21.676 (180 epoch) |        6.135         |     6.248 (270 epoch)      |        79.074         |     79.423 (180 epoch)      |         3.292         |      3.359 (270 epoch)      |    11.655     | 12.156 (180 epoch)  |
+|   connector   |     98.333      |  98.810 (210 epoch)   |    95.712    | 97.220 (210 epoch)  |      96.552      |   96.552 (60  epoch)   |   97.283    | 97.401 (210 epoch) |   99.180    | 99.213 (210 epoch) |  62.286  | 63.789 (210 epoch) |    57.606    | 60.847 (90  epoch) |        35.368        |     35.492 (270 epoch)     |        66.690         |     74.425 (30  epoch)      |        22.927         |     23.088 (210 epoch)      |    40.455     | 43.726 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (60  epoch)  |   100.000    | 100.000 (60  epoch) |     100.000      |  100.000 (60  epoch)   |   95.720    | 96.096 (120 epoch) |   98.973    | 99.071 (120 epoch) |  91.606  | 92.624 (120 epoch) |    86.580    | 87.089 (240 epoch) |        55.766        |     56.592 (240 epoch)     |        60.918         |     61.404 (240 epoch)      |        43.656         |     44.552 (240 epoch)      |    76.335     | 77.130 (240 epoch)  |
+|     tubes     |     96.649      |  97.645 (240 epoch)   |    98.666    | 99.044 (240 epoch)  |      95.455      |   95.522 (240 epoch)   |   97.404    | 97.786 (150 epoch) |   99.326    | 99.418 (180 epoch) |  73.093  | 75.724 (240 epoch) |    69.043    | 71.072 (90  epoch) |        33.974        |     35.651 (150 epoch)     |        71.051         |     72.044 (30  epoch)      |        22.810         |     24.210 (150 epoch)      |    52.722     | 55.125 (90  epoch)  |
+|      Avg      |     95.960      |  96.332 (180 epoch)   |    97.081    | 97.350 (210 epoch)  |      94.499      |   94.659 (180 epoch)   |   95.320    | 95.610 (240 epoch) |   98.518    | 98.645 (180 epoch) |  44.097  | 45.429 (240 epoch) |    46.417    | 47.423 (240 epoch) |        25.546        |     26.019 (240 epoch)     |        63.704         |     64.433 (30  epoch)      |        17.454         |     17.872 (240 epoch)      |    34.418     | 35.375 (240 epoch)  |
+2024-05-26 13:25:05,063 - ==> Total time: 1:13:56	 Eta: 0:00:00 	Logged in 'runs/benchmark/invad_256_300e/mpdd/InvADTrainer_configs_benchmark_invad_256_300e_20240526-121108'
+2024-05-26 13:25:07,859 - finish training

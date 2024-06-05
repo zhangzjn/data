@@ -1,0 +1,1226 @@
+2024-05-24 01:03:06,421 - ==> Logging on master GPU: 0
+2024-05-24 01:03:06,421 - ==> Running Trainer: ViTADTrainer
+2024-05-24 01:03:06,422 - ==> Using GPU: [0] for Training
+2024-05-24 01:03:06,422 - ==> Building model
+2024-05-24 01:03:06,653 - Loading pretrained weights from file (model/pretrain/dino_deitsmall16_pretrain.pth)
+2024-05-24 01:03:06,824 - Loaded  from checkpoint 'model/pretrain/dino_deitsmall16_pretrain.pth'
+2024-05-24 01:03:06,825 - Resized position embedding: (14, 14) to (16, 16).
+2024-05-24 01:03:10,042 - 
+------------------------------------ ViTAD ------------------------------------
+| module                            | #parameters or shape   | #flops       |
+|:----------------------------------|:-----------------------|:-------------|
+| model                             | 38.971M                | 9.668G       |
+|  net_t                            |  22.074M               |  5.544G      |
+|   net_t.cls_token                 |   (1, 1, 384)          |              |
+|   net_t.pos_embed                 |   (1, 257, 384)        |              |
+|   net_t.patch_embed.proj          |   0.295M               |   75.497M    |
+|    net_t.patch_embed.proj.weight  |    (384, 3, 16, 16)    |              |
+|    net_t.patch_embed.proj.bias    |    (384,)              |              |
+|   net_t.blocks                    |   21.294M              |   5.469G     |
+|    net_t.blocks.0                 |    1.774M              |    0.456G    |
+|     net_t.blocks.0.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.0.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.0.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.0.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.0.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.0.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.0.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.0.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.0.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.0.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.0.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.0.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.1                 |    1.774M              |    0.456G    |
+|     net_t.blocks.1.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.1.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.1.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.1.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.1.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.1.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.1.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.1.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.1.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.1.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.1.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.1.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.2                 |    1.774M              |    0.456G    |
+|     net_t.blocks.2.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.2.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.2.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.2.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.2.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.2.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.2.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.2.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.2.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.2.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.2.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.2.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.3                 |    1.774M              |    0.456G    |
+|     net_t.blocks.3.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.3.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.3.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.3.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.3.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.3.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.3.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.3.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.3.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.3.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.3.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.3.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.4                 |    1.774M              |    0.456G    |
+|     net_t.blocks.4.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.4.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.4.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.4.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.4.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.4.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.4.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.4.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.4.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.4.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.4.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.4.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.5                 |    1.774M              |    0.456G    |
+|     net_t.blocks.5.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.5.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.5.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.5.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.5.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.5.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.5.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.5.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.5.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.5.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.5.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.5.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.6                 |    1.774M              |    0.456G    |
+|     net_t.blocks.6.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.6.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.6.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.6.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.6.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.6.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.6.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.6.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.6.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.6.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.6.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.6.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.7                 |    1.774M              |    0.456G    |
+|     net_t.blocks.7.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.7.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.7.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.7.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.7.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.7.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.7.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.7.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.7.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.7.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.7.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.7.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.8                 |    1.774M              |    0.456G    |
+|     net_t.blocks.8.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.8.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.8.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.8.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.8.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.8.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.8.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.8.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.8.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.8.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.8.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.8.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.9                 |    1.774M              |    0.456G    |
+|     net_t.blocks.9.norm1          |     0.768K             |     0.493M   |
+|      net_t.blocks.9.norm1.weight  |      (384,)            |              |
+|      net_t.blocks.9.norm1.bias    |      (384,)            |              |
+|     net_t.blocks.9.attn           |     0.591M             |     0.152G   |
+|      net_t.blocks.9.attn.qkv      |      0.444M            |      0.114G  |
+|      net_t.blocks.9.attn.proj     |      0.148M            |      37.896M |
+|     net_t.blocks.9.norm2          |     0.768K             |     0.493M   |
+|      net_t.blocks.9.norm2.weight  |      (384,)            |              |
+|      net_t.blocks.9.norm2.bias    |      (384,)            |              |
+|     net_t.blocks.9.mlp            |     1.182M             |     0.303G   |
+|      net_t.blocks.9.mlp.fc1       |      0.591M            |      0.152G  |
+|      net_t.blocks.9.mlp.fc2       |      0.59M             |      0.152G  |
+|    net_t.blocks.10                |    1.774M              |    0.456G    |
+|     net_t.blocks.10.norm1         |     0.768K             |     0.493M   |
+|      net_t.blocks.10.norm1.weight |      (384,)            |              |
+|      net_t.blocks.10.norm1.bias   |      (384,)            |              |
+|     net_t.blocks.10.attn          |     0.591M             |     0.152G   |
+|      net_t.blocks.10.attn.qkv     |      0.444M            |      0.114G  |
+|      net_t.blocks.10.attn.proj    |      0.148M            |      37.896M |
+|     net_t.blocks.10.norm2         |     0.768K             |     0.493M   |
+|      net_t.blocks.10.norm2.weight |      (384,)            |              |
+|      net_t.blocks.10.norm2.bias   |      (384,)            |              |
+|     net_t.blocks.10.mlp           |     1.182M             |     0.303G   |
+|      net_t.blocks.10.mlp.fc1      |      0.591M            |      0.152G  |
+|      net_t.blocks.10.mlp.fc2      |      0.59M             |      0.152G  |
+|    net_t.blocks.11                |    1.774M              |    0.456G    |
+|     net_t.blocks.11.norm1         |     0.768K             |     0.493M   |
+|      net_t.blocks.11.norm1.weight |      (384,)            |              |
+|      net_t.blocks.11.norm1.bias   |      (384,)            |              |
+|     net_t.blocks.11.attn          |     0.591M             |     0.152G   |
+|      net_t.blocks.11.attn.qkv     |      0.444M            |      0.114G  |
+|      net_t.blocks.11.attn.proj    |      0.148M            |      37.896M |
+|     net_t.blocks.11.norm2         |     0.768K             |     0.493M   |
+|      net_t.blocks.11.norm2.weight |      (384,)            |              |
+|      net_t.blocks.11.norm2.bias   |      (384,)            |              |
+|     net_t.blocks.11.mlp           |     1.182M             |     0.303G   |
+|      net_t.blocks.11.mlp.fc1      |      0.591M            |      0.152G  |
+|      net_t.blocks.11.mlp.fc2      |      0.59M             |      0.152G  |
+|   net_t.norm                      |   0.768K               |              |
+|    net_t.norm.weight              |    (384,)              |              |
+|    net_t.norm.bias                |    (384,)              |              |
+|   net_t.head                      |   0.385M               |              |
+|    net_t.head.weight              |    (1000, 384)         |              |
+|    net_t.head.bias                |    (1000,)             |              |
+|  net_fusion.fc                    |  0.148M                |  37.749M     |
+|   net_fusion.fc.weight            |   (384, 384)           |              |
+|   net_fusion.fc.bias              |   (384,)               |              |
+|  net_s                            |  16.75M                |  4.086G      |
+|   net_s.cls_token                 |   (1, 1, 384)          |              |
+|   net_s.pos_embed                 |   (1, 256, 384)        |              |
+|   net_s.patch_embed.proj          |   0.295M               |              |
+|    net_s.patch_embed.proj.weight  |    (384, 3, 16, 16)    |              |
+|    net_s.patch_embed.proj.bias    |    (384,)              |              |
+|   net_s.blocks                    |   15.97M               |   4.086G     |
+|    net_s.blocks.0                 |    1.774M              |    0.454G    |
+|     net_s.blocks.0.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.0.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.0.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.0.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.0.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.0.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.0.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.0.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.0.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.0.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.0.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.0.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.1                 |    1.774M              |    0.454G    |
+|     net_s.blocks.1.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.1.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.1.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.1.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.1.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.1.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.1.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.1.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.1.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.1.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.1.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.1.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.2                 |    1.774M              |    0.454G    |
+|     net_s.blocks.2.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.2.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.2.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.2.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.2.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.2.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.2.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.2.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.2.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.2.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.2.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.2.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.3                 |    1.774M              |    0.454G    |
+|     net_s.blocks.3.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.3.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.3.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.3.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.3.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.3.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.3.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.3.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.3.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.3.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.3.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.3.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.4                 |    1.774M              |    0.454G    |
+|     net_s.blocks.4.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.4.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.4.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.4.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.4.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.4.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.4.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.4.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.4.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.4.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.4.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.4.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.5                 |    1.774M              |    0.454G    |
+|     net_s.blocks.5.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.5.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.5.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.5.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.5.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.5.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.5.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.5.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.5.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.5.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.5.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.5.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.6                 |    1.774M              |    0.454G    |
+|     net_s.blocks.6.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.6.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.6.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.6.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.6.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.6.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.6.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.6.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.6.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.6.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.6.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.6.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.7                 |    1.774M              |    0.454G    |
+|     net_s.blocks.7.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.7.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.7.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.7.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.7.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.7.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.7.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.7.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.7.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.7.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.7.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.7.mlp.fc2       |      0.59M             |      0.151G  |
+|    net_s.blocks.8                 |    1.774M              |    0.454G    |
+|     net_s.blocks.8.norm1          |     0.768K             |     0.492M   |
+|      net_s.blocks.8.norm1.weight  |      (384,)            |              |
+|      net_s.blocks.8.norm1.bias    |      (384,)            |              |
+|     net_s.blocks.8.attn           |     0.591M             |     0.151G   |
+|      net_s.blocks.8.attn.qkv      |      0.444M            |      0.113G  |
+|      net_s.blocks.8.attn.proj     |      0.148M            |      37.749M |
+|     net_s.blocks.8.norm2          |     0.768K             |     0.492M   |
+|      net_s.blocks.8.norm2.weight  |      (384,)            |              |
+|      net_s.blocks.8.norm2.bias    |      (384,)            |              |
+|     net_s.blocks.8.mlp            |     1.182M             |     0.302G   |
+|      net_s.blocks.8.mlp.fc1       |      0.591M            |      0.151G  |
+|      net_s.blocks.8.mlp.fc2       |      0.59M             |      0.151G  |
+|   net_s.norm                      |   0.768K               |              |
+|    net_s.norm.weight              |    (384,)              |              |
+|    net_s.norm.bias                |    (384,)              |              |
+|   net_s.head                      |   0.385M               |              |
+|    net_s.head.weight              |    (1000, 384)         |              |
+|    net_s.head.bias                |    (1000,)             |              |
+-------------------------------------------------------------------------------
+2024-05-24 01:03:10,045 - ==> Creating optimizer
+2024-05-24 01:03:10,060 - ==> Loading dataset: DefaultAD
+2024-05-24 01:03:10,068 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.0001                              
+optim.kwargs                         : {'name': 'adamw', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0001, 'amsgrad': False}
+trainer.name                         : ViTADTrainer                        
+trainer.checkpoint                   : runs/benchmark/vitad_256_100e/mvtec_loco
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-06, 'warmup_lr': 1.0000000000000001e-07, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 8                                   
+trainer.data.batch_size_per_gpu      : 8                                   
+trainer.data.batch_size_test         : 8                                   
+trainer.data.batch_size_per_gpu_test : 8                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 26000                               
+trainer.metric_recorder              : {'mAUROC_sp_max_breakfast_box': [], 'mAP_sp_max_breakfast_box': [], 'mF1_max_sp_max_breakfast_box': [], 'mAUPRO_px_breakfast_box': [], 'mAUROC_px_breakfast_box': [], 'mAP_px_breakfast_box': [], 'mF1_max_px_breakfast_box': [], 'mF1_px_0.2_0.8_0.1_breakfast_box': [], 'mAcc_px_0.2_0.8_0.1_breakfast_box': [], 'mIoU_px_0.2_0.8_0.1_breakfast_box': [], 'mIoU_max_px_breakfast_box': [], 'mAUROC_sp_max_juice_bottle': [], 'mAP_sp_max_juice_bottle': [], 'mF1_max_sp_max_juice_bottle': [], 'mAUPRO_px_juice_bottle': [], 'mAUROC_px_juice_bottle': [], 'mAP_px_juice_bottle': [], 'mF1_max_px_juice_bottle': [], 'mF1_px_0.2_0.8_0.1_juice_bottle': [], 'mAcc_px_0.2_0.8_0.1_juice_bottle': [], 'mIoU_px_0.2_0.8_0.1_juice_bottle': [], 'mIoU_max_px_juice_bottle': [], 'mAUROC_sp_max_pushpins': [], 'mAP_sp_max_pushpins': [], 'mF1_max_sp_max_pushpins': [], 'mAUPRO_px_pushpins': [], 'mAUROC_px_pushpins': [], 'mAP_px_pushpins': [], 'mF1_max_px_pushpins': [], 'mF1_px_0.2_0.8_0.1_pushpins': [], 'mAcc_px_0.2_0.8_0.1_pushpins': [], 'mIoU_px_0.2_0.8_0.1_pushpins': [], 'mIoU_max_px_pushpins': [], 'mAUROC_sp_max_screw_bag': [], 'mAP_sp_max_screw_bag': [], 'mF1_max_sp_max_screw_bag': [], 'mAUPRO_px_screw_bag': [], 'mAUROC_px_screw_bag': [], 'mAP_px_screw_bag': [], 'mF1_max_px_screw_bag': [], 'mF1_px_0.2_0.8_0.1_screw_bag': [], 'mAcc_px_0.2_0.8_0.1_screw_bag': [], 'mIoU_px_0.2_0.8_0.1_screw_bag': [], 'mIoU_max_px_screw_bag': [], 'mAUROC_sp_max_splicing_connectors': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_splicing_connectors': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_splicing_connectors': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_splicing_connectors': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_splicing_connectors': [], 'mAUROC_px_Avg': [], 'mAP_px_splicing_connectors': [], 'mAP_px_Avg': [], 'mF1_max_px_splicing_connectors': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_splicing_connectors': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_splicing_connectors': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_splicing_connectors': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_splicing_connectors': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'cos', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mvtec_loco                     
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 260                                 
+data.test_size                       : 196                                 
+data.train_length                    : 2083                                
+data.test_length                     : 1568                                
+model_t.name                         : vit_small_patch16_224_dino          
+model_t.kwargs                       : {'pretrained': True, 'checkpoint_path': '', 'pretrained_cfg': {'file': 'model/pretrain/dino_deitsmall16_pretrain.pth'}, 'pretrained_strict': False, 'strict': True, 'img_size': 256, 'teachers': [3, 6, 9], 'neck': [12]}
+model_f.name                         : fusion                              
+model_f.kwargs                       : {'pretrained': False, 'checkpoint_path': '', 'strict': False, 'dim': 384, 'mul': 1}
+model_s.name                         : de_vit_small_patch16_224_dino       
+model_s.kwargs                       : {'pretrained': False, 'checkpoint_path': '', 'strict': False, 'img_size': 256, 'students': [3, 6, 9], 'depth': 9}
+model.name                           : vitad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_t': Namespace(name='vit_small_patch16_224_dino', kwargs={'pretrained': True, 'checkpoint_path': '', 'pretrained_cfg': {'file': 'model/pretrain/dino_deitsmall16_pretrain.pth'}, 'pretrained_strict': False, 'strict': True, 'img_size': 256, 'teachers': [3, 6, 9], 'neck': [12]}), 'model_f': Namespace(name='fusion', kwargs={'pretrained': False, 'checkpoint_path': '', 'strict': False, 'dim': 384, 'mul': 1}), 'model_s': Namespace(name='de_vit_small_patch16_224_dino', kwargs={'pretrained': False, 'checkpoint_path': '', 'strict': False, 'img_size': 256, 'students': [3, 6, 9], 'depth': 9})}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 8                                   
+batch_test_per                       : 8                                   
+lr                                   : 0.0001                              
+weight_decay                         : 0.0001                              
+cfg_path                             : configs.benchmark.vitad_256_100e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/vitad_256_100e/mvtec_loco', 'data.root=data/mvtec_loco']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.vitad_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/vitad_256_100e/mvtec_loco data.root=data/mvtec_loco
+task_start_time                      : 2900676.676042257                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306/show_train
+logdir_test                          : runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306/show_test
+2024-05-24 01:03:10,069 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-24 01:03:17,894 - Train: 0.19% [50/26000]  [0.2/100.0] [batch_t 0.316 (0.151)] [data_t 0.278] [optim_t 0.038] [lr 0.000100] [cos 0.854 (1.263)]
+2024-05-24 01:03:23,005 - Train: 0.38% [100/26000]  [0.4/100.0] [batch_t 0.039 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.561 (0.656)]
+2024-05-24 01:03:28,562 - Train: 0.58% [150/26000]  [0.6/100.0] [batch_t 0.340 (0.111)] [data_t 0.301] [optim_t 0.039] [lr 0.000100] [cos 0.506 (0.525)]
+2024-05-24 01:03:33,731 - Train: 0.77% [200/26000]  [0.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.414 (0.446)]
+2024-05-24 01:03:39,155 - Train: 0.96% [250/26000]  [1.0/100.0] [batch_t 0.315 (0.108)] [data_t 0.276] [optim_t 0.039] [lr 0.000100] [cos 0.357 (0.399)]
+2024-05-24 01:03:40,013 - ==> Total time: 0:00:33	 Eta: 0:55:31 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:03:44,854 - Train: 1.15% [300/26000]  [1.2/100.0] [batch_t 0.019 (0.106)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.338 (0.364)]
+2024-05-24 01:03:50,273 - Train: 1.35% [350/26000]  [1.3/100.0] [batch_t 0.048 (0.108)] [data_t 0.009] [optim_t 0.039] [lr 0.000100] [cos 0.337 (0.340)]
+2024-05-24 01:03:55,408 - Train: 1.54% [400/26000]  [1.5/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.313 (0.324)]
+2024-05-24 01:04:00,654 - Train: 1.73% [450/26000]  [1.7/100.0] [batch_t 0.080 (0.105)] [data_t 0.041] [optim_t 0.039] [lr 0.000100] [cos 0.292 (0.304)]
+2024-05-24 01:04:05,827 - Train: 1.92% [500/26000]  [1.9/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.270 (0.292)]
+2024-05-24 01:04:07,989 - ==> Total time: 0:01:01	 Eta: 0:50:19 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:04:12,061 - Train: 2.12% [550/26000]  [2.1/100.0] [batch_t 0.040 (0.113)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.243 (0.266)]
+2024-05-24 01:04:17,142 - Train: 2.31% [600/26000]  [2.3/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.269 (0.267)]
+2024-05-24 01:04:22,538 - Train: 2.50% [650/26000]  [2.5/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.278 (0.255)]
+2024-05-24 01:04:27,621 - Train: 2.69% [700/26000]  [2.7/100.0] [batch_t 0.042 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.252 (0.246)]
+2024-05-24 01:04:32,903 - Train: 2.88% [750/26000]  [2.9/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.228 (0.249)]
+2024-05-24 01:04:35,896 - ==> Total time: 0:01:29	 Eta: 0:48:15 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:04:38,768 - Train: 3.08% [800/26000]  [3.1/100.0] [batch_t 0.019 (0.111)] [data_t 0.000] [optim_t 0.019] [lr 0.000100] [cos 0.218 (0.237)]
+2024-05-24 01:04:44,385 - Train: 3.27% [850/26000]  [3.3/100.0] [batch_t 0.199 (0.112)] [data_t 0.159] [optim_t 0.039] [lr 0.000100] [cos 0.250 (0.229)]
+2024-05-24 01:04:49,438 - Train: 3.46% [900/26000]  [3.5/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.255 (0.220)]
+2024-05-24 01:04:54,699 - Train: 3.65% [950/26000]  [3.7/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.226 (0.219)]
+2024-05-24 01:04:59,974 - Train: 3.85% [1000/26000]  [3.8/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.200 (0.218)]
+2024-05-24 01:05:03,948 - ==> Total time: 0:01:57	 Eta: 0:47:02 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:05:06,149 - Train: 4.04% [1050/26000]  [4.0/100.0] [batch_t 0.042 (0.119)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.210 (0.200)]
+2024-05-24 01:05:11,304 - Train: 4.23% [1100/26000]  [4.2/100.0] [batch_t 0.018 (0.103)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.192 (0.206)]
+2024-05-24 01:05:16,730 - Train: 4.42% [1150/26000]  [4.4/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.196 (0.204)]
+2024-05-24 01:05:21,890 - Train: 4.62% [1200/26000]  [4.6/100.0] [batch_t 0.018 (0.103)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.213 (0.199)]
+2024-05-24 01:05:27,207 - Train: 4.81% [1250/26000]  [4.8/100.0] [batch_t 0.043 (0.106)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.170 (0.190)]
+2024-05-24 01:05:32,288 - Train: 5.00% [1300/26000]  [5.0/100.0] [batch_t 0.043 (0.102)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.198 (0.194)]
+2024-05-24 01:05:32,290 - ==> Total time: 0:02:25	 Eta: 0:46:12 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:05:38,423 - Train: 5.19% [1350/26000]  [5.2/100.0] [batch_t 0.159 (0.109)] [data_t 0.119] [optim_t 0.040] [lr 0.000100] [cos 0.209 (0.187)]
+2024-05-24 01:05:43,406 - Train: 5.38% [1400/26000]  [5.4/100.0] [batch_t 0.019 (0.100)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.185 (0.186)]
+2024-05-24 01:05:48,720 - Train: 5.58% [1450/26000]  [5.6/100.0] [batch_t 0.143 (0.106)] [data_t 0.103] [optim_t 0.040] [lr 0.000100] [cos 0.169 (0.187)]
+2024-05-24 01:05:53,928 - Train: 5.77% [1500/26000]  [5.8/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.171 (0.178)]
+2024-05-24 01:05:59,269 - Train: 5.96% [1550/26000]  [6.0/100.0] [batch_t 0.289 (0.107)] [data_t 0.250] [optim_t 0.039] [lr 0.000100] [cos 0.162 (0.180)]
+2024-05-24 01:06:00,145 - ==> Total time: 0:02:53	 Eta: 0:45:22 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:06:05,197 - Train: 6.15% [1600/26000]  [6.2/100.0] [batch_t 0.039 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.191 (0.178)]
+2024-05-24 01:06:10,439 - Train: 6.35% [1650/26000]  [6.3/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.172 (0.169)]
+2024-05-24 01:06:15,684 - Train: 6.54% [1700/26000]  [6.5/100.0] [batch_t 0.241 (0.105)] [data_t 0.224] [optim_t 0.018] [lr 0.000100] [cos 0.167 (0.175)]
+2024-05-24 01:06:20,980 - Train: 6.73% [1750/26000]  [6.7/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.160 (0.169)]
+2024-05-24 01:06:26,149 - Train: 6.92% [1800/26000]  [6.9/100.0] [batch_t 0.059 (0.103)] [data_t 0.020] [optim_t 0.039] [lr 0.000100] [cos 0.194 (0.171)]
+2024-05-24 01:06:28,226 - ==> Total time: 0:03:21	 Eta: 0:44:41 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:06:32,244 - Train: 7.12% [1850/26000]  [7.1/100.0] [batch_t 0.097 (0.111)] [data_t 0.055] [optim_t 0.042] [lr 0.000100] [cos 0.156 (0.165)]
+2024-05-24 01:06:37,275 - Train: 7.31% [1900/26000]  [7.3/100.0] [batch_t 0.018 (0.101)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.140 (0.161)]
+2024-05-24 01:06:42,587 - Train: 7.50% [1950/26000]  [7.5/100.0] [batch_t 0.311 (0.106)] [data_t 0.272] [optim_t 0.038] [lr 0.000100] [cos 0.166 (0.162)]
+2024-05-24 01:06:47,701 - Train: 7.69% [2000/26000]  [7.7/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.171 (0.162)]
+2024-05-24 01:06:53,154 - Train: 7.88% [2050/26000]  [7.9/100.0] [batch_t 0.283 (0.109)] [data_t 0.245] [optim_t 0.038] [lr 0.000100] [cos 0.184 (0.161)]
+2024-05-24 01:06:56,149 - ==> Total time: 0:03:49	 Eta: 0:44:02 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:06:59,141 - Train: 8.08% [2100/26000]  [8.1/100.0] [batch_t 0.040 (0.115)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.173 (0.165)]
+2024-05-24 01:07:04,462 - Train: 8.27% [2150/26000]  [8.3/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.158 (0.153)]
+2024-05-24 01:07:09,425 - Train: 8.46% [2200/26000]  [8.5/100.0] [batch_t 0.040 (0.099)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.156 (0.153)]
+2024-05-24 01:07:14,746 - Train: 8.65% [2250/26000]  [8.7/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.129 (0.153)]
+2024-05-24 01:07:19,905 - Train: 8.85% [2300/26000]  [8.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.158 (0.155)]
+2024-05-24 01:07:24,000 - ==> Total time: 0:04:17	 Eta: 0:43:25 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:07:26,023 - Train: 9.04% [2350/26000]  [9.0/100.0] [batch_t 0.040 (0.131)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.153 (0.148)]
+2024-05-24 01:07:31,181 - Train: 9.23% [2400/26000]  [9.2/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.175 (0.153)]
+2024-05-24 01:07:36,461 - Train: 9.42% [2450/26000]  [9.4/100.0] [batch_t 0.042 (0.106)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.145 (0.149)]
+2024-05-24 01:07:41,581 - Train: 9.62% [2500/26000]  [9.6/100.0] [batch_t 0.039 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.154 (0.148)]
+2024-05-24 01:07:46,974 - Train: 9.81% [2550/26000]  [9.8/100.0] [batch_t 0.040 (0.108)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.138 (0.145)]
+2024-05-24 01:07:52,170 - Train: 10.00% [2600/26000]  [10.0/100.0] [batch_t 0.039 (0.104)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.161 (0.143)]
+2024-05-24 01:07:58,760 - Test: 25.51% [50/196] [batch_t 0.065 (0.130)] [cos 0.117 (0.166)]
+2024-05-24 01:08:03,390 - Test: 51.02% [100/196] [batch_t 0.042 (0.111)] [cos 0.146 (0.150)]
+2024-05-24 01:08:09,184 - Test: 76.53% [150/196] [batch_t 0.239 (0.113)] [cos 0.218 (0.166)]
+2024-05-24 01:08:13,739 - Test: 100.00% [196/196] [batch_t 0.025 (0.110)] [cos 0.104 (0.157)]
+2024-05-24 01:08:17,701 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.537 (mF1_max_px)	  0.186 (mF1_px_0.2_0.8_0.1)	  0.185 (mAcc_px_0.2_0.8_0.1)	  0.184 (mIoU_px_0.2_0.8_0.1)	  0.534 (mIoU_max_px)	
+2024-05-24 01:08:23,524 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.665 (mF1_max_px)	  0.224 (mF1_px_0.2_0.8_0.1)	  0.225 (mAcc_px_0.2_0.8_0.1)	  0.228 (mIoU_px_0.2_0.8_0.1)	  0.648 (mIoU_max_px)	
+2024-05-24 01:08:28,796 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.612 (mF1_max_px)	  0.211 (mF1_px_0.2_0.8_0.1)	  0.211 (mAcc_px_0.2_0.8_0.1)	  0.211 (mIoU_px_0.2_0.8_0.1)	  0.609 (mIoU_max_px)	
+2024-05-24 01:08:34,504 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.678 (mF1_max_px)	  0.230 (mF1_px_0.2_0.8_0.1)	  0.231 (mAcc_px_0.2_0.8_0.1)	  0.235 (mIoU_px_0.2_0.8_0.1)	  0.667 (mIoU_max_px)	
+2024-05-24 01:08:39,909 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.615 (mF1_max_px)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.211 (mAcc_px_0.2_0.8_0.1)	  0.211 (mIoU_px_0.2_0.8_0.1)	  0.612 (mIoU_max_px)	
+2024-05-24 01:08:39,922 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.128      |  77.128 (10  epoch)   |    87.665    | 87.665 (10  epoch) |      77.690      |   77.690 (10  epoch)   |   70.938    | 70.938 (10  epoch) |   89.535    | 89.535 (10  epoch) |  53.528  | 53.528 (10  epoch) |    51.070    | 51.070 (10  epoch) |        22.732        |     22.732 (10  epoch)     |        35.925         |     35.925 (10  epoch)      |        13.981         |     13.981 (10  epoch)      |    34.292     | 34.292 (10  epoch)  |
+|    juice_bottle     |     88.487      |  88.487 (10  epoch)   |    95.631    | 95.631 (10  epoch) |      87.627      |   87.627 (10  epoch)   |   82.877    | 82.877 (10  epoch) |   88.582    | 88.582 (10  epoch) |  47.091  | 47.091 (10  epoch) |    48.720    | 48.720 (10  epoch) |        20.040        |     20.040 (10  epoch)     |        22.606         |     22.606 (10  epoch)      |        12.334         |     12.334 (10  epoch)      |    32.205     | 32.205 (10  epoch)  |
+|      pushpins       |     66.330      |  66.330 (10  epoch)   |    73.923    | 73.923 (10  epoch) |      72.235      |   72.235 (10  epoch)   |   54.128    | 54.128 (10  epoch) |   45.024    | 45.024 (10  epoch) |  1.969   | 1.969 (10  epoch)  |    4.923     | 4.923 (10  epoch)  |        2.469         |     2.469 (10  epoch)      |         7.265         |      7.265 (10  epoch)      |         1.256         |      1.256 (10  epoch)      |     2.524     |  2.524 (10  epoch)  |
+|      screw_bag      |     62.115      |  62.115 (10  epoch)   |    75.845    | 75.845 (10  epoch) |      78.755      |   78.755 (10  epoch)   |   47.649    | 47.649 (10  epoch) |   72.709    | 72.709 (10  epoch) |  13.225  | 13.225 (10  epoch) |    22.050    | 22.050 (10  epoch) |        9.635         |     9.635 (10  epoch)      |        27.275         |     27.275 (10  epoch)      |         5.291         |      5.291 (10  epoch)      |    12.391     | 12.391 (10  epoch)  |
+| splicing_connectors |     79.218      |  79.218 (10  epoch)   |    88.807    | 88.807 (10  epoch) |      78.072      |   78.072 (10  epoch)   |   63.173    | 63.173 (10  epoch) |   69.342    | 69.342 (10  epoch) |  21.070  | 21.070 (10  epoch) |    21.596    | 21.596 (10  epoch) |        11.361        |     11.361 (10  epoch)     |        13.619         |     13.619 (10  epoch)      |         6.228         |      6.228 (10  epoch)      |    12.105     | 12.105 (10  epoch)  |
+|         Avg         |     74.656      |  74.656 (10  epoch)   |    84.374    | 84.374 (10  epoch) |      78.876      |   78.876 (10  epoch)   |   63.753    | 63.753 (10  epoch) |   73.039    | 73.039 (10  epoch) |  27.377  | 27.377 (10  epoch) |    29.672    | 29.672 (10  epoch) |        13.247        |     13.247 (10  epoch)     |        21.338         |     21.338 (10  epoch)      |         7.818         |      7.818 (10  epoch)      |    18.703     | 18.703 (10  epoch)  |
+2024-05-24 01:08:40,000 - ==> Total time: 0:05:33	 Eta: 0:50:02 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:08:46,530 - Train: 10.19% [2650/26000]  [10.2/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.131 (0.145)]
+2024-05-24 01:08:51,561 - Train: 10.38% [2700/26000]  [10.4/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.149 (0.143)]
+2024-05-24 01:08:57,043 - Train: 10.58% [2750/26000]  [10.6/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.148 (0.142)]
+2024-05-24 01:09:02,057 - Train: 10.77% [2800/26000]  [10.8/100.0] [batch_t 0.040 (0.100)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.139 (0.140)]
+2024-05-24 01:09:07,468 - Train: 10.96% [2850/26000]  [11.0/100.0] [batch_t 0.043 (0.108)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.139 (0.140)]
+2024-05-24 01:09:08,367 - ==> Total time: 0:06:02	 Eta: 0:48:48 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:09:13,475 - Train: 11.15% [2900/26000]  [11.2/100.0] [batch_t 0.039 (0.107)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.116 (0.140)]
+2024-05-24 01:09:18,768 - Train: 11.35% [2950/26000]  [11.3/100.0] [batch_t 0.044 (0.106)] [data_t 0.006] [optim_t 0.038] [lr 0.000100] [cos 0.154 (0.141)]
+2024-05-24 01:09:23,865 - Train: 11.54% [3000/26000]  [11.5/100.0] [batch_t 0.066 (0.102)] [data_t 0.024] [optim_t 0.041] [lr 0.000100] [cos 0.115 (0.135)]
+2024-05-24 01:09:28,921 - Train: 11.73% [3050/26000]  [11.7/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.146 (0.132)]
+2024-05-24 01:09:34,188 - Train: 11.92% [3100/26000]  [11.9/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.125 (0.135)]
+2024-05-24 01:09:36,278 - ==> Total time: 0:06:29	 Eta: 0:47:39 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:09:40,523 - Train: 12.12% [3150/26000]  [12.1/100.0] [batch_t 0.079 (0.111)] [data_t 0.041] [optim_t 0.039] [lr 0.000100] [cos 0.131 (0.137)]
+2024-05-24 01:09:45,477 - Train: 12.31% [3200/26000]  [12.3/100.0] [batch_t 0.019 (0.099)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.122 (0.131)]
+2024-05-24 01:09:50,881 - Train: 12.50% [3250/26000]  [12.5/100.0] [batch_t 0.116 (0.108)] [data_t 0.074] [optim_t 0.042] [lr 0.000100] [cos 0.129 (0.137)]
+2024-05-24 01:09:56,011 - Train: 12.69% [3300/26000]  [12.7/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.126 (0.129)]
+2024-05-24 01:10:01,507 - Train: 12.88% [3350/26000]  [12.9/100.0] [batch_t 0.344 (0.110)] [data_t 0.305] [optim_t 0.039] [lr 0.000100] [cos 0.147 (0.131)]
+2024-05-24 01:10:04,540 - ==> Total time: 0:06:58	 Eta: 0:46:38 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:10:08,079 - Train: 13.08% [3400/26000]  [13.1/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.116 (0.132)]
+2024-05-24 01:10:13,631 - Train: 13.27% [3450/26000]  [13.3/100.0] [batch_t 0.302 (0.111)] [data_t 0.263] [optim_t 0.039] [lr 0.000100] [cos 0.114 (0.129)]
+2024-05-24 01:10:18,774 - Train: 13.46% [3500/26000]  [13.5/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.129 (0.129)]
+2024-05-24 01:10:24,091 - Train: 13.65% [3550/26000]  [13.7/100.0] [batch_t 0.263 (0.106)] [data_t 0.222] [optim_t 0.041] [lr 0.000100] [cos 0.116 (0.128)]
+2024-05-24 01:10:29,108 - Train: 13.85% [3600/26000]  [13.8/100.0] [batch_t 0.040 (0.100)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.124 (0.128)]
+2024-05-24 01:10:33,301 - ==> Total time: 0:07:26	 Eta: 0:45:45 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:10:35,445 - Train: 14.04% [3650/26000]  [14.0/100.0] [batch_t 0.043 (0.126)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.141 (0.132)]
+2024-05-24 01:10:40,635 - Train: 14.23% [3700/26000]  [14.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.134 (0.128)]
+2024-05-24 01:10:45,733 - Train: 14.42% [3750/26000]  [14.4/100.0] [batch_t 0.051 (0.102)] [data_t 0.018] [optim_t 0.033] [lr 0.000100] [cos 0.103 (0.120)]
+2024-05-24 01:10:50,984 - Train: 14.62% [3800/26000]  [14.6/100.0] [batch_t 0.042 (0.105)] [data_t 0.001] [optim_t 0.041] [lr 0.000100] [cos 0.143 (0.125)]
+2024-05-24 01:10:56,282 - Train: 14.81% [3850/26000]  [14.8/100.0] [batch_t 0.233 (0.106)] [data_t 0.191] [optim_t 0.043] [lr 0.000100] [cos 0.135 (0.126)]
+2024-05-24 01:11:01,263 - Train: 15.00% [3900/26000]  [15.0/100.0] [batch_t 0.018 (0.100)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.147 (0.123)]
+2024-05-24 01:11:01,265 - ==> Total time: 0:07:54	 Eta: 0:44:51 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:11:08,845 - Train: 15.19% [3950/26000]  [15.2/100.0] [batch_t 0.018 (0.106)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.110 (0.129)]
+2024-05-24 01:11:13,966 - Train: 15.38% [4000/26000]  [15.4/100.0] [batch_t 0.065 (0.102)] [data_t 0.026] [optim_t 0.038] [lr 0.000100] [cos 0.135 (0.119)]
+2024-05-24 01:11:19,342 - Train: 15.58% [4050/26000]  [15.6/100.0] [batch_t 0.310 (0.107)] [data_t 0.272] [optim_t 0.039] [lr 0.000100] [cos 0.115 (0.117)]
+2024-05-24 01:11:24,491 - Train: 15.77% [4100/26000]  [15.8/100.0] [batch_t 0.019 (0.103)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.095 (0.120)]
+2024-05-24 01:11:29,898 - Train: 15.96% [4150/26000]  [16.0/100.0] [batch_t 0.266 (0.108)] [data_t 0.227] [optim_t 0.040] [lr 0.000100] [cos 0.092 (0.122)]
+2024-05-24 01:11:30,877 - ==> Total time: 0:08:24	 Eta: 0:44:08 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:11:36,097 - Train: 16.15% [4200/26000]  [16.2/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.120 (0.119)]
+2024-05-24 01:11:41,336 - Train: 16.35% [4250/26000]  [16.3/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.134 (0.117)]
+2024-05-24 01:11:46,383 - Train: 16.54% [4300/26000]  [16.5/100.0] [batch_t 0.033 (0.101)] [data_t 0.000] [optim_t 0.033] [lr 0.000100] [cos 0.106 (0.120)]
+2024-05-24 01:11:51,540 - Train: 16.73% [4350/26000]  [16.7/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.094 (0.116)]
+2024-05-24 01:11:56,819 - Train: 16.92% [4400/26000]  [16.9/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.114 (0.119)]
+2024-05-24 01:11:58,888 - ==> Total time: 0:08:52	 Eta: 0:43:20 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:12:03,083 - Train: 17.12% [4450/26000]  [17.1/100.0] [batch_t 0.207 (0.110)] [data_t 0.168] [optim_t 0.039] [lr 0.000100] [cos 0.105 (0.114)]
+2024-05-24 01:12:08,209 - Train: 17.31% [4500/26000]  [17.3/100.0] [batch_t 0.043 (0.102)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.116 (0.117)]
+2024-05-24 01:12:13,505 - Train: 17.50% [4550/26000]  [17.5/100.0] [batch_t 0.113 (0.106)] [data_t 0.075] [optim_t 0.038] [lr 0.000100] [cos 0.110 (0.115)]
+2024-05-24 01:12:18,690 - Train: 17.69% [4600/26000]  [17.7/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.144 (0.115)]
+2024-05-24 01:12:23,791 - Train: 17.88% [4650/26000]  [17.9/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.110 (0.115)]
+2024-05-24 01:12:27,058 - ==> Total time: 0:09:20	 Eta: 0:42:34 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:12:30,095 - Train: 18.08% [4700/26000]  [18.1/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.128 (0.112)]
+2024-05-24 01:12:35,246 - Train: 18.27% [4750/26000]  [18.3/100.0] [batch_t 0.071 (0.103)] [data_t 0.033] [optim_t 0.038] [lr 0.000100] [cos 0.106 (0.113)]
+2024-05-24 01:12:40,571 - Train: 18.46% [4800/26000]  [18.5/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.103 (0.112)]
+2024-05-24 01:12:45,757 - Train: 18.65% [4850/26000]  [18.7/100.0] [batch_t 0.054 (0.104)] [data_t 0.015] [optim_t 0.040] [lr 0.000100] [cos 0.102 (0.115)]
+2024-05-24 01:12:51,186 - Train: 18.85% [4900/26000]  [18.8/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.121 (0.112)]
+2024-05-24 01:12:55,438 - ==> Total time: 0:09:49	 Eta: 0:41:51 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:12:57,544 - Train: 19.04% [4950/26000]  [19.0/100.0] [batch_t 0.032 (0.119)] [data_t 0.014] [optim_t 0.018] [lr 0.000100] [cos 0.126 (0.120)]
+2024-05-24 01:13:02,625 - Train: 19.23% [5000/26000]  [19.2/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.120 (0.110)]
+2024-05-24 01:13:08,044 - Train: 19.42% [5050/26000]  [19.4/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.094 (0.110)]
+2024-05-24 01:13:13,211 - Train: 19.62% [5100/26000]  [19.6/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.121 (0.114)]
+2024-05-24 01:13:18,462 - Train: 19.81% [5150/26000]  [19.8/100.0] [batch_t 0.040 (0.105)] [data_t 0.000] [optim_t 0.040] [lr 0.000100] [cos 0.129 (0.109)]
+2024-05-24 01:13:23,734 - Train: 20.00% [5200/26000]  [20.0/100.0] [batch_t 0.042 (0.105)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.114 (0.108)]
+2024-05-24 01:13:30,410 - Test: 25.51% [50/196] [batch_t 0.043 (0.130)] [cos 0.091 (0.134)]
+2024-05-24 01:13:34,980 - Test: 51.02% [100/196] [batch_t 0.025 (0.111)] [cos 0.109 (0.118)]
+2024-05-24 01:13:40,698 - Test: 76.53% [150/196] [batch_t 0.071 (0.112)] [cos 0.174 (0.131)]
+2024-05-24 01:13:45,247 - Test: 100.00% [196/196] [batch_t 0.041 (0.109)] [cos 0.073 (0.122)]
+2024-05-24 01:13:49,181 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.561 (mF1_max_px)	  0.191 (mF1_px_0.2_0.8_0.1)	  0.192 (mAcc_px_0.2_0.8_0.1)	  0.191 (mIoU_px_0.2_0.8_0.1)	  0.551 (mIoU_max_px)	
+2024-05-24 01:13:54,916 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.658 (mF1_max_px)	  0.231 (mF1_px_0.2_0.8_0.1)	  0.231 (mAcc_px_0.2_0.8_0.1)	  0.227 (mIoU_px_0.2_0.8_0.1)	  0.658 (mIoU_max_px)	
+2024-05-24 01:13:58,954 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.618 (mF1_max_px)	  0.216 (mF1_px_0.2_0.8_0.1)	  0.215 (mAcc_px_0.2_0.8_0.1)	  0.214 (mIoU_px_0.2_0.8_0.1)	  0.623 (mIoU_max_px)	
+2024-05-24 01:14:04,546 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.673 (mF1_max_px)	  0.231 (mF1_px_0.2_0.8_0.1)	  0.233 (mAcc_px_0.2_0.8_0.1)	  0.231 (mIoU_px_0.2_0.8_0.1)	  0.665 (mIoU_max_px)	
+2024-05-24 01:14:08,843 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.619 (mF1_max_px)	  0.214 (mF1_px_0.2_0.8_0.1)	  0.214 (mAcc_px_0.2_0.8_0.1)	  0.215 (mIoU_px_0.2_0.8_0.1)	  0.620 (mIoU_max_px)	
+2024-05-24 01:14:08,856 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     75.190      |  77.128 (10  epoch)   |    86.593    | 87.665 (10  epoch) |      77.232      |   77.690 (10  epoch)   |   70.798    | 70.938 (10  epoch) |   89.365    | 89.535 (10  epoch) |  54.324  | 54.324 (20  epoch) |    50.381    | 51.070 (10  epoch) |        22.364        |     22.732 (10  epoch)     |        34.258         |     35.925 (10  epoch)      |        13.790         |     13.981 (10  epoch)      |    33.673     | 34.292 (10  epoch)  |
+|    juice_bottle     |     89.231      |  89.231 (20  epoch)   |    95.982    | 95.982 (20  epoch) |      87.473      |   87.627 (10  epoch)   |   83.220    | 83.220 (20  epoch) |   88.706    | 88.706 (20  epoch) |  48.019  | 48.019 (20  epoch) |    48.824    | 48.824 (20  epoch) |        20.063        |     20.063 (20  epoch)     |        19.933         |     22.606 (10  epoch)      |        12.412         |     12.412 (20  epoch)      |    32.297     | 32.297 (20  epoch)  |
+|      pushpins       |     66.144      |  66.330 (10  epoch)   |    74.383    | 74.383 (20  epoch) |      72.444      |   72.444 (20  epoch)   |   56.443    | 56.443 (20  epoch) |   45.732    | 45.732 (20  epoch) |  1.995   | 1.995 (20  epoch)  |    4.967     | 4.967 (20  epoch)  |        2.619         |     2.619 (20  epoch)      |         5.866         |      7.265 (10  epoch)      |         1.333         |      1.333 (20  epoch)      |     2.547     |  2.547 (20  epoch)  |
+|      screw_bag      |     62.666      |  62.666 (20  epoch)   |    75.344    | 75.845 (10  epoch) |      79.129      |   79.129 (20  epoch)   |   45.153    | 47.649 (10  epoch) |   72.915    | 72.915 (20  epoch) |  13.272  | 13.272 (20  epoch) |    22.243    | 22.243 (20  epoch) |        9.276         |     9.635 (10  epoch)      |        24.902         |     27.275 (10  epoch)      |         5.091         |      5.291 (10  epoch)      |    12.513     | 12.513 (20  epoch)  |
+| splicing_connectors |     81.082      |  81.082 (20  epoch)   |    89.714    | 89.714 (20  epoch) |      80.000      |   80.000 (20  epoch)   |   62.635    | 63.173 (10  epoch) |   69.613    | 69.613 (20  epoch) |  22.131  | 22.131 (20  epoch) |    22.705    | 22.705 (20  epoch) |        10.665        |     11.361 (10  epoch)     |        11.368         |     13.619 (10  epoch)      |         5.866         |      6.228 (10  epoch)      |    12.806     | 12.806 (20  epoch)  |
+|         Avg         |     74.862      |  74.862 (20  epoch)   |    84.403    | 84.403 (20  epoch) |      79.256      |   79.256 (20  epoch)   |   63.650    | 63.753 (10  epoch) |   73.266    | 73.266 (20  epoch) |  27.948  | 27.948 (20  epoch) |    29.824    | 29.824 (20  epoch) |        12.998        |     13.247 (10  epoch)     |        19.265         |     21.338 (10  epoch)      |         7.698         |      7.818 (10  epoch)      |    18.767     | 18.767 (20  epoch)  |
+2024-05-24 01:14:08,955 - ==> Total time: 0:11:02	 Eta: 0:44:10 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:14:15,372 - Train: 20.19% [5250/26000]  [20.2/100.0] [batch_t 0.094 (0.106)] [data_t 0.056] [optim_t 0.038] [lr 0.000100] [cos 0.098 (0.108)]
+2024-05-24 01:14:20,566 - Train: 20.38% [5300/26000]  [20.4/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.103 (0.107)]
+2024-05-24 01:14:25,770 - Train: 20.58% [5350/26000]  [20.6/100.0] [batch_t 0.289 (0.104)] [data_t 0.250] [optim_t 0.040] [lr 0.000100] [cos 0.118 (0.108)]
+2024-05-24 01:14:30,904 - Train: 20.77% [5400/26000]  [20.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.083 (0.110)]
+2024-05-24 01:14:36,035 - Train: 20.96% [5450/26000]  [21.0/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.109 (0.107)]
+2024-05-24 01:14:37,226 - ==> Total time: 0:11:30	 Eta: 0:43:18 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:14:42,376 - Train: 21.15% [5500/26000]  [21.2/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.106 (0.111)]
+2024-05-24 01:14:47,664 - Train: 21.35% [5550/26000]  [21.3/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.040] [lr 0.000100] [cos 0.101 (0.108)]
+2024-05-24 01:14:52,854 - Train: 21.54% [5600/26000]  [21.5/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.110 (0.104)]
+2024-05-24 01:14:57,972 - Train: 21.73% [5650/26000]  [21.7/100.0] [batch_t 0.042 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.126 (0.107)]
+2024-05-24 01:15:03,182 - Train: 21.92% [5700/26000]  [21.9/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.120 (0.104)]
+2024-05-24 01:15:05,246 - ==> Total time: 0:11:58	 Eta: 0:42:28 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:15:09,569 - Train: 22.12% [5750/26000]  [22.1/100.0] [batch_t 0.054 (0.112)] [data_t 0.024] [optim_t 0.030] [lr 0.000100] [cos 0.103 (0.102)]
+2024-05-24 01:15:14,694 - Train: 22.31% [5800/26000]  [22.3/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.092 (0.103)]
+2024-05-24 01:15:20,274 - Train: 22.50% [5850/26000]  [22.5/100.0] [batch_t 0.295 (0.112)] [data_t 0.277] [optim_t 0.018] [lr 0.000100] [cos 0.110 (0.108)]
+2024-05-24 01:15:25,310 - Train: 22.69% [5900/26000]  [22.7/100.0] [batch_t 0.042 (0.101)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.101 (0.102)]
+2024-05-24 01:15:30,762 - Train: 22.88% [5950/26000]  [22.9/100.0] [batch_t 0.307 (0.109)] [data_t 0.265] [optim_t 0.041] [lr 0.000100] [cos 0.113 (0.104)]
+2024-05-24 01:15:33,670 - ==> Total time: 0:12:27	 Eta: 0:41:41 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:15:36,693 - Train: 23.08% [6000/26000]  [23.1/100.0] [batch_t 0.042 (0.108)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.108 (0.103)]
+2024-05-24 01:15:42,056 - Train: 23.27% [6050/26000]  [23.3/100.0] [batch_t 0.018 (0.107)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.089 (0.107)]
+2024-05-24 01:15:47,336 - Train: 23.46% [6100/26000]  [23.5/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.098 (0.100)]
+2024-05-24 01:15:52,655 - Train: 23.65% [6150/26000]  [23.7/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.098 (0.102)]
+2024-05-24 01:15:58,133 - Train: 23.85% [6200/26000]  [23.8/100.0] [batch_t 0.325 (0.109)] [data_t 0.286] [optim_t 0.039] [lr 0.000100] [cos 0.100 (0.104)]
+2024-05-24 01:16:02,297 - ==> Total time: 0:12:55	 Eta: 0:40:57 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:16:04,889 - Train: 24.04% [6250/26000]  [24.0/100.0] [batch_t 0.065 (0.126)] [data_t 0.047] [optim_t 0.018] [lr 0.000100] [cos 0.090 (0.099)]
+2024-05-24 01:16:10,026 - Train: 24.23% [6300/26000]  [24.2/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.083 (0.100)]
+2024-05-24 01:16:15,508 - Train: 24.42% [6350/26000]  [24.4/100.0] [batch_t 0.142 (0.110)] [data_t 0.104] [optim_t 0.038] [lr 0.000100] [cos 0.093 (0.103)]
+2024-05-24 01:16:20,555 - Train: 24.62% [6400/26000]  [24.6/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.100 (0.098)]
+2024-05-24 01:16:26,088 - Train: 24.81% [6450/26000]  [24.8/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.120 (0.104)]
+2024-05-24 01:16:31,195 - Train: 25.00% [6500/26000]  [25.0/100.0] [batch_t 0.019 (0.102)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.113 (0.099)]
+2024-05-24 01:16:31,197 - ==> Total time: 0:13:24	 Eta: 0:40:14 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:16:37,584 - Train: 25.19% [6550/26000]  [25.2/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.096 (0.099)]
+2024-05-24 01:16:42,658 - Train: 25.38% [6600/26000]  [25.4/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.099)]
+2024-05-24 01:16:48,083 - Train: 25.58% [6650/26000]  [25.6/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.092 (0.100)]
+2024-05-24 01:16:53,045 - Train: 25.77% [6700/26000]  [25.8/100.0] [batch_t 0.043 (0.099)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.085 (0.098)]
+2024-05-24 01:16:58,353 - Train: 25.96% [6750/26000]  [26.0/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.114 (0.098)]
+2024-05-24 01:16:59,282 - ==> Total time: 0:13:52	 Eta: 0:39:30 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:17:04,563 - Train: 26.15% [6800/26000]  [26.2/100.0] [batch_t 0.039 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.118 (0.096)]
+2024-05-24 01:17:09,967 - Train: 26.35% [6850/26000]  [26.3/100.0] [batch_t 0.308 (0.108)] [data_t 0.270] [optim_t 0.038] [lr 0.000100] [cos 0.106 (0.100)]
+2024-05-24 01:17:15,099 - Train: 26.54% [6900/26000]  [26.5/100.0] [batch_t 0.019 (0.103)] [data_t 0.001] [optim_t 0.019] [lr 0.000100] [cos 0.119 (0.098)]
+2024-05-24 01:17:20,379 - Train: 26.73% [6950/26000]  [26.7/100.0] [batch_t 0.298 (0.106)] [data_t 0.259] [optim_t 0.039] [lr 0.000100] [cos 0.095 (0.098)]
+2024-05-24 01:17:25,349 - Train: 26.92% [7000/26000]  [26.9/100.0] [batch_t 0.042 (0.099)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.084 (0.097)]
+2024-05-24 01:17:27,453 - ==> Total time: 0:14:21	 Eta: 0:38:48 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:17:31,729 - Train: 27.12% [7050/26000]  [27.1/100.0] [batch_t 0.040 (0.114)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.079 (0.096)]
+2024-05-24 01:17:36,881 - Train: 27.31% [7100/26000]  [27.3/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.070 (0.097)]
+2024-05-24 01:17:42,084 - Train: 27.50% [7150/26000]  [27.5/100.0] [batch_t 0.023 (0.104)] [data_t 0.000] [optim_t 0.023] [lr 0.000100] [cos 0.122 (0.095)]
+2024-05-24 01:17:47,156 - Train: 27.69% [7200/26000]  [27.7/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.096 (0.096)]
+2024-05-24 01:17:52,627 - Train: 27.88% [7250/26000]  [27.9/100.0] [batch_t 0.159 (0.109)] [data_t 0.141] [optim_t 0.018] [lr 0.000100] [cos 0.102 (0.099)]
+2024-05-24 01:17:55,534 - ==> Total time: 0:14:49	 Eta: 0:38:06 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:17:58,736 - Train: 28.08% [7300/26000]  [28.1/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.095 (0.096)]
+2024-05-24 01:18:04,036 - Train: 28.27% [7350/26000]  [28.3/100.0] [batch_t 0.018 (0.106)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.092 (0.095)]
+2024-05-24 01:18:09,160 - Train: 28.46% [7400/26000]  [28.5/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.106 (0.095)]
+2024-05-24 01:18:14,424 - Train: 28.65% [7450/26000]  [28.7/100.0] [batch_t 0.212 (0.105)] [data_t 0.174] [optim_t 0.038] [lr 0.000100] [cos 0.107 (0.092)]
+2024-05-24 01:18:19,685 - Train: 28.85% [7500/26000]  [28.8/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.101 (0.098)]
+2024-05-24 01:18:23,816 - ==> Total time: 0:15:17	 Eta: 0:37:26 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:18:25,909 - Train: 29.04% [7550/26000]  [29.0/100.0] [batch_t 0.042 (0.127)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.095 (0.093)]
+2024-05-24 01:18:31,068 - Train: 29.23% [7600/26000]  [29.2/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.096 (0.096)]
+2024-05-24 01:18:36,345 - Train: 29.42% [7650/26000]  [29.4/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.091)]
+2024-05-24 01:18:41,573 - Train: 29.62% [7700/26000]  [29.6/100.0] [batch_t 0.042 (0.104)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.094 (0.095)]
+2024-05-24 01:18:46,914 - Train: 29.81% [7750/26000]  [29.8/100.0] [batch_t 0.018 (0.107)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.092 (0.095)]
+2024-05-24 01:18:52,131 - Train: 30.00% [7800/26000]  [30.0/100.0] [batch_t 0.039 (0.104)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.127 (0.093)]
+2024-05-24 01:18:58,904 - Test: 25.51% [50/196] [batch_t 0.039 (0.131)] [cos 0.075 (0.118)]
+2024-05-24 01:19:03,541 - Test: 51.02% [100/196] [batch_t 0.039 (0.112)] [cos 0.091 (0.102)]
+2024-05-24 01:19:09,233 - Test: 76.53% [150/196] [batch_t 0.042 (0.113)] [cos 0.153 (0.114)]
+2024-05-24 01:19:13,781 - Test: 100.00% [196/196] [batch_t 0.042 (0.109)] [cos 0.063 (0.106)]
+2024-05-24 01:19:18,083 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.555 (mF1_max_px)	  0.191 (mF1_px_0.2_0.8_0.1)	  0.192 (mAcc_px_0.2_0.8_0.1)	  0.191 (mIoU_px_0.2_0.8_0.1)	  0.553 (mIoU_max_px)	
+2024-05-24 01:19:23,936 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.679 (mF1_max_px)	  0.237 (mF1_px_0.2_0.8_0.1)	  0.234 (mAcc_px_0.2_0.8_0.1)	  0.237 (mIoU_px_0.2_0.8_0.1)	  0.683 (mIoU_max_px)	
+2024-05-24 01:19:29,132 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.640 (mF1_max_px)	  0.222 (mF1_px_0.2_0.8_0.1)	  0.220 (mAcc_px_0.2_0.8_0.1)	  0.222 (mIoU_px_0.2_0.8_0.1)	  0.637 (mIoU_max_px)	
+2024-05-24 01:19:33,783 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.703 (mF1_max_px)	  0.245 (mF1_px_0.2_0.8_0.1)	  0.243 (mAcc_px_0.2_0.8_0.1)	  0.249 (mIoU_px_0.2_0.8_0.1)	  0.711 (mIoU_max_px)	
+2024-05-24 01:19:38,972 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.643 (mF1_max_px)	  0.223 (mF1_px_0.2_0.8_0.1)	  0.221 (mAcc_px_0.2_0.8_0.1)	  0.221 (mIoU_px_0.2_0.8_0.1)	  0.645 (mIoU_max_px)	
+2024-05-24 01:19:38,983 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     75.009      |  77.128 (10  epoch)   |    86.406    | 87.665 (10  epoch) |      77.477      |   77.690 (10  epoch)   |   70.338    | 70.938 (10  epoch) |   89.246    | 89.535 (10  epoch) |  54.831  | 54.831 (30  epoch) |    51.786    | 51.786 (30  epoch) |        21.664        |     22.732 (10  epoch)     |        31.863         |     35.925 (10  epoch)      |        13.320         |     13.981 (10  epoch)      |    34.940     | 34.940 (30  epoch)  |
+|    juice_bottle     |     89.515      |  89.515 (30  epoch)   |    96.117    | 96.117 (30  epoch) |      88.223      |   88.223 (30  epoch)   |   83.247    | 83.247 (30  epoch) |   88.579    | 88.706 (20  epoch) |  47.913  | 48.019 (20  epoch) |    49.296    | 49.296 (30  epoch) |        21.135        |     21.135 (30  epoch)     |        20.235         |     22.606 (10  epoch)      |        13.113         |     13.113 (30  epoch)      |    32.710     | 32.710 (30  epoch)  |
+|      pushpins       |     65.407      |  66.330 (10  epoch)   |    73.094    | 74.383 (20  epoch) |      71.369      |   72.444 (20  epoch)   |   56.230    | 56.443 (20  epoch) |   45.685    | 45.732 (20  epoch) |  2.097   | 2.097 (30  epoch)  |    5.282     | 5.282 (30  epoch)  |        2.786         |     2.786 (30  epoch)      |         5.188         |      7.265 (10  epoch)      |         1.419         |      1.419 (30  epoch)      |     2.713     |  2.713 (30  epoch)  |
+|      screw_bag      |     61.539      |  62.666 (20  epoch)   |    75.247    | 75.845 (10  epoch) |      80.297      |   80.297 (30  epoch)   |   44.558    | 47.649 (10  epoch) |   72.758    | 72.915 (20  epoch) |  13.217  | 13.272 (20  epoch) |    22.095    | 22.243 (20  epoch) |        8.906         |     9.635 (10  epoch)      |        22.975         |     27.275 (10  epoch)      |         4.881         |      5.291 (10  epoch)      |    12.420     | 12.513 (20  epoch)  |
+| splicing_connectors |     80.894      |  81.082 (20  epoch)   |    89.615    | 89.714 (20  epoch) |      79.500      |   80.000 (20  epoch)   |   62.578    | 63.173 (10  epoch) |   70.097    | 70.097 (30  epoch) |  23.077  | 23.077 (30  epoch) |    25.016    | 25.016 (30  epoch) |        9.744         |     11.361 (10  epoch)     |         9.447         |     13.619 (10  epoch)      |         5.378         |      6.228 (10  epoch)      |    14.296     | 14.296 (30  epoch)  |
+|         Avg         |     74.473      |  74.862 (20  epoch)   |    84.096    | 84.403 (20  epoch) |      79.373      |   79.373 (30  epoch)   |   63.390    | 63.753 (10  epoch) |   73.273    | 73.273 (30  epoch) |  28.227  | 28.227 (30  epoch) |    30.695    | 30.695 (30  epoch) |        12.847        |     13.247 (10  epoch)     |        17.941         |     21.338 (10  epoch)      |         7.622         |      7.818 (10  epoch)      |    19.416     | 19.416 (30  epoch)  |
+2024-05-24 01:19:39,099 - ==> Total time: 0:16:32	 Eta: 0:38:36 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:19:45,655 - Train: 30.19% [7850/26000]  [30.2/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.083 (0.094)]
+2024-05-24 01:19:50,690 - Train: 30.38% [7900/26000]  [30.4/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.092 (0.095)]
+2024-05-24 01:19:56,051 - Train: 30.58% [7950/26000]  [30.6/100.0] [batch_t 0.039 (0.107)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.081 (0.088)]
+2024-05-24 01:20:01,143 - Train: 30.77% [8000/26000]  [30.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.102 (0.091)]
+2024-05-24 01:20:06,726 - Train: 30.96% [8050/26000]  [31.0/100.0] [batch_t 0.042 (0.112)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.106 (0.094)]
+2024-05-24 01:20:07,582 - ==> Total time: 0:17:01	 Eta: 0:37:53 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:20:12,787 - Train: 31.15% [8100/26000]  [31.2/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.091)]
+2024-05-24 01:20:18,119 - Train: 31.35% [8150/26000]  [31.3/100.0] [batch_t 0.039 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.111 (0.093)]
+2024-05-24 01:20:23,385 - Train: 31.54% [8200/26000]  [31.5/100.0] [batch_t 0.295 (0.105)] [data_t 0.257] [optim_t 0.038] [lr 0.000100] [cos 0.091 (0.091)]
+2024-05-24 01:20:28,451 - Train: 31.73% [8250/26000]  [31.7/100.0] [batch_t 0.094 (0.101)] [data_t 0.055] [optim_t 0.039] [lr 0.000100] [cos 0.104 (0.091)]
+2024-05-24 01:20:33,738 - Train: 31.92% [8300/26000]  [31.9/100.0] [batch_t 0.247 (0.106)] [data_t 0.209] [optim_t 0.038] [lr 0.000100] [cos 0.106 (0.091)]
+2024-05-24 01:20:35,724 - ==> Total time: 0:17:29	 Eta: 0:37:09 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:20:39,795 - Train: 32.12% [8350/26000]  [32.1/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.080 (0.088)]
+2024-05-24 01:20:44,970 - Train: 32.31% [8400/26000]  [32.3/100.0] [batch_t 0.101 (0.103)] [data_t 0.062] [optim_t 0.039] [lr 0.000100] [cos 0.099 (0.087)]
+2024-05-24 01:20:50,054 - Train: 32.50% [8450/26000]  [32.5/100.0] [batch_t 0.018 (0.102)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.073 (0.088)]
+2024-05-24 01:20:55,359 - Train: 32.69% [8500/26000]  [32.7/100.0] [batch_t 0.095 (0.106)] [data_t 0.054] [optim_t 0.040] [lr 0.000100] [cos 0.092 (0.091)]
+2024-05-24 01:21:00,707 - Train: 32.88% [8550/26000]  [32.9/100.0] [batch_t 0.153 (0.107)] [data_t 0.135] [optim_t 0.018] [lr 0.000100] [cos 0.094 (0.090)]
+2024-05-24 01:21:03,800 - ==> Total time: 0:17:57	 Eta: 0:36:27 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:21:06,752 - Train: 33.08% [8600/26000]  [33.1/100.0] [batch_t 0.043 (0.107)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.094 (0.085)]
+2024-05-24 01:21:12,137 - Train: 33.27% [8650/26000]  [33.3/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.095 (0.088)]
+2024-05-24 01:21:17,248 - Train: 33.46% [8700/26000]  [33.5/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.099 (0.090)]
+2024-05-24 01:21:22,777 - Train: 33.65% [8750/26000]  [33.7/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.084 (0.088)]
+2024-05-24 01:21:27,850 - Train: 33.85% [8800/26000]  [33.8/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.077 (0.090)]
+2024-05-24 01:21:32,021 - ==> Total time: 0:18:25	 Eta: 0:35:46 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:21:34,127 - Train: 34.04% [8850/26000]  [34.0/100.0] [batch_t 0.086 (0.129)] [data_t 0.047] [optim_t 0.038] [lr 0.000100] [cos 0.081 (0.087)]
+2024-05-24 01:21:39,231 - Train: 34.23% [8900/26000]  [34.2/100.0] [batch_t 0.039 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.089 (0.088)]
+2024-05-24 01:21:44,576 - Train: 34.42% [8950/26000]  [34.4/100.0] [batch_t 0.023 (0.107)] [data_t 0.000] [optim_t 0.023] [lr 0.000100] [cos 0.078 (0.087)]
+2024-05-24 01:21:49,598 - Train: 34.62% [9000/26000]  [34.6/100.0] [batch_t 0.040 (0.100)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.089 (0.088)]
+2024-05-24 01:21:54,889 - Train: 34.81% [9050/26000]  [34.8/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.089 (0.088)]
+2024-05-24 01:21:59,916 - Train: 35.00% [9100/26000]  [35.0/100.0] [batch_t 0.018 (0.100)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.069 (0.087)]
+2024-05-24 01:21:59,918 - ==> Total time: 0:18:53	 Eta: 0:35:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:22:06,148 - Train: 35.19% [9150/26000]  [35.2/100.0] [batch_t 0.046 (0.108)] [data_t 0.007] [optim_t 0.039] [lr 0.000100] [cos 0.085 (0.085)]
+2024-05-24 01:22:11,219 - Train: 35.38% [9200/26000]  [35.4/100.0] [batch_t 0.043 (0.101)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.076 (0.087)]
+2024-05-24 01:22:16,441 - Train: 35.58% [9250/26000]  [35.6/100.0] [batch_t 0.136 (0.104)] [data_t 0.118] [optim_t 0.018] [lr 0.000100] [cos 0.092 (0.085)]
+2024-05-24 01:22:21,615 - Train: 35.77% [9300/26000]  [35.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.098 (0.089)]
+2024-05-24 01:22:26,968 - Train: 35.96% [9350/26000]  [36.0/100.0] [batch_t 0.244 (0.107)] [data_t 0.203] [optim_t 0.040] [lr 0.000100] [cos 0.085 (0.088)]
+2024-05-24 01:22:27,875 - ==> Total time: 0:19:21	 Eta: 0:34:24 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:22:33,019 - Train: 36.15% [9400/26000]  [36.2/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.073 (0.089)]
+2024-05-24 01:22:38,327 - Train: 36.35% [9450/26000]  [36.3/100.0] [batch_t 0.035 (0.106)] [data_t 0.017] [optim_t 0.018] [lr 0.000100] [cos 0.071 (0.087)]
+2024-05-24 01:22:43,521 - Train: 36.54% [9500/26000]  [36.5/100.0] [batch_t 0.039 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.084)]
+2024-05-24 01:22:48,876 - Train: 36.73% [9550/26000]  [36.7/100.0] [batch_t 0.287 (0.107)] [data_t 0.249] [optim_t 0.039] [lr 0.000100] [cos 0.091 (0.086)]
+2024-05-24 01:22:53,935 - Train: 36.92% [9600/26000]  [36.9/100.0] [batch_t 0.033 (0.101)] [data_t 0.001] [optim_t 0.032] [lr 0.000100] [cos 0.085 (0.086)]
+2024-05-24 01:22:55,988 - ==> Total time: 0:19:49	 Eta: 0:33:45 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:23:00,176 - Train: 37.12% [9650/26000]  [37.1/100.0] [batch_t 0.078 (0.109)] [data_t 0.038] [optim_t 0.039] [lr 0.000100] [cos 0.089 (0.082)]
+2024-05-24 01:23:05,357 - Train: 37.31% [9700/26000]  [37.3/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.094 (0.084)]
+2024-05-24 01:23:10,733 - Train: 37.50% [9750/26000]  [37.5/100.0] [batch_t 0.086 (0.107)] [data_t 0.045] [optim_t 0.041] [lr 0.000100] [cos 0.074 (0.085)]
+2024-05-24 01:23:15,762 - Train: 37.69% [9800/26000]  [37.7/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.087 (0.084)]
+2024-05-24 01:23:21,151 - Train: 37.88% [9850/26000]  [37.9/100.0] [batch_t 0.157 (0.108)] [data_t 0.119] [optim_t 0.039] [lr 0.000100] [cos 0.106 (0.086)]
+2024-05-24 01:23:24,089 - ==> Total time: 0:20:17	 Eta: 0:33:06 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:23:27,169 - Train: 38.08% [9900/26000]  [38.1/100.0] [batch_t 0.040 (0.112)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.074 (0.082)]
+2024-05-24 01:23:32,516 - Train: 38.27% [9950/26000]  [38.3/100.0] [batch_t 0.039 (0.107)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.080 (0.088)]
+2024-05-24 01:23:37,645 - Train: 38.46% [10000/26000]  [38.5/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.083 (0.083)]
+2024-05-24 01:23:42,945 - Train: 38.65% [10050/26000]  [38.7/100.0] [batch_t 0.201 (0.106)] [data_t 0.162] [optim_t 0.039] [lr 0.000100] [cos 0.090 (0.084)]
+2024-05-24 01:23:48,008 - Train: 38.85% [10100/26000]  [38.8/100.0] [batch_t 0.058 (0.101)] [data_t 0.020] [optim_t 0.038] [lr 0.000100] [cos 0.064 (0.084)]
+2024-05-24 01:23:52,125 - ==> Total time: 0:20:45	 Eta: 0:32:28 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:23:54,210 - Train: 39.04% [10150/26000]  [39.0/100.0] [batch_t 0.039 (0.125)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.077)]
+2024-05-24 01:23:59,323 - Train: 39.23% [10200/26000]  [39.2/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.082)]
+2024-05-24 01:24:04,691 - Train: 39.42% [10250/26000]  [39.4/100.0] [batch_t 0.033 (0.107)] [data_t 0.015] [optim_t 0.018] [lr 0.000100] [cos 0.079 (0.083)]
+2024-05-24 01:24:09,744 - Train: 39.62% [10300/26000]  [39.6/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.059 (0.082)]
+2024-05-24 01:24:15,151 - Train: 39.81% [10350/26000]  [39.8/100.0] [batch_t 0.094 (0.108)] [data_t 0.056] [optim_t 0.038] [lr 0.000100] [cos 0.087 (0.085)]
+2024-05-24 01:24:20,108 - Train: 40.00% [10400/26000]  [40.0/100.0] [batch_t 0.040 (0.099)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.062 (0.084)]
+2024-05-24 01:24:26,814 - Test: 25.51% [50/196] [batch_t 0.048 (0.131)] [cos 0.067 (0.110)]
+2024-05-24 01:24:31,383 - Test: 51.02% [100/196] [batch_t 0.024 (0.111)] [cos 0.087 (0.094)]
+2024-05-24 01:24:37,103 - Test: 76.53% [150/196] [batch_t 0.065 (0.112)] [cos 0.142 (0.106)]
+2024-05-24 01:24:41,626 - Test: 100.00% [196/196] [batch_t 0.038 (0.109)] [cos 0.056 (0.098)]
+2024-05-24 01:24:46,324 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.561 (mF1_max_px)	  0.191 (mF1_px_0.2_0.8_0.1)	  0.191 (mAcc_px_0.2_0.8_0.1)	  0.192 (mIoU_px_0.2_0.8_0.1)	  0.556 (mIoU_max_px)	
+2024-05-24 01:24:52,259 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.682 (mF1_max_px)	  0.235 (mF1_px_0.2_0.8_0.1)	  0.235 (mAcc_px_0.2_0.8_0.1)	  0.234 (mIoU_px_0.2_0.8_0.1)	  0.677 (mIoU_max_px)	
+2024-05-24 01:24:57,638 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.632 (mF1_max_px)	  0.218 (mF1_px_0.2_0.8_0.1)	  0.219 (mAcc_px_0.2_0.8_0.1)	  0.219 (mIoU_px_0.2_0.8_0.1)	  0.633 (mIoU_max_px)	
+2024-05-24 01:25:03,444 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.698 (mF1_max_px)	  0.241 (mF1_px_0.2_0.8_0.1)	  0.242 (mAcc_px_0.2_0.8_0.1)	  0.243 (mIoU_px_0.2_0.8_0.1)	  0.694 (mIoU_max_px)	
+2024-05-24 01:25:08,718 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.635 (mF1_max_px)	  0.219 (mF1_px_0.2_0.8_0.1)	  0.218 (mAcc_px_0.2_0.8_0.1)	  0.219 (mIoU_px_0.2_0.8_0.1)	  0.631 (mIoU_max_px)	
+2024-05-24 01:25:08,728 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     75.320      |  77.128 (10  epoch)   |    86.305    | 87.665 (10  epoch) |      78.237      |   78.237 (40  epoch)   |   70.104    | 70.938 (10  epoch) |   89.116    | 89.535 (10  epoch) |  55.059  | 55.059 (40  epoch) |    51.453    | 51.786 (30  epoch) |        22.406        |     22.732 (10  epoch)     |        32.529         |     35.925 (10  epoch)      |        13.817         |     13.981 (10  epoch)      |    34.637     | 34.940 (30  epoch)  |
+|    juice_bottle     |     89.443      |  89.515 (30  epoch)   |    96.081    | 96.117 (30  epoch) |      87.773      |   88.223 (30  epoch)   |   83.343    | 83.343 (40  epoch) |   88.643    | 88.706 (20  epoch) |  48.295  | 48.295 (40  epoch) |    49.657    | 49.657 (40  epoch) |        21.413        |     21.413 (40  epoch)     |        19.800         |     22.606 (10  epoch)      |        13.315         |     13.315 (40  epoch)      |    33.029     | 33.029 (40  epoch)  |
+|      pushpins       |     65.129      |  66.330 (10  epoch)   |    71.947    | 74.383 (20  epoch) |      71.730      |   72.444 (20  epoch)   |   56.693    | 56.693 (40  epoch) |   45.134    | 45.732 (20  epoch) |  2.033   | 2.097 (30  epoch)  |    5.088     | 5.282 (30  epoch)  |        2.662         |     2.786 (30  epoch)      |         4.785         |      7.265 (10  epoch)      |         1.354         |      1.419 (30  epoch)      |     2.611     |  2.713 (30  epoch)  |
+|      screw_bag      |     62.164      |  62.666 (20  epoch)   |    75.982    | 75.982 (40  epoch) |      79.630      |   80.297 (30  epoch)   |   44.039    | 47.649 (10  epoch) |   72.758    | 72.915 (20  epoch) |  13.255  | 13.272 (20  epoch) |    21.914    | 22.243 (20  epoch) |        8.393         |     9.635 (10  epoch)      |        20.692         |     27.275 (10  epoch)      |         4.596         |      5.291 (10  epoch)      |    12.305     | 12.513 (20  epoch)  |
+| splicing_connectors |     80.694      |  81.082 (20  epoch)   |    89.804    | 89.804 (40  epoch) |      79.032      |   80.000 (20  epoch)   |   62.796    | 63.173 (10  epoch) |   69.693    | 70.097 (30  epoch) |  22.602  | 23.077 (30  epoch) |    23.498    | 25.016 (30  epoch) |        9.137         |     11.361 (10  epoch)     |         8.321         |     13.619 (10  epoch)      |         5.032         |      6.228 (10  epoch)      |    13.313     | 14.296 (30  epoch)  |
+|         Avg         |     74.550      |  74.862 (20  epoch)   |    84.024    | 84.403 (20  epoch) |      79.280      |   79.373 (30  epoch)   |   63.395    | 63.753 (10  epoch) |   73.069    | 73.273 (30  epoch) |  28.249  | 28.249 (40  epoch) |    30.322    | 30.695 (30  epoch) |        12.802        |     13.247 (10  epoch)     |        17.225         |     21.338 (10  epoch)      |         7.623         |      7.818 (10  epoch)      |    19.179     | 19.416 (30  epoch)  |
+2024-05-24 01:25:08,830 - ==> Total time: 0:22:02	 Eta: 0:33:03 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:25:15,349 - Train: 40.19% [10450/26000]  [40.2/100.0] [batch_t 0.232 (0.109)] [data_t 0.194] [optim_t 0.038] [lr 0.000100] [cos 0.081 (0.083)]
+2024-05-24 01:25:20,660 - Train: 40.38% [10500/26000]  [40.4/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.067 (0.083)]
+2024-05-24 01:25:25,626 - Train: 40.58% [10550/26000]  [40.6/100.0] [batch_t 0.040 (0.099)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.082)]
+2024-05-24 01:25:30,817 - Train: 40.77% [10600/26000]  [40.8/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.082)]
+2024-05-24 01:25:35,973 - Train: 40.96% [10650/26000]  [41.0/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.040] [lr 0.000100] [cos 0.091 (0.082)]
+2024-05-24 01:25:37,070 - ==> Total time: 0:22:30	 Eta: 0:32:23 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:25:42,339 - Train: 41.15% [10700/26000]  [41.2/100.0] [batch_t 0.039 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.083)]
+2024-05-24 01:25:47,510 - Train: 41.35% [10750/26000]  [41.3/100.0] [batch_t 0.052 (0.103)] [data_t 0.014] [optim_t 0.038] [lr 0.000100] [cos 0.067 (0.083)]
+2024-05-24 01:25:52,836 - Train: 41.54% [10800/26000]  [41.5/100.0] [batch_t 0.143 (0.106)] [data_t 0.103] [optim_t 0.040] [lr 0.000100] [cos 0.067 (0.081)]
+2024-05-24 01:25:57,885 - Train: 41.73% [10850/26000]  [41.7/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.101 (0.082)]
+2024-05-24 01:26:03,091 - Train: 41.92% [10900/26000]  [41.9/100.0] [batch_t 0.268 (0.104)] [data_t 0.229] [optim_t 0.039] [lr 0.000100] [cos 0.075 (0.079)]
+2024-05-24 01:26:05,171 - ==> Total time: 0:22:58	 Eta: 0:31:44 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:26:09,460 - Train: 42.12% [10950/26000]  [42.1/100.0] [batch_t 0.102 (0.115)] [data_t 0.063] [optim_t 0.039] [lr 0.000100] [cos 0.096 (0.083)]
+2024-05-24 01:26:14,508 - Train: 42.31% [11000/26000]  [42.3/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.078 (0.080)]
+2024-05-24 01:26:19,987 - Train: 42.50% [11050/26000]  [42.5/100.0] [batch_t 0.258 (0.110)] [data_t 0.220] [optim_t 0.038] [lr 0.000100] [cos 0.072 (0.080)]
+2024-05-24 01:26:25,100 - Train: 42.69% [11100/26000]  [42.7/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.081)]
+2024-05-24 01:26:30,386 - Train: 42.88% [11150/26000]  [42.9/100.0] [batch_t 0.264 (0.106)] [data_t 0.226] [optim_t 0.038] [lr 0.000100] [cos 0.073 (0.081)]
+2024-05-24 01:26:33,344 - ==> Total time: 0:23:26	 Eta: 0:31:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:26:36,412 - Train: 43.08% [11200/26000]  [43.1/100.0] [batch_t 0.039 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.077)]
+2024-05-24 01:26:41,755 - Train: 43.27% [11250/26000]  [43.3/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.040] [lr 0.000100] [cos 0.086 (0.080)]
+2024-05-24 01:26:46,836 - Train: 43.46% [11300/26000]  [43.5/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.084 (0.078)]
+2024-05-24 01:26:52,078 - Train: 43.65% [11350/26000]  [43.7/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.083)]
+2024-05-24 01:26:57,103 - Train: 43.85% [11400/26000]  [43.8/100.0] [batch_t 0.089 (0.100)] [data_t 0.047] [optim_t 0.042] [lr 0.000100] [cos 0.077 (0.078)]
+2024-05-24 01:27:01,357 - ==> Total time: 0:23:55	 Eta: 0:30:26 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:27:04,940 - Train: 44.04% [11450/26000]  [44.0/100.0] [batch_t 0.039 (0.120)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.064 (0.074)]
+2024-05-24 01:27:10,088 - Train: 44.23% [11500/26000]  [44.2/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.077 (0.078)]
+2024-05-24 01:27:15,363 - Train: 44.42% [11550/26000]  [44.4/100.0] [batch_t 0.230 (0.105)] [data_t 0.191] [optim_t 0.040] [lr 0.000100] [cos 0.059 (0.080)]
+2024-05-24 01:27:20,445 - Train: 44.62% [11600/26000]  [44.6/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.064 (0.078)]
+2024-05-24 01:27:26,049 - Train: 44.81% [11650/26000]  [44.8/100.0] [batch_t 0.369 (0.112)] [data_t 0.331] [optim_t 0.039] [lr 0.000100] [cos 0.072 (0.080)]
+2024-05-24 01:27:31,146 - Train: 45.00% [11700/26000]  [45.0/100.0] [batch_t 0.042 (0.102)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.067 (0.081)]
+2024-05-24 01:27:31,148 - ==> Total time: 0:24:24	 Eta: 0:29:50 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:27:37,532 - Train: 45.19% [11750/26000]  [45.2/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.070 (0.076)]
+2024-05-24 01:27:42,718 - Train: 45.38% [11800/26000]  [45.4/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.080)]
+2024-05-24 01:27:47,925 - Train: 45.58% [11850/26000]  [45.6/100.0] [batch_t 0.042 (0.104)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.079 (0.078)]
+2024-05-24 01:27:53,156 - Train: 45.77% [11900/26000]  [45.8/100.0] [batch_t 0.094 (0.105)] [data_t 0.056] [optim_t 0.038] [lr 0.000100] [cos 0.062 (0.078)]
+2024-05-24 01:27:58,218 - Train: 45.96% [11950/26000]  [46.0/100.0] [batch_t 0.018 (0.101)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.056 (0.080)]
+2024-05-24 01:27:59,511 - ==> Total time: 0:24:53	 Eta: 0:29:12 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:28:04,754 - Train: 46.15% [12000/26000]  [46.2/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.097 (0.079)]
+2024-05-24 01:28:10,024 - Train: 46.35% [12050/26000]  [46.3/100.0] [batch_t 0.042 (0.105)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.084 (0.078)]
+2024-05-24 01:28:15,133 - Train: 46.54% [12100/26000]  [46.5/100.0] [batch_t 0.050 (0.102)] [data_t 0.012] [optim_t 0.038] [lr 0.000100] [cos 0.066 (0.077)]
+2024-05-24 01:28:20,250 - Train: 46.73% [12150/26000]  [46.7/100.0] [batch_t 0.075 (0.102)] [data_t 0.037] [optim_t 0.037] [lr 0.000100] [cos 0.073 (0.078)]
+2024-05-24 01:28:25,635 - Train: 46.92% [12200/26000]  [46.9/100.0] [batch_t 0.230 (0.108)] [data_t 0.191] [optim_t 0.039] [lr 0.000100] [cos 0.087 (0.079)]
+2024-05-24 01:28:27,722 - ==> Total time: 0:25:21	 Eta: 0:28:35 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:28:32,013 - Train: 47.12% [12250/26000]  [47.1/100.0] [batch_t 0.039 (0.115)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.102 (0.077)]
+2024-05-24 01:28:37,287 - Train: 47.31% [12300/26000]  [47.3/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.084 (0.078)]
+2024-05-24 01:28:42,659 - Train: 47.50% [12350/26000]  [47.5/100.0] [batch_t 0.039 (0.107)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.076)]
+2024-05-24 01:28:47,522 - Train: 47.69% [12400/26000]  [47.7/100.0] [batch_t 0.019 (0.097)] [data_t 0.000] [optim_t 0.019] [lr 0.000100] [cos 0.086 (0.077)]
+2024-05-24 01:28:52,884 - Train: 47.88% [12450/26000]  [47.9/100.0] [batch_t 0.039 (0.107)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.077)]
+2024-05-24 01:28:55,969 - ==> Total time: 0:25:49	 Eta: 0:27:58 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:28:59,059 - Train: 48.08% [12500/26000]  [48.1/100.0] [batch_t 0.042 (0.112)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.087 (0.076)]
+2024-05-24 01:29:04,391 - Train: 48.27% [12550/26000]  [48.3/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.072 (0.075)]
+2024-05-24 01:29:09,390 - Train: 48.46% [12600/26000]  [48.5/100.0] [batch_t 0.043 (0.100)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.062 (0.075)]
+2024-05-24 01:29:14,528 - Train: 48.65% [12650/26000]  [48.7/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.077)]
+2024-05-24 01:29:19,927 - Train: 48.85% [12700/26000]  [48.8/100.0] [batch_t 0.042 (0.108)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.071 (0.079)]
+2024-05-24 01:29:24,064 - ==> Total time: 0:26:17	 Eta: 0:27:22 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:29:26,210 - Train: 49.04% [12750/26000]  [49.0/100.0] [batch_t 0.040 (0.130)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.074)]
+2024-05-24 01:29:31,338 - Train: 49.23% [12800/26000]  [49.2/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.079 (0.078)]
+2024-05-24 01:29:36,607 - Train: 49.42% [12850/26000]  [49.4/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.065 (0.078)]
+2024-05-24 01:29:41,851 - Train: 49.62% [12900/26000]  [49.6/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.070 (0.075)]
+2024-05-24 01:29:47,012 - Train: 49.81% [12950/26000]  [49.8/100.0] [batch_t 0.043 (0.103)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.071 (0.075)]
+2024-05-24 01:29:52,124 - Train: 50.00% [13000/26000]  [50.0/100.0] [batch_t 0.040 (0.102)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.085 (0.076)]
+2024-05-24 01:29:58,777 - Test: 25.51% [50/196] [batch_t 0.030 (0.130)] [cos 0.063 (0.104)]
+2024-05-24 01:30:03,361 - Test: 51.02% [100/196] [batch_t 0.040 (0.111)] [cos 0.075 (0.088)]
+2024-05-24 01:30:09,060 - Test: 76.53% [150/196] [batch_t 0.041 (0.112)] [cos 0.132 (0.098)]
+2024-05-24 01:30:13,606 - Test: 100.00% [196/196] [batch_t 0.043 (0.109)] [cos 0.055 (0.092)]
+2024-05-24 01:30:18,001 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.566 (mF1_max_px)	  0.192 (mF1_px_0.2_0.8_0.1)	  0.192 (mAcc_px_0.2_0.8_0.1)	  0.193 (mIoU_px_0.2_0.8_0.1)	  0.558 (mIoU_max_px)	
+2024-05-24 01:30:23,825 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.680 (mF1_max_px)	  0.233 (mF1_px_0.2_0.8_0.1)	  0.232 (mAcc_px_0.2_0.8_0.1)	  0.233 (mIoU_px_0.2_0.8_0.1)	  0.672 (mIoU_max_px)	
+2024-05-24 01:30:29,133 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.634 (mF1_max_px)	  0.218 (mF1_px_0.2_0.8_0.1)	  0.219 (mAcc_px_0.2_0.8_0.1)	  0.219 (mIoU_px_0.2_0.8_0.1)	  0.630 (mIoU_max_px)	
+2024-05-24 01:30:37,270 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.696 (mF1_max_px)	  0.240 (mF1_px_0.2_0.8_0.1)	  0.240 (mAcc_px_0.2_0.8_0.1)	  0.241 (mIoU_px_0.2_0.8_0.1)	  0.697 (mIoU_max_px)	
+2024-05-24 01:30:42,459 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.637 (mF1_max_px)	  0.220 (mF1_px_0.2_0.8_0.1)	  0.221 (mAcc_px_0.2_0.8_0.1)	  0.221 (mIoU_px_0.2_0.8_0.1)	  0.635 (mIoU_max_px)	
+2024-05-24 01:30:42,470 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     78.635      |  78.635 (50  epoch)   |    88.543    | 88.543 (50  epoch) |      79.675      |   79.675 (50  epoch)   |   70.190    | 70.938 (10  epoch) |   89.161    | 89.535 (10  epoch) |  55.808  | 55.808 (50  epoch) |    52.547    | 52.547 (50  epoch) |        22.077        |     22.732 (10  epoch)     |        31.042         |     35.925 (10  epoch)      |        13.626         |     13.981 (10  epoch)      |    35.636     | 35.636 (50  epoch)  |
+|    juice_bottle     |     89.610      |  89.610 (50  epoch)   |    96.202    | 96.202 (50  epoch) |      88.312      |   88.312 (50  epoch)   |   83.232    | 83.343 (40  epoch) |   88.589    | 88.706 (20  epoch) |  48.298  | 48.298 (50  epoch) |    49.657    | 49.657 (50  epoch) |        21.531        |     21.531 (50  epoch)     |        19.511         |     22.606 (10  epoch)      |        13.405         |     13.405 (50  epoch)      |    33.029     | 33.029 (50  epoch)  |
+|      pushpins       |     66.056      |  66.330 (10  epoch)   |    72.705    | 74.383 (20  epoch) |      72.372      |   72.444 (20  epoch)   |   56.391    | 56.693 (40  epoch) |   45.865    | 45.865 (50  epoch) |  2.184   | 2.184 (50  epoch)  |    5.707     | 5.707 (50  epoch)  |        2.724         |     2.786 (30  epoch)      |         4.012         |      7.265 (10  epoch)      |         1.389         |      1.419 (30  epoch)      |     2.937     |  2.937 (50  epoch)  |
+|      screw_bag      |     62.134      |  62.666 (20  epoch)   |    75.567    | 75.982 (40  epoch) |      79.182      |   80.297 (30  epoch)   |   43.337    | 47.649 (10  epoch) |   72.604    | 72.915 (20  epoch) |  13.182  | 13.272 (20  epoch) |    21.877    | 22.243 (20  epoch) |        8.132         |     9.635 (10  epoch)      |        19.494         |     27.275 (10  epoch)      |         4.447         |      5.291 (10  epoch)      |    12.282     | 12.513 (20  epoch)  |
+| splicing_connectors |     81.312      |  81.312 (50  epoch)   |    90.001    | 90.001 (50  epoch) |      79.019      |   80.000 (20  epoch)   |   62.224    | 63.173 (10  epoch) |   69.553    | 70.097 (30  epoch) |  22.706  | 23.077 (30  epoch) |    23.755    | 25.016 (30  epoch) |        9.029         |     11.361 (10  epoch)     |         7.879         |     13.619 (10  epoch)      |         4.969         |      6.228 (10  epoch)      |    13.478     | 14.296 (30  epoch)  |
+|         Avg         |     75.549      |  75.549 (50  epoch)   |    84.604    | 84.604 (50  epoch) |      79.712      |   79.712 (50  epoch)   |   63.075    | 63.753 (10  epoch) |   73.154    | 73.273 (30  epoch) |  28.435  | 28.435 (50  epoch) |    30.709    | 30.709 (50  epoch) |        12.699        |     13.247 (10  epoch)     |        16.388         |     21.338 (10  epoch)      |         7.567         |      7.818 (10  epoch)      |    19.473     | 19.473 (50  epoch)  |
+2024-05-24 01:30:42,584 - ==> Total time: 0:27:36	 Eta: 0:27:36 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:30:49,192 - Train: 50.19% [13050/26000]  [50.2/100.0] [batch_t 0.155 (0.110)] [data_t 0.116] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.075)]
+2024-05-24 01:30:54,365 - Train: 50.38% [13100/26000]  [50.4/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.088 (0.076)]
+2024-05-24 01:30:59,700 - Train: 50.58% [13150/26000]  [50.6/100.0] [batch_t 0.222 (0.107)] [data_t 0.182] [optim_t 0.040] [lr 0.000100] [cos 0.072 (0.074)]
+2024-05-24 01:31:04,573 - Train: 50.77% [13200/26000]  [50.8/100.0] [batch_t 0.019 (0.097)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.088 (0.074)]
+2024-05-24 01:31:09,890 - Train: 50.96% [13250/26000]  [51.0/100.0] [batch_t 0.212 (0.106)] [data_t 0.172] [optim_t 0.040] [lr 0.000100] [cos 0.086 (0.077)]
+2024-05-24 01:31:10,855 - ==> Total time: 0:28:04	 Eta: 0:26:58 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:31:16,023 - Train: 51.15% [13300/26000]  [51.2/100.0] [batch_t 0.038 (0.107)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.071 (0.073)]
+2024-05-24 01:31:21,465 - Train: 51.35% [13350/26000]  [51.3/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.040] [lr 0.000100] [cos 0.059 (0.075)]
+2024-05-24 01:31:26,434 - Train: 51.54% [13400/26000]  [51.5/100.0] [batch_t 0.040 (0.099)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.074)]
+2024-05-24 01:31:31,835 - Train: 51.73% [13450/26000]  [51.7/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.054 (0.075)]
+2024-05-24 01:31:36,900 - Train: 51.92% [13500/26000]  [51.9/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.084 (0.075)]
+2024-05-24 01:31:39,069 - ==> Total time: 0:28:32	 Eta: 0:26:20 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:31:43,524 - Train: 52.12% [13550/26000]  [52.1/100.0] [batch_t 0.040 (0.118)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.076)]
+2024-05-24 01:31:48,624 - Train: 52.31% [13600/26000]  [52.3/100.0] [batch_t 0.018 (0.102)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.066 (0.075)]
+2024-05-24 01:31:54,048 - Train: 52.50% [13650/26000]  [52.5/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.094 (0.074)]
+2024-05-24 01:31:59,093 - Train: 52.69% [13700/26000]  [52.7/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.080 (0.074)]
+2024-05-24 01:32:04,300 - Train: 52.88% [13750/26000]  [52.9/100.0] [batch_t 0.118 (0.104)] [data_t 0.100] [optim_t 0.018] [lr 0.000100] [cos 0.083 (0.073)]
+2024-05-24 01:32:07,401 - ==> Total time: 0:29:01	 Eta: 0:25:43 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:32:10,454 - Train: 53.08% [13800/26000]  [53.1/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.074 (0.075)]
+2024-05-24 01:32:15,795 - Train: 53.27% [13850/26000]  [53.3/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.057 (0.073)]
+2024-05-24 01:32:21,046 - Train: 53.46% [13900/26000]  [53.5/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.054 (0.074)]
+2024-05-24 01:32:26,327 - Train: 53.65% [13950/26000]  [53.7/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.073)]
+2024-05-24 01:32:31,313 - Train: 53.85% [14000/26000]  [53.8/100.0] [batch_t 0.039 (0.100)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.100 (0.073)]
+2024-05-24 01:32:35,573 - ==> Total time: 0:29:29	 Eta: 0:25:07 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:32:37,701 - Train: 54.04% [14050/26000]  [54.0/100.0] [batch_t 0.040 (0.128)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.061 (0.067)]
+2024-05-24 01:32:42,809 - Train: 54.23% [14100/26000]  [54.2/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.103 (0.075)]
+2024-05-24 01:32:48,175 - Train: 54.42% [14150/26000]  [54.4/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.078 (0.071)]
+2024-05-24 01:32:53,406 - Train: 54.62% [14200/26000]  [54.6/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.087 (0.074)]
+2024-05-24 01:32:58,635 - Train: 54.81% [14250/26000]  [54.8/100.0] [batch_t 0.018 (0.104)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.068 (0.072)]
+2024-05-24 01:33:03,696 - Train: 55.00% [14300/26000]  [55.0/100.0] [batch_t 0.043 (0.101)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.065 (0.074)]
+2024-05-24 01:33:03,699 - ==> Total time: 0:29:57	 Eta: 0:24:30 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:33:10,306 - Train: 55.19% [14350/26000]  [55.2/100.0] [batch_t 0.039 (0.108)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.072)]
+2024-05-24 01:33:15,351 - Train: 55.38% [14400/26000]  [55.4/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.079 (0.070)]
+2024-05-24 01:33:20,674 - Train: 55.58% [14450/26000]  [55.6/100.0] [batch_t 0.018 (0.106)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.079 (0.075)]
+2024-05-24 01:33:25,858 - Train: 55.77% [14500/26000]  [55.8/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.084 (0.074)]
+2024-05-24 01:33:31,327 - Train: 55.96% [14550/26000]  [56.0/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.080 (0.075)]
+2024-05-24 01:33:32,253 - ==> Total time: 0:30:25	 Eta: 0:23:54 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:33:37,454 - Train: 56.15% [14600/26000]  [56.2/100.0] [batch_t 0.039 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.073)]
+2024-05-24 01:33:42,791 - Train: 56.35% [14650/26000]  [56.3/100.0] [batch_t 0.233 (0.107)] [data_t 0.215] [optim_t 0.018] [lr 0.000100] [cos 0.076 (0.070)]
+2024-05-24 01:33:47,716 - Train: 56.54% [14700/26000]  [56.5/100.0] [batch_t 0.043 (0.098)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.075 (0.070)]
+2024-05-24 01:33:53,069 - Train: 56.73% [14750/26000]  [56.7/100.0] [batch_t 0.248 (0.107)] [data_t 0.206] [optim_t 0.043] [lr 0.000100] [cos 0.076 (0.076)]
+2024-05-24 01:33:58,328 - Train: 56.92% [14800/26000]  [56.9/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.078 (0.073)]
+2024-05-24 01:34:00,235 - ==> Total time: 0:30:53	 Eta: 0:23:18 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:34:04,510 - Train: 57.12% [14850/26000]  [57.1/100.0] [batch_t 0.126 (0.111)] [data_t 0.108] [optim_t 0.018] [lr 0.000100] [cos 0.078 (0.073)]
+2024-05-24 01:34:09,840 - Train: 57.31% [14900/26000]  [57.3/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.071)]
+2024-05-24 01:34:15,019 - Train: 57.50% [14950/26000]  [57.5/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.071)]
+2024-05-24 01:34:20,179 - Train: 57.69% [15000/26000]  [57.7/100.0] [batch_t 0.018 (0.103)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.067 (0.073)]
+2024-05-24 01:34:25,576 - Train: 57.88% [15050/26000]  [57.9/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.077 (0.071)]
+2024-05-24 01:34:28,441 - ==> Total time: 0:31:22	 Eta: 0:22:42 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:34:31,542 - Train: 58.08% [15100/26000]  [58.1/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.063 (0.073)]
+2024-05-24 01:34:36,888 - Train: 58.27% [15150/26000]  [58.3/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.071)]
+2024-05-24 01:34:42,125 - Train: 58.46% [15200/26000]  [58.5/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.072)]
+2024-05-24 01:34:47,207 - Train: 58.65% [15250/26000]  [58.7/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.060 (0.068)]
+2024-05-24 01:34:52,446 - Train: 58.85% [15300/26000]  [58.8/100.0] [batch_t 0.039 (0.105)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.087 (0.071)]
+2024-05-24 01:34:56,532 - ==> Total time: 0:31:50	 Eta: 0:22:07 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:34:58,748 - Train: 59.04% [15350/26000]  [59.0/100.0] [batch_t 0.040 (0.128)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.073)]
+2024-05-24 01:35:03,776 - Train: 59.23% [15400/26000]  [59.2/100.0] [batch_t 0.094 (0.100)] [data_t 0.055] [optim_t 0.039] [lr 0.000100] [cos 0.063 (0.070)]
+2024-05-24 01:35:09,051 - Train: 59.42% [15450/26000]  [59.4/100.0] [batch_t 0.147 (0.105)] [data_t 0.105] [optim_t 0.042] [lr 0.000100] [cos 0.063 (0.070)]
+2024-05-24 01:35:14,259 - Train: 59.62% [15500/26000]  [59.6/100.0] [batch_t 0.028 (0.104)] [data_t 0.000] [optim_t 0.028] [lr 0.000100] [cos 0.068 (0.068)]
+2024-05-24 01:35:19,409 - Train: 59.81% [15550/26000]  [59.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.073)]
+2024-05-24 01:35:24,592 - Train: 60.00% [15600/26000]  [60.0/100.0] [batch_t 0.040 (0.104)] [data_t 0.000] [optim_t 0.040] [lr 0.000100] [cos 0.070 (0.072)]
+2024-05-24 01:35:31,269 - Test: 25.51% [50/196] [batch_t 0.038 (0.130)] [cos 0.059 (0.099)]
+2024-05-24 01:35:35,856 - Test: 51.02% [100/196] [batch_t 0.027 (0.111)] [cos 0.072 (0.083)]
+2024-05-24 01:35:41,569 - Test: 76.53% [150/196] [batch_t 0.040 (0.112)] [cos 0.127 (0.093)]
+2024-05-24 01:35:46,134 - Test: 100.00% [196/196] [batch_t 0.040 (0.109)] [cos 0.048 (0.087)]
+2024-05-24 01:35:50,857 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.566 (mF1_max_px)	  0.193 (mF1_px_0.2_0.8_0.1)	  0.192 (mAcc_px_0.2_0.8_0.1)	  0.195 (mIoU_px_0.2_0.8_0.1)	  0.559 (mIoU_max_px)	
+2024-05-24 01:35:56,715 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.680 (mF1_max_px)	  0.235 (mF1_px_0.2_0.8_0.1)	  0.233 (mAcc_px_0.2_0.8_0.1)	  0.234 (mIoU_px_0.2_0.8_0.1)	  0.677 (mIoU_max_px)	
+2024-05-24 01:36:02,017 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.633 (mF1_max_px)	  0.219 (mF1_px_0.2_0.8_0.1)	  0.221 (mAcc_px_0.2_0.8_0.1)	  0.219 (mIoU_px_0.2_0.8_0.1)	  0.633 (mIoU_max_px)	
+2024-05-24 01:36:06,121 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.701 (mF1_max_px)	  0.241 (mF1_px_0.2_0.8_0.1)	  0.242 (mAcc_px_0.2_0.8_0.1)	  0.242 (mIoU_px_0.2_0.8_0.1)	  0.700 (mIoU_max_px)	
+2024-05-24 01:36:12,158 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.632 (mF1_max_px)	  0.222 (mF1_px_0.2_0.8_0.1)	  0.221 (mAcc_px_0.2_0.8_0.1)	  0.218 (mIoU_px_0.2_0.8_0.1)	  0.637 (mIoU_max_px)	
+2024-05-24 01:36:12,169 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.349      |  78.635 (50  epoch)   |    87.674    | 88.543 (50  epoch) |      78.404      |   79.675 (50  epoch)   |   70.061    | 70.938 (10  epoch) |   89.094    | 89.535 (10  epoch) |  56.187  | 56.187 (60  epoch) |    52.505    | 52.547 (50  epoch) |        22.273        |     22.732 (10  epoch)     |        30.585         |     35.925 (10  epoch)      |        13.757         |     13.981 (10  epoch)      |    35.598     | 35.636 (50  epoch)  |
+|    juice_bottle     |     89.722      |  89.722 (60  epoch)   |    96.196    | 96.202 (50  epoch) |      88.235      |   88.312 (50  epoch)   |   83.313    | 83.343 (40  epoch) |   88.618    | 88.706 (20  epoch) |  48.278  | 48.298 (50  epoch) |    49.487    | 49.657 (50  epoch) |        21.303        |     21.531 (50  epoch)     |        19.070         |     22.606 (10  epoch)      |        13.283         |     13.405 (50  epoch)      |    32.879     | 33.029 (50  epoch)  |
+|      pushpins       |     66.170      |  66.330 (10  epoch)   |    73.377    | 74.383 (20  epoch) |      71.806      |   72.444 (20  epoch)   |   56.879    | 56.879 (60  epoch) |   45.701    | 45.865 (50  epoch) |  2.225   | 2.225 (60  epoch)  |    6.015     | 6.015 (60  epoch)  |        2.767         |     2.786 (30  epoch)      |         3.881         |      7.265 (10  epoch)      |         1.412         |      1.419 (30  epoch)      |     3.101     |  3.101 (60  epoch)  |
+|      screw_bag      |     62.089      |  62.666 (20  epoch)   |    75.808    | 75.982 (40  epoch) |      78.967      |   80.297 (30  epoch)   |   43.000    | 47.649 (10  epoch) |   72.667    | 72.915 (20  epoch) |  13.207  | 13.272 (20  epoch) |    21.976    | 22.243 (20  epoch) |        8.179         |     9.635 (10  epoch)      |        19.362         |     27.275 (10  epoch)      |         4.473         |      5.291 (10  epoch)      |    12.344     | 12.513 (20  epoch)  |
+| splicing_connectors |     81.452      |  81.452 (60  epoch)   |    90.371    | 90.371 (60  epoch) |      79.032      |   80.000 (20  epoch)   |   62.415    | 63.173 (10  epoch) |   70.044    | 70.097 (30  epoch) |  22.668  | 23.077 (30  epoch) |    23.446    | 25.016 (30  epoch) |        8.503         |     11.361 (10  epoch)     |         6.969         |     13.619 (10  epoch)      |         4.665         |      6.228 (10  epoch)      |    13.280     | 14.296 (30  epoch)  |
+|         Avg         |     75.356      |  75.549 (50  epoch)   |    84.685    | 84.685 (60  epoch) |      79.289      |   79.712 (50  epoch)   |   63.134    | 63.753 (10  epoch) |   73.225    | 73.273 (30  epoch) |  28.513  | 28.513 (60  epoch) |    30.686    | 30.709 (50  epoch) |        12.605        |     13.247 (10  epoch)     |        15.973         |     21.338 (10  epoch)      |         7.518         |      7.818 (10  epoch)      |    19.440     | 19.473 (50  epoch)  |
+2024-05-24 01:36:12,275 - ==> Total time: 0:33:05	 Eta: 0:22:03 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:36:19,057 - Train: 60.19% [15650/26000]  [60.2/100.0] [batch_t 0.289 (0.109)] [data_t 0.251] [optim_t 0.038] [lr 0.000100] [cos 0.087 (0.071)]
+2024-05-24 01:36:24,198 - Train: 60.38% [15700/26000]  [60.4/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.053 (0.070)]
+2024-05-24 01:36:29,752 - Train: 60.58% [15750/26000]  [60.6/100.0] [batch_t 0.271 (0.111)] [data_t 0.232] [optim_t 0.039] [lr 0.000100] [cos 0.056 (0.070)]
+2024-05-24 01:36:34,895 - Train: 60.77% [15800/26000]  [60.8/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.072)]
+2024-05-24 01:36:40,220 - Train: 60.96% [15850/26000]  [61.0/100.0] [batch_t 0.364 (0.106)] [data_t 0.324] [optim_t 0.040] [lr 0.000100] [cos 0.070 (0.068)]
+2024-05-24 01:36:41,159 - ==> Total time: 0:33:34	 Eta: 0:21:28 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:36:46,506 - Train: 61.15% [15900/26000]  [61.2/100.0] [batch_t 0.019 (0.107)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.063 (0.070)]
+2024-05-24 01:36:52,128 - Train: 61.35% [15950/26000]  [61.3/100.0] [batch_t 0.199 (0.112)] [data_t 0.160] [optim_t 0.039] [lr 0.000100] [cos 0.082 (0.072)]
+2024-05-24 01:36:57,196 - Train: 61.54% [16000/26000]  [61.5/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.091 (0.071)]
+2024-05-24 01:37:02,610 - Train: 61.73% [16050/26000]  [61.7/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.068)]
+2024-05-24 01:37:07,610 - Train: 61.92% [16100/26000]  [61.9/100.0] [batch_t 0.040 (0.100)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.075 (0.069)]
+2024-05-24 01:37:09,657 - ==> Total time: 0:34:03	 Eta: 0:20:52 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:37:13,907 - Train: 62.12% [16150/26000]  [62.1/100.0] [batch_t 0.053 (0.112)] [data_t 0.011] [optim_t 0.042] [lr 0.000100] [cos 0.083 (0.068)]
+2024-05-24 01:37:18,996 - Train: 62.31% [16200/26000]  [62.3/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.090 (0.071)]
+2024-05-24 01:37:24,454 - Train: 62.50% [16250/26000]  [62.5/100.0] [batch_t 0.043 (0.109)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.068 (0.071)]
+2024-05-24 01:37:29,551 - Train: 62.69% [16300/26000]  [62.7/100.0] [batch_t 0.043 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.070 (0.070)]
+2024-05-24 01:37:34,849 - Train: 62.88% [16350/26000]  [62.9/100.0] [batch_t 0.018 (0.106)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.070 (0.068)]
+2024-05-24 01:37:37,774 - ==> Total time: 0:34:31	 Eta: 0:20:16 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:37:40,793 - Train: 63.08% [16400/26000]  [63.1/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.088 (0.069)]
+2024-05-24 01:37:46,013 - Train: 63.27% [16450/26000]  [63.3/100.0] [batch_t 0.071 (0.104)] [data_t 0.033] [optim_t 0.038] [lr 0.000100] [cos 0.062 (0.067)]
+2024-05-24 01:37:51,309 - Train: 63.46% [16500/26000]  [63.5/100.0] [batch_t 0.043 (0.106)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.077 (0.071)]
+2024-05-24 01:37:56,744 - Train: 63.65% [16550/26000]  [63.7/100.0] [batch_t 0.247 (0.109)] [data_t 0.208] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.070)]
+2024-05-24 01:38:01,727 - Train: 63.85% [16600/26000]  [63.8/100.0] [batch_t 0.040 (0.100)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.068)]
+2024-05-24 01:38:05,990 - ==> Total time: 0:34:59	 Eta: 0:19:41 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:38:08,219 - Train: 64.04% [16650/26000]  [64.0/100.0] [batch_t 0.040 (0.123)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.067 (0.063)]
+2024-05-24 01:38:13,372 - Train: 64.23% [16700/26000]  [64.2/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.066 (0.069)]
+2024-05-24 01:38:18,737 - Train: 64.42% [16750/26000]  [64.4/100.0] [batch_t 0.243 (0.107)] [data_t 0.205] [optim_t 0.038] [lr 0.000100] [cos 0.083 (0.067)]
+2024-05-24 01:38:23,846 - Train: 64.62% [16800/26000]  [64.6/100.0] [batch_t 0.042 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.070 (0.071)]
+2024-05-24 01:38:29,144 - Train: 64.81% [16850/26000]  [64.8/100.0] [batch_t 0.065 (0.106)] [data_t 0.027] [optim_t 0.038] [lr 0.000100] [cos 0.081 (0.070)]
+2024-05-24 01:38:34,315 - Train: 65.00% [16900/26000]  [65.0/100.0] [batch_t 0.202 (0.103)] [data_t 0.163] [optim_t 0.038] [lr 0.000100] [cos 0.070 (0.070)]
+2024-05-24 01:38:34,317 - ==> Total time: 0:35:27	 Eta: 0:19:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:38:40,467 - Train: 65.19% [16950/26000]  [65.2/100.0] [batch_t 0.082 (0.106)] [data_t 0.043] [optim_t 0.038] [lr 0.000100] [cos 0.065 (0.068)]
+2024-05-24 01:38:45,974 - Train: 65.38% [17000/26000]  [65.4/100.0] [batch_t 0.039 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.063 (0.068)]
+2024-05-24 01:38:50,951 - Train: 65.58% [17050/26000]  [65.6/100.0] [batch_t 0.040 (0.099)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.063 (0.069)]
+2024-05-24 01:38:56,265 - Train: 65.77% [17100/26000]  [65.8/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.073 (0.068)]
+2024-05-24 01:39:01,415 - Train: 65.96% [17150/26000]  [66.0/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.073 (0.068)]
+2024-05-24 01:39:02,357 - ==> Total time: 0:35:56	 Eta: 0:18:30 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:39:08,197 - Train: 66.15% [17200/26000]  [66.2/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.077 (0.068)]
+2024-05-24 01:39:13,443 - Train: 66.35% [17250/26000]  [66.3/100.0] [batch_t 0.083 (0.105)] [data_t 0.045] [optim_t 0.038] [lr 0.000100] [cos 0.066 (0.067)]
+2024-05-24 01:39:18,590 - Train: 66.54% [17300/26000]  [66.5/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.051 (0.066)]
+2024-05-24 01:39:24,085 - Train: 66.73% [17350/26000]  [66.7/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.067 (0.068)]
+2024-05-24 01:39:29,084 - Train: 66.92% [17400/26000]  [66.9/100.0] [batch_t 0.042 (0.100)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.080 (0.069)]
+2024-05-24 01:39:31,208 - ==> Total time: 0:36:24	 Eta: 0:17:56 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:39:35,474 - Train: 67.12% [17450/26000]  [67.1/100.0] [batch_t 0.042 (0.111)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.064 (0.065)]
+2024-05-24 01:39:40,579 - Train: 67.31% [17500/26000]  [67.3/100.0] [batch_t 0.018 (0.102)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.051 (0.067)]
+2024-05-24 01:39:45,948 - Train: 67.50% [17550/26000]  [67.5/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.040] [lr 0.000100] [cos 0.063 (0.066)]
+2024-05-24 01:39:51,080 - Train: 67.69% [17600/26000]  [67.7/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.090 (0.068)]
+2024-05-24 01:39:56,348 - Train: 67.88% [17650/26000]  [67.9/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.069)]
+2024-05-24 01:39:59,320 - ==> Total time: 0:36:52	 Eta: 0:17:21 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:40:02,553 - Train: 68.08% [17700/26000]  [68.1/100.0] [batch_t 0.024 (0.111)] [data_t 0.001] [optim_t 0.023] [lr 0.000100] [cos 0.065 (0.066)]
+2024-05-24 01:40:07,816 - Train: 68.27% [17750/26000]  [68.3/100.0] [batch_t 0.079 (0.105)] [data_t 0.040] [optim_t 0.040] [lr 0.000100] [cos 0.084 (0.066)]
+2024-05-24 01:40:12,983 - Train: 68.46% [17800/26000]  [68.5/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.077 (0.067)]
+2024-05-24 01:40:18,232 - Train: 68.65% [17850/26000]  [68.7/100.0] [batch_t 0.029 (0.105)] [data_t 0.011] [optim_t 0.018] [lr 0.000100] [cos 0.062 (0.069)]
+2024-05-24 01:40:23,457 - Train: 68.85% [17900/26000]  [68.8/100.0] [batch_t 0.084 (0.104)] [data_t 0.044] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.067)]
+2024-05-24 01:40:27,708 - ==> Total time: 0:37:21	 Eta: 0:16:46 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:40:29,889 - Train: 69.04% [17950/26000]  [69.0/100.0] [batch_t 0.094 (0.129)] [data_t 0.056] [optim_t 0.038] [lr 0.000100] [cos 0.054 (0.066)]
+2024-05-24 01:40:34,983 - Train: 69.23% [18000/26000]  [69.2/100.0] [batch_t 0.119 (0.102)] [data_t 0.080] [optim_t 0.039] [lr 0.000100] [cos 0.078 (0.068)]
+2024-05-24 01:40:40,223 - Train: 69.42% [18050/26000]  [69.4/100.0] [batch_t 0.078 (0.105)] [data_t 0.060] [optim_t 0.018] [lr 0.000100] [cos 0.096 (0.067)]
+2024-05-24 01:40:45,442 - Train: 69.62% [18100/26000]  [69.6/100.0] [batch_t 0.071 (0.104)] [data_t 0.032] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.065)]
+2024-05-24 01:40:50,673 - Train: 69.81% [18150/26000]  [69.8/100.0] [batch_t 0.273 (0.105)] [data_t 0.235] [optim_t 0.038] [lr 0.000100] [cos 0.062 (0.068)]
+2024-05-24 01:40:55,681 - Train: 70.00% [18200/26000]  [70.0/100.0] [batch_t 0.040 (0.100)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.045 (0.066)]
+2024-05-24 01:41:02,385 - Test: 25.51% [50/196] [batch_t 0.071 (0.131)] [cos 0.056 (0.096)]
+2024-05-24 01:41:07,007 - Test: 51.02% [100/196] [batch_t 0.040 (0.112)] [cos 0.068 (0.080)]
+2024-05-24 01:41:12,666 - Test: 76.53% [150/196] [batch_t 0.128 (0.112)] [cos 0.125 (0.091)]
+2024-05-24 01:41:17,133 - Test: 100.00% [196/196] [batch_t 0.042 (0.109)] [cos 0.048 (0.084)]
+2024-05-24 01:41:20,141 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.544 (mF1_max_px)	  0.188 (mF1_px_0.2_0.8_0.1)	  0.188 (mAcc_px_0.2_0.8_0.1)	  0.195 (mIoU_px_0.2_0.8_0.1)	  0.545 (mIoU_max_px)	
+2024-05-24 01:41:24,910 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.663 (mF1_max_px)	  0.228 (mF1_px_0.2_0.8_0.1)	  0.228 (mAcc_px_0.2_0.8_0.1)	  0.227 (mIoU_px_0.2_0.8_0.1)	  0.653 (mIoU_max_px)	
+2024-05-24 01:41:32,303 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.612 (mF1_max_px)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.212 (mAcc_px_0.2_0.8_0.1)	  0.211 (mIoU_px_0.2_0.8_0.1)	  0.611 (mIoU_max_px)	
+2024-05-24 01:41:38,026 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.680 (mF1_max_px)	  0.231 (mF1_px_0.2_0.8_0.1)	  0.230 (mAcc_px_0.2_0.8_0.1)	  0.232 (mIoU_px_0.2_0.8_0.1)	  0.665 (mIoU_max_px)	
+2024-05-24 01:41:43,422 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.613 (mF1_max_px)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.211 (mAcc_px_0.2_0.8_0.1)	  0.213 (mIoU_px_0.2_0.8_0.1)	  0.613 (mIoU_max_px)	
+2024-05-24 01:41:43,435 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.712      |  78.635 (50  epoch)   |    88.045    | 88.543 (50  epoch) |      78.118      |   79.675 (50  epoch)   |   70.115    | 70.938 (10  epoch) |   89.040    | 89.535 (10  epoch) |  55.894  | 56.187 (60  epoch) |    52.472    | 52.547 (50  epoch) |        22.305        |     22.732 (10  epoch)     |        30.408         |     35.925 (10  epoch)      |        13.762         |     13.981 (10  epoch)      |    35.567     | 35.636 (50  epoch)  |
+|    juice_bottle     |     90.092      |  90.092 (70  epoch)   |    96.323    | 96.323 (70  epoch) |      88.296      |   88.312 (50  epoch)   |   83.408    | 83.408 (70  epoch) |   88.677    | 88.706 (20  epoch) |  48.429  | 48.429 (70  epoch) |    49.521    | 49.657 (50  epoch) |        21.349        |     21.531 (50  epoch)     |        18.726         |     22.606 (10  epoch)      |        13.306         |     13.405 (50  epoch)      |    32.909     | 33.029 (50  epoch)  |
+|      pushpins       |     65.790      |  66.330 (10  epoch)   |    72.896    | 74.383 (20  epoch) |      72.284      |   72.444 (20  epoch)   |   56.899    | 56.899 (70  epoch) |   45.990    | 45.990 (70  epoch) |  2.200   | 2.225 (60  epoch)  |    5.938     | 6.015 (60  epoch)  |        2.771         |     2.786 (30  epoch)      |         3.693         |      7.265 (10  epoch)      |         1.414         |      1.419 (30  epoch)      |     3.060     |  3.101 (60  epoch)  |
+|      screw_bag      |     63.354      |  63.354 (70  epoch)   |    76.281    | 76.281 (70  epoch) |      79.238      |   80.297 (30  epoch)   |   42.575    | 47.649 (10  epoch) |   72.585    | 72.915 (20  epoch) |  13.176  | 13.272 (20  epoch) |    21.979    | 22.243 (20  epoch) |        7.520         |     9.635 (10  epoch)      |        17.234         |     27.275 (10  epoch)      |         4.109         |      5.291 (10  epoch)      |    12.346     | 12.513 (20  epoch)  |
+| splicing_connectors |     81.909      |  81.909 (70  epoch)   |    90.344    | 90.371 (60  epoch) |      79.133      |   80.000 (20  epoch)   |   62.521    | 63.173 (10  epoch) |   70.111    | 70.111 (70  epoch) |  22.859  | 23.077 (30  epoch) |    24.038    | 25.016 (30  epoch) |        8.746         |     11.361 (10  epoch)     |         7.161         |     13.619 (10  epoch)      |         4.804         |      6.228 (10  epoch)      |    13.661     | 14.296 (30  epoch)  |
+|         Avg         |     75.771      |  75.771 (70  epoch)   |    84.778    | 84.778 (70  epoch) |      79.414      |   79.712 (50  epoch)   |   63.103    | 63.753 (10  epoch) |   73.281    | 73.281 (70  epoch) |  28.511  | 28.513 (60  epoch) |    30.790    | 30.790 (70  epoch) |        12.538        |     13.247 (10  epoch)     |        15.445         |     21.338 (10  epoch)      |         7.479         |      7.818 (10  epoch)      |    19.509     | 19.509 (70  epoch)  |
+2024-05-24 01:41:43,543 - ==> Total time: 0:38:37	 Eta: 0:16:33 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:41:50,081 - Train: 70.19% [18250/26000]  [70.2/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.070 (0.066)]
+2024-05-24 01:41:55,196 - Train: 70.38% [18300/26000]  [70.4/100.0] [batch_t 0.039 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.072 (0.066)]
+2024-05-24 01:42:00,367 - Train: 70.58% [18350/26000]  [70.6/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.067 (0.065)]
+2024-05-24 01:42:05,677 - Train: 70.77% [18400/26000]  [70.8/100.0] [batch_t 0.042 (0.106)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.059 (0.070)]
+2024-05-24 01:42:10,933 - Train: 70.96% [18450/26000]  [71.0/100.0] [batch_t 0.042 (0.105)] [data_t 0.000] [optim_t 0.042] [lr 0.000100] [cos 0.058 (0.067)]
+2024-05-24 01:42:11,889 - ==> Total time: 0:39:05	 Eta: 0:15:58 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:42:17,122 - Train: 71.15% [18500/26000]  [71.2/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.074 (0.068)]
+2024-05-24 01:42:22,425 - Train: 71.35% [18550/26000]  [71.3/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.073 (0.063)]
+2024-05-24 01:42:27,444 - Train: 71.54% [18600/26000]  [71.5/100.0] [batch_t 0.086 (0.100)] [data_t 0.047] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.065)]
+2024-05-24 01:42:32,638 - Train: 71.73% [18650/26000]  [71.7/100.0] [batch_t 0.116 (0.104)] [data_t 0.075] [optim_t 0.041] [lr 0.000100] [cos 0.070 (0.065)]
+2024-05-24 01:42:37,826 - Train: 71.92% [18700/26000]  [71.9/100.0] [batch_t 0.048 (0.104)] [data_t 0.009] [optim_t 0.039] [lr 0.000100] [cos 0.080 (0.067)]
+2024-05-24 01:42:39,960 - ==> Total time: 0:39:33	 Eta: 0:15:23 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:42:44,095 - Train: 72.12% [18750/26000]  [72.1/100.0] [batch_t 0.018 (0.110)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.045 (0.063)]
+2024-05-24 01:42:49,260 - Train: 72.31% [18800/26000]  [72.3/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.048 (0.065)]
+2024-05-24 01:42:54,611 - Train: 72.50% [18850/26000]  [72.5/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.073 (0.066)]
+2024-05-24 01:42:59,650 - Train: 72.69% [18900/26000]  [72.7/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.083 (0.066)]
+2024-05-24 01:43:05,021 - Train: 72.88% [18950/26000]  [72.9/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.060 (0.067)]
+2024-05-24 01:43:08,014 - ==> Total time: 0:40:01	 Eta: 0:14:48 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:43:11,055 - Train: 73.08% [19000/26000]  [73.1/100.0] [batch_t 0.039 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.048 (0.063)]
+2024-05-24 01:43:16,251 - Train: 73.27% [19050/26000]  [73.3/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.065)]
+2024-05-24 01:43:21,595 - Train: 73.46% [19100/26000]  [73.5/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.058 (0.066)]
+2024-05-24 01:43:26,661 - Train: 73.65% [19150/26000]  [73.7/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.067)]
+2024-05-24 01:43:32,004 - Train: 73.85% [19200/26000]  [73.8/100.0] [batch_t 0.197 (0.107)] [data_t 0.158] [optim_t 0.039] [lr 0.000100] [cos 0.053 (0.064)]
+2024-05-24 01:43:36,057 - ==> Total time: 0:40:29	 Eta: 0:14:13 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:43:38,281 - Train: 74.04% [19250/26000]  [74.0/100.0] [batch_t 0.039 (0.131)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.072 (0.059)]
+2024-05-24 01:43:43,479 - Train: 74.23% [19300/26000]  [74.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.081 (0.064)]
+2024-05-24 01:43:48,765 - Train: 74.42% [19350/26000]  [74.4/100.0] [batch_t 0.042 (0.106)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.058 (0.065)]
+2024-05-24 01:43:53,815 - Train: 74.62% [19400/26000]  [74.6/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.076 (0.065)]
+2024-05-24 01:43:59,028 - Train: 74.81% [19450/26000]  [74.8/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.089 (0.066)]
+2024-05-24 01:44:04,187 - Train: 75.00% [19500/26000]  [75.0/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.071 (0.067)]
+2024-05-24 01:44:04,189 - ==> Total time: 0:40:57	 Eta: 0:13:39 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:44:11,128 - Train: 75.19% [19550/26000]  [75.2/100.0] [batch_t 0.039 (0.113)] [data_t 0.001] [optim_t 0.038] [lr 0.000100] [cos 0.073 (0.064)]
+2024-05-24 01:44:16,167 - Train: 75.38% [19600/26000]  [75.4/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.061 (0.065)]
+2024-05-24 01:44:21,368 - Train: 75.58% [19650/26000]  [75.6/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.062 (0.065)]
+2024-05-24 01:44:26,477 - Train: 75.77% [19700/26000]  [75.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.055 (0.065)]
+2024-05-24 01:44:31,687 - Train: 75.96% [19750/26000]  [76.0/100.0] [batch_t 0.048 (0.104)] [data_t 0.009] [optim_t 0.039] [lr 0.000100] [cos 0.061 (0.064)]
+2024-05-24 01:44:32,764 - ==> Total time: 0:41:26	 Eta: 0:13:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:44:37,919 - Train: 76.15% [19800/26000]  [76.2/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.079 (0.063)]
+2024-05-24 01:44:43,380 - Train: 76.35% [19850/26000]  [76.3/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.053 (0.064)]
+2024-05-24 01:44:48,521 - Train: 76.54% [19900/26000]  [76.5/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.064 (0.063)]
+2024-05-24 01:44:53,910 - Train: 76.73% [19950/26000]  [76.7/100.0] [batch_t 0.040 (0.108)] [data_t 0.000] [optim_t 0.040] [lr 0.000100] [cos 0.063 (0.064)]
+2024-05-24 01:44:58,884 - Train: 76.92% [20000/26000]  [76.9/100.0] [batch_t 0.040 (0.099)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.075 (0.066)]
+2024-05-24 01:45:00,922 - ==> Total time: 0:41:54	 Eta: 0:12:31 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:45:05,633 - Train: 77.12% [20050/26000]  [77.1/100.0] [batch_t 0.075 (0.117)] [data_t 0.037] [optim_t 0.038] [lr 0.000100] [cos 0.078 (0.064)]
+2024-05-24 01:45:10,705 - Train: 77.31% [20100/26000]  [77.3/100.0] [batch_t 0.040 (0.101)] [data_t 0.000] [optim_t 0.039] [lr 0.000100] [cos 0.046 (0.064)]
+2024-05-24 01:45:15,983 - Train: 77.50% [20150/26000]  [77.5/100.0] [batch_t 0.022 (0.106)] [data_t 0.004] [optim_t 0.018] [lr 0.000100] [cos 0.069 (0.065)]
+2024-05-24 01:45:21,204 - Train: 77.69% [20200/26000]  [77.7/100.0] [batch_t 0.043 (0.104)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.060 (0.065)]
+2024-05-24 01:45:26,450 - Train: 77.88% [20250/26000]  [77.9/100.0] [batch_t 0.126 (0.105)] [data_t 0.086] [optim_t 0.039] [lr 0.000100] [cos 0.055 (0.063)]
+2024-05-24 01:45:29,279 - ==> Total time: 0:42:22	 Eta: 0:11:57 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:45:32,270 - Train: 78.08% [20300/26000]  [78.1/100.0] [batch_t 0.042 (0.110)] [data_t 0.001] [optim_t 0.042] [lr 0.000100] [cos 0.072 (0.062)]
+2024-05-24 01:45:37,585 - Train: 78.27% [20350/26000]  [78.3/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.063)]
+2024-05-24 01:45:42,626 - Train: 78.46% [20400/26000]  [78.5/100.0] [batch_t 0.059 (0.101)] [data_t 0.020] [optim_t 0.038] [lr 0.000100] [cos 0.064 (0.062)]
+2024-05-24 01:45:47,882 - Train: 78.65% [20450/26000]  [78.7/100.0] [batch_t 0.018 (0.105)] [data_t 0.000] [optim_t 0.018] [lr 0.000100] [cos 0.064 (0.063)]
+2024-05-24 01:45:53,047 - Train: 78.85% [20500/26000]  [78.8/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.078 (0.064)]
+2024-05-24 01:45:57,170 - ==> Total time: 0:42:50	 Eta: 0:11:23 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:45:59,541 - Train: 79.04% [20550/26000]  [79.0/100.0] [batch_t 0.040 (0.136)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.064 (0.069)]
+2024-05-24 01:46:04,542 - Train: 79.23% [20600/26000]  [79.2/100.0] [batch_t 0.019 (0.100)] [data_t 0.001] [optim_t 0.018] [lr 0.000100] [cos 0.067 (0.064)]
+2024-05-24 01:46:09,983 - Train: 79.42% [20650/26000]  [79.4/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.069 (0.064)]
+2024-05-24 01:46:15,019 - Train: 79.62% [20700/26000]  [79.6/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000100] [cos 0.065 (0.063)]
+2024-05-24 01:46:20,269 - Train: 79.81% [20750/26000]  [79.8/100.0] [batch_t 0.102 (0.105)] [data_t 0.064] [optim_t 0.038] [lr 0.000100] [cos 0.062 (0.062)]
+2024-05-24 01:46:25,371 - Train: 80.00% [20800/26000]  [80.0/100.0] [batch_t 0.124 (0.102)] [data_t 0.085] [optim_t 0.039] [lr 0.000100] [cos 0.068 (0.062)]
+2024-05-24 01:46:32,069 - Test: 25.51% [50/196] [batch_t 0.038 (0.130)] [cos 0.056 (0.096)]
+2024-05-24 01:46:36,698 - Test: 51.02% [100/196] [batch_t 0.042 (0.111)] [cos 0.066 (0.079)]
+2024-05-24 01:46:42,383 - Test: 76.53% [150/196] [batch_t 0.041 (0.112)] [cos 0.120 (0.089)]
+2024-05-24 01:46:46,922 - Test: 100.00% [196/196] [batch_t 0.042 (0.109)] [cos 0.046 (0.082)]
+2024-05-24 01:46:51,662 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.551 (mF1_max_px)	  0.192 (mF1_px_0.2_0.8_0.1)	  0.190 (mAcc_px_0.2_0.8_0.1)	  0.190 (mIoU_px_0.2_0.8_0.1)	  0.553 (mIoU_max_px)	
+2024-05-24 01:46:56,430 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.660 (mF1_max_px)	  0.228 (mF1_px_0.2_0.8_0.1)	  0.228 (mAcc_px_0.2_0.8_0.1)	  0.226 (mIoU_px_0.2_0.8_0.1)	  0.655 (mIoU_max_px)	
+2024-05-24 01:47:01,571 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.615 (mF1_max_px)	  0.213 (mF1_px_0.2_0.8_0.1)	  0.211 (mAcc_px_0.2_0.8_0.1)	  0.213 (mIoU_px_0.2_0.8_0.1)	  0.614 (mIoU_max_px)	
+2024-05-24 01:47:09,508 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.680 (mF1_max_px)	  0.230 (mF1_px_0.2_0.8_0.1)	  0.232 (mAcc_px_0.2_0.8_0.1)	  0.233 (mIoU_px_0.2_0.8_0.1)	  0.660 (mIoU_max_px)	
+2024-05-24 01:47:14,716 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.617 (mF1_max_px)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.213 (mAcc_px_0.2_0.8_0.1)	  0.212 (mIoU_px_0.2_0.8_0.1)	  0.609 (mIoU_max_px)	
+2024-05-24 01:47:14,721 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     76.403      |  78.635 (50  epoch)   |    87.331    | 88.543 (50  epoch) |      78.014      |   79.675 (50  epoch)   |   69.293    | 70.938 (10  epoch) |   88.797    | 89.535 (10  epoch) |  55.885  | 56.187 (60  epoch) |    52.846    | 52.846 (80  epoch) |        22.188        |     22.732 (10  epoch)     |        30.592         |     35.925 (10  epoch)      |        13.698         |     13.981 (10  epoch)      |    35.912     | 35.912 (80  epoch)  |
+|    juice_bottle     |     90.155      |  90.155 (80  epoch)   |    96.313    | 96.323 (70  epoch) |      88.085      |   88.312 (50  epoch)   |   83.246    | 83.408 (70  epoch) |   88.599    | 88.706 (20  epoch) |  48.313  | 48.429 (70  epoch) |    49.338    | 49.657 (50  epoch) |        21.320        |     21.531 (50  epoch)     |        18.613         |     22.606 (10  epoch)      |        13.289         |     13.405 (50  epoch)      |    32.747     | 33.029 (50  epoch)  |
+|      pushpins       |     67.522      |  67.522 (80  epoch)   |    74.630    | 74.630 (80  epoch) |      72.414      |   72.444 (20  epoch)   |   56.807    | 56.899 (70  epoch) |   46.264    | 46.264 (80  epoch) |  2.295   | 2.295 (80  epoch)  |    6.393     | 6.393 (80  epoch)  |        2.859         |     2.859 (80  epoch)      |         3.742         |      7.265 (10  epoch)      |         1.460         |      1.460 (80  epoch)      |     3.302     |  3.302 (80  epoch)  |
+|      screw_bag      |     64.335      |  64.335 (80  epoch)   |    77.189    | 77.189 (80  epoch) |      79.026      |   80.297 (30  epoch)   |   42.289    | 47.649 (10  epoch) |   72.558    | 72.915 (20  epoch) |  13.149  | 13.272 (20  epoch) |    22.012    | 22.243 (20  epoch) |        7.130         |     9.635 (10  epoch)      |        15.722         |     27.275 (10  epoch)      |         3.892         |      5.291 (10  epoch)      |    12.367     | 12.513 (20  epoch)  |
+| splicing_connectors |     81.630      |  81.909 (70  epoch)   |    90.254    | 90.371 (60  epoch) |      79.675      |   80.000 (20  epoch)   |   61.939    | 63.173 (10  epoch) |   68.722    | 70.111 (70  epoch) |  21.918  | 23.077 (30  epoch) |    22.623    | 25.016 (30  epoch) |        8.136         |     11.361 (10  epoch)     |         6.337         |     13.619 (10  epoch)      |         4.433         |      6.228 (10  epoch)      |    12.754     | 14.296 (30  epoch)  |
+|         Avg         |     76.009      |  76.009 (80  epoch)   |    85.143    | 85.143 (80  epoch) |      79.443      |   79.712 (50  epoch)   |   62.715    | 63.753 (10  epoch) |   72.988    | 73.281 (70  epoch) |  28.312  | 28.513 (60  epoch) |    30.642    | 30.790 (70  epoch) |        12.326        |     13.247 (10  epoch)     |        15.001         |     21.338 (10  epoch)      |         7.355         |      7.818 (10  epoch)      |    19.417     | 19.509 (70  epoch)  |
+2024-05-24 01:47:14,842 - ==> Total time: 0:44:08	 Eta: 0:11:02 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:47:21,316 - Train: 80.19% [20850/26000]  [80.2/100.0] [batch_t 0.043 (0.108)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.063 (0.060)]
+2024-05-24 01:47:26,478 - Train: 80.38% [20900/26000]  [80.4/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.058)]
+2024-05-24 01:47:31,911 - Train: 80.58% [20950/26000]  [80.6/100.0] [batch_t 0.018 (0.109)] [data_t 0.000] [optim_t 0.018] [lr 0.000010] [cos 0.061 (0.062)]
+2024-05-24 01:47:37,042 - Train: 80.77% [21000/26000]  [80.8/100.0] [batch_t 0.042 (0.103)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.073 (0.058)]
+2024-05-24 01:47:42,496 - Train: 80.96% [21050/26000]  [81.0/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.071 (0.061)]
+2024-05-24 01:47:43,403 - ==> Total time: 0:44:37	 Eta: 0:10:27 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:47:48,665 - Train: 81.15% [21100/26000]  [81.2/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.051 (0.062)]
+2024-05-24 01:47:53,889 - Train: 81.35% [21150/26000]  [81.3/100.0] [batch_t 0.211 (0.104)] [data_t 0.193] [optim_t 0.018] [lr 0.000010] [cos 0.052 (0.058)]
+2024-05-24 01:47:59,032 - Train: 81.54% [21200/26000]  [81.5/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.053 (0.059)]
+2024-05-24 01:48:04,374 - Train: 81.73% [21250/26000]  [81.7/100.0] [batch_t 0.272 (0.107)] [data_t 0.234] [optim_t 0.038] [lr 0.000010] [cos 0.050 (0.059)]
+2024-05-24 01:48:09,322 - Train: 81.92% [21300/26000]  [81.9/100.0] [batch_t 0.018 (0.099)] [data_t 0.000] [optim_t 0.018] [lr 0.000010] [cos 0.059 (0.058)]
+2024-05-24 01:48:11,471 - ==> Total time: 0:45:05	 Eta: 0:09:53 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:48:15,839 - Train: 82.12% [21350/26000]  [82.1/100.0] [batch_t 0.040 (0.119)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.053 (0.062)]
+2024-05-24 01:48:20,980 - Train: 82.31% [21400/26000]  [82.3/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.045 (0.060)]
+2024-05-24 01:48:26,520 - Train: 82.50% [21450/26000]  [82.5/100.0] [batch_t 0.039 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.073 (0.059)]
+2024-05-24 01:48:31,365 - Train: 82.69% [21500/26000]  [82.7/100.0] [batch_t 0.019 (0.097)] [data_t 0.001] [optim_t 0.018] [lr 0.000010] [cos 0.052 (0.057)]
+2024-05-24 01:48:36,555 - Train: 82.88% [21550/26000]  [82.9/100.0] [batch_t 0.042 (0.104)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.054 (0.060)]
+2024-05-24 01:48:39,536 - ==> Total time: 0:45:33	 Eta: 0:09:19 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:48:42,487 - Train: 83.08% [21600/26000]  [83.1/100.0] [batch_t 0.018 (0.107)] [data_t 0.001] [optim_t 0.018] [lr 0.000010] [cos 0.069 (0.060)]
+2024-05-24 01:48:47,945 - Train: 83.27% [21650/26000]  [83.3/100.0] [batch_t 0.043 (0.109)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.057 (0.060)]
+2024-05-24 01:48:53,050 - Train: 83.46% [21700/26000]  [83.5/100.0] [batch_t 0.043 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.064 (0.061)]
+2024-05-24 01:48:58,194 - Train: 83.65% [21750/26000]  [83.7/100.0] [batch_t 0.168 (0.103)] [data_t 0.129] [optim_t 0.039] [lr 0.000010] [cos 0.067 (0.055)]
+2024-05-24 01:49:03,259 - Train: 83.85% [21800/26000]  [83.8/100.0] [batch_t 0.044 (0.101)] [data_t 0.004] [optim_t 0.040] [lr 0.000010] [cos 0.057 (0.059)]
+2024-05-24 01:49:07,406 - ==> Total time: 0:46:01	 Eta: 0:08:45 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:49:09,682 - Train: 84.04% [21850/26000]  [84.0/100.0] [batch_t 0.040 (0.122)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.047 (0.056)]
+2024-05-24 01:49:14,863 - Train: 84.23% [21900/26000]  [84.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.050 (0.061)]
+2024-05-24 01:49:20,131 - Train: 84.42% [21950/26000]  [84.4/100.0] [batch_t 0.184 (0.105)] [data_t 0.145] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.061)]
+2024-05-24 01:49:25,242 - Train: 84.62% [22000/26000]  [84.6/100.0] [batch_t 0.039 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.047 (0.057)]
+2024-05-24 01:49:30,398 - Train: 84.81% [22050/26000]  [84.8/100.0] [batch_t 0.130 (0.103)] [data_t 0.091] [optim_t 0.039] [lr 0.000010] [cos 0.061 (0.058)]
+2024-05-24 01:49:35,638 - Train: 85.00% [22100/26000]  [85.0/100.0] [batch_t 0.040 (0.105)] [data_t 0.000] [optim_t 0.039] [lr 0.000010] [cos 0.065 (0.059)]
+2024-05-24 01:49:35,640 - ==> Total time: 0:46:29	 Eta: 0:08:12 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:49:42,220 - Train: 85.19% [22150/26000]  [85.2/100.0] [batch_t 0.151 (0.110)] [data_t 0.112] [optim_t 0.039] [lr 0.000010] [cos 0.059 (0.060)]
+2024-05-24 01:49:47,492 - Train: 85.38% [22200/26000]  [85.4/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.053 (0.060)]
+2024-05-24 01:49:52,823 - Train: 85.58% [22250/26000]  [85.6/100.0] [batch_t 0.275 (0.107)] [data_t 0.235] [optim_t 0.039] [lr 0.000010] [cos 0.051 (0.058)]
+2024-05-24 01:49:57,950 - Train: 85.77% [22300/26000]  [85.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.064 (0.060)]
+2024-05-24 01:50:03,398 - Train: 85.96% [22350/26000]  [86.0/100.0] [batch_t 0.298 (0.109)] [data_t 0.259] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.059)]
+2024-05-24 01:50:04,210 - ==> Total time: 0:46:57	 Eta: 0:07:38 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:50:09,294 - Train: 86.15% [22400/26000]  [86.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.045 (0.059)]
+2024-05-24 01:50:14,705 - Train: 86.35% [22450/26000]  [86.3/100.0] [batch_t 0.182 (0.108)] [data_t 0.143] [optim_t 0.039] [lr 0.000010] [cos 0.059 (0.060)]
+2024-05-24 01:50:19,778 - Train: 86.54% [22500/26000]  [86.5/100.0] [batch_t 0.208 (0.101)] [data_t 0.168] [optim_t 0.040] [lr 0.000010] [cos 0.066 (0.057)]
+2024-05-24 01:50:24,911 - Train: 86.73% [22550/26000]  [86.7/100.0] [batch_t 0.178 (0.103)] [data_t 0.140] [optim_t 0.038] [lr 0.000010] [cos 0.060 (0.059)]
+2024-05-24 01:50:30,253 - Train: 86.92% [22600/26000]  [86.9/100.0] [batch_t 0.299 (0.107)] [data_t 0.257] [optim_t 0.042] [lr 0.000010] [cos 0.058 (0.060)]
+2024-05-24 01:50:32,368 - ==> Total time: 0:47:26	 Eta: 0:07:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:50:36,669 - Train: 87.12% [22650/26000]  [87.1/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.059)]
+2024-05-24 01:50:41,775 - Train: 87.31% [22700/26000]  [87.3/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.056 (0.060)]
+2024-05-24 01:50:46,893 - Train: 87.50% [22750/26000]  [87.5/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.050 (0.058)]
+2024-05-24 01:50:52,132 - Train: 87.69% [22800/26000]  [87.7/100.0] [batch_t 0.040 (0.105)] [data_t 0.000] [optim_t 0.039] [lr 0.000010] [cos 0.066 (0.059)]
+2024-05-24 01:50:57,335 - Train: 87.88% [22850/26000]  [87.9/100.0] [batch_t 0.086 (0.104)] [data_t 0.048] [optim_t 0.038] [lr 0.000010] [cos 0.076 (0.060)]
+2024-05-24 01:51:00,657 - ==> Total time: 0:47:54	 Eta: 0:06:31 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:51:03,783 - Train: 88.08% [22900/26000]  [88.1/100.0] [batch_t 0.031 (0.116)] [data_t 0.013] [optim_t 0.018] [lr 0.000010] [cos 0.069 (0.060)]
+2024-05-24 01:51:09,130 - Train: 88.27% [22950/26000]  [88.3/100.0] [batch_t 0.144 (0.107)] [data_t 0.106] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.060)]
+2024-05-24 01:51:14,483 - Train: 88.46% [23000/26000]  [88.5/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.059)]
+2024-05-24 01:51:19,551 - Train: 88.65% [23050/26000]  [88.7/100.0] [batch_t 0.105 (0.101)] [data_t 0.066] [optim_t 0.038] [lr 0.000010] [cos 0.065 (0.059)]
+2024-05-24 01:51:24,799 - Train: 88.85% [23100/26000]  [88.8/100.0] [batch_t 0.042 (0.105)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.062 (0.059)]
+2024-05-24 01:51:28,896 - ==> Total time: 0:48:22	 Eta: 0:05:58 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:51:30,982 - Train: 89.04% [23150/26000]  [89.0/100.0] [batch_t 0.039 (0.125)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.066 (0.054)]
+2024-05-24 01:51:36,143 - Train: 89.23% [23200/26000]  [89.2/100.0] [batch_t 0.043 (0.103)] [data_t 0.000] [optim_t 0.042] [lr 0.000010] [cos 0.051 (0.059)]
+2024-05-24 01:51:41,388 - Train: 89.42% [23250/26000]  [89.4/100.0] [batch_t 0.279 (0.105)] [data_t 0.239] [optim_t 0.040] [lr 0.000010] [cos 0.063 (0.059)]
+2024-05-24 01:51:46,442 - Train: 89.62% [23300/26000]  [89.6/100.0] [batch_t 0.060 (0.101)] [data_t 0.022] [optim_t 0.038] [lr 0.000010] [cos 0.064 (0.058)]
+2024-05-24 01:51:51,568 - Train: 89.81% [23350/26000]  [89.8/100.0] [batch_t 0.084 (0.102)] [data_t 0.045] [optim_t 0.039] [lr 0.000010] [cos 0.056 (0.058)]
+2024-05-24 01:51:57,009 - Train: 90.00% [23400/26000]  [90.0/100.0] [batch_t 0.039 (0.109)] [data_t 0.000] [optim_t 0.039] [lr 0.000010] [cos 0.064 (0.060)]
+2024-05-24 01:52:03,709 - Test: 25.51% [50/196] [batch_t 0.084 (0.131)] [cos 0.052 (0.090)]
+2024-05-24 01:52:08,363 - Test: 51.02% [100/196] [batch_t 0.044 (0.112)] [cos 0.063 (0.075)]
+2024-05-24 01:52:14,029 - Test: 76.53% [150/196] [batch_t 0.139 (0.112)] [cos 0.116 (0.084)]
+2024-05-24 01:52:18,512 - Test: 100.00% [196/196] [batch_t 0.041 (0.109)] [cos 0.042 (0.078)]
+2024-05-24 01:52:21,949 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.586 (mF1_max_px)	  0.199 (mF1_px_0.2_0.8_0.1)	  0.201 (mAcc_px_0.2_0.8_0.1)	  0.199 (mIoU_px_0.2_0.8_0.1)	  0.577 (mIoU_max_px)	
+2024-05-24 01:52:27,802 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.706 (mF1_max_px)	  0.241 (mF1_px_0.2_0.8_0.1)	  0.240 (mAcc_px_0.2_0.8_0.1)	  0.242 (mIoU_px_0.2_0.8_0.1)	  0.699 (mIoU_max_px)	
+2024-05-24 01:52:33,099 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.645 (mF1_max_px)	  0.223 (mF1_px_0.2_0.8_0.1)	  0.222 (mAcc_px_0.2_0.8_0.1)	  0.223 (mIoU_px_0.2_0.8_0.1)	  0.647 (mIoU_max_px)	
+2024-05-24 01:52:38,898 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.709 (mF1_max_px)	  0.249 (mF1_px_0.2_0.8_0.1)	  0.249 (mAcc_px_0.2_0.8_0.1)	  0.250 (mIoU_px_0.2_0.8_0.1)	  0.725 (mIoU_max_px)	
+2024-05-24 01:52:46,432 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.650 (mF1_max_px)	  0.224 (mF1_px_0.2_0.8_0.1)	  0.223 (mAcc_px_0.2_0.8_0.1)	  0.226 (mIoU_px_0.2_0.8_0.1)	  0.646 (mIoU_max_px)	
+2024-05-24 01:52:46,446 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.610      |  78.635 (50  epoch)   |    87.968    | 88.543 (50  epoch) |      78.588      |   79.675 (50  epoch)   |   70.304    | 70.938 (10  epoch) |   89.070    | 89.535 (10  epoch) |  56.224  | 56.224 (90  epoch) |    52.989    | 52.989 (90  epoch) |        22.504        |     22.732 (10  epoch)     |        30.226         |     35.925 (10  epoch)      |        13.949         |     13.981 (10  epoch)      |    36.044     | 36.044 (90  epoch)  |
+|    juice_bottle     |     90.245      |  90.245 (90  epoch)   |    96.356    | 96.356 (90  epoch) |      88.511      |   88.511 (90  epoch)   |   83.436    | 83.436 (90  epoch) |   88.609    | 88.706 (20  epoch) |  48.484  | 48.484 (90  epoch) |    49.162    | 49.657 (50  epoch) |        20.915        |     21.531 (50  epoch)     |        17.909         |     22.606 (10  epoch)      |        13.052         |     13.405 (50  epoch)      |    32.592     | 33.029 (50  epoch)  |
+|      pushpins       |     66.932      |  67.522 (80  epoch)   |    73.893    | 74.630 (80  epoch) |      71.979      |   72.444 (20  epoch)   |   57.015    | 57.015 (90  epoch) |   46.068    | 46.264 (80  epoch) |  2.213   | 2.295 (80  epoch)  |    5.926     | 6.393 (80  epoch)  |        2.862         |     2.862 (90  epoch)      |         3.678         |      7.265 (10  epoch)      |         1.461         |      1.461 (90  epoch)      |     3.053     |  3.302 (80  epoch)  |
+|      screw_bag      |     64.836      |  64.836 (90  epoch)   |    77.547    | 77.547 (90  epoch) |      78.821      |   80.297 (30  epoch)   |   42.213    | 47.649 (10  epoch) |   72.497    | 72.915 (20  epoch) |  13.133  | 13.272 (20  epoch) |    21.940    | 22.243 (20  epoch) |        7.020         |     9.635 (10  epoch)      |        15.144         |     27.275 (10  epoch)      |         3.829         |      5.291 (10  epoch)      |    12.322     | 12.513 (20  epoch)  |
+| splicing_connectors |     82.048      |  82.048 (90  epoch)   |    90.544    | 90.544 (90  epoch) |      79.467      |   80.000 (20  epoch)   |   62.362    | 63.173 (10  epoch) |   70.348    | 70.348 (90  epoch) |  23.532  | 23.532 (90  epoch) |    25.598    | 25.598 (90  epoch) |        8.719         |     11.361 (10  epoch)     |         6.852         |     13.619 (10  epoch)      |         4.804         |      6.228 (10  epoch)      |    14.677     | 14.677 (90  epoch)  |
+|         Avg         |     76.334      |  76.334 (90  epoch)   |    85.262    | 85.262 (90  epoch) |      79.473      |   79.712 (50  epoch)   |   63.066    | 63.753 (10  epoch) |   73.319    | 73.319 (90  epoch) |  28.717  | 28.717 (90  epoch) |    31.123    | 31.123 (90  epoch) |        12.404        |     13.247 (10  epoch)     |        14.762         |     21.338 (10  epoch)      |         7.419         |      7.818 (10  epoch)      |    19.738     | 19.738 (90  epoch)  |
+2024-05-24 01:52:46,571 - ==> Total time: 0:49:40	 Eta: 0:05:31 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:52:53,289 - Train: 90.19% [23450/26000]  [90.2/100.0] [batch_t 0.040 (0.111)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.060 (0.060)]
+2024-05-24 01:52:58,347 - Train: 90.38% [23500/26000]  [90.4/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.057)]
+2024-05-24 01:53:03,697 - Train: 90.58% [23550/26000]  [90.6/100.0] [batch_t 0.040 (0.107)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.058 (0.058)]
+2024-05-24 01:53:08,806 - Train: 90.77% [23600/26000]  [90.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.067 (0.060)]
+2024-05-24 01:53:14,069 - Train: 90.96% [23650/26000]  [91.0/100.0] [batch_t 0.019 (0.105)] [data_t 0.001] [optim_t 0.018] [lr 0.000010] [cos 0.056 (0.059)]
+2024-05-24 01:53:15,056 - ==> Total time: 0:50:08	 Eta: 0:04:57 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:53:20,089 - Train: 91.15% [23700/26000]  [91.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.072 (0.056)]
+2024-05-24 01:53:25,546 - Train: 91.35% [23750/26000]  [91.3/100.0] [batch_t 0.153 (0.109)] [data_t 0.113] [optim_t 0.040] [lr 0.000010] [cos 0.067 (0.061)]
+2024-05-24 01:53:30,627 - Train: 91.54% [23800/26000]  [91.5/100.0] [batch_t 0.042 (0.102)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.063 (0.060)]
+2024-05-24 01:53:37,372 - Train: 91.73% [23850/26000]  [91.7/100.0] [batch_t 0.325 (0.135)] [data_t 0.285] [optim_t 0.040] [lr 0.000010] [cos 0.060 (0.058)]
+2024-05-24 01:53:42,694 - Train: 91.92% [23900/26000]  [91.9/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.064 (0.059)]
+2024-05-24 01:53:44,758 - ==> Total time: 0:50:38	 Eta: 0:04:24 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:53:48,976 - Train: 92.12% [23950/26000]  [92.1/100.0] [batch_t 0.039 (0.110)] [data_t 0.001] [optim_t 0.038] [lr 0.000010] [cos 0.058 (0.059)]
+2024-05-24 01:53:54,172 - Train: 92.31% [24000/26000]  [92.3/100.0] [batch_t 0.039 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.068 (0.060)]
+2024-05-24 01:53:59,406 - Train: 92.50% [24050/26000]  [92.5/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.057)]
+2024-05-24 01:54:05,193 - Train: 92.69% [24100/26000]  [92.7/100.0] [batch_t 0.039 (0.116)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.059)]
+2024-05-24 01:54:10,438 - Train: 92.88% [24150/26000]  [92.9/100.0] [batch_t 0.130 (0.105)] [data_t 0.091] [optim_t 0.039] [lr 0.000010] [cos 0.053 (0.058)]
+2024-05-24 01:54:13,395 - ==> Total time: 0:51:07	 Eta: 0:03:50 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:54:16,490 - Train: 93.08% [24200/26000]  [93.1/100.0] [batch_t 0.042 (0.110)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.054 (0.060)]
+2024-05-24 01:54:21,825 - Train: 93.27% [24250/26000]  [93.3/100.0] [batch_t 0.104 (0.107)] [data_t 0.066] [optim_t 0.038] [lr 0.000010] [cos 0.059 (0.058)]
+2024-05-24 01:54:26,872 - Train: 93.46% [24300/26000]  [93.5/100.0] [batch_t 0.039 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.068 (0.058)]
+2024-05-24 01:54:32,056 - Train: 93.65% [24350/26000]  [93.7/100.0] [batch_t 0.153 (0.104)] [data_t 0.114] [optim_t 0.039] [lr 0.000010] [cos 0.061 (0.058)]
+2024-05-24 01:54:37,264 - Train: 93.85% [24400/26000]  [93.8/100.0] [batch_t 0.055 (0.104)] [data_t 0.013] [optim_t 0.042] [lr 0.000010] [cos 0.067 (0.059)]
+2024-05-24 01:54:41,519 - ==> Total time: 0:51:35	 Eta: 0:03:17 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:54:43,756 - Train: 94.04% [24450/26000]  [94.0/100.0] [batch_t 0.115 (0.127)] [data_t 0.075] [optim_t 0.040] [lr 0.000010] [cos 0.068 (0.062)]
+2024-05-24 01:54:48,976 - Train: 94.23% [24500/26000]  [94.2/100.0] [batch_t 0.168 (0.104)] [data_t 0.127] [optim_t 0.042] [lr 0.000010] [cos 0.074 (0.059)]
+2024-05-24 01:54:54,228 - Train: 94.42% [24550/26000]  [94.4/100.0] [batch_t 0.203 (0.105)] [data_t 0.164] [optim_t 0.039] [lr 0.000010] [cos 0.056 (0.058)]
+2024-05-24 01:54:59,520 - Train: 94.62% [24600/26000]  [94.6/100.0] [batch_t 0.187 (0.106)] [data_t 0.148] [optim_t 0.039] [lr 0.000010] [cos 0.057 (0.059)]
+2024-05-24 01:55:04,519 - Train: 94.81% [24650/26000]  [94.8/100.0] [batch_t 0.019 (0.100)] [data_t 0.001] [optim_t 0.019] [lr 0.000010] [cos 0.065 (0.059)]
+2024-05-24 01:55:10,003 - Train: 95.00% [24700/26000]  [95.0/100.0] [batch_t 0.040 (0.110)] [data_t 0.000] [optim_t 0.039] [lr 0.000010] [cos 0.067 (0.058)]
+2024-05-24 01:55:10,005 - ==> Total time: 0:52:03	 Eta: 0:02:44 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:55:16,511 - Train: 95.19% [24750/26000]  [95.2/100.0] [batch_t 0.140 (0.109)] [data_t 0.101] [optim_t 0.039] [lr 0.000010] [cos 0.070 (0.059)]
+2024-05-24 01:55:21,577 - Train: 95.38% [24800/26000]  [95.4/100.0] [batch_t 0.040 (0.101)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.070 (0.058)]
+2024-05-24 01:55:27,102 - Train: 95.58% [24850/26000]  [95.6/100.0] [batch_t 0.040 (0.110)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.051 (0.060)]
+2024-05-24 01:55:32,065 - Train: 95.77% [24900/26000]  [95.8/100.0] [batch_t 0.040 (0.099)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.057)]
+2024-05-24 01:55:37,270 - Train: 95.96% [24950/26000]  [96.0/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.051 (0.059)]
+2024-05-24 01:55:38,173 - ==> Total time: 0:52:31	 Eta: 0:02:11 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:55:43,477 - Train: 96.15% [25000/26000]  [96.2/100.0] [batch_t 0.039 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.058 (0.058)]
+2024-05-24 01:55:48,793 - Train: 96.35% [25050/26000]  [96.3/100.0] [batch_t 0.039 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.067 (0.058)]
+2024-05-24 01:55:53,836 - Train: 96.54% [25100/26000]  [96.5/100.0] [batch_t 0.042 (0.101)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.078 (0.059)]
+2024-05-24 01:55:59,162 - Train: 96.73% [25150/26000]  [96.7/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.054 (0.059)]
+2024-05-24 01:56:04,180 - Train: 96.92% [25200/26000]  [96.9/100.0] [batch_t 0.019 (0.100)] [data_t 0.001] [optim_t 0.019] [lr 0.000010] [cos 0.048 (0.059)]
+2024-05-24 01:56:06,317 - ==> Total time: 0:52:59	 Eta: 0:01:38 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:56:10,528 - Train: 97.12% [25250/26000]  [97.1/100.0] [batch_t 0.042 (0.107)] [data_t 0.001] [optim_t 0.042] [lr 0.000010] [cos 0.062 (0.057)]
+2024-05-24 01:56:15,744 - Train: 97.31% [25300/26000]  [97.3/100.0] [batch_t 0.134 (0.104)] [data_t 0.096] [optim_t 0.038] [lr 0.000010] [cos 0.063 (0.057)]
+2024-05-24 01:56:20,972 - Train: 97.50% [25350/26000]  [97.5/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.060 (0.059)]
+2024-05-24 01:56:26,212 - Train: 97.69% [25400/26000]  [97.7/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.056 (0.060)]
+2024-05-24 01:56:31,479 - Train: 97.88% [25450/26000]  [97.9/100.0] [batch_t 0.040 (0.105)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.058 (0.058)]
+2024-05-24 01:56:34,550 - ==> Total time: 0:53:28	 Eta: 0:01:05 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:56:37,633 - Train: 98.08% [25500/26000]  [98.1/100.0] [batch_t 0.040 (0.108)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.042 (0.058)]
+2024-05-24 01:56:43,009 - Train: 98.27% [25550/26000]  [98.3/100.0] [batch_t 0.018 (0.107)] [data_t 0.001] [optim_t 0.018] [lr 0.000010] [cos 0.052 (0.057)]
+2024-05-24 01:56:48,161 - Train: 98.46% [25600/26000]  [98.5/100.0] [batch_t 0.039 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.053 (0.059)]
+2024-05-24 01:56:53,484 - Train: 98.65% [25650/26000]  [98.7/100.0] [batch_t 0.040 (0.106)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.052 (0.056)]
+2024-05-24 01:56:58,573 - Train: 98.85% [25700/26000]  [98.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.065 (0.061)]
+2024-05-24 01:57:02,771 - ==> Total time: 0:53:56	 Eta: 0:00:32 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:57:05,779 - Train: 99.04% [25750/26000]  [99.0/100.0] [batch_t 0.040 (0.129)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.062 (0.059)]
+2024-05-24 01:57:10,961 - Train: 99.23% [25800/26000]  [99.2/100.0] [batch_t 0.040 (0.104)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.064 (0.056)]
+2024-05-24 01:57:16,109 - Train: 99.42% [25850/26000]  [99.4/100.0] [batch_t 0.040 (0.103)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.050 (0.059)]
+2024-05-24 01:57:21,579 - Train: 99.62% [25900/26000]  [99.6/100.0] [batch_t 0.040 (0.109)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.063 (0.059)]
+2024-05-24 01:57:26,658 - Train: 99.81% [25950/26000]  [99.8/100.0] [batch_t 0.040 (0.102)] [data_t 0.001] [optim_t 0.039] [lr 0.000010] [cos 0.046 (0.060)]
+2024-05-24 01:57:31,850 - Train: 100.00% [26000/26000]  [100.0/100.0] [batch_t 0.040 (0.104)] [data_t 0.000] [optim_t 0.039] [lr 0.000010] [cos 0.055 (0.057)]
+2024-05-24 01:57:38,690 - Test: 25.51% [50/196] [batch_t 0.058 (0.130)] [cos 0.052 (0.090)]
+2024-05-24 01:57:43,324 - Test: 51.02% [100/196] [batch_t 0.042 (0.112)] [cos 0.062 (0.075)]
+2024-05-24 01:57:49,013 - Test: 76.53% [150/196] [batch_t 0.097 (0.112)] [cos 0.116 (0.084)]
+2024-05-24 01:57:53,482 - Test: 100.00% [196/196] [batch_t 0.025 (0.109)] [cos 0.041 (0.077)]
+2024-05-24 01:58:00,756 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.556 (mF1_max_px)	  0.193 (mF1_px_0.2_0.8_0.1)	  0.191 (mAcc_px_0.2_0.8_0.1)	  0.191 (mIoU_px_0.2_0.8_0.1)	  0.557 (mIoU_max_px)	
+2024-05-24 01:58:06,550 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.676 (mF1_max_px)	  0.231 (mF1_px_0.2_0.8_0.1)	  0.231 (mAcc_px_0.2_0.8_0.1)	  0.232 (mIoU_px_0.2_0.8_0.1)	  0.669 (mIoU_max_px)	
+2024-05-24 01:58:14,183 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.632 (mF1_max_px)	  0.217 (mF1_px_0.2_0.8_0.1)	  0.218 (mAcc_px_0.2_0.8_0.1)	  0.218 (mIoU_px_0.2_0.8_0.1)	  0.629 (mIoU_max_px)	
+2024-05-24 01:58:19,746 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.678 (mF1_max_px)	  0.229 (mF1_px_0.2_0.8_0.1)	  0.232 (mAcc_px_0.2_0.8_0.1)	  0.232 (mIoU_px_0.2_0.8_0.1)	  0.661 (mIoU_max_px)	
+2024-05-24 01:58:25,167 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.632 (mF1_max_px)	  0.218 (mF1_px_0.2_0.8_0.1)	  0.218 (mAcc_px_0.2_0.8_0.1)	  0.218 (mIoU_px_0.2_0.8_0.1)	  0.629 (mIoU_max_px)	
+2024-05-24 01:58:25,181 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     77.746      |  78.635 (50  epoch)   |    87.965    | 88.543 (50  epoch) |      78.759      |   79.675 (50  epoch)   |   70.299    | 70.938 (10  epoch) |   89.054    | 89.535 (10  epoch) |  56.104  | 56.224 (90  epoch) |    53.066    | 53.066 (100 epoch) |        22.528        |     22.732 (10  epoch)     |        30.372         |     35.925 (10  epoch)      |        13.963         |     13.981 (10  epoch)      |    36.116     | 36.116 (100 epoch)  |
+|    juice_bottle     |     90.268      |  90.268 (100 epoch)   |    96.363    | 96.363 (100 epoch) |      88.747      |   88.747 (100 epoch)   |   83.422    | 83.436 (90  epoch) |   88.600    | 88.706 (20  epoch) |  48.445  | 48.484 (90  epoch) |    49.092    | 49.657 (50  epoch) |        20.805        |     21.531 (50  epoch)     |        17.763         |     22.606 (10  epoch)      |        12.981         |     13.405 (50  epoch)      |    32.531     | 33.029 (50  epoch)  |
+|      pushpins       |     66.780      |  67.522 (80  epoch)   |    73.629    | 74.630 (80  epoch) |      72.170      |   72.444 (20  epoch)   |   57.119    | 57.119 (100 epoch) |   46.075    | 46.264 (80  epoch) |  2.201   | 2.295 (80  epoch)  |    5.983     | 6.393 (80  epoch)  |        2.822         |     2.862 (90  epoch)      |         3.494         |      7.265 (10  epoch)      |         1.441         |      1.461 (90  epoch)      |     3.084     |  3.302 (80  epoch)  |
+|      screw_bag      |     65.226      |  65.226 (100 epoch)   |    77.728    | 77.728 (100 epoch) |      79.008      |   80.297 (30  epoch)   |   42.236    | 47.649 (10  epoch) |   72.530    | 72.915 (20  epoch) |  13.158  | 13.272 (20  epoch) |    21.938    | 22.243 (20  epoch) |        6.970         |     9.635 (10  epoch)      |        14.938         |     27.275 (10  epoch)      |         3.801         |      5.291 (10  epoch)      |    12.321     | 12.513 (20  epoch)  |
+| splicing_connectors |     82.079      |  82.079 (100 epoch)   |    90.555    | 90.555 (100 epoch) |      79.558      |   80.000 (20  epoch)   |   62.388    | 63.173 (10  epoch) |   70.494    | 70.494 (100 epoch) |  23.700  | 23.700 (100 epoch) |    25.844    | 25.844 (100 epoch) |        8.895         |     11.361 (10  epoch)     |         7.056         |     13.619 (10  epoch)      |         4.907         |      6.228 (10  epoch)      |    14.840     | 14.840 (100 epoch)  |
+|         Avg         |     76.420      |  76.420 (100 epoch)   |    85.248    | 85.262 (90  epoch) |      79.648      |   79.712 (50  epoch)   |   63.093    | 63.753 (10  epoch) |   73.351    | 73.351 (100 epoch) |  28.722  | 28.722 (100 epoch) |    31.185    | 31.185 (100 epoch) |        12.404        |     13.247 (10  epoch)     |        14.725         |     21.338 (10  epoch)      |         7.419         |      7.818 (10  epoch)      |    19.778     | 19.778 (100 epoch)  |
+2024-05-24 01:58:25,334 - ==> Total time: 0:55:18	 Eta: 0:00:00 	Logged in 'runs/benchmark/vitad_256_100e/mvtec_loco/ViTADTrainer_configs_benchmark_vitad_256_100e_20240524-010306'
+2024-05-24 01:58:26,488 - finish training

@@ -1,0 +1,931 @@
+2024-05-24 20:15:05,661 - ==> Logging on master GPU: 0
+2024-05-24 20:15:05,662 - ==> Running Trainer: CFLOWTrainer
+2024-05-24 20:15:05,662 - ==> Using GPU: [0] for Training
+2024-05-24 20:15:05,662 - ==> Building model
+2024-05-24 20:15:07,540 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_2-95faca4d.pth'
+2024-05-24 20:19:27,076 - 
+------------------------------------ CFLOW ------------------------------------
+| module                                     | #parameters or shape    | #flops   |
+|:-------------------------------------------|:------------------------|:---------|
+| model                                      | 0.237G                  | 0        |
+|  encoder                                   |  66.834M                |          |
+|   encoder.conv1                            |   9.408K                |          |
+|    encoder.conv1.weight                    |    (64, 3, 7, 7)        |          |
+|   encoder.bn1                              |   0.128K                |          |
+|    encoder.bn1.weight                      |    (64,)                |          |
+|    encoder.bn1.bias                        |    (64,)                |          |
+|   encoder.layer1                           |   0.634M                |          |
+|    encoder.layer1.0                        |    0.206M               |          |
+|     encoder.layer1.0.conv1                 |     8.192K              |          |
+|      encoder.layer1.0.conv1.weight         |      (128, 64, 1, 1)    |          |
+|     encoder.layer1.0.bn1                   |     0.256K              |          |
+|      encoder.layer1.0.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.0.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.0.conv2                 |     0.147M              |          |
+|      encoder.layer1.0.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.0.bn2                   |     0.256K              |          |
+|      encoder.layer1.0.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.0.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.0.conv3                 |     32.768K             |          |
+|      encoder.layer1.0.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.0.bn3                   |     0.512K              |          |
+|      encoder.layer1.0.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.0.bn3.bias             |      (256,)             |          |
+|     encoder.layer1.0.downsample            |     16.896K             |          |
+|      encoder.layer1.0.downsample.0         |      16.384K            |          |
+|      encoder.layer1.0.downsample.1         |      0.512K             |          |
+|    encoder.layer1.1                        |    0.214M               |          |
+|     encoder.layer1.1.conv1                 |     32.768K             |          |
+|      encoder.layer1.1.conv1.weight         |      (128, 256, 1, 1)   |          |
+|     encoder.layer1.1.bn1                   |     0.256K              |          |
+|      encoder.layer1.1.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.1.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.1.conv2                 |     0.147M              |          |
+|      encoder.layer1.1.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.1.bn2                   |     0.256K              |          |
+|      encoder.layer1.1.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.1.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.1.conv3                 |     32.768K             |          |
+|      encoder.layer1.1.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.1.bn3                   |     0.512K              |          |
+|      encoder.layer1.1.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.1.bn3.bias             |      (256,)             |          |
+|    encoder.layer1.2                        |    0.214M               |          |
+|     encoder.layer1.2.conv1                 |     32.768K             |          |
+|      encoder.layer1.2.conv1.weight         |      (128, 256, 1, 1)   |          |
+|     encoder.layer1.2.bn1                   |     0.256K              |          |
+|      encoder.layer1.2.bn1.weight           |      (128,)             |          |
+|      encoder.layer1.2.bn1.bias             |      (128,)             |          |
+|     encoder.layer1.2.conv2                 |     0.147M              |          |
+|      encoder.layer1.2.conv2.weight         |      (128, 128, 3, 3)   |          |
+|     encoder.layer1.2.bn2                   |     0.256K              |          |
+|      encoder.layer1.2.bn2.weight           |      (128,)             |          |
+|      encoder.layer1.2.bn2.bias             |      (128,)             |          |
+|     encoder.layer1.2.conv3                 |     32.768K             |          |
+|      encoder.layer1.2.conv3.weight         |      (256, 128, 1, 1)   |          |
+|     encoder.layer1.2.bn3                   |     0.512K              |          |
+|      encoder.layer1.2.bn3.weight           |      (256,)             |          |
+|      encoder.layer1.2.bn3.bias             |      (256,)             |          |
+|   encoder.layer2                           |   3.483M                |          |
+|    encoder.layer2.0                        |    0.921M               |          |
+|     encoder.layer2.0.conv1                 |     65.536K             |          |
+|      encoder.layer2.0.conv1.weight         |      (256, 256, 1, 1)   |          |
+|     encoder.layer2.0.bn1                   |     0.512K              |          |
+|      encoder.layer2.0.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.0.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.0.conv2                 |     0.59M               |          |
+|      encoder.layer2.0.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.0.bn2                   |     0.512K              |          |
+|      encoder.layer2.0.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.0.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.0.conv3                 |     0.131M              |          |
+|      encoder.layer2.0.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.0.bn3                   |     1.024K              |          |
+|      encoder.layer2.0.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.0.bn3.bias             |      (512,)             |          |
+|     encoder.layer2.0.downsample            |     0.132M              |          |
+|      encoder.layer2.0.downsample.0         |      0.131M             |          |
+|      encoder.layer2.0.downsample.1         |      1.024K             |          |
+|    encoder.layer2.1                        |    0.854M               |          |
+|     encoder.layer2.1.conv1                 |     0.131M              |          |
+|      encoder.layer2.1.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.1.bn1                   |     0.512K              |          |
+|      encoder.layer2.1.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.1.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.1.conv2                 |     0.59M               |          |
+|      encoder.layer2.1.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.1.bn2                   |     0.512K              |          |
+|      encoder.layer2.1.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.1.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.1.conv3                 |     0.131M              |          |
+|      encoder.layer2.1.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.1.bn3                   |     1.024K              |          |
+|      encoder.layer2.1.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.1.bn3.bias             |      (512,)             |          |
+|    encoder.layer2.2                        |    0.854M               |          |
+|     encoder.layer2.2.conv1                 |     0.131M              |          |
+|      encoder.layer2.2.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.2.bn1                   |     0.512K              |          |
+|      encoder.layer2.2.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.2.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.2.conv2                 |     0.59M               |          |
+|      encoder.layer2.2.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.2.bn2                   |     0.512K              |          |
+|      encoder.layer2.2.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.2.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.2.conv3                 |     0.131M              |          |
+|      encoder.layer2.2.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.2.bn3                   |     1.024K              |          |
+|      encoder.layer2.2.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.2.bn3.bias             |      (512,)             |          |
+|    encoder.layer2.3                        |    0.854M               |          |
+|     encoder.layer2.3.conv1                 |     0.131M              |          |
+|      encoder.layer2.3.conv1.weight         |      (256, 512, 1, 1)   |          |
+|     encoder.layer2.3.bn1                   |     0.512K              |          |
+|      encoder.layer2.3.bn1.weight           |      (256,)             |          |
+|      encoder.layer2.3.bn1.bias             |      (256,)             |          |
+|     encoder.layer2.3.conv2                 |     0.59M               |          |
+|      encoder.layer2.3.conv2.weight         |      (256, 256, 3, 3)   |          |
+|     encoder.layer2.3.bn2                   |     0.512K              |          |
+|      encoder.layer2.3.bn2.weight           |      (256,)             |          |
+|      encoder.layer2.3.bn2.bias             |      (256,)             |          |
+|     encoder.layer2.3.conv3                 |     0.131M              |          |
+|      encoder.layer2.3.conv3.weight         |      (512, 256, 1, 1)   |          |
+|     encoder.layer2.3.bn3                   |     1.024K              |          |
+|      encoder.layer2.3.bn3.weight           |      (512,)             |          |
+|      encoder.layer2.3.bn3.bias             |      (512,)             |          |
+|   encoder.layer3                           |   20.736M               |          |
+|    encoder.layer3.0                        |    3.676M               |          |
+|     encoder.layer3.0.conv1                 |     0.262M              |          |
+|      encoder.layer3.0.conv1.weight         |      (512, 512, 1, 1)   |          |
+|     encoder.layer3.0.bn1                   |     1.024K              |          |
+|      encoder.layer3.0.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.0.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.0.conv2                 |     2.359M              |          |
+|      encoder.layer3.0.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.0.bn2                   |     1.024K              |          |
+|      encoder.layer3.0.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.0.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.0.conv3                 |     0.524M              |          |
+|      encoder.layer3.0.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.0.bn3                   |     2.048K              |          |
+|      encoder.layer3.0.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.0.bn3.bias             |      (1024,)            |          |
+|     encoder.layer3.0.downsample            |     0.526M              |          |
+|      encoder.layer3.0.downsample.0         |      0.524M             |          |
+|      encoder.layer3.0.downsample.1         |      2.048K             |          |
+|    encoder.layer3.1                        |    3.412M               |          |
+|     encoder.layer3.1.conv1                 |     0.524M              |          |
+|      encoder.layer3.1.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.1.bn1                   |     1.024K              |          |
+|      encoder.layer3.1.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.1.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.1.conv2                 |     2.359M              |          |
+|      encoder.layer3.1.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.1.bn2                   |     1.024K              |          |
+|      encoder.layer3.1.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.1.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.1.conv3                 |     0.524M              |          |
+|      encoder.layer3.1.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.1.bn3                   |     2.048K              |          |
+|      encoder.layer3.1.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.1.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.2                        |    3.412M               |          |
+|     encoder.layer3.2.conv1                 |     0.524M              |          |
+|      encoder.layer3.2.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.2.bn1                   |     1.024K              |          |
+|      encoder.layer3.2.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.2.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.2.conv2                 |     2.359M              |          |
+|      encoder.layer3.2.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.2.bn2                   |     1.024K              |          |
+|      encoder.layer3.2.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.2.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.2.conv3                 |     0.524M              |          |
+|      encoder.layer3.2.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.2.bn3                   |     2.048K              |          |
+|      encoder.layer3.2.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.2.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.3                        |    3.412M               |          |
+|     encoder.layer3.3.conv1                 |     0.524M              |          |
+|      encoder.layer3.3.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.3.bn1                   |     1.024K              |          |
+|      encoder.layer3.3.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.3.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.3.conv2                 |     2.359M              |          |
+|      encoder.layer3.3.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.3.bn2                   |     1.024K              |          |
+|      encoder.layer3.3.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.3.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.3.conv3                 |     0.524M              |          |
+|      encoder.layer3.3.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.3.bn3                   |     2.048K              |          |
+|      encoder.layer3.3.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.3.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.4                        |    3.412M               |          |
+|     encoder.layer3.4.conv1                 |     0.524M              |          |
+|      encoder.layer3.4.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.4.bn1                   |     1.024K              |          |
+|      encoder.layer3.4.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.4.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.4.conv2                 |     2.359M              |          |
+|      encoder.layer3.4.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.4.bn2                   |     1.024K              |          |
+|      encoder.layer3.4.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.4.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.4.conv3                 |     0.524M              |          |
+|      encoder.layer3.4.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.4.bn3                   |     2.048K              |          |
+|      encoder.layer3.4.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.4.bn3.bias             |      (1024,)            |          |
+|    encoder.layer3.5                        |    3.412M               |          |
+|     encoder.layer3.5.conv1                 |     0.524M              |          |
+|      encoder.layer3.5.conv1.weight         |      (512, 1024, 1, 1)  |          |
+|     encoder.layer3.5.bn1                   |     1.024K              |          |
+|      encoder.layer3.5.bn1.weight           |      (512,)             |          |
+|      encoder.layer3.5.bn1.bias             |      (512,)             |          |
+|     encoder.layer3.5.conv2                 |     2.359M              |          |
+|      encoder.layer3.5.conv2.weight         |      (512, 512, 3, 3)   |          |
+|     encoder.layer3.5.bn2                   |     1.024K              |          |
+|      encoder.layer3.5.bn2.weight           |      (512,)             |          |
+|      encoder.layer3.5.bn2.bias             |      (512,)             |          |
+|     encoder.layer3.5.conv3                 |     0.524M              |          |
+|      encoder.layer3.5.conv3.weight         |      (1024, 512, 1, 1)  |          |
+|     encoder.layer3.5.bn3                   |     2.048K              |          |
+|      encoder.layer3.5.bn3.weight           |      (1024,)            |          |
+|      encoder.layer3.5.bn3.bias             |      (1024,)            |          |
+|   encoder.layer4                           |   41.972M               |          |
+|    encoder.layer4.0                        |    14.692M              |          |
+|     encoder.layer4.0.conv1                 |     1.049M              |          |
+|      encoder.layer4.0.conv1.weight         |      (1024, 1024, 1, 1) |          |
+|     encoder.layer4.0.bn1                   |     2.048K              |          |
+|      encoder.layer4.0.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.0.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.0.conv2                 |     9.437M              |          |
+|      encoder.layer4.0.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.0.bn2                   |     2.048K              |          |
+|      encoder.layer4.0.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.0.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.0.conv3                 |     2.097M              |          |
+|      encoder.layer4.0.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.0.bn3                   |     4.096K              |          |
+|      encoder.layer4.0.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.0.bn3.bias             |      (2048,)            |          |
+|     encoder.layer4.0.downsample            |     2.101M              |          |
+|      encoder.layer4.0.downsample.0         |      2.097M             |          |
+|      encoder.layer4.0.downsample.1         |      4.096K             |          |
+|    encoder.layer4.1                        |    13.64M               |          |
+|     encoder.layer4.1.conv1                 |     2.097M              |          |
+|      encoder.layer4.1.conv1.weight         |      (1024, 2048, 1, 1) |          |
+|     encoder.layer4.1.bn1                   |     2.048K              |          |
+|      encoder.layer4.1.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.1.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.1.conv2                 |     9.437M              |          |
+|      encoder.layer4.1.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.1.bn2                   |     2.048K              |          |
+|      encoder.layer4.1.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.1.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.1.conv3                 |     2.097M              |          |
+|      encoder.layer4.1.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.1.bn3                   |     4.096K              |          |
+|      encoder.layer4.1.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.1.bn3.bias             |      (2048,)            |          |
+|    encoder.layer4.2                        |    13.64M               |          |
+|     encoder.layer4.2.conv1                 |     2.097M              |          |
+|      encoder.layer4.2.conv1.weight         |      (1024, 2048, 1, 1) |          |
+|     encoder.layer4.2.bn1                   |     2.048K              |          |
+|      encoder.layer4.2.bn1.weight           |      (1024,)            |          |
+|      encoder.layer4.2.bn1.bias             |      (1024,)            |          |
+|     encoder.layer4.2.conv2                 |     9.437M              |          |
+|      encoder.layer4.2.conv2.weight         |      (1024, 1024, 3, 3) |          |
+|     encoder.layer4.2.bn2                   |     2.048K              |          |
+|      encoder.layer4.2.bn2.weight           |      (1024,)            |          |
+|      encoder.layer4.2.bn2.bias             |      (1024,)            |          |
+|     encoder.layer4.2.conv3                 |     2.097M              |          |
+|      encoder.layer4.2.conv3.weight         |      (2048, 1024, 1, 1) |          |
+|     encoder.layer4.2.bn3                   |     4.096K              |          |
+|      encoder.layer4.2.bn3.weight           |      (2048,)            |          |
+|      encoder.layer4.2.bn3.bias             |      (2048,)            |          |
+|  decoders                                  |  0.17G                  |          |
+|   decoders.0.module_list                   |   9.718M                |          |
+|    decoders.0.module_list.0                |    1.215M               |          |
+|     decoders.0.module_list.0.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.0.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.0.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.0.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.0.subnet        |     0.689M              |          |
+|      decoders.0.module_list.0.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.0.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.1                |    1.215M               |          |
+|     decoders.0.module_list.1.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.1.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.1.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.1.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.1.subnet        |     0.689M              |          |
+|      decoders.0.module_list.1.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.1.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.2                |    1.215M               |          |
+|     decoders.0.module_list.2.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.2.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.2.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.2.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.2.subnet        |     0.689M              |          |
+|      decoders.0.module_list.2.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.2.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.3                |    1.215M               |          |
+|     decoders.0.module_list.3.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.3.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.3.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.3.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.3.subnet        |     0.689M              |          |
+|      decoders.0.module_list.3.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.3.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.4                |    1.215M               |          |
+|     decoders.0.module_list.4.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.4.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.4.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.4.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.4.subnet        |     0.689M              |          |
+|      decoders.0.module_list.4.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.4.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.5                |    1.215M               |          |
+|     decoders.0.module_list.5.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.5.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.5.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.5.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.5.subnet        |     0.689M              |          |
+|      decoders.0.module_list.5.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.5.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.6                |    1.215M               |          |
+|     decoders.0.module_list.6.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.6.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.6.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.6.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.6.subnet        |     0.689M              |          |
+|      decoders.0.module_list.6.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.6.subnet.2     |      0.394M             |          |
+|    decoders.0.module_list.7                |    1.215M               |          |
+|     decoders.0.module_list.7.global_scale  |     (1, 512)            |          |
+|     decoders.0.module_list.7.global_offset |     (1, 512)            |          |
+|     decoders.0.module_list.7.w_perm        |     (512, 512)          |          |
+|     decoders.0.module_list.7.w_perm_inv    |     (512, 512)          |          |
+|     decoders.0.module_list.7.subnet        |     0.689M              |          |
+|      decoders.0.module_list.7.subnet.0     |      0.296M             |          |
+|      decoders.0.module_list.7.subnet.2     |      0.394M             |          |
+|   decoders.1.module_list                   |   33.851M               |          |
+|    decoders.1.module_list.0                |    4.231M               |          |
+|     decoders.1.module_list.0.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.0.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.0.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.0.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.0.subnet        |     2.132M              |          |
+|      decoders.1.module_list.0.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.0.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.1                |    4.231M               |          |
+|     decoders.1.module_list.1.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.1.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.1.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.1.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.1.subnet        |     2.132M              |          |
+|      decoders.1.module_list.1.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.1.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.2                |    4.231M               |          |
+|     decoders.1.module_list.2.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.2.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.2.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.2.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.2.subnet        |     2.132M              |          |
+|      decoders.1.module_list.2.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.2.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.3                |    4.231M               |          |
+|     decoders.1.module_list.3.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.3.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.3.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.3.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.3.subnet        |     2.132M              |          |
+|      decoders.1.module_list.3.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.3.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.4                |    4.231M               |          |
+|     decoders.1.module_list.4.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.4.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.4.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.4.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.4.subnet        |     2.132M              |          |
+|      decoders.1.module_list.4.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.4.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.5                |    4.231M               |          |
+|     decoders.1.module_list.5.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.5.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.5.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.5.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.5.subnet        |     2.132M              |          |
+|      decoders.1.module_list.5.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.5.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.6                |    4.231M               |          |
+|     decoders.1.module_list.6.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.6.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.6.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.6.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.6.subnet        |     2.132M              |          |
+|      decoders.1.module_list.6.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.6.subnet.2     |      1.312M             |          |
+|    decoders.1.module_list.7                |    4.231M               |          |
+|     decoders.1.module_list.7.global_scale  |     (1, 1024)           |          |
+|     decoders.1.module_list.7.global_offset |     (1, 1024)           |          |
+|     decoders.1.module_list.7.w_perm        |     (1024, 1024)        |          |
+|     decoders.1.module_list.7.w_perm_inv    |     (1024, 1024)        |          |
+|     decoders.1.module_list.7.subnet        |     2.132M              |          |
+|      decoders.1.module_list.7.subnet.0     |      0.82M              |          |
+|      decoders.1.module_list.7.subnet.2     |      1.312M             |          |
+|   decoders.2.module_list                   |   0.126G                |          |
+|    decoders.2.module_list.0                |    15.77M               |          |
+|     decoders.2.module_list.0.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.0.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.0.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.0.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.0.subnet        |     7.377M              |          |
+|      decoders.2.module_list.0.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.0.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.1                |    15.77M               |          |
+|     decoders.2.module_list.1.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.1.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.1.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.1.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.1.subnet        |     7.377M              |          |
+|      decoders.2.module_list.1.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.1.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.2                |    15.77M               |          |
+|     decoders.2.module_list.2.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.2.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.2.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.2.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.2.subnet        |     7.377M              |          |
+|      decoders.2.module_list.2.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.2.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.3                |    15.77M               |          |
+|     decoders.2.module_list.3.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.3.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.3.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.3.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.3.subnet        |     7.377M              |          |
+|      decoders.2.module_list.3.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.3.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.4                |    15.77M               |          |
+|     decoders.2.module_list.4.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.4.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.4.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.4.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.4.subnet        |     7.377M              |          |
+|      decoders.2.module_list.4.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.4.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.5                |    15.77M               |          |
+|     decoders.2.module_list.5.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.5.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.5.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.5.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.5.subnet        |     7.377M              |          |
+|      decoders.2.module_list.5.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.5.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.6                |    15.77M               |          |
+|     decoders.2.module_list.6.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.6.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.6.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.6.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.6.subnet        |     7.377M              |          |
+|      decoders.2.module_list.6.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.6.subnet.2     |      4.721M             |          |
+|    decoders.2.module_list.7                |    15.77M               |          |
+|     decoders.2.module_list.7.global_scale  |     (1, 2048)           |          |
+|     decoders.2.module_list.7.global_offset |     (1, 2048)           |          |
+|     decoders.2.module_list.7.w_perm        |     (2048, 2048)        |          |
+|     decoders.2.module_list.7.w_perm_inv    |     (2048, 2048)        |          |
+|     decoders.2.module_list.7.subnet        |     7.377M              |          |
+|      decoders.2.module_list.7.subnet.0     |      2.657M             |          |
+|      decoders.2.module_list.7.subnet.2     |      4.721M             |          |
+-------------------------------------------------------------------------------
+2024-05-24 20:19:27,079 - ==> Creating optimizer
+2024-05-24 20:19:27,096 - ==> Loading dataset: DefaultAD
+2024-05-24 20:19:27,125 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 10                                  
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.0002                              
+optim.kwargs                         : {'name': 'adam', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0, 'amsgrad': False}
+trainer.name                         : CFLOWTrainer                        
+trainer.checkpoint                   : runs/benchmark/cflow_256_100e/btad  
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 10                                  
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 2e-06, 'warmup_lr': 2.0000000000000002e-07, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 8, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.lr                           : 0.0002                              
+trainer.lr_warm_epochs               : 2                                   
+trainer.lr_cosine                    : True                                
+trainer.lr_warm                      : True                                
+trainer.lr_decay_rate                : 0.1                                 
+trainer.meta_epochs                  : 10                                  
+trainer.sub_epochs                   : 10                                  
+trainer.lr_decay_epochs              : [5, 7, 9]                           
+trainer.lr_warmup_from               : 2e-05                               
+trainer.lr_warmup_to                 : 0.00018092079773805725              
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 560                                 
+trainer.metric_recorder              : {'mAUROC_sp_max_01': [], 'mAP_sp_max_01': [], 'mF1_max_sp_max_01': [], 'mAUPRO_px_01': [], 'mAUROC_px_01': [], 'mAP_px_01': [], 'mF1_max_px_01': [], 'mF1_px_0.2_0.8_0.1_01': [], 'mAcc_px_0.2_0.8_0.1_01': [], 'mIoU_px_0.2_0.8_0.1_01': [], 'mIoU_max_px_01': [], 'mAUROC_sp_max_02': [], 'mAP_sp_max_02': [], 'mF1_max_sp_max_02': [], 'mAUPRO_px_02': [], 'mAUROC_px_02': [], 'mAP_px_02': [], 'mF1_max_px_02': [], 'mF1_px_0.2_0.8_0.1_02': [], 'mAcc_px_0.2_0.8_0.1_02': [], 'mIoU_px_0.2_0.8_0.1_02': [], 'mIoU_max_px_02': [], 'mAUROC_sp_max_03': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_03': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_03': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_03': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_03': [], 'mAUROC_px_Avg': [], 'mAP_px_03': [], 'mAP_px_Avg': [], 'mF1_max_px_03': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_03': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_03': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_03': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_03': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : None                                
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/btad                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'RandomRotation', 'degrees': 5}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 56                                  
+data.test_size                       : 24                                  
+data.train_length                    : 1799                                
+data.test_length                     : 741                                 
+model_backbone.name                  : timm_wide_resnet50_2                
+model_backbone.device                : cuda                                
+model_backbone.dec_arch              : freia-cflow                         
+model_backbone.condition_vec         : 128                                 
+model_backbone.coupling_blocks       : 8                                   
+model_backbone.clamp_alpha           : 1.9                                 
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}
+model.name                           : cflow                               
+model.pool_layers                    : 3                                   
+model.N                              : 256                                 
+model.kwargs                         : {'pretrained': True, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='timm_wide_resnet50_2', device='cuda', dec_arch='freia-cflow', condition_vec=128, coupling_blocks=8, clamp_alpha=1.9, kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}), 'L': 3, 'N': 256}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.0002                              
+weight_decay                         : 0.0                                 
+cfg_path                             : configs.benchmark.cflow_256_100e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/cflow_256_100e/btad', 'data.root=data/btad']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.cflow_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/cflow_256_100e/btad data.root=data/btad
+task_start_time                      : 2881546.880412982                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505/show_train
+logdir_test                          : runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505/show_test
+2024-05-24 20:19:27,127 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-24 20:20:33,481 - Train: 0.89% [50/5600]  [0.9/100.0] [batch_t 1.213 (1.326)] [data_t 0.001] [optim_t 1.211] [pixel 0.722 (0.939)]
+2024-05-24 20:20:40,773 - ==> Total time: 0:05:35	 Eta: 0:50:16 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:21:37,085 - Train: 1.79% [100/5600]  [1.8/100.0] [batch_t 1.205 (1.221)] [data_t 0.001] [optim_t 1.204] [pixel 0.592 (0.665)]
+2024-05-24 20:21:51,656 - ==> Total time: 0:06:46	 Eta: 0:27:04 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:22:40,485 - Train: 2.68% [150/5600]  [2.7/100.0] [batch_t 1.222 (1.206)] [data_t 0.001] [optim_t 1.221] [pixel 0.588 (0.570)]
+2024-05-24 20:23:02,398 - ==> Total time: 0:07:56	 Eta: 0:18:32 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:23:42,933 - Train: 3.57% [200/5600]  [3.6/100.0] [batch_t 1.103 (1.123)] [data_t 0.002] [optim_t 1.101] [pixel 0.497 (0.524)]
+2024-05-24 20:24:09,401 - ==> Total time: 0:09:03	 Eta: 0:13:35 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:24:41,582 - Train: 4.46% [250/5600]  [4.5/100.0] [batch_t 1.105 (1.120)] [data_t 0.001] [optim_t 1.103] [pixel 0.503 (0.492)]
+2024-05-24 20:25:16,081 - ==> Total time: 0:10:10	 Eta: 0:10:10 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:25:41,712 - Train: 5.36% [300/5600]  [5.4/100.0] [batch_t 1.098 (1.123)] [data_t 0.001] [optim_t 1.097] [pixel 0.463 (0.472)]
+2024-05-24 20:26:21,436 - ==> Total time: 0:11:15	 Eta: 0:07:30 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:26:40,556 - Train: 6.25% [350/5600]  [6.2/100.0] [batch_t 1.101 (1.131)] [data_t 0.001] [optim_t 1.100] [pixel 0.470 (0.452)]
+2024-05-24 20:27:27,202 - ==> Total time: 0:12:21	 Eta: 0:05:17 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:27:39,443 - Train: 7.14% [400/5600]  [7.1/100.0] [batch_t 1.098 (1.145)] [data_t 0.001] [optim_t 1.097] [pixel 0.444 (0.447)]
+2024-05-24 20:28:35,000 - ==> Total time: 0:13:29	 Eta: 0:03:22 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:28:40,950 - Train: 8.04% [450/5600]  [8.0/100.0] [batch_t 1.215 (1.353)] [data_t 0.001] [optim_t 1.214] [pixel 0.423 (0.418)]
+2024-05-24 20:29:41,527 - Train: 8.93% [500/5600]  [8.9/100.0] [batch_t 1.203 (1.211)] [data_t 0.001] [optim_t 1.201] [pixel 0.424 (0.416)]
+2024-05-24 20:29:46,339 - ==> Total time: 0:14:40	 Eta: 0:01:37 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:30:45,205 - Train: 9.82% [550/5600]  [9.8/100.0] [batch_t 1.202 (1.212)] [data_t 0.001] [optim_t 1.200] [pixel 0.400 (0.407)]
+2024-05-24 20:31:11,680 - Test: 100.00% [24/24] [batch_t 1.197 (0.593)] [pixel 0.426 (0.498)]
+2024-05-24 20:31:12,985 - ==> Metric Time for 01             :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.135 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-24 20:31:15,581 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.484 (mF1_max_px)	  0.169 (mF1_px_0.2_0.8_0.1)	  0.168 (mAcc_px_0.2_0.8_0.1)	  0.169 (mIoU_px_0.2_0.8_0.1)	  0.487 (mIoU_max_px)	
+2024-05-24 20:31:20,408 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.920 (mF1_max_px)	  0.322 (mF1_px_0.2_0.8_0.1)	  0.320 (mAcc_px_0.2_0.8_0.1)	  0.316 (mIoU_px_0.2_0.8_0.1)	  0.930 (mIoU_max_px)	
+2024-05-24 20:31:20,428 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     95.530      |  95.530 (10  epoch)   |    98.362    | 98.362 (10  epoch) |      93.478      |   93.478 (10  epoch)   |   65.989    | 65.989 (10  epoch) |   93.807    | 93.807 (10  epoch) |  36.794  | 36.794 (10  epoch) |    44.899    | 44.899 (10  epoch) |        20.668        |     20.668 (10  epoch)     |        84.007         |     84.007 (10  epoch)      |        12.287         |     12.287 (10  epoch)      |    28.948     | 28.948 (10  epoch)  |
+|   02   |     81.002      |  81.002 (10  epoch)   |    96.894    | 96.894 (10  epoch) |      92.958      |   92.958 (10  epoch)   |   53.031    | 53.031 (10  epoch) |   95.653    | 95.653 (10  epoch) |  49.738  | 49.738 (10  epoch) |    56.849    | 56.849 (10  epoch) |        36.918        |     36.918 (10  epoch)     |        90.896         |     90.896 (10  epoch)      |        23.663         |     23.663 (10  epoch)      |    39.713     | 39.713 (10  epoch)  |
+|   03   |     98.308      |  98.308 (10  epoch)   |    86.452    | 86.452 (10  epoch) |      80.000      |   80.000 (10  epoch)   |   96.829    | 96.829 (10  epoch) |   99.249    | 99.249 (10  epoch) |  44.301  | 44.301 (10  epoch) |    48.015    | 48.015 (10  epoch) |        4.784         |     4.784 (10  epoch)      |        97.347         |     97.347 (10  epoch)      |         2.671         |      2.671 (10  epoch)      |    31.592     | 31.592 (10  epoch)  |
+|  Avg   |     91.613      |  91.613 (10  epoch)   |    93.902    | 93.902 (10  epoch) |      88.812      |   88.812 (10  epoch)   |   71.950    | 71.950 (10  epoch) |   96.236    | 96.236 (10  epoch) |  43.611  | 43.611 (10  epoch) |    49.921    | 49.921 (10  epoch) |        20.790        |     20.790 (10  epoch)     |        90.750         |     90.750 (10  epoch)      |        12.874         |     12.874 (10  epoch)      |    33.417     | 33.417 (10  epoch)  |
+2024-05-24 20:31:20,603 - ==> Total time: 0:16:15	 Eta: 0:00:00 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:32:11,406 - Train: 10.71% [600/5600]  [10.7/100.0] [batch_t 1.103 (1.167)] [data_t 0.001] [optim_t 1.101] [pixel 0.385 (0.401)]
+2024-05-24 20:32:29,034 - ==> Total time: 0:17:23	 Eta: -1 day, 23:58:26 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:33:18,067 - Train: 11.61% [650/5600]  [11.6/100.0] [batch_t 1.354 (1.350)] [data_t 0.002] [optim_t 1.353] [pixel 0.511 (0.602)]
+2024-05-24 20:33:47,387 - ==> Total time: 0:18:41	 Eta: -1 day, 23:56:54 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:34:28,038 - Train: 12.50% [700/5600]  [12.5/100.0] [batch_t 1.346 (1.347)] [data_t 0.001] [optim_t 1.344] [pixel 0.404 (0.406)]
+2024-05-24 20:35:05,425 - ==> Total time: 0:19:59	 Eta: -1 day, 23:55:24 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:35:35,226 - Train: 13.39% [750/5600]  [13.4/100.0] [batch_t 1.113 (1.206)] [data_t 0.001] [optim_t 1.111] [pixel 0.384 (0.383)]
+2024-05-24 20:36:13,307 - ==> Total time: 0:21:07	 Eta: -1 day, 23:53:58 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:36:34,551 - Train: 14.29% [800/5600]  [14.3/100.0] [batch_t 1.113 (1.130)] [data_t 0.002] [optim_t 1.112] [pixel 0.386 (0.380)]
+2024-05-24 20:37:19,251 - ==> Total time: 0:22:13	 Eta: -1 day, 23:52:36 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:37:33,575 - Train: 15.18% [850/5600]  [15.2/100.0] [batch_t 1.117 (1.149)] [data_t 0.001] [optim_t 1.116] [pixel 0.382 (0.371)]
+2024-05-24 20:38:24,660 - ==> Total time: 0:23:19	 Eta: -1 day, 23:51:16 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:38:32,296 - Train: 16.07% [900/5600]  [16.1/100.0] [batch_t 1.108 (1.194)] [data_t 0.002] [optim_t 1.107] [pixel 0.393 (0.379)]
+2024-05-24 20:39:32,763 - Train: 16.96% [950/5600]  [17.0/100.0] [batch_t 1.227 (1.209)] [data_t 0.001] [optim_t 1.225] [pixel 0.363 (0.361)]
+2024-05-24 20:39:35,228 - ==> Total time: 0:24:29	 Eta: -1 day, 23:49:55 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:40:36,679 - Train: 17.86% [1000/5600]  [17.9/100.0] [batch_t 1.215 (1.221)] [data_t 0.001] [optim_t 1.214] [pixel 0.366 (0.353)]
+2024-05-24 20:40:46,354 - ==> Total time: 0:25:40	 Eta: -1 day, 23:48:36 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:41:38,429 - Train: 18.75% [1050/5600]  [18.8/100.0] [batch_t 1.104 (1.174)] [data_t 0.001] [optim_t 1.103] [pixel 0.349 (0.350)]
+2024-05-24 20:41:54,069 - ==> Total time: 0:26:48	 Eta: -1 day, 23:47:19 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:42:36,915 - Train: 19.64% [1100/5600]  [19.6/100.0] [batch_t 1.102 (1.113)] [data_t 0.001] [optim_t 1.101] [pixel 0.324 (0.345)]
+2024-05-24 20:43:12,016 - Test: 100.00% [24/24] [batch_t 0.119 (0.538)] [pixel 0.372 (0.440)]
+2024-05-24 20:43:13,303 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.129 (mIoU_max_px)	
+2024-05-24 20:43:15,805 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.458 (mF1_max_px)	  0.159 (mF1_px_0.2_0.8_0.1)	  0.158 (mAcc_px_0.2_0.8_0.1)	  0.159 (mIoU_px_0.2_0.8_0.1)	  0.458 (mIoU_max_px)	
+2024-05-24 20:43:20,400 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.906 (mF1_max_px)	  0.311 (mF1_px_0.2_0.8_0.1)	  0.313 (mAcc_px_0.2_0.8_0.1)	  0.314 (mIoU_px_0.2_0.8_0.1)	  0.902 (mIoU_max_px)	
+2024-05-24 20:43:20,425 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     96.793      |  96.793 (20  epoch)   |    98.747    | 98.747 (20  epoch) |      93.878      |   93.878 (20  epoch)   |   66.831    | 66.831 (20  epoch) |   94.316    | 94.316 (20  epoch) |  38.154  | 38.154 (20  epoch) |    46.423    | 46.423 (20  epoch) |        20.225        |     20.668 (10  epoch)     |        86.741         |     86.741 (20  epoch)      |        12.048         |     12.287 (10  epoch)      |    30.228     | 30.228 (20  epoch)  |
+|   02   |     81.018      |  81.018 (20  epoch)   |    96.916    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   53.606    | 53.606 (20  epoch) |   96.152    | 96.152 (20  epoch) |  57.450  | 57.450 (20  epoch) |    60.650    | 60.650 (20  epoch) |        36.505        |     36.918 (10  epoch)     |        93.269         |     93.269 (20  epoch)      |        23.573         |     23.663 (10  epoch)      |    43.523     | 43.523 (20  epoch)  |
+|   03   |     98.828      |  98.828 (20  epoch)   |    90.006    | 90.006 (20  epoch) |      81.250      |   81.250 (20  epoch)   |   97.186    | 97.186 (20  epoch) |   99.361    | 99.361 (20  epoch) |  43.382  | 44.301 (10  epoch) |    47.121    | 48.015 (10  epoch) |        3.535         |     4.784 (10  epoch)      |        98.550         |     98.550 (20  epoch)      |         1.917         |      2.671 (10  epoch)      |    30.822     | 31.592 (10  epoch)  |
+|  Avg   |     92.213      |  92.213 (20  epoch)   |    95.223    | 95.223 (20  epoch) |      89.300      |   89.300 (20  epoch)   |   72.541    | 72.541 (20  epoch) |   96.610    | 96.610 (20  epoch) |  46.329  | 46.329 (20  epoch) |    51.398    | 51.398 (20  epoch) |        20.088        |     20.790 (10  epoch)     |        92.853         |     92.853 (20  epoch)      |        12.513         |     12.874 (10  epoch)      |    34.858     | 34.858 (20  epoch)  |
+2024-05-24 20:43:20,594 - ==> Total time: 0:28:15	 Eta: -1 day, 23:45:53 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:43:58,146 - Train: 20.54% [1150/5600]  [20.5/100.0] [batch_t 1.096 (1.117)] [data_t 0.001] [optim_t 1.095] [pixel 0.353 (0.338)]
+2024-05-24 20:44:26,903 - ==> Total time: 0:29:21	 Eta: -1 day, 23:44:38 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:44:56,904 - Train: 21.43% [1200/5600]  [21.4/100.0] [batch_t 1.109 (1.132)] [data_t 0.001] [optim_t 1.108] [pixel 0.482 (0.569)]
+2024-05-24 20:45:32,218 - ==> Total time: 0:30:26	 Eta: -1 day, 23:43:24 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:45:56,854 - Train: 22.32% [1250/5600]  [22.3/100.0] [batch_t 1.218 (1.212)] [data_t 0.001] [optim_t 1.216] [pixel 0.335 (0.340)]
+2024-05-24 20:46:42,040 - ==> Total time: 0:31:36	 Eta: -1 day, 23:42:09 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:47:01,204 - Train: 23.21% [1300/5600]  [23.2/100.0] [batch_t 1.334 (1.357)] [data_t 0.001] [optim_t 1.332] [pixel 0.344 (0.331)]
+2024-05-24 20:48:00,058 - ==> Total time: 0:32:54	 Eta: -1 day, 23:40:49 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:48:12,135 - Train: 24.11% [1350/5600]  [24.1/100.0] [batch_t 1.250 (1.283)] [data_t 0.002] [optim_t 1.249] [pixel 0.325 (0.328)]
+2024-05-24 20:49:18,751 - Train: 25.00% [1400/5600]  [25.0/100.0] [batch_t 1.340 (1.332)] [data_t 0.001] [optim_t 1.338] [pixel 0.324 (0.324)]
+2024-05-24 20:49:18,753 - ==> Total time: 0:34:13	 Eta: -1 day, 23:39:29 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:50:20,384 - Train: 25.89% [1450/5600]  [25.9/100.0] [batch_t 1.104 (1.176)] [data_t 0.001] [optim_t 1.103] [pixel 0.345 (0.321)]
+2024-05-24 20:50:27,016 - ==> Total time: 0:35:21	 Eta: -1 day, 23:38:15 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:51:29,676 - Train: 26.79% [1500/5600]  [26.8/100.0] [batch_t 1.347 (1.353)] [data_t 0.002] [optim_t 1.345] [pixel 0.294 (0.315)]
+2024-05-24 20:51:45,828 - ==> Total time: 0:36:40	 Eta: -1 day, 23:36:55 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:52:40,281 - Train: 27.68% [1550/5600]  [27.7/100.0] [batch_t 1.336 (1.353)] [data_t 0.002] [optim_t 1.334] [pixel 0.312 (0.313)]
+2024-05-24 20:53:04,330 - ==> Total time: 0:37:58	 Eta: -1 day, 23:35:36 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:53:44,199 - Train: 28.57% [1600/5600]  [28.6/100.0] [batch_t 1.137 (1.140)] [data_t 0.001] [optim_t 1.136] [pixel 0.297 (0.308)]
+2024-05-24 20:54:11,100 - ==> Total time: 0:39:05	 Eta: -1 day, 23:34:24 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:54:43,219 - Train: 29.46% [1650/5600]  [29.5/100.0] [batch_t 1.102 (1.115)] [data_t 0.002] [optim_t 1.100] [pixel 0.306 (0.302)]
+2024-05-24 20:55:29,289 - Test: 100.00% [24/24] [batch_t 0.117 (0.525)] [pixel 0.332 (0.395)]
+2024-05-24 20:55:30,557 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.131 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-24 20:55:33,110 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.479 (mF1_max_px)	  0.166 (mF1_px_0.2_0.8_0.1)	  0.165 (mAcc_px_0.2_0.8_0.1)	  0.164 (mIoU_px_0.2_0.8_0.1)	  0.479 (mIoU_max_px)	
+2024-05-24 20:55:37,728 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.916 (mF1_max_px)	  0.319 (mF1_px_0.2_0.8_0.1)	  0.315 (mAcc_px_0.2_0.8_0.1)	  0.317 (mIoU_px_0.2_0.8_0.1)	  0.923 (mIoU_max_px)	
+2024-05-24 20:55:37,749 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     96.210      |  96.793 (20  epoch)   |    98.547    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.662    | 66.831 (20  epoch) |   94.575    | 94.575 (30  epoch) |  37.022  | 38.154 (20  epoch) |    46.374    | 46.423 (20  epoch) |        17.447        |     20.668 (10  epoch)     |        92.858         |     92.858 (30  epoch)      |        10.300         |     12.287 (10  epoch)      |    30.186     | 30.228 (20  epoch)  |
+|   02   |     79.689      |  81.018 (20  epoch)   |    96.662    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.266    | 54.266 (30  epoch) |   96.338    | 96.338 (30  epoch) |  61.295  | 61.295 (30  epoch) |    62.144    | 62.144 (30  epoch) |        34.553        |     36.918 (10  epoch)     |        93.819         |     93.819 (30  epoch)      |        22.299         |     23.663 (10  epoch)      |    45.079     | 45.079 (30  epoch)  |
+|   03   |     98.836      |  98.836 (30  epoch)   |    88.790    | 90.006 (20  epoch) |      77.778      |   81.250 (20  epoch)   |   97.225    | 97.225 (30  epoch) |   99.390    | 99.390 (30  epoch) |  39.968  | 44.301 (10  epoch) |    41.928    | 48.015 (10  epoch) |        1.721         |     4.784 (10  epoch)      |        99.753         |     99.753 (30  epoch)      |         0.889         |      2.671 (10  epoch)      |    26.525     | 31.592 (10  epoch)  |
+|  Avg   |     91.578      |  92.213 (20  epoch)   |    94.667    | 95.223 (20  epoch) |      88.010      |   89.300 (20  epoch)   |   72.718    | 72.718 (30  epoch) |   96.768    | 96.768 (30  epoch) |  46.095  | 46.329 (20  epoch) |    50.149    | 51.398 (20  epoch) |        17.907        |     20.790 (10  epoch)     |        95.476         |     95.476 (30  epoch)      |        11.163         |     12.874 (10  epoch)      |    33.930     | 34.858 (20  epoch)  |
+2024-05-24 20:55:37,919 - ==> Total time: 0:40:32	 Eta: -1 day, 23:32:59 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:56:04,170 - Train: 30.36% [1700/5600]  [30.4/100.0] [batch_t 1.121 (1.116)] [data_t 0.002] [optim_t 1.119] [pixel 0.302 (0.302)]
+2024-05-24 20:56:44,752 - ==> Total time: 0:41:39	 Eta: -1 day, 23:31:48 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:57:04,999 - Train: 31.25% [1750/5600]  [31.2/100.0] [batch_t 1.255 (1.229)] [data_t 0.002] [optim_t 1.254] [pixel 0.301 (0.301)]
+2024-05-24 20:57:57,605 - ==> Total time: 0:42:52	 Eta: -1 day, 23:30:32 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:58:11,206 - Train: 32.14% [1800/5600]  [32.1/100.0] [batch_t 1.241 (1.288)] [data_t 0.002] [optim_t 1.240] [pixel 0.306 (0.297)]
+2024-05-24 20:59:07,056 - ==> Total time: 0:44:01	 Eta: -1 day, 23:29:19 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 20:59:13,333 - Train: 33.04% [1850/5600]  [33.0/100.0] [batch_t 1.391 (1.524)] [data_t 0.001] [optim_t 1.390] [pixel 0.281 (0.285)]
+2024-05-24 21:00:21,414 - Train: 33.93% [1900/5600]  [33.9/100.0] [batch_t 1.333 (1.362)] [data_t 0.001] [optim_t 1.332] [pixel 0.289 (0.293)]
+2024-05-24 21:00:26,780 - ==> Total time: 0:45:21	 Eta: -1 day, 23:28:00 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:01:32,143 - Train: 34.82% [1950/5600]  [34.8/100.0] [batch_t 1.341 (1.353)] [data_t 0.002] [optim_t 1.339] [pixel 0.298 (0.291)]
+2024-05-24 21:01:45,523 - ==> Total time: 0:46:39	 Eta: -1 day, 23:26:41 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:02:41,502 - Train: 35.71% [2000/5600]  [35.7/100.0] [batch_t 1.111 (1.326)] [data_t 0.002] [optim_t 1.109] [pixel 0.299 (0.287)]
+2024-05-24 21:02:59,300 - ==> Total time: 0:47:53	 Eta: -1 day, 23:25:25 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:03:49,053 - Train: 36.61% [2050/5600]  [36.6/100.0] [batch_t 1.345 (1.332)] [data_t 0.001] [optim_t 1.344] [pixel 0.313 (0.284)]
+2024-05-24 21:04:18,639 - ==> Total time: 0:49:13	 Eta: -1 day, 23:24:06 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:04:59,788 - Train: 37.50% [2100/5600]  [37.5/100.0] [batch_t 1.347 (1.353)] [data_t 0.002] [optim_t 1.345] [pixel 0.278 (0.284)]
+2024-05-24 21:05:37,330 - ==> Total time: 0:50:31	 Eta: -1 day, 23:22:47 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:06:10,399 - Train: 38.39% [2150/5600]  [38.4/100.0] [batch_t 1.347 (1.363)] [data_t 0.002] [optim_t 1.346] [pixel 0.288 (0.281)]
+2024-05-24 21:06:56,064 - ==> Total time: 0:51:50	 Eta: -1 day, 23:21:28 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:07:21,126 - Train: 39.29% [2200/5600]  [39.3/100.0] [batch_t 1.351 (1.370)] [data_t 0.001] [optim_t 1.350] [pixel 0.262 (0.278)]
+2024-05-24 21:08:27,037 - Test: 100.00% [24/24] [batch_t 0.125 (0.572)] [pixel 0.308 (0.367)]
+2024-05-24 21:08:28,322 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.047 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.135 (mIoU_max_px)	
+2024-05-24 21:08:30,823 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.459 (mF1_max_px)	  0.160 (mF1_px_0.2_0.8_0.1)	  0.157 (mAcc_px_0.2_0.8_0.1)	  0.162 (mIoU_px_0.2_0.8_0.1)	  0.458 (mIoU_max_px)	
+2024-05-24 21:08:35,349 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.891 (mF1_max_px)	  0.308 (mF1_px_0.2_0.8_0.1)	  0.306 (mAcc_px_0.2_0.8_0.1)	  0.306 (mIoU_px_0.2_0.8_0.1)	  0.889 (mIoU_max_px)	
+2024-05-24 21:08:35,364 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     96.307      |  96.793 (20  epoch)   |    98.567    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   67.201    | 67.201 (40  epoch) |   94.759    | 94.759 (40  epoch) |  38.104  | 38.154 (20  epoch) |    44.956    | 46.423 (20  epoch) |        15.597        |     20.668 (10  epoch)     |        95.234         |     95.234 (40  epoch)      |         9.072         |     12.287 (10  epoch)      |    28.996     | 30.228 (20  epoch)  |
+|   02   |     79.673      |  81.018 (20  epoch)   |    96.659    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.629    | 54.629 (40  epoch) |   96.352    | 96.352 (40  epoch) |  60.698  | 61.295 (30  epoch) |    62.375    | 62.375 (40  epoch) |        34.261        |     36.918 (10  epoch)     |        94.005         |     94.005 (40  epoch)      |        22.113         |     23.663 (10  epoch)      |    45.322     | 45.322 (40  epoch)  |
+|   03   |     98.906      |  98.906 (40  epoch)   |    88.888    | 90.006 (20  epoch) |      77.778      |   81.250 (20  epoch)   |   97.311    | 97.311 (40  epoch) |   99.409    | 99.409 (40  epoch) |  39.538  | 44.301 (10  epoch) |    36.641    | 48.015 (10  epoch) |        1.161         |     4.784 (10  epoch)      |        99.916         |     99.916 (40  epoch)      |         0.591         |      2.671 (10  epoch)      |    22.430     | 31.592 (10  epoch)  |
+|  Avg   |     91.629      |  92.213 (20  epoch)   |    94.705    | 95.223 (20  epoch) |      88.010      |   89.300 (20  epoch)   |   73.047    | 73.047 (40  epoch) |   96.840    | 96.840 (40  epoch) |  46.113  | 46.329 (20  epoch) |    47.991    | 51.398 (20  epoch) |        17.006        |     20.790 (10  epoch)     |        96.385         |     96.385 (40  epoch)      |        10.592         |     12.874 (10  epoch)      |    32.249     | 34.858 (20  epoch)  |
+2024-05-24 21:08:35,495 - ==> Total time: 0:53:29	 Eta: -1 day, 23:19:53 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:08:53,000 - Train: 40.18% [2250/5600]  [40.2/100.0] [batch_t 1.287 (1.303)] [data_t 0.002] [optim_t 1.285] [pixel 0.274 (0.277)]
+2024-05-24 21:09:52,398 - ==> Total time: 0:54:46	 Eta: -1 day, 23:18:35 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:10:00,974 - Train: 41.07% [2300/5600]  [41.1/100.0] [batch_t 1.284 (1.350)] [data_t 0.001] [optim_t 1.282] [pixel 0.270 (0.266)]
+2024-05-24 21:11:02,261 - Train: 41.96% [2350/5600]  [42.0/100.0] [batch_t 1.156 (1.226)] [data_t 0.001] [optim_t 1.154] [pixel 0.284 (0.273)]
+2024-05-24 21:11:04,579 - ==> Total time: 0:55:59	 Eta: -1 day, 23:17:21 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:12:12,670 - Train: 42.86% [2400/5600]  [42.9/100.0] [batch_t 1.351 (1.351)] [data_t 0.002] [optim_t 1.349] [pixel 0.287 (0.271)]
+2024-05-24 21:12:23,430 - ==> Total time: 0:57:17	 Eta: -1 day, 23:16:02 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:13:23,594 - Train: 43.75% [2450/5600]  [43.8/100.0] [batch_t 1.357 (1.361)] [data_t 0.002] [optim_t 1.356] [pixel 0.275 (0.269)]
+2024-05-24 21:13:42,324 - ==> Total time: 0:58:36	 Eta: -1 day, 23:14:43 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:14:34,465 - Train: 44.64% [2500/5600]  [44.6/100.0] [batch_t 1.364 (1.368)] [data_t 0.001] [optim_t 1.362] [pixel 0.261 (0.267)]
+2024-05-24 21:15:01,339 - ==> Total time: 0:59:55	 Eta: -1 day, 23:13:24 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:15:46,752 - Train: 45.54% [2550/5600]  [45.5/100.0] [batch_t 1.348 (1.362)] [data_t 0.002] [optim_t 1.347] [pixel 0.262 (0.267)]
+2024-05-24 21:16:21,801 - ==> Total time: 1:01:16	 Eta: -1 day, 23:12:03 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:16:57,452 - Train: 46.43% [2600/5600]  [46.4/100.0] [batch_t 1.337 (1.361)] [data_t 0.002] [optim_t 1.335] [pixel 0.266 (0.262)]
+2024-05-24 21:17:40,625 - ==> Total time: 1:02:35	 Eta: -1 day, 23:10:44 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:18:08,021 - Train: 47.32% [2650/5600]  [47.3/100.0] [batch_t 1.335 (1.359)] [data_t 0.002] [optim_t 1.333] [pixel 0.263 (0.267)]
+2024-05-24 21:18:58,909 - ==> Total time: 1:03:53	 Eta: -1 day, 23:09:26 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:19:19,189 - Train: 48.21% [2700/5600]  [48.2/100.0] [batch_t 1.346 (1.401)] [data_t 0.002] [optim_t 1.345] [pixel 0.266 (0.260)]
+2024-05-24 21:20:18,389 - ==> Total time: 1:05:12	 Eta: -1 day, 23:08:06 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:20:29,568 - Train: 49.11% [2750/5600]  [49.1/100.0] [batch_t 1.350 (1.405)] [data_t 0.002] [optim_t 1.348] [pixel 0.257 (0.266)]
+2024-05-24 21:21:37,041 - Train: 50.00% [2800/5600]  [50.0/100.0] [batch_t 1.340 (1.349)] [data_t 0.001] [optim_t 1.338] [pixel 0.263 (0.260)]
+2024-05-24 21:21:50,099 - Test: 100.00% [24/24] [batch_t 0.127 (0.539)] [pixel 0.291 (0.348)]
+2024-05-24 21:21:51,379 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.133 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-24 21:21:53,947 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.486 (mF1_max_px)	  0.169 (mF1_px_0.2_0.8_0.1)	  0.166 (mAcc_px_0.2_0.8_0.1)	  0.167 (mIoU_px_0.2_0.8_0.1)	  0.488 (mIoU_max_px)	
+2024-05-24 21:21:58,605 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.933 (mF1_max_px)	  0.325 (mF1_px_0.2_0.8_0.1)	  0.320 (mAcc_px_0.2_0.8_0.1)	  0.322 (mIoU_px_0.2_0.8_0.1)	  0.941 (mIoU_max_px)	
+2024-05-24 21:21:58,625 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     95.335      |  96.793 (20  epoch)   |    98.284    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.855    | 67.201 (40  epoch) |   94.671    | 94.759 (40  epoch) |  36.646  | 38.154 (20  epoch) |    45.873    | 46.423 (20  epoch) |        14.621        |     20.668 (10  epoch)     |        96.045         |     96.045 (50  epoch)      |         8.385         |     12.287 (10  epoch)      |    29.763     | 30.228 (20  epoch)  |
+|   02   |     79.040      |  81.018 (20  epoch)   |    96.552    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.642    | 54.642 (50  epoch) |   96.328    | 96.352 (40  epoch) |  59.764  | 61.295 (30  epoch) |    62.219    | 62.375 (40  epoch) |        33.871        |     36.918 (10  epoch)     |        94.710         |     94.710 (50  epoch)      |        21.798         |     23.663 (10  epoch)      |    45.158     | 45.322 (40  epoch)  |
+|   03   |     98.843      |  98.906 (40  epoch)   |    88.588    | 90.006 (20  epoch) |      77.778      |   81.250 (20  epoch)   |   97.396    | 97.396 (50  epoch) |   99.423    | 99.423 (50  epoch) |  39.634  | 44.301 (10  epoch) |    35.858    | 48.015 (10  epoch) |        1.076         |     4.784 (10  epoch)      |        99.942         |     99.942 (50  epoch)      |         0.546         |      2.671 (10  epoch)      |    21.846     | 31.592 (10  epoch)  |
+|  Avg   |     91.073      |  92.213 (20  epoch)   |    94.474    | 95.223 (20  epoch) |      88.010      |   89.300 (20  epoch)   |   72.964    | 73.047 (40  epoch) |   96.808    | 96.840 (40  epoch) |  45.348  | 46.329 (20  epoch) |    47.983    | 51.398 (20  epoch) |        16.522        |     20.790 (10  epoch)     |        96.899         |     96.899 (50  epoch)      |        10.243         |     12.874 (10  epoch)      |    32.256     | 34.858 (20  epoch)  |
+2024-05-24 21:21:58,782 - ==> Total time: 1:06:53	 Eta: -1 day, 23:06:30 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:23:12,354 - Train: 50.89% [2850/5600]  [50.9/100.0] [batch_t 1.345 (1.346)] [data_t 0.001] [optim_t 1.344] [pixel 0.260 (0.256)]
+2024-05-24 21:23:20,435 - ==> Total time: 1:08:14	 Eta: -1 day, 23:05:09 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:24:21,424 - Train: 51.79% [2900/5600]  [51.8/100.0] [batch_t 1.180 (1.295)] [data_t 0.001] [optim_t 1.178] [pixel 0.272 (0.256)]
+2024-05-24 21:24:37,310 - ==> Total time: 1:09:31	 Eta: -1 day, 23:03:51 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:25:25,518 - Train: 52.68% [2950/5600]  [52.7/100.0] [batch_t 1.183 (1.188)] [data_t 0.001] [optim_t 1.181] [pixel 0.258 (0.256)]
+2024-05-24 21:25:47,930 - ==> Total time: 1:10:42	 Eta: -1 day, 23:02:39 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:26:29,474 - Train: 53.57% [3000/5600]  [53.6/100.0] [batch_t 1.199 (1.199)] [data_t 0.002] [optim_t 1.198] [pixel 0.246 (0.255)]
+2024-05-24 21:26:58,158 - ==> Total time: 1:11:52	 Eta: -1 day, 23:01:27 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:27:34,916 - Train: 54.46% [3050/5600]  [54.5/100.0] [batch_t 1.221 (1.287)] [data_t 0.002] [optim_t 1.219] [pixel 0.273 (0.254)]
+2024-05-24 21:28:14,112 - ==> Total time: 1:13:08	 Eta: -1 day, 23:00:10 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:28:42,857 - Train: 55.36% [3100/5600]  [55.4/100.0] [batch_t 1.160 (1.285)] [data_t 0.001] [optim_t 1.159] [pixel 0.258 (0.250)]
+2024-05-24 21:29:29,838 - ==> Total time: 1:14:24	 Eta: -1 day, 22:58:53 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:29:50,239 - Train: 56.25% [3150/5600]  [56.2/100.0] [batch_t 1.176 (1.233)] [data_t 0.001] [optim_t 1.175] [pixel 0.263 (0.252)]
+2024-05-24 21:30:40,546 - ==> Total time: 1:15:34	 Eta: -1 day, 22:57:41 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:30:54,283 - Train: 57.14% [3200/5600]  [57.1/100.0] [batch_t 1.289 (1.327)] [data_t 0.001] [optim_t 1.287] [pixel 0.242 (0.251)]
+2024-05-24 21:31:55,831 - ==> Total time: 1:16:50	 Eta: -1 day, 22:56:25 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:32:01,730 - Train: 58.04% [3250/5600]  [58.0/100.0] [batch_t 1.340 (1.466)] [data_t 0.001] [optim_t 1.339] [pixel 0.237 (0.247)]
+2024-05-24 21:33:09,304 - Train: 58.93% [3300/5600]  [58.9/100.0] [batch_t 1.334 (1.351)] [data_t 0.001] [optim_t 1.332] [pixel 0.236 (0.250)]
+2024-05-24 21:33:14,662 - ==> Total time: 1:18:09	 Eta: -1 day, 22:55:06 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:34:19,602 - Train: 59.82% [3350/5600]  [59.8/100.0] [batch_t 1.350 (1.349)] [data_t 0.002] [optim_t 1.349] [pixel 0.220 (0.247)]
+2024-05-24 21:34:46,192 - Test: 100.00% [24/24] [batch_t 0.124 (0.548)] [pixel 0.281 (0.338)]
+2024-05-24 21:34:47,464 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.131 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.131 (mIoU_max_px)	
+2024-05-24 21:34:50,046 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.488 (mF1_max_px)	  0.169 (mF1_px_0.2_0.8_0.1)	  0.168 (mAcc_px_0.2_0.8_0.1)	  0.168 (mIoU_px_0.2_0.8_0.1)	  0.491 (mIoU_max_px)	
+2024-05-24 21:34:54,691 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.935 (mF1_max_px)	  0.323 (mF1_px_0.2_0.8_0.1)	  0.319 (mAcc_px_0.2_0.8_0.1)	  0.319 (mIoU_px_0.2_0.8_0.1)	  0.943 (mIoU_max_px)	
+2024-05-24 21:34:54,709 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     95.238      |  96.793 (20  epoch)   |    98.243    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.931    | 67.201 (40  epoch) |   94.708    | 94.759 (40  epoch) |  36.729  | 38.154 (20  epoch) |    46.276    | 46.423 (20  epoch) |        13.470        |     20.668 (10  epoch)     |        97.017         |     97.017 (60  epoch)      |         7.623         |     12.287 (10  epoch)      |    30.103     | 30.228 (20  epoch)  |
+|   02   |     79.494      |  81.018 (20  epoch)   |    96.627    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.758    | 54.758 (60  epoch) |   96.402    | 96.402 (60  epoch) |  60.753  | 61.295 (30  epoch) |    62.745    | 62.745 (60  epoch) |        34.063        |     36.918 (10  epoch)     |        94.812         |     94.812 (60  epoch)      |        21.945         |     23.663 (10  epoch)      |    45.714     | 45.714 (60  epoch)  |
+|   03   |     98.875      |  98.906 (40  epoch)   |    88.433    | 90.006 (20  epoch) |      77.922      |   81.250 (20  epoch)   |   97.362    | 97.396 (50  epoch) |   99.422    | 99.423 (50  epoch) |  39.736  | 44.301 (10  epoch) |    39.314    | 48.015 (10  epoch) |        0.871         |     4.784 (10  epoch)      |        99.968         |     99.968 (60  epoch)      |         0.440         |      2.671 (10  epoch)      |    24.467     | 31.592 (10  epoch)  |
+|  Avg   |     91.202      |  92.213 (20  epoch)   |    94.434    | 95.223 (20  epoch) |      88.058      |   89.300 (20  epoch)   |   73.017    | 73.047 (40  epoch) |   96.844    | 96.844 (60  epoch) |  45.739  | 46.329 (20  epoch) |    49.445    | 51.398 (20  epoch) |        16.134        |     20.790 (10  epoch)     |        97.266         |     97.266 (60  epoch)      |        10.002         |     12.874 (10  epoch)      |    33.428     | 34.858 (20  epoch)  |
+2024-05-24 21:34:54,864 - ==> Total time: 1:19:49	 Eta: -1 day, 22:53:29 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:35:51,923 - Train: 60.71% [3400/5600]  [60.7/100.0] [batch_t 1.300 (1.311)] [data_t 0.002] [optim_t 1.299] [pixel 0.236 (0.243)]
+2024-05-24 21:36:12,115 - ==> Total time: 1:21:06	 Eta: -1 day, 22:52:12 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:36:59,372 - Train: 61.61% [3450/5600]  [61.6/100.0] [batch_t 1.295 (1.299)] [data_t 0.001] [optim_t 1.294] [pixel 0.232 (0.243)]
+2024-05-24 21:37:28,150 - ==> Total time: 1:22:22	 Eta: -1 day, 22:50:55 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:38:09,834 - Train: 62.50% [3500/5600]  [62.5/100.0] [batch_t 1.378 (1.374)] [data_t 0.002] [optim_t 1.376] [pixel 0.248 (0.244)]
+2024-05-24 21:38:47,734 - ==> Total time: 1:23:42	 Eta: -1 day, 22:49:36 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:39:20,705 - Train: 63.39% [3550/5600]  [63.4/100.0] [batch_t 1.341 (1.360)] [data_t 0.001] [optim_t 1.340] [pixel 0.245 (0.242)]
+2024-05-24 21:40:06,481 - ==> Total time: 1:25:00	 Eta: -1 day, 22:48:17 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:40:31,535 - Train: 64.29% [3600/5600]  [64.3/100.0] [batch_t 1.337 (1.364)] [data_t 0.001] [optim_t 1.336] [pixel 0.245 (0.242)]
+2024-05-24 21:41:25,444 - ==> Total time: 1:26:19	 Eta: -1 day, 22:46:58 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:41:42,264 - Train: 65.18% [3650/5600]  [65.2/100.0] [batch_t 1.337 (1.373)] [data_t 0.002] [optim_t 1.336] [pixel 0.228 (0.237)]
+2024-05-24 21:42:44,075 - ==> Total time: 1:27:38	 Eta: -1 day, 22:45:39 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:42:52,870 - Train: 66.07% [3700/5600]  [66.1/100.0] [batch_t 1.355 (1.426)] [data_t 0.002] [optim_t 1.353] [pixel 0.251 (0.242)]
+2024-05-24 21:44:00,492 - Train: 66.96% [3750/5600]  [67.0/100.0] [batch_t 1.355 (1.352)] [data_t 0.001] [optim_t 1.354] [pixel 0.226 (0.242)]
+2024-05-24 21:44:03,215 - ==> Total time: 1:28:57	 Eta: -1 day, 22:44:20 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:45:12,521 - Train: 67.86% [3800/5600]  [67.9/100.0] [batch_t 1.353 (1.363)] [data_t 0.001] [optim_t 1.352] [pixel 0.230 (0.241)]
+2024-05-24 21:45:23,311 - ==> Total time: 1:30:17	 Eta: -1 day, 22:42:59 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:46:23,288 - Train: 68.75% [3850/5600]  [68.8/100.0] [batch_t 1.332 (1.346)] [data_t 0.002] [optim_t 1.331] [pixel 0.241 (0.237)]
+2024-05-24 21:46:41,921 - ==> Total time: 1:31:36	 Eta: -1 day, 22:41:41 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:47:33,300 - Train: 69.64% [3900/5600]  [69.6/100.0] [batch_t 1.333 (1.344)] [data_t 0.001] [optim_t 1.331] [pixel 0.237 (0.237)]
+2024-05-24 21:48:13,020 - Test: 100.00% [24/24] [batch_t 0.118 (0.532)] [pixel 0.276 (0.330)]
+2024-05-24 21:48:14,287 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.132 (mF1_max_px)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-24 21:48:16,817 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.471 (mF1_max_px)	  0.163 (mF1_px_0.2_0.8_0.1)	  0.161 (mAcc_px_0.2_0.8_0.1)	  0.165 (mIoU_px_0.2_0.8_0.1)	  0.477 (mIoU_max_px)	
+2024-05-24 21:48:21,396 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.912 (mF1_max_px)	  0.315 (mF1_px_0.2_0.8_0.1)	  0.312 (mAcc_px_0.2_0.8_0.1)	  0.312 (mIoU_px_0.2_0.8_0.1)	  0.913 (mIoU_max_px)	
+2024-05-24 21:48:21,415 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     95.335      |  96.793 (20  epoch)   |    98.260    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.906    | 67.201 (40  epoch) |   94.755    | 94.759 (40  epoch) |  37.100  | 38.154 (20  epoch) |    46.295    | 46.423 (20  epoch) |        13.120        |     20.668 (10  epoch)     |        97.288         |     97.288 (70  epoch)      |         7.389         |     12.287 (10  epoch)      |    30.120     | 30.228 (20  epoch)  |
+|   02   |     79.381      |  81.018 (20  epoch)   |    96.608    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.800    | 54.800 (70  epoch) |   96.446    | 96.446 (70  epoch) |  61.397  | 61.397 (70  epoch) |    62.951    | 62.951 (70  epoch) |        33.819        |     36.918 (10  epoch)     |        95.039         |     95.039 (70  epoch)      |        21.773         |     23.663 (10  epoch)      |    45.933     | 45.933 (70  epoch)  |
+|   03   |     98.883      |  98.906 (40  epoch)   |    88.556    | 90.006 (20  epoch) |      78.378      |   81.250 (20  epoch)   |   97.345    | 97.396 (50  epoch) |   99.409    | 99.423 (50  epoch) |  38.772  | 44.301 (10  epoch) |    42.109    | 48.015 (10  epoch) |        0.784         |     4.784 (10  epoch)      |        99.988         |     99.988 (70  epoch)      |         0.395         |      2.671 (10  epoch)      |    26.670     | 31.592 (10  epoch)  |
+|  Avg   |     91.200      |  92.213 (20  epoch)   |    94.475    | 95.223 (20  epoch) |      88.210      |   89.300 (20  epoch)   |   73.017    | 73.047 (40  epoch) |   96.870    | 96.870 (70  epoch) |  45.756  | 46.329 (20  epoch) |    50.452    | 51.398 (20  epoch) |        15.908        |     20.790 (10  epoch)     |        97.438         |     97.438 (70  epoch)      |         9.852         |     12.874 (10  epoch)      |    34.241     | 34.858 (20  epoch)  |
+2024-05-24 21:48:21,547 - ==> Total time: 1:33:15	 Eta: -1 day, 22:40:04 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:49:06,212 - Train: 70.54% [3950/5600]  [70.5/100.0] [batch_t 1.345 (1.347)] [data_t 0.002] [optim_t 1.343] [pixel 0.258 (0.235)]
+2024-05-24 21:49:40,989 - ==> Total time: 1:34:35	 Eta: -1 day, 22:38:44 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:50:17,020 - Train: 71.43% [4000/5600]  [71.4/100.0] [batch_t 1.353 (1.369)] [data_t 0.001] [optim_t 1.351] [pixel 0.245 (0.235)]
+2024-05-24 21:50:59,889 - ==> Total time: 1:35:54	 Eta: -1 day, 22:37:25 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:51:29,053 - Train: 72.32% [4050/5600]  [72.3/100.0] [batch_t 1.336 (1.352)] [data_t 0.001] [optim_t 1.335] [pixel 0.236 (0.231)]
+2024-05-24 21:52:20,139 - ==> Total time: 1:37:14	 Eta: -1 day, 22:36:05 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:52:39,613 - Train: 73.21% [4100/5600]  [73.2/100.0] [batch_t 1.344 (1.370)] [data_t 0.002] [optim_t 1.343] [pixel 0.240 (0.231)]
+2024-05-24 21:53:38,405 - ==> Total time: 1:38:32	 Eta: -1 day, 22:34:47 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:53:49,773 - Train: 74.11% [4150/5600]  [74.1/100.0] [batch_t 1.352 (1.389)] [data_t 0.001] [optim_t 1.350] [pixel 0.239 (0.243)]
+2024-05-24 21:54:56,694 - Train: 75.00% [4200/5600]  [75.0/100.0] [batch_t 1.334 (1.338)] [data_t 0.001] [optim_t 1.333] [pixel 0.241 (0.233)]
+2024-05-24 21:54:56,696 - ==> Total time: 1:39:51	 Eta: -1 day, 22:33:28 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:56:07,016 - Train: 75.89% [4250/5600]  [75.9/100.0] [batch_t 1.341 (1.346)] [data_t 0.001] [optim_t 1.339] [pixel 0.244 (0.233)]
+2024-05-24 21:56:15,003 - ==> Total time: 1:41:09	 Eta: -1 day, 22:32:10 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:57:17,370 - Train: 76.79% [4300/5600]  [76.8/100.0] [batch_t 1.330 (1.348)] [data_t 0.001] [optim_t 1.329] [pixel 0.233 (0.233)]
+2024-05-24 21:57:33,344 - ==> Total time: 1:42:27	 Eta: -1 day, 22:30:51 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:58:27,560 - Train: 77.68% [4350/5600]  [77.7/100.0] [batch_t 1.334 (1.348)] [data_t 0.001] [optim_t 1.332] [pixel 0.232 (0.230)]
+2024-05-24 21:58:51,690 - ==> Total time: 1:43:46	 Eta: -1 day, 22:29:33 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 21:59:38,108 - Train: 78.57% [4400/5600]  [78.6/100.0] [batch_t 1.339 (1.350)] [data_t 0.001] [optim_t 1.338] [pixel 0.244 (0.232)]
+2024-05-24 22:00:10,243 - ==> Total time: 1:45:04	 Eta: -1 day, 22:28:14 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:00:48,372 - Train: 79.46% [4450/5600]  [79.5/100.0] [batch_t 1.339 (1.350)] [data_t 0.001] [optim_t 1.337] [pixel 0.222 (0.234)]
+2024-05-24 22:01:41,325 - Test: 100.00% [24/24] [batch_t 0.117 (0.535)] [pixel 0.268 (0.321)]
+2024-05-24 22:01:42,593 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.128 (mF1_max_px)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.127 (mIoU_max_px)	
+2024-05-24 22:01:45,120 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.467 (mF1_max_px)	  0.163 (mF1_px_0.2_0.8_0.1)	  0.161 (mAcc_px_0.2_0.8_0.1)	  0.162 (mIoU_px_0.2_0.8_0.1)	  0.473 (mIoU_max_px)	
+2024-05-24 22:01:49,700 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.913 (mF1_max_px)	  0.318 (mF1_px_0.2_0.8_0.1)	  0.317 (mAcc_px_0.2_0.8_0.1)	  0.313 (mIoU_px_0.2_0.8_0.1)	  0.916 (mIoU_max_px)	
+2024-05-24 22:01:49,721 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     94.558      |  96.793 (20  epoch)   |    98.041    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.735    | 67.201 (40  epoch) |   94.721    | 94.759 (40  epoch) |  36.704  | 38.154 (20  epoch) |    45.774    | 46.423 (20  epoch) |        12.924        |     20.668 (10  epoch)     |        97.450         |     97.450 (80  epoch)      |         7.250         |     12.287 (10  epoch)      |    29.680     | 30.228 (20  epoch)  |
+|   02   |     79.494      |  81.018 (20  epoch)   |    96.625    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.744    | 54.800 (70  epoch) |   96.402    | 96.446 (70  epoch) |  60.798  | 61.397 (70  epoch) |    62.059    | 62.951 (70  epoch) |        33.492        |     36.918 (10  epoch)     |        95.306         |     95.306 (80  epoch)      |        21.485         |     23.663 (10  epoch)      |    44.989     | 45.933 (70  epoch)  |
+|   03   |     98.961      |  98.961 (80  epoch)   |    89.271    | 90.006 (20  epoch) |      77.922      |   81.250 (20  epoch)   |   97.389    | 97.396 (50  epoch) |   99.421    | 99.423 (50  epoch) |  39.150  | 44.301 (10  epoch) |    44.265    | 48.015 (10  epoch) |        0.692         |     4.784 (10  epoch)      |        100.000        |     100.000 (80  epoch)     |         0.348         |      2.671 (10  epoch)      |    28.423     | 31.592 (10  epoch)  |
+|  Avg   |     91.005      |  92.213 (20  epoch)   |    94.646    | 95.223 (20  epoch) |      88.058      |   89.300 (20  epoch)   |   72.956    | 73.047 (40  epoch) |   96.848    | 96.870 (70  epoch) |  45.551  | 46.329 (20  epoch) |    50.699    | 51.398 (20  epoch) |        15.703        |     20.790 (10  epoch)     |        97.585         |     97.585 (80  epoch)      |         9.694         |     12.874 (10  epoch)      |    34.364     | 34.858 (20  epoch)  |
+2024-05-24 22:01:49,882 - ==> Total time: 1:46:44	 Eta: -1 day, 22:26:37 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:02:21,047 - Train: 80.36% [4500/5600]  [80.4/100.0] [batch_t 1.353 (1.342)] [data_t 0.002] [optim_t 1.352] [pixel 0.232 (0.225)]
+2024-05-24 22:03:09,034 - ==> Total time: 1:48:03	 Eta: -1 day, 22:25:17 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:03:31,261 - Train: 81.25% [4550/5600]  [81.2/100.0] [batch_t 1.338 (1.367)] [data_t 0.001] [optim_t 1.336] [pixel 0.228 (0.229)]
+2024-05-24 22:04:27,628 - ==> Total time: 1:49:22	 Eta: -1 day, 22:23:59 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:04:41,681 - Train: 82.14% [4600/5600]  [82.1/100.0] [batch_t 1.337 (1.375)] [data_t 0.002] [optim_t 1.335] [pixel 0.235 (0.231)]
+2024-05-24 22:05:45,931 - ==> Total time: 1:50:40	 Eta: -1 day, 22:22:40 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:05:52,019 - Train: 83.04% [4650/5600]  [83.0/100.0] [batch_t 1.335 (1.491)] [data_t 0.001] [optim_t 1.333] [pixel 0.226 (0.227)]
+2024-05-24 22:06:58,207 - Train: 83.93% [4700/5600]  [83.9/100.0] [batch_t 1.165 (1.324)] [data_t 0.001] [optim_t 1.164] [pixel 0.216 (0.229)]
+2024-05-24 22:07:03,647 - ==> Total time: 1:51:58	 Eta: -1 day, 22:21:22 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:08:07,913 - Train: 84.82% [4750/5600]  [84.8/100.0] [batch_t 1.345 (1.322)] [data_t 0.002] [optim_t 1.343] [pixel 0.231 (0.230)]
+2024-05-24 22:08:21,438 - ==> Total time: 1:53:15	 Eta: -1 day, 22:20:04 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:09:17,967 - Train: 85.71% [4800/5600]  [85.7/100.0] [batch_t 1.326 (1.334)] [data_t 0.001] [optim_t 1.325] [pixel 0.257 (0.228)]
+2024-05-24 22:09:39,685 - ==> Total time: 1:54:34	 Eta: -1 day, 22:18:46 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:10:26,956 - Train: 86.61% [4850/5600]  [86.6/100.0] [batch_t 1.310 (1.296)] [data_t 0.001] [optim_t 1.309] [pixel 0.199 (0.229)]
+2024-05-24 22:10:55,696 - ==> Total time: 1:55:50	 Eta: -1 day, 22:17:29 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:11:36,664 - Train: 87.50% [4900/5600]  [87.5/100.0] [batch_t 1.337 (1.346)] [data_t 0.002] [optim_t 1.335] [pixel 0.222 (0.229)]
+2024-05-24 22:12:14,160 - ==> Total time: 1:57:08	 Eta: -1 day, 22:16:11 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:12:43,818 - Train: 88.39% [4950/5600]  [88.4/100.0] [batch_t 1.125 (1.203)] [data_t 0.001] [optim_t 1.123] [pixel 0.225 (0.228)]
+2024-05-24 22:13:21,635 - ==> Total time: 1:58:16	 Eta: -1 day, 22:15:02 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:13:43,523 - Train: 89.29% [5000/5600]  [89.3/100.0] [batch_t 1.119 (1.153)] [data_t 0.002] [optim_t 1.118] [pixel 0.249 (0.227)]
+2024-05-24 22:14:41,223 - Test: 100.00% [24/24] [batch_t 0.117 (0.534)] [pixel 0.265 (0.318)]
+2024-05-24 22:14:42,494 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mIoU_max_px)	
+2024-05-24 22:14:44,999 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.466 (mF1_max_px)	  0.161 (mF1_px_0.2_0.8_0.1)	  0.162 (mAcc_px_0.2_0.8_0.1)	  0.162 (mIoU_px_0.2_0.8_0.1)	  0.465 (mIoU_max_px)	
+2024-05-24 22:14:49,549 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.899 (mF1_max_px)	  0.313 (mF1_px_0.2_0.8_0.1)	  0.309 (mAcc_px_0.2_0.8_0.1)	  0.309 (mIoU_px_0.2_0.8_0.1)	  0.904 (mIoU_max_px)	
+2024-05-24 22:14:49,568 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     94.655      |  96.793 (20  epoch)   |    98.073    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.548    | 67.201 (40  epoch) |   94.707    | 94.759 (40  epoch) |  36.630  | 38.154 (20  epoch) |    44.552    | 46.423 (20  epoch) |        12.194        |     20.668 (10  epoch)     |        98.018         |     98.018 (90  epoch)      |         6.769         |     12.287 (10  epoch)      |    28.661     | 30.228 (20  epoch)  |
+|   02   |     79.316      |  81.018 (20  epoch)   |    96.606    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.682    | 54.800 (70  epoch) |   96.444    | 96.446 (70  epoch) |  61.592  | 61.592 (90  epoch) |    61.774    | 62.951 (70  epoch) |        33.013        |     36.918 (10  epoch)     |        95.621         |     95.621 (90  epoch)      |        21.122         |     23.663 (10  epoch)      |    44.690     | 45.933 (70  epoch)  |
+|   03   |     98.969      |  98.969 (90  epoch)   |    89.343    | 90.006 (20  epoch) |      78.571      |   81.250 (20  epoch)   |   97.321    | 97.396 (50  epoch) |   99.410    | 99.423 (50  epoch) |  38.910  | 44.301 (10  epoch) |    45.401    | 48.015 (10  epoch) |        0.637         |     4.784 (10  epoch)      |        100.000        |     100.000 (80  epoch)     |         0.320         |      2.671 (10  epoch)      |    29.367     | 31.592 (10  epoch)  |
+|  Avg   |     90.980      |  92.213 (20  epoch)   |    94.674    | 95.223 (20  epoch) |      88.275      |   89.300 (20  epoch)   |   72.850    | 73.047 (40  epoch) |   96.854    | 96.870 (70  epoch) |  45.711  | 46.329 (20  epoch) |    50.576    | 51.398 (20  epoch) |        15.281        |     20.790 (10  epoch)     |        97.880         |     97.880 (90  epoch)      |         9.404         |     12.874 (10  epoch)      |    34.239     | 34.858 (20  epoch)  |
+2024-05-24 22:14:49,705 - ==> Total time: 1:59:44	 Eta: -1 day, 22:13:35 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:15:05,415 - Train: 90.18% [5050/5600]  [90.2/100.0] [batch_t 1.107 (1.128)] [data_t 0.001] [optim_t 1.105] [pixel 0.244 (0.228)]
+2024-05-24 22:15:56,102 - ==> Total time: 2:00:50	 Eta: -1 day, 22:12:27 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:16:04,147 - Train: 91.07% [5100/5600]  [91.1/100.0] [batch_t 1.116 (1.180)] [data_t 0.001] [optim_t 1.114] [pixel 0.232 (0.220)]
+2024-05-24 22:17:00,222 - Train: 91.96% [5150/5600]  [92.0/100.0] [batch_t 1.147 (1.121)] [data_t 0.001] [optim_t 1.145] [pixel 0.212 (0.229)]
+2024-05-24 22:17:02,488 - ==> Total time: 2:01:56	 Eta: -1 day, 22:11:19 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:18:04,609 - Train: 92.86% [5200/5600]  [92.9/100.0] [batch_t 1.100 (1.198)] [data_t 0.001] [optim_t 1.099] [pixel 0.229 (0.225)]
+2024-05-24 22:18:13,423 - ==> Total time: 2:03:07	 Eta: -1 day, 22:10:07 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:19:08,149 - Train: 93.75% [5250/5600]  [93.8/100.0] [batch_t 1.221 (1.226)] [data_t 0.002] [optim_t 1.219] [pixel 0.230 (0.227)]
+2024-05-24 22:19:24,659 - ==> Total time: 2:04:19	 Eta: -1 day, 22:08:55 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:20:16,499 - Train: 94.64% [5300/5600]  [94.6/100.0] [batch_t 1.350 (1.347)] [data_t 0.002] [optim_t 1.348] [pixel 0.245 (0.228)]
+2024-05-24 22:20:43,455 - ==> Total time: 2:05:37	 Eta: -1 day, 22:07:36 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:21:22,099 - Train: 95.54% [5350/5600]  [95.5/100.0] [batch_t 1.103 (1.174)] [data_t 0.001] [optim_t 1.102] [pixel 0.231 (0.228)]
+2024-05-24 22:21:50,732 - ==> Total time: 2:06:45	 Eta: -1 day, 22:06:28 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:22:21,044 - Train: 96.43% [5400/5600]  [96.4/100.0] [batch_t 1.104 (1.122)] [data_t 0.001] [optim_t 1.103] [pixel 0.217 (0.223)]
+2024-05-24 22:22:56,591 - ==> Total time: 2:07:51	 Eta: -1 day, 22:05:20 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:23:20,288 - Train: 97.32% [5450/5600]  [97.3/100.0] [batch_t 1.112 (1.129)] [data_t 0.002] [optim_t 1.110] [pixel 0.242 (0.230)]
+2024-05-24 22:24:03,754 - ==> Total time: 2:08:58	 Eta: -1 day, 22:04:12 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:24:22,482 - Train: 98.21% [5500/5600]  [98.2/100.0] [batch_t 1.226 (1.231)] [data_t 0.001] [optim_t 1.224] [pixel 0.226 (0.227)]
+2024-05-24 22:25:12,689 - ==> Total time: 2:10:07	 Eta: -1 day, 22:03:02 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:25:23,574 - Train: 99.11% [5550/5600]  [99.1/100.0] [batch_t 1.213 (1.285)] [data_t 0.002] [optim_t 1.212] [pixel 0.243 (0.229)]
+2024-05-24 22:26:24,004 - Train: 100.00% [5600/5600]  [100.0/100.0] [batch_t 1.096 (1.209)] [data_t 0.001] [optim_t 1.095] [pixel 0.214 (0.227)]
+2024-05-24 22:26:37,182 - Test: 100.00% [24/24] [batch_t 0.118 (0.544)] [pixel 0.263 (0.315)]
+2024-05-24 22:26:38,445 - ==> Metric Time for 01             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.129 (mF1_max_px)	  0.047 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.130 (mIoU_max_px)	
+2024-05-24 22:26:40,960 - ==> Metric Time for 02             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.465 (mF1_max_px)	  0.164 (mF1_px_0.2_0.8_0.1)	  0.167 (mAcc_px_0.2_0.8_0.1)	  0.164 (mIoU_px_0.2_0.8_0.1)	  0.465 (mIoU_max_px)	
+2024-05-24 22:26:45,513 - ==> Metric Time for 03             :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.900 (mF1_max_px)	  0.312 (mF1_px_0.2_0.8_0.1)	  0.317 (mAcc_px_0.2_0.8_0.1)	  0.310 (mIoU_px_0.2_0.8_0.1)	  0.906 (mIoU_max_px)	
+2024-05-24 22:26:45,531 - 
+|  Name  |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   01   |     94.849      |  96.793 (20  epoch)   |    98.129    | 98.747 (20  epoch) |      93.478      |   93.878 (20  epoch)   |   66.230    | 67.201 (40  epoch) |   94.669    | 94.759 (40  epoch) |  36.642  | 38.154 (20  epoch) |    43.387    | 46.423 (20  epoch) |        11.758        |     20.668 (10  epoch)     |        98.261         |     98.261 (100 epoch)      |         6.489         |     12.287 (10  epoch)      |    27.704     | 30.228 (20  epoch)  |
+|   02   |     79.624      |  81.018 (20  epoch)   |    96.655    | 96.916 (20  epoch) |      92.774      |   92.958 (10  epoch)   |   54.531    | 54.800 (70  epoch) |   96.416    | 96.446 (70  epoch) |  61.362  | 61.592 (90  epoch) |    60.975    | 62.951 (70  epoch) |        32.541        |     36.918 (10  epoch)     |        95.861         |     95.861 (100 epoch)      |        20.740         |     23.663 (10  epoch)      |    43.859     | 45.933 (70  epoch)  |
+|   03   |     98.977      |  98.977 (100 epoch)   |    89.466    | 90.006 (20  epoch) |      78.571      |   81.250 (20  epoch)   |   97.294    | 97.396 (50  epoch) |   99.411    | 99.423 (50  epoch) |  38.759  | 44.301 (10  epoch) |    46.015    | 48.015 (10  epoch) |        0.590         |     4.784 (10  epoch)      |        100.000        |     100.000 (80  epoch)     |         0.296         |      2.671 (10  epoch)      |    29.882     | 31.592 (10  epoch)  |
+|  Avg   |     91.150      |  92.213 (20  epoch)   |    94.750    | 95.223 (20  epoch) |      88.275      |   89.300 (20  epoch)   |   72.685    | 73.047 (40  epoch) |   96.832    | 96.870 (70  epoch) |  45.588  | 46.329 (20  epoch) |    50.125    | 51.398 (20  epoch) |        14.963        |     20.790 (10  epoch)     |        98.041         |     98.041 (100 epoch)      |         9.175         |     12.874 (10  epoch)      |    33.815     | 34.858 (20  epoch)  |
+2024-05-24 22:26:45,665 - ==> Total time: 2:11:40	 Eta: -1 day, 22:01:30 	Logged in 'runs/benchmark/cflow_256_100e/btad/CFLOWTrainer_configs_benchmark_cflow_256_100e_20240524-201505'
+2024-05-24 22:26:50,081 - finish training

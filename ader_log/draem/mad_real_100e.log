@@ -1,0 +1,930 @@
+2024-05-24 15:27:57,405 - ==> Logging on master GPU: 0
+2024-05-24 15:27:57,405 - ==> Running Trainer: DRAEMTrainer
+2024-05-24 15:27:57,406 - ==> Using GPU: [0] for Training
+2024-05-24 15:27:57,406 - ==> Building model
+2024-05-24 15:28:06,958 - 
+------------------------------------ DRAEM ------------------------------------
+| module                                         | #parameters or shape    | #flops      |
+|:-----------------------------------------------|:------------------------|:------------|
+| model                                          | 97.423M                 | 0.198T      |
+|  model                                         |  69.049M                |  0.16T      |
+|   model.encoder                                |   37.622M               |   58.273G   |
+|    model.encoder.block1                        |    0.152M               |    9.924G   |
+|     model.encoder.block1.0                     |     3.584K              |     0.226G  |
+|      model.encoder.block1.0.weight             |      (128, 3, 3, 3)     |             |
+|      model.encoder.block1.0.bias               |      (128,)             |             |
+|     model.encoder.block1.1                     |     0.256K              |     16.777M |
+|      model.encoder.block1.1.weight             |      (128,)             |             |
+|      model.encoder.block1.1.bias               |      (128,)             |             |
+|     model.encoder.block1.3                     |     0.148M              |     9.664G  |
+|      model.encoder.block1.3.weight             |      (128, 128, 3, 3)   |             |
+|      model.encoder.block1.3.bias               |      (128,)             |             |
+|     model.encoder.block1.4                     |     0.256K              |     16.777M |
+|      model.encoder.block1.4.weight             |      (128,)             |             |
+|      model.encoder.block1.4.bias               |      (128,)             |             |
+|    model.encoder.block2                        |    0.886M               |    14.512G  |
+|     model.encoder.block2.0                     |     0.295M              |     4.832G  |
+|      model.encoder.block2.0.weight             |      (256, 128, 3, 3)   |             |
+|      model.encoder.block2.0.bias               |      (256,)             |             |
+|     model.encoder.block2.1                     |     0.512K              |     8.389M  |
+|      model.encoder.block2.1.weight             |      (256,)             |             |
+|      model.encoder.block2.1.bias               |      (256,)             |             |
+|     model.encoder.block2.3                     |     0.59M               |     9.664G  |
+|      model.encoder.block2.3.weight             |      (256, 256, 3, 3)   |             |
+|      model.encoder.block2.3.bias               |      (256,)             |             |
+|     model.encoder.block2.4                     |     0.512K              |     8.389M  |
+|      model.encoder.block2.4.weight             |      (256,)             |             |
+|      model.encoder.block2.4.bias               |      (256,)             |             |
+|    model.encoder.block3                        |    3.542M               |    14.504G  |
+|     model.encoder.block3.0                     |     1.18M               |     4.832G  |
+|      model.encoder.block3.0.weight             |      (512, 256, 3, 3)   |             |
+|      model.encoder.block3.0.bias               |      (512,)             |             |
+|     model.encoder.block3.1                     |     1.024K              |     4.194M  |
+|      model.encoder.block3.1.weight             |      (512,)             |             |
+|      model.encoder.block3.1.bias               |      (512,)             |             |
+|     model.encoder.block3.3                     |     2.36M               |     9.664G  |
+|      model.encoder.block3.3.weight             |      (512, 512, 3, 3)   |             |
+|      model.encoder.block3.3.bias               |      (512,)             |             |
+|     model.encoder.block3.4                     |     1.024K              |     4.194M  |
+|      model.encoder.block3.4.weight             |      (512,)             |             |
+|      model.encoder.block3.4.bias               |      (512,)             |             |
+|    model.encoder.block4                        |    14.162M              |    14.5G    |
+|     model.encoder.block4.0                     |     4.72M               |     4.832G  |
+|      model.encoder.block4.0.weight             |      (1024, 512, 3, 3)  |             |
+|      model.encoder.block4.0.bias               |      (1024,)            |             |
+|     model.encoder.block4.1                     |     2.048K              |     2.097M  |
+|      model.encoder.block4.1.weight             |      (1024,)            |             |
+|      model.encoder.block4.1.bias               |      (1024,)            |             |
+|     model.encoder.block4.3                     |     9.438M              |     9.664G  |
+|      model.encoder.block4.3.weight             |      (1024, 1024, 3, 3) |             |
+|      model.encoder.block4.3.bias               |      (1024,)            |             |
+|     model.encoder.block4.4                     |     2.048K              |     2.097M  |
+|      model.encoder.block4.4.weight             |      (1024,)            |             |
+|      model.encoder.block4.4.bias               |      (1024,)            |             |
+|    model.encoder.block5                        |    18.881M              |    4.833G   |
+|     model.encoder.block5.0                     |     9.438M              |     2.416G  |
+|      model.encoder.block5.0.weight             |      (1024, 1024, 3, 3) |             |
+|      model.encoder.block5.0.bias               |      (1024,)            |             |
+|     model.encoder.block5.1                     |     2.048K              |     0.524M  |
+|      model.encoder.block5.1.weight             |      (1024,)            |             |
+|      model.encoder.block5.1.bias               |      (1024,)            |             |
+|     model.encoder.block5.3                     |     9.438M              |     2.416G  |
+|      model.encoder.block5.3.weight             |      (1024, 1024, 3, 3) |             |
+|      model.encoder.block5.3.bias               |      (1024,)            |             |
+|     model.encoder.block5.4                     |     2.048K              |     0.524M  |
+|      model.encoder.block5.4.weight             |      (1024,)            |             |
+|      model.encoder.block5.4.bias               |      (1024,)            |             |
+|   model.decoder                                |   31.426M               |   0.102T    |
+|    model.decoder.up1                           |    9.44M                |    9.67G    |
+|     model.decoder.up1.1                        |     9.438M              |     9.664G  |
+|      model.decoder.up1.1.weight                |      (1024, 1024, 3, 3) |             |
+|      model.decoder.up1.1.bias                  |      (1024,)            |             |
+|     model.decoder.up1.2                        |     2.048K              |     2.097M  |
+|      model.decoder.up1.2.weight                |      (1024,)            |             |
+|      model.decoder.up1.2.bias                  |      (1024,)            |             |
+|     model.decoder.up1.0                        |                         |     4.194M  |
+|    model.decoder.db1                           |    14.16M               |    14.499G  |
+|     model.decoder.db1.0                        |     9.438M              |     9.664G  |
+|      model.decoder.db1.0.weight                |      (1024, 1024, 3, 3) |             |
+|      model.decoder.db1.0.bias                  |      (1024,)            |             |
+|     model.decoder.db1.1                        |     2.048K              |     2.097M  |
+|      model.decoder.db1.1.weight                |      (1024,)            |             |
+|      model.decoder.db1.1.bias                  |      (1024,)            |             |
+|     model.decoder.db1.3                        |     4.719M              |     4.832G  |
+|      model.decoder.db1.3.weight                |      (512, 1024, 3, 3)  |             |
+|      model.decoder.db1.3.bias                  |      (512,)             |             |
+|     model.decoder.db1.4                        |     1.024K              |     1.049M  |
+|      model.decoder.db1.4.weight                |      (512,)             |             |
+|      model.decoder.db1.4.bias                  |      (512,)             |             |
+|    model.decoder.up2                           |    2.361M               |    9.676G   |
+|     model.decoder.up2.1                        |     2.36M               |     9.664G  |
+|      model.decoder.up2.1.weight                |      (512, 512, 3, 3)   |             |
+|      model.decoder.up2.1.bias                  |      (512,)             |             |
+|     model.decoder.up2.2                        |     1.024K              |     4.194M  |
+|      model.decoder.up2.2.weight                |      (512,)             |             |
+|      model.decoder.up2.2.bias                  |      (512,)             |             |
+|     model.decoder.up2.0                        |                         |     8.389M  |
+|    model.decoder.db2                           |    3.541M               |    14.502G  |
+|     model.decoder.db2.0                        |     2.36M               |     9.664G  |
+|      model.decoder.db2.0.weight                |      (512, 512, 3, 3)   |             |
+|      model.decoder.db2.0.bias                  |      (512,)             |             |
+|     model.decoder.db2.1                        |     1.024K              |     4.194M  |
+|      model.decoder.db2.1.weight                |      (512,)             |             |
+|      model.decoder.db2.1.bias                  |      (512,)             |             |
+|     model.decoder.db2.3                        |     1.18M               |     4.832G  |
+|      model.decoder.db2.3.weight                |      (256, 512, 3, 3)   |             |
+|      model.decoder.db2.3.bias                  |      (256,)             |             |
+|     model.decoder.db2.4                        |     0.512K              |     2.097M  |
+|      model.decoder.db2.4.weight                |      (256,)             |             |
+|      model.decoder.db2.4.bias                  |      (256,)             |             |
+|    model.decoder.up3                           |    0.591M               |    9.689G   |
+|     model.decoder.up3.1                        |     0.59M               |     9.664G  |
+|      model.decoder.up3.1.weight                |      (256, 256, 3, 3)   |             |
+|      model.decoder.up3.1.bias                  |      (256,)             |             |
+|     model.decoder.up3.2                        |     0.512K              |     8.389M  |
+|      model.decoder.up3.2.weight                |      (256,)             |             |
+|      model.decoder.up3.2.bias                  |      (256,)             |             |
+|     model.decoder.up3.0                        |                         |     16.777M |
+|    model.decoder.db3                           |    0.886M               |    14.508G  |
+|     model.decoder.db3.0                        |     0.59M               |     9.664G  |
+|      model.decoder.db3.0.weight                |      (256, 256, 3, 3)   |             |
+|      model.decoder.db3.0.bias                  |      (256,)             |             |
+|     model.decoder.db3.1                        |     0.512K              |     8.389M  |
+|      model.decoder.db3.1.weight                |      (256,)             |             |
+|      model.decoder.db3.1.bias                  |      (256,)             |             |
+|     model.decoder.db3.3                        |     0.295M              |     4.832G  |
+|      model.decoder.db3.3.weight                |      (128, 256, 3, 3)   |             |
+|      model.decoder.db3.3.bias                  |      (128,)             |             |
+|     model.decoder.db3.4                        |     0.256K              |     4.194M  |
+|      model.decoder.db3.4.weight                |      (128,)             |             |
+|      model.decoder.db3.4.bias                  |      (128,)             |             |
+|    model.decoder.up4                           |    0.148M               |    9.714G   |
+|     model.decoder.up4.1                        |     0.148M              |     9.664G  |
+|      model.decoder.up4.1.weight                |      (128, 128, 3, 3)   |             |
+|      model.decoder.up4.1.bias                  |      (128,)             |             |
+|     model.decoder.up4.2                        |     0.256K              |     16.777M |
+|      model.decoder.up4.2.weight                |      (128,)             |             |
+|      model.decoder.up4.2.bias                  |      (128,)             |             |
+|     model.decoder.up4.0                        |                         |     33.554M |
+|    model.decoder.db4                           |    0.296M               |    19.361G  |
+|     model.decoder.db4.0                        |     0.148M              |     9.664G  |
+|      model.decoder.db4.0.weight                |      (128, 128, 3, 3)   |             |
+|      model.decoder.db4.0.bias                  |      (128,)             |             |
+|     model.decoder.db4.1                        |     0.256K              |     16.777M |
+|      model.decoder.db4.1.weight                |      (128,)             |             |
+|      model.decoder.db4.1.bias                  |      (128,)             |             |
+|     model.decoder.db4.3                        |     0.148M              |     9.664G  |
+|      model.decoder.db4.3.weight                |      (128, 128, 3, 3)   |             |
+|      model.decoder.db4.3.bias                  |      (128,)             |             |
+|     model.decoder.db4.4                        |     0.256K              |     16.777M |
+|      model.decoder.db4.4.weight                |      (128,)             |             |
+|      model.decoder.db4.4.bias                  |      (128,)             |             |
+|    model.decoder.fin_out.0                     |    3.459K               |    0.226G   |
+|     model.decoder.fin_out.0.weight             |     (3, 128, 3, 3)      |             |
+|     model.decoder.fin_out.0.bias               |     (3,)                |             |
+|  model_seg                                     |  28.374M                |  38.152G    |
+|   model_seg.encoder_segment                    |   14.134M               |   15.056G   |
+|    model_seg.encoder_segment.block1            |    40.704K              |    2.659G   |
+|     model_seg.encoder_segment.block1.0         |     3.52K               |     0.226G  |
+|      model_seg.encoder_segment.block1.0.weight |      (64, 6, 3, 3)      |             |
+|      model_seg.encoder_segment.block1.0.bias   |      (64,)              |             |
+|     model_seg.encoder_segment.block1.1         |     0.128K              |     8.389M  |
+|      model_seg.encoder_segment.block1.1.weight |      (64,)              |             |
+|      model_seg.encoder_segment.block1.1.bias   |      (64,)              |             |
+|     model_seg.encoder_segment.block1.3         |     36.928K             |     2.416G  |
+|      model_seg.encoder_segment.block1.3.weight |      (64, 64, 3, 3)     |             |
+|      model_seg.encoder_segment.block1.3.bias   |      (64,)              |             |
+|     model_seg.encoder_segment.block1.4         |     0.128K              |     8.389M  |
+|      model_seg.encoder_segment.block1.4.weight |      (64,)              |             |
+|      model_seg.encoder_segment.block1.4.bias   |      (64,)              |             |
+|    model_seg.encoder_segment.block2            |    0.222M               |    3.632G   |
+|     model_seg.encoder_segment.block2.0         |     73.856K             |     1.208G  |
+|      model_seg.encoder_segment.block2.0.weight |      (128, 64, 3, 3)    |             |
+|      model_seg.encoder_segment.block2.0.bias   |      (128,)             |             |
+|     model_seg.encoder_segment.block2.1         |     0.256K              |     4.194M  |
+|      model_seg.encoder_segment.block2.1.weight |      (128,)             |             |
+|      model_seg.encoder_segment.block2.1.bias   |      (128,)             |             |
+|     model_seg.encoder_segment.block2.3         |     0.148M              |     2.416G  |
+|      model_seg.encoder_segment.block2.3.weight |      (128, 128, 3, 3)   |             |
+|      model_seg.encoder_segment.block2.3.bias   |      (128,)             |             |
+|     model_seg.encoder_segment.block2.4         |     0.256K              |     4.194M  |
+|      model_seg.encoder_segment.block2.4.weight |      (128,)             |             |
+|      model_seg.encoder_segment.block2.4.bias   |      (128,)             |             |
+|    model_seg.encoder_segment.block3            |    0.886M               |    3.628G   |
+|     model_seg.encoder_segment.block3.0         |     0.295M              |     1.208G  |
+|      model_seg.encoder_segment.block3.0.weight |      (256, 128, 3, 3)   |             |
+|      model_seg.encoder_segment.block3.0.bias   |      (256,)             |             |
+|     model_seg.encoder_segment.block3.1         |     0.512K              |     2.097M  |
+|      model_seg.encoder_segment.block3.1.weight |      (256,)             |             |
+|      model_seg.encoder_segment.block3.1.bias   |      (256,)             |             |
+|     model_seg.encoder_segment.block3.3         |     0.59M               |     2.416G  |
+|      model_seg.encoder_segment.block3.3.weight |      (256, 256, 3, 3)   |             |
+|      model_seg.encoder_segment.block3.3.bias   |      (256,)             |             |
+|     model_seg.encoder_segment.block3.4         |     0.512K              |     2.097M  |
+|      model_seg.encoder_segment.block3.4.weight |      (256,)             |             |
+|      model_seg.encoder_segment.block3.4.bias   |      (256,)             |             |
+|    model_seg.encoder_segment.block4            |    3.542M               |    3.626G   |
+|     model_seg.encoder_segment.block4.0         |     1.18M               |     1.208G  |
+|      model_seg.encoder_segment.block4.0.weight |      (512, 256, 3, 3)   |             |
+|      model_seg.encoder_segment.block4.0.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block4.1         |     1.024K              |     1.049M  |
+|      model_seg.encoder_segment.block4.1.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block4.1.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block4.3         |     2.36M               |     2.416G  |
+|      model_seg.encoder_segment.block4.3.weight |      (512, 512, 3, 3)   |             |
+|      model_seg.encoder_segment.block4.3.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block4.4         |     1.024K              |     1.049M  |
+|      model_seg.encoder_segment.block4.4.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block4.4.bias   |      (512,)             |             |
+|    model_seg.encoder_segment.block5            |    4.722M               |    1.208G   |
+|     model_seg.encoder_segment.block5.0         |     2.36M               |     0.604G  |
+|      model_seg.encoder_segment.block5.0.weight |      (512, 512, 3, 3)   |             |
+|      model_seg.encoder_segment.block5.0.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block5.1         |     1.024K              |     0.262M  |
+|      model_seg.encoder_segment.block5.1.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block5.1.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block5.3         |     2.36M               |     0.604G  |
+|      model_seg.encoder_segment.block5.3.weight |      (512, 512, 3, 3)   |             |
+|      model_seg.encoder_segment.block5.3.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block5.4         |     1.024K              |     0.262M  |
+|      model_seg.encoder_segment.block5.4.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block5.4.bias   |      (512,)             |             |
+|    model_seg.encoder_segment.block6            |    4.722M               |    0.302G   |
+|     model_seg.encoder_segment.block6.0         |     2.36M               |     0.151G  |
+|      model_seg.encoder_segment.block6.0.weight |      (512, 512, 3, 3)   |             |
+|      model_seg.encoder_segment.block6.0.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block6.1         |     1.024K              |     65.536K |
+|      model_seg.encoder_segment.block6.1.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block6.1.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block6.3         |     2.36M               |     0.151G  |
+|      model_seg.encoder_segment.block6.3.weight |      (512, 512, 3, 3)   |             |
+|      model_seg.encoder_segment.block6.3.bias   |      (512,)             |             |
+|     model_seg.encoder_segment.block6.4         |     1.024K              |     65.536K |
+|      model_seg.encoder_segment.block6.4.weight |      (512,)             |             |
+|      model_seg.encoder_segment.block6.4.bias   |      (512,)             |             |
+|   model_seg.decoder_segment                    |   14.24M                |   23.096G   |
+|    model_seg.decoder_segment.up_b              |    2.361M               |    0.605G   |
+|     model_seg.decoder_segment.up_b.1           |     2.36M               |     0.604G  |
+|      model_seg.decoder_segment.up_b.1.weight   |      (512, 512, 3, 3)   |             |
+|      model_seg.decoder_segment.up_b.1.bias     |      (512,)             |             |
+|     model_seg.decoder_segment.up_b.2           |     1.024K              |     0.262M  |
+|      model_seg.decoder_segment.up_b.2.weight   |      (512,)             |             |
+|      model_seg.decoder_segment.up_b.2.bias     |      (512,)             |             |
+|     model_seg.decoder_segment.up_b.0           |                         |     0.524M  |
+|    model_seg.decoder_segment.db_b              |    7.081M               |    1.812G   |
+|     model_seg.decoder_segment.db_b.0           |     4.719M              |     1.208G  |
+|      model_seg.decoder_segment.db_b.0.weight   |      (512, 1024, 3, 3)  |             |
+|      model_seg.decoder_segment.db_b.0.bias     |      (512,)             |             |
+|     model_seg.decoder_segment.db_b.1           |     1.024K              |     0.262M  |
+|      model_seg.decoder_segment.db_b.1.weight   |      (512,)             |             |
+|      model_seg.decoder_segment.db_b.1.bias     |      (512,)             |             |
+|     model_seg.decoder_segment.db_b.3           |     2.36M               |     0.604G  |
+|      model_seg.decoder_segment.db_b.3.weight   |      (512, 512, 3, 3)   |             |
+|      model_seg.decoder_segment.db_b.3.bias     |      (512,)             |             |
+|     model_seg.decoder_segment.db_b.4           |     1.024K              |     0.262M  |
+|      model_seg.decoder_segment.db_b.4.weight   |      (512,)             |             |
+|      model_seg.decoder_segment.db_b.4.bias     |      (512,)             |             |
+|    model_seg.decoder_segment.up1               |    1.18M                |    1.211G   |
+|     model_seg.decoder_segment.up1.1            |     1.18M               |     1.208G  |
+|      model_seg.decoder_segment.up1.1.weight    |      (256, 512, 3, 3)   |             |
+|      model_seg.decoder_segment.up1.1.bias      |      (256,)             |             |
+|     model_seg.decoder_segment.up1.2            |     0.512K              |     0.524M  |
+|      model_seg.decoder_segment.up1.2.weight    |      (256,)             |             |
+|      model_seg.decoder_segment.up1.2.bias      |      (256,)             |             |
+|     model_seg.decoder_segment.up1.0            |                         |     2.097M  |
+|    model_seg.decoder_segment.db1               |    2.361M               |    2.417G   |
+|     model_seg.decoder_segment.db1.0            |     1.77M               |     1.812G  |
+|      model_seg.decoder_segment.db1.0.weight    |      (256, 768, 3, 3)   |             |
+|      model_seg.decoder_segment.db1.0.bias      |      (256,)             |             |
+|     model_seg.decoder_segment.db1.1            |     0.512K              |     0.524M  |
+|      model_seg.decoder_segment.db1.1.weight    |      (256,)             |             |
+|      model_seg.decoder_segment.db1.1.bias      |      (256,)             |             |
+|     model_seg.decoder_segment.db1.3            |     0.59M               |     0.604G  |
+|      model_seg.decoder_segment.db1.3.weight    |      (256, 256, 3, 3)   |             |
+|      model_seg.decoder_segment.db1.3.bias      |      (256,)             |             |
+|     model_seg.decoder_segment.db1.4            |     0.512K              |     0.524M  |
+|      model_seg.decoder_segment.db1.4.weight    |      (256,)             |             |
+|      model_seg.decoder_segment.db1.4.bias      |      (256,)             |             |
+|    model_seg.decoder_segment.up2               |    0.295M               |    1.213G   |
+|     model_seg.decoder_segment.up2.1            |     0.295M              |     1.208G  |
+|      model_seg.decoder_segment.up2.1.weight    |      (128, 256, 3, 3)   |             |
+|      model_seg.decoder_segment.up2.1.bias      |      (128,)             |             |
+|     model_seg.decoder_segment.up2.2            |     0.256K              |     1.049M  |
+|      model_seg.decoder_segment.up2.2.weight    |      (128,)             |             |
+|      model_seg.decoder_segment.up2.2.bias      |      (128,)             |             |
+|     model_seg.decoder_segment.up2.0            |                         |     4.194M  |
+|    model_seg.decoder_segment.db2               |    0.591M               |    2.418G   |
+|     model_seg.decoder_segment.db2.0            |     0.442M              |     1.812G  |
+|      model_seg.decoder_segment.db2.0.weight    |      (128, 384, 3, 3)   |             |
+|      model_seg.decoder_segment.db2.0.bias      |      (128,)             |             |
+|     model_seg.decoder_segment.db2.1            |     0.256K              |     1.049M  |
+|      model_seg.decoder_segment.db2.1.weight    |      (128,)             |             |
+|      model_seg.decoder_segment.db2.1.bias      |      (128,)             |             |
+|     model_seg.decoder_segment.db2.3            |     0.148M              |     0.604G  |
+|      model_seg.decoder_segment.db2.3.weight    |      (128, 128, 3, 3)   |             |
+|      model_seg.decoder_segment.db2.3.bias      |      (128,)             |             |
+|     model_seg.decoder_segment.db2.4            |     0.256K              |     1.049M  |
+|      model_seg.decoder_segment.db2.4.weight    |      (128,)             |             |
+|      model_seg.decoder_segment.db2.4.bias      |      (128,)             |             |
+|    model_seg.decoder_segment.up3               |    73.92K               |    1.218G   |
+|     model_seg.decoder_segment.up3.1            |     73.792K             |     1.208G  |
+|      model_seg.decoder_segment.up3.1.weight    |      (64, 128, 3, 3)    |             |
+|      model_seg.decoder_segment.up3.1.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.up3.2            |     0.128K              |     2.097M  |
+|      model_seg.decoder_segment.up3.2.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.up3.2.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.up3.0            |                         |     8.389M  |
+|    model_seg.decoder_segment.db3               |    0.148M               |    2.42G    |
+|     model_seg.decoder_segment.db3.0            |     0.111M              |     1.812G  |
+|      model_seg.decoder_segment.db3.0.weight    |      (64, 192, 3, 3)    |             |
+|      model_seg.decoder_segment.db3.0.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db3.1            |     0.128K              |     2.097M  |
+|      model_seg.decoder_segment.db3.1.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.db3.1.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db3.3            |     36.928K             |     0.604G  |
+|      model_seg.decoder_segment.db3.3.weight    |      (64, 64, 3, 3)     |             |
+|      model_seg.decoder_segment.db3.3.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db3.4            |     0.128K              |     2.097M  |
+|      model_seg.decoder_segment.db3.4.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.db3.4.bias      |      (64,)              |             |
+|    model_seg.decoder_segment.up4               |    37.056K              |    2.441G   |
+|     model_seg.decoder_segment.up4.1            |     36.928K             |     2.416G  |
+|      model_seg.decoder_segment.up4.1.weight    |      (64, 64, 3, 3)     |             |
+|      model_seg.decoder_segment.up4.1.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.up4.2            |     0.128K              |     8.389M  |
+|      model_seg.decoder_segment.up4.2.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.up4.2.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.up4.0            |                         |     16.777M |
+|    model_seg.decoder_segment.db4               |    0.111M               |    7.265G   |
+|     model_seg.decoder_segment.db4.0            |     73.792K             |     4.832G  |
+|      model_seg.decoder_segment.db4.0.weight    |      (64, 128, 3, 3)    |             |
+|      model_seg.decoder_segment.db4.0.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db4.1            |     0.128K              |     8.389M  |
+|      model_seg.decoder_segment.db4.1.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.db4.1.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db4.3            |     36.928K             |     2.416G  |
+|      model_seg.decoder_segment.db4.3.weight    |      (64, 64, 3, 3)     |             |
+|      model_seg.decoder_segment.db4.3.bias      |      (64,)              |             |
+|     model_seg.decoder_segment.db4.4            |     0.128K              |     8.389M  |
+|      model_seg.decoder_segment.db4.4.weight    |      (64,)              |             |
+|      model_seg.decoder_segment.db4.4.bias      |      (64,)              |             |
+|    model_seg.decoder_segment.fin_out.0         |    1.154K               |    75.497M  |
+|     model_seg.decoder_segment.fin_out.0.weight |     (2, 64, 3, 3)       |             |
+|     model_seg.decoder_segment.fin_out.0.bias   |     (2,)                |             |
+-------------------------------------------------------------------------------
+2024-05-24 15:28:06,960 - ==> Creating optimizer
+2024-05-24 15:28:06,978 - ==> Loading dataset: DefaultAD
+2024-05-24 15:28:06,981 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [21, 21], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.0001                              
+optim.kwargs                         : {'name': 'adam'}                    
+trainer.name                         : DRAEMTrainer                        
+trainer.checkpoint                   : runs/benchmark/draem_256_100e/mad_real
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-06, 'warmup_lr': 1.0000000000000001e-07, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 8                                   
+trainer.data.batch_size_per_gpu      : 8                                   
+trainer.data.batch_size_test         : 8                                   
+trainer.data.batch_size_per_gpu_test : 8                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 6100                                
+trainer.metric_recorder              : {'mAUROC_sp_max_Bear': [], 'mAP_sp_max_Bear': [], 'mF1_max_sp_max_Bear': [], 'mAUPRO_px_Bear': [], 'mAUROC_px_Bear': [], 'mAP_px_Bear': [], 'mF1_max_px_Bear': [], 'mF1_px_0.2_0.8_0.1_Bear': [], 'mAcc_px_0.2_0.8_0.1_Bear': [], 'mIoU_px_0.2_0.8_0.1_Bear': [], 'mIoU_max_px_Bear': [], 'mAUROC_sp_max_Bird': [], 'mAP_sp_max_Bird': [], 'mF1_max_sp_max_Bird': [], 'mAUPRO_px_Bird': [], 'mAUROC_px_Bird': [], 'mAP_px_Bird': [], 'mF1_max_px_Bird': [], 'mF1_px_0.2_0.8_0.1_Bird': [], 'mAcc_px_0.2_0.8_0.1_Bird': [], 'mIoU_px_0.2_0.8_0.1_Bird': [], 'mIoU_max_px_Bird': [], 'mAUROC_sp_max_Elephant': [], 'mAP_sp_max_Elephant': [], 'mF1_max_sp_max_Elephant': [], 'mAUPRO_px_Elephant': [], 'mAUROC_px_Elephant': [], 'mAP_px_Elephant': [], 'mF1_max_px_Elephant': [], 'mF1_px_0.2_0.8_0.1_Elephant': [], 'mAcc_px_0.2_0.8_0.1_Elephant': [], 'mIoU_px_0.2_0.8_0.1_Elephant': [], 'mIoU_max_px_Elephant': [], 'mAUROC_sp_max_Parrot': [], 'mAP_sp_max_Parrot': [], 'mF1_max_sp_max_Parrot': [], 'mAUPRO_px_Parrot': [], 'mAUROC_px_Parrot': [], 'mAP_px_Parrot': [], 'mF1_max_px_Parrot': [], 'mF1_px_0.2_0.8_0.1_Parrot': [], 'mAcc_px_0.2_0.8_0.1_Parrot': [], 'mIoU_px_0.2_0.8_0.1_Parrot': [], 'mIoU_max_px_Parrot': [], 'mAUROC_sp_max_Pig': [], 'mAP_sp_max_Pig': [], 'mF1_max_sp_max_Pig': [], 'mAUPRO_px_Pig': [], 'mAUROC_px_Pig': [], 'mAP_px_Pig': [], 'mF1_max_px_Pig': [], 'mF1_px_0.2_0.8_0.1_Pig': [], 'mAcc_px_0.2_0.8_0.1_Pig': [], 'mIoU_px_0.2_0.8_0.1_Pig': [], 'mIoU_max_px_Pig': [], 'mAUROC_sp_max_Puppy': [], 'mAP_sp_max_Puppy': [], 'mF1_max_sp_max_Puppy': [], 'mAUPRO_px_Puppy': [], 'mAUROC_px_Puppy': [], 'mAP_px_Puppy': [], 'mF1_max_px_Puppy': [], 'mF1_px_0.2_0.8_0.1_Puppy': [], 'mAcc_px_0.2_0.8_0.1_Puppy': [], 'mIoU_px_0.2_0.8_0.1_Puppy': [], 'mIoU_max_px_Puppy': [], 'mAUROC_sp_max_Scorpion': [], 'mAP_sp_max_Scorpion': [], 'mF1_max_sp_max_Scorpion': [], 'mAUPRO_px_Scorpion': [], 'mAUROC_px_Scorpion': [], 'mAP_px_Scorpion': [], 'mF1_max_px_Scorpion': [], 'mF1_px_0.2_0.8_0.1_Scorpion': [], 'mAcc_px_0.2_0.8_0.1_Scorpion': [], 'mIoU_px_0.2_0.8_0.1_Scorpion': [], 'mIoU_max_px_Scorpion': [], 'mAUROC_sp_max_Turtle': [], 'mAP_sp_max_Turtle': [], 'mF1_max_sp_max_Turtle': [], 'mAUPRO_px_Turtle': [], 'mAUROC_px_Turtle': [], 'mAP_px_Turtle': [], 'mF1_max_px_Turtle': [], 'mF1_px_0.2_0.8_0.1_Turtle': [], 'mAcc_px_0.2_0.8_0.1_Turtle': [], 'mIoU_px_0.2_0.8_0.1_Turtle': [], 'mIoU_max_px_Turtle': [], 'mAUROC_sp_max_Unicorn': [], 'mAP_sp_max_Unicorn': [], 'mF1_max_sp_max_Unicorn': [], 'mAUPRO_px_Unicorn': [], 'mAUROC_px_Unicorn': [], 'mAP_px_Unicorn': [], 'mF1_max_px_Unicorn': [], 'mF1_px_0.2_0.8_0.1_Unicorn': [], 'mAcc_px_0.2_0.8_0.1_Unicorn': [], 'mIoU_px_0.2_0.8_0.1_Unicorn': [], 'mIoU_max_px_Unicorn': [], 'mAUROC_sp_max_Whale': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_Whale': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_Whale': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_Whale': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_Whale': [], 'mAUROC_px_Avg': [], 'mAP_px_Whale': [], 'mAP_px_Avg': [], 'mF1_max_px_Whale': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_Whale': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_Whale': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_Whale': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_Whale': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'mse', 'lam': 1.0}, {'type': 'SSIMLoss', 'name': 'ssim', 'lam': 1.0}, {'type': 'FocalLoss', 'name': 'focal', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mad_real                       
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 61                                  
+data.test_size                       : 34                                  
+data.train_length                    : 490                                 
+data.test_length                     : 271                                 
+model.name                           : draem                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 8                                   
+batch_test_per                       : 8                                   
+lr                                   : 0.0001                              
+cfg_path                             : configs.benchmark.draem_256_100e    
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/draem_256_100e/mad_real', 'data.root=data/mad_real']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.draem_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/draem_256_100e/mad_real data.root=data/mad_real
+task_start_time                      : 2952567.619521532                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757/show_train
+logdir_test                          : runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757/show_test
+2024-05-24 15:28:06,981 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-24 15:28:56,824 - Train: 0.82% [50/6100]  [0.8/100.0] [batch_t 0.258 (0.996)] [data_t 0.001] [optim_t 0.257] [lr 0.000100] [total 0.794 (0.907)]
+2024-05-24 15:28:59,663 - ==> Total time: 0:01:02	 Eta: 1:42:53 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:29:13,280 - Train: 1.64% [100/6100]  [1.6/100.0] [batch_t 0.258 (0.287)] [data_t 0.001] [optim_t 0.257] [lr 0.000100] [total 0.747 (0.744)]
+2024-05-24 15:29:19,079 - ==> Total time: 0:01:21	 Eta: 1:06:47 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:29:29,804 - Train: 2.46% [150/6100]  [2.5/100.0] [batch_t 0.259 (0.298)] [data_t 0.001] [optim_t 0.258] [lr 0.000100] [total 0.678 (0.717)]
+2024-05-24 15:29:38,400 - ==> Total time: 0:01:41	 Eta: 0:54:28 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:29:46,416 - Train: 3.28% [200/6100]  [3.3/100.0] [batch_t 0.260 (0.326)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.661 (0.680)]
+2024-05-24 15:29:57,853 - ==> Total time: 0:02:00	 Eta: 0:48:13 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:30:02,864 - Train: 4.10% [250/6100]  [4.1/100.0] [batch_t 0.259 (0.430)] [data_t 0.001] [optim_t 0.258] [lr 0.000100] [total 0.645 (0.649)]
+2024-05-24 15:30:15,971 - Train: 4.92% [300/6100]  [4.9/100.0] [batch_t 0.260 (0.262)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.683 (0.659)]
+2024-05-24 15:30:17,274 - ==> Total time: 0:02:19	 Eta: 0:44:19 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:30:32,430 - Train: 5.74% [350/6100]  [5.7/100.0] [batch_t 0.260 (0.283)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.596 (0.634)]
+2024-05-24 15:30:36,593 - ==> Total time: 0:02:39	 Eta: 0:41:35 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:30:48,883 - Train: 6.56% [400/6100]  [6.6/100.0] [batch_t 0.260 (0.290)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.609 (0.619)]
+2024-05-24 15:30:55,903 - ==> Total time: 0:02:58	 Eta: 0:39:32 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:31:05,526 - Train: 7.38% [450/6100]  [7.4/100.0] [batch_t 0.260 (0.308)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.604 (0.596)]
+2024-05-24 15:31:15,548 - ==> Total time: 0:03:18	 Eta: 0:37:59 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:31:22,021 - Train: 8.20% [500/6100]  [8.2/100.0] [batch_t 0.260 (0.343)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.616 (0.592)]
+2024-05-24 15:31:34,776 - ==> Total time: 0:03:37	 Eta: 0:36:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:31:38,441 - Train: 9.02% [550/6100]  [9.0/100.0] [batch_t 1.271 (1.271)] [data_t 1.010] [optim_t 0.261] [lr 0.000100] [total 0.597 (0.597)]
+2024-05-24 15:31:51,446 - Train: 9.84% [600/6100]  [9.8/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.592 (0.575)]
+2024-05-24 15:32:15,014 - Test: 100.00% [34/34] [batch_t 8.598 (0.615)]
+2024-05-24 15:32:15,753 - ==> Metric Time for Bear           :   0.002 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-24 15:32:16,391 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:32:16,935 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-24 15:32:17,600 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.043 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:32:18,118 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.011 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:32:18,710 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.038 (mIoU_max_px)	
+2024-05-24 15:32:19,370 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:32:19,996 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:32:20,610 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:32:21,490 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:32:21,493 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     53.333      |  53.333 (10  epoch)   |    84.378    | 84.378 (10  epoch) |      90.566      |   90.566 (10  epoch)   |   21.079    | 21.079 (10  epoch) |   39.965    | 39.965 (10  epoch) |  0.080   | 0.080 (10  epoch) |    0.329     | 0.329 (10  epoch)  |        0.053         |     0.053 (10  epoch)      |         1.038         |      1.038 (10  epoch)      |         0.027         |      0.027 (10  epoch)      |     0.165     |  0.165 (10  epoch)  |
+|   Bird   |     66.364      |  66.364 (10  epoch)   |    91.451    | 91.451 (10  epoch) |      89.796      |   89.796 (10  epoch)   |   26.489    | 26.489 (10  epoch) |   57.156    | 57.156 (10  epoch) |  1.082   | 1.082 (10  epoch) |    3.588     | 3.588 (10  epoch)  |        0.513         |     0.513 (10  epoch)      |         1.552         |      1.552 (10  epoch)      |         0.261         |      0.261 (10  epoch)      |     1.827     |  1.827 (10  epoch)  |
+| Elephant |     46.667      |  46.667 (10  epoch)   |    73.765    | 73.765 (10  epoch) |      87.805      |   87.805 (10  epoch)   |   13.043    | 13.043 (10  epoch) |   43.122    | 43.122 (10  epoch) |  0.310   | 0.310 (10  epoch) |    0.710     | 0.710 (10  epoch)  |        0.223         |     0.223 (10  epoch)      |        13.420         |     13.420 (10  epoch)      |         0.112         |      0.112 (10  epoch)      |     0.356     |  0.356 (10  epoch)  |
+|  Parrot  |     64.348      |  64.348 (10  epoch)   |    90.324    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   13.704    | 13.704 (10  epoch) |   49.934    | 49.934 (10  epoch) |  0.604   | 0.604 (10  epoch) |    1.317     | 1.317 (10  epoch)  |        0.092         |     0.092 (10  epoch)      |         0.297         |      0.297 (10  epoch)      |         0.046         |      0.046 (10  epoch)      |     0.663     |  0.663 (10  epoch)  |
+|   Pig    |     50.588      |  50.588 (10  epoch)   |    81.936    | 81.936 (10  epoch) |      87.179      |   87.179 (10  epoch)   |   21.654    | 21.654 (10  epoch) |   50.479    | 50.479 (10  epoch) |  0.460   | 0.460 (10  epoch) |    0.857     | 0.857 (10  epoch)  |        0.134         |     0.134 (10  epoch)      |         7.535         |      7.535 (10  epoch)      |         0.067         |      0.067 (10  epoch)      |     0.430     |  0.430 (10  epoch)  |
+|  Puppy   |     65.000      |  65.000 (10  epoch)   |    91.332    | 91.332 (10  epoch) |      88.889      |   88.889 (10  epoch)   |   34.906    | 34.906 (10  epoch) |   61.198    | 61.198 (10  epoch) |  0.586   | 0.586 (10  epoch) |    2.492     | 2.492 (10  epoch)  |        0.465         |     0.465 (10  epoch)      |         3.478         |      3.478 (10  epoch)      |         0.235         |      0.235 (10  epoch)      |     1.262     |  1.262 (10  epoch)  |
+| Scorpion |     60.000      |  60.000 (10  epoch)   |    90.778    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   14.146    | 14.146 (10  epoch) |   41.522    | 41.522 (10  epoch) |  1.292   | 1.292 (10  epoch) |    2.928     | 2.928 (10  epoch)  |        0.234         |     0.234 (10  epoch)      |         0.318         |      0.318 (10  epoch)      |         0.118         |      0.118 (10  epoch)      |     1.486     |  1.486 (10  epoch)  |
+|  Turtle  |     83.810      |  83.810 (10  epoch)   |    96.282    | 96.282 (10  epoch) |      90.476      |   90.476 (10  epoch)   |   51.149    | 51.149 (10  epoch) |   67.428    | 67.428 (10  epoch) |  2.138   | 2.138 (10  epoch) |    7.129     | 7.129 (10  epoch)  |        1.349         |     1.349 (10  epoch)      |        15.042         |     15.042 (10  epoch)      |         0.695         |      0.695 (10  epoch)      |     3.696     |  3.696 (10  epoch)  |
+| Unicorn  |     64.762      |  64.762 (10  epoch)   |    91.556    | 91.556 (10  epoch) |      89.362      |   89.362 (10  epoch)   |   14.462    | 14.462 (10  epoch) |   44.637    | 44.637 (10  epoch) |  0.220   | 0.220 (10  epoch) |    0.497     | 0.497 (10  epoch)  |        0.037         |     0.037 (10  epoch)      |         0.246         |      0.246 (10  epoch)      |         0.018         |      0.018 (10  epoch)      |     0.249     |  0.249 (10  epoch)  |
+|  Whale   |     62.500      |  62.500 (10  epoch)   |    92.330    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   39.917    | 39.917 (10  epoch) |   55.772    | 55.772 (10  epoch) |  0.609   | 0.609 (10  epoch) |    2.814     | 2.814 (10  epoch)  |        0.546         |     0.546 (10  epoch)      |         3.760         |      3.760 (10  epoch)      |         0.276         |      0.276 (10  epoch)      |     1.427     |  1.427 (10  epoch)  |
+|   Avg    |     61.737      |  61.737 (10  epoch)   |    88.413    | 88.413 (10  epoch) |      89.722      |   89.722 (10  epoch)   |   25.055    | 25.055 (10  epoch) |   51.121    | 51.121 (10  epoch) |  0.738   | 0.738 (10  epoch) |    2.266     | 2.266 (10  epoch)  |        0.365         |     0.365 (10  epoch)      |         4.669         |      4.669 (10  epoch)      |         0.185         |      0.185 (10  epoch)      |     1.156     |  1.156 (10  epoch)  |
+2024-05-24 15:32:21,547 - ==> Total time: 0:04:24	 Eta: 0:39:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:32:36,347 - Train: 10.66% [650/6100]  [10.7/100.0] [batch_t 0.260 (0.306)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.586 (0.555)]
+2024-05-24 15:32:41,806 - ==> Total time: 0:04:44	 Eta: 0:38:21 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:32:52,345 - Train: 11.48% [700/6100]  [11.5/100.0] [batch_t 0.260 (0.288)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.504 (0.555)]
+2024-05-24 15:33:00,662 - ==> Total time: 0:05:03	 Eta: 0:37:04 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:33:10,599 - Train: 12.30% [750/6100]  [12.3/100.0] [batch_t 0.259 (0.305)] [data_t 0.001] [optim_t 0.258] [lr 0.000100] [total 0.509 (0.533)]
+2024-05-24 15:33:21,777 - ==> Total time: 0:05:24	 Eta: 0:36:11 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:33:26,534 - Train: 13.11% [800/6100]  [13.1/100.0] [batch_t 0.260 (0.374)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.540 (0.532)]
+2024-05-24 15:33:39,537 - Train: 13.93% [850/6100]  [13.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.561 (0.520)]
+2024-05-24 15:33:40,580 - ==> Total time: 0:05:43	 Eta: 0:35:08 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:33:55,546 - Train: 14.75% [900/6100]  [14.8/100.0] [batch_t 0.260 (0.277)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.566 (0.512)]
+2024-05-24 15:33:59,445 - ==> Total time: 0:06:02	 Eta: 0:34:12 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:34:11,504 - Train: 15.57% [950/6100]  [15.6/100.0] [batch_t 0.260 (0.283)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.529 (0.490)]
+2024-05-24 15:34:18,280 - ==> Total time: 0:06:20	 Eta: 0:33:20 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:34:27,539 - Train: 16.39% [1000/6100]  [16.4/100.0] [batch_t 0.261 (0.294)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.513 (0.486)]
+2024-05-24 15:34:37,192 - ==> Total time: 0:06:39	 Eta: 0:32:32 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:34:43,497 - Train: 17.21% [1050/6100]  [17.2/100.0] [batch_t 0.260 (0.322)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.413 (0.489)]
+2024-05-24 15:34:55,992 - ==> Total time: 0:06:58	 Eta: 0:31:47 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:34:59,522 - Train: 18.03% [1100/6100]  [18.0/100.0] [batch_t 0.261 (0.670)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.486 (0.451)]
+2024-05-24 15:35:12,541 - Train: 18.85% [1150/6100]  [18.9/100.0] [batch_t 0.261 (0.260)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.433 (0.473)]
+2024-05-24 15:35:14,884 - ==> Total time: 0:07:17	 Eta: 0:31:05 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:35:28,678 - Train: 19.67% [1200/6100]  [19.7/100.0] [batch_t 0.260 (0.280)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.481 (0.462)]
+2024-05-24 15:35:44,513 - Test: 100.00% [34/34] [batch_t 0.068 (0.309)]
+2024-05-24 15:35:45,232 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-24 15:35:45,881 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-24 15:35:46,434 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-24 15:35:47,108 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:35:47,634 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.011 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:35:48,228 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.037 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:35:48,896 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:35:49,530 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:35:50,153 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:35:51,049 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.020 (mF1_px_0.2_0.8_0.1)	  0.020 (mAcc_px_0.2_0.8_0.1)	  0.020 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:35:51,054 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     74.167      |  74.167 (20  epoch)   |    93.630    | 93.630 (20  epoch) |      92.308      |   92.308 (20  epoch)   |   23.832    | 23.832 (20  epoch) |   41.647    | 41.647 (20  epoch) |  0.099   | 0.099 (20  epoch) |    0.439     | 0.439 (20  epoch)  |        0.084         |     0.084 (20  epoch)      |         0.937         |      1.038 (10  epoch)      |         0.042         |      0.042 (20  epoch)      |     0.220     |  0.220 (20  epoch)  |
+|   Bird   |     60.909      |  66.364 (10  epoch)   |    90.386    | 91.451 (10  epoch) |      89.796      |   89.796 (10  epoch)   |   23.562    | 26.489 (10  epoch) |   55.539    | 57.156 (10  epoch) |  0.747   | 1.082 (10  epoch) |    2.528     | 3.588 (10  epoch)  |        0.025         |     0.513 (10  epoch)      |         0.055         |      1.552 (10  epoch)      |         0.012         |      0.261 (10  epoch)      |     1.280     |  1.827 (10  epoch)  |
+| Elephant |     28.889      |  46.667 (10  epoch)   |    70.781    | 73.765 (10  epoch) |      87.805      |   87.805 (10  epoch)   |   16.852    | 16.852 (20  epoch) |   46.858    | 46.858 (20  epoch) |  0.360   | 0.360 (20  epoch) |    0.921     | 0.921 (20  epoch)  |        0.162         |     0.223 (10  epoch)      |         5.395         |     13.420 (10  epoch)      |         0.081         |      0.112 (10  epoch)      |     0.462     |  0.462 (20  epoch)  |
+|  Parrot  |     53.043      |  64.348 (10  epoch)   |    88.242    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   14.249    | 14.249 (20  epoch) |   49.370    | 49.934 (10  epoch) |  0.622   | 0.622 (20  epoch) |    1.273     | 1.317 (10  epoch)  |        0.055         |     0.092 (10  epoch)      |         0.112         |      0.297 (10  epoch)      |         0.027         |      0.046 (10  epoch)      |     0.640     |  0.663 (10  epoch)  |
+|   Pig    |     28.235      |  50.588 (10  epoch)   |    69.687    | 81.936 (10  epoch) |      87.179      |   87.179 (10  epoch)   |   22.574    | 22.574 (20  epoch) |   48.421    | 50.479 (10  epoch) |  0.482   | 0.482 (20  epoch) |    1.370     | 1.370 (20  epoch)  |        0.210         |     0.210 (20  epoch)      |         3.241         |      7.535 (10  epoch)      |         0.106         |      0.106 (20  epoch)      |     0.690     |  0.690 (20  epoch)  |
+|  Puppy   |     73.000      |  73.000 (20  epoch)   |    92.208    | 92.208 (20  epoch) |      90.909      |   90.909 (20  epoch)   |   34.719    | 34.906 (10  epoch) |   55.278    | 61.198 (10  epoch) |  0.559   | 0.586 (10  epoch) |    2.531     | 2.531 (20  epoch)  |        0.484         |     0.484 (20  epoch)      |         2.705         |      3.478 (10  epoch)      |         0.245         |      0.245 (20  epoch)      |     1.282     |  1.282 (20  epoch)  |
+| Scorpion |     34.783      |  60.000 (10  epoch)   |    76.534    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   15.959    | 15.959 (20  epoch) |   47.466    | 47.466 (20  epoch) |  1.490   | 1.490 (20  epoch) |    3.283     | 3.283 (20  epoch)  |        0.134         |     0.234 (10  epoch)      |         0.157         |      0.318 (10  epoch)      |         0.067         |      0.118 (10  epoch)      |     1.669     |  1.669 (20  epoch)  |
+|  Turtle  |     92.381      |  92.381 (20  epoch)   |    98.184    | 98.184 (20  epoch) |      95.455      |   95.455 (20  epoch)   |   47.948    | 51.149 (10  epoch) |   62.520    | 67.428 (10  epoch) |  2.082   | 2.138 (10  epoch) |    7.492     | 7.492 (20  epoch)  |        1.562         |     1.562 (20  epoch)      |         4.377         |     15.042 (10  epoch)      |         0.806         |      0.806 (20  epoch)      |     3.892     |  3.892 (20  epoch)  |
+| Unicorn  |     60.000      |  64.762 (10  epoch)   |    89.424    | 91.556 (10  epoch) |      89.362      |   89.362 (10  epoch)   |   18.052    | 18.052 (20  epoch) |   51.283    | 51.283 (20  epoch) |  0.260   | 0.260 (20  epoch) |    0.555     | 0.555 (20  epoch)  |        0.012         |     0.037 (10  epoch)      |         0.067         |      0.246 (10  epoch)      |         0.006         |      0.018 (10  epoch)      |     0.278     |  0.278 (20  epoch)  |
+|  Whale   |     17.500      |  62.500 (10  epoch)   |    76.952    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   41.275    | 41.275 (20  epoch) |   54.221    | 55.772 (10  epoch) |  0.561   | 0.609 (10  epoch) |    2.361     | 2.814 (10  epoch)  |        0.408         |     0.546 (10  epoch)      |         2.385         |      3.760 (10  epoch)      |         0.206         |      0.276 (10  epoch)      |     1.195     |  1.427 (10  epoch)  |
+|   Avg    |     52.291      |  61.737 (10  epoch)   |    84.603    | 88.413 (10  epoch) |      90.596      |   90.596 (20  epoch)   |   25.902    | 25.902 (20  epoch) |   51.260    | 51.260 (20  epoch) |  0.726   | 0.738 (10  epoch) |    2.275     | 2.275 (20  epoch)  |        0.314         |     0.365 (10  epoch)      |         1.943         |      4.669 (10  epoch)      |         0.160         |      0.185 (10  epoch)      |     1.161     |  1.161 (20  epoch)  |
+2024-05-24 15:35:51,130 - ==> Total time: 0:07:53	 Eta: 0:31:35 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:36:02,849 - Train: 20.49% [1250/6100]  [20.5/100.0] [batch_t 0.260 (0.286)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.395 (0.452)]
+2024-05-24 15:36:10,901 - ==> Total time: 0:08:13	 Eta: 0:30:56 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:36:19,263 - Train: 21.31% [1300/6100]  [21.3/100.0] [batch_t 0.259 (0.302)] [data_t 0.001] [optim_t 0.258] [lr 0.000100] [total 0.460 (0.449)]
+2024-05-24 15:36:30,183 - ==> Total time: 0:08:32	 Eta: 0:30:18 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:36:35,631 - Train: 22.13% [1350/6100]  [22.1/100.0] [batch_t 0.260 (0.360)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.443 (0.432)]
+2024-05-24 15:36:48,662 - Train: 22.95% [1400/6100]  [23.0/100.0] [batch_t 0.261 (0.261)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.474 (0.445)]
+2024-05-24 15:36:49,446 - ==> Total time: 0:08:52	 Eta: 0:29:41 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:37:05,532 - Train: 23.77% [1450/6100]  [23.8/100.0] [batch_t 0.260 (0.278)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.463 (0.437)]
+2024-05-24 15:37:09,187 - ==> Total time: 0:09:11	 Eta: 0:29:07 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:37:22,230 - Train: 24.59% [1500/6100]  [24.6/100.0] [batch_t 0.261 (0.283)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.491 (0.421)]
+2024-05-24 15:37:28,746 - ==> Total time: 0:09:31	 Eta: 0:28:34 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:37:38,563 - Train: 25.41% [1550/6100]  [25.4/100.0] [batch_t 0.260 (0.292)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.467 (0.420)]
+2024-05-24 15:37:47,951 - ==> Total time: 0:09:50	 Eta: 0:28:01 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:37:54,956 - Train: 26.23% [1600/6100]  [26.2/100.0] [batch_t 0.260 (0.318)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.470 (0.412)]
+2024-05-24 15:38:07,197 - ==> Total time: 0:10:09	 Eta: 0:27:28 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:38:11,507 - Train: 27.05% [1650/6100]  [27.0/100.0] [batch_t 0.261 (0.531)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.405 (0.397)]
+2024-05-24 15:38:24,527 - Train: 27.87% [1700/6100]  [27.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.432 (0.404)]
+2024-05-24 15:38:26,612 - ==> Total time: 0:10:29	 Eta: 0:26:58 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:38:40,872 - Train: 28.69% [1750/6100]  [28.7/100.0] [batch_t 0.260 (0.279)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.377 (0.398)]
+2024-05-24 15:38:45,821 - ==> Total time: 0:10:48	 Eta: 0:26:27 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:38:57,244 - Train: 29.51% [1800/6100]  [29.5/100.0] [batch_t 0.261 (0.286)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.395 (0.407)]
+2024-05-24 15:39:15,863 - Test: 100.00% [34/34] [batch_t 0.069 (0.311)]
+2024-05-24 15:39:16,582 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 15:39:17,232 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:39:17,784 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-24 15:39:18,459 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:39:18,987 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:39:19,581 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:39:20,254 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:39:20,888 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:39:21,516 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.017 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:39:22,409 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:39:22,414 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     91.667      |  91.667 (30  epoch)   |    98.207    | 98.207 (30  epoch) |      94.118      |   94.118 (30  epoch)   |   22.059    | 23.832 (20  epoch) |   42.041    | 42.041 (30  epoch) |  0.110   | 0.110 (30  epoch) |    0.597     | 0.597 (30  epoch)  |        0.049         |     0.084 (20  epoch)      |         6.849         |      6.849 (30  epoch)      |         0.024         |      0.042 (20  epoch)      |     0.299     |  0.299 (30  epoch)  |
+|   Bird   |     64.545      |  66.364 (10  epoch)   |    91.682    | 91.682 (30  epoch) |      89.796      |   89.796 (10  epoch)   |   21.692    | 26.489 (10  epoch) |   56.300    | 57.156 (10  epoch) |  0.750   | 1.082 (10  epoch) |    2.255     | 3.588 (10  epoch)  |        0.330         |     0.513 (10  epoch)      |         2.494         |      2.494 (30  epoch)      |         0.167         |      0.261 (10  epoch)      |     1.141     |  1.827 (10  epoch)  |
+| Elephant |     70.000      |  70.000 (30  epoch)   |    91.132    | 91.132 (30  epoch) |      87.805      |   87.805 (10  epoch)   |   15.104    | 16.852 (20  epoch) |   48.443    | 48.443 (30  epoch) |  0.352   | 0.360 (20  epoch) |    0.842     | 0.921 (20  epoch)  |        0.120         |     0.223 (10  epoch)      |         1.110         |     13.420 (10  epoch)      |         0.060         |      0.112 (10  epoch)      |     0.423     |  0.462 (20  epoch)  |
+|  Parrot  |     33.913      |  64.348 (10  epoch)   |    77.918    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   12.182    | 14.249 (20  epoch) |   47.190    | 49.934 (10  epoch) |  0.565   | 0.622 (20  epoch) |    1.282     | 1.317 (10  epoch)  |        0.197         |     0.197 (30  epoch)      |         9.534         |      9.534 (30  epoch)      |         0.099         |      0.099 (30  epoch)      |     0.645     |  0.663 (10  epoch)  |
+|   Pig    |     34.118      |  50.588 (10  epoch)   |    68.311    | 81.936 (10  epoch) |      89.474      |   89.474 (30  epoch)   |   21.519    | 22.574 (20  epoch) |   56.323    | 56.323 (30  epoch) |  0.547   | 0.547 (30  epoch) |    0.972     | 1.370 (20  epoch)  |        0.170         |     0.210 (20  epoch)      |         8.593         |      8.593 (30  epoch)      |         0.085         |      0.106 (20  epoch)      |     0.488     |  0.690 (20  epoch)  |
+|  Puppy   |     36.000      |  73.000 (20  epoch)   |    77.412    | 92.208 (20  epoch) |      88.889      |   90.909 (20  epoch)   |   26.569    | 34.906 (10  epoch) |   46.527    | 61.198 (10  epoch) |  0.356   | 0.586 (10  epoch) |    1.773     | 2.531 (20  epoch)  |        0.235         |     0.484 (20  epoch)      |         8.260         |      8.260 (30  epoch)      |         0.118         |      0.245 (20  epoch)      |     0.894     |  1.282 (20  epoch)  |
+| Scorpion |     43.478      |  60.000 (10  epoch)   |    81.444    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   16.559    | 16.559 (30  epoch) |   40.519    | 47.466 (20  epoch) |  1.508   | 1.508 (30  epoch) |    3.096     | 3.283 (20  epoch)  |        0.427         |     0.427 (30  epoch)      |         6.928         |      6.928 (30  epoch)      |         0.215         |      0.215 (30  epoch)      |     1.572     |  1.669 (20  epoch)  |
+|  Turtle  |     44.762      |  92.381 (20  epoch)   |    82.458    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   26.607    | 51.149 (10  epoch) |   37.772    | 67.428 (10  epoch) |  0.756   | 2.138 (10  epoch) |    3.851     | 7.492 (20  epoch)  |        0.481         |     1.562 (20  epoch)      |         6.390         |     15.042 (10  epoch)      |         0.243         |      0.806 (20  epoch)      |     1.963     |  3.892 (20  epoch)  |
+| Unicorn  |     89.524      |  89.524 (30  epoch)   |    97.802    | 97.802 (30  epoch) |      92.683      |   92.683 (30  epoch)   |   23.731    | 23.731 (30  epoch) |   50.335    | 51.283 (20  epoch) |  0.338   | 0.338 (30  epoch) |    0.901     | 0.901 (30  epoch)  |        0.320         |     0.320 (30  epoch)      |         9.129         |      9.129 (30  epoch)      |         0.161         |      0.161 (30  epoch)      |     0.453     |  0.453 (30  epoch)  |
+|  Whale   |     66.875      |  66.875 (30  epoch)   |    91.921    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   18.575    | 41.275 (20  epoch) |   24.530    | 55.772 (10  epoch) |  0.569   | 0.609 (10  epoch) |    1.847     | 2.814 (10  epoch)  |        1.057         |     1.057 (30  epoch)      |         1.980         |      3.760 (10  epoch)      |         0.532         |      0.532 (30  epoch)      |     0.932     |  1.427 (10  epoch)  |
+|   Avg    |     57.488      |  61.737 (10  epoch)   |    85.829    | 88.413 (10  epoch) |      90.527      |   90.596 (20  epoch)   |   20.460    | 25.902 (20  epoch) |   44.998    | 51.260 (20  epoch) |  0.585   | 0.738 (10  epoch) |    1.742     | 2.275 (20  epoch)  |        0.339         |     0.365 (10  epoch)      |         6.127         |      6.127 (30  epoch)      |         0.171         |      0.185 (10  epoch)      |     0.881     |  1.161 (20  epoch)  |
+2024-05-24 15:39:22,480 - ==> Total time: 0:11:25	 Eta: 0:26:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:39:31,266 - Train: 30.33% [1850/6100]  [30.3/100.0] [batch_t 0.260 (0.299)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.410 (0.391)]
+2024-05-24 15:39:41,938 - ==> Total time: 0:11:44	 Eta: 0:26:08 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:39:47,970 - Train: 31.15% [1900/6100]  [31.1/100.0] [batch_t 0.260 (0.350)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.387 (0.395)]
+2024-05-24 15:40:00,977 - Train: 31.97% [1950/6100]  [32.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.420 (0.387)]
+2024-05-24 15:40:01,498 - ==> Total time: 0:12:04	 Eta: 0:25:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:40:19,338 - Train: 32.79% [2000/6100]  [32.8/100.0] [batch_t 0.260 (0.277)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.361 (0.384)]
+2024-05-24 15:40:22,728 - ==> Total time: 0:12:25	 Eta: 0:25:13 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:40:35,512 - Train: 33.61% [2050/6100]  [33.6/100.0] [batch_t 0.261 (0.282)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.374 (0.380)]
+2024-05-24 15:40:41,777 - ==> Total time: 0:12:44	 Eta: 0:24:43 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:40:51,960 - Train: 34.43% [2100/6100]  [34.4/100.0] [batch_t 0.260 (0.292)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.352 (0.370)]
+2024-05-24 15:41:01,076 - ==> Total time: 0:13:03	 Eta: 0:24:15 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:41:09,386 - Train: 35.25% [2150/6100]  [35.2/100.0] [batch_t 0.261 (0.314)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.413 (0.351)]
+2024-05-24 15:41:21,383 - ==> Total time: 0:13:24	 Eta: 0:23:49 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:41:25,592 - Train: 36.07% [2200/6100]  [36.1/100.0] [batch_t 0.260 (0.461)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.389 (0.358)]
+2024-05-24 15:41:38,627 - Train: 36.89% [2250/6100]  [36.9/100.0] [batch_t 0.260 (0.261)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.308 (0.367)]
+2024-05-24 15:41:40,456 - ==> Total time: 0:13:43	 Eta: 0:23:21 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:41:54,796 - Train: 37.70% [2300/6100]  [37.7/100.0] [batch_t 0.260 (0.280)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.370 (0.355)]
+2024-05-24 15:41:59,489 - ==> Total time: 0:14:02	 Eta: 0:22:54 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:42:10,779 - Train: 38.52% [2350/6100]  [38.5/100.0] [batch_t 0.260 (0.286)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.336 (0.358)]
+2024-05-24 15:42:18,334 - ==> Total time: 0:14:21	 Eta: 0:22:26 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:42:27,008 - Train: 39.34% [2400/6100]  [39.3/100.0] [batch_t 0.260 (0.300)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.380 (0.356)]
+2024-05-24 15:42:48,066 - Test: 100.00% [34/34] [batch_t 0.068 (0.310)]
+2024-05-24 15:42:48,785 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 15:42:49,432 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:42:49,984 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-24 15:42:50,660 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:42:51,187 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:42:51,780 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:42:52,452 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:42:53,085 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:42:53,706 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:42:54,603 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:42:54,608 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     68.333      |  91.667 (30  epoch)   |    92.546    | 98.207 (30  epoch) |      90.566      |   94.118 (30  epoch)   |   20.534    | 23.832 (20  epoch) |   38.765    | 42.041 (30  epoch) |  0.101   | 0.110 (30  epoch) |    0.519     | 0.597 (30  epoch)  |        0.107         |     0.107 (40  epoch)      |         0.779         |      6.849 (30  epoch)      |         0.054         |      0.054 (40  epoch)      |     0.260     |  0.299 (30  epoch)  |
+|   Bird   |     62.727      |  66.364 (10  epoch)   |    86.931    | 91.682 (30  epoch) |      89.796      |   89.796 (10  epoch)   |   24.870    | 26.489 (10  epoch) |   57.007    | 57.156 (10  epoch) |  0.788   | 1.082 (10  epoch) |    1.898     | 3.588 (10  epoch)  |        0.019         |     0.513 (10  epoch)      |         0.034         |      2.494 (30  epoch)      |         0.009         |      0.261 (10  epoch)      |     0.958     |  1.827 (10  epoch)  |
+| Elephant |     60.000      |  70.000 (30  epoch)   |    83.578    | 91.132 (30  epoch) |      87.805      |   87.805 (10  epoch)   |   17.187    | 17.187 (40  epoch) |   47.591    | 48.443 (30  epoch) |  0.368   | 0.368 (40  epoch) |    0.754     | 0.921 (20  epoch)  |        0.128         |     0.223 (10  epoch)      |         3.973         |     13.420 (10  epoch)      |         0.064         |      0.112 (10  epoch)      |     0.379     |  0.462 (20  epoch)  |
+|  Parrot  |     63.478      |  64.348 (10  epoch)   |    89.574    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   14.440    | 14.440 (40  epoch) |   48.546    | 49.934 (10  epoch) |  0.599   | 0.622 (20  epoch) |    1.273     | 1.317 (10  epoch)  |        0.061         |     0.197 (30  epoch)      |         0.120         |      9.534 (30  epoch)      |         0.030         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     44.706      |  50.588 (10  epoch)   |    80.147    | 81.936 (10  epoch) |      89.474      |   89.474 (30  epoch)   |   23.297    | 23.297 (40  epoch) |   53.708    | 56.323 (30  epoch) |  0.523   | 0.547 (30  epoch) |    1.502     | 1.502 (40  epoch)  |        0.089         |     0.210 (20  epoch)      |         0.230         |      8.593 (30  epoch)      |         0.045         |      0.106 (20  epoch)      |     0.757     |  0.757 (40  epoch)  |
+|  Puppy   |     80.000      |  80.000 (40  epoch)   |    95.159    | 95.159 (40  epoch) |      88.889      |   90.909 (20  epoch)   |   19.604    | 34.906 (10  epoch) |   40.288    | 61.198 (10  epoch) |  0.238   | 0.586 (10  epoch) |    0.994     | 2.531 (20  epoch)  |        0.161         |     0.484 (20  epoch)      |         0.844         |      8.260 (30  epoch)      |         0.081         |      0.245 (20  epoch)      |     0.500     |  1.282 (20  epoch)  |
+| Scorpion |     49.565      |  60.000 (10  epoch)   |    80.662    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   16.439    | 16.559 (30  epoch) |   47.121    | 47.466 (20  epoch) |  1.520   | 1.520 (40  epoch) |    3.484     | 3.484 (40  epoch)  |        0.089         |     0.427 (30  epoch)      |         0.087         |      6.928 (30  epoch)      |         0.045         |      0.215 (30  epoch)      |     1.773     |  1.773 (40  epoch)  |
+|  Turtle  |     52.381      |  92.381 (20  epoch)   |    86.169    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   26.183    | 51.149 (10  epoch) |   41.936    | 67.428 (10  epoch) |  0.716   | 2.138 (10  epoch) |    3.005     | 7.492 (20  epoch)  |        0.481         |     1.562 (20  epoch)      |         1.345         |     15.042 (10  epoch)      |         0.244         |      0.806 (20  epoch)      |     1.525     |  3.892 (20  epoch)  |
+| Unicorn  |     42.857      |  89.524 (30  epoch)   |    82.047    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   17.534    | 23.731 (30  epoch) |   49.798    | 51.283 (20  epoch) |  0.257   | 0.338 (30  epoch) |    0.675     | 0.901 (30  epoch)  |        0.002         |     0.320 (30  epoch)      |         0.007         |      9.129 (30  epoch)      |         0.001         |      0.161 (30  epoch)      |     0.339     |  0.453 (30  epoch)  |
+|  Whale   |     30.000      |  66.875 (30  epoch)   |    82.243    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   22.384    | 41.275 (20  epoch) |   39.509    | 55.772 (10  epoch) |  0.225   | 0.609 (10  epoch) |    0.787     | 2.814 (10  epoch)  |        0.071         |     1.057 (30  epoch)      |         0.342         |      3.760 (10  epoch)      |         0.035         |      0.532 (30  epoch)      |     0.395     |  1.427 (10  epoch)  |
+|   Avg    |     55.405      |  61.737 (10  epoch)   |    85.906    | 88.413 (10  epoch) |      89.840      |   90.596 (20  epoch)   |   20.247    | 25.902 (20  epoch) |   46.427    | 51.260 (20  epoch) |  0.534   | 0.738 (10  epoch) |    1.489     | 2.275 (20  epoch)  |        0.121         |     0.365 (10  epoch)      |         0.776         |      6.127 (30  epoch)      |         0.061         |      0.185 (10  epoch)      |     0.753     |  1.161 (20  epoch)  |
+2024-05-24 15:42:54,679 - ==> Total time: 0:14:57	 Eta: 0:22:26 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:43:01,088 - Train: 40.16% [2450/6100]  [40.2/100.0] [batch_t 0.260 (0.339)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.383 (0.348)]
+2024-05-24 15:43:14,105 - Train: 40.98% [2500/6100]  [41.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.332 (0.345)]
+2024-05-24 15:43:14,367 - ==> Total time: 0:15:17	 Eta: 0:21:59 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:43:30,426 - Train: 41.80% [2550/6100]  [41.8/100.0] [batch_t 0.260 (0.277)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.373 (0.344)]
+2024-05-24 15:43:33,550 - ==> Total time: 0:15:36	 Eta: 0:21:32 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:43:46,887 - Train: 42.62% [2600/6100]  [42.6/100.0] [batch_t 0.260 (0.282)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.326 (0.335)]
+2024-05-24 15:43:52,885 - ==> Total time: 0:15:55	 Eta: 0:21:06 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:44:03,700 - Train: 43.44% [2650/6100]  [43.4/100.0] [batch_t 0.260 (0.290)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.319 (0.332)]
+2024-05-24 15:44:12,579 - ==> Total time: 0:16:15	 Eta: 0:20:41 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:44:20,030 - Train: 44.26% [2700/6100]  [44.3/100.0] [batch_t 0.260 (0.309)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.360 (0.334)]
+2024-05-24 15:44:31,762 - ==> Total time: 0:16:34	 Eta: 0:20:15 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:44:36,486 - Train: 45.08% [2750/6100]  [45.1/100.0] [batch_t 0.260 (0.422)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.304 (0.320)]
+2024-05-24 15:44:49,506 - Train: 45.90% [2800/6100]  [45.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.280 (0.329)]
+2024-05-24 15:44:51,071 - ==> Total time: 0:16:53	 Eta: 0:19:50 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:45:05,835 - Train: 46.72% [2850/6100]  [46.7/100.0] [batch_t 0.260 (0.279)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.355 (0.324)]
+2024-05-24 15:45:10,260 - ==> Total time: 0:17:12	 Eta: 0:19:24 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:45:22,656 - Train: 47.54% [2900/6100]  [47.5/100.0] [batch_t 0.260 (0.285)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.306 (0.319)]
+2024-05-24 15:45:29,952 - ==> Total time: 0:17:32	 Eta: 0:19:00 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:45:38,929 - Train: 48.36% [2950/6100]  [48.4/100.0] [batch_t 0.260 (0.296)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.297 (0.318)]
+2024-05-24 15:45:49,068 - ==> Total time: 0:17:51	 Eta: 0:18:35 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:45:55,061 - Train: 49.18% [3000/6100]  [49.2/100.0] [batch_t 0.260 (0.333)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.339 (0.304)]
+2024-05-24 15:46:08,072 - Train: 50.00% [3050/6100]  [50.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.312 (0.305)]
+2024-05-24 15:46:18,815 - Test: 100.00% [34/34] [batch_t 0.067 (0.313)]
+2024-05-24 15:46:19,539 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.016 (mAcc_px_0.2_0.8_0.1)	  0.016 (mIoU_px_0.2_0.8_0.1)	  0.045 (mIoU_max_px)	
+2024-05-24 15:46:20,187 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:46:20,739 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-24 15:46:21,414 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:46:21,942 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:46:22,537 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:46:23,210 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:46:23,846 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:46:24,470 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:46:25,368 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.057 (mF1_max_px)	  0.020 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.020 (mIoU_px_0.2_0.8_0.1)	  0.056 (mIoU_max_px)	
+2024-05-24 15:46:25,373 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     44.167      |  91.667 (30  epoch)   |    84.771    | 98.207 (30  epoch) |      90.566      |   94.118 (30  epoch)   |   25.215    | 25.215 (50  epoch) |   44.997    | 44.997 (50  epoch) |  0.120   | 0.120 (50  epoch) |    0.558     | 0.597 (30  epoch)  |        0.051         |     0.107 (40  epoch)      |         0.418         |      6.849 (30  epoch)      |         0.026         |      0.054 (40  epoch)      |     0.280     |  0.299 (30  epoch)  |
+|   Bird   |     60.909      |  66.364 (10  epoch)   |    85.733    | 91.682 (30  epoch) |      89.796      |   89.796 (10  epoch)   |   24.494    | 26.489 (10  epoch) |   56.557    | 57.156 (10  epoch) |  0.832   | 1.082 (10  epoch) |    1.895     | 3.588 (10  epoch)  |        0.012         |     0.513 (10  epoch)      |         0.021         |      2.494 (30  epoch)      |         0.006         |      0.261 (10  epoch)      |     0.957     |  1.827 (10  epoch)  |
+| Elephant |     53.333      |  70.000 (30  epoch)   |    82.090    | 91.132 (30  epoch) |      90.000      |   90.000 (50  epoch)   |   18.404    | 18.404 (50  epoch) |   47.707    | 48.443 (30  epoch) |  0.383   | 0.383 (50  epoch) |    0.911     | 0.921 (20  epoch)  |        0.166         |     0.223 (10  epoch)      |         2.343         |     13.420 (10  epoch)      |         0.083         |      0.112 (10  epoch)      |     0.458     |  0.462 (20  epoch)  |
+|  Parrot  |     46.087      |  64.348 (10  epoch)   |    83.712    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   14.817    | 14.817 (50  epoch) |   46.578    | 49.934 (10  epoch) |  0.573   | 0.622 (20  epoch) |    1.274     | 1.317 (10  epoch)  |        0.051         |     0.197 (30  epoch)      |         0.092         |      9.534 (30  epoch)      |         0.025         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     45.882      |  50.588 (10  epoch)   |    81.168    | 81.936 (10  epoch) |      87.179      |   89.474 (30  epoch)   |   24.430    | 24.430 (50  epoch) |   51.387    | 56.323 (30  epoch) |  0.497   | 0.547 (30  epoch) |    1.398     | 1.502 (40  epoch)  |        0.091         |     0.210 (20  epoch)      |         0.205         |      8.593 (30  epoch)      |         0.046         |      0.106 (20  epoch)      |     0.704     |  0.757 (40  epoch)  |
+|  Puppy   |     61.000      |  80.000 (40  epoch)   |    87.246    | 95.159 (40  epoch) |      88.889      |   90.909 (20  epoch)   |   24.589    | 34.906 (10  epoch) |   42.813    | 61.198 (10  epoch) |  0.280   | 0.586 (10  epoch) |    1.122     | 2.531 (20  epoch)  |        0.160         |     0.484 (20  epoch)      |         0.833         |      8.260 (30  epoch)      |         0.081         |      0.245 (20  epoch)      |     0.564     |  1.282 (20  epoch)  |
+| Scorpion |     46.957      |  60.000 (10  epoch)   |    79.598    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   18.541    | 18.541 (50  epoch) |   48.828    | 48.828 (50  epoch) |  1.716   | 1.716 (50  epoch) |    3.683     | 3.683 (50  epoch)  |        0.068         |     0.427 (30  epoch)      |         0.063         |      6.928 (30  epoch)      |         0.034         |      0.215 (30  epoch)      |     1.876     |  1.876 (50  epoch)  |
+|  Turtle  |     62.857      |  92.381 (20  epoch)   |    89.997    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   32.460    | 51.149 (10  epoch) |   49.374    | 67.428 (10  epoch) |  1.154   | 2.138 (10  epoch) |    4.303     | 7.492 (20  epoch)  |        0.737         |     1.562 (20  epoch)      |         1.830         |     15.042 (10  epoch)      |         0.375         |      0.806 (20  epoch)      |     2.199     |  3.892 (20  epoch)  |
+| Unicorn  |     64.762      |  89.524 (30  epoch)   |    91.865    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   22.054    | 23.731 (30  epoch) |   55.182    | 55.182 (50  epoch) |  0.309   | 0.338 (30  epoch) |    0.879     | 0.901 (30  epoch)  |        0.002         |     0.320 (30  epoch)      |         0.007         |      9.129 (30  epoch)      |         0.001         |      0.161 (30  epoch)      |     0.441     |  0.453 (30  epoch)  |
+|  Whale   |     19.375      |  66.875 (30  epoch)   |    78.845    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   27.957    | 41.275 (20  epoch) |   44.120    | 55.772 (10  epoch) |  0.305   | 0.609 (10  epoch) |    1.196     | 2.814 (10  epoch)  |        0.096         |     1.057 (30  epoch)      |         0.422         |      3.760 (10  epoch)      |         0.048         |      0.532 (30  epoch)      |     0.602     |  1.427 (10  epoch)  |
+|   Avg    |     50.533      |  61.737 (10  epoch)   |    84.502    | 88.413 (10  epoch) |      89.830      |   90.596 (20  epoch)   |   23.296    | 25.902 (20  epoch) |   48.754    | 51.260 (20  epoch) |  0.617   | 0.738 (10  epoch) |    1.722     | 2.275 (20  epoch)  |        0.144         |     0.365 (10  epoch)      |         0.623         |      6.127 (30  epoch)      |         0.073         |      0.185 (10  epoch)      |     0.872     |  1.161 (20  epoch)  |
+2024-05-24 15:46:25,432 - ==> Total time: 0:18:28	 Eta: 0:18:28 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:46:42,046 - Train: 50.82% [3100/6100]  [50.8/100.0] [batch_t 0.260 (0.276)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.345 (0.306)]
+2024-05-24 15:46:44,908 - ==> Total time: 0:18:47	 Eta: 0:18:03 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:46:58,180 - Train: 51.64% [3150/6100]  [51.6/100.0] [batch_t 0.260 (0.281)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.274 (0.304)]
+2024-05-24 15:47:03,904 - ==> Total time: 0:19:06	 Eta: 0:17:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:47:14,842 - Train: 52.46% [3200/6100]  [52.5/100.0] [batch_t 0.260 (0.289)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.304 (0.310)]
+2024-05-24 15:47:23,442 - ==> Total time: 0:19:26	 Eta: 0:17:14 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:47:31,136 - Train: 53.28% [3250/6100]  [53.3/100.0] [batch_t 0.260 (0.308)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.318 (0.296)]
+2024-05-24 15:47:42,595 - ==> Total time: 0:19:45	 Eta: 0:16:49 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:47:47,453 - Train: 54.10% [3300/6100]  [54.1/100.0] [batch_t 0.260 (0.392)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.328 (0.302)]
+2024-05-24 15:48:00,480 - Train: 54.92% [3350/6100]  [54.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.312 (0.303)]
+2024-05-24 15:48:01,784 - ==> Total time: 0:20:04	 Eta: 0:16:25 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:48:18,636 - Train: 55.74% [3400/6100]  [55.7/100.0] [batch_t 0.261 (0.278)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.342 (0.288)]
+2024-05-24 15:48:22,807 - ==> Total time: 0:20:25	 Eta: 0:16:02 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:48:34,791 - Train: 56.56% [3450/6100]  [56.6/100.0] [batch_t 0.260 (0.283)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.262 (0.283)]
+2024-05-24 15:48:41,813 - ==> Total time: 0:20:44	 Eta: 0:15:38 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:48:50,888 - Train: 57.38% [3500/6100]  [57.4/100.0] [batch_t 0.260 (0.295)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.296 (0.287)]
+2024-05-24 15:49:00,786 - ==> Total time: 0:21:03	 Eta: 0:15:14 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:49:08,461 - Train: 58.20% [3550/6100]  [58.2/100.0] [batch_t 0.260 (0.327)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.249 (0.279)]
+2024-05-24 15:49:21,217 - ==> Total time: 0:21:23	 Eta: 0:14:52 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:49:24,691 - Train: 59.02% [3600/6100]  [59.0/100.0] [batch_t 1.073 (1.073)] [data_t 0.809] [optim_t 0.264] [lr 0.000100] [total 0.267 (0.267)]
+2024-05-24 15:49:37,716 - Train: 59.84% [3650/6100]  [59.8/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.271 (0.281)]
+2024-05-24 15:49:50,937 - Test: 100.00% [34/34] [batch_t 0.068 (0.309)]
+2024-05-24 15:49:51,657 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.044 (mIoU_max_px)	
+2024-05-24 15:49:52,303 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:49:52,854 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-24 15:49:53,530 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:49:54,054 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.011 (mAcc_px_0.2_0.8_0.1)	  0.011 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:49:54,648 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:49:55,320 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:49:55,953 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:49:56,575 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:49:57,467 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:49:57,471 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     39.167      |  91.667 (30  epoch)   |    80.638    | 98.207 (30  epoch) |      90.566      |   94.118 (30  epoch)   |   22.401    | 25.215 (50  epoch) |   41.920    | 44.997 (50  epoch) |  0.128   | 0.128 (60  epoch) |    0.557     | 0.597 (30  epoch)  |        0.106         |     0.107 (40  epoch)      |         0.790         |      6.849 (30  epoch)      |         0.053         |      0.054 (40  epoch)      |     0.279     |  0.299 (30  epoch)  |
+|   Bird   |     79.091      |  79.091 (60  epoch)   |    94.964    | 94.964 (60  epoch) |      91.304      |   91.304 (60  epoch)   |   22.924    | 26.489 (10  epoch) |   54.789    | 57.156 (10  epoch) |  0.754   | 1.082 (10  epoch) |    1.761     | 3.588 (10  epoch)  |        0.017         |     0.513 (10  epoch)      |         0.029         |      2.494 (30  epoch)      |         0.008         |      0.261 (10  epoch)      |     0.888     |  1.827 (10  epoch)  |
+| Elephant |     51.111      |  70.000 (30  epoch)   |    84.567    | 91.132 (30  epoch) |      87.805      |   90.000 (50  epoch)   |   17.687    | 18.404 (50  epoch) |   47.162    | 48.443 (30  epoch) |  0.371   | 0.383 (50  epoch) |    0.912     | 0.921 (20  epoch)  |        0.075         |     0.223 (10  epoch)      |         0.197         |     13.420 (10  epoch)      |         0.038         |      0.112 (10  epoch)      |     0.458     |  0.462 (20  epoch)  |
+|  Parrot  |     58.261      |  64.348 (10  epoch)   |    87.706    | 90.324 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   14.186    | 14.817 (50  epoch) |   47.034    | 49.934 (10  epoch) |  0.572   | 0.622 (20  epoch) |    1.275     | 1.317 (10  epoch)  |        0.042         |     0.197 (30  epoch)      |         0.072         |      9.534 (30  epoch)      |         0.021         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     25.882      |  50.588 (10  epoch)   |    72.722    | 81.936 (10  epoch) |      87.179      |   89.474 (30  epoch)   |   23.967    | 24.430 (50  epoch) |   51.532    | 56.323 (30  epoch) |  0.535   | 0.547 (30  epoch) |    1.437     | 1.502 (40  epoch)  |        0.065         |     0.210 (20  epoch)      |         0.140         |      8.593 (30  epoch)      |         0.033         |      0.106 (20  epoch)      |     0.724     |  0.757 (40  epoch)  |
+|  Puppy   |     61.000      |  80.000 (40  epoch)   |    87.873    | 95.159 (40  epoch) |      88.889      |   90.909 (20  epoch)   |   22.016    | 34.906 (10  epoch) |   40.487    | 61.198 (10  epoch) |  0.257   | 0.586 (10  epoch) |    0.966     | 2.531 (20  epoch)  |        0.153         |     0.484 (20  epoch)      |         0.719         |      8.260 (30  epoch)      |         0.077         |      0.245 (20  epoch)      |     0.485     |  1.282 (20  epoch)  |
+| Scorpion |     46.957      |  60.000 (10  epoch)   |    82.107    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   19.445    | 19.445 (60  epoch) |   48.819    | 48.828 (50  epoch) |  1.756   | 1.756 (60  epoch) |    3.418     | 3.683 (50  epoch)  |        0.039         |     0.427 (30  epoch)      |         0.036         |      6.928 (30  epoch)      |         0.020         |      0.215 (30  epoch)      |     1.739     |  1.876 (50  epoch)  |
+|  Turtle  |     44.762      |  92.381 (20  epoch)   |    84.178    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   25.384    | 51.149 (10  epoch) |   43.230    | 67.428 (10  epoch) |  0.857   | 2.138 (10  epoch) |    3.045     | 7.492 (20  epoch)  |        0.513         |     1.562 (20  epoch)      |         1.221         |     15.042 (10  epoch)      |         0.260         |      0.806 (20  epoch)      |     1.546     |  3.892 (20  epoch)  |
+| Unicorn  |     36.190      |  89.524 (30  epoch)   |    81.352    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   19.887    | 23.731 (30  epoch) |   50.458    | 55.182 (50  epoch) |  0.298   | 0.338 (30  epoch) |    0.790     | 0.901 (30  epoch)  |        0.003         |     0.320 (30  epoch)      |         0.013         |      9.129 (30  epoch)      |         0.002         |      0.161 (30  epoch)      |     0.396     |  0.453 (30  epoch)  |
+|  Whale   |     28.125      |  66.875 (30  epoch)   |    79.268    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   22.968    | 41.275 (20  epoch) |   36.735    | 55.772 (10  epoch) |  0.219   | 0.609 (10  epoch) |    1.099     | 2.814 (10  epoch)  |        0.040         |     1.057 (30  epoch)      |         0.169         |      3.760 (10  epoch)      |         0.020         |      0.532 (30  epoch)      |     0.552     |  1.427 (10  epoch)  |
+|   Avg    |     47.055      |  61.737 (10  epoch)   |    83.537    | 88.413 (10  epoch) |      89.761      |   90.596 (20  epoch)   |   21.086    | 25.902 (20  epoch) |   46.217    | 51.260 (20  epoch) |  0.575   | 0.738 (10  epoch) |    1.526     | 2.275 (20  epoch)  |        0.105         |     0.365 (10  epoch)      |         0.339         |      6.127 (30  epoch)      |         0.053         |      0.185 (10  epoch)      |     0.771     |  1.161 (20  epoch)  |
+2024-05-24 15:49:57,523 - ==> Total time: 0:22:00	 Eta: 0:14:40 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:50:11,405 - Train: 60.66% [3700/6100]  [60.7/100.0] [batch_t 0.260 (0.280)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.302 (0.279)]
+2024-05-24 15:50:16,874 - ==> Total time: 0:22:19	 Eta: 0:14:16 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:50:28,643 - Train: 61.48% [3750/6100]  [61.5/100.0] [batch_t 0.260 (0.286)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.280 (0.278)]
+2024-05-24 15:50:36,976 - ==> Total time: 0:22:39	 Eta: 0:13:53 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:50:44,788 - Train: 62.30% [3800/6100]  [62.3/100.0] [batch_t 0.260 (0.305)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.306 (0.280)]
+2024-05-24 15:50:55,970 - ==> Total time: 0:22:58	 Eta: 0:13:29 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:51:01,104 - Train: 63.11% [3850/6100]  [63.1/100.0] [batch_t 0.261 (0.378)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.240 (0.268)]
+2024-05-24 15:51:14,125 - Train: 63.93% [3900/6100]  [63.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.287 (0.277)]
+2024-05-24 15:51:15,167 - ==> Total time: 0:23:17	 Eta: 0:13:06 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:51:30,497 - Train: 64.75% [3950/6100]  [64.8/100.0] [batch_t 0.260 (0.278)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.249 (0.276)]
+2024-05-24 15:51:34,399 - ==> Total time: 0:23:37	 Eta: 0:12:43 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:51:46,634 - Train: 65.57% [4000/6100]  [65.6/100.0] [batch_t 0.260 (0.283)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.274 (0.264)]
+2024-05-24 15:51:53,403 - ==> Total time: 0:23:56	 Eta: 0:12:19 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:52:03,346 - Train: 66.39% [4050/6100]  [66.4/100.0] [batch_t 0.261 (0.294)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.232 (0.256)]
+2024-05-24 15:52:12,982 - ==> Total time: 0:24:15	 Eta: 0:11:56 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:52:20,739 - Train: 67.21% [4100/6100]  [67.2/100.0] [batch_t 0.260 (0.321)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.329 (0.274)]
+2024-05-24 15:52:33,219 - ==> Total time: 0:24:35	 Eta: 0:11:34 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:52:37,035 - Train: 68.03% [4150/6100]  [68.0/100.0] [batch_t 0.260 (0.656)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.291 (0.265)]
+2024-05-24 15:52:50,033 - Train: 68.85% [4200/6100]  [68.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.270 (0.255)]
+2024-05-24 15:52:52,374 - ==> Total time: 0:24:55	 Eta: 0:11:11 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:53:06,222 - Train: 69.67% [4250/6100]  [69.7/100.0] [batch_t 0.260 (0.279)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.291 (0.257)]
+2024-05-24 15:53:22,042 - Test: 100.00% [34/34] [batch_t 0.069 (0.310)]
+2024-05-24 15:53:22,760 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 15:53:23,407 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 15:53:23,959 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-24 15:53:24,635 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:53:25,164 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.011 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:53:25,758 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 15:53:26,428 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:53:27,062 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:53:27,685 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:53:28,578 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.019 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 15:53:28,583 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     37.500      |  91.667 (30  epoch)   |    78.042    | 98.207 (30  epoch) |      90.566      |   94.118 (30  epoch)   |   26.335    | 26.335 (70  epoch) |   48.938    | 48.938 (70  epoch) |  0.164   | 0.164 (70  epoch) |    0.774     | 0.774 (70  epoch)  |        0.100         |     0.107 (40  epoch)      |         0.711         |      6.849 (30  epoch)      |         0.050         |      0.054 (40  epoch)      |     0.389     |  0.389 (70  epoch)  |
+|   Bird   |     50.909      |  79.091 (60  epoch)   |    86.688    | 94.964 (60  epoch) |      89.796      |   91.304 (60  epoch)   |   22.559    | 26.489 (10  epoch) |   59.265    | 59.265 (70  epoch) |  0.833   | 1.082 (10  epoch) |    1.246     | 3.588 (10  epoch)  |        0.006         |     0.513 (10  epoch)      |         0.008         |      2.494 (30  epoch)      |         0.003         |      0.261 (10  epoch)      |     0.627     |  1.827 (10  epoch)  |
+| Elephant |     82.222      |  82.222 (70  epoch)   |    95.269    | 95.269 (70  epoch) |      88.889      |   90.000 (50  epoch)   |   15.480    | 18.404 (50  epoch) |   47.327    | 48.443 (30  epoch) |  0.356   | 0.383 (50  epoch) |    0.909     | 0.921 (20  epoch)  |        0.076         |     0.223 (10  epoch)      |         0.170         |     13.420 (10  epoch)      |         0.038         |      0.112 (10  epoch)      |     0.456     |  0.462 (20  epoch)  |
+|  Parrot  |     63.478      |  64.348 (10  epoch)   |    88.813    | 90.324 (10  epoch) |      92.000      |   92.000 (70  epoch)   |   15.149    | 15.149 (70  epoch) |   50.320    | 50.320 (70  epoch) |  0.632   | 0.632 (70  epoch) |    1.275     | 1.317 (10  epoch)  |        0.019         |     0.197 (30  epoch)      |         0.028         |      9.534 (30  epoch)      |         0.009         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     41.176      |  50.588 (10  epoch)   |    80.020    | 81.936 (10  epoch) |      87.179      |   89.474 (30  epoch)   |   23.064    | 24.430 (50  epoch) |   54.247    | 56.323 (30  epoch) |  0.540   | 0.547 (30  epoch) |    1.266     | 1.502 (40  epoch)  |        0.074         |     0.210 (20  epoch)      |         0.125         |      8.593 (30  epoch)      |         0.037         |      0.106 (20  epoch)      |     0.637     |  0.757 (40  epoch)  |
+|  Puppy   |     55.000      |  80.000 (40  epoch)   |    84.914    | 95.159 (40  epoch) |      90.476      |   90.909 (20  epoch)   |   19.975    | 34.906 (10  epoch) |   41.664    | 61.198 (10  epoch) |  0.283   | 0.586 (10  epoch) |    1.586     | 2.531 (20  epoch)  |        0.113         |     0.484 (20  epoch)      |         0.454         |      8.260 (30  epoch)      |         0.057         |      0.245 (20  epoch)      |     0.799     |  1.282 (20  epoch)  |
+| Scorpion |     49.565      |  60.000 (10  epoch)   |    83.926    | 90.778 (10  epoch) |      90.196      |   90.196 (10  epoch)   |   15.667    | 19.445 (60  epoch) |   47.050    | 48.828 (50  epoch) |  1.478   | 1.756 (60  epoch) |    2.929     | 3.683 (50  epoch)  |        0.025         |     0.427 (30  epoch)      |         0.022         |      6.928 (30  epoch)      |         0.012         |      0.215 (30  epoch)      |     1.486     |  1.876 (50  epoch)  |
+|  Turtle  |     74.286      |  92.381 (20  epoch)   |    93.939    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   25.628    | 51.149 (10  epoch) |   45.433    | 67.428 (10  epoch) |  0.998   | 2.138 (10  epoch) |    3.621     | 7.492 (20  epoch)  |        0.596         |     1.562 (20  epoch)      |         1.326         |     15.042 (10  epoch)      |         0.303         |      0.806 (20  epoch)      |     1.844     |  3.892 (20  epoch)  |
+| Unicorn  |     60.952      |  89.524 (30  epoch)   |    86.604    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   17.105    | 23.731 (30  epoch) |   49.672    | 55.182 (50  epoch) |  0.259   | 0.338 (30  epoch) |    0.624     | 0.901 (30  epoch)  |        0.002         |     0.320 (30  epoch)      |         0.007         |      9.129 (30  epoch)      |         0.001         |      0.161 (30  epoch)      |     0.313     |  0.453 (30  epoch)  |
+|  Whale   |     38.750      |  66.875 (30  epoch)   |    86.800    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   17.812    | 41.275 (20  epoch) |   36.734    | 55.772 (10  epoch) |  0.182   | 0.609 (10  epoch) |    0.900     | 2.814 (10  epoch)  |        0.021         |     1.057 (30  epoch)      |         0.083         |      3.760 (10  epoch)      |         0.010         |      0.532 (30  epoch)      |     0.452     |  1.427 (10  epoch)  |
+|   Avg    |     55.384      |  61.737 (10  epoch)   |    86.502    | 88.413 (10  epoch) |      90.058      |   90.596 (20  epoch)   |   19.877    | 25.902 (20  epoch) |   48.065    | 51.260 (20  epoch) |  0.573   | 0.738 (10  epoch) |    1.513     | 2.275 (20  epoch)  |        0.103         |     0.365 (10  epoch)      |         0.293         |      6.127 (30  epoch)      |         0.052         |      0.185 (10  epoch)      |     0.764     |  1.161 (20  epoch)  |
+2024-05-24 15:53:28,653 - ==> Total time: 0:25:31	 Eta: 0:10:56 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:53:40,016 - Train: 70.49% [4300/6100]  [70.5/100.0] [batch_t 0.260 (0.286)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.237 (0.256)]
+2024-05-24 15:53:48,077 - ==> Total time: 0:25:50	 Eta: 0:10:33 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:53:56,308 - Train: 71.31% [4350/6100]  [71.3/100.0] [batch_t 0.260 (0.303)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.245 (0.250)]
+2024-05-24 15:54:07,230 - ==> Total time: 0:26:09	 Eta: 0:10:10 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:54:12,443 - Train: 72.13% [4400/6100]  [72.1/100.0] [batch_t 0.259 (0.358)] [data_t 0.001] [optim_t 0.258] [lr 0.000100] [total 0.259 (0.246)]
+2024-05-24 15:54:25,444 - Train: 72.95% [4450/6100]  [73.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.242 (0.246)]
+2024-05-24 15:54:26,225 - ==> Total time: 0:26:28	 Eta: 0:09:47 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:54:41,579 - Train: 73.77% [4500/6100]  [73.8/100.0] [batch_t 0.260 (0.277)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.241 (0.250)]
+2024-05-24 15:54:45,219 - ==> Total time: 0:26:47	 Eta: 0:09:24 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:54:57,730 - Train: 74.59% [4550/6100]  [74.6/100.0] [batch_t 0.261 (0.282)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.241 (0.253)]
+2024-05-24 15:55:04,233 - ==> Total time: 0:27:06	 Eta: 0:09:02 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:55:14,219 - Train: 75.41% [4600/6100]  [75.4/100.0] [batch_t 0.261 (0.292)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.224 (0.239)]
+2024-05-24 15:55:23,592 - ==> Total time: 0:27:26	 Eta: 0:08:39 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:55:30,302 - Train: 76.23% [4650/6100]  [76.2/100.0] [batch_t 0.260 (0.318)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.228 (0.244)]
+2024-05-24 15:55:42,546 - ==> Total time: 0:27:45	 Eta: 0:08:17 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:55:46,953 - Train: 77.05% [4700/6100]  [77.0/100.0] [batch_t 0.261 (0.521)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.220 (0.225)]
+2024-05-24 15:55:59,971 - Train: 77.87% [4750/6100]  [77.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.278 (0.242)]
+2024-05-24 15:56:02,057 - ==> Total time: 0:28:04	 Eta: 0:07:55 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:56:18,292 - Train: 78.69% [4800/6100]  [78.7/100.0] [batch_t 0.260 (0.280)] [data_t 0.001] [optim_t 0.259] [lr 0.000100] [total 0.254 (0.243)]
+2024-05-24 15:56:23,244 - ==> Total time: 0:28:25	 Eta: 0:07:33 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:56:34,540 - Train: 79.51% [4850/6100]  [79.5/100.0] [batch_t 0.261 (0.287)] [data_t 0.001] [optim_t 0.260] [lr 0.000100] [total 0.245 (0.232)]
+2024-05-24 15:56:53,016 - Test: 100.00% [34/34] [batch_t 0.068 (0.311)]
+2024-05-24 15:56:53,740 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.016 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 15:56:54,389 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.041 (mIoU_max_px)	
+2024-05-24 15:56:54,940 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-24 15:56:55,617 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:56:56,148 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.034 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 15:56:56,744 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.038 (mIoU_max_px)	
+2024-05-24 15:56:57,416 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 15:56:58,052 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:56:58,675 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 15:56:59,574 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.021 (mF1_px_0.2_0.8_0.1)	  0.021 (mAcc_px_0.2_0.8_0.1)	  0.020 (mIoU_px_0.2_0.8_0.1)	  0.057 (mIoU_max_px)	
+2024-05-24 15:56:59,579 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     41.667      |  91.667 (30  epoch)   |    82.340    | 98.207 (30  epoch) |      90.566      |   94.118 (30  epoch)   |   28.008    | 28.008 (80  epoch) |   45.954    | 48.938 (70  epoch) |  0.202   | 0.202 (80  epoch) |    1.228     | 1.228 (80  epoch)  |        0.204         |     0.204 (80  epoch)      |         0.970         |      6.849 (30  epoch)      |         0.103         |      0.103 (80  epoch)      |     0.618     |  0.618 (80  epoch)  |
+|   Bird   |     53.636      |  79.091 (60  epoch)   |    83.384    | 94.964 (60  epoch) |      89.796      |   91.304 (60  epoch)   |   20.245    | 26.489 (10  epoch) |   56.189    | 59.265 (70  epoch) |  0.689   | 1.082 (10  epoch) |    0.996     | 3.588 (10  epoch)  |        0.025         |     0.513 (10  epoch)      |         0.034         |      2.494 (30  epoch)      |         0.012         |      0.261 (10  epoch)      |     0.501     |  1.827 (10  epoch)  |
+| Elephant |     64.444      |  82.222 (70  epoch)   |    88.918    | 95.269 (70  epoch) |      87.805      |   90.000 (50  epoch)   |   16.307    | 18.404 (50  epoch) |   47.372    | 48.443 (30  epoch) |  0.368   | 0.383 (50  epoch) |    1.049     | 1.049 (80  epoch)  |        0.048         |     0.223 (10  epoch)      |         0.107         |     13.420 (10  epoch)      |         0.024         |      0.112 (10  epoch)      |     0.527     |  0.527 (80  epoch)  |
+|  Parrot  |     59.130      |  64.348 (10  epoch)   |    88.820    | 90.324 (10  epoch) |      90.196      |   92.000 (70  epoch)   |   15.264    | 15.264 (80  epoch) |   48.618    | 50.320 (70  epoch) |  0.599   | 0.632 (70  epoch) |    1.275     | 1.317 (10  epoch)  |        0.014         |     0.197 (30  epoch)      |         0.022         |      9.534 (30  epoch)      |         0.007         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     34.118      |  50.588 (10  epoch)   |    78.818    | 81.936 (10  epoch) |      87.179      |   89.474 (30  epoch)   |   24.875    | 24.875 (80  epoch) |   54.434    | 56.323 (30  epoch) |  0.589   | 0.589 (80  epoch) |    1.519     | 1.519 (80  epoch)  |        0.065         |     0.210 (20  epoch)      |         0.112         |      8.593 (30  epoch)      |         0.033         |      0.106 (20  epoch)      |     0.765     |  0.765 (80  epoch)  |
+|  Puppy   |     74.000      |  80.000 (40  epoch)   |    92.540    | 95.159 (40  epoch) |      90.476      |   90.909 (20  epoch)   |   20.735    | 34.906 (10  epoch) |   41.604    | 61.198 (10  epoch) |  0.312   | 0.586 (10  epoch) |    1.727     | 2.531 (20  epoch)  |        0.147         |     0.484 (20  epoch)      |         0.552         |      8.260 (30  epoch)      |         0.074         |      0.245 (20  epoch)      |     0.871     |  1.282 (20  epoch)  |
+| Scorpion |     42.609      |  60.000 (10  epoch)   |    80.252    | 90.778 (10  epoch) |      92.000      |   92.000 (80  epoch)   |   15.030    | 19.445 (60  epoch) |   47.133    | 48.828 (50  epoch) |  1.491   | 1.756 (60  epoch) |    2.932     | 3.683 (50  epoch)  |        0.012         |     0.427 (30  epoch)      |         0.009         |      6.928 (30  epoch)      |         0.006         |      0.215 (30  epoch)      |     1.488     |  1.876 (50  epoch)  |
+|  Turtle  |     62.857      |  92.381 (20  epoch)   |    90.578    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   26.011    | 51.149 (10  epoch) |   43.587    | 67.428 (10  epoch) |  1.001   | 2.138 (10  epoch) |    3.569     | 7.492 (20  epoch)  |        0.603         |     1.562 (20  epoch)      |         1.258         |     15.042 (10  epoch)      |         0.306         |      0.806 (20  epoch)      |     1.817     |  3.892 (20  epoch)  |
+| Unicorn  |     57.143      |  89.524 (30  epoch)   |    86.321    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   17.942    | 23.731 (30  epoch) |   50.533    | 55.182 (50  epoch) |  0.279   | 0.338 (30  epoch) |    0.561     | 0.901 (30  epoch)  |        0.005         |     0.320 (30  epoch)      |         0.013         |      9.129 (30  epoch)      |         0.002         |      0.161 (30  epoch)      |     0.281     |  0.453 (30  epoch)  |
+|  Whale   |     14.375      |  66.875 (30  epoch)   |    74.075    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   18.441    | 41.275 (20  epoch) |   35.544    | 55.772 (10  epoch) |  0.189   | 0.609 (10  epoch) |    0.887     | 2.814 (10  epoch)  |        0.020         |     1.057 (30  epoch)      |         0.066         |      3.760 (10  epoch)      |         0.010         |      0.532 (30  epoch)      |     0.446     |  1.427 (10  epoch)  |
+|   Avg    |     50.398      |  61.737 (10  epoch)   |    84.605    | 88.413 (10  epoch) |      89.950      |   90.596 (20  epoch)   |   20.286    | 25.902 (20  epoch) |   47.097    | 51.260 (20  epoch) |  0.572   | 0.738 (10  epoch) |    1.574     | 2.275 (20  epoch)  |        0.114         |     0.365 (10  epoch)      |         0.314         |      6.127 (30  epoch)      |         0.058         |      0.185 (10  epoch)      |     0.796     |  1.161 (20  epoch)  |
+2024-05-24 15:56:59,656 - ==> Total time: 0:29:02	 Eta: 0:07:15 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:57:10,127 - Train: 80.33% [4900/6100]  [80.3/100.0] [batch_t 0.260 (0.300)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.236 (0.230)]
+2024-05-24 15:57:20,784 - ==> Total time: 0:29:23	 Eta: 0:06:53 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:57:26,124 - Train: 81.15% [4950/6100]  [81.1/100.0] [batch_t 0.260 (0.351)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.184 (0.201)]
+2024-05-24 15:57:39,133 - Train: 81.97% [5000/6100]  [82.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.192 (0.205)]
+2024-05-24 15:57:39,656 - ==> Total time: 0:29:42	 Eta: 0:06:31 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:57:55,083 - Train: 82.79% [5050/6100]  [82.8/100.0] [batch_t 0.260 (0.277)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.187 (0.201)]
+2024-05-24 15:57:58,470 - ==> Total time: 0:30:01	 Eta: 0:06:08 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:58:11,075 - Train: 83.61% [5100/6100]  [83.6/100.0] [batch_t 0.261 (0.282)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.161 (0.193)]
+2024-05-24 15:58:17,329 - ==> Total time: 0:30:20	 Eta: 0:05:46 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:58:27,124 - Train: 84.43% [5150/6100]  [84.4/100.0] [batch_t 0.261 (0.292)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.202 (0.193)]
+2024-05-24 15:58:36,241 - ==> Total time: 0:30:38	 Eta: 0:05:24 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:58:43,106 - Train: 85.25% [5200/6100]  [85.2/100.0] [batch_t 0.261 (0.313)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.169 (0.184)]
+2024-05-24 15:58:55,080 - ==> Total time: 0:30:57	 Eta: 0:05:02 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:58:59,137 - Train: 86.07% [5250/6100]  [86.1/100.0] [batch_t 0.260 (0.459)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.167 (0.174)]
+2024-05-24 15:59:12,149 - Train: 86.89% [5300/6100]  [86.9/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.177 (0.191)]
+2024-05-24 15:59:13,973 - ==> Total time: 0:31:16	 Eta: 0:04:40 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:59:28,230 - Train: 87.70% [5350/6100]  [87.7/100.0] [batch_t 0.260 (0.279)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.178 (0.184)]
+2024-05-24 15:59:32,922 - ==> Total time: 0:31:35	 Eta: 0:04:18 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 15:59:44,601 - Train: 88.52% [5400/6100]  [88.5/100.0] [batch_t 0.260 (0.285)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.190 (0.191)]
+2024-05-24 15:59:52,153 - ==> Total time: 0:31:54	 Eta: 0:03:56 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:00:00,659 - Train: 89.34% [5450/6100]  [89.3/100.0] [batch_t 0.261 (0.298)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.183 (0.180)]
+2024-05-24 16:00:21,746 - Test: 100.00% [34/34] [batch_t 0.069 (0.311)]
+2024-05-24 16:00:22,466 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 16:00:23,114 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 16:00:23,667 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.035 (mIoU_max_px)	
+2024-05-24 16:00:24,340 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 16:00:24,867 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 16:00:25,461 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 16:00:26,132 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 16:00:26,765 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.040 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 16:00:27,387 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 16:00:28,280 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.020 (mAcc_px_0.2_0.8_0.1)	  0.020 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 16:00:28,285 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     35.833      |  91.667 (30  epoch)   |    79.913    | 98.207 (30  epoch) |      92.308      |   94.118 (30  epoch)   |   31.229    | 31.229 (90  epoch) |   51.272    | 51.272 (90  epoch) |  0.192   | 0.202 (80  epoch) |    0.793     | 1.228 (80  epoch)  |        0.141         |     0.204 (80  epoch)      |         0.779         |      6.849 (30  epoch)      |         0.071         |      0.103 (80  epoch)      |     0.398     |  0.618 (80  epoch)  |
+|   Bird   |     66.364      |  79.091 (60  epoch)   |    91.812    | 94.964 (60  epoch) |      89.796      |   91.304 (60  epoch)   |   20.042    | 26.489 (10  epoch) |   55.349    | 59.265 (70  epoch) |  0.645   | 1.082 (10  epoch) |    0.996     | 3.588 (10  epoch)  |        0.004         |     0.513 (10  epoch)      |         0.005         |      2.494 (30  epoch)      |         0.002         |      0.261 (10  epoch)      |     0.500     |  1.827 (10  epoch)  |
+| Elephant |     62.222      |  82.222 (70  epoch)   |    81.205    | 95.269 (70  epoch) |      87.805      |   90.000 (50  epoch)   |   18.633    | 18.633 (90  epoch) |   49.227    | 49.227 (90  epoch) |  0.402   | 0.402 (90  epoch) |    1.163     | 1.163 (90  epoch)  |        0.182         |     0.223 (10  epoch)      |         1.006         |     13.420 (10  epoch)      |         0.091         |      0.112 (10  epoch)      |     0.585     |  0.585 (90  epoch)  |
+|  Parrot  |     66.957      |  66.957 (90  epoch)   |    89.050    | 90.324 (10  epoch) |      93.878      |   93.878 (90  epoch)   |   14.964    | 15.264 (80  epoch) |   48.138    | 50.320 (70  epoch) |  0.616   | 0.632 (70  epoch) |    1.274     | 1.317 (10  epoch)  |        0.017         |     0.197 (30  epoch)      |         0.023         |      9.534 (30  epoch)      |         0.008         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     62.353      |  62.353 (90  epoch)   |    85.341    | 85.341 (90  epoch) |      87.179      |   89.474 (30  epoch)   |   22.467    | 24.875 (80  epoch) |   49.202    | 56.323 (30  epoch) |  0.500   | 0.589 (80  epoch) |    1.077     | 1.519 (80  epoch)  |        0.179         |     0.210 (20  epoch)      |         0.639         |      8.593 (30  epoch)      |         0.090         |      0.106 (20  epoch)      |     0.542     |  0.765 (80  epoch)  |
+|  Puppy   |     48.000      |  80.000 (40  epoch)   |    81.908    | 95.159 (40  epoch) |      88.889      |   90.909 (20  epoch)   |   24.304    | 34.906 (10  epoch) |   44.257    | 61.198 (10  epoch) |  0.338   | 0.586 (10  epoch) |    1.729     | 2.531 (20  epoch)  |        0.141         |     0.484 (20  epoch)      |         0.530         |      8.260 (30  epoch)      |         0.071         |      0.245 (20  epoch)      |     0.872     |  1.282 (20  epoch)  |
+| Scorpion |     35.652      |  60.000 (10  epoch)   |    79.463    | 90.778 (10  epoch) |      90.196      |   92.000 (80  epoch)   |   17.014    | 19.445 (60  epoch) |   49.528    | 49.528 (90  epoch) |  1.579   | 1.756 (60  epoch) |    2.933     | 3.683 (50  epoch)  |        0.018         |     0.427 (30  epoch)      |         0.013         |      6.928 (30  epoch)      |         0.009         |      0.215 (30  epoch)      |     1.488     |  1.876 (50  epoch)  |
+|  Turtle  |     70.476      |  92.381 (20  epoch)   |    92.096    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   30.691    | 51.149 (10  epoch) |   48.219    | 67.428 (10  epoch) |  1.214   | 2.138 (10  epoch) |    4.189     | 7.492 (20  epoch)  |        0.679         |     1.562 (20  epoch)      |         1.511         |     15.042 (10  epoch)      |         0.346         |      0.806 (20  epoch)      |     2.140     |  3.892 (20  epoch)  |
+| Unicorn  |     69.524      |  89.524 (30  epoch)   |    92.144    | 97.802 (30  epoch) |      89.362      |   92.683 (30  epoch)   |   18.574    | 23.731 (30  epoch) |   51.354    | 55.182 (50  epoch) |  0.286   | 0.338 (30  epoch) |    0.569     | 0.901 (30  epoch)  |        0.001         |     0.320 (30  epoch)      |         0.003         |      9.129 (30  epoch)      |         0.001         |      0.161 (30  epoch)      |     0.285     |  0.453 (30  epoch)  |
+|  Whale   |     45.625      |  66.875 (30  epoch)   |    89.958    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   25.505    | 41.275 (20  epoch) |   42.132    | 55.772 (10  epoch) |  0.275   | 0.609 (10  epoch) |    1.305     | 2.814 (10  epoch)  |        0.068         |     1.057 (30  epoch)      |         0.276         |      3.760 (10  epoch)      |         0.034         |      0.532 (30  epoch)      |     0.657     |  1.427 (10  epoch)  |
+|   Avg    |     56.301      |  61.737 (10  epoch)   |    86.289    | 88.413 (10  epoch) |      90.153      |   90.596 (20  epoch)   |   22.342    | 25.902 (20  epoch) |   48.868    | 51.260 (20  epoch) |  0.605   | 0.738 (10  epoch) |    1.603     | 2.275 (20  epoch)  |        0.143         |     0.365 (10  epoch)      |         0.478         |      6.127 (30  epoch)      |         0.072         |      0.185 (10  epoch)      |     0.811     |  1.161 (20  epoch)  |
+2024-05-24 16:00:28,358 - ==> Total time: 0:32:31	 Eta: 0:03:36 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:00:34,275 - Train: 90.16% [5500/6100]  [90.2/100.0] [batch_t 0.260 (0.341)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.203 (0.175)]
+2024-05-24 16:00:47,286 - Train: 90.98% [5550/6100]  [91.0/100.0] [batch_t 0.260 (0.260)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.208 (0.185)]
+2024-05-24 16:00:47,548 - ==> Total time: 0:32:50	 Eta: 0:03:14 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:01:03,326 - Train: 91.80% [5600/6100]  [91.8/100.0] [batch_t 0.261 (0.276)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.180 (0.186)]
+2024-05-24 16:01:06,454 - ==> Total time: 0:33:09	 Eta: 0:02:52 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:01:19,431 - Train: 92.62% [5650/6100]  [92.6/100.0] [batch_t 0.261 (0.282)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.198 (0.186)]
+2024-05-24 16:01:25,429 - ==> Total time: 0:33:28	 Eta: 0:02:31 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:01:35,553 - Train: 93.44% [5700/6100]  [93.4/100.0] [batch_t 0.261 (0.290)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.169 (0.179)]
+2024-05-24 16:01:44,423 - ==> Total time: 0:33:47	 Eta: 0:02:09 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:01:51,616 - Train: 94.26% [5750/6100]  [94.3/100.0] [batch_t 0.261 (0.311)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.172 (0.177)]
+2024-05-24 16:02:03,360 - ==> Total time: 0:34:06	 Eta: 0:01:47 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:02:08,186 - Train: 95.08% [5800/6100]  [95.1/100.0] [batch_t 0.261 (0.422)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.188 (0.188)]
+2024-05-24 16:02:21,234 - Train: 95.90% [5850/6100]  [95.9/100.0] [batch_t 0.261 (0.261)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.174 (0.180)]
+2024-05-24 16:02:22,799 - ==> Total time: 0:34:25	 Eta: 0:01:26 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:02:37,122 - Train: 96.72% [5900/6100]  [96.7/100.0] [batch_t 0.261 (0.279)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.206 (0.179)]
+2024-05-24 16:02:41,543 - ==> Total time: 0:34:44	 Eta: 0:01:04 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:02:53,105 - Train: 97.54% [5950/6100]  [97.5/100.0] [batch_t 0.260 (0.284)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.174 (0.180)]
+2024-05-24 16:03:00,382 - ==> Total time: 0:35:03	 Eta: 0:00:42 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:03:10,791 - Train: 98.36% [6000/6100]  [98.4/100.0] [batch_t 0.260 (0.296)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.172 (0.177)]
+2024-05-24 16:03:20,954 - ==> Total time: 0:35:23	 Eta: 0:00:21 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:03:26,711 - Train: 99.18% [6050/6100]  [99.2/100.0] [batch_t 0.260 (0.335)] [data_t 0.001] [optim_t 0.259] [lr 0.000010] [total 0.180 (0.182)]
+2024-05-24 16:03:39,745 - Train: 100.00% [6100/6100]  [100.0/100.0] [batch_t 0.261 (0.261)] [data_t 0.001] [optim_t 0.260] [lr 0.000010] [total 0.180 (0.175)]
+2024-05-24 16:03:50,457 - Test: 100.00% [34/34] [batch_t 0.068 (0.312)]
+2024-05-24 16:03:51,174 - ==> Metric Time for Bear           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.045 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.043 (mIoU_max_px)	
+2024-05-24 16:03:51,821 - ==> Metric Time for Bird           :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.041 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.040 (mIoU_max_px)	
+2024-05-24 16:03:52,371 - ==> Metric Time for Elephant       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.035 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.034 (mIoU_max_px)	
+2024-05-24 16:03:53,047 - ==> Metric Time for Parrot         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.042 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 16:03:53,576 - ==> Metric Time for Pig            :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.033 (mF1_max_px)	  0.012 (mF1_px_0.2_0.8_0.1)	  0.012 (mAcc_px_0.2_0.8_0.1)	  0.012 (mIoU_px_0.2_0.8_0.1)	  0.033 (mIoU_max_px)	
+2024-05-24 16:03:54,171 - ==> Metric Time for Puppy          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.038 (mF1_max_px)	  0.013 (mF1_px_0.2_0.8_0.1)	  0.013 (mAcc_px_0.2_0.8_0.1)	  0.013 (mIoU_px_0.2_0.8_0.1)	  0.037 (mIoU_max_px)	
+2024-05-24 16:03:54,845 - ==> Metric Time for Scorpion       :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.044 (mF1_max_px)	  0.015 (mF1_px_0.2_0.8_0.1)	  0.015 (mAcc_px_0.2_0.8_0.1)	  0.015 (mIoU_px_0.2_0.8_0.1)	  0.042 (mIoU_max_px)	
+2024-05-24 16:03:55,479 - ==> Metric Time for Turtle         :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 16:03:56,101 - ==> Metric Time for Unicorn        :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.039 (mF1_max_px)	  0.014 (mF1_px_0.2_0.8_0.1)	  0.014 (mAcc_px_0.2_0.8_0.1)	  0.014 (mIoU_px_0.2_0.8_0.1)	  0.039 (mIoU_max_px)	
+2024-05-24 16:03:56,993 - ==> Metric Time for Whale          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.056 (mF1_max_px)	  0.019 (mF1_px_0.2_0.8_0.1)	  0.019 (mAcc_px_0.2_0.8_0.1)	  0.020 (mIoU_px_0.2_0.8_0.1)	  0.055 (mIoU_max_px)	
+2024-05-24 16:03:56,998 - 
+|   Name   |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |   mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:--------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:-----------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   Bear   |     43.333      |  91.667 (30  epoch)   |    83.525    | 98.207 (30  epoch) |      92.308      |   94.118 (30  epoch)   |   34.126    | 34.126 (100 epoch) |   53.985    | 53.985 (100 epoch) |  0.222   | 0.222 (100 epoch) |    1.053     | 1.228 (80  epoch)  |        0.253         |     0.253 (100 epoch)      |         3.306         |      6.849 (30  epoch)      |         0.127         |      0.127 (100 epoch)      |     0.529     |  0.618 (80  epoch)  |
+|   Bird   |     60.909      |  79.091 (60  epoch)   |    89.608    | 94.964 (60  epoch) |      89.796      |   91.304 (60  epoch)   |   22.082    | 26.489 (10  epoch) |   57.714    | 59.265 (70  epoch) |  0.724   | 1.082 (10  epoch) |    0.996     | 3.588 (10  epoch)  |        0.003         |     0.513 (10  epoch)      |         0.003         |      2.494 (30  epoch)      |         0.001         |      0.261 (10  epoch)      |     0.500     |  1.827 (10  epoch)  |
+| Elephant |     77.778      |  82.222 (70  epoch)   |    93.904    | 95.269 (70  epoch) |      90.000      |   90.000 (50  epoch)   |   18.737    | 18.737 (100 epoch) |   50.053    | 50.053 (100 epoch) |  0.424   | 0.424 (100 epoch) |    1.183     | 1.183 (100 epoch)  |        0.309         |     0.309 (100 epoch)      |         1.151         |     13.420 (10  epoch)      |         0.155         |      0.155 (100 epoch)      |     0.595     |  0.595 (100 epoch)  |
+|  Parrot  |     64.348      |  66.957 (90  epoch)   |    86.969    | 90.324 (10  epoch) |      92.000      |   93.878 (90  epoch)   |   14.604    | 15.264 (80  epoch) |   49.233    | 50.320 (70  epoch) |  0.633   | 0.633 (100 epoch) |    1.275     | 1.317 (10  epoch)  |        0.021         |     0.197 (30  epoch)      |         0.028         |      9.534 (30  epoch)      |         0.010         |      0.099 (30  epoch)      |     0.641     |  0.663 (10  epoch)  |
+|   Pig    |     67.059      |  67.059 (100 epoch)   |    89.533    | 89.533 (100 epoch) |      87.179      |   89.474 (30  epoch)   |   23.783    | 24.875 (80  epoch) |   52.190    | 56.323 (30  epoch) |  0.516   | 0.589 (80  epoch) |    1.199     | 1.519 (80  epoch)  |        0.199         |     0.210 (20  epoch)      |         0.839         |      8.593 (30  epoch)      |         0.100         |      0.106 (20  epoch)      |     0.603     |  0.765 (80  epoch)  |
+|  Puppy   |     53.000      |  80.000 (40  epoch)   |    82.920    | 95.159 (40  epoch) |      88.889      |   90.909 (20  epoch)   |   23.881    | 34.906 (10  epoch) |   46.273    | 61.198 (10  epoch) |  0.369   | 0.586 (10  epoch) |    1.947     | 2.531 (20  epoch)  |        0.152         |     0.484 (20  epoch)      |         0.519         |      8.260 (30  epoch)      |         0.076         |      0.245 (20  epoch)      |     0.983     |  1.282 (20  epoch)  |
+| Scorpion |     33.043      |  60.000 (10  epoch)   |    80.651    | 90.778 (10  epoch) |      90.196      |   92.000 (80  epoch)   |   14.616    | 19.445 (60  epoch) |   46.795    | 49.528 (90  epoch) |  1.426   | 1.756 (60  epoch) |    2.932     | 3.683 (50  epoch)  |        0.016         |     0.427 (30  epoch)      |         0.011         |      6.928 (30  epoch)      |         0.008         |      0.215 (30  epoch)      |     1.488     |  1.876 (50  epoch)  |
+|  Turtle  |     73.333      |  92.381 (20  epoch)   |    93.281    | 98.184 (20  epoch) |      89.362      |   95.455 (20  epoch)   |   30.994    | 51.149 (10  epoch) |   47.947    | 67.428 (10  epoch) |  1.268   | 2.138 (10  epoch) |    4.008     | 7.492 (20  epoch)  |        0.929         |     1.562 (20  epoch)      |         4.727         |     15.042 (10  epoch)      |         0.473         |      0.806 (20  epoch)      |     2.045     |  3.892 (20  epoch)  |
+| Unicorn  |     72.381      |  89.524 (30  epoch)   |    91.285    | 97.802 (30  epoch) |      91.304      |   92.683 (30  epoch)   |   14.520    | 23.731 (30  epoch) |   47.517    | 55.182 (50  epoch) |  0.238   | 0.338 (30  epoch) |    0.497     | 0.901 (30  epoch)  |        0.036         |     0.320 (30  epoch)      |         0.209         |      9.129 (30  epoch)      |         0.018         |      0.161 (30  epoch)      |     0.249     |  0.453 (30  epoch)  |
+|  Whale   |     46.250      |  66.875 (30  epoch)   |    89.540    | 92.330 (10  epoch) |      92.754      |   92.754 (10  epoch)   |   25.648    | 41.275 (20  epoch) |   42.557    | 55.772 (10  epoch) |  0.284   | 0.609 (10  epoch) |    1.454     | 2.814 (10  epoch)  |        0.082         |     1.057 (30  epoch)      |         0.302         |      3.760 (10  epoch)      |         0.041         |      0.532 (30  epoch)      |     0.733     |  1.427 (10  epoch)  |
+|   Avg    |     59.143      |  61.737 (10  epoch)   |    88.121    | 88.413 (10  epoch) |      90.379      |   90.596 (20  epoch)   |   22.299    | 25.902 (20  epoch) |   49.426    | 51.260 (20  epoch) |  0.610   | 0.738 (10  epoch) |    1.654     | 2.275 (20  epoch)  |        0.200         |     0.365 (10  epoch)      |         1.110         |      6.127 (30  epoch)      |         0.101         |      0.185 (10  epoch)      |     0.837     |  1.161 (20  epoch)  |
+2024-05-24 16:03:57,058 - ==> Total time: 0:35:59	 Eta: 0:00:00 	Logged in 'runs/benchmark/draem_256_100e/mad_real/DRAEMTrainer_configs_benchmark_draem_256_100e_20240524-152757'
+2024-05-24 16:04:00,502 - finish training

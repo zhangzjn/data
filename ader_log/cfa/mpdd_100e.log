@@ -1,0 +1,1090 @@
+2024-05-27 14:21:50,362 - ==> Logging on master GPU: 0
+2024-05-27 14:21:50,362 - ==> Running Trainer: CFATrainer
+2024-05-27 14:21:50,362 - ==> Using GPU: [0] for Training
+2024-05-27 14:21:50,362 - ==> Building model
+2024-05-27 14:21:51,164 - Loaded  from checkpoint 'model/pretrain/wide_resnet50_2-95faca4d.pth'
+2024-05-27 14:22:05,246 - 
+------------------------------------ CFA ------------------------------------
+| module                                      | #parameters or shape    | #flops       |
+|:--------------------------------------------|:------------------------|:-------------|
+| model                                       | 38.632M                 | 55.292G      |
+|  net_backbone                               |  24.863M                |  12.034G     |
+|   net_backbone.conv1                        |   9.408K                |   0.154G     |
+|    net_backbone.conv1.weight                |    (64, 3, 7, 7)        |              |
+|   net_backbone.bn1                          |   0.128K                |   2.097M     |
+|    net_backbone.bn1.weight                  |    (64,)                |              |
+|    net_backbone.bn1.bias                    |    (64,)                |              |
+|   net_backbone.layer1                       |   0.634M                |   2.598G     |
+|    net_backbone.layer1.0                    |    0.206M               |    0.845G    |
+|     net_backbone.layer1.0.conv1             |     8.192K              |     33.554M  |
+|      net_backbone.layer1.0.conv1.weight     |      (128, 64, 1, 1)    |              |
+|     net_backbone.layer1.0.bn1               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.0.bn1.weight       |      (128,)             |              |
+|      net_backbone.layer1.0.bn1.bias         |      (128,)             |              |
+|     net_backbone.layer1.0.conv2             |     0.147M              |     0.604G   |
+|      net_backbone.layer1.0.conv2.weight     |      (128, 128, 3, 3)   |              |
+|     net_backbone.layer1.0.bn2               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.0.bn2.weight       |      (128,)             |              |
+|      net_backbone.layer1.0.bn2.bias         |      (128,)             |              |
+|     net_backbone.layer1.0.conv3             |     32.768K             |     0.134G   |
+|      net_backbone.layer1.0.conv3.weight     |      (256, 128, 1, 1)   |              |
+|     net_backbone.layer1.0.bn3               |     0.512K              |     2.097M   |
+|      net_backbone.layer1.0.bn3.weight       |      (256,)             |              |
+|      net_backbone.layer1.0.bn3.bias         |      (256,)             |              |
+|     net_backbone.layer1.0.downsample        |     16.896K             |     69.206M  |
+|      net_backbone.layer1.0.downsample.0     |      16.384K            |      67.109M |
+|      net_backbone.layer1.0.downsample.1     |      0.512K             |      2.097M  |
+|    net_backbone.layer1.1                    |    0.214M               |    0.877G    |
+|     net_backbone.layer1.1.conv1             |     32.768K             |     0.134G   |
+|      net_backbone.layer1.1.conv1.weight     |      (128, 256, 1, 1)   |              |
+|     net_backbone.layer1.1.bn1               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.1.bn1.weight       |      (128,)             |              |
+|      net_backbone.layer1.1.bn1.bias         |      (128,)             |              |
+|     net_backbone.layer1.1.conv2             |     0.147M              |     0.604G   |
+|      net_backbone.layer1.1.conv2.weight     |      (128, 128, 3, 3)   |              |
+|     net_backbone.layer1.1.bn2               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.1.bn2.weight       |      (128,)             |              |
+|      net_backbone.layer1.1.bn2.bias         |      (128,)             |              |
+|     net_backbone.layer1.1.conv3             |     32.768K             |     0.134G   |
+|      net_backbone.layer1.1.conv3.weight     |      (256, 128, 1, 1)   |              |
+|     net_backbone.layer1.1.bn3               |     0.512K              |     2.097M   |
+|      net_backbone.layer1.1.bn3.weight       |      (256,)             |              |
+|      net_backbone.layer1.1.bn3.bias         |      (256,)             |              |
+|    net_backbone.layer1.2                    |    0.214M               |    0.877G    |
+|     net_backbone.layer1.2.conv1             |     32.768K             |     0.134G   |
+|      net_backbone.layer1.2.conv1.weight     |      (128, 256, 1, 1)   |              |
+|     net_backbone.layer1.2.bn1               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.2.bn1.weight       |      (128,)             |              |
+|      net_backbone.layer1.2.bn1.bias         |      (128,)             |              |
+|     net_backbone.layer1.2.conv2             |     0.147M              |     0.604G   |
+|      net_backbone.layer1.2.conv2.weight     |      (128, 128, 3, 3)   |              |
+|     net_backbone.layer1.2.bn2               |     0.256K              |     1.049M   |
+|      net_backbone.layer1.2.bn2.weight       |      (128,)             |              |
+|      net_backbone.layer1.2.bn2.bias         |      (128,)             |              |
+|     net_backbone.layer1.2.conv3             |     32.768K             |     0.134G   |
+|      net_backbone.layer1.2.conv3.weight     |      (256, 128, 1, 1)   |              |
+|     net_backbone.layer1.2.bn3               |     0.512K              |     2.097M   |
+|      net_backbone.layer1.2.bn3.weight       |      (256,)             |              |
+|      net_backbone.layer1.2.bn3.bias         |      (256,)             |              |
+|   net_backbone.layer2                       |   3.483M                |   3.769G     |
+|    net_backbone.layer2.0                    |    0.921M               |    1.146G    |
+|     net_backbone.layer2.0.conv1             |     65.536K             |     0.268G   |
+|      net_backbone.layer2.0.conv1.weight     |      (256, 256, 1, 1)   |              |
+|     net_backbone.layer2.0.bn1               |     0.512K              |     2.097M   |
+|      net_backbone.layer2.0.bn1.weight       |      (256,)             |              |
+|      net_backbone.layer2.0.bn1.bias         |      (256,)             |              |
+|     net_backbone.layer2.0.conv2             |     0.59M               |     0.604G   |
+|      net_backbone.layer2.0.conv2.weight     |      (256, 256, 3, 3)   |              |
+|     net_backbone.layer2.0.bn2               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.0.bn2.weight       |      (256,)             |              |
+|      net_backbone.layer2.0.bn2.bias         |      (256,)             |              |
+|     net_backbone.layer2.0.conv3             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.0.conv3.weight     |      (512, 256, 1, 1)   |              |
+|     net_backbone.layer2.0.bn3               |     1.024K              |     1.049M   |
+|      net_backbone.layer2.0.bn3.weight       |      (512,)             |              |
+|      net_backbone.layer2.0.bn3.bias         |      (512,)             |              |
+|     net_backbone.layer2.0.downsample        |     0.132M              |     0.135G   |
+|      net_backbone.layer2.0.downsample.0     |      0.131M             |      0.134G  |
+|      net_backbone.layer2.0.downsample.1     |      1.024K             |      1.049M  |
+|    net_backbone.layer2.1                    |    0.854M               |    0.875G    |
+|     net_backbone.layer2.1.conv1             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.1.conv1.weight     |      (256, 512, 1, 1)   |              |
+|     net_backbone.layer2.1.bn1               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.1.bn1.weight       |      (256,)             |              |
+|      net_backbone.layer2.1.bn1.bias         |      (256,)             |              |
+|     net_backbone.layer2.1.conv2             |     0.59M               |     0.604G   |
+|      net_backbone.layer2.1.conv2.weight     |      (256, 256, 3, 3)   |              |
+|     net_backbone.layer2.1.bn2               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.1.bn2.weight       |      (256,)             |              |
+|      net_backbone.layer2.1.bn2.bias         |      (256,)             |              |
+|     net_backbone.layer2.1.conv3             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.1.conv3.weight     |      (512, 256, 1, 1)   |              |
+|     net_backbone.layer2.1.bn3               |     1.024K              |     1.049M   |
+|      net_backbone.layer2.1.bn3.weight       |      (512,)             |              |
+|      net_backbone.layer2.1.bn3.bias         |      (512,)             |              |
+|    net_backbone.layer2.2                    |    0.854M               |    0.875G    |
+|     net_backbone.layer2.2.conv1             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.2.conv1.weight     |      (256, 512, 1, 1)   |              |
+|     net_backbone.layer2.2.bn1               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.2.bn1.weight       |      (256,)             |              |
+|      net_backbone.layer2.2.bn1.bias         |      (256,)             |              |
+|     net_backbone.layer2.2.conv2             |     0.59M               |     0.604G   |
+|      net_backbone.layer2.2.conv2.weight     |      (256, 256, 3, 3)   |              |
+|     net_backbone.layer2.2.bn2               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.2.bn2.weight       |      (256,)             |              |
+|      net_backbone.layer2.2.bn2.bias         |      (256,)             |              |
+|     net_backbone.layer2.2.conv3             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.2.conv3.weight     |      (512, 256, 1, 1)   |              |
+|     net_backbone.layer2.2.bn3               |     1.024K              |     1.049M   |
+|      net_backbone.layer2.2.bn3.weight       |      (512,)             |              |
+|      net_backbone.layer2.2.bn3.bias         |      (512,)             |              |
+|    net_backbone.layer2.3                    |    0.854M               |    0.875G    |
+|     net_backbone.layer2.3.conv1             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.3.conv1.weight     |      (256, 512, 1, 1)   |              |
+|     net_backbone.layer2.3.bn1               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.3.bn1.weight       |      (256,)             |              |
+|      net_backbone.layer2.3.bn1.bias         |      (256,)             |              |
+|     net_backbone.layer2.3.conv2             |     0.59M               |     0.604G   |
+|      net_backbone.layer2.3.conv2.weight     |      (256, 256, 3, 3)   |              |
+|     net_backbone.layer2.3.bn2               |     0.512K              |     0.524M   |
+|      net_backbone.layer2.3.bn2.weight       |      (256,)             |              |
+|      net_backbone.layer2.3.bn2.bias         |      (256,)             |              |
+|     net_backbone.layer2.3.conv3             |     0.131M              |     0.134G   |
+|      net_backbone.layer2.3.conv3.weight     |      (512, 256, 1, 1)   |              |
+|     net_backbone.layer2.3.bn3               |     1.024K              |     1.049M   |
+|      net_backbone.layer2.3.bn3.weight       |      (512,)             |              |
+|      net_backbone.layer2.3.bn3.bias         |      (512,)             |              |
+|   net_backbone.layer3                       |   20.736M               |   5.511G     |
+|    net_backbone.layer3.0                    |    3.676M               |    1.143G    |
+|     net_backbone.layer3.0.conv1             |     0.262M              |     0.268G   |
+|      net_backbone.layer3.0.conv1.weight     |      (512, 512, 1, 1)   |              |
+|     net_backbone.layer3.0.bn1               |     1.024K              |     1.049M   |
+|      net_backbone.layer3.0.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.0.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.0.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.0.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.0.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.0.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.0.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.0.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.0.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.0.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.0.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.0.bn3.bias         |      (1024,)            |              |
+|     net_backbone.layer3.0.downsample        |     0.526M              |     0.135G   |
+|      net_backbone.layer3.0.downsample.0     |      0.524M             |      0.134G  |
+|      net_backbone.layer3.0.downsample.1     |      2.048K             |      0.524M  |
+|    net_backbone.layer3.1                    |    3.412M               |    0.873G    |
+|     net_backbone.layer3.1.conv1             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.1.conv1.weight     |      (512, 1024, 1, 1)  |              |
+|     net_backbone.layer3.1.bn1               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.1.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.1.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.1.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.1.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.1.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.1.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.1.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.1.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.1.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.1.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.1.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.1.bn3.bias         |      (1024,)            |              |
+|    net_backbone.layer3.2                    |    3.412M               |    0.873G    |
+|     net_backbone.layer3.2.conv1             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.2.conv1.weight     |      (512, 1024, 1, 1)  |              |
+|     net_backbone.layer3.2.bn1               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.2.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.2.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.2.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.2.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.2.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.2.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.2.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.2.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.2.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.2.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.2.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.2.bn3.bias         |      (1024,)            |              |
+|    net_backbone.layer3.3                    |    3.412M               |    0.873G    |
+|     net_backbone.layer3.3.conv1             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.3.conv1.weight     |      (512, 1024, 1, 1)  |              |
+|     net_backbone.layer3.3.bn1               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.3.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.3.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.3.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.3.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.3.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.3.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.3.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.3.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.3.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.3.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.3.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.3.bn3.bias         |      (1024,)            |              |
+|    net_backbone.layer3.4                    |    3.412M               |    0.873G    |
+|     net_backbone.layer3.4.conv1             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.4.conv1.weight     |      (512, 1024, 1, 1)  |              |
+|     net_backbone.layer3.4.bn1               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.4.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.4.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.4.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.4.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.4.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.4.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.4.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.4.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.4.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.4.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.4.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.4.bn3.bias         |      (1024,)            |              |
+|    net_backbone.layer3.5                    |    3.412M               |    0.873G    |
+|     net_backbone.layer3.5.conv1             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.5.conv1.weight     |      (512, 1024, 1, 1)  |              |
+|     net_backbone.layer3.5.bn1               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.5.bn1.weight       |      (512,)             |              |
+|      net_backbone.layer3.5.bn1.bias         |      (512,)             |              |
+|     net_backbone.layer3.5.conv2             |     2.359M              |     0.604G   |
+|      net_backbone.layer3.5.conv2.weight     |      (512, 512, 3, 3)   |              |
+|     net_backbone.layer3.5.bn2               |     1.024K              |     0.262M   |
+|      net_backbone.layer3.5.bn2.weight       |      (512,)             |              |
+|      net_backbone.layer3.5.bn2.bias         |      (512,)             |              |
+|     net_backbone.layer3.5.conv3             |     0.524M              |     0.134G   |
+|      net_backbone.layer3.5.conv3.weight     |      (1024, 512, 1, 1)  |              |
+|     net_backbone.layer3.5.bn3               |     2.048K              |     0.524M   |
+|      net_backbone.layer3.5.bn3.weight       |      (1024,)            |              |
+|      net_backbone.layer3.5.bn3.bias         |      (1024,)            |              |
+|  net_dsvdd                                  |  13.77M                 |  43.258G     |
+|   net_dsvdd.r                               |   (1,)                  |              |
+|   net_dsvdd.C                               |   (1792, 4096)          |              |
+|   net_dsvdd.Descriptor                      |   6.43M                 |   13.193G    |
+|    net_dsvdd.Descriptor.layer               |    6.43M                |    13.168G   |
+|     net_dsvdd.Descriptor.layer.weight       |     (1792, 1792, 1, 1)  |              |
+|     net_dsvdd.Descriptor.layer.bias         |     (1792,)             |              |
+|     net_dsvdd.Descriptor.layer.conv         |     3.217M              |     13.168G  |
+|      net_dsvdd.Descriptor.layer.conv.weight |      (1792, 1794, 1, 1) |              |
+|      net_dsvdd.Descriptor.layer.conv.bias   |      (1792,)            |              |
+|     net_dsvdd.Descriptor.layer.addcoords    |                         |     8.192K   |
+-----------------------------------------------------------------------------
+2024-05-27 14:22:05,254 - ==> Creating optimizer
+2024-05-27 14:22:05,288 - ==> Loading dataset: DefaultAD
+2024-05-27 14:22:05,292 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.001                               
+optim.kwargs                         : {'name': 'adamw', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': True}
+trainer.name                         : CFATrainer                          
+trainer.checkpoint                   : runs/benchmark/cfa_256_100e/mpdd    
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 4                                   
+trainer.data.batch_size_per_gpu      : 4                                   
+trainer.data.batch_size_test         : 4                                   
+trainer.data.batch_size_per_gpu_test : 4                                   
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 22200                               
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}]
+loss.clip_grad                       : None                                
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': 1}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': False}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': 1}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': False}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': 0}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 222                                 
+data.test_size                       : 115                                 
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_backbone.name                  : timm_wide_resnet50_2                
+model_backbone.kwargs                : {'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_dsvdd.kwargs                   : {'gamma_c': 1, 'gamma_d': 1, 'device': 'cuda', 'cnn': 'wrn50_2'}
+model.name                           : cfa                                 
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_backbone': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_dsvdd': Namespace(kwargs={'gamma_c': 1, 'gamma_d': 1, 'device': 'cuda', 'cnn': 'wrn50_2'}), 'data_cfg': cfg(fvcore_is=True, fvcore_b=1, fvcore_c=3, epoch_full=100, metrics=['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], use_adeval=True, evaluator=Namespace(kwargs={'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': [16, 16], 'max_step_aupro': 100, 'use_adeval': True}), optim=Namespace(lr=0.001, kwargs={'name': 'adamw', 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': True}), trainer=Namespace(name='CFATrainer', checkpoint='runs/benchmark/cfa_256_100e/mpdd', logdir_sub='', resume_dir='', cuda_deterministic=False, epoch_full=100, scheduler_kwargs={'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 1e-05, 'warmup_lr': 1e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}, mixup_kwargs={'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}, test_start_epoch=100, test_per_epoch=10, find_unused_parameters=False, sync_BN='apex', dist_BN='', scaler='none', data=Namespace(batch_size=4, batch_size_per_gpu=4, batch_size_test=4, batch_size_per_gpu_test=4, num_workers_per_gpu=4, drop_last=True, pin_memory=True, persistent_workers=False, num_workers=4), iter=0, epoch=0, iter_full=22200, metric_recorder={'mAUROC_sp_max_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'mAP_sp_max_connector': [], 'mF1_max_sp_max_connector': [], 'mAUPRO_px_connector': [], 'mAUROC_px_connector': [], 'mAP_px_connector': [], 'mF1_max_px_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}), loss=Namespace(loss_terms=[{'type': 'CosLoss', 'name': 'cos', 'avg': False, 'lam': 1.0}], clip_grad=None, create_graph=False, retain_graph=False), adv=False, logging=Namespace(log_terms_train=[{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}], log_terms_test=[{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}], train_reset_log_per=50, train_log_per=50, test_log_per=50), data=Namespace(sampler='naive', loader_type='pil', loader_type_target='pil_L', type='DefaultAD', root='data/mpdd', meta='meta.json', cls_names=[], train_transforms=[{'type': 'Resize', 'size': (256, 256), 'interpolation': 1}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': False}], test_transforms=[{'type': 'Resize', 'size': (256, 256), 'interpolation': 1}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': False}], target_transforms=[{'type': 'Resize', 'size': (256, 256), 'interpolation': 0}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}], anomaly_source_path='data/dtd/images/', resize_shape=[256, 256], use_sample=False, views=[], train_size=222, test_size=115, train_length=888, test_length=458), model_backbone=Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/wide_resnet50_2-95faca4d.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), model_dsvdd=Namespace(kwargs={'gamma_c': 1, 'gamma_d': 1, 'device': 'cuda', 'cnn': 'wrn50_2'}), model=Namespace(name='cfa', kwargs={...}), seed=1024, size=256, warmup_epochs=0, test_start_epoch=100, test_per_epoch=10, batch_train=4, batch_test_per=4, lr=0.001, weight_decay=0.0005, cfg_path='configs.benchmark.cfa_256_100e', mode='train', sleep=-1, memory=-1, dist_url='env://', logger_rank=0, opts=['trainer.checkpoint=runs/benchmark/cfa_256_100e/mpdd', 'data.root=data/mpdd'], command='python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.cfa_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/cfa_256_100e/mpdd data.root=data/mpdd', task_start_time=3119551.582037695, dist=False, world_size=1, rank=0, local_rank=0, ngpus_per_node=1, nnodes=1, master=True, logdir='runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150', logger=<RootLogger root (INFO)>, writer=<tensorboardX.writer.SummaryWriter object at 0x7f4e736aa1c0>, logdir_train='runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150/show_train', logdir_test='runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150/show_test')}
+seed                                 : 1024                                
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 4                                   
+batch_test_per                       : 4                                   
+lr                                   : 0.001                               
+weight_decay                         : 0.0005                              
+cfg_path                             : configs.benchmark.cfa_256_100e      
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/cfa_256_100e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.cfa_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/cfa_256_100e/mpdd data.root=data/mpdd
+task_start_time                      : 3119551.582037695                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150/show_train
+logdir_test                          : runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150/show_test
+2024-05-27 14:22:05,294 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-27 14:22:08,531 - Train: 0.23% [50/22200]  [0.2/100.0] [batch_t 0.040 (0.064)] [data_t 0.000] [optim_t 0.040] [pixel 1122.909 (2922.834)]
+2024-05-27 14:22:10,583 - Train: 0.45% [100/22200]  [0.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 456.502 (562.580)]
+2024-05-27 14:22:12,639 - Train: 0.68% [150/22200]  [0.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 280.387 (384.584)]
+2024-05-27 14:22:14,691 - Train: 0.90% [200/22200]  [0.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 184.734 (292.462)]
+2024-05-27 14:22:15,592 - ==> Total time: 0:00:25	 Eta: 0:41:45 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:22:17,608 - Train: 1.13% [250/22200]  [1.1/100.0] [batch_t 0.040 (0.046)] [data_t 0.000] [optim_t 0.040] [pixel 151.835 (148.293)]
+2024-05-27 14:22:19,649 - Train: 1.35% [300/22200]  [1.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 53.829 (109.442)]
+2024-05-27 14:22:21,685 - Train: 1.58% [350/22200]  [1.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 92.311 (66.657)]
+2024-05-27 14:22:23,727 - Train: 1.80% [400/22200]  [1.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 41.738 (52.701)]
+2024-05-27 14:22:25,524 - ==> Total time: 0:00:35	 Eta: 0:28:46 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:22:26,651 - Train: 2.03% [450/22200]  [2.0/100.0] [batch_t 0.041 (0.063)] [data_t 0.000] [optim_t 0.041] [pixel 83.584 (83.186)]
+2024-05-27 14:22:28,682 - Train: 2.25% [500/22200]  [2.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 18.470 (80.414)]
+2024-05-27 14:22:30,713 - Train: 2.48% [550/22200]  [2.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 231.969 (112.538)]
+2024-05-27 14:22:32,752 - Train: 2.70% [600/22200]  [2.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 144.394 (133.640)]
+2024-05-27 14:22:34,815 - Train: 2.93% [650/22200]  [2.9/100.0] [batch_t 0.042 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 630.017 (141.053)]
+2024-05-27 14:22:35,474 - ==> Total time: 0:00:45	 Eta: 0:24:21 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:22:37,951 - Train: 3.15% [700/22200]  [3.2/100.0] [batch_t 0.041 (0.045)] [data_t 0.001] [optim_t 0.041] [pixel 347.734 (302.748)]
+2024-05-27 14:22:40,009 - Train: 3.38% [750/22200]  [3.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 164.032 (180.638)]
+2024-05-27 14:22:42,069 - Train: 3.60% [800/22200]  [3.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 139.689 (267.018)]
+2024-05-27 14:22:44,124 - Train: 3.83% [850/22200]  [3.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 168.229 (192.861)]
+2024-05-27 14:22:45,682 - ==> Total time: 0:00:55	 Eta: 0:22:09 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:22:47,073 - Train: 4.05% [900/22200]  [4.1/100.0] [batch_t 0.041 (0.050)] [data_t 0.000] [optim_t 0.040] [pixel 29.680 (100.343)]
+2024-05-27 14:22:49,119 - Train: 4.28% [950/22200]  [4.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 26.543 (139.728)]
+2024-05-27 14:22:51,169 - Train: 4.50% [1000/22200]  [4.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 334.106 (234.820)]
+2024-05-27 14:22:53,246 - Train: 4.73% [1050/22200]  [4.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 106.208 (230.973)]
+2024-05-27 14:22:55,305 - Train: 4.95% [1100/22200]  [5.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 110.684 (174.858)]
+2024-05-27 14:22:55,716 - ==> Total time: 0:01:05	 Eta: 0:20:43 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:22:58,228 - Train: 5.18% [1150/22200]  [5.2/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 106.972 (208.424)]
+2024-05-27 14:23:00,278 - Train: 5.41% [1200/22200]  [5.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 300.651 (421.987)]
+2024-05-27 14:23:02,327 - Train: 5.63% [1250/22200]  [5.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 159.651 (251.912)]
+2024-05-27 14:23:04,390 - Train: 5.86% [1300/22200]  [5.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 640.799 (236.748)]
+2024-05-27 14:23:05,702 - ==> Total time: 0:01:15	 Eta: 0:19:41 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:23:07,215 - Train: 6.08% [1350/22200]  [6.1/100.0] [batch_t 0.041 (0.047)] [data_t 0.000] [optim_t 0.040] [pixel 397.260 (499.551)]
+2024-05-27 14:23:09,264 - Train: 6.31% [1400/22200]  [6.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 418.121 (657.293)]
+2024-05-27 14:23:11,314 - Train: 6.53% [1450/22200]  [6.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 5282.939 (1733.322)]
+2024-05-27 14:23:13,372 - Train: 6.76% [1500/22200]  [6.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 142.638 (577.579)]
+2024-05-27 14:23:15,419 - Train: 6.98% [1550/22200]  [7.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 277.289 (348.882)]
+2024-05-27 14:23:15,584 - ==> Total time: 0:01:25	 Eta: 0:18:53 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:23:18,371 - Train: 7.21% [1600/22200]  [7.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 148.233 (223.715)]
+2024-05-27 14:23:20,426 - Train: 7.43% [1650/22200]  [7.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 427.834 (1094.652)]
+2024-05-27 14:23:22,482 - Train: 7.66% [1700/22200]  [7.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 412.680 (576.304)]
+2024-05-27 14:23:24,537 - Train: 7.88% [1750/22200]  [7.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 493.554 (473.442)]
+2024-05-27 14:23:25,605 - ==> Total time: 0:01:35	 Eta: 0:18:16 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:23:27,405 - Train: 8.11% [1800/22200]  [8.1/100.0] [batch_t 0.041 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 96.988 (185.528)]
+2024-05-27 14:23:29,452 - Train: 8.33% [1850/22200]  [8.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 145.459 (157.347)]
+2024-05-27 14:23:31,495 - Train: 8.56% [1900/22200]  [8.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 115.749 (144.598)]
+2024-05-27 14:23:33,547 - Train: 8.78% [1950/22200]  [8.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 51.884 (151.685)]
+2024-05-27 14:23:35,510 - ==> Total time: 0:01:45	 Eta: 0:17:43 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:23:36,667 - Train: 9.01% [2000/22200]  [9.0/100.0] [batch_t 0.041 (0.103)] [data_t 0.000] [optim_t 0.041] [pixel 81.194 (82.733)]
+2024-05-27 14:23:38,709 - Train: 9.23% [2050/22200]  [9.2/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 76.104 (112.570)]
+2024-05-27 14:23:40,745 - Train: 9.46% [2100/22200]  [9.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 96.364 (86.925)]
+2024-05-27 14:23:42,778 - Train: 9.68% [2150/22200]  [9.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 105.713 (123.999)]
+2024-05-27 14:23:44,813 - Train: 9.91% [2200/22200]  [9.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 33.731 (56.641)]
+2024-05-27 14:23:48,028 - Test: 43.48% [50/115] [batch_t 0.019 (0.045)]
+2024-05-27 14:23:50,017 - Test: 86.96% [100/115] [batch_t 0.035 (0.042)]
+2024-05-27 14:23:51,654 - Test: 100.00% [115/115] [batch_t 1.091 (0.051)]
+2024-05-27 14:23:57,218 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.151 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 14:23:58,032 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-27 14:23:58,661 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.115 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-27 14:23:59,103 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.082 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.029 (mAcc_px_0.2_0.8_0.1)	  0.029 (mIoU_px_0.2_0.8_0.1)	  0.082 (mIoU_max_px)	
+2024-05-27 14:24:00,149 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-27 14:24:01,230 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.206 (mF1_max_px)	  0.071 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.201 (mIoU_max_px)	
+2024-05-27 14:24:01,239 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     60.306      |  60.306 (10  epoch)   |    64.327    | 64.327 (10  epoch) |      78.333      |   78.333 (10  epoch)   |   75.365    | 75.365 (10  epoch) |   93.870    | 93.870 (10  epoch) |  0.849   | 0.849 (10  epoch)  |    2.269     | 2.269 (10  epoch)  |        1.033         |     1.033 (10  epoch)      |        73.129         |     73.129 (10  epoch)      |         0.520         |      0.520 (10  epoch)      |     1.148     |  1.148 (10  epoch)  |
+| bracket_brown |     72.775      |  72.775 (10  epoch)   |    82.424    | 82.424 (10  epoch) |      80.645      |   80.645 (10  epoch)   |   81.865    | 81.865 (10  epoch) |   95.065    | 95.065 (10  epoch) |  5.888   | 5.888 (10  epoch)  |    10.653    | 10.653 (10  epoch) |        5.793         |     5.793 (10  epoch)      |        73.299         |     73.299 (10  epoch)      |         3.012         |      3.012 (10  epoch)      |     5.626     |  5.626 (10  epoch)  |
+| bracket_white |     53.333      |  53.333 (10  epoch)   |    55.243    | 55.243 (10  epoch) |      68.493      |   68.493 (10  epoch)   |   86.385    | 86.385 (10  epoch) |   97.123    | 97.123 (10  epoch) |  0.541   | 0.541 (10  epoch)  |    1.422     | 1.422 (10  epoch)  |        0.531         |     0.531 (10  epoch)      |        78.840         |     78.840 (10  epoch)      |         0.267         |      0.267 (10  epoch)      |     0.716     |  0.716 (10  epoch)  |
+|   connector   |     86.429      |  86.429 (10  epoch)   |    82.666    | 82.666 (10  epoch) |      76.923      |   76.923 (10  epoch)   |   87.391    | 87.391 (10  epoch) |   96.107    | 96.107 (10  epoch) |  10.118  | 10.118 (10  epoch) |    17.901    | 17.901 (10  epoch) |        6.732         |     6.732 (10  epoch)      |        68.587         |     68.587 (10  epoch)      |         3.590         |      3.590 (10  epoch)      |     9.830     |  9.830 (10  epoch)  |
+|  metal_plate  |     94.800      |  94.800 (10  epoch)   |    98.235    | 98.235 (10  epoch) |      93.151      |   93.151 (10  epoch)   |   76.061    | 76.061 (10  epoch) |   96.001    | 96.001 (10  epoch) |  82.712  | 82.712 (10  epoch) |    77.495    | 77.495 (10  epoch) |        46.460        |     46.460 (10  epoch)     |        63.675         |     63.675 (10  epoch)      |        32.837         |     32.837 (10  epoch)      |    63.259     | 63.259 (10  epoch)  |
+|     tubes     |     65.172      |  65.172 (10  epoch)   |    82.936    | 82.936 (10  epoch) |      83.019      |   83.019 (10  epoch)   |   68.619    | 68.619 (10  epoch) |   90.794    | 90.794 (10  epoch) |  10.940  | 10.940 (10  epoch) |    16.781    | 16.781 (10  epoch) |        7.526         |     7.526 (10  epoch)      |        49.761         |     49.761 (10  epoch)      |         3.978         |      3.978 (10  epoch)      |     9.159     |  9.159 (10  epoch)  |
+|      Avg      |     72.136      |  72.136 (10  epoch)   |    77.638    | 77.638 (10  epoch) |      80.094      |   80.094 (10  epoch)   |   79.281    | 79.281 (10  epoch) |   94.827    | 94.827 (10  epoch) |  18.508  | 18.508 (10  epoch) |    21.087    | 21.087 (10  epoch) |        11.346        |     11.346 (10  epoch)     |        67.882         |     67.882 (10  epoch)      |         7.367         |      7.367 (10  epoch)      |    14.956     | 14.956 (10  epoch)  |
+2024-05-27 14:24:01,591 - ==> Total time: 0:02:11	 Eta: 0:19:41 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:06,175 - Train: 10.14% [2250/22200]  [10.1/100.0] [batch_t 0.040 (0.059)] [data_t 0.000] [optim_t 0.040] [pixel 39.834 (133.512)]
+2024-05-27 14:24:08,224 - Train: 10.36% [2300/22200]  [10.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 23.916 (83.013)]
+2024-05-27 14:24:10,275 - Train: 10.59% [2350/22200]  [10.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 321.884 (103.965)]
+2024-05-27 14:24:12,323 - Train: 10.81% [2400/22200]  [10.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 65.416 (83.426)]
+2024-05-27 14:24:14,041 - ==> Total time: 0:02:23	 Eta: 0:19:23 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:15,128 - Train: 11.04% [2450/22200]  [11.0/100.0] [batch_t 0.041 (0.053)] [data_t 0.000] [optim_t 0.041] [pixel 25.247 (40.996)]
+2024-05-27 14:24:17,187 - Train: 11.26% [2500/22200]  [11.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 45.330 (85.517)]
+2024-05-27 14:24:19,240 - Train: 11.49% [2550/22200]  [11.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 59.622 (76.098)]
+2024-05-27 14:24:21,281 - Train: 11.71% [2600/22200]  [11.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 16.730 (52.563)]
+2024-05-27 14:24:23,323 - Train: 11.94% [2650/22200]  [11.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 87.188 (62.796)]
+2024-05-27 14:24:23,893 - ==> Total time: 0:02:33	 Eta: 0:18:46 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:26,117 - Train: 12.16% [2700/22200]  [12.2/100.0] [batch_t 0.041 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 32.416 (49.987)]
+2024-05-27 14:24:28,158 - Train: 12.39% [2750/22200]  [12.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 56.620 (30.491)]
+2024-05-27 14:24:30,199 - Train: 12.61% [2800/22200]  [12.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 25.917 (50.899)]
+2024-05-27 14:24:32,239 - Train: 12.84% [2850/22200]  [12.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 70.530 (30.948)]
+2024-05-27 14:24:33,712 - ==> Total time: 0:02:43	 Eta: 0:18:13 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:35,131 - Train: 13.06% [2900/22200]  [13.1/100.0] [batch_t 0.041 (0.048)] [data_t 0.000] [optim_t 0.040] [pixel 29.173 (31.836)]
+2024-05-27 14:24:37,183 - Train: 13.29% [2950/22200]  [13.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 21.662 (34.528)]
+2024-05-27 14:24:39,234 - Train: 13.51% [3000/22200]  [13.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 88.039 (59.491)]
+2024-05-27 14:24:41,304 - Train: 13.74% [3050/22200]  [13.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 37.445 (61.424)]
+2024-05-27 14:24:43,373 - Train: 13.96% [3100/22200]  [14.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 106.289 (47.580)]
+2024-05-27 14:24:43,703 - ==> Total time: 0:02:53	 Eta: 0:17:45 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:46,148 - Train: 14.19% [3150/22200]  [14.2/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.041] [pixel 114.401 (53.703)]
+2024-05-27 14:24:48,212 - Train: 14.41% [3200/22200]  [14.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 224.966 (207.431)]
+2024-05-27 14:24:50,264 - Train: 14.64% [3250/22200]  [14.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 50.282 (148.287)]
+2024-05-27 14:24:52,311 - Train: 14.86% [3300/22200]  [14.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 45.331 (55.643)]
+2024-05-27 14:24:53,539 - ==> Total time: 0:03:03	 Eta: 0:17:18 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:24:55,096 - Train: 15.09% [3350/22200]  [15.1/100.0] [batch_t 0.042 (0.046)] [data_t 0.000] [optim_t 0.042] [pixel 24.611 (14.154)]
+2024-05-27 14:24:57,132 - Train: 15.32% [3400/22200]  [15.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 1.528 (7.584)]
+2024-05-27 14:24:59,173 - Train: 15.54% [3450/22200]  [15.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 37.523 (9.325)]
+2024-05-27 14:25:01,207 - Train: 15.77% [3500/22200]  [15.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 2.448 (13.985)]
+2024-05-27 14:25:03,244 - Train: 15.99% [3550/22200]  [16.0/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 103.965 (14.017)]
+2024-05-27 14:25:03,326 - ==> Total time: 0:03:13	 Eta: 0:16:53 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:25:06,232 - Train: 16.22% [3600/22200]  [16.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 2.363 (5.563)]
+2024-05-27 14:25:08,279 - Train: 16.44% [3650/22200]  [16.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.687 (1.327)]
+2024-05-27 14:25:10,325 - Train: 16.67% [3700/22200]  [16.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.773 (0.626)]
+2024-05-27 14:25:12,374 - Train: 16.89% [3750/22200]  [16.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.168 (0.343)]
+2024-05-27 14:25:13,354 - ==> Total time: 0:03:23	 Eta: 0:16:31 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:25:15,127 - Train: 17.12% [3800/22200]  [17.1/100.0] [batch_t 0.041 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.154 (0.125)]
+2024-05-27 14:25:17,175 - Train: 17.34% [3850/22200]  [17.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.068 (0.119)]
+2024-05-27 14:25:19,217 - Train: 17.57% [3900/22200]  [17.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.156 (0.120)]
+2024-05-27 14:25:21,257 - Train: 17.79% [3950/22200]  [17.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.085 (0.101)]
+2024-05-27 14:25:23,130 - ==> Total time: 0:03:32	 Eta: 0:16:09 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:25:24,017 - Train: 18.02% [4000/22200]  [18.0/100.0] [batch_t 0.041 (0.066)] [data_t 0.000] [optim_t 0.041] [pixel 0.049 (0.057)]
+2024-05-27 14:25:26,061 - Train: 18.24% [4050/22200]  [18.2/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.050 (0.077)]
+2024-05-27 14:25:28,107 - Train: 18.47% [4100/22200]  [18.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.051 (0.078)]
+2024-05-27 14:25:30,148 - Train: 18.69% [4150/22200]  [18.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.092 (0.075)]
+2024-05-27 14:25:32,191 - Train: 18.92% [4200/22200]  [18.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 0.042 (0.079)]
+2024-05-27 14:25:32,926 - ==> Total time: 0:03:42	 Eta: 0:15:49 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:25:35,064 - Train: 19.14% [4250/22200]  [19.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.001] [optim_t 0.040] [pixel 0.050 (0.064)]
+2024-05-27 14:25:37,097 - Train: 19.37% [4300/22200]  [19.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.129 (0.066)]
+2024-05-27 14:25:39,141 - Train: 19.59% [4350/22200]  [19.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.066 (0.058)]
+2024-05-27 14:25:41,171 - Train: 19.82% [4400/22200]  [19.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.056 (0.065)]
+2024-05-27 14:25:45,150 - Test: 43.48% [50/115] [batch_t 0.019 (0.045)]
+2024-05-27 14:25:47,032 - Test: 86.96% [100/115] [batch_t 0.020 (0.041)]
+2024-05-27 14:25:47,648 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:25:52,797 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.153 (mIoU_max_px)	
+2024-05-27 14:25:53,617 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.149 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-27 14:25:54,229 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.114 (mF1_max_px)	  0.040 (mF1_px_0.2_0.8_0.1)	  0.040 (mAcc_px_0.2_0.8_0.1)	  0.040 (mIoU_px_0.2_0.8_0.1)	  0.116 (mIoU_max_px)	
+2024-05-27 14:25:54,659 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.077 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.078 (mIoU_max_px)	
+2024-05-27 14:25:55,695 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.185 (mIoU_max_px)	
+2024-05-27 14:25:56,767 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.206 (mF1_max_px)	  0.072 (mF1_px_0.2_0.8_0.1)	  0.067 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.195 (mIoU_max_px)	
+2024-05-27 14:25:56,775 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.840      |  60.306 (10  epoch)   |    70.862    | 70.862 (20  epoch) |      74.603      |   78.333 (10  epoch)   |   38.573    | 75.365 (10  epoch) |   76.911    | 93.870 (10  epoch) |  0.202   | 0.849 (10  epoch)  |    0.540     | 2.269 (10  epoch)  |        0.306         |     1.033 (10  epoch)      |        43.207         |     73.129 (10  epoch)      |         0.153         |      0.520 (10  epoch)      |     0.271     |  1.148 (10  epoch)  |
+| bracket_brown |     83.484      |  83.484 (20  epoch)   |    90.282    | 90.282 (20  epoch) |      84.906      |   84.906 (20  epoch)   |   43.331    | 81.865 (10  epoch) |   82.357    | 95.065 (10  epoch) |  2.342   | 5.888 (10  epoch)  |    5.640     | 10.653 (10  epoch) |        3.185         |     5.793 (10  epoch)      |        53.585         |     73.299 (10  epoch)      |         1.626         |      3.012 (10  epoch)      |     2.902     |  5.626 (10  epoch)  |
+| bracket_white |     75.333      |  75.333 (20  epoch)   |    80.852    | 80.852 (20  epoch) |      71.642      |   71.642 (20  epoch)   |   44.426    | 86.385 (10  epoch) |   89.327    | 97.123 (10  epoch) |  4.301   | 4.301 (20  epoch)  |    14.662    | 14.662 (20  epoch) |        2.965         |     2.965 (20  epoch)      |        67.274         |     78.840 (10  epoch)      |         1.572         |      1.572 (20  epoch)      |     7.911     |  7.911 (20  epoch)  |
+|   connector   |     91.667      |  91.667 (20  epoch)   |    82.858    | 82.858 (20  epoch) |      82.759      |   82.759 (20  epoch)   |   52.273    | 87.391 (10  epoch) |   79.542    | 96.107 (10  epoch) |  9.370   | 10.118 (10  epoch) |    14.586    | 17.901 (10  epoch) |        5.750         |     6.732 (10  epoch)      |        58.814         |     68.587 (10  epoch)      |         3.026         |      3.590 (10  epoch)      |     7.867     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.729      |  99.729 (20  epoch)   |    99.901    | 99.901 (20  epoch) |      98.611      |   98.611 (20  epoch)   |   82.356    | 82.356 (20  epoch) |   97.432    | 97.432 (20  epoch) |  89.635  | 89.635 (20  epoch) |    81.946    | 81.946 (20  epoch) |        52.302        |     52.302 (20  epoch)     |        51.416         |     63.675 (10  epoch)      |        39.824         |     39.824 (20  epoch)      |    69.414     | 69.414 (20  epoch)  |
+|     tubes     |     65.716      |  65.716 (20  epoch)   |    84.523    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   40.619    | 68.619 (10  epoch) |   74.967    | 90.794 (10  epoch) |  6.023   | 10.940 (10  epoch) |    12.122    | 16.781 (10  epoch) |        6.237         |     7.526 (10  epoch)      |        38.971         |     49.761 (10  epoch)      |         3.253         |      3.978 (10  epoch)      |     6.452     |  9.159 (10  epoch)  |
+|      Avg      |     79.295      |  79.295 (20  epoch)   |    84.879    | 84.879 (20  epoch) |      82.283      |   82.283 (20  epoch)   |   50.263    | 79.281 (10  epoch) |   83.423    | 94.827 (10  epoch) |  18.645  | 18.645 (20  epoch) |    21.583    | 21.583 (20  epoch) |        11.791        |     11.791 (20  epoch)     |        52.211         |     67.882 (10  epoch)      |         8.243         |      8.243 (20  epoch)      |    15.803     | 15.803 (20  epoch)  |
+2024-05-27 14:25:57,146 - ==> Total time: 0:04:06	 Eta: 0:16:27 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:25:58,637 - Train: 20.05% [4450/22200]  [20.0/100.0] [batch_t 0.041 (0.050)] [data_t 0.000] [optim_t 0.041] [pixel 0.121 (0.056)]
+2024-05-27 14:26:00,687 - Train: 20.27% [4500/22200]  [20.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.035 (0.048)]
+2024-05-27 14:26:02,739 - Train: 20.50% [4550/22200]  [20.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.077 (0.053)]
+2024-05-27 14:26:04,779 - Train: 20.72% [4600/22200]  [20.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.044 (0.053)]
+2024-05-27 14:26:06,814 - Train: 20.95% [4650/22200]  [20.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.068 (0.052)]
+2024-05-27 14:26:07,306 - ==> Total time: 0:04:17	 Eta: 0:16:06 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:09,717 - Train: 21.17% [4700/22200]  [21.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.036 (0.053)]
+2024-05-27 14:26:11,767 - Train: 21.40% [4750/22200]  [21.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.031 (0.049)]
+2024-05-27 14:26:13,808 - Train: 21.62% [4800/22200]  [21.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.023 (0.041)]
+2024-05-27 14:26:15,851 - Train: 21.85% [4850/22200]  [21.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.022 (0.039)]
+2024-05-27 14:26:17,242 - ==> Total time: 0:04:26	 Eta: 0:15:46 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:18,699 - Train: 22.07% [4900/22200]  [22.1/100.0] [batch_t 0.041 (0.047)] [data_t 0.001] [optim_t 0.040] [pixel 0.035 (0.041)]
+2024-05-27 14:26:20,743 - Train: 22.30% [4950/22200]  [22.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.016 (0.043)]
+2024-05-27 14:26:22,792 - Train: 22.52% [5000/22200]  [22.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.033 (0.039)]
+2024-05-27 14:26:24,840 - Train: 22.75% [5050/22200]  [22.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.038)]
+2024-05-27 14:26:26,889 - Train: 22.97% [5100/22200]  [23.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.054 (0.040)]
+2024-05-27 14:26:27,137 - ==> Total time: 0:04:36	 Eta: 0:15:26 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:29,772 - Train: 23.20% [5150/22200]  [23.2/100.0] [batch_t 0.041 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.047 (0.034)]
+2024-05-27 14:26:31,832 - Train: 23.42% [5200/22200]  [23.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.021 (0.036)]
+2024-05-27 14:26:33,888 - Train: 23.65% [5250/22200]  [23.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.019 (0.034)]
+2024-05-27 14:26:35,930 - Train: 23.87% [5300/22200]  [23.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.019 (0.038)]
+2024-05-27 14:26:37,075 - ==> Total time: 0:04:46	 Eta: 0:15:08 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:38,737 - Train: 24.10% [5350/22200]  [24.1/100.0] [batch_t 0.040 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.032 (0.035)]
+2024-05-27 14:26:40,753 - Train: 24.32% [5400/22200]  [24.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.057 (0.027)]
+2024-05-27 14:26:42,765 - Train: 24.55% [5450/22200]  [24.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.015 (0.031)]
+2024-05-27 14:26:44,783 - Train: 24.77% [5500/22200]  [24.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.018 (0.034)]
+2024-05-27 14:26:46,803 - Train: 25.00% [5550/22200]  [25.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.022 (0.034)]
+2024-05-27 14:26:46,804 - ==> Total time: 0:04:56	 Eta: 0:14:49 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:49,629 - Train: 25.23% [5600/22200]  [25.2/100.0] [batch_t 0.041 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.033 (0.028)]
+2024-05-27 14:26:51,651 - Train: 25.45% [5650/22200]  [25.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.035 (0.030)]
+2024-05-27 14:26:53,671 - Train: 25.68% [5700/22200]  [25.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.035 (0.028)]
+2024-05-27 14:26:55,693 - Train: 25.90% [5750/22200]  [25.9/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.058 (0.031)]
+2024-05-27 14:26:56,584 - ==> Total time: 0:05:06	 Eta: 0:14:31 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:26:58,528 - Train: 26.13% [5800/22200]  [26.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.041] [pixel 0.029 (0.030)]
+2024-05-27 14:27:00,546 - Train: 26.35% [5850/22200]  [26.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.025 (0.029)]
+2024-05-27 14:27:02,562 - Train: 26.58% [5900/22200]  [26.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.037 (0.022)]
+2024-05-27 14:27:04,579 - Train: 26.80% [5950/22200]  [26.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.025)]
+2024-05-27 14:27:06,357 - ==> Total time: 0:05:16	 Eta: 0:14:14 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:27:07,604 - Train: 27.03% [6000/22200]  [27.0/100.0] [batch_t 0.041 (0.058)] [data_t 0.000] [optim_t 0.040] [pixel 0.018 (0.017)]
+2024-05-27 14:27:09,628 - Train: 27.25% [6050/22200]  [27.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.024)]
+2024-05-27 14:27:11,655 - Train: 27.48% [6100/22200]  [27.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.044 (0.027)]
+2024-05-27 14:27:13,673 - Train: 27.70% [6150/22200]  [27.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.026)]
+2024-05-27 14:27:15,694 - Train: 27.93% [6200/22200]  [27.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.020 (0.023)]
+2024-05-27 14:27:16,339 - ==> Total time: 0:05:26	 Eta: 0:13:58 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:27:18,455 - Train: 28.15% [6250/22200]  [28.2/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.023 (0.024)]
+2024-05-27 14:27:20,511 - Train: 28.38% [6300/22200]  [28.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.041] [pixel 0.012 (0.021)]
+2024-05-27 14:27:22,552 - Train: 28.60% [6350/22200]  [28.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.025 (0.023)]
+2024-05-27 14:27:24,586 - Train: 28.83% [6400/22200]  [28.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.014 (0.023)]
+2024-05-27 14:27:26,132 - ==> Total time: 0:05:35	 Eta: 0:13:42 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:27:27,581 - Train: 29.05% [6450/22200]  [29.1/100.0] [batch_t 0.040 (0.047)] [data_t 0.000] [optim_t 0.040] [pixel 0.029 (0.021)]
+2024-05-27 14:27:29,600 - Train: 29.28% [6500/22200]  [29.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.019)]
+2024-05-27 14:27:31,625 - Train: 29.50% [6550/22200]  [29.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.020)]
+2024-05-27 14:27:33,653 - Train: 29.73% [6600/22200]  [29.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.044 (0.022)]
+2024-05-27 14:27:35,682 - Train: 29.95% [6650/22200]  [30.0/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.022 (0.021)]
+2024-05-27 14:27:38,563 - Test: 43.48% [50/115] [batch_t 0.020 (0.045)]
+2024-05-27 14:27:40,448 - Test: 86.96% [100/115] [batch_t 0.020 (0.041)]
+2024-05-27 14:27:41,061 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:27:46,678 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.146 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-27 14:27:47,487 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.142 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.149 (mIoU_max_px)	
+2024-05-27 14:27:48,090 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.038 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.113 (mIoU_max_px)	
+2024-05-27 14:27:48,507 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.075 (mIoU_max_px)	
+2024-05-27 14:27:49,516 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.183 (mF1_max_px)	  0.062 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.179 (mIoU_max_px)	
+2024-05-27 14:27:50,544 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.065 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.065 (mIoU_px_0.2_0.8_0.1)	  0.187 (mIoU_max_px)	
+2024-05-27 14:27:50,552 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     62.101      |  62.101 (30  epoch)   |    73.860    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   37.614    | 75.365 (10  epoch) |   77.711    | 93.870 (10  epoch) |  0.208   | 0.849 (10  epoch)  |    0.697     | 2.269 (10  epoch)  |        0.324         |     1.033 (10  epoch)      |        45.851         |     73.129 (10  epoch)      |         0.162         |      0.520 (10  epoch)      |     0.350     |  1.148 (10  epoch)  |
+| bracket_brown |     86.350      |  86.350 (30  epoch)   |    92.470    | 92.470 (30  epoch) |      86.869      |   86.869 (30  epoch)   |   49.661    | 81.865 (10  epoch) |   84.849    | 95.065 (10  epoch) |  2.877   | 5.888 (10  epoch)  |    6.387     | 10.653 (10  epoch) |        3.404         |     5.793 (10  epoch)      |        58.344         |     73.299 (10  epoch)      |         1.742         |      3.012 (10  epoch)      |     3.299     |  5.626 (10  epoch)  |
+| bracket_white |     79.667      |  79.667 (30  epoch)   |    84.191    | 84.191 (30  epoch) |      76.923      |   76.923 (30  epoch)   |   51.988    | 86.385 (10  epoch) |   91.039    | 97.123 (10  epoch) |  4.781   | 4.781 (30  epoch)  |    16.499    | 16.499 (30  epoch) |        2.317         |     2.965 (20  epoch)      |        73.075         |     78.840 (10  epoch)      |         1.215         |      1.572 (20  epoch)      |     8.991     |  8.991 (30  epoch)  |
+|   connector   |     95.238      |  95.238 (30  epoch)   |    86.830    | 86.830 (30  epoch) |      89.655      |   89.655 (30  epoch)   |   59.280    | 87.391 (10  epoch) |   83.242    | 96.107 (10  epoch) |  11.626  | 11.626 (30  epoch) |    16.542    | 17.901 (10  epoch) |        6.418         |     6.732 (10  epoch)      |        63.542         |     68.587 (10  epoch)      |         3.412         |      3.590 (10  epoch)      |     9.017     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.675      |  99.729 (20  epoch)   |    99.883    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.290    | 83.290 (30  epoch) |   97.542    | 97.542 (30  epoch) |  89.846  | 89.846 (30  epoch) |    82.057    | 82.057 (30  epoch) |        52.244        |     52.302 (20  epoch)     |        52.036         |     63.675 (10  epoch)      |        39.790         |     39.824 (20  epoch)      |    69.573     | 69.573 (30  epoch)  |
+|     tubes     |     66.168      |  66.168 (30  epoch)   |    84.359    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   44.910    | 68.619 (10  epoch) |   77.703    | 90.794 (10  epoch) |  7.955   | 10.940 (10  epoch) |    15.337    | 16.781 (10  epoch) |        7.134         |     7.526 (10  epoch)      |        40.572         |     49.761 (10  epoch)      |         3.757         |      3.978 (10  epoch)      |     8.305     |  9.159 (10  epoch)  |
+|      Avg      |     81.533      |  81.533 (30  epoch)   |    86.932    | 86.932 (30  epoch) |      84.636      |   84.636 (30  epoch)   |   54.457    | 79.281 (10  epoch) |   85.348    | 94.827 (10  epoch) |  19.549  | 19.549 (30  epoch) |    22.920    | 22.920 (30  epoch) |        11.973        |     11.973 (30  epoch)     |        55.570         |     67.882 (10  epoch)      |         8.346         |      8.346 (30  epoch)      |    16.589     | 16.589 (30  epoch)  |
+2024-05-27 14:27:50,880 - ==> Total time: 0:06:00	 Eta: 0:14:01 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:27:53,700 - Train: 30.18% [6700/22200]  [30.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.041] [pixel 0.006 (0.018)]
+2024-05-27 14:27:55,737 - Train: 30.41% [6750/22200]  [30.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.023 (0.022)]
+2024-05-27 14:27:57,777 - Train: 30.63% [6800/22200]  [30.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.030 (0.020)]
+2024-05-27 14:27:59,813 - Train: 30.86% [6850/22200]  [30.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.018)]
+2024-05-27 14:28:01,112 - ==> Total time: 0:06:10	 Eta: 0:13:45 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:02,964 - Train: 31.08% [6900/22200]  [31.1/100.0] [batch_t 0.040 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.050 (0.020)]
+2024-05-27 14:28:04,987 - Train: 31.31% [6950/22200]  [31.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.017)]
+2024-05-27 14:28:07,010 - Train: 31.53% [7000/22200]  [31.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.019 (0.018)]
+2024-05-27 14:28:09,042 - Train: 31.76% [7050/22200]  [31.8/100.0] [batch_t 0.042 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.014 (0.020)]
+2024-05-27 14:28:11,076 - Train: 31.98% [7100/22200]  [32.0/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.017)]
+2024-05-27 14:28:11,239 - ==> Total time: 0:06:20	 Eta: 0:13:29 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:13,853 - Train: 32.21% [7150/22200]  [32.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.025 (0.018)]
+2024-05-27 14:28:15,881 - Train: 32.43% [7200/22200]  [32.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.017 (0.015)]
+2024-05-27 14:28:17,910 - Train: 32.66% [7250/22200]  [32.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.018)]
+2024-05-27 14:28:19,937 - Train: 32.88% [7300/22200]  [32.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.018)]
+2024-05-27 14:28:20,994 - ==> Total time: 0:06:30	 Eta: 0:13:13 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:22,731 - Train: 33.11% [7350/22200]  [33.1/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.016 (0.015)]
+2024-05-27 14:28:24,748 - Train: 33.33% [7400/22200]  [33.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.015)]
+2024-05-27 14:28:26,767 - Train: 33.56% [7450/22200]  [33.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.015)]
+2024-05-27 14:28:28,784 - Train: 33.78% [7500/22200]  [33.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.026 (0.019)]
+2024-05-27 14:28:30,721 - ==> Total time: 0:06:40	 Eta: 0:12:57 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:31,710 - Train: 34.01% [7550/22200]  [34.0/100.0] [batch_t 0.041 (0.088)] [data_t 0.000] [optim_t 0.041] [pixel 0.008 (0.025)]
+2024-05-27 14:28:33,734 - Train: 34.23% [7600/22200]  [34.2/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.018 (0.013)]
+2024-05-27 14:28:35,756 - Train: 34.46% [7650/22200]  [34.5/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.052 (0.015)]
+2024-05-27 14:28:37,774 - Train: 34.68% [7700/22200]  [34.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.016)]
+2024-05-27 14:28:39,793 - Train: 34.91% [7750/22200]  [34.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.015)]
+2024-05-27 14:28:40,608 - ==> Total time: 0:06:50	 Eta: 0:12:42 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:43,083 - Train: 35.14% [7800/22200]  [35.1/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.015)]
+2024-05-27 14:28:45,112 - Train: 35.36% [7850/22200]  [35.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.015 (0.015)]
+2024-05-27 14:28:47,137 - Train: 35.59% [7900/22200]  [35.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.035 (0.014)]
+2024-05-27 14:28:49,157 - Train: 35.81% [7950/22200]  [35.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.013 (0.014)]
+2024-05-27 14:28:50,855 - ==> Total time: 0:07:00	 Eta: 0:12:27 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:28:52,064 - Train: 36.04% [8000/22200]  [36.0/100.0] [batch_t 0.041 (0.052)] [data_t 0.001] [optim_t 0.040] [pixel 0.011 (0.012)]
+2024-05-27 14:28:54,092 - Train: 36.26% [8050/22200]  [36.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.014)]
+2024-05-27 14:28:56,125 - Train: 36.49% [8100/22200]  [36.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.013)]
+2024-05-27 14:28:58,160 - Train: 36.71% [8150/22200]  [36.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.017 (0.012)]
+2024-05-27 14:29:00,186 - Train: 36.94% [8200/22200]  [36.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.020 (0.014)]
+2024-05-27 14:29:00,753 - ==> Total time: 0:07:10	 Eta: 0:12:12 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:29:03,140 - Train: 37.16% [8250/22200]  [37.2/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.012)]
+2024-05-27 14:29:05,159 - Train: 37.39% [8300/22200]  [37.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.012)]
+2024-05-27 14:29:07,178 - Train: 37.61% [8350/22200]  [37.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.013)]
+2024-05-27 14:29:09,198 - Train: 37.84% [8400/22200]  [37.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.017 (0.014)]
+2024-05-27 14:29:10,651 - ==> Total time: 0:07:20	 Eta: 0:11:58 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:29:11,989 - Train: 38.06% [8450/22200]  [38.1/100.0] [batch_t 0.040 (0.047)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.012)]
+2024-05-27 14:29:14,012 - Train: 38.29% [8500/22200]  [38.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.030 (0.012)]
+2024-05-27 14:29:16,032 - Train: 38.51% [8550/22200]  [38.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.011)]
+2024-05-27 14:29:18,052 - Train: 38.74% [8600/22200]  [38.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.028 (0.012)]
+2024-05-27 14:29:20,071 - Train: 38.96% [8650/22200]  [39.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.012)]
+2024-05-27 14:29:20,395 - ==> Total time: 0:07:30	 Eta: 0:11:44 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:29:23,111 - Train: 39.19% [8700/22200]  [39.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.012)]
+2024-05-27 14:29:25,130 - Train: 39.41% [8750/22200]  [39.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.020 (0.010)]
+2024-05-27 14:29:27,151 - Train: 39.64% [8800/22200]  [39.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.012)]
+2024-05-27 14:29:29,173 - Train: 39.86% [8850/22200]  [39.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.012)]
+2024-05-27 14:29:32,716 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:29:34,578 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:29:35,189 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:29:40,288 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-27 14:29:41,088 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.142 (mIoU_max_px)	
+2024-05-27 14:29:41,688 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.110 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 14:29:42,117 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.081 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.076 (mIoU_max_px)	
+2024-05-27 14:29:43,122 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.181 (mIoU_max_px)	
+2024-05-27 14:29:44,163 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.191 (mIoU_max_px)	
+2024-05-27 14:29:44,171 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.907      |  62.101 (30  epoch)   |    72.407    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   33.335    | 75.365 (10  epoch) |   75.476    | 93.870 (10  epoch) |  0.185   | 0.849 (10  epoch)  |    0.516     | 2.269 (10  epoch)  |        0.277         |     1.033 (10  epoch)      |        46.052         |     73.129 (10  epoch)      |         0.139         |      0.520 (10  epoch)      |     0.259     |  1.148 (10  epoch)  |
+| bracket_brown |     87.557      |  87.557 (40  epoch)   |    93.364    | 93.364 (40  epoch) |      87.755      |   87.755 (40  epoch)   |   49.842    | 81.865 (10  epoch) |   84.171    | 95.065 (10  epoch) |  2.878   | 5.888 (10  epoch)  |    6.432     | 10.653 (10  epoch) |        3.406         |     5.793 (10  epoch)      |        58.380         |     73.299 (10  epoch)      |         1.744         |      3.012 (10  epoch)      |     3.323     |  5.626 (10  epoch)  |
+| bracket_white |     78.667      |  79.667 (30  epoch)   |    83.501    | 84.191 (30  epoch) |      75.758      |   76.923 (30  epoch)   |   48.075    | 86.385 (10  epoch) |   89.832    | 97.123 (10  epoch) |  4.028   | 4.781 (30  epoch)  |    15.175    | 16.499 (30  epoch) |        1.897         |     2.965 (20  epoch)      |        73.475         |     78.840 (10  epoch)      |         0.988         |      1.572 (20  epoch)      |     8.210     |  8.991 (30  epoch)  |
+|   connector   |     95.714      |  95.714 (40  epoch)   |    87.285    | 87.285 (40  epoch) |      89.655      |   89.655 (30  epoch)   |   57.488    | 87.391 (10  epoch) |   82.421    | 96.107 (10  epoch) |  10.325  | 11.626 (30  epoch) |    15.495    | 17.901 (10  epoch) |        5.955         |     6.732 (10  epoch)      |        63.440         |     68.587 (10  epoch)      |         3.151         |      3.590 (10  epoch)      |     8.398     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.621      |  99.729 (20  epoch)   |    99.865    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.120    | 83.290 (30  epoch) |   97.536    | 97.542 (30  epoch) |  89.813  | 89.846 (30  epoch) |    81.978    | 82.057 (30  epoch) |        52.374        |     52.374 (40  epoch)     |        52.153         |     63.675 (10  epoch)      |        39.894         |     39.894 (40  epoch)      |    69.459     | 69.573 (30  epoch)  |
+|     tubes     |     66.486      |  66.486 (40  epoch)   |    84.384    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   46.087    | 68.619 (10  epoch) |   78.344    | 90.794 (10  epoch) |  8.372   | 10.940 (10  epoch) |    16.150    | 16.781 (10  epoch) |        7.351         |     7.526 (10  epoch)      |        41.517         |     49.761 (10  epoch)      |         3.880         |      3.978 (10  epoch)      |     8.784     |  9.159 (10  epoch)  |
+|      Avg      |     81.325      |  81.533 (30  epoch)   |    86.801    | 86.932 (30  epoch) |      84.590      |   84.636 (30  epoch)   |   52.991    | 79.281 (10  epoch) |   84.630    | 94.827 (10  epoch) |  19.267  | 19.549 (30  epoch) |    22.624    | 22.920 (30  epoch) |        11.876        |     11.973 (30  epoch)     |        55.836         |     67.882 (10  epoch)      |         8.299         |      8.346 (30  epoch)      |    16.406     | 16.589 (30  epoch)  |
+2024-05-27 14:29:44,523 - ==> Total time: 0:07:54	 Eta: 0:11:51 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:29:46,753 - Train: 40.09% [8900/22200]  [40.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.012)]
+2024-05-27 14:29:48,781 - Train: 40.32% [8950/22200]  [40.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.011)]
+2024-05-27 14:29:50,809 - Train: 40.54% [9000/22200]  [40.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.026 (0.012)]
+2024-05-27 14:29:52,837 - Train: 40.77% [9050/22200]  [40.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.010)]
+2024-05-27 14:29:54,863 - Train: 40.99% [9100/22200]  [41.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.024 (0.010)]
+2024-05-27 14:29:54,946 - ==> Total time: 0:08:04	 Eta: 0:11:37 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:29:58,533 - Train: 41.22% [9150/22200]  [41.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.010)]
+2024-05-27 14:30:00,562 - Train: 41.44% [9200/22200]  [41.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.009)]
+2024-05-27 14:30:02,587 - Train: 41.67% [9250/22200]  [41.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.011)]
+2024-05-27 14:30:04,612 - Train: 41.89% [9300/22200]  [41.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.015 (0.011)]
+2024-05-27 14:30:05,583 - ==> Total time: 0:08:15	 Eta: 0:11:23 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:07,817 - Train: 42.12% [9350/22200]  [42.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.008)]
+2024-05-27 14:30:09,841 - Train: 42.34% [9400/22200]  [42.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.011)]
+2024-05-27 14:30:11,864 - Train: 42.57% [9450/22200]  [42.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.011)]
+2024-05-27 14:30:13,888 - Train: 42.79% [9500/22200]  [42.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.010)]
+2024-05-27 14:30:15,748 - ==> Total time: 0:08:25	 Eta: 0:11:10 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:17,125 - Train: 43.02% [9550/22200]  [43.0/100.0] [batch_t 0.041 (0.064)] [data_t 0.000] [optim_t 0.041] [pixel 0.003 (0.008)]
+2024-05-27 14:30:19,162 - Train: 43.24% [9600/22200]  [43.2/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.008)]
+2024-05-27 14:30:21,192 - Train: 43.47% [9650/22200]  [43.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.009)]
+2024-05-27 14:30:23,223 - Train: 43.69% [9700/22200]  [43.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.010)]
+2024-05-27 14:30:25,256 - Train: 43.92% [9750/22200]  [43.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.019 (0.010)]
+2024-05-27 14:30:25,991 - ==> Total time: 0:08:35	 Eta: 0:10:56 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:28,116 - Train: 44.14% [9800/22200]  [44.1/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.008)]
+2024-05-27 14:30:30,143 - Train: 44.37% [9850/22200]  [44.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.009)]
+2024-05-27 14:30:32,170 - Train: 44.59% [9900/22200]  [44.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.007 (0.009)]
+2024-05-27 14:30:34,198 - Train: 44.82% [9950/22200]  [44.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.006 (0.009)]
+2024-05-27 14:30:35,821 - ==> Total time: 0:08:45	 Eta: 0:10:42 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:37,014 - Train: 45.05% [10000/22200]  [45.0/100.0] [batch_t 0.040 (0.050)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.009)]
+2024-05-27 14:30:39,042 - Train: 45.27% [10050/22200]  [45.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.008)]
+2024-05-27 14:30:41,071 - Train: 45.50% [10100/22200]  [45.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.010 (0.009)]
+2024-05-27 14:30:43,094 - Train: 45.72% [10150/22200]  [45.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.008)]
+2024-05-27 14:30:45,114 - Train: 45.95% [10200/22200]  [45.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.009)]
+2024-05-27 14:30:45,600 - ==> Total time: 0:08:55	 Eta: 0:10:28 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:48,503 - Train: 46.17% [10250/22200]  [46.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.009)]
+2024-05-27 14:30:50,530 - Train: 46.40% [10300/22200]  [46.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.007)]
+2024-05-27 14:30:52,559 - Train: 46.62% [10350/22200]  [46.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.009)]
+2024-05-27 14:30:54,591 - Train: 46.85% [10400/22200]  [46.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.008)]
+2024-05-27 14:30:55,967 - ==> Total time: 0:09:05	 Eta: 0:10:15 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:30:57,442 - Train: 47.07% [10450/22200]  [47.1/100.0] [batch_t 0.041 (0.046)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.010)]
+2024-05-27 14:30:59,470 - Train: 47.30% [10500/22200]  [47.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.014 (0.009)]
+2024-05-27 14:31:01,506 - Train: 47.52% [10550/22200]  [47.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.008)]
+2024-05-27 14:31:03,538 - Train: 47.75% [10600/22200]  [47.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.007)]
+2024-05-27 14:31:05,570 - Train: 47.97% [10650/22200]  [48.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.007)]
+2024-05-27 14:31:05,815 - ==> Total time: 0:09:15	 Eta: 0:10:01 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:31:08,554 - Train: 48.20% [10700/22200]  [48.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.007)]
+2024-05-27 14:31:10,586 - Train: 48.42% [10750/22200]  [48.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.007)]
+2024-05-27 14:31:12,618 - Train: 48.65% [10800/22200]  [48.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.008)]
+2024-05-27 14:31:14,649 - Train: 48.87% [10850/22200]  [48.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.008)]
+2024-05-27 14:31:15,783 - ==> Total time: 0:09:25	 Eta: 0:09:48 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:31:17,540 - Train: 49.10% [10900/22200]  [49.1/100.0] [batch_t 0.040 (0.046)] [data_t 0.001] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:31:19,566 - Train: 49.32% [10950/22200]  [49.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.008)]
+2024-05-27 14:31:21,591 - Train: 49.55% [11000/22200]  [49.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.007)]
+2024-05-27 14:31:23,616 - Train: 49.77% [11050/22200]  [49.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.007)]
+2024-05-27 14:31:25,639 - Train: 50.00% [11100/22200]  [50.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.007)]
+2024-05-27 14:31:27,970 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:31:29,832 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:31:30,444 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:31:35,697 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.152 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.052 (mAcc_px_0.2_0.8_0.1)	  0.052 (mIoU_px_0.2_0.8_0.1)	  0.151 (mIoU_max_px)	
+2024-05-27 14:31:36,510 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.146 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-27 14:31:37,118 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.113 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.114 (mIoU_max_px)	
+2024-05-27 14:31:37,556 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.080 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.081 (mIoU_max_px)	
+2024-05-27 14:31:38,585 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.190 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-27 14:31:39,635 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.196 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.193 (mIoU_max_px)	
+2024-05-27 14:31:39,642 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     58.311      |  62.101 (30  epoch)   |    71.297    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   31.416    | 75.365 (10  epoch) |   74.248    | 93.870 (10  epoch) |  0.175   | 0.849 (10  epoch)  |    0.503     | 2.269 (10  epoch)  |        0.266         |     1.033 (10  epoch)      |        45.615         |     73.129 (10  epoch)      |         0.133         |      0.520 (10  epoch)      |     0.252     |  1.148 (10  epoch)  |
+| bracket_brown |     87.783      |  87.783 (50  epoch)   |    93.675    | 93.675 (50  epoch) |      87.755      |   87.755 (40  epoch)   |   49.683    | 81.865 (10  epoch) |   84.134    | 95.065 (10  epoch) |  2.933   | 5.888 (10  epoch)  |    6.619     | 10.653 (10  epoch) |        3.441         |     5.793 (10  epoch)      |        59.241         |     73.299 (10  epoch)      |         1.763         |      3.012 (10  epoch)      |     3.423     |  5.626 (10  epoch)  |
+| bracket_white |     78.111      |  79.667 (30  epoch)   |    83.315    | 84.191 (30  epoch) |      73.846      |   76.923 (30  epoch)   |   47.359    | 86.385 (10  epoch) |   89.618    | 97.123 (10  epoch) |  4.020   | 4.781 (30  epoch)  |    14.689    | 16.499 (30  epoch) |        1.771         |     2.965 (20  epoch)      |        74.061         |     78.840 (10  epoch)      |         0.920         |      1.572 (20  epoch)      |     7.926     |  8.991 (30  epoch)  |
+|   connector   |     96.429      |  96.429 (50  epoch)   |    88.282    | 88.282 (50  epoch) |      92.857      |   92.857 (50  epoch)   |   56.885    | 87.391 (10  epoch) |   82.162    | 96.107 (10  epoch) |  10.422  | 11.626 (30  epoch) |    15.710    | 17.901 (10  epoch) |        5.958         |     6.732 (10  epoch)      |        63.292         |     68.587 (10  epoch)      |         3.154         |      3.590 (10  epoch)      |     8.524     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.675      |  99.729 (20  epoch)   |    99.883    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.185    | 83.290 (30  epoch) |   97.544    | 97.544 (50  epoch) |  89.845  | 89.846 (30  epoch) |    81.970    | 82.057 (30  epoch) |        52.500        |     52.500 (50  epoch)     |        52.464         |     63.675 (10  epoch)      |        39.994         |     39.994 (50  epoch)      |    69.448     | 69.573 (30  epoch)  |
+|     tubes     |     66.214      |  66.486 (40  epoch)   |    84.182    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   45.759    | 68.619 (10  epoch) |   77.985    | 90.794 (10  epoch) |  8.450   | 10.940 (10  epoch) |    16.433    | 16.781 (10  epoch) |        7.381         |     7.526 (10  epoch)      |        41.234         |     49.761 (10  epoch)      |         3.899         |      3.978 (10  epoch)      |     8.952     |  9.159 (10  epoch)  |
+|      Avg      |     81.087      |  81.533 (30  epoch)   |    86.772    | 86.932 (30  epoch) |      84.805      |   84.805 (50  epoch)   |   52.381    | 79.281 (10  epoch) |   84.282    | 94.827 (10  epoch) |  19.307  | 19.549 (30  epoch) |    22.654    | 22.920 (30  epoch) |        11.886        |     11.973 (30  epoch)     |        55.985         |     67.882 (10  epoch)      |         8.310         |      8.346 (30  epoch)      |    16.421     | 16.589 (30  epoch)  |
+2024-05-27 14:31:39,990 - ==> Total time: 0:09:49	 Eta: 0:09:49 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:31:43,341 - Train: 50.23% [11150/22200]  [50.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.007)]
+2024-05-27 14:31:45,374 - Train: 50.45% [11200/22200]  [50.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.007)]
+2024-05-27 14:31:47,394 - Train: 50.68% [11250/22200]  [50.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.006)]
+2024-05-27 14:31:49,419 - Train: 50.90% [11300/22200]  [50.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.007)]
+2024-05-27 14:31:50,309 - ==> Total time: 0:10:00	 Eta: 0:09:36 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:31:52,971 - Train: 51.13% [11350/22200]  [51.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.007)]
+2024-05-27 14:31:54,999 - Train: 51.35% [11400/22200]  [51.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.007)]
+2024-05-27 14:31:57,024 - Train: 51.58% [11450/22200]  [51.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.006)]
+2024-05-27 14:31:59,053 - Train: 51.80% [11500/22200]  [51.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.007)]
+2024-05-27 14:32:00,837 - ==> Total time: 0:10:10	 Eta: 0:09:23 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:01,826 - Train: 52.03% [11550/22200]  [52.0/100.0] [batch_t 0.040 (0.058)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:32:03,851 - Train: 52.25% [11600/22200]  [52.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.007)]
+2024-05-27 14:32:05,871 - Train: 52.48% [11650/22200]  [52.5/100.0] [batch_t 0.042 (0.040)] [data_t 0.000] [optim_t 0.042] [pixel 0.008 (0.005)]
+2024-05-27 14:32:07,892 - Train: 52.70% [11700/22200]  [52.7/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.007)]
+2024-05-27 14:32:09,914 - Train: 52.93% [11750/22200]  [52.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.006)]
+2024-05-27 14:32:10,562 - ==> Total time: 0:10:20	 Eta: 0:09:10 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:12,830 - Train: 53.15% [11800/22200]  [53.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.005)]
+2024-05-27 14:32:14,861 - Train: 53.38% [11850/22200]  [53.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.004 (0.007)]
+2024-05-27 14:32:16,892 - Train: 53.60% [11900/22200]  [53.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.007)]
+2024-05-27 14:32:18,917 - Train: 53.83% [11950/22200]  [53.8/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:32:20,455 - ==> Total time: 0:10:30	 Eta: 0:08:56 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:22,249 - Train: 54.05% [12000/22200]  [54.1/100.0] [batch_t 0.040 (0.048)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.006)]
+2024-05-27 14:32:24,270 - Train: 54.28% [12050/22200]  [54.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.006)]
+2024-05-27 14:32:26,290 - Train: 54.50% [12100/22200]  [54.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.006)]
+2024-05-27 14:32:28,316 - Train: 54.73% [12150/22200]  [54.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.011 (0.005)]
+2024-05-27 14:32:30,338 - Train: 54.95% [12200/22200]  [55.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.005)]
+2024-05-27 14:32:30,746 - ==> Total time: 0:10:40	 Eta: 0:08:44 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:33,210 - Train: 55.18% [12250/22200]  [55.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.001] [optim_t 0.040] [pixel 0.005 (0.006)]
+2024-05-27 14:32:35,229 - Train: 55.41% [12300/22200]  [55.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.012 (0.005)]
+2024-05-27 14:32:37,248 - Train: 55.63% [12350/22200]  [55.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.019 (0.006)]
+2024-05-27 14:32:39,272 - Train: 55.86% [12400/22200]  [55.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.005)]
+2024-05-27 14:32:40,564 - ==> Total time: 0:10:50	 Eta: 0:08:30 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:42,448 - Train: 56.08% [12450/22200]  [56.1/100.0] [batch_t 0.040 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.005)]
+2024-05-27 14:32:44,468 - Train: 56.31% [12500/22200]  [56.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.004 (0.005)]
+2024-05-27 14:32:46,484 - Train: 56.53% [12550/22200]  [56.5/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.009 (0.006)]
+2024-05-27 14:32:48,502 - Train: 56.76% [12600/22200]  [56.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.005)]
+2024-05-27 14:32:50,523 - Train: 56.98% [12650/22200]  [57.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.007)]
+2024-05-27 14:32:50,685 - ==> Total time: 0:11:00	 Eta: 0:08:18 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:32:53,442 - Train: 57.21% [12700/22200]  [57.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.005)]
+2024-05-27 14:32:55,464 - Train: 57.43% [12750/22200]  [57.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.006)]
+2024-05-27 14:32:57,485 - Train: 57.66% [12800/22200]  [57.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.007 (0.005)]
+2024-05-27 14:32:59,507 - Train: 57.88% [12850/22200]  [57.9/100.0] [batch_t 0.041 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.006 (0.005)]
+2024-05-27 14:33:00,557 - ==> Total time: 0:11:10	 Eta: 0:08:05 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:33:02,426 - Train: 58.11% [12900/22200]  [58.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.001] [optim_t 0.040] [pixel 0.006 (0.004)]
+2024-05-27 14:33:04,439 - Train: 58.33% [12950/22200]  [58.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.005)]
+2024-05-27 14:33:06,456 - Train: 58.56% [13000/22200]  [58.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.005)]
+2024-05-27 14:33:08,472 - Train: 58.78% [13050/22200]  [58.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.005)]
+2024-05-27 14:33:10,408 - ==> Total time: 0:11:20	 Eta: 0:07:52 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:33:11,394 - Train: 59.01% [13100/22200]  [59.0/100.0] [batch_t 0.040 (0.084)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.006)]
+2024-05-27 14:33:13,414 - Train: 59.23% [13150/22200]  [59.2/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.013 (0.005)]
+2024-05-27 14:33:15,433 - Train: 59.46% [13200/22200]  [59.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.017 (0.005)]
+2024-05-27 14:33:17,452 - Train: 59.68% [13250/22200]  [59.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.005)]
+2024-05-27 14:33:19,472 - Train: 59.91% [13300/22200]  [59.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:33:22,616 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:33:24,495 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:33:25,109 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:33:30,570 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.151 (mIoU_max_px)	
+2024-05-27 14:33:31,373 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.142 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.142 (mIoU_max_px)	
+2024-05-27 14:33:31,975 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 14:33:32,401 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.076 (mIoU_max_px)	
+2024-05-27 14:33:33,404 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.181 (mIoU_max_px)	
+2024-05-27 14:33:34,439 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.193 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.065 (mAcc_px_0.2_0.8_0.1)	  0.068 (mIoU_px_0.2_0.8_0.1)	  0.189 (mIoU_max_px)	
+2024-05-27 14:33:34,445 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.973      |  62.101 (30  epoch)   |    72.581    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   32.149    | 75.365 (10  epoch) |   74.797    | 93.870 (10  epoch) |  0.180   | 0.849 (10  epoch)  |    0.497     | 2.269 (10  epoch)  |        0.269         |     1.033 (10  epoch)      |        45.479         |     73.129 (10  epoch)      |         0.135         |      0.520 (10  epoch)      |     0.249     |  1.148 (10  epoch)  |
+| bracket_brown |     88.386      |  88.386 (60  epoch)   |    94.341    | 94.341 (60  epoch) |      87.755      |   87.755 (40  epoch)   |   52.027    | 81.865 (10  epoch) |   84.979    | 95.065 (10  epoch) |  3.140   | 5.888 (10  epoch)  |    6.816     | 10.653 (10  epoch) |        3.545         |     5.793 (10  epoch)      |        60.474         |     73.299 (10  epoch)      |         1.818         |      3.012 (10  epoch)      |     3.528     |  5.626 (10  epoch)  |
+| bracket_white |     80.556      |  80.556 (60  epoch)   |    85.433    | 85.433 (60  epoch) |      76.923      |   76.923 (30  epoch)   |   50.063    | 86.385 (10  epoch) |   90.336    | 97.123 (10  epoch) |  4.274   | 4.781 (30  epoch)  |    15.018    | 16.499 (30  epoch) |        1.753         |     2.965 (20  epoch)      |        74.885         |     78.840 (10  epoch)      |         0.911         |      1.572 (20  epoch)      |     8.119     |  8.991 (30  epoch)  |
+|   connector   |     96.667      |  96.667 (60  epoch)   |    88.609    | 88.609 (60  epoch) |      92.857      |   92.857 (50  epoch)   |   58.951    | 87.391 (10  epoch) |   83.247    | 96.107 (10  epoch) |  11.246  | 11.626 (30  epoch) |    16.288    | 17.901 (10  epoch) |        6.152         |     6.732 (10  epoch)      |        64.365         |     68.587 (10  epoch)      |         3.265         |      3.590 (10  epoch)      |     8.866     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.675      |  99.729 (20  epoch)   |    99.883    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.144    | 83.290 (30  epoch) |   97.542    | 97.544 (50  epoch) |  89.827  | 89.846 (30  epoch) |    81.911    | 82.057 (30  epoch) |        52.618        |     52.618 (60  epoch)     |        52.635         |     63.675 (10  epoch)      |        40.095         |     40.095 (60  epoch)      |    69.364     | 69.573 (30  epoch)  |
+|     tubes     |     66.168      |  66.486 (40  epoch)   |    84.292    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   47.185    | 68.619 (10  epoch) |   78.808    | 90.794 (10  epoch) |  8.883   | 10.940 (10  epoch) |    16.890    | 16.890 (60  epoch) |        7.584         |     7.584 (60  epoch)      |        41.160         |     49.761 (10  epoch)      |         4.013         |      4.013 (60  epoch)      |     9.224     |  9.224 (60  epoch)  |
+|      Avg      |     81.904      |  81.904 (60  epoch)   |    87.523    | 87.523 (60  epoch) |      85.318      |   85.318 (60  epoch)   |   53.920    | 79.281 (10  epoch) |   84.952    | 94.827 (10  epoch) |  19.592  | 19.592 (60  epoch) |    22.904    | 22.920 (30  epoch) |        11.987        |     11.987 (60  epoch)     |        56.500         |     67.882 (10  epoch)      |         8.373         |      8.373 (60  epoch)      |    16.558     | 16.589 (30  epoch)  |
+2024-05-27 14:33:34,786 - ==> Total time: 0:11:44	 Eta: 0:07:49 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:33:36,953 - Train: 60.14% [13350/22200]  [60.1/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.005)]
+2024-05-27 14:33:38,979 - Train: 60.36% [13400/22200]  [60.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:33:41,005 - Train: 60.59% [13450/22200]  [60.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:33:43,028 - Train: 60.81% [13500/22200]  [60.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.005)]
+2024-05-27 14:33:44,729 - ==> Total time: 0:11:54	 Eta: 0:07:36 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:33:45,836 - Train: 61.04% [13550/22200]  [61.0/100.0] [batch_t 0.040 (0.053)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.005)]
+2024-05-27 14:33:47,861 - Train: 61.26% [13600/22200]  [61.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.004)]
+2024-05-27 14:33:49,891 - Train: 61.49% [13650/22200]  [61.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:33:51,913 - Train: 61.71% [13700/22200]  [61.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:33:53,938 - Train: 61.94% [13750/22200]  [61.9/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.004)]
+2024-05-27 14:33:54,503 - ==> Total time: 0:12:04	 Eta: 0:07:23 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:33:56,741 - Train: 62.16% [13800/22200]  [62.2/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.005)]
+2024-05-27 14:33:58,773 - Train: 62.39% [13850/22200]  [62.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.008 (0.004)]
+2024-05-27 14:34:00,822 - Train: 62.61% [13900/22200]  [62.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.005)]
+2024-05-27 14:34:02,873 - Train: 62.84% [13950/22200]  [62.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.005)]
+2024-05-27 14:34:04,331 - ==> Total time: 0:12:14	 Eta: 0:07:11 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:05,947 - Train: 63.06% [14000/22200]  [63.1/100.0] [batch_t 0.040 (0.048)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.005)]
+2024-05-27 14:34:07,983 - Train: 63.29% [14050/22200]  [63.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.003 (0.004)]
+2024-05-27 14:34:10,019 - Train: 63.51% [14100/22200]  [63.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.004)]
+2024-05-27 14:34:12,048 - Train: 63.74% [14150/22200]  [63.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.004)]
+2024-05-27 14:34:14,069 - Train: 63.96% [14200/22200]  [64.0/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.004)]
+2024-05-27 14:34:14,395 - ==> Total time: 0:12:24	 Eta: 0:06:58 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:16,968 - Train: 64.19% [14250/22200]  [64.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.005)]
+2024-05-27 14:34:18,999 - Train: 64.41% [14300/22200]  [64.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.004 (0.004)]
+2024-05-27 14:34:21,034 - Train: 64.64% [14350/22200]  [64.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:34:23,060 - Train: 64.86% [14400/22200]  [64.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:34:24,280 - ==> Total time: 0:12:34	 Eta: 0:06:46 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:25,905 - Train: 65.09% [14450/22200]  [65.1/100.0] [batch_t 0.042 (0.046)] [data_t 0.000] [optim_t 0.041] [pixel 0.007 (0.004)]
+2024-05-27 14:34:27,934 - Train: 65.32% [14500/22200]  [65.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:34:29,964 - Train: 65.54% [14550/22200]  [65.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.005)]
+2024-05-27 14:34:31,990 - Train: 65.77% [14600/22200]  [65.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.004)]
+2024-05-27 14:34:34,015 - Train: 65.99% [14650/22200]  [66.0/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:34:34,098 - ==> Total time: 0:12:43	 Eta: 0:06:33 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:36,948 - Train: 66.22% [14700/22200]  [66.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:34:38,967 - Train: 66.44% [14750/22200]  [66.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.004)]
+2024-05-27 14:34:40,994 - Train: 66.67% [14800/22200]  [66.7/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.015 (0.004)]
+2024-05-27 14:34:43,019 - Train: 66.89% [14850/22200]  [66.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:34:43,993 - ==> Total time: 0:12:53	 Eta: 0:06:21 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:45,933 - Train: 67.12% [14900/22200]  [67.1/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:34:47,953 - Train: 67.34% [14950/22200]  [67.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.004)]
+2024-05-27 14:34:49,965 - Train: 67.57% [15000/22200]  [67.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:34:51,984 - Train: 67.79% [15050/22200]  [67.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.009 (0.004)]
+2024-05-27 14:34:53,842 - ==> Total time: 0:13:03	 Eta: 0:06:08 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:34:54,794 - Train: 68.02% [15100/22200]  [68.0/100.0] [batch_t 0.040 (0.066)] [data_t 0.000] [optim_t 0.040] [pixel 0.008 (0.004)]
+2024-05-27 14:34:56,820 - Train: 68.24% [15150/22200]  [68.2/100.0] [batch_t 0.041 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.005 (0.004)]
+2024-05-27 14:34:58,851 - Train: 68.47% [15200/22200]  [68.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:35:00,881 - Train: 68.69% [15250/22200]  [68.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.004)]
+2024-05-27 14:35:02,902 - Train: 68.92% [15300/22200]  [68.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:35:03,630 - ==> Total time: 0:13:13	 Eta: 0:05:56 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:35:05,909 - Train: 69.14% [15350/22200]  [69.1/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:35:07,934 - Train: 69.37% [15400/22200]  [69.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:35:09,967 - Train: 69.59% [15450/22200]  [69.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:35:12,004 - Train: 69.82% [15500/22200]  [69.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:35:16,035 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:35:17,906 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:35:18,515 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:35:23,563 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.150 (mF1_max_px)	  0.052 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.053 (mIoU_px_0.2_0.8_0.1)	  0.148 (mIoU_max_px)	
+2024-05-27 14:35:24,375 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.144 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.144 (mIoU_max_px)	
+2024-05-27 14:35:24,981 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.112 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-27 14:35:25,408 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.027 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.076 (mIoU_max_px)	
+2024-05-27 14:35:26,442 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.186 (mF1_max_px)	  0.064 (mF1_px_0.2_0.8_0.1)	  0.064 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.184 (mIoU_max_px)	
+2024-05-27 14:35:27,480 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.191 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.190 (mIoU_max_px)	
+2024-05-27 14:35:27,488 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.840      |  62.101 (30  epoch)   |    72.982    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   33.028    | 75.365 (10  epoch) |   75.306    | 93.870 (10  epoch) |  0.184   | 0.849 (10  epoch)  |    0.500     | 2.269 (10  epoch)  |        0.276         |     1.033 (10  epoch)      |        45.779         |     73.129 (10  epoch)      |         0.138         |      0.520 (10  epoch)      |     0.251     |  1.148 (10  epoch)  |
+| bracket_brown |     88.537      |  88.537 (70  epoch)   |    94.414    | 94.414 (70  epoch) |      88.000      |   88.000 (70  epoch)   |   52.742    | 81.865 (10  epoch) |   85.254    | 95.065 (10  epoch) |  3.242   | 5.888 (10  epoch)  |    6.906     | 10.653 (10  epoch) |        3.582         |     5.793 (10  epoch)      |        60.811         |     73.299 (10  epoch)      |         1.838         |      3.012 (10  epoch)      |     3.576     |  5.626 (10  epoch)  |
+| bracket_white |     80.778      |  80.778 (70  epoch)   |    86.056    | 86.056 (70  epoch) |      78.125      |   78.125 (70  epoch)   |   49.792    | 86.385 (10  epoch) |   90.367    | 97.123 (10  epoch) |  4.277   | 4.781 (30  epoch)  |    14.994    | 16.499 (30  epoch) |        1.780         |     2.965 (20  epoch)      |        74.947         |     78.840 (10  epoch)      |         0.926         |      1.572 (20  epoch)      |     8.104     |  8.991 (30  epoch)  |
+|   connector   |     96.667      |  96.667 (60  epoch)   |    88.609    | 88.609 (60  epoch) |      92.857      |   92.857 (50  epoch)   |   59.861    | 87.391 (10  epoch) |   83.754    | 96.107 (10  epoch) |  11.574  | 11.626 (30  epoch) |    16.536    | 17.901 (10  epoch) |        6.293         |     6.732 (10  epoch)      |        64.721         |     68.587 (10  epoch)      |         3.345         |      3.590 (10  epoch)      |     9.013     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.675      |  99.729 (20  epoch)   |    99.883    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.251    | 83.290 (30  epoch) |   97.564    | 97.564 (70  epoch) |  89.857  | 89.857 (70  epoch) |    81.898    | 82.057 (30  epoch) |        52.689        |     52.689 (70  epoch)     |        52.777         |     63.675 (10  epoch)      |        40.157         |     40.157 (70  epoch)      |    69.345     | 69.573 (30  epoch)  |
+|     tubes     |     65.670      |  66.486 (40  epoch)   |    83.955    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   48.177    | 68.619 (10  epoch) |   79.398    | 90.794 (10  epoch) |  9.281   | 10.940 (10  epoch) |    17.194    | 17.194 (70  epoch) |        7.746         |     7.746 (70  epoch)      |        40.994         |     49.761 (10  epoch)      |         4.103         |      4.103 (70  epoch)      |     9.406     |  9.406 (70  epoch)  |
+|      Avg      |     81.861      |  81.904 (60  epoch)   |    87.650    | 87.650 (70  epoch) |      85.559      |   85.559 (70  epoch)   |   54.475    | 79.281 (10  epoch) |   85.274    | 94.827 (10  epoch) |  19.736  | 19.736 (70  epoch) |    23.004    | 23.004 (70  epoch) |        12.061        |     12.061 (70  epoch)     |        56.671         |     67.882 (10  epoch)      |         8.418         |      8.418 (70  epoch)      |    16.616     | 16.616 (70  epoch)  |
+2024-05-27 14:35:27,820 - ==> Total time: 0:13:37	 Eta: 0:05:50 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:35:29,544 - Train: 70.05% [15550/22200]  [70.0/100.0] [batch_t 0.040 (0.051)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:35:31,570 - Train: 70.27% [15600/22200]  [70.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:35:33,593 - Train: 70.50% [15650/22200]  [70.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:35:35,621 - Train: 70.72% [15700/22200]  [70.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:35:37,650 - Train: 70.95% [15750/22200]  [70.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:35:38,138 - ==> Total time: 0:13:47	 Eta: 0:05:38 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:35:40,638 - Train: 71.17% [15800/22200]  [71.2/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:35:42,671 - Train: 71.40% [15850/22200]  [71.4/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:35:44,706 - Train: 71.62% [15900/22200]  [71.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:35:46,736 - Train: 71.85% [15950/22200]  [71.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.004)]
+2024-05-27 14:35:48,110 - ==> Total time: 0:13:57	 Eta: 0:05:25 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:35:49,537 - Train: 72.07% [16000/22200]  [72.1/100.0] [batch_t 0.041 (0.046)] [data_t 0.000] [optim_t 0.041] [pixel 0.012 (0.005)]
+2024-05-27 14:35:51,556 - Train: 72.30% [16050/22200]  [72.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:35:53,580 - Train: 72.52% [16100/22200]  [72.5/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.003)]
+2024-05-27 14:35:55,604 - Train: 72.75% [16150/22200]  [72.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:35:57,627 - Train: 72.97% [16200/22200]  [73.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.003)]
+2024-05-27 14:35:57,871 - ==> Total time: 0:14:07	 Eta: 0:05:13 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:00,514 - Train: 73.20% [16250/22200]  [73.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.004)]
+2024-05-27 14:36:02,539 - Train: 73.42% [16300/22200]  [73.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.010 (0.003)]
+2024-05-27 14:36:04,569 - Train: 73.65% [16350/22200]  [73.6/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:36:06,591 - Train: 73.87% [16400/22200]  [73.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:36:07,732 - ==> Total time: 0:14:17	 Eta: 0:05:01 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:09,698 - Train: 74.10% [16450/22200]  [74.1/100.0] [batch_t 0.040 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.004)]
+2024-05-27 14:36:11,731 - Train: 74.32% [16500/22200]  [74.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:36:13,763 - Train: 74.55% [16550/22200]  [74.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:36:15,797 - Train: 74.77% [16600/22200]  [74.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:36:17,820 - Train: 75.00% [16650/22200]  [75.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:36:17,822 - ==> Total time: 0:14:27	 Eta: 0:04:49 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:20,605 - Train: 75.23% [16700/22200]  [75.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:36:22,626 - Train: 75.45% [16750/22200]  [75.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.003)]
+2024-05-27 14:36:24,648 - Train: 75.68% [16800/22200]  [75.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.004)]
+2024-05-27 14:36:26,666 - Train: 75.90% [16850/22200]  [75.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.003)]
+2024-05-27 14:36:27,554 - ==> Total time: 0:14:37	 Eta: 0:04:37 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:29,564 - Train: 76.13% [16900/22200]  [76.1/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.004)]
+2024-05-27 14:36:31,587 - Train: 76.35% [16950/22200]  [76.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:36:33,607 - Train: 76.58% [17000/22200]  [76.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.003)]
+2024-05-27 14:36:35,624 - Train: 76.80% [17050/22200]  [76.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:36:37,400 - ==> Total time: 0:14:47	 Eta: 0:04:24 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:38,750 - Train: 77.03% [17100/22200]  [77.0/100.0] [batch_t 0.040 (0.055)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:36:40,769 - Train: 77.25% [17150/22200]  [77.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.039] [pixel 0.007 (0.003)]
+2024-05-27 14:36:42,787 - Train: 77.48% [17200/22200]  [77.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:36:44,800 - Train: 77.70% [17250/22200]  [77.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:36:46,818 - Train: 77.93% [17300/22200]  [77.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:36:47,465 - ==> Total time: 0:14:57	 Eta: 0:04:13 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:50,005 - Train: 78.15% [17350/22200]  [78.2/100.0] [batch_t 0.040 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:36:52,024 - Train: 78.38% [17400/22200]  [78.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.003)]
+2024-05-27 14:36:54,044 - Train: 78.60% [17450/22200]  [78.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:36:56,057 - Train: 78.83% [17500/22200]  [78.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:36:57,585 - ==> Total time: 0:15:07	 Eta: 0:04:01 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:36:59,074 - Train: 79.05% [17550/22200]  [79.1/100.0] [batch_t 0.040 (0.049)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:37:01,093 - Train: 79.28% [17600/22200]  [79.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:37:03,110 - Train: 79.50% [17650/22200]  [79.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:37:05,121 - Train: 79.73% [17700/22200]  [79.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.003)]
+2024-05-27 14:37:07,136 - Train: 79.95% [17750/22200]  [80.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:37:09,862 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:37:11,719 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:37:12,330 - Test: 100.00% [115/115] [batch_t 0.010 (0.041)]
+2024-05-27 14:37:17,763 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 14:37:18,557 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.049 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 14:37:19,154 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.038 (mIoU_px_0.2_0.8_0.1)	  0.111 (mIoU_max_px)	
+2024-05-27 14:37:19,585 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.079 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.079 (mIoU_max_px)	
+2024-05-27 14:37:20,590 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.185 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.064 (mIoU_px_0.2_0.8_0.1)	  0.188 (mIoU_max_px)	
+2024-05-27 14:37:21,641 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.196 (mF1_max_px)	  0.068 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.070 (mIoU_px_0.2_0.8_0.1)	  0.201 (mIoU_max_px)	
+2024-05-27 14:37:21,648 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     58.577      |  62.101 (30  epoch)   |    72.394    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   31.312    | 75.365 (10  epoch) |   74.186    | 93.870 (10  epoch) |  0.175   | 0.849 (10  epoch)  |    0.472     | 2.269 (10  epoch)  |        0.262         |     1.033 (10  epoch)      |        45.300         |     73.129 (10  epoch)      |         0.131         |      0.520 (10  epoch)      |     0.237     |  1.148 (10  epoch)  |
+| bracket_brown |     88.839      |  88.839 (80  epoch)   |    94.831    | 94.831 (80  epoch) |      88.000      |   88.000 (70  epoch)   |   51.908    | 81.865 (10  epoch) |   84.809    | 95.065 (10  epoch) |  3.159   | 5.888 (10  epoch)  |    6.795     | 10.653 (10  epoch) |        3.522         |     5.793 (10  epoch)      |        60.790         |     73.299 (10  epoch)      |         1.807         |      3.012 (10  epoch)      |     3.517     |  5.626 (10  epoch)  |
+| bracket_white |     79.889      |  80.778 (70  epoch)   |    85.378    | 86.056 (70  epoch) |      75.862      |   78.125 (70  epoch)   |   47.852    | 86.385 (10  epoch) |   89.835    | 97.123 (10  epoch) |  4.116   | 4.781 (30  epoch)  |    14.932    | 16.499 (30  epoch) |        1.758         |     2.965 (20  epoch)      |        74.498         |     78.840 (10  epoch)      |         0.914         |      1.572 (20  epoch)      |     8.068     |  8.991 (30  epoch)  |
+|   connector   |     96.905      |  96.905 (80  epoch)   |    88.977    | 88.977 (80  epoch) |      93.333      |   93.333 (80  epoch)   |   58.617    | 87.391 (10  epoch) |   83.132    | 96.107 (10  epoch) |  11.029  | 11.626 (30  epoch) |    16.207    | 17.901 (10  epoch) |        6.067         |     6.732 (10  epoch)      |        64.554         |     68.587 (10  epoch)      |         3.218         |      3.590 (10  epoch)      |     8.818     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.621      |  99.729 (20  epoch)   |    99.865    | 99.901 (20  epoch) |      98.592      |   98.611 (20  epoch)   |   83.172    | 83.290 (30  epoch) |   97.556    | 97.564 (70  epoch) |  89.844  | 89.857 (70  epoch) |    81.857    | 82.057 (30  epoch) |        52.683        |     52.689 (70  epoch)     |        53.029         |     63.675 (10  epoch)      |        40.128         |     40.157 (70  epoch)      |    69.286     | 69.573 (30  epoch)  |
+|     tubes     |     65.580      |  66.486 (40  epoch)   |    83.854    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   47.049    | 68.619 (10  epoch) |   78.717    | 90.794 (10  epoch) |  9.026   | 10.940 (10  epoch) |    17.121    | 17.194 (70  epoch) |        7.664         |     7.746 (70  epoch)      |        40.956         |     49.761 (10  epoch)      |         4.059         |      4.103 (70  epoch)      |     9.362     |  9.406 (70  epoch)  |
+|      Avg      |     81.568      |  81.904 (60  epoch)   |    87.550    | 87.650 (70  epoch) |      85.261      |   85.559 (70  epoch)   |   53.318    | 79.281 (10  epoch) |   84.706    | 94.827 (10  epoch) |  19.558  | 19.736 (70  epoch) |    22.897    | 23.004 (70  epoch) |        11.993        |     12.061 (70  epoch)     |        56.521         |     67.882 (10  epoch)      |         8.376         |      8.418 (70  epoch)      |    16.548     | 16.616 (70  epoch)  |
+2024-05-27 14:37:22,013 - ==> Total time: 0:15:31	 Eta: 0:03:52 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:37:24,808 - Train: 80.18% [17800/22200]  [80.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.002)]
+2024-05-27 14:37:26,824 - Train: 80.41% [17850/22200]  [80.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:37:28,834 - Train: 80.63% [17900/22200]  [80.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.003)]
+2024-05-27 14:37:30,853 - Train: 80.86% [17950/22200]  [80.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:32,143 - ==> Total time: 0:15:41	 Eta: 0:03:40 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:37:33,862 - Train: 81.08% [18000/22200]  [81.1/100.0] [batch_t 0.040 (0.047)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:35,883 - Train: 81.31% [18050/22200]  [81.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:37:37,920 - Train: 81.53% [18100/22200]  [81.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.006 (0.003)]
+2024-05-27 14:37:39,952 - Train: 81.76% [18150/22200]  [81.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.003)]
+2024-05-27 14:37:41,987 - Train: 81.98% [18200/22200]  [82.0/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:37:42,151 - ==> Total time: 0:15:51	 Eta: 0:03:28 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:37:45,022 - Train: 82.21% [18250/22200]  [82.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:47,051 - Train: 82.43% [18300/22200]  [82.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:49,078 - Train: 82.66% [18350/22200]  [82.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.003)]
+2024-05-27 14:37:51,101 - Train: 82.88% [18400/22200]  [82.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:37:52,152 - ==> Total time: 0:16:01	 Eta: 0:03:17 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:37:53,898 - Train: 83.11% [18450/22200]  [83.1/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:55,922 - Train: 83.33% [18500/22200]  [83.3/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:37:57,946 - Train: 83.56% [18550/22200]  [83.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:37:59,976 - Train: 83.78% [18600/22200]  [83.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:01,934 - ==> Total time: 0:16:11	 Eta: 0:03:05 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:04,405 - Train: 84.01% [18650/22200]  [84.0/100.0] [batch_t 0.040 (0.090)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.001)]
+2024-05-27 14:38:06,444 - Train: 84.23% [18700/22200]  [84.2/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:08,485 - Train: 84.46% [18750/22200]  [84.5/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:38:10,519 - Train: 84.68% [18800/22200]  [84.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.007 (0.002)]
+2024-05-27 14:38:12,548 - Train: 84.91% [18850/22200]  [84.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.003)]
+2024-05-27 14:38:13,361 - ==> Total time: 0:16:23	 Eta: 0:02:53 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:15,523 - Train: 85.14% [18900/22200]  [85.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.001] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:38:17,552 - Train: 85.36% [18950/22200]  [85.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:38:19,578 - Train: 85.59% [19000/22200]  [85.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:38:21,606 - Train: 85.81% [19050/22200]  [85.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:38:23,301 - ==> Total time: 0:16:33	 Eta: 0:02:41 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:24,368 - Train: 86.04% [19100/22200]  [86.0/100.0] [batch_t 0.040 (0.050)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:38:26,385 - Train: 86.26% [19150/22200]  [86.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:28,409 - Train: 86.49% [19200/22200]  [86.5/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:30,425 - Train: 86.71% [19250/22200]  [86.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:38:32,447 - Train: 86.94% [19300/22200]  [86.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:33,014 - ==> Total time: 0:16:42	 Eta: 0:02:29 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:35,577 - Train: 87.16% [19350/22200]  [87.2/100.0] [batch_t 0.041 (0.043)] [data_t 0.000] [optim_t 0.041] [pixel 0.003 (0.002)]
+2024-05-27 14:38:37,599 - Train: 87.39% [19400/22200]  [87.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.041] [pixel 0.002 (0.002)]
+2024-05-27 14:38:39,614 - Train: 87.61% [19450/22200]  [87.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.001 (0.003)]
+2024-05-27 14:38:41,644 - Train: 87.84% [19500/22200]  [87.8/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:43,102 - ==> Total time: 0:16:52	 Eta: 0:02:18 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:44,864 - Train: 88.06% [19550/22200]  [88.1/100.0] [batch_t 0.040 (0.046)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:38:46,898 - Train: 88.29% [19600/22200]  [88.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:38:48,925 - Train: 88.51% [19650/22200]  [88.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.002)]
+2024-05-27 14:38:50,955 - Train: 88.74% [19700/22200]  [88.7/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:38:52,978 - Train: 88.96% [19750/22200]  [89.0/100.0] [batch_t 0.041 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:38:53,301 - ==> Total time: 0:17:03	 Eta: 0:02:06 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:38:55,770 - Train: 89.19% [19800/22200]  [89.2/100.0] [batch_t 0.040 (0.042)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:38:57,798 - Train: 89.41% [19850/22200]  [89.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.002)]
+2024-05-27 14:38:59,818 - Train: 89.64% [19900/22200]  [89.6/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:39:01,839 - Train: 89.86% [19950/22200]  [89.9/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:06,278 - Test: 43.48% [50/115] [batch_t 0.019 (0.045)]
+2024-05-27 14:39:08,159 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:39:08,778 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:39:13,879 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.148 (mF1_max_px)	  0.051 (mF1_px_0.2_0.8_0.1)	  0.054 (mAcc_px_0.2_0.8_0.1)	  0.051 (mIoU_px_0.2_0.8_0.1)	  0.147 (mIoU_max_px)	
+2024-05-27 14:39:14,683 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.049 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.145 (mIoU_max_px)	
+2024-05-27 14:39:15,287 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-27 14:39:15,715 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.075 (mF1_max_px)	  0.028 (mF1_px_0.2_0.8_0.1)	  0.028 (mAcc_px_0.2_0.8_0.1)	  0.027 (mIoU_px_0.2_0.8_0.1)	  0.078 (mIoU_max_px)	
+2024-05-27 14:39:16,721 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.183 (mIoU_max_px)	
+2024-05-27 14:39:17,777 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.194 (mF1_max_px)	  0.067 (mF1_px_0.2_0.8_0.1)	  0.068 (mAcc_px_0.2_0.8_0.1)	  0.067 (mIoU_px_0.2_0.8_0.1)	  0.198 (mIoU_max_px)	
+2024-05-27 14:39:17,784 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     59.574      |  62.101 (30  epoch)   |    73.257    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   32.637    | 75.365 (10  epoch) |   74.921    | 93.870 (10  epoch) |  0.181   | 0.849 (10  epoch)  |    0.513     | 2.269 (10  epoch)  |        0.275         |     1.033 (10  epoch)      |        45.190         |     73.129 (10  epoch)      |         0.138         |      0.520 (10  epoch)      |     0.257     |  1.148 (10  epoch)  |
+| bracket_brown |     88.763      |  88.839 (80  epoch)   |    94.867    | 94.867 (90  epoch) |      88.889      |   88.889 (90  epoch)   |   53.173    | 81.865 (10  epoch) |   85.376    | 95.065 (10  epoch) |  3.264   | 5.888 (10  epoch)  |    6.905     | 10.653 (10  epoch) |        3.570         |     5.793 (10  epoch)      |        61.338         |     73.299 (10  epoch)      |         1.832         |      3.012 (10  epoch)      |     3.576     |  5.626 (10  epoch)  |
+| bracket_white |     81.000      |  81.000 (90  epoch)   |    86.346    | 86.346 (90  epoch) |      77.778      |   78.125 (70  epoch)   |   49.226    | 86.385 (10  epoch) |   90.292    | 97.123 (10  epoch) |  4.112   | 4.781 (30  epoch)  |    15.103    | 16.499 (30  epoch) |        1.794         |     2.965 (20  epoch)      |        74.947         |     78.840 (10  epoch)      |         0.934         |      1.572 (20  epoch)      |     8.168     |  8.991 (30  epoch)  |
+|   connector   |     96.905      |  96.905 (80  epoch)   |    88.977    | 88.977 (80  epoch) |      93.333      |   93.333 (80  epoch)   |   59.838    | 87.391 (10  epoch) |   83.783    | 96.107 (10  epoch) |  11.726  | 11.726 (90  epoch) |    16.689    | 17.901 (10  epoch) |        6.246         |     6.732 (10  epoch)      |        65.188         |     68.587 (10  epoch)      |         3.320         |      3.590 (10  epoch)      |     9.104     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.729      |  99.729 (20  epoch)   |    99.903    | 99.903 (90  epoch) |      98.592      |   98.611 (20  epoch)   |   83.181    | 83.290 (30  epoch) |   97.566    | 97.566 (90  epoch) |  89.842  | 89.857 (70  epoch) |    81.834    | 82.057 (30  epoch) |        52.725        |     52.725 (90  epoch)     |        53.131         |     63.675 (10  epoch)      |        40.165         |     40.165 (90  epoch)      |    69.253     | 69.573 (30  epoch)  |
+|     tubes     |     65.761      |  66.486 (40  epoch)   |    83.924    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   47.400    | 68.619 (10  epoch) |   79.001    | 90.794 (10  epoch) |  9.178   | 10.940 (10  epoch) |    17.272    | 17.272 (90  epoch) |        7.744         |     7.746 (70  epoch)      |        40.710         |     49.761 (10  epoch)      |         4.104         |      4.104 (90  epoch)      |     9.452     |  9.452 (90  epoch)  |
+|      Avg      |     81.955      |  81.955 (90  epoch)   |    87.879    | 87.879 (90  epoch) |      85.729      |   85.729 (90  epoch)   |   54.242    | 79.281 (10  epoch) |   85.157    | 94.827 (10  epoch) |  19.717  | 19.736 (70  epoch) |    23.053    | 23.053 (90  epoch) |        12.059        |     12.061 (70  epoch)     |        56.751         |     67.882 (10  epoch)      |         8.415         |      8.418 (70  epoch)      |    16.635     | 16.635 (90  epoch)  |
+2024-05-27 14:39:18,158 - ==> Total time: 0:17:27	 Eta: 0:01:56 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:39:20,014 - Train: 90.09% [20000/22200]  [90.1/100.0] [batch_t 0.041 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:22,051 - Train: 90.32% [20050/22200]  [90.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.002)]
+2024-05-27 14:39:24,084 - Train: 90.54% [20100/22200]  [90.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.041] [pixel 0.000 (0.002)]
+2024-05-27 14:39:26,110 - Train: 90.77% [20150/22200]  [90.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:39:28,137 - Train: 90.99% [20200/22200]  [91.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.002)]
+2024-05-27 14:39:28,221 - ==> Total time: 0:17:37	 Eta: 0:01:44 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:39:31,075 - Train: 91.22% [20250/22200]  [91.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:33,096 - Train: 91.44% [20300/22200]  [91.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:35,117 - Train: 91.67% [20350/22200]  [91.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:39:37,147 - Train: 91.89% [20400/22200]  [91.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:39:38,126 - ==> Total time: 0:17:47	 Eta: 0:01:32 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:39:40,099 - Train: 92.12% [20450/22200]  [92.1/100.0] [batch_t 0.041 (0.045)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:42,141 - Train: 92.34% [20500/22200]  [92.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:39:44,181 - Train: 92.57% [20550/22200]  [92.6/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:39:46,219 - Train: 92.79% [20600/22200]  [92.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:39:48,092 - ==> Total time: 0:17:57	 Eta: 0:01:21 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:39:49,352 - Train: 93.02% [20650/22200]  [93.0/100.0] [batch_t 0.041 (0.067)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:39:51,379 - Train: 93.24% [20700/22200]  [93.2/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:39:53,405 - Train: 93.47% [20750/22200]  [93.5/100.0] [batch_t 0.041 (0.040)] [data_t 0.001] [optim_t 0.040] [pixel 0.004 (0.002)]
+2024-05-27 14:39:55,441 - Train: 93.69% [20800/22200]  [93.7/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:39:57,478 - Train: 93.92% [20850/22200]  [93.9/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.005 (0.002)]
+2024-05-27 14:39:58,211 - ==> Total time: 0:18:07	 Eta: 0:01:09 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:00,529 - Train: 94.14% [20900/22200]  [94.1/100.0] [batch_t 0.041 (0.044)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.002)]
+2024-05-27 14:40:02,560 - Train: 94.37% [20950/22200]  [94.4/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.002)]
+2024-05-27 14:40:04,578 - Train: 94.59% [21000/22200]  [94.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.002)]
+2024-05-27 14:40:06,594 - Train: 94.82% [21050/22200]  [94.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:08,205 - ==> Total time: 0:18:17	 Eta: 0:00:57 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:10,136 - Train: 95.05% [21100/22200]  [95.0/100.0] [batch_t 0.040 (0.050)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.001)]
+2024-05-27 14:40:12,164 - Train: 95.27% [21150/22200]  [95.3/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.002)]
+2024-05-27 14:40:14,190 - Train: 95.50% [21200/22200]  [95.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:16,214 - Train: 95.72% [21250/22200]  [95.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.002)]
+2024-05-27 14:40:18,242 - Train: 95.95% [21300/22200]  [95.9/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:40:18,729 - ==> Total time: 0:18:28	 Eta: 0:00:46 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:21,492 - Train: 96.17% [21350/22200]  [96.2/100.0] [batch_t 0.040 (0.043)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:23,500 - Train: 96.40% [21400/22200]  [96.4/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:40:25,510 - Train: 96.62% [21450/22200]  [96.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.002 (0.002)]
+2024-05-27 14:40:27,519 - Train: 96.85% [21500/22200]  [96.8/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.001)]
+2024-05-27 14:40:28,887 - ==> Total time: 0:18:38	 Eta: 0:00:34 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:30,529 - Train: 97.07% [21550/22200]  [97.1/100.0] [batch_t 0.040 (0.046)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:32,537 - Train: 97.30% [21600/22200]  [97.3/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.039] [pixel 0.008 (0.002)]
+2024-05-27 14:40:34,549 - Train: 97.52% [21650/22200]  [97.5/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.006 (0.002)]
+2024-05-27 14:40:36,566 - Train: 97.75% [21700/22200]  [97.7/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.004 (0.002)]
+2024-05-27 14:40:38,578 - Train: 97.97% [21750/22200]  [98.0/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:40:38,821 - ==> Total time: 0:18:48	 Eta: 0:00:23 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:41,452 - Train: 98.20% [21800/22200]  [98.2/100.0] [batch_t 0.041 (0.042)] [data_t 0.000] [optim_t 0.041] [pixel 0.001 (0.002)]
+2024-05-27 14:40:43,469 - Train: 98.42% [21850/22200]  [98.4/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.005 (0.002)]
+2024-05-27 14:40:45,484 - Train: 98.65% [21900/22200]  [98.6/100.0] [batch_t 0.040 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.003 (0.002)]
+2024-05-27 14:40:47,498 - Train: 98.87% [21950/22200]  [98.9/100.0] [batch_t 0.041 (0.040)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:40:48,632 - ==> Total time: 0:18:58	 Eta: 0:00:11 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:40:50,532 - Train: 99.10% [22000/22200]  [99.1/100.0] [batch_t 0.040 (0.046)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.001)]
+2024-05-27 14:40:52,570 - Train: 99.32% [22050/22200]  [99.3/100.0] [batch_t 0.041 (0.041)] [data_t 0.001] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:54,609 - Train: 99.55% [22100/22200]  [99.5/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.001)]
+2024-05-27 14:40:56,644 - Train: 99.77% [22150/22200]  [99.8/100.0] [batch_t 0.041 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.001 (0.002)]
+2024-05-27 14:40:58,678 - Train: 100.00% [22200/22200]  [100.0/100.0] [batch_t 0.040 (0.041)] [data_t 0.000] [optim_t 0.040] [pixel 0.000 (0.002)]
+2024-05-27 14:41:01,018 - Test: 43.48% [50/115] [batch_t 0.019 (0.044)]
+2024-05-27 14:41:02,885 - Test: 86.96% [100/115] [batch_t 0.019 (0.041)]
+2024-05-27 14:41:03,500 - Test: 100.00% [115/115] [batch_t 0.011 (0.041)]
+2024-05-27 14:41:08,934 - ==> Metric Time for bracket_black  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.147 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.051 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.146 (mIoU_max_px)	
+2024-05-27 14:41:09,739 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.143 (mF1_max_px)	  0.050 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.050 (mIoU_px_0.2_0.8_0.1)	  0.143 (mIoU_max_px)	
+2024-05-27 14:41:10,343 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.111 (mF1_max_px)	  0.039 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.039 (mIoU_px_0.2_0.8_0.1)	  0.112 (mIoU_max_px)	
+2024-05-27 14:41:10,775 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.076 (mF1_max_px)	  0.027 (mF1_px_0.2_0.8_0.1)	  0.032 (mAcc_px_0.2_0.8_0.1)	  0.028 (mIoU_px_0.2_0.8_0.1)	  0.075 (mIoU_max_px)	
+2024-05-27 14:41:11,784 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.184 (mF1_max_px)	  0.063 (mF1_px_0.2_0.8_0.1)	  0.063 (mAcc_px_0.2_0.8_0.1)	  0.063 (mIoU_px_0.2_0.8_0.1)	  0.181 (mIoU_max_px)	
+2024-05-27 14:41:12,817 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  0.000 (mAUPRO_px)	  0.000 (mAUROC_px)	  0.000 (mAP_px)	  0.192 (mF1_max_px)	  0.066 (mF1_px_0.2_0.8_0.1)	  0.066 (mAcc_px_0.2_0.8_0.1)	  0.066 (mIoU_px_0.2_0.8_0.1)	  0.189 (mIoU_max_px)	
+2024-05-27 14:41:12,824 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)  |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:------------:|:------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+| bracket_black |     58.444      |  62.101 (30  epoch)   |    72.806    | 73.860 (30  epoch) |      74.603      |   78.333 (10  epoch)   |   31.910    | 75.365 (10  epoch) |   74.648    | 93.870 (10  epoch) |  0.177   | 0.849 (10  epoch)  |    0.452     | 2.269 (10  epoch)  |        0.263         |     1.033 (10  epoch)      |        45.549         |     73.129 (10  epoch)      |         0.132         |      0.520 (10  epoch)      |     0.226     |  1.148 (10  epoch)  |
+| bracket_brown |     88.688      |  88.839 (80  epoch)   |    94.936    | 94.936 (100 epoch) |      88.889      |   88.889 (90  epoch)   |   52.644    | 81.865 (10  epoch) |   85.125    | 95.065 (10  epoch) |  3.229   | 5.888 (10  epoch)  |    6.868     | 10.653 (10  epoch) |        3.554         |     5.793 (10  epoch)      |        61.143         |     73.299 (10  epoch)      |         1.823         |      3.012 (10  epoch)      |     3.556     |  5.626 (10  epoch)  |
+| bracket_white |     80.222      |  81.000 (90  epoch)   |    86.004    | 86.346 (90  epoch) |      77.778      |   78.125 (70  epoch)   |   47.309    | 86.385 (10  epoch) |   89.830    | 97.123 (10  epoch) |  3.922   | 4.781 (30  epoch)  |    14.895    | 16.499 (30  epoch) |        1.769         |     2.965 (20  epoch)      |        74.598         |     78.840 (10  epoch)      |         0.921         |      1.572 (20  epoch)      |     8.047     |  8.991 (30  epoch)  |
+|   connector   |     96.905      |  96.905 (80  epoch)   |    88.977    | 88.977 (80  epoch) |      93.333      |   93.333 (80  epoch)   |   59.181    | 87.391 (10  epoch) |   83.517    | 96.107 (10  epoch) |  11.247  | 11.726 (90  epoch) |    16.321    | 17.901 (10  epoch) |        6.095         |     6.732 (10  epoch)      |        65.170         |     68.587 (10  epoch)      |         3.234         |      3.590 (10  epoch)      |     8.885     |  9.830 (10  epoch)  |
+|  metal_plate  |     99.729      |  99.729 (20  epoch)   |    99.903    | 99.903 (90  epoch) |      98.592      |   98.611 (20  epoch)   |   83.130    | 83.290 (30  epoch) |   97.554    | 97.566 (90  epoch) |  89.812  | 89.857 (70  epoch) |    81.793    | 82.057 (30  epoch) |        52.692        |     52.725 (90  epoch)     |        53.175         |     63.675 (10  epoch)      |        40.127         |     40.165 (90  epoch)      |    69.195     | 69.573 (30  epoch)  |
+|     tubes     |     65.444      |  66.486 (40  epoch)   |    83.747    | 84.523 (20  epoch) |      81.176      |   83.019 (10  epoch)   |   47.068    | 68.619 (10  epoch) |   78.761    | 90.794 (10  epoch) |  9.158   | 10.940 (10  epoch) |    17.350    | 17.350 (100 epoch) |        7.730         |     7.746 (70  epoch)      |        40.726         |     49.761 (10  epoch)      |         4.096         |      4.104 (90  epoch)      |     9.499     |  9.499 (100 epoch)  |
+|      Avg      |     81.572      |  81.955 (90  epoch)   |    87.729    | 87.879 (90  epoch) |      85.729      |   85.729 (90  epoch)   |   53.540    | 79.281 (10  epoch) |   84.906    | 94.827 (10  epoch) |  19.591  | 19.736 (70  epoch) |    22.946    | 23.053 (90  epoch) |        12.017        |     12.061 (70  epoch)     |        56.727         |     67.882 (10  epoch)      |         8.389         |      8.418 (70  epoch)      |    16.568     | 16.635 (90  epoch)  |
+2024-05-27 14:41:13,157 - ==> Total time: 0:19:22	 Eta: 0:00:00 	Logged in 'runs/benchmark/cfa_256_100e/mpdd/CFATrainer_configs_benchmark_cfa_256_100e_20240527-142150'
+2024-05-27 14:41:14,317 - finish training

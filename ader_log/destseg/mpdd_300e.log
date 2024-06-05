@@ -1,0 +1,1014 @@
+2024-05-26 15:30:01,095 - ==> Logging on master GPU: 0
+2024-05-26 15:30:01,095 - ==> Running Trainer: DeSTSegTrainer
+2024-05-26 15:30:01,095 - ==> Using GPU: [0] for Training
+2024-05-26 15:30:01,096 - ==> Building model
+2024-05-26 15:30:01,254 - Loaded  from checkpoint 'model/pretrain/resnet18-5c106cde.pth'
+2024-05-26 15:30:08,720 - 
+------------------------------------ DESTSEG ------------------------------------
+| module                                                       | #parameters or shape   | #flops       |
+|:-------------------------------------------------------------|:-----------------------|:-------------|
+| model                                                        | 35.154M                | 30.673G      |
+|  net_t                                                       |  2.783M                |  3.676G      |
+|   net_t.conv1                                                |   9.408K               |   0.308G     |
+|    net_t.conv1.weight                                        |    (64, 3, 7, 7)       |              |
+|   net_t.bn1                                                  |   0.128K               |   4.194M     |
+|    net_t.bn1.weight                                          |    (64,)               |              |
+|    net_t.bn1.bias                                            |    (64,)               |              |
+|   net_t.layer1                                               |   0.148M               |   1.212G     |
+|    net_t.layer1.0                                            |    73.984K             |    0.606G    |
+|     net_t.layer1.0.conv1                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.0.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.0.bn1                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.0.bn1.weight                               |      (64,)             |              |
+|      net_t.layer1.0.bn1.bias                                 |      (64,)             |              |
+|     net_t.layer1.0.conv2                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.0.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.0.bn2                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.0.bn2.weight                               |      (64,)             |              |
+|      net_t.layer1.0.bn2.bias                                 |      (64,)             |              |
+|    net_t.layer1.1                                            |    73.984K             |    0.606G    |
+|     net_t.layer1.1.conv1                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.1.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.1.bn1                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.1.bn1.weight                               |      (64,)             |              |
+|      net_t.layer1.1.bn1.bias                                 |      (64,)             |              |
+|     net_t.layer1.1.conv2                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.1.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.1.bn2                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.1.bn2.weight                               |      (64,)             |              |
+|      net_t.layer1.1.bn2.bias                                 |      (64,)             |              |
+|   net_t.layer2                                               |   0.526M               |   1.076G     |
+|    net_t.layer2.0                                            |    0.23M               |    0.471G    |
+|     net_t.layer2.0.conv1                                     |     73.728K            |     0.151G   |
+|      net_t.layer2.0.conv1.weight                             |      (128, 64, 3, 3)   |              |
+|     net_t.layer2.0.bn1                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.0.bn1.weight                               |      (128,)            |              |
+|      net_t.layer2.0.bn1.bias                                 |      (128,)            |              |
+|     net_t.layer2.0.conv2                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.0.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.0.bn2                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.0.bn2.weight                               |      (128,)            |              |
+|      net_t.layer2.0.bn2.bias                                 |      (128,)            |              |
+|     net_t.layer2.0.downsample                                |     8.448K             |     17.302M  |
+|      net_t.layer2.0.downsample.0                             |      8.192K            |      16.777M |
+|      net_t.layer2.0.downsample.1                             |      0.256K            |      0.524M  |
+|    net_t.layer2.1                                            |    0.295M              |    0.605G    |
+|     net_t.layer2.1.conv1                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.1.conv1.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.1.bn1                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.1.bn1.weight                               |      (128,)            |              |
+|      net_t.layer2.1.bn1.bias                                 |      (128,)            |              |
+|     net_t.layer2.1.conv2                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.1.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.1.bn2                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.1.bn2.weight                               |      (128,)            |              |
+|      net_t.layer2.1.bn2.bias                                 |      (128,)            |              |
+|   net_t.layer3                                               |   2.1M                 |   1.075G     |
+|    net_t.layer3.0                                            |    0.919M              |    0.471G    |
+|     net_t.layer3.0.conv1                                     |     0.295M             |     0.151G   |
+|      net_t.layer3.0.conv1.weight                             |      (256, 128, 3, 3)  |              |
+|     net_t.layer3.0.bn1                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.0.bn1.weight                               |      (256,)            |              |
+|      net_t.layer3.0.bn1.bias                                 |      (256,)            |              |
+|     net_t.layer3.0.conv2                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.0.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.0.bn2                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.0.bn2.weight                               |      (256,)            |              |
+|      net_t.layer3.0.bn2.bias                                 |      (256,)            |              |
+|     net_t.layer3.0.downsample                                |     33.28K             |     17.039M  |
+|      net_t.layer3.0.downsample.0                             |      32.768K           |      16.777M |
+|      net_t.layer3.0.downsample.1                             |      0.512K            |      0.262M  |
+|    net_t.layer3.1                                            |    1.181M              |    0.605G    |
+|     net_t.layer3.1.conv1                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.1.conv1.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.1.bn1                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.1.bn1.weight                               |      (256,)            |              |
+|      net_t.layer3.1.bn1.bias                                 |      (256,)            |              |
+|     net_t.layer3.1.conv2                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.1.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.1.bn2                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.1.bn2.weight                               |      (256,)            |              |
+|      net_t.layer3.1.bn2.bias                                 |      (256,)            |              |
+|  net_s                                                       |  11.177M               |  2.375G      |
+|   net_s.conv1                                                |   9.408K               |   0.154G     |
+|    net_s.conv1.weight                                        |    (64, 3, 7, 7)       |              |
+|   net_s.bn1                                                  |   0.128K               |   2.097M     |
+|    net_s.bn1.weight                                          |    (64,)               |              |
+|    net_s.bn1.bias                                            |    (64,)               |              |
+|   net_s.layer1                                               |   0.148M               |   0.606G     |
+|    net_s.layer1.0                                            |    73.984K             |    0.303G    |
+|     net_s.layer1.0.conv1                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.0.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.0.bn1                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.0.bn1.weight                               |      (64,)             |              |
+|      net_s.layer1.0.bn1.bias                                 |      (64,)             |              |
+|     net_s.layer1.0.conv2                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.0.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.0.bn2                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.0.bn2.weight                               |      (64,)             |              |
+|      net_s.layer1.0.bn2.bias                                 |      (64,)             |              |
+|    net_s.layer1.1                                            |    73.984K             |    0.303G    |
+|     net_s.layer1.1.conv1                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.1.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.1.bn1                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.1.bn1.weight                               |      (64,)             |              |
+|      net_s.layer1.1.bn1.bias                                 |      (64,)             |              |
+|     net_s.layer1.1.conv2                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.1.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.1.bn2                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.1.bn2.weight                               |      (64,)             |              |
+|      net_s.layer1.1.bn2.bias                                 |      (64,)             |              |
+|   net_s.layer2                                               |   0.526M               |   0.538G     |
+|    net_s.layer2.0                                            |    0.23M               |    0.236G    |
+|     net_s.layer2.0.conv1                                     |     73.728K            |     75.497M  |
+|      net_s.layer2.0.conv1.weight                             |      (128, 64, 3, 3)   |              |
+|     net_s.layer2.0.bn1                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.0.bn1.weight                               |      (128,)            |              |
+|      net_s.layer2.0.bn1.bias                                 |      (128,)            |              |
+|     net_s.layer2.0.conv2                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.0.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.0.bn2                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.0.bn2.weight                               |      (128,)            |              |
+|      net_s.layer2.0.bn2.bias                                 |      (128,)            |              |
+|     net_s.layer2.0.downsample                                |     8.448K             |     8.651M   |
+|      net_s.layer2.0.downsample.0                             |      8.192K            |      8.389M  |
+|      net_s.layer2.0.downsample.1                             |      0.256K            |      0.262M  |
+|    net_s.layer2.1                                            |    0.295M              |    0.303G    |
+|     net_s.layer2.1.conv1                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.1.conv1.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.1.bn1                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.1.bn1.weight                               |      (128,)            |              |
+|      net_s.layer2.1.bn1.bias                                 |      (128,)            |              |
+|     net_s.layer2.1.conv2                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.1.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.1.bn2                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.1.bn2.weight                               |      (128,)            |              |
+|      net_s.layer2.1.bn2.bias                                 |      (128,)            |              |
+|   net_s.layer3                                               |   2.1M                 |   0.538G     |
+|    net_s.layer3.0                                            |    0.919M              |    0.235G    |
+|     net_s.layer3.0.conv1                                     |     0.295M             |     75.497M  |
+|      net_s.layer3.0.conv1.weight                             |      (256, 128, 3, 3)  |              |
+|     net_s.layer3.0.bn1                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.0.bn1.weight                               |      (256,)            |              |
+|      net_s.layer3.0.bn1.bias                                 |      (256,)            |              |
+|     net_s.layer3.0.conv2                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.0.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.0.bn2                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.0.bn2.weight                               |      (256,)            |              |
+|      net_s.layer3.0.bn2.bias                                 |      (256,)            |              |
+|     net_s.layer3.0.downsample                                |     33.28K             |     8.52M    |
+|      net_s.layer3.0.downsample.0                             |      32.768K           |      8.389M  |
+|      net_s.layer3.0.downsample.1                             |      0.512K            |      0.131M  |
+|    net_s.layer3.1                                            |    1.181M              |    0.302G    |
+|     net_s.layer3.1.conv1                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.1.conv1.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.1.bn1                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.1.bn1.weight                               |      (256,)            |              |
+|      net_s.layer3.1.bn1.bias                                 |      (256,)            |              |
+|     net_s.layer3.1.conv2                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.1.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.1.bn2                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.1.bn2.weight                               |      (256,)            |              |
+|      net_s.layer3.1.bn2.bias                                 |      (256,)            |              |
+|   net_s.layer4                                               |   8.394M               |   0.537G     |
+|    net_s.layer4.0                                            |    3.673M              |    0.235G    |
+|     net_s.layer4.0.conv1                                     |     1.18M              |     75.497M  |
+|      net_s.layer4.0.conv1.weight                             |      (512, 256, 3, 3)  |              |
+|     net_s.layer4.0.bn1                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.0.bn1.weight                               |      (512,)            |              |
+|      net_s.layer4.0.bn1.bias                                 |      (512,)            |              |
+|     net_s.layer4.0.conv2                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.0.conv2.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.0.bn2                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.0.bn2.weight                               |      (512,)            |              |
+|      net_s.layer4.0.bn2.bias                                 |      (512,)            |              |
+|     net_s.layer4.0.downsample                                |     0.132M             |     8.454M   |
+|      net_s.layer4.0.downsample.0                             |      0.131M            |      8.389M  |
+|      net_s.layer4.0.downsample.1                             |      1.024K            |      65.536K |
+|    net_s.layer4.1                                            |    4.721M              |    0.302G    |
+|     net_s.layer4.1.conv1                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.1.conv1.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.1.bn1                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.1.bn1.weight                               |      (512,)            |              |
+|      net_s.layer4.1.bn1.bias                                 |      (512,)            |              |
+|     net_s.layer4.1.conv2                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.1.conv2.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.1.bn2                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.1.bn2.weight                               |      (512,)            |              |
+|      net_s.layer4.1.bn2.bias                                 |      (512,)            |              |
+|  destseg                                                     |  21.195M               |  24.622G     |
+|   destseg.student_net                                        |   13.489M              |   2.978G     |
+|    destseg.student_net.decoder_layer4                        |    9.441M              |    0.604G    |
+|     destseg.student_net.decoder_layer4.0                     |     4.721M             |     0.302G   |
+|      destseg.student_net.decoder_layer4.0.conv1              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.0.bn1                |      1.024K            |      65.536K |
+|      destseg.student_net.decoder_layer4.0.conv2              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.0.bn2                |      1.024K            |      65.536K |
+|     destseg.student_net.decoder_layer4.1                     |     4.721M             |     0.302G   |
+|      destseg.student_net.decoder_layer4.1.conv1              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.1.bn1                |      1.024K            |      65.536K |
+|      destseg.student_net.decoder_layer4.1.conv2              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.1.bn2                |      1.024K            |      65.536K |
+|    destseg.student_net.decoder_layer3                        |    3.083M              |    0.789G    |
+|     destseg.student_net.decoder_layer3.0                     |     1.902M             |     0.487G   |
+|      destseg.student_net.decoder_layer3.0.conv1              |      1.18M             |      0.302G  |
+|      destseg.student_net.decoder_layer3.0.bn1                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.0.conv2              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.0.bn2                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.0.downsample         |      0.132M            |      33.686M |
+|     destseg.student_net.decoder_layer3.1                     |     1.181M             |     0.302G   |
+|      destseg.student_net.decoder_layer3.1.conv1              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.1.bn1                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.1.conv2              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.1.bn2                |      0.512K            |      0.131M  |
+|    destseg.student_net.decoder_layer2                        |    0.771M              |    0.79G     |
+|     destseg.student_net.decoder_layer2.0                     |     0.476M             |     0.487G   |
+|      destseg.student_net.decoder_layer2.0.conv1              |      0.295M            |      0.302G  |
+|      destseg.student_net.decoder_layer2.0.bn1                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.0.conv2              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.0.bn2                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.0.downsample         |      33.024K           |      33.817M |
+|     destseg.student_net.decoder_layer2.1                     |     0.295M             |     0.303G   |
+|      destseg.student_net.decoder_layer2.1.conv1              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.1.bn1                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.1.conv2              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.1.bn2                |      0.256K            |      0.262M  |
+|    destseg.student_net.decoder_layer1                        |    0.193M              |    0.791G    |
+|     destseg.student_net.decoder_layer1.0                     |     0.119M             |     0.488G   |
+|      destseg.student_net.decoder_layer1.0.conv1              |      73.728K           |      0.302G  |
+|      destseg.student_net.decoder_layer1.0.bn1                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.0.conv2              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.0.bn2                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.0.downsample         |      8.32K             |      34.079M |
+|     destseg.student_net.decoder_layer1.1                     |     73.984K            |     0.303G   |
+|      destseg.student_net.decoder_layer1.1.conv1              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.1.bn1                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.1.conv2              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.1.bn2                |      0.128K            |      0.524M  |
+|   destseg.segmentation_net                                   |   7.706M               |   21.636G    |
+|    destseg.segmentation_net.res                              |    2.919M              |    11.956G   |
+|     destseg.segmentation_net.res.0                           |     1.738M             |     7.12G    |
+|      destseg.segmentation_net.res.0.conv1                    |      1.032M            |      4.228G  |
+|      destseg.segmentation_net.res.0.bn1                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.0.conv2                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.0.bn2                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.0.downsample               |      0.115M            |      0.472G  |
+|     destseg.segmentation_net.res.1                           |     1.181M             |     4.836G   |
+|      destseg.segmentation_net.res.1.conv1                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.1.bn1                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.1.conv2                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.1.bn2                      |      0.512K            |      2.097M  |
+|    destseg.segmentation_net.head                             |    4.787M              |    9.68G     |
+|     destseg.segmentation_net.head.0                          |     4.197M             |     7.261G   |
+|      destseg.segmentation_net.head.0.aspp_feature_extractors |      1.837M            |      7.255G  |
+|      destseg.segmentation_net.head.0.aspp_fusion_layer       |      2.36M             |      2.097M  |
+|     destseg.segmentation_net.head.1                          |     0.59M              |     2.416G   |
+|      destseg.segmentation_net.head.1.weight                  |      (256, 256, 3, 3)  |              |
+|     destseg.segmentation_net.head.2                          |     0.512K             |     2.097M   |
+|      destseg.segmentation_net.head.2.weight                  |      (256,)            |              |
+|      destseg.segmentation_net.head.2.bias                    |      (256,)            |              |
+|     destseg.segmentation_net.head.4                          |     0.257K             |     1.049M   |
+|      destseg.segmentation_net.head.4.weight                  |      (1, 256, 1, 1)    |              |
+|      destseg.segmentation_net.head.4.bias                    |      (1,)              |              |
+---------------------------------------------------------------------------------
+2024-05-26 15:30:08,722 - ==> Creating optimizer
+2024-05-26 15:30:08,738 - ==> Loading dataset: DeSTSeg
+2024-05-26 15:30:08,765 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 300                                 
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+optim.de_st.kwargs                   : {'name': 'sgd', 'momentum': 0.9, 'weight_decay': 0.0001, 'nesterov': False}
+trainer.name                         : DeSTSegTrainer                      
+trainer.checkpoint                   : runs/benchmark/destseg_256_300e/mpdd
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 300                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 0.0001, 'warmup_lr': 1e-05, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 240, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 8100                                
+trainer.metric_recorder              : {'mAUROC_sp_max_bracket_black': [], 'AUROC_sp_bracket_black': [], 'mAUROC_px_bracket_black': [], 'mAUPRO_px_bracket_black': [], 'mAP_sp_max_bracket_black': [], 'mAP_px_bracket_black': [], 'mF1_max_sp_max_bracket_black': [], 'mF1_px_0.2_0.8_0.1_bracket_black': [], 'mAcc_px_0.2_0.8_0.1_bracket_black': [], 'mIoU_px_0.2_0.8_0.1_bracket_black': [], 'mF1_max_px_bracket_black': [], 'mIoU_max_px_bracket_black': [], 'mAUROC_sp_max_bracket_brown': [], 'AUROC_sp_bracket_brown': [], 'mAUROC_px_bracket_brown': [], 'mAUPRO_px_bracket_brown': [], 'mAP_sp_max_bracket_brown': [], 'mAP_px_bracket_brown': [], 'mF1_max_sp_max_bracket_brown': [], 'mF1_px_0.2_0.8_0.1_bracket_brown': [], 'mAcc_px_0.2_0.8_0.1_bracket_brown': [], 'mIoU_px_0.2_0.8_0.1_bracket_brown': [], 'mF1_max_px_bracket_brown': [], 'mIoU_max_px_bracket_brown': [], 'mAUROC_sp_max_bracket_white': [], 'AUROC_sp_bracket_white': [], 'mAUROC_px_bracket_white': [], 'mAUPRO_px_bracket_white': [], 'mAP_sp_max_bracket_white': [], 'mAP_px_bracket_white': [], 'mF1_max_sp_max_bracket_white': [], 'mF1_px_0.2_0.8_0.1_bracket_white': [], 'mAcc_px_0.2_0.8_0.1_bracket_white': [], 'mIoU_px_0.2_0.8_0.1_bracket_white': [], 'mF1_max_px_bracket_white': [], 'mIoU_max_px_bracket_white': [], 'mAUROC_sp_max_connector': [], 'AUROC_sp_connector': [], 'mAUROC_px_connector': [], 'mAUPRO_px_connector': [], 'mAP_sp_max_connector': [], 'mAP_px_connector': [], 'mF1_max_sp_max_connector': [], 'mF1_px_0.2_0.8_0.1_connector': [], 'mAcc_px_0.2_0.8_0.1_connector': [], 'mIoU_px_0.2_0.8_0.1_connector': [], 'mF1_max_px_connector': [], 'mIoU_max_px_connector': [], 'mAUROC_sp_max_metal_plate': [], 'AUROC_sp_metal_plate': [], 'mAUROC_px_metal_plate': [], 'mAUPRO_px_metal_plate': [], 'mAP_sp_max_metal_plate': [], 'mAP_px_metal_plate': [], 'mF1_max_sp_max_metal_plate': [], 'mF1_px_0.2_0.8_0.1_metal_plate': [], 'mAcc_px_0.2_0.8_0.1_metal_plate': [], 'mIoU_px_0.2_0.8_0.1_metal_plate': [], 'mF1_max_px_metal_plate': [], 'mIoU_max_px_metal_plate': [], 'mAUROC_sp_max_tubes': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_tubes': [], 'AUROC_sp_Avg': [], 'mAUROC_px_tubes': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_tubes': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_tubes': [], 'mAP_sp_max_Avg': [], 'mAP_px_tubes': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_tubes': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_tubes': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_tubes': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_tubes': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_tubes': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_tubes': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L1Loss', 'name': 'l1', 'lam': 1.0}, {'type': 'CSUMLoss', 'name': 'csum', 'lam': 1.0}, {'type': 'FFocalLoss', 'name': 'ffocal', 'gamma': 4, 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DeSTSeg                             
+data.root                            : data/mpdd                           
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 27                                  
+data.test_size                       : 15                                  
+data.train_length                    : 888                                 
+data.test_length                     : 458                                 
+model_t.name                         : timm_resnet18                       
+model_t.kwargs                       : {'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet18-5c106cde.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_s.name                         : timm_resnet18                       
+model_s.kwargs                       : {'pretrained': False, 'checkpoint_path': None, 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}
+model.name                           : destseg                             
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_t': Namespace(name='timm_resnet18', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet18-5c106cde.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_s': Namespace(name='timm_resnet18', kwargs={'pretrained': False, 'checkpoint_path': None, 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]})}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.01                                
+cfg_path                             : configs.benchmark.destseg_256_300e  
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/destseg_256_300e/mpdd', 'data.root=data/mpdd']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.destseg_256_300e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/destseg_256_300e/mpdd data.root=data/mpdd
+task_start_time                      : 3125491.34074834                    
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001/show_train
+logdir_test                          : runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001/show_test
+2024-05-26 15:30:08,766 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-26 15:30:33,591 - ==> Total time: 0:00:32	 Eta: 2:42:18 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:30:42,371 - Train: 0.62% [50/8100]  [1.9/300.0] [batch_t 0.084 (0.359)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 16.080 (17.437)]
+2024-05-26 15:30:43,722 - ==> Total time: 0:00:42	 Eta: 1:46:02 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:30:53,816 - ==> Total time: 0:00:52	 Eta: 1:27:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:01,159 - Train: 1.23% [100/8100]  [3.7/300.0] [batch_t 0.084 (0.361)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 13.889 (13.791)]
+2024-05-26 15:31:03,797 - ==> Total time: 0:01:02	 Eta: 1:17:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:13,625 - ==> Total time: 0:01:12	 Eta: 1:11:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:19,686 - Train: 1.85% [150/8100]  [5.6/300.0] [batch_t 0.084 (0.371)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 12.140 (12.201)]
+2024-05-26 15:31:23,677 - ==> Total time: 0:01:22	 Eta: 1:07:30 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:33,656 - ==> Total time: 0:01:32	 Eta: 1:04:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:38,363 - Train: 2.47% [200/8100]  [7.4/300.0] [batch_t 0.084 (0.381)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.145 (11.135)]
+2024-05-26 15:31:43,633 - ==> Total time: 0:01:42	 Eta: 1:02:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:53,607 - ==> Total time: 0:01:52	 Eta: 1:00:40 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:31:57,008 - Train: 3.09% [250/8100]  [9.3/300.0] [batch_t 0.085 (0.410)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 9.318 (9.684)]
+2024-05-26 15:32:03,663 - ==> Total time: 0:02:02	 Eta: 0:59:16 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:32:13,551 - ==> Total time: 0:02:12	 Eta: 0:58:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:32:15,681 - Train: 3.70% [300/8100]  [11.1/300.0] [batch_t 0.084 (0.537)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 8.957 (9.145)]
+2024-05-26 15:32:23,652 - ==> Total time: 0:02:22	 Eta: 0:57:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:32:33,640 - Train: 4.32% [350/8100]  [13.0/300.0] [batch_t 0.084 (0.365)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 8.527 (8.959)]
+2024-05-26 15:32:33,727 - ==> Total time: 0:02:32	 Eta: 0:56:11 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:32:43,860 - ==> Total time: 0:02:42	 Eta: 0:55:26 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:32:52,432 - Train: 4.94% [400/8100]  [14.8/300.0] [batch_t 0.223 (0.367)] [data_t 0.141] [optim_t 0.082] [lr 0.005000] [total 8.010 (8.363)]
+2024-05-26 15:32:53,839 - ==> Total time: 0:02:52	 Eta: 0:54:43 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:03,867 - ==> Total time: 0:03:02	 Eta: 0:54:05 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:11,236 - Train: 5.56% [450/8100]  [16.7/300.0] [batch_t 0.084 (0.376)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 7.413 (8.015)]
+2024-05-26 15:33:13,968 - ==> Total time: 0:03:12	 Eta: 0:53:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:24,017 - ==> Total time: 0:03:22	 Eta: 0:53:00 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:29,955 - Train: 6.17% [500/8100]  [18.5/300.0] [batch_t 0.084 (0.386)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 6.976 (7.502)]
+2024-05-26 15:33:33,984 - ==> Total time: 0:03:32	 Eta: 0:52:29 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:44,018 - ==> Total time: 0:03:42	 Eta: 0:52:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:33:48,696 - Train: 6.79% [550/8100]  [20.4/300.0] [batch_t 0.084 (0.410)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 7.003 (7.294)]
+2024-05-26 15:33:54,138 - ==> Total time: 0:03:53	 Eta: 0:51:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:04,024 - ==> Total time: 0:04:03	 Eta: 0:51:10 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:07,363 - Train: 7.41% [600/8100]  [22.2/300.0] [batch_t 0.084 (0.471)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 6.807 (7.133)]
+2024-05-26 15:34:14,056 - ==> Total time: 0:04:13	 Eta: 0:50:47 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:24,140 - ==> Total time: 0:04:23	 Eta: 0:50:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:26,129 - Train: 8.02% [650/8100]  [24.1/300.0] [batch_t 0.084 (0.735)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 6.815 (6.594)]
+2024-05-26 15:34:34,198 - ==> Total time: 0:04:33	 Eta: 0:50:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:43,981 - Train: 8.64% [700/8100]  [25.9/300.0] [batch_t 1.067 (0.371)] [data_t 0.985] [optim_t 0.081] [lr 0.005000] [total 6.007 (6.628)]
+2024-05-26 15:34:44,153 - ==> Total time: 0:04:43	 Eta: 0:49:43 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:34:54,207 - ==> Total time: 0:04:53	 Eta: 0:49:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:35:02,661 - Train: 9.26% [750/8100]  [27.8/300.0] [batch_t 1.026 (0.379)] [data_t 0.945] [optim_t 0.081] [lr 0.005000] [total 6.021 (6.249)]
+2024-05-26 15:35:04,167 - ==> Total time: 0:05:03	 Eta: 0:49:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:35:14,187 - ==> Total time: 0:05:13	 Eta: 0:48:46 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:35:21,398 - Train: 9.88% [800/8100]  [29.6/300.0] [batch_t 1.085 (0.395)] [data_t 1.003] [optim_t 0.082] [lr 0.005000] [total 6.192 (6.006)]
+2024-05-26 15:35:33,104 - Test: 100.00% [15/15] [batch_t 5.030 (0.590)]
+2024-05-26 15:35:33,810 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mF1_max_px)	  0.128 (mIoU_max_px)	
+2024-05-26 15:35:34,320 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mF1_max_px)	  0.125 (mIoU_max_px)	
+2024-05-26 15:35:34,699 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.094 (mF1_max_px)	  0.093 (mIoU_max_px)	
+2024-05-26 15:35:34,958 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.066 (mIoU_max_px)	
+2024-05-26 15:35:35,595 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.160 (mF1_max_px)	  0.160 (mIoU_max_px)	
+2024-05-26 15:35:36,255 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.167 (mF1_max_px)	  0.168 (mIoU_max_px)	
+2024-05-26 15:35:36,259 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |   mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:-----------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     24.668      |  24.668 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   54.912    | 54.912 (30  epoch) |   15.302    | 15.302 (30  epoch) |    45.349    | 45.349 (30  epoch) |  0.116   | 0.116 (30  epoch) |      74.603      |   74.603 (30  epoch)   |        0.196         |     0.196 (30  epoch)      |        51.651         |     51.651 (30  epoch)      |         0.098         |      0.098 (30  epoch)      |    0.352     | 0.352 (30  epoch)  |     0.176     |  0.176 (30  epoch)  |
+| bracket_brown |     50.452      |  50.452 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   50.033    | 50.033 (30  epoch) |    6.639    | 6.639 (30  epoch)  |    71.465    | 71.465 (30  epoch) |  0.441   | 0.441 (30  epoch) |      80.645      |   80.645 (30  epoch)   |        0.785         |     0.785 (30  epoch)      |        48.684         |     48.684 (30  epoch)      |         0.394         |      0.394 (30  epoch)      |    0.976     | 0.976 (30  epoch)  |     0.491     |  0.491 (30  epoch)  |
+| bracket_white |     55.222      |  55.222 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   53.161    | 53.161 (30  epoch) |   13.636    | 13.636 (30  epoch) |    50.701    | 50.701 (30  epoch) |  0.032   | 0.032 (30  epoch) |      70.588      |   70.588 (30  epoch)   |        0.045         |     0.045 (30  epoch)      |        45.730         |     45.730 (30  epoch)      |         0.022         |      0.022 (30  epoch)      |    0.077     | 0.077 (30  epoch)  |     0.038     |  0.038 (30  epoch)  |
+|   connector   |      9.167      |   9.167 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   38.404    | 38.404 (30  epoch) |    7.038    | 7.038 (30  epoch)  |    19.972    | 19.972 (30  epoch) |  0.403   | 0.403 (30  epoch) |      48.276      |   48.276 (30  epoch)   |        0.606         |     0.606 (30  epoch)      |        39.928         |     39.928 (30  epoch)      |         0.305         |      0.305 (30  epoch)      |    1.098     | 1.098 (30  epoch)  |     0.552     |  0.552 (30  epoch)  |
+|  metal_plate  |     43.283      |  43.283 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   43.430    | 43.430 (30  epoch) |    9.659    | 9.659 (30  epoch)  |    69.375    | 69.375 (30  epoch) |  9.705   | 9.705 (30  epoch) |      85.030      |   85.030 (30  epoch)   |        12.155        |     12.155 (30  epoch)     |        44.615         |     44.615 (30  epoch)      |         6.689         |      6.689 (30  epoch)      |    21.202    | 21.202 (30  epoch) |    11.858     | 11.858 (30  epoch)  |
+|     tubes     |     48.573      |  48.573 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   44.934    | 44.934 (30  epoch) |    6.850    | 6.850 (30  epoch)  |    66.901    | 66.901 (30  epoch) |  0.676   | 0.676 (30  epoch) |      81.928      |   81.928 (30  epoch)   |        0.981         |     0.981 (30  epoch)      |        38.815         |     38.815 (30  epoch)      |         0.494         |      0.494 (30  epoch)      |    1.665     | 1.665 (30  epoch)  |     0.839     |  0.839 (30  epoch)  |
+|      Avg      |     38.561      |  38.561 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   47.479    | 47.479 (30  epoch) |    9.854    | 9.854 (30  epoch)  |    53.960    | 53.960 (30  epoch) |  1.895   | 1.895 (30  epoch) |      73.512      |   73.512 (30  epoch)   |        2.461         |     2.461 (30  epoch)      |        44.904         |     44.904 (30  epoch)      |         1.334         |      1.334 (30  epoch)      |    4.228     | 4.228 (30  epoch)  |     2.326     |  2.326 (30  epoch)  |
+2024-05-26 15:35:36,337 - ==> Total time: 0:05:35	 Eta: 0:50:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:35:46,505 - ==> Total time: 0:05:45	 Eta: 0:49:57 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:35:52,406 - Train: 10.49% [850/8100]  [31.5/300.0] [batch_t 1.077 (0.412)] [data_t 0.995] [optim_t 0.081] [lr 0.005000] [total 5.608 (5.795)]
+2024-05-26 15:35:56,533 - ==> Total time: 0:05:55	 Eta: 0:49:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:06,580 - ==> Total time: 0:06:05	 Eta: 0:49:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:11,126 - Train: 11.11% [900/8100]  [33.3/300.0] [batch_t 1.051 (0.447)] [data_t 0.969] [optim_t 0.082] [lr 0.005000] [total 5.947 (6.063)]
+2024-05-26 15:36:16,594 - ==> Total time: 0:06:15	 Eta: 0:48:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:26,583 - ==> Total time: 0:06:25	 Eta: 0:48:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:29,871 - Train: 11.73% [950/8100]  [35.2/300.0] [batch_t 1.069 (0.546)] [data_t 0.988] [optim_t 0.081] [lr 0.005000] [total 5.302 (5.944)]
+2024-05-26 15:36:36,697 - ==> Total time: 0:06:35	 Eta: 0:48:21 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:46,667 - ==> Total time: 0:06:45	 Eta: 0:48:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:36:48,637 - Train: 12.35% [1000/8100]  [37.0/300.0] [batch_t 1.425 (1.425)] [data_t 1.343] [optim_t 0.082] [lr 0.005000] [total 5.693 (5.693)]
+2024-05-26 15:36:56,744 - ==> Total time: 0:06:55	 Eta: 0:47:46 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:05,433 - Train: 12.96% [1050/8100]  [38.9/300.0] [batch_t 0.084 (0.339)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 5.706 (5.618)]
+2024-05-26 15:37:06,693 - ==> Total time: 0:07:05	 Eta: 0:47:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:16,697 - ==> Total time: 0:07:15	 Eta: 0:47:11 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:24,188 - Train: 13.58% [1100/8100]  [40.7/300.0] [batch_t 0.084 (0.341)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 5.000 (5.249)]
+2024-05-26 15:37:26,769 - ==> Total time: 0:07:25	 Eta: 0:46:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:36,750 - ==> Total time: 0:07:35	 Eta: 0:46:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:42,942 - Train: 14.20% [1150/8100]  [42.6/300.0] [batch_t 0.084 (0.354)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 5.282 (5.236)]
+2024-05-26 15:37:46,885 - ==> Total time: 0:07:45	 Eta: 0:46:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:37:56,946 - ==> Total time: 0:07:55	 Eta: 0:46:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:01,811 - Train: 14.81% [1200/8100]  [44.4/300.0] [batch_t 0.084 (0.362)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 5.131 (5.202)]
+2024-05-26 15:38:06,952 - ==> Total time: 0:08:05	 Eta: 0:45:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:16,910 - ==> Total time: 0:08:15	 Eta: 0:45:38 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:20,475 - Train: 15.43% [1250/8100]  [46.3/300.0] [batch_t 0.084 (0.369)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 5.091 (4.892)]
+2024-05-26 15:38:27,002 - ==> Total time: 0:08:25	 Eta: 0:45:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:37,044 - ==> Total time: 0:08:36	 Eta: 0:45:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:39,305 - Train: 16.05% [1300/8100]  [48.1/300.0] [batch_t 0.084 (0.412)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 5.028 (4.986)]
+2024-05-26 15:38:47,097 - ==> Total time: 0:08:46	 Eta: 0:44:54 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:38:57,086 - Train: 16.67% [1350/8100]  [50.0/300.0] [batch_t 0.084 (0.350)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 4.721 (4.870)]
+2024-05-26 15:38:57,088 - ==> Total time: 0:08:56	 Eta: 0:44:40 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:07,157 - ==> Total time: 0:09:06	 Eta: 0:44:26 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:15,845 - Train: 17.28% [1400/8100]  [51.9/300.0] [batch_t 0.084 (0.352)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 4.893 (4.817)]
+2024-05-26 15:39:17,143 - ==> Total time: 0:09:16	 Eta: 0:44:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:27,138 - ==> Total time: 0:09:26	 Eta: 0:43:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:34,524 - Train: 17.90% [1450/8100]  [53.7/300.0] [batch_t 0.084 (0.361)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 4.219 (4.735)]
+2024-05-26 15:39:37,143 - ==> Total time: 0:09:36	 Eta: 0:43:44 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:47,161 - ==> Total time: 0:09:46	 Eta: 0:43:30 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:39:53,162 - Train: 18.52% [1500/8100]  [55.6/300.0] [batch_t 0.084 (0.362)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 4.431 (4.658)]
+2024-05-26 15:39:57,052 - ==> Total time: 0:09:56	 Eta: 0:43:16 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:40:07,130 - ==> Total time: 0:10:06	 Eta: 0:43:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:40:11,911 - Train: 19.14% [1550/8100]  [57.4/300.0] [batch_t 0.085 (0.381)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 4.432 (4.605)]
+2024-05-26 15:40:17,232 - ==> Total time: 0:10:16	 Eta: 0:42:51 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:40:27,190 - ==> Total time: 0:10:26	 Eta: 0:42:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:40:30,715 - Train: 19.75% [1600/8100]  [59.3/300.0] [batch_t 0.084 (0.411)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 4.390 (4.737)]
+2024-05-26 15:40:41,163 - Test: 100.00% [15/15] [batch_t 0.023 (0.255)]
+2024-05-26 15:40:41,707 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.127 (mF1_max_px)	  0.127 (mIoU_max_px)	
+2024-05-26 15:40:42,208 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.123 (mF1_max_px)	  0.123 (mIoU_max_px)	
+2024-05-26 15:40:42,588 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mF1_max_px)	  0.093 (mIoU_max_px)	
+2024-05-26 15:40:42,850 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.066 (mIoU_max_px)	
+2024-05-26 15:40:43,485 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.159 (mF1_max_px)	  0.159 (mIoU_max_px)	
+2024-05-26 15:40:44,140 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.165 (mF1_max_px)	  0.166 (mIoU_max_px)	
+2024-05-26 15:40:44,145 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |   mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:-----------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     19.282      |  24.668 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   55.438    | 55.438 (60  epoch) |   14.879    | 15.302 (30  epoch) |    43.614    | 45.349 (30  epoch) |  0.117   | 0.117 (60  epoch) |      74.603      |   74.603 (30  epoch)   |        0.190         |     0.196 (30  epoch)      |        51.395         |     51.651 (30  epoch)      |         0.095         |      0.098 (30  epoch)      |    0.361     | 0.361 (60  epoch)  |     0.181     |  0.181 (60  epoch)  |
+| bracket_brown |     42.081      |  50.452 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   50.634    | 50.634 (60  epoch) |    7.975    | 7.975 (60  epoch)  |    65.826    | 71.465 (30  epoch) |  0.464   | 0.464 (60  epoch) |      80.315      |   80.645 (30  epoch)   |        0.803         |     0.803 (60  epoch)      |        49.584         |     49.584 (60  epoch)      |         0.403         |      0.403 (60  epoch)      |    0.965     | 0.976 (30  epoch)  |     0.485     |  0.491 (30  epoch)  |
+| bracket_white |     45.778      |  55.222 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   50.581    | 53.161 (30  epoch) |   12.824    | 13.636 (30  epoch) |    46.024    | 50.701 (30  epoch) |  0.030   | 0.032 (30  epoch) |      66.667      |   70.588 (30  epoch)   |        0.042         |     0.045 (30  epoch)      |        43.915         |     45.730 (30  epoch)      |         0.021         |      0.022 (30  epoch)      |    0.075     | 0.077 (30  epoch)  |     0.037     |  0.038 (30  epoch)  |
+|   connector   |     11.905      |  11.905 (60  epoch)   |  100.000   | 100.000 (30  epoch) |   35.262    | 38.404 (30  epoch) |    6.517    | 7.038 (30  epoch)  |    20.668    | 20.668 (60  epoch) |  0.383   | 0.403 (30  epoch) |      48.276      |   48.276 (30  epoch)   |        0.559         |     0.606 (30  epoch)      |        38.518         |     39.928 (30  epoch)      |         0.281         |      0.305 (30  epoch)      |    1.094     | 1.098 (30  epoch)  |     0.550     |  0.552 (30  epoch)  |
+|  metal_plate  |     37.053      |  43.283 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   43.695    | 43.695 (60  epoch) |    9.405    | 9.659 (30  epoch)  |    65.862    | 69.375 (30  epoch) |  9.701   | 9.705 (30  epoch) |      84.524      |   85.030 (30  epoch)   |        12.894        |     12.894 (60  epoch)     |        48.285         |     48.285 (60  epoch)      |         7.108         |      7.108 (60  epoch)      |    21.204    | 21.204 (60  epoch) |    11.859     | 11.859 (60  epoch)  |
+|     tubes     |     47.758      |  48.573 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   46.001    | 46.001 (60  epoch) |    7.464    | 7.464 (60  epoch)  |    69.840    | 69.840 (60  epoch) |  0.691   | 0.691 (60  epoch) |      81.176      |   81.928 (30  epoch)   |        1.078         |     1.078 (60  epoch)      |        42.802         |     42.802 (60  epoch)      |         0.543         |      0.543 (60  epoch)      |    1.678     | 1.678 (60  epoch)  |     0.846     |  0.846 (60  epoch)  |
+|      Avg      |     33.976      |  38.561 (30  epoch)   |  100.000   | 100.000 (30  epoch) |   46.935    | 47.479 (30  epoch) |    9.844    | 9.854 (30  epoch)  |    51.972    | 53.960 (30  epoch) |  1.898   | 1.898 (60  epoch) |      72.593      |   73.512 (30  epoch)   |        2.594         |     2.594 (60  epoch)      |        45.750         |     45.750 (60  epoch)      |         1.408         |      1.408 (60  epoch)      |    4.229     | 4.229 (60  epoch)  |     2.326     |  2.326 (60  epoch)  |
+2024-05-26 15:40:44,232 - ==> Total time: 0:10:43	 Eta: 0:42:52 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:02,533 - ==> Total time: 0:11:01	 Eta: 0:43:11 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:05,441 - Train: 20.37% [1650/8100]  [61.1/300.0] [batch_t 0.243 (0.689)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.126 (0.126)]
+2024-05-26 15:41:13,332 - ==> Total time: 0:11:12	 Eta: 0:43:00 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:23,601 - Train: 20.99% [1700/8100]  [63.0/300.0] [batch_t 0.244 (0.372)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.086 (0.083)]
+2024-05-26 15:41:23,849 - ==> Total time: 0:11:22	 Eta: 0:42:48 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:34,322 - ==> Total time: 0:11:33	 Eta: 0:42:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:43,299 - Train: 21.60% [1750/8100]  [64.8/300.0] [batch_t 0.244 (0.383)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.051 (0.060)]
+2024-05-26 15:41:44,851 - ==> Total time: 0:11:43	 Eta: 0:42:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:41:55,235 - ==> Total time: 0:11:54	 Eta: 0:42:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:02,957 - Train: 22.22% [1800/8100]  [66.7/300.0] [batch_t 0.246 (0.397)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.051 (0.050)]
+2024-05-26 15:42:05,833 - ==> Total time: 0:12:04	 Eta: 0:42:00 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:16,258 - ==> Total time: 0:12:15	 Eta: 0:41:48 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:22,570 - Train: 22.84% [1850/8100]  [68.5/300.0] [batch_t 0.245 (0.410)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.040 (0.046)]
+2024-05-26 15:42:26,759 - ==> Total time: 0:12:25	 Eta: 0:41:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:37,187 - ==> Total time: 0:12:36	 Eta: 0:41:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:42,145 - Train: 23.46% [1900/8100]  [70.4/300.0] [batch_t 0.245 (0.439)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.041 (0.047)]
+2024-05-26 15:42:47,698 - ==> Total time: 0:12:46	 Eta: 0:41:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:42:58,226 - ==> Total time: 0:12:57	 Eta: 0:41:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:02,004 - Train: 24.07% [1950/8100]  [72.2/300.0] [batch_t 0.244 (0.518)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.038 (0.041)]
+2024-05-26 15:43:08,819 - ==> Total time: 0:13:07	 Eta: 0:40:49 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:19,352 - ==> Total time: 0:13:18	 Eta: 0:40:38 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:21,642 - Train: 24.69% [2000/8100]  [74.1/300.0] [batch_t 0.245 (0.867)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.039 (0.042)]
+2024-05-26 15:43:29,639 - ==> Total time: 0:13:28	 Eta: 0:40:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:39,430 - Train: 25.31% [2050/8100]  [75.9/300.0] [batch_t 0.544 (0.370)] [data_t 0.303] [optim_t 0.241] [lr 0.005000] [total 0.030 (0.039)]
+2024-05-26 15:43:39,953 - ==> Total time: 0:13:38	 Eta: 0:40:13 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:50,676 - ==> Total time: 0:13:49	 Eta: 0:40:02 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:43:59,458 - Train: 25.93% [2100/8100]  [77.8/300.0] [batch_t 0.590 (0.390)] [data_t 0.348] [optim_t 0.242] [lr 0.005000] [total 0.042 (0.037)]
+2024-05-26 15:44:01,286 - ==> Total time: 0:14:00	 Eta: 0:39:51 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:12,025 - ==> Total time: 0:14:11	 Eta: 0:39:40 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:19,397 - Train: 26.54% [2150/8100]  [79.6/300.0] [batch_t 0.577 (0.401)] [data_t 0.336] [optim_t 0.241] [lr 0.005000] [total 0.030 (0.037)]
+2024-05-26 15:44:22,525 - ==> Total time: 0:14:21	 Eta: 0:39:29 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:32,994 - ==> Total time: 0:14:31	 Eta: 0:39:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:39,012 - Train: 27.16% [2200/8100]  [81.5/300.0] [batch_t 0.543 (0.417)] [data_t 0.302] [optim_t 0.241] [lr 0.005000] [total 0.036 (0.034)]
+2024-05-26 15:44:43,349 - ==> Total time: 0:14:42	 Eta: 0:39:05 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:53,852 - ==> Total time: 0:14:52	 Eta: 0:38:54 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:44:58,592 - Train: 27.78% [2250/8100]  [83.3/300.0] [batch_t 0.584 (0.461)] [data_t 0.343] [optim_t 0.242] [lr 0.005000] [total 0.026 (0.035)]
+2024-05-26 15:45:04,331 - ==> Total time: 0:15:03	 Eta: 0:38:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:45:14,898 - ==> Total time: 0:15:13	 Eta: 0:38:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:45:18,397 - Train: 28.40% [2300/8100]  [85.2/300.0] [batch_t 0.570 (0.579)] [data_t 0.330] [optim_t 0.240] [lr 0.005000] [total 0.028 (0.030)]
+2024-05-26 15:45:25,455 - ==> Total time: 0:15:24	 Eta: 0:38:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:45:36,021 - ==> Total time: 0:15:35	 Eta: 0:38:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:45:38,156 - Train: 29.01% [2350/8100]  [87.0/300.0] [batch_t 1.566 (1.566)] [data_t 1.324] [optim_t 0.242] [lr 0.005000] [total 0.054 (0.054)]
+2024-05-26 15:45:46,669 - ==> Total time: 0:15:45	 Eta: 0:37:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:45:56,033 - Train: 29.63% [2400/8100]  [88.9/300.0] [batch_t 0.245 (0.364)] [data_t 0.002] [optim_t 0.243] [lr 0.005000] [total 0.037 (0.032)]
+2024-05-26 15:45:57,094 - ==> Total time: 0:15:56	 Eta: 0:37:46 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:46:11,658 - Test: 100.00% [15/15] [batch_t 0.022 (0.258)]
+2024-05-26 15:46:12,210 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mF1_max_px)	  0.128 (mIoU_max_px)	
+2024-05-26 15:46:12,716 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mF1_max_px)	  0.126 (mIoU_max_px)	
+2024-05-26 15:46:13,096 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.034 (mIoU_px_0.2_0.8_0.1)	  0.094 (mF1_max_px)	  0.093 (mIoU_max_px)	
+2024-05-26 15:46:13,359 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.066 (mIoU_max_px)	
+2024-05-26 15:46:13,998 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.055 (mIoU_px_0.2_0.8_0.1)	  0.161 (mF1_max_px)	  0.161 (mIoU_max_px)	
+2024-05-26 15:46:14,659 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mF1_max_px)	  0.169 (mIoU_max_px)	
+2024-05-26 15:46:14,663 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     86.503      |  86.503 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   93.111    | 93.111 (90  epoch) |   91.870    | 91.870 (90  epoch) |    92.268    | 92.268 (90  epoch)  |  6.454   | 6.454 (90  epoch)  |      82.353      |   82.353 (90  epoch)   |        11.459        |     11.459 (90  epoch)     |        44.286         |     51.651 (30  epoch)      |         6.103         |      6.103 (90  epoch)      |    15.741    | 15.741 (90  epoch) |     8.543     |  8.543 (90  epoch)  |
+| bracket_brown |     87.934      |  87.934 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   84.107    | 84.107 (90  epoch) |   81.237    | 81.237 (90  epoch) |    90.062    | 90.062 (90  epoch)  |  8.753   | 8.753 (90  epoch)  |      95.327      |   95.327 (90  epoch)   |        13.603        |     13.603 (90  epoch)     |        25.221         |     49.584 (60  epoch)      |         7.301         |      7.301 (90  epoch)      |    14.802    | 14.802 (90  epoch) |     7.993     |  7.993 (90  epoch)  |
+| bracket_white |     92.333      |  92.333 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   94.582    | 94.582 (90  epoch) |   71.282    | 71.282 (90  epoch) |    88.613    | 88.613 (90  epoch)  |  1.052   | 1.052 (90  epoch)  |      87.879      |   87.879 (90  epoch)   |        2.100         |     2.100 (90  epoch)      |        38.504         |     45.730 (30  epoch)      |         1.062         |      1.062 (90  epoch)      |    2.754     | 2.754 (90  epoch)  |     1.396     |  1.396 (90  epoch)  |
+|   connector   |     92.619      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   92.210    | 92.210 (90  epoch) |   85.582    | 85.582 (90  epoch) |    80.739    | 80.739 (90  epoch)  |  30.394  | 30.394 (90  epoch) |      87.500      |   87.500 (90  epoch)   |        33.828        |     33.828 (90  epoch)     |        48.002         |     48.002 (90  epoch)      |        20.413         |     20.413 (90  epoch)      |    37.934    | 37.934 (90  epoch) |    23.406     | 23.406 (90  epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   97.014    | 97.014 (90  epoch) |   92.137    | 92.137 (90  epoch) |   100.000    | 100.000 (90  epoch) |  93.679  | 93.679 (90  epoch) |     100.000      |  100.000 (90  epoch)   |        85.413        |     85.413 (90  epoch)     |        80.653         |     80.653 (90  epoch)      |        74.576         |     74.576 (90  epoch)      |    86.855    | 86.855 (90  epoch) |    76.765     | 76.765 (90  epoch)  |
+|     tubes     |     82.473      |  82.473 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   96.956    | 96.956 (90  epoch) |   90.473    | 90.473 (90  epoch) |    91.276    | 91.276 (90  epoch)  |  41.397  | 41.397 (90  epoch) |      85.135      |   85.135 (90  epoch)   |        24.431        |     24.431 (90  epoch)     |        77.317         |     77.317 (90  epoch)      |        14.145         |     14.145 (90  epoch)      |    41.885    | 41.885 (90  epoch) |    26.490     | 26.490 (90  epoch)  |
+|      Avg      |     90.310      |  90.310 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   92.997    | 92.997 (90  epoch) |   85.430    | 85.430 (90  epoch) |    90.493    | 90.493 (90  epoch)  |  30.288  | 30.288 (90  epoch) |      89.699      |   89.699 (90  epoch)   |        28.472        |     28.472 (90  epoch)     |        52.330         |     52.330 (90  epoch)      |        20.600         |     20.600 (90  epoch)      |    33.329    | 33.329 (90  epoch) |    24.099     | 24.099 (90  epoch)  |
+2024-05-26 15:46:14,820 - ==> Total time: 0:16:13	 Eta: 0:37:52 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:46:23,040 - Train: 30.25% [2450/8100]  [90.7/300.0] [batch_t 0.244 (0.373)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.030 (0.032)]
+2024-05-26 15:46:25,406 - ==> Total time: 0:16:24	 Eta: 0:37:40 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:46:36,052 - ==> Total time: 0:16:35	 Eta: 0:37:29 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:46:42,868 - Train: 30.86% [2500/8100]  [92.6/300.0] [batch_t 0.245 (0.385)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.029 (0.036)]
+2024-05-26 15:46:46,568 - ==> Total time: 0:16:45	 Eta: 0:37:18 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:46:56,975 - ==> Total time: 0:16:55	 Eta: 0:37:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:02,399 - Train: 31.48% [2550/8100]  [94.4/300.0] [batch_t 0.244 (0.406)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.023 (0.030)]
+2024-05-26 15:47:07,405 - ==> Total time: 0:17:06	 Eta: 0:36:54 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:17,920 - ==> Total time: 0:17:16	 Eta: 0:36:43 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:22,149 - Train: 32.10% [2600/8100]  [96.3/300.0] [batch_t 0.244 (0.444)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.025 (0.029)]
+2024-05-26 15:47:28,375 - ==> Total time: 0:17:27	 Eta: 0:36:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:38,794 - ==> Total time: 0:17:37	 Eta: 0:36:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:41,654 - Train: 32.72% [2650/8100]  [98.1/300.0] [batch_t 0.243 (0.571)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.030 (0.028)]
+2024-05-26 15:47:49,189 - ==> Total time: 0:17:48	 Eta: 0:36:08 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:47:59,586 - Train: 33.33% [2700/8100]  [100.0/300.0] [batch_t 0.245 (0.362)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.028 (0.030)]
+2024-05-26 15:47:59,589 - ==> Total time: 0:17:58	 Eta: 0:35:57 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:10,094 - ==> Total time: 0:18:09	 Eta: 0:35:45 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:19,341 - Train: 33.95% [2750/8100]  [101.9/300.0] [batch_t 0.244 (0.374)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.029 (0.030)]
+2024-05-26 15:48:20,659 - ==> Total time: 0:18:19	 Eta: 0:35:34 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:31,147 - ==> Total time: 0:18:30	 Eta: 0:35:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:39,293 - Train: 34.57% [2800/8100]  [103.7/300.0] [batch_t 0.244 (0.380)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.021 (0.028)]
+2024-05-26 15:48:41,886 - ==> Total time: 0:18:40	 Eta: 0:35:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:52,465 - ==> Total time: 0:18:51	 Eta: 0:35:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:48:59,135 - Train: 35.19% [2850/8100]  [105.6/300.0] [batch_t 0.246 (0.404)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.024 (0.026)]
+2024-05-26 15:49:03,134 - ==> Total time: 0:19:02	 Eta: 0:34:50 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:13,651 - ==> Total time: 0:19:12	 Eta: 0:34:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:18,823 - Train: 35.80% [2900/8100]  [107.4/300.0] [batch_t 0.244 (0.415)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.025 (0.027)]
+2024-05-26 15:49:24,045 - ==> Total time: 0:19:23	 Eta: 0:34:27 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:34,501 - ==> Total time: 0:19:33	 Eta: 0:34:16 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:38,424 - Train: 36.42% [2950/8100]  [109.3/300.0] [batch_t 0.245 (0.479)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.035 (0.030)]
+2024-05-26 15:49:44,966 - ==> Total time: 0:19:43	 Eta: 0:34:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:55,324 - ==> Total time: 0:19:54	 Eta: 0:33:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:49:57,938 - Train: 37.04% [3000/8100]  [111.1/300.0] [batch_t 0.245 (0.687)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.023 (0.024)]
+2024-05-26 15:50:06,078 - ==> Total time: 0:20:05	 Eta: 0:33:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:50:16,549 - Train: 37.65% [3050/8100]  [113.0/300.0] [batch_t 0.245 (0.374)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.027 (0.026)]
+2024-05-26 15:50:16,797 - ==> Total time: 0:20:15	 Eta: 0:33:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:50:27,459 - ==> Total time: 0:20:26	 Eta: 0:33:21 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:50:36,498 - Train: 38.27% [3100/8100]  [114.8/300.0] [batch_t 0.243 (0.380)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.027 (0.029)]
+2024-05-26 15:50:38,060 - ==> Total time: 0:20:37	 Eta: 0:33:10 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:50:48,828 - ==> Total time: 0:20:47	 Eta: 0:32:59 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:50:56,835 - Train: 38.89% [3150/8100]  [116.7/300.0] [batch_t 0.244 (0.396)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.024 (0.026)]
+2024-05-26 15:50:59,739 - ==> Total time: 0:20:58	 Eta: 0:32:48 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:51:10,286 - ==> Total time: 0:21:09	 Eta: 0:32:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:51:16,778 - Train: 39.51% [3200/8100]  [118.5/300.0] [batch_t 0.244 (0.414)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.027 (0.029)]
+2024-05-26 15:51:21,002 - ==> Total time: 0:21:19	 Eta: 0:32:26 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:51:35,956 - Test: 100.00% [15/15] [batch_t 0.024 (0.262)]
+2024-05-26 15:51:36,535 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.049 (mF1_px_0.2_0.8_0.1)	  0.048 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.133 (mF1_max_px)	  0.131 (mIoU_max_px)	
+2024-05-26 15:51:37,058 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.125 (mF1_max_px)	  0.127 (mIoU_max_px)	
+2024-05-26 15:51:37,452 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.093 (mF1_max_px)	  0.097 (mIoU_max_px)	
+2024-05-26 15:51:37,723 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.067 (mF1_max_px)	  0.068 (mIoU_max_px)	
+2024-05-26 15:51:38,384 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.057 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.166 (mF1_max_px)	  0.166 (mIoU_max_px)	
+2024-05-26 15:51:39,068 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.171 (mF1_max_px)	  0.172 (mIoU_max_px)	
+2024-05-26 15:51:39,074 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     91.423      |  91.423 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   91.299    | 93.111 (90  epoch) |   87.721    | 91.870 (90  epoch) |    95.007    | 95.007 (120 epoch)  |  5.957   | 6.454 (90  epoch)  |      86.598      |   86.598 (120 epoch)   |        11.558        |     11.558 (120 epoch)     |        41.985         |     51.651 (30  epoch)      |         6.158         |      6.158 (120 epoch)      |    15.332    | 15.741 (90  epoch) |     8.303     |  8.543 (90  epoch)  |
+| bracket_brown |     88.009      |  88.009 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   80.771    | 84.107 (90  epoch) |   79.449    | 81.237 (90  epoch) |    89.028    | 90.062 (90  epoch)  |  8.546   | 8.753 (90  epoch)  |      96.226      |   96.226 (120 epoch)   |        13.029        |     13.603 (90  epoch)     |        23.909         |     49.584 (60  epoch)      |         6.972         |      7.301 (90  epoch)      |    14.197    | 14.802 (90  epoch) |     7.641     |  7.993 (90  epoch)  |
+| bracket_white |     92.222      |  92.333 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   92.989    | 94.582 (90  epoch) |   57.529    | 71.282 (90  epoch) |    88.430    | 88.613 (90  epoch)  |  1.550   | 1.550 (120 epoch)  |      88.889      |   88.889 (120 epoch)   |        3.157         |     3.157 (120 epoch)      |        42.133         |     45.730 (30  epoch)      |         1.605         |      1.605 (120 epoch)      |    4.059     | 4.059 (120 epoch)  |     2.071     |  2.071 (120 epoch)  |
+|   connector   |     91.905      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   92.227    | 92.227 (120 epoch) |   86.318    | 86.318 (120 epoch) |    80.457    | 80.739 (90  epoch)  |  36.339  | 36.339 (120 epoch) |      87.500      |   87.500 (90  epoch)   |        38.233        |     38.233 (120 epoch)     |        45.953         |     48.002 (90  epoch)      |        23.666         |     23.666 (120 epoch)      |    41.396    | 41.396 (120 epoch) |    26.101     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   97.069    | 97.069 (120 epoch) |   92.273    | 92.273 (120 epoch) |   100.000    | 100.000 (90  epoch) |  93.555  | 93.679 (90  epoch) |     100.000      |  100.000 (90  epoch)   |        85.903        |     85.903 (120 epoch)     |        83.376         |     83.376 (120 epoch)      |        75.300         |     75.300 (120 epoch)      |    86.814    | 86.855 (90  epoch) |    76.701     | 76.765 (90  epoch)  |
+|     tubes     |     82.835      |  82.835 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   96.906    | 96.956 (90  epoch) |   90.442    | 90.473 (90  epoch) |    91.552    | 91.552 (120 epoch)  |  43.947  | 43.947 (120 epoch) |      88.276      |   88.276 (120 epoch)   |        20.824        |     24.431 (90  epoch)     |        83.363         |     83.363 (120 epoch)      |        11.731         |     14.145 (90  epoch)      |    44.224    | 44.224 (120 epoch) |    28.390     | 28.390 (120 epoch)  |
+|      Avg      |     91.066      |  91.066 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   91.877    | 92.997 (90  epoch) |   82.289    | 85.430 (90  epoch) |    90.746    | 90.746 (120 epoch)  |  31.649  | 31.649 (120 epoch) |      91.248      |   91.248 (120 epoch)   |        28.784        |     28.784 (120 epoch)     |        53.453         |     53.453 (120 epoch)      |        20.905         |     20.905 (120 epoch)      |    34.337    | 34.337 (120 epoch) |    24.868     | 24.868 (120 epoch)  |
+2024-05-26 15:51:39,186 - ==> Total time: 0:21:38	 Eta: 0:32:27 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:51:44,583 - Train: 40.12% [3250/8100]  [120.4/300.0] [batch_t 0.245 (0.446)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.036 (0.028)]
+2024-05-26 15:51:50,124 - ==> Total time: 0:21:49	 Eta: 0:32:16 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:00,791 - ==> Total time: 0:21:59	 Eta: 0:32:05 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:04,596 - Train: 40.74% [3300/8100]  [122.2/300.0] [batch_t 0.245 (0.523)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.026 (0.028)]
+2024-05-26 15:52:11,386 - ==> Total time: 0:22:10	 Eta: 0:31:54 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:22,028 - ==> Total time: 0:22:21	 Eta: 0:31:43 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:24,451 - Train: 41.36% [3350/8100]  [124.1/300.0] [batch_t 0.245 (0.892)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.021 (0.020)]
+2024-05-26 15:52:32,595 - ==> Total time: 0:22:31	 Eta: 0:31:32 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:42,772 - Train: 41.98% [3400/8100]  [125.9/300.0] [batch_t 0.561 (0.380)] [data_t 0.318] [optim_t 0.242] [lr 0.005000] [total 0.024 (0.025)]
+2024-05-26 15:52:43,264 - ==> Total time: 0:22:42	 Eta: 0:31:21 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:52:53,788 - ==> Total time: 0:22:52	 Eta: 0:31:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:02,641 - Train: 42.59% [3450/8100]  [127.8/300.0] [batch_t 0.607 (0.388)] [data_t 0.365] [optim_t 0.242] [lr 0.005000] [total 0.024 (0.025)]
+2024-05-26 15:53:04,455 - ==> Total time: 0:23:03	 Eta: 0:30:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:15,150 - ==> Total time: 0:23:14	 Eta: 0:30:48 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:22,647 - Train: 43.21% [3500/8100]  [129.6/300.0] [batch_t 0.592 (0.404)] [data_t 0.351] [optim_t 0.241] [lr 0.005000] [total 0.029 (0.024)]
+2024-05-26 15:53:25,774 - ==> Total time: 0:23:24	 Eta: 0:30:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:36,460 - ==> Total time: 0:23:35	 Eta: 0:30:26 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:42,679 - Train: 43.83% [3550/8100]  [131.5/300.0] [batch_t 0.596 (0.425)] [data_t 0.352] [optim_t 0.244] [lr 0.005000] [total 0.027 (0.027)]
+2024-05-26 15:53:47,151 - ==> Total time: 0:23:46	 Eta: 0:30:15 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:53:57,926 - ==> Total time: 0:23:56	 Eta: 0:30:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:54:02,683 - Train: 44.44% [3600/8100]  [133.3/300.0] [batch_t 0.558 (0.461)] [data_t 0.317] [optim_t 0.242] [lr 0.005000] [total 0.020 (0.025)]
+2024-05-26 15:54:08,410 - ==> Total time: 0:24:07	 Eta: 0:29:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:54:19,026 - ==> Total time: 0:24:18	 Eta: 0:29:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:54:22,494 - Train: 45.06% [3650/8100]  [135.2/300.0] [batch_t 0.558 (0.569)] [data_t 0.316] [optim_t 0.242] [lr 0.005000] [total 0.019 (0.024)]
+2024-05-26 15:54:29,618 - ==> Total time: 0:24:28	 Eta: 0:29:30 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:54:40,219 - ==> Total time: 0:24:39	 Eta: 0:29:19 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:54:42,418 - Train: 45.68% [3700/8100]  [137.0/300.0] [batch_t 1.557 (1.557)] [data_t 1.314] [optim_t 0.244] [lr 0.005000] [total 0.022 (0.022)]
+2024-05-26 15:54:50,899 - ==> Total time: 0:24:49	 Eta: 0:29:08 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:00,294 - Train: 46.30% [3750/8100]  [138.9/300.0] [batch_t 0.247 (0.366)] [data_t 0.002] [optim_t 0.244] [lr 0.005000] [total 0.023 (0.025)]
+2024-05-26 15:55:01,334 - ==> Total time: 0:25:00	 Eta: 0:28:57 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:12,065 - ==> Total time: 0:25:11	 Eta: 0:28:46 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:20,197 - Train: 46.91% [3800/8100]  [140.7/300.0] [batch_t 0.246 (0.375)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.022 (0.023)]
+2024-05-26 15:55:22,581 - ==> Total time: 0:25:21	 Eta: 0:28:35 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:33,193 - ==> Total time: 0:25:32	 Eta: 0:28:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:40,108 - Train: 47.53% [3850/8100]  [142.6/300.0] [batch_t 0.245 (0.394)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.020 (0.023)]
+2024-05-26 15:55:43,814 - ==> Total time: 0:25:42	 Eta: 0:28:13 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:54,240 - ==> Total time: 0:25:53	 Eta: 0:28:02 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:55:59,743 - Train: 48.15% [3900/8100]  [144.4/300.0] [batch_t 0.245 (0.408)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.023 (0.028)]
+2024-05-26 15:56:04,810 - ==> Total time: 0:26:03	 Eta: 0:27:51 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:56:15,380 - ==> Total time: 0:26:14	 Eta: 0:27:40 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:56:19,543 - Train: 48.77% [3950/8100]  [146.3/300.0] [batch_t 0.245 (0.440)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.029 (0.025)]
+2024-05-26 15:56:25,758 - ==> Total time: 0:26:24	 Eta: 0:27:29 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:56:36,393 - ==> Total time: 0:26:35	 Eta: 0:27:18 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:56:39,292 - Train: 49.38% [4000/8100]  [148.1/300.0] [batch_t 0.246 (0.566)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.023 (0.026)]
+2024-05-26 15:56:46,970 - ==> Total time: 0:26:45	 Eta: 0:27:07 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:56:57,648 - Train: 50.00% [4050/8100]  [150.0/300.0] [batch_t 0.244 (0.372)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.022 (0.025)]
+2024-05-26 15:57:01,649 - Test: 100.00% [15/15] [batch_t 0.024 (0.258)]
+2024-05-26 15:57:02,219 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mF1_max_px)	  0.131 (mIoU_max_px)	
+2024-05-26 15:57:02,746 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.127 (mF1_max_px)	  0.130 (mIoU_max_px)	
+2024-05-26 15:57:03,145 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.096 (mF1_max_px)	  0.098 (mIoU_max_px)	
+2024-05-26 15:57:03,418 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.025 (mIoU_px_0.2_0.8_0.1)	  0.067 (mF1_max_px)	  0.067 (mIoU_max_px)	
+2024-05-26 15:57:04,082 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.057 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.165 (mF1_max_px)	  0.167 (mIoU_max_px)	
+2024-05-26 15:57:04,767 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.171 (mF1_max_px)	  0.171 (mIoU_max_px)	
+2024-05-26 15:57:04,773 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     85.239      |  91.423 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   95.364    | 95.364 (150 epoch) |   88.840    | 91.870 (90  epoch) |    87.830    | 95.007 (120 epoch)  |  4.826   | 6.454 (90  epoch)  |      84.906      |   86.598 (120 epoch)   |        8.946         |     11.558 (120 epoch)     |        31.618         |     51.651 (30  epoch)      |         4.710         |      6.158 (120 epoch)      |    12.246    | 15.741 (90  epoch) |     6.522     |  8.543 (90  epoch)  |
+| bracket_brown |     88.235      |  88.235 (150 epoch)   |  100.000   | 100.000 (30  epoch) |   85.467    | 85.467 (150 epoch) |   80.047    | 81.237 (90  epoch) |    88.463    | 90.062 (90  epoch)  |  7.442   | 8.753 (90  epoch)  |      96.226      |   96.226 (120 epoch)   |        11.634        |     13.603 (90  epoch)     |        20.672         |     49.584 (60  epoch)      |         6.193         |      7.301 (90  epoch)      |    13.601    | 14.802 (90  epoch) |     7.297     |  7.993 (90  epoch)  |
+| bracket_white |     93.111      |  93.111 (150 epoch)   |  100.000   | 100.000 (30  epoch) |   96.612    | 96.612 (150 epoch) |   81.673    | 81.673 (150 epoch) |    92.199    | 92.199 (150 epoch)  |  1.162   | 1.550 (120 epoch)  |      90.323      |   90.323 (150 epoch)   |        2.095         |     3.157 (120 epoch)      |        30.665         |     45.730 (30  epoch)      |         1.061         |      1.605 (120 epoch)      |    2.914     | 4.059 (120 epoch)  |     1.479     |  2.071 (120 epoch)  |
+|   connector   |     90.238      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   92.105    | 92.227 (120 epoch) |   85.525    | 86.318 (120 epoch) |    78.539    | 80.739 (90  epoch)  |  30.979  | 36.339 (120 epoch) |      84.848      |   87.500 (90  epoch)   |        31.864        |     38.233 (120 epoch)     |        40.756         |     48.002 (90  epoch)      |        19.039         |     23.666 (120 epoch)      |    37.255    | 41.396 (120 epoch) |    22.892     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   96.320    | 97.069 (120 epoch) |   90.671    | 92.273 (120 epoch) |   100.000    | 100.000 (90  epoch) |  93.620  | 93.679 (90  epoch) |     100.000      |  100.000 (90  epoch)   |        85.476        |     85.903 (120 epoch)     |        79.726         |     83.376 (120 epoch)      |        74.677         |     75.300 (120 epoch)      |    87.066    | 87.066 (150 epoch) |    77.095     | 77.095 (150 epoch)  |
+|     tubes     |     82.292      |  82.835 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   96.406    | 96.956 (90  epoch) |   89.245    | 90.473 (90  epoch) |    91.780    | 91.780 (150 epoch)  |  45.212  | 45.212 (150 epoch) |      85.333      |   88.276 (120 epoch)   |        30.111        |     30.111 (150 epoch)     |        72.085         |     83.363 (120 epoch)      |        18.194         |     18.194 (150 epoch)      |    46.217    | 46.217 (150 epoch) |    30.053     | 30.053 (150 epoch)  |
+|      Avg      |     89.853      |  91.066 (120 epoch)   |  100.000   | 100.000 (30  epoch) |   93.712    | 93.712 (150 epoch) |   86.000    | 86.000 (150 epoch) |    89.802    | 90.746 (120 epoch)  |  30.540  | 31.649 (120 epoch) |      90.273      |   91.248 (120 epoch)   |        28.354        |     28.784 (120 epoch)     |        45.920         |     53.453 (120 epoch)      |        20.646         |     20.905 (120 epoch)      |    33.216    | 34.337 (120 epoch) |    24.223     | 24.868 (120 epoch)  |
+2024-05-26 15:57:04,881 - ==> Total time: 0:27:03	 Eta: 0:27:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:57:15,710 - ==> Total time: 0:27:14	 Eta: 0:26:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:57:25,159 - Train: 50.62% [4100/8100]  [151.9/300.0] [batch_t 0.247 (0.376)] [data_t 0.003] [optim_t 0.244] [lr 0.005000] [total 0.023 (0.023)]
+2024-05-26 15:57:26,497 - ==> Total time: 0:27:25	 Eta: 0:26:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:57:37,114 - ==> Total time: 0:27:36	 Eta: 0:26:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:57:45,041 - Train: 51.23% [4150/8100]  [153.7/300.0] [batch_t 0.245 (0.384)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.022 (0.027)]
+2024-05-26 15:57:47,644 - ==> Total time: 0:27:46	 Eta: 0:26:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:57:58,215 - ==> Total time: 0:27:57	 Eta: 0:26:08 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:58:04,816 - Train: 51.85% [4200/8100]  [155.6/300.0] [batch_t 0.246 (0.398)] [data_t 0.003] [optim_t 0.244] [lr 0.005000] [total 0.020 (0.021)]
+2024-05-26 15:58:08,773 - ==> Total time: 0:28:07	 Eta: 0:25:57 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:58:19,275 - ==> Total time: 0:28:18	 Eta: 0:25:46 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:58:24,543 - Train: 52.47% [4250/8100]  [157.4/300.0] [batch_t 0.245 (0.425)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.019 (0.021)]
+2024-05-26 15:58:29,768 - ==> Total time: 0:28:28	 Eta: 0:25:35 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:58:40,314 - ==> Total time: 0:28:39	 Eta: 0:25:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:58:44,321 - Train: 53.09% [4300/8100]  [159.3/300.0] [batch_t 0.245 (0.477)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.026 (0.023)]
+2024-05-26 15:58:50,944 - ==> Total time: 0:28:49	 Eta: 0:25:13 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:01,334 - ==> Total time: 0:29:00	 Eta: 0:25:02 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:04,825 - Train: 53.70% [4350/8100]  [161.1/300.0] [batch_t 0.244 (0.683)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.022 (0.020)]
+2024-05-26 15:59:12,698 - ==> Total time: 0:29:11	 Eta: 0:24:52 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:23,025 - Train: 54.32% [4400/8100]  [163.0/300.0] [batch_t 0.245 (0.374)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.025 (0.023)]
+2024-05-26 15:59:23,274 - ==> Total time: 0:29:22	 Eta: 0:24:41 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:33,727 - ==> Total time: 0:29:32	 Eta: 0:24:30 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:42,703 - Train: 54.94% [4450/8100]  [164.8/300.0] [batch_t 0.245 (0.380)] [data_t 0.002] [optim_t 0.243] [lr 0.005000] [total 0.022 (0.022)]
+2024-05-26 15:59:44,254 - ==> Total time: 0:29:43	 Eta: 0:24:19 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 15:59:54,821 - ==> Total time: 0:29:53	 Eta: 0:24:08 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:02,354 - Train: 55.56% [4500/8100]  [166.7/300.0] [batch_t 0.245 (0.386)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.018 (0.022)]
+2024-05-26 16:00:05,181 - ==> Total time: 0:30:04	 Eta: 0:23:56 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:15,676 - ==> Total time: 0:30:14	 Eta: 0:23:45 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:22,143 - Train: 56.17% [4550/8100]  [168.5/300.0] [batch_t 0.245 (0.416)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.023 (0.021)]
+2024-05-26 16:00:26,375 - ==> Total time: 0:30:25	 Eta: 0:23:34 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:36,789 - ==> Total time: 0:30:35	 Eta: 0:23:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:41,879 - Train: 56.79% [4600/8100]  [170.4/300.0] [batch_t 0.244 (0.444)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.022 (0.022)]
+2024-05-26 16:00:47,398 - ==> Total time: 0:30:46	 Eta: 0:23:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:00:57,819 - ==> Total time: 0:30:56	 Eta: 0:23:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:01,534 - Train: 57.41% [4650/8100]  [172.2/300.0] [batch_t 0.245 (0.521)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.020)]
+2024-05-26 16:01:08,291 - ==> Total time: 0:31:07	 Eta: 0:22:50 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:18,775 - ==> Total time: 0:31:17	 Eta: 0:22:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:21,203 - Train: 58.02% [4700/8100]  [174.1/300.0] [batch_t 0.244 (0.895)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.020 (0.021)]
+2024-05-26 16:01:29,422 - ==> Total time: 0:31:28	 Eta: 0:22:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:39,429 - Train: 58.64% [4750/8100]  [175.9/300.0] [batch_t 0.556 (0.377)] [data_t 0.312] [optim_t 0.243] [lr 0.005000] [total 0.015 (0.021)]
+2024-05-26 16:01:39,921 - ==> Total time: 0:31:38	 Eta: 0:22:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:50,568 - ==> Total time: 0:31:49	 Eta: 0:22:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:01:59,253 - Train: 59.26% [4800/8100]  [177.8/300.0] [batch_t 0.607 (0.385)] [data_t 0.366] [optim_t 0.241] [lr 0.005000] [total 0.023 (0.022)]
+2024-05-26 16:02:01,077 - ==> Total time: 0:32:00	 Eta: 0:21:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:02:12,382 - ==> Total time: 0:32:11	 Eta: 0:21:45 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:02:19,831 - Train: 59.88% [4850/8100]  [179.6/300.0] [batch_t 0.576 (0.402)] [data_t 0.334] [optim_t 0.242] [lr 0.005000] [total 0.025 (0.021)]
+2024-05-26 16:02:26,971 - Test: 100.00% [15/15] [batch_t 0.022 (0.257)]
+2024-05-26 16:02:27,537 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.044 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.130 (mF1_max_px)	  0.129 (mIoU_max_px)	
+2024-05-26 16:02:28,054 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.126 (mF1_max_px)	  0.125 (mIoU_max_px)	
+2024-05-26 16:02:28,446 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.035 (mIoU_px_0.2_0.8_0.1)	  0.093 (mF1_max_px)	  0.094 (mIoU_max_px)	
+2024-05-26 16:02:28,715 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.067 (mIoU_max_px)	
+2024-05-26 16:02:29,373 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.163 (mF1_max_px)	  0.163 (mIoU_max_px)	
+2024-05-26 16:02:30,054 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.171 (mF1_max_px)	  0.172 (mIoU_max_px)	
+2024-05-26 16:02:30,060 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     93.883      |  93.883 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   88.052    | 95.364 (150 epoch) |   82.875    | 91.870 (90  epoch) |    95.304    | 95.304 (180 epoch)  |  4.784   | 6.454 (90  epoch)  |      91.089      |   91.089 (180 epoch)   |        8.894         |     11.558 (120 epoch)     |        20.490         |     51.651 (30  epoch)      |         4.706         |      6.158 (120 epoch)      |    13.070    | 15.741 (90  epoch) |     6.992     |  8.543 (90  epoch)  |
+| bracket_brown |     94.344      |  94.344 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   73.685    | 85.467 (150 epoch) |   53.865    | 81.237 (90  epoch) |    94.915    | 94.915 (180 epoch)  |  3.476   | 8.753 (90  epoch)  |      96.226      |   96.226 (120 epoch)   |        6.440         |     13.603 (90  epoch)     |        13.964         |     49.584 (60  epoch)      |         3.328         |      7.301 (90  epoch)      |    7.080     | 14.802 (90  epoch) |     3.670     |  7.993 (90  epoch)  |
+| bracket_white |     93.778      |  93.778 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   90.972    | 96.612 (150 epoch) |   51.301    | 81.673 (150 epoch) |    91.050    | 92.199 (150 epoch)  |  0.696   | 1.550 (120 epoch)  |      92.308      |   92.308 (180 epoch)   |        1.355         |     3.157 (120 epoch)      |        24.251         |     45.730 (30  epoch)      |         0.683         |      1.605 (120 epoch)      |    1.812     | 4.059 (120 epoch)  |     0.914     |  2.071 (120 epoch)  |
+|   connector   |     92.143      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   88.486    | 92.227 (120 epoch) |   80.178    | 86.318 (120 epoch) |    81.736    | 81.736 (180 epoch)  |  32.934  | 36.339 (120 epoch) |      87.500      |   87.500 (90  epoch)   |        31.673        |     38.233 (120 epoch)     |        30.976         |     48.002 (90  epoch)      |        19.032         |     23.666 (120 epoch)      |    38.865    | 41.396 (120 epoch) |    24.119     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   96.865    | 97.069 (120 epoch) |   91.660    | 92.273 (120 epoch) |   100.000    | 100.000 (90  epoch) |  94.226  | 94.226 (180 epoch) |     100.000      |  100.000 (90  epoch)   |        86.452        |     86.452 (180 epoch)     |        81.995         |     83.376 (120 epoch)      |        76.163         |     76.163 (180 epoch)      |    87.698    | 87.698 (180 epoch) |    78.091     | 78.091 (180 epoch)  |
+|     tubes     |     83.469      |  83.469 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   96.167    | 96.956 (90  epoch) |   89.468    | 90.473 (90  epoch) |    91.861    | 91.861 (180 epoch)  |  45.409  | 45.409 (180 epoch) |      85.350      |   88.276 (120 epoch)   |        32.337        |     32.337 (180 epoch)     |        70.165         |     83.363 (120 epoch)      |        19.671         |     19.671 (180 epoch)      |    46.765    | 46.765 (180 epoch) |    30.518     | 30.518 (180 epoch)  |
+|      Avg      |     92.936      |  92.936 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   89.038    | 93.712 (150 epoch) |   74.891    | 86.000 (150 epoch) |    92.478    | 92.478 (180 epoch)  |  30.254  | 31.649 (120 epoch) |      92.079      |   92.079 (180 epoch)   |        27.859        |     28.784 (120 epoch)     |        40.307         |     53.453 (120 epoch)      |        20.597         |     20.905 (120 epoch)      |    32.548    | 34.337 (120 epoch) |    24.051     | 24.868 (120 epoch)  |
+2024-05-26 16:02:30,171 - ==> Total time: 0:32:29	 Eta: 0:21:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:02:40,839 - ==> Total time: 0:32:39	 Eta: 0:21:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:02:46,912 - Train: 60.49% [4900/8100]  [181.5/300.0] [batch_t 0.570 (0.422)] [data_t 0.328] [optim_t 0.242] [lr 0.005000] [total 0.021 (0.020)]
+2024-05-26 16:02:51,326 - ==> Total time: 0:32:50	 Eta: 0:21:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:02,054 - ==> Total time: 0:33:01	 Eta: 0:21:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:07,532 - Train: 61.11% [4950/8100]  [183.3/300.0] [batch_t 0.562 (0.458)] [data_t 0.321] [optim_t 0.241] [lr 0.005000] [total 0.023 (0.021)]
+2024-05-26 16:03:13,247 - ==> Total time: 0:33:12	 Eta: 0:20:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:23,913 - ==> Total time: 0:33:22	 Eta: 0:20:45 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:27,513 - Train: 61.73% [5000/8100]  [185.2/300.0] [batch_t 0.594 (0.581)] [data_t 0.352] [optim_t 0.242] [lr 0.005000] [total 0.016 (0.021)]
+2024-05-26 16:03:34,571 - ==> Total time: 0:33:33	 Eta: 0:20:34 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:45,058 - ==> Total time: 0:33:44	 Eta: 0:20:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:03:47,211 - Train: 62.35% [5050/8100]  [187.0/300.0] [batch_t 1.574 (1.574)] [data_t 1.332] [optim_t 0.242] [lr 0.005000] [total 0.020 (0.020)]
+2024-05-26 16:03:55,473 - ==> Total time: 0:33:54	 Eta: 0:20:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:05,022 - Train: 62.96% [5100/8100]  [188.9/300.0] [batch_t 0.243 (0.373)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.023 (0.020)]
+2024-05-26 16:04:06,121 - ==> Total time: 0:34:05	 Eta: 0:20:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:16,545 - ==> Total time: 0:34:15	 Eta: 0:19:50 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:24,691 - Train: 63.58% [5150/8100]  [190.7/300.0] [batch_t 0.245 (0.373)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.022 (0.020)]
+2024-05-26 16:04:27,045 - ==> Total time: 0:34:26	 Eta: 0:19:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:37,658 - ==> Total time: 0:34:36	 Eta: 0:19:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:44,430 - Train: 64.20% [5200/8100]  [192.6/300.0] [batch_t 0.244 (0.383)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.019 (0.021)]
+2024-05-26 16:04:48,108 - ==> Total time: 0:34:47	 Eta: 0:19:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:04:59,036 - ==> Total time: 0:34:58	 Eta: 0:19:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:05:04,509 - Train: 64.81% [5250/8100]  [194.4/300.0] [batch_t 0.245 (0.403)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.015 (0.021)]
+2024-05-26 16:05:09,504 - ==> Total time: 0:35:08	 Eta: 0:18:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:05:19,909 - ==> Total time: 0:35:18	 Eta: 0:18:44 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:05:24,252 - Train: 65.43% [5300/8100]  [196.3/300.0] [batch_t 0.245 (0.463)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.015 (0.019)]
+2024-05-26 16:05:30,479 - ==> Total time: 0:35:29	 Eta: 0:18:33 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:05:41,211 - ==> Total time: 0:35:40	 Eta: 0:18:22 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:05:44,527 - Train: 66.05% [5350/8100]  [198.1/300.0] [batch_t 0.245 (0.581)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.021 (0.020)]
+2024-05-26 16:05:52,156 - ==> Total time: 0:35:51	 Eta: 0:18:11 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:02,610 - Train: 66.67% [5400/8100]  [200.0/300.0] [batch_t 0.245 (0.363)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.019 (0.019)]
+2024-05-26 16:06:02,612 - ==> Total time: 0:36:01	 Eta: 0:18:00 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:13,131 - ==> Total time: 0:36:12	 Eta: 0:17:49 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:22,302 - Train: 67.28% [5450/8100]  [201.9/300.0] [batch_t 0.244 (0.372)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.015 (0.020)]
+2024-05-26 16:06:23,618 - ==> Total time: 0:36:22	 Eta: 0:17:38 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:34,374 - ==> Total time: 0:36:33	 Eta: 0:17:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:42,321 - Train: 67.90% [5500/8100]  [203.7/300.0] [batch_t 0.245 (0.380)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.020 (0.020)]
+2024-05-26 16:06:44,939 - ==> Total time: 0:36:43	 Eta: 0:17:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:06:55,349 - ==> Total time: 0:36:54	 Eta: 0:17:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:07:01,976 - Train: 68.52% [5550/8100]  [205.6/300.0] [batch_t 0.244 (0.397)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.015 (0.018)]
+2024-05-26 16:07:05,874 - ==> Total time: 0:37:04	 Eta: 0:16:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:07:16,472 - ==> Total time: 0:37:15	 Eta: 0:16:44 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:07:21,765 - Train: 69.14% [5600/8100]  [207.4/300.0] [batch_t 0.244 (0.426)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.023 (0.019)]
+2024-05-26 16:07:27,078 - ==> Total time: 0:37:26	 Eta: 0:16:33 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:07:37,574 - ==> Total time: 0:37:36	 Eta: 0:16:22 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:07:41,582 - Train: 69.75% [5650/8100]  [209.3/300.0] [batch_t 0.246 (0.479)] [data_t 0.003] [optim_t 0.244] [lr 0.005000] [total 0.021 (0.019)]
+2024-05-26 16:07:52,184 - Test: 100.00% [15/15] [batch_t 0.021 (0.259)]
+2024-05-26 16:07:52,766 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.050 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.141 (mF1_max_px)	  0.135 (mIoU_max_px)	
+2024-05-26 16:07:53,303 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.048 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.047 (mIoU_px_0.2_0.8_0.1)	  0.133 (mF1_max_px)	  0.129 (mIoU_max_px)	
+2024-05-26 16:07:53,716 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.036 (mF1_px_0.2_0.8_0.1)	  0.039 (mAcc_px_0.2_0.8_0.1)	  0.036 (mIoU_px_0.2_0.8_0.1)	  0.100 (mF1_max_px)	  0.100 (mIoU_max_px)	
+2024-05-26 16:07:53,995 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.025 (mAcc_px_0.2_0.8_0.1)	  0.025 (mIoU_px_0.2_0.8_0.1)	  0.069 (mF1_max_px)	  0.069 (mIoU_max_px)	
+2024-05-26 16:07:54,672 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.057 (mIoU_px_0.2_0.8_0.1)	  0.171 (mF1_max_px)	  0.169 (mIoU_max_px)	
+2024-05-26 16:07:55,368 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.061 (mF1_px_0.2_0.8_0.1)	  0.062 (mAcc_px_0.2_0.8_0.1)	  0.062 (mIoU_px_0.2_0.8_0.1)	  0.176 (mF1_max_px)	  0.176 (mIoU_max_px)	
+2024-05-26 16:07:55,374 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     89.495      |  93.883 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   94.584    | 95.364 (150 epoch) |   90.043    | 91.870 (90  epoch) |    92.135    | 95.304 (180 epoch)  |  5.316   | 6.454 (90  epoch)  |      89.524      |   91.089 (180 epoch)   |        9.774         |     11.558 (120 epoch)     |        30.490         |     51.651 (30  epoch)      |         5.179         |      6.158 (120 epoch)      |    14.677    | 15.741 (90  epoch) |     7.920     |  8.543 (90  epoch)  |
+| bracket_brown |     92.685      |  94.344 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   79.510    | 85.467 (150 epoch) |   72.116    | 81.237 (90  epoch) |    93.556    | 94.915 (180 epoch)  |  3.960   | 8.753 (90  epoch)  |      95.327      |   96.226 (120 epoch)   |        6.978         |     13.603 (90  epoch)     |        19.091         |     49.584 (60  epoch)      |         3.616         |      7.301 (90  epoch)      |    7.558     | 14.802 (90  epoch) |     3.927     |  7.993 (90  epoch)  |
+| bracket_white |     93.000      |  93.778 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   93.087    | 96.612 (150 epoch) |   57.041    | 81.673 (150 epoch) |    90.403    | 92.199 (150 epoch)  |  0.739   | 1.550 (120 epoch)  |      92.308      |   92.308 (180 epoch)   |        1.656         |     3.157 (120 epoch)      |        41.109         |     45.730 (30  epoch)      |         0.835         |      1.605 (120 epoch)      |    1.903     | 4.059 (120 epoch)  |     0.960     |  2.071 (120 epoch)  |
+|   connector   |     90.714      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   90.728    | 92.227 (120 epoch) |   83.477    | 86.318 (120 epoch) |    77.336    | 81.736 (180 epoch)  |  30.300  | 36.339 (120 epoch) |      87.500      |   87.500 (90  epoch)   |        30.455        |     38.233 (120 epoch)     |        34.194         |     48.002 (90  epoch)      |        18.083         |     23.666 (120 epoch)      |    35.852    | 41.396 (120 epoch) |    21.841     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   96.473    | 97.069 (120 epoch) |   91.086    | 92.273 (120 epoch) |   100.000    | 100.000 (90  epoch) |  93.933  | 94.226 (180 epoch) |     100.000      |  100.000 (90  epoch)   |        86.376        |     86.452 (180 epoch)     |        81.590         |     83.376 (120 epoch)      |        76.040         |     76.163 (180 epoch)      |    87.455    | 87.698 (180 epoch) |    77.707     | 78.091 (180 epoch)  |
+|     tubes     |     81.159      |  83.469 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   95.695    | 96.956 (90  epoch) |   88.409    | 90.473 (90  epoch) |    90.993    | 91.861 (180 epoch)  |  42.445  | 45.409 (180 epoch) |      83.465      |   88.276 (120 epoch)   |        29.444        |     32.337 (180 epoch)     |        71.558         |     83.363 (120 epoch)      |        17.437         |     19.671 (180 epoch)      |    43.566    | 46.765 (180 epoch) |    27.850     | 30.518 (180 epoch)  |
+|      Avg      |     91.176      |  92.936 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   91.680    | 93.712 (150 epoch) |   80.362    | 86.000 (150 epoch) |    90.737    | 92.478 (180 epoch)  |  29.449  | 31.649 (120 epoch) |      91.354      |   92.079 (180 epoch)   |        27.447        |     28.784 (120 epoch)     |        46.339         |     53.453 (120 epoch)      |        20.198         |     20.905 (120 epoch)      |    31.835    | 34.337 (120 epoch) |    23.368     | 24.868 (120 epoch)  |
+2024-05-26 16:07:55,496 - ==> Total time: 0:37:54	 Eta: 0:16:14 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:06,174 - ==> Total time: 0:38:05	 Eta: 0:16:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:08,809 - Train: 70.37% [5700/8100]  [211.1/300.0] [batch_t 0.244 (0.687)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.017 (0.017)]
+2024-05-26 16:08:16,791 - ==> Total time: 0:38:15	 Eta: 0:15:52 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:27,072 - Train: 70.99% [5750/8100]  [213.0/300.0] [batch_t 0.244 (0.370)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.017 (0.019)]
+2024-05-26 16:08:27,319 - ==> Total time: 0:38:26	 Eta: 0:15:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:37,741 - ==> Total time: 0:38:36	 Eta: 0:15:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:47,104 - Train: 71.60% [5800/8100]  [214.8/300.0] [batch_t 0.244 (0.386)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.019)]
+2024-05-26 16:08:48,698 - ==> Total time: 0:38:47	 Eta: 0:15:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:08:59,230 - ==> Total time: 0:38:58	 Eta: 0:15:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:09:06,981 - Train: 72.22% [5850/8100]  [216.7/300.0] [batch_t 0.244 (0.394)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.021 (0.020)]
+2024-05-26 16:09:09,838 - ==> Total time: 0:39:08	 Eta: 0:14:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:09:20,773 - ==> Total time: 0:39:19	 Eta: 0:14:47 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:09:27,006 - Train: 72.84% [5900/8100]  [218.5/300.0] [batch_t 0.244 (0.401)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.021)]
+2024-05-26 16:09:31,134 - ==> Total time: 0:39:30	 Eta: 0:14:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:09:41,678 - ==> Total time: 0:39:40	 Eta: 0:14:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:09:46,675 - Train: 73.46% [5950/8100]  [220.4/300.0] [batch_t 0.243 (0.433)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.021 (0.018)]
+2024-05-26 16:09:52,172 - ==> Total time: 0:39:51	 Eta: 0:14:14 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:02,670 - ==> Total time: 0:40:01	 Eta: 0:14:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:06,658 - Train: 74.07% [6000/8100]  [222.2/300.0] [batch_t 0.245 (0.516)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.022 (0.023)]
+2024-05-26 16:10:13,483 - ==> Total time: 0:40:12	 Eta: 0:13:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:23,863 - ==> Total time: 0:40:22	 Eta: 0:13:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:26,272 - Train: 74.69% [6050/8100]  [224.1/300.0] [batch_t 0.244 (0.905)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.018 (0.018)]
+2024-05-26 16:10:34,310 - ==> Total time: 0:40:33	 Eta: 0:13:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:44,291 - Train: 75.31% [6100/8100]  [225.9/300.0] [batch_t 0.557 (0.376)] [data_t 0.316] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.022)]
+2024-05-26 16:10:44,781 - ==> Total time: 0:40:43	 Eta: 0:13:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:10:55,360 - ==> Total time: 0:40:54	 Eta: 0:13:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:04,165 - Train: 75.93% [6150/8100]  [227.8/300.0] [batch_t 0.569 (0.392)] [data_t 0.327] [optim_t 0.242] [lr 0.005000] [total 0.012 (0.019)]
+2024-05-26 16:11:05,974 - ==> Total time: 0:41:04	 Eta: 0:12:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:16,693 - ==> Total time: 0:41:15	 Eta: 0:12:47 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:24,086 - Train: 76.54% [6200/8100]  [229.6/300.0] [batch_t 0.591 (0.400)] [data_t 0.350] [optim_t 0.241] [lr 0.005000] [total 0.018 (0.020)]
+2024-05-26 16:11:27,183 - ==> Total time: 0:41:26	 Eta: 0:12:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:37,855 - ==> Total time: 0:41:36	 Eta: 0:12:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:44,214 - Train: 77.16% [6250/8100]  [231.5/300.0] [batch_t 0.612 (0.429)] [data_t 0.370] [optim_t 0.242] [lr 0.005000] [total 0.016 (0.019)]
+2024-05-26 16:11:48,646 - ==> Total time: 0:41:47	 Eta: 0:12:14 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:11:59,375 - ==> Total time: 0:41:58	 Eta: 0:12:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:12:04,112 - Train: 77.78% [6300/8100]  [233.3/300.0] [batch_t 0.578 (0.463)] [data_t 0.338] [optim_t 0.241] [lr 0.005000] [total 0.015 (0.019)]
+2024-05-26 16:12:09,859 - ==> Total time: 0:42:08	 Eta: 0:11:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:12:20,771 - ==> Total time: 0:42:19	 Eta: 0:11:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:12:24,332 - Train: 78.40% [6350/8100]  [235.2/300.0] [batch_t 0.598 (0.579)] [data_t 0.355] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.019)]
+2024-05-26 16:12:31,382 - ==> Total time: 0:42:30	 Eta: 0:11:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:12:41,950 - ==> Total time: 0:42:40	 Eta: 0:11:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:12:44,134 - Train: 79.01% [6400/8100]  [237.0/300.0] [batch_t 1.604 (1.604)] [data_t 1.361] [optim_t 0.243] [lr 0.005000] [total 0.022 (0.022)]
+2024-05-26 16:12:52,645 - ==> Total time: 0:42:51	 Eta: 0:11:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:13:02,103 - Train: 79.63% [6450/8100]  [238.9/300.0] [batch_t 0.244 (0.368)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.017 (0.018)]
+2024-05-26 16:13:03,162 - ==> Total time: 0:43:02	 Eta: 0:10:59 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:13:17,694 - Test: 100.00% [15/15] [batch_t 0.021 (0.257)]
+2024-05-26 16:13:18,244 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.046 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.127 (mF1_max_px)	  0.129 (mIoU_max_px)	
+2024-05-26 16:13:18,747 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.044 (mAcc_px_0.2_0.8_0.1)	  0.043 (mIoU_px_0.2_0.8_0.1)	  0.123 (mF1_max_px)	  0.124 (mIoU_max_px)	
+2024-05-26 16:13:19,125 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.034 (mF1_px_0.2_0.8_0.1)	  0.033 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mF1_max_px)	  0.092 (mIoU_max_px)	
+2024-05-26 16:13:19,388 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.025 (mF1_px_0.2_0.8_0.1)	  0.024 (mAcc_px_0.2_0.8_0.1)	  0.024 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.065 (mIoU_max_px)	
+2024-05-26 16:13:20,020 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.055 (mF1_px_0.2_0.8_0.1)	  0.055 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.159 (mF1_max_px)	  0.158 (mIoU_max_px)	
+2024-05-26 16:13:20,676 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.058 (mF1_px_0.2_0.8_0.1)	  0.060 (mAcc_px_0.2_0.8_0.1)	  0.059 (mIoU_px_0.2_0.8_0.1)	  0.165 (mF1_max_px)	  0.166 (mIoU_max_px)	
+2024-05-26 16:13:20,680 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     93.750      |  93.883 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   94.622    | 95.364 (150 epoch) |   89.725    | 91.870 (90  epoch) |    95.265    | 95.304 (180 epoch)  |  5.974   | 6.454 (90  epoch)  |      90.323      |   91.089 (180 epoch)   |        11.071        |     11.558 (120 epoch)     |        31.615         |     51.651 (30  epoch)      |         5.884         |      6.158 (120 epoch)      |    14.582    | 15.741 (90  epoch) |     7.864     |  8.543 (90  epoch)  |
+| bracket_brown |     90.271      |  94.344 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   79.766    | 85.467 (150 epoch) |   75.307    | 81.237 (90  epoch) |    91.732    | 94.915 (180 epoch)  |  5.987   | 8.753 (90  epoch)  |      95.327      |   96.226 (120 epoch)   |        9.915         |     13.603 (90  epoch)     |        18.255         |     49.584 (60  epoch)      |         5.220         |      7.301 (90  epoch)      |    11.288    | 14.802 (90  epoch) |     5.981     |  7.993 (90  epoch)  |
+| bracket_white |     94.111      |  94.111 (240 epoch)   |  100.000   | 100.000 (30  epoch) |   92.606    | 96.612 (150 epoch) |   55.816    | 81.673 (150 epoch) |    92.288    | 92.288 (240 epoch)  |  0.865   | 1.550 (120 epoch)  |      91.803      |   92.308 (180 epoch)   |        1.906         |     3.157 (120 epoch)      |        35.564         |     45.730 (30  epoch)      |         0.962         |      1.605 (120 epoch)      |    2.133     | 4.059 (120 epoch)  |     1.078     |  2.071 (120 epoch)  |
+|   connector   |     90.238      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   89.768    | 92.227 (120 epoch) |   82.046    | 86.318 (120 epoch) |    77.500    | 81.736 (180 epoch)  |  29.379  | 36.339 (120 epoch) |      84.848      |   87.500 (90  epoch)   |        31.513        |     38.233 (120 epoch)     |        37.131         |     48.002 (90  epoch)      |        18.775         |     23.666 (120 epoch)      |    35.482    | 41.396 (120 epoch) |    21.567     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   97.121    | 97.121 (240 epoch) |   91.793    | 92.273 (120 epoch) |   100.000    | 100.000 (90  epoch) |  93.953  | 94.226 (180 epoch) |     100.000      |  100.000 (90  epoch)   |        86.393        |     86.452 (180 epoch)     |        83.277         |     83.376 (120 epoch)      |        76.068         |     76.163 (180 epoch)      |    87.567    | 87.698 (180 epoch) |    77.883     | 78.091 (180 epoch)  |
+|     tubes     |     81.069      |  83.469 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   95.846    | 96.956 (90  epoch) |   87.942    | 90.473 (90  epoch) |    91.395    | 91.861 (180 epoch)  |  38.857  | 45.409 (180 epoch) |      84.211      |   88.276 (120 epoch)   |        26.856        |     32.337 (180 epoch)     |        70.324         |     83.363 (120 epoch)      |        15.756         |     19.671 (180 epoch)      |    41.760    | 46.765 (180 epoch) |    26.390     | 30.518 (180 epoch)  |
+|      Avg      |     91.573      |  92.936 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   91.622    | 93.712 (150 epoch) |   80.438    | 86.000 (150 epoch) |    91.364    | 92.478 (180 epoch)  |  29.169  | 31.649 (120 epoch) |      91.085      |   92.079 (180 epoch)   |        27.942        |     28.784 (120 epoch)     |        46.028         |     53.453 (120 epoch)      |        20.444         |     20.905 (120 epoch)      |    32.135    | 34.337 (120 epoch) |    23.461     | 24.868 (120 epoch)  |
+2024-05-26 16:13:20,820 - ==> Total time: 0:43:19	 Eta: 0:10:49 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:13:28,989 - Train: 80.25% [6500/8100]  [240.7/300.0] [batch_t 0.244 (0.370)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.016 (0.018)]
+2024-05-26 16:13:31,327 - ==> Total time: 0:43:30	 Eta: 0:10:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:13:42,100 - ==> Total time: 0:43:41	 Eta: 0:10:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:13:48,962 - Train: 80.86% [6550/8100]  [242.6/300.0] [batch_t 0.244 (0.389)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.020 (0.019)]
+2024-05-26 16:13:52,597 - ==> Total time: 0:43:51	 Eta: 0:10:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:03,013 - ==> Total time: 0:44:01	 Eta: 0:10:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:09,189 - Train: 81.48% [6600/8100]  [244.4/300.0] [batch_t 0.245 (0.409)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.020 (0.020)]
+2024-05-26 16:14:14,091 - ==> Total time: 0:44:13	 Eta: 0:09:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:24,638 - ==> Total time: 0:44:23	 Eta: 0:09:44 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:28,758 - Train: 82.10% [6650/8100]  [246.3/300.0] [batch_t 0.244 (0.444)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.021 (0.016)]
+2024-05-26 16:14:34,917 - ==> Total time: 0:44:33	 Eta: 0:09:33 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:45,410 - ==> Total time: 0:44:44	 Eta: 0:09:22 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:14:48,259 - Train: 82.72% [6700/8100]  [248.1/300.0] [batch_t 0.245 (0.560)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.018 (0.016)]
+2024-05-26 16:14:55,776 - ==> Total time: 0:44:54	 Eta: 0:09:11 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:06,174 - Train: 83.33% [6750/8100]  [250.0/300.0] [batch_t 0.244 (0.364)] [data_t 0.002] [optim_t 0.241] [lr 0.000500] [total 0.018 (0.018)]
+2024-05-26 16:15:06,176 - ==> Total time: 0:45:05	 Eta: 0:09:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:16,760 - ==> Total time: 0:45:15	 Eta: 0:08:50 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:25,906 - Train: 83.95% [6800/8100]  [251.9/300.0] [batch_t 0.244 (0.369)] [data_t 0.002] [optim_t 0.242] [lr 0.000500] [total 0.023 (0.019)]
+2024-05-26 16:15:27,184 - ==> Total time: 0:45:26	 Eta: 0:08:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:37,610 - ==> Total time: 0:45:36	 Eta: 0:08:28 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:45,511 - Train: 84.57% [6850/8100]  [253.7/300.0] [batch_t 0.246 (0.384)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.011 (0.018)]
+2024-05-26 16:15:48,131 - ==> Total time: 0:45:47	 Eta: 0:08:17 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:15:58,557 - ==> Total time: 0:45:57	 Eta: 0:08:06 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:16:05,254 - Train: 85.19% [6900/8100]  [255.6/300.0] [batch_t 0.245 (0.395)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.025 (0.020)]
+2024-05-26 16:16:09,154 - ==> Total time: 0:46:08	 Eta: 0:07:55 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:16:19,700 - ==> Total time: 0:46:18	 Eta: 0:07:44 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:16:25,143 - Train: 85.80% [6950/8100]  [257.4/300.0] [batch_t 0.244 (0.426)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.016 (0.019)]
+2024-05-26 16:16:30,394 - ==> Total time: 0:46:29	 Eta: 0:07:34 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:16:40,863 - ==> Total time: 0:46:39	 Eta: 0:07:23 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:16:44,703 - Train: 86.42% [7000/8100]  [259.3/300.0] [batch_t 0.245 (0.471)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.019 (0.016)]
+2024-05-26 16:16:51,230 - ==> Total time: 0:46:50	 Eta: 0:07:12 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:02,008 - ==> Total time: 0:47:00	 Eta: 0:07:01 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:05,152 - Train: 87.04% [7050/8100]  [261.1/300.0] [batch_t 0.245 (0.680)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.021 (0.019)]
+2024-05-26 16:17:12,905 - ==> Total time: 0:47:11	 Eta: 0:06:50 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:23,231 - Train: 87.65% [7100/8100]  [263.0/300.0] [batch_t 0.244 (0.374)] [data_t 0.002] [optim_t 0.241] [lr 0.000500] [total 0.016 (0.018)]
+2024-05-26 16:17:23,480 - ==> Total time: 0:47:22	 Eta: 0:06:39 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:34,127 - ==> Total time: 0:47:33	 Eta: 0:06:29 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:43,180 - Train: 88.27% [7150/8100]  [264.8/300.0] [batch_t 0.245 (0.384)] [data_t 0.002] [optim_t 0.242] [lr 0.000500] [total 0.017 (0.019)]
+2024-05-26 16:17:44,744 - ==> Total time: 0:47:43	 Eta: 0:06:18 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:17:55,381 - ==> Total time: 0:47:54	 Eta: 0:06:07 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:18:03,022 - Train: 88.89% [7200/8100]  [266.7/300.0] [batch_t 0.244 (0.385)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.019 (0.018)]
+2024-05-26 16:18:05,837 - ==> Total time: 0:48:04	 Eta: 0:05:56 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:18:16,330 - ==> Total time: 0:48:15	 Eta: 0:05:45 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:18:22,857 - Train: 89.51% [7250/8100]  [268.5/300.0] [batch_t 0.245 (0.422)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.018 (0.018)]
+2024-05-26 16:18:27,026 - ==> Total time: 0:48:26	 Eta: 0:05:34 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:18:41,757 - Test: 100.00% [15/15] [batch_t 0.022 (0.258)]
+2024-05-26 16:18:42,323 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.045 (mF1_px_0.2_0.8_0.1)	  0.047 (mAcc_px_0.2_0.8_0.1)	  0.046 (mIoU_px_0.2_0.8_0.1)	  0.131 (mF1_max_px)	  0.132 (mIoU_max_px)	
+2024-05-26 16:18:42,847 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.046 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.125 (mF1_max_px)	  0.129 (mIoU_max_px)	
+2024-05-26 16:18:43,232 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.092 (mF1_max_px)	  0.093 (mIoU_max_px)	
+2024-05-26 16:18:43,499 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.025 (mIoU_px_0.2_0.8_0.1)	  0.065 (mF1_max_px)	  0.066 (mIoU_max_px)	
+2024-05-26 16:18:44,163 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.058 (mAcc_px_0.2_0.8_0.1)	  0.060 (mIoU_px_0.2_0.8_0.1)	  0.167 (mF1_max_px)	  0.166 (mIoU_max_px)	
+2024-05-26 16:18:44,852 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.060 (mF1_px_0.2_0.8_0.1)	  0.061 (mAcc_px_0.2_0.8_0.1)	  0.061 (mIoU_px_0.2_0.8_0.1)	  0.174 (mF1_max_px)	  0.174 (mIoU_max_px)	
+2024-05-26 16:18:44,858 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     89.694      |  93.883 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   83.275    | 95.364 (150 epoch) |   76.289    | 91.870 (90  epoch) |    92.571    | 95.304 (180 epoch)  |  5.016   | 6.454 (90  epoch)  |      89.524      |   91.089 (180 epoch)   |        7.276         |     11.558 (120 epoch)     |        11.699         |     51.651 (30  epoch)      |         3.850         |      6.158 (120 epoch)      |    13.980    | 15.741 (90  epoch) |     7.515     |  8.543 (90  epoch)  |
+| bracket_brown |     95.852      |  95.852 (270 epoch)   |  100.000   | 100.000 (30  epoch) |   70.231    | 85.467 (150 epoch) |   55.101    | 81.237 (90  epoch) |    97.410    | 97.410 (270 epoch)  |  3.872   | 8.753 (90  epoch)  |      96.226      |   96.226 (120 epoch)   |        6.213         |     13.603 (90  epoch)     |         8.326         |     49.584 (60  epoch)      |         3.208         |      7.301 (90  epoch)      |    6.950     | 14.802 (90  epoch) |     3.600     |  7.993 (90  epoch)  |
+| bracket_white |     97.667      |  97.667 (270 epoch)   |  100.000   | 100.000 (30  epoch) |   92.025    | 96.612 (150 epoch) |   52.722    | 81.673 (150 epoch) |    97.665    | 97.665 (270 epoch)  |  1.366   | 1.550 (120 epoch)  |      93.548      |   93.548 (270 epoch)   |        3.080         |     3.157 (120 epoch)      |        24.017         |     45.730 (30  epoch)      |         1.566         |      1.605 (120 epoch)      |    4.076     | 4.076 (270 epoch)  |     2.080     |  2.080 (270 epoch)  |
+|   connector   |     90.000      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   85.811    | 92.227 (120 epoch) |   75.748    | 86.318 (120 epoch) |    77.277    | 81.736 (180 epoch)  |  31.924  | 36.339 (120 epoch) |      80.000      |   87.500 (90  epoch)   |        24.946        |     38.233 (120 epoch)     |        19.822         |     48.002 (90  epoch)      |        14.512         |     23.666 (120 epoch)      |    37.120    | 41.396 (120 epoch) |    22.790     | 26.101 (120 epoch)  |
+|  metal_plate  |     99.837      |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   96.503    | 97.121 (240 epoch) |   90.328    | 92.273 (120 epoch) |    99.943    | 100.000 (90  epoch) |  93.796  | 94.226 (180 epoch) |      99.291      |  100.000 (90  epoch)   |        85.618        |     86.452 (180 epoch)     |        80.556         |     83.376 (120 epoch)      |        74.884         |     76.163 (180 epoch)      |    86.973    | 87.698 (180 epoch) |    76.949     | 78.091 (180 epoch)  |
+|     tubes     |     81.024      |  83.469 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   96.017    | 96.956 (90  epoch) |   88.847    | 90.473 (90  epoch) |    90.889    | 91.861 (180 epoch)  |  43.715  | 45.409 (180 epoch) |      84.211      |   88.276 (120 epoch)   |        31.018        |     32.337 (180 epoch)     |        70.024         |     83.363 (120 epoch)      |        18.628         |     19.671 (180 epoch)      |    45.243    | 46.765 (180 epoch) |    29.235     | 30.518 (180 epoch)  |
+|      Avg      |     92.346      |  92.936 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   87.310    | 93.712 (150 epoch) |   73.173    | 86.000 (150 epoch) |    92.626    | 92.626 (270 epoch)  |  29.948  | 31.649 (120 epoch) |      90.467      |   92.079 (180 epoch)   |        26.358        |     28.784 (120 epoch)     |        35.741         |     53.453 (120 epoch)      |        19.441         |     20.905 (120 epoch)      |    32.390    | 34.337 (120 epoch) |    23.695     | 24.868 (120 epoch)  |
+2024-05-26 16:18:44,977 - ==> Total time: 0:48:43	 Eta: 0:05:24 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:18:50,241 - Train: 90.12% [7300/8100]  [270.4/300.0] [batch_t 0.245 (0.444)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.012 (0.017)]
+2024-05-26 16:18:55,763 - ==> Total time: 0:48:54	 Eta: 0:05:14 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:06,291 - ==> Total time: 0:49:05	 Eta: 0:05:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:10,008 - Train: 90.74% [7350/8100]  [272.2/300.0] [batch_t 0.245 (0.518)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.015 (0.017)]
+2024-05-26 16:19:16,780 - ==> Total time: 0:49:15	 Eta: 0:04:52 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:27,257 - ==> Total time: 0:49:26	 Eta: 0:04:41 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:29,697 - Train: 91.36% [7400/8100]  [274.1/300.0] [batch_t 0.245 (0.920)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.013 (0.018)]
+2024-05-26 16:19:37,783 - ==> Total time: 0:49:36	 Eta: 0:04:30 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:47,784 - Train: 91.98% [7450/8100]  [275.9/300.0] [batch_t 0.555 (0.376)] [data_t 0.313] [optim_t 0.242] [lr 0.000500] [total 0.021 (0.017)]
+2024-05-26 16:19:48,276 - ==> Total time: 0:49:47	 Eta: 0:04:19 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:19:58,765 - ==> Total time: 0:49:57	 Eta: 0:04:08 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:20:07,549 - Train: 92.59% [7500/8100]  [277.8/300.0] [batch_t 0.554 (0.386)] [data_t 0.313] [optim_t 0.241] [lr 0.000500] [total 0.015 (0.018)]
+2024-05-26 16:20:09,344 - ==> Total time: 0:50:08	 Eta: 0:03:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:20:19,836 - ==> Total time: 0:50:18	 Eta: 0:03:47 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:20:27,257 - Train: 93.21% [7550/8100]  [279.6/300.0] [batch_t 0.577 (0.397)] [data_t 0.335] [optim_t 0.242] [lr 0.000500] [total 0.016 (0.017)]
+2024-05-26 16:20:30,342 - ==> Total time: 0:50:29	 Eta: 0:03:36 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:20:40,858 - ==> Total time: 0:50:39	 Eta: 0:03:25 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:20:46,925 - Train: 93.83% [7600/8100]  [281.5/300.0] [batch_t 0.567 (0.421)] [data_t 0.325] [optim_t 0.242] [lr 0.000500] [total 0.015 (0.017)]
+2024-05-26 16:20:51,336 - ==> Total time: 0:50:50	 Eta: 0:03:14 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:01,981 - ==> Total time: 0:51:00	 Eta: 0:03:03 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:07,568 - Train: 94.44% [7650/8100]  [283.3/300.0] [batch_t 0.565 (0.458)] [data_t 0.322] [optim_t 0.242] [lr 0.000500] [total 0.017 (0.019)]
+2024-05-26 16:21:13,314 - ==> Total time: 0:51:12	 Eta: 0:02:53 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:23,795 - ==> Total time: 0:51:22	 Eta: 0:02:42 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:27,280 - Train: 95.06% [7700/8100]  [285.2/300.0] [batch_t 0.561 (0.565)] [data_t 0.319] [optim_t 0.242] [lr 0.000500] [total 0.017 (0.018)]
+2024-05-26 16:21:34,311 - ==> Total time: 0:51:33	 Eta: 0:02:31 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:44,758 - ==> Total time: 0:51:43	 Eta: 0:02:20 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:21:46,869 - Train: 95.68% [7750/8100]  [287.0/300.0] [batch_t 1.541 (1.541)] [data_t 1.299] [optim_t 0.242] [lr 0.000500] [total 0.017 (0.017)]
+2024-05-26 16:21:55,095 - ==> Total time: 0:51:54	 Eta: 0:02:09 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:04,566 - Train: 96.30% [7800/8100]  [288.9/300.0] [batch_t 0.244 (0.367)] [data_t 0.002] [optim_t 0.242] [lr 0.000500] [total 0.016 (0.017)]
+2024-05-26 16:22:05,603 - ==> Total time: 0:52:04	 Eta: 0:01:58 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:16,170 - ==> Total time: 0:52:15	 Eta: 0:01:48 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:24,330 - Train: 96.91% [7850/8100]  [290.7/300.0] [batch_t 0.245 (0.377)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.019 (0.019)]
+2024-05-26 16:22:26,703 - ==> Total time: 0:52:25	 Eta: 0:01:37 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:37,232 - ==> Total time: 0:52:36	 Eta: 0:01:26 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:43,934 - Train: 97.53% [7900/8100]  [292.6/300.0] [batch_t 0.245 (0.384)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.019 (0.017)]
+2024-05-26 16:22:47,599 - ==> Total time: 0:52:46	 Eta: 0:01:15 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:22:58,021 - ==> Total time: 0:52:56	 Eta: 0:01:04 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:23:03,498 - Train: 98.15% [7950/8100]  [294.4/300.0] [batch_t 0.247 (0.408)] [data_t 0.003] [optim_t 0.244] [lr 0.000500] [total 0.019 (0.019)]
+2024-05-26 16:23:08,441 - ==> Total time: 0:53:07	 Eta: 0:00:54 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:23:18,953 - ==> Total time: 0:53:17	 Eta: 0:00:43 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:23:23,109 - Train: 98.77% [8000/8100]  [296.3/300.0] [batch_t 0.246 (0.447)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.016 (0.017)]
+2024-05-26 16:23:29,391 - ==> Total time: 0:53:28	 Eta: 0:00:32 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:23:39,864 - ==> Total time: 0:53:38	 Eta: 0:00:21 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:23:42,708 - Train: 99.38% [8050/8100]  [298.1/300.0] [batch_t 0.247 (0.557)] [data_t 0.003] [optim_t 0.244] [lr 0.000500] [total 0.024 (0.023)]
+2024-05-26 16:23:50,253 - ==> Total time: 0:53:49	 Eta: 0:00:10 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:24:00,586 - Train: 100.00% [8100/8100]  [300.0/300.0] [batch_t 0.244 (0.361)] [data_t 0.002] [optim_t 0.241] [lr 0.000500] [total 0.016 (0.017)]
+2024-05-26 16:24:04,500 - Test: 100.00% [15/15] [batch_t 0.021 (0.254)]
+2024-05-26 16:24:05,051 - ==> Metric Time for bracket_black  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.047 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.045 (mIoU_px_0.2_0.8_0.1)	  0.128 (mF1_max_px)	  0.127 (mIoU_max_px)	
+2024-05-26 16:24:05,560 - ==> Metric Time for bracket_brown  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.043 (mF1_px_0.2_0.8_0.1)	  0.045 (mAcc_px_0.2_0.8_0.1)	  0.044 (mIoU_px_0.2_0.8_0.1)	  0.124 (mF1_max_px)	  0.127 (mIoU_max_px)	
+2024-05-26 16:24:05,939 - ==> Metric Time for bracket_white  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.033 (mF1_px_0.2_0.8_0.1)	  0.034 (mAcc_px_0.2_0.8_0.1)	  0.033 (mIoU_px_0.2_0.8_0.1)	  0.093 (mF1_max_px)	  0.091 (mIoU_max_px)	
+2024-05-26 16:24:06,201 - ==> Metric Time for connector      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.024 (mF1_px_0.2_0.8_0.1)	  0.023 (mAcc_px_0.2_0.8_0.1)	  0.023 (mIoU_px_0.2_0.8_0.1)	  0.066 (mF1_max_px)	  0.065 (mIoU_max_px)	
+2024-05-26 16:24:06,848 - ==> Metric Time for metal_plate    :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.056 (mF1_px_0.2_0.8_0.1)	  0.056 (mAcc_px_0.2_0.8_0.1)	  0.056 (mIoU_px_0.2_0.8_0.1)	  0.165 (mF1_max_px)	  0.164 (mIoU_max_px)	
+2024-05-26 16:24:07,510 - ==> Metric Time for tubes          :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.059 (mF1_px_0.2_0.8_0.1)	  0.059 (mAcc_px_0.2_0.8_0.1)	  0.058 (mIoU_px_0.2_0.8_0.1)	  0.168 (mF1_max_px)	  0.170 (mIoU_max_px)	
+2024-05-26 16:24:07,515 - 
+|     Name      |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:-------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+| bracket_black |     92.886      |  93.883 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   91.914    | 95.364 (150 epoch) |   87.591    | 91.870 (90  epoch) |    95.006    | 95.304 (180 epoch)  |  5.989   | 6.454 (90  epoch)  |      91.262      |   91.262 (300 epoch)   |        10.966        |     11.558 (120 epoch)     |        23.988         |     51.651 (30  epoch)      |         5.838         |      6.158 (120 epoch)      |    14.165    | 15.741 (90  epoch) |     7.622     |  8.543 (90  epoch)  |
+| bracket_brown |     91.403      |  95.852 (270 epoch)   |  100.000   | 100.000 (30  epoch) |   78.856    | 85.467 (150 epoch) |   66.934    | 81.237 (90  epoch) |    92.422    | 97.410 (270 epoch)  |  5.115   | 8.753 (90  epoch)  |      96.154      |   96.226 (120 epoch)   |        8.143         |     13.603 (90  epoch)     |        15.155         |     49.584 (60  epoch)      |         4.245         |      7.301 (90  epoch)      |    8.764     | 14.802 (90  epoch) |     4.583     |  7.993 (90  epoch)  |
+| bracket_white |     96.333      |  97.667 (270 epoch)   |  100.000   | 100.000 (30  epoch) |   91.604    | 96.612 (150 epoch) |   52.636    | 81.673 (150 epoch) |    93.538    | 97.665 (270 epoch)  |  0.852   | 1.550 (120 epoch)  |      94.915      |   94.915 (300 epoch)   |        1.787         |     3.157 (120 epoch)      |        28.939         |     45.730 (30  epoch)      |         0.902         |      1.605 (120 epoch)      |    2.156     | 4.076 (270 epoch)  |     1.090     |  2.080 (270 epoch)  |
+|   connector   |     90.714      |  92.619 (90  epoch)   |  100.000   | 100.000 (30  epoch) |   89.112    | 92.227 (120 epoch) |   81.187    | 86.318 (120 epoch) |    77.336    | 81.736 (180 epoch)  |  31.447  | 36.339 (120 epoch) |      87.500      |   87.500 (90  epoch)   |        30.882        |     38.233 (120 epoch)     |        31.251         |     48.002 (90  epoch)      |        18.451         |     23.666 (120 epoch)      |    38.326    | 41.396 (120 epoch) |    23.706     | 26.101 (120 epoch)  |
+|  metal_plate  |     100.000     |  100.000 (90  epoch)  |  100.000   | 100.000 (30  epoch) |   96.873    | 97.121 (240 epoch) |   91.436    | 92.273 (120 epoch) |   100.000    | 100.000 (300 epoch) |  93.788  | 94.226 (180 epoch) |     100.000      |  100.000 (90  epoch)   |        86.211        |     86.452 (180 epoch)     |        83.089         |     83.376 (120 epoch)      |        75.777         |     76.163 (180 epoch)      |    87.163    | 87.698 (180 epoch) |    77.248     | 78.091 (180 epoch)  |
+|     tubes     |     83.967      |  83.967 (300 epoch)   |  100.000   | 100.000 (30  epoch) |   96.541    | 96.956 (90  epoch) |   89.903    | 90.473 (90  epoch) |    92.266    | 92.266 (300 epoch)  |  46.309  | 46.309 (300 epoch) |      87.218      |   88.276 (120 epoch)   |        31.130        |     32.337 (180 epoch)     |        73.256         |     83.363 (120 epoch)      |        18.786         |     19.671 (180 epoch)      |    46.682    | 46.765 (180 epoch) |    30.448     | 30.518 (180 epoch)  |
+|      Avg      |     92.551      |  92.936 (180 epoch)   |  100.000   | 100.000 (30  epoch) |   90.817    | 93.712 (150 epoch) |   78.281    | 86.000 (150 epoch) |    91.761    | 92.626 (270 epoch)  |  30.583  | 31.649 (120 epoch) |      92.842      |   92.842 (300 epoch)   |        28.186        |     28.784 (120 epoch)     |        42.613         |     53.453 (120 epoch)      |        20.667         |     20.905 (120 epoch)      |    32.876    | 34.337 (120 epoch) |    24.116     | 24.868 (120 epoch)  |
+2024-05-26 16:24:07,626 - ==> Total time: 0:54:06	 Eta: 0:00:00 	Logged in 'runs/benchmark/destseg_256_300e/mpdd/DeSTSegTrainer_configs_benchmark_destseg_256_300e_20240526-153001'
+2024-05-26 16:24:08,555 - finish training

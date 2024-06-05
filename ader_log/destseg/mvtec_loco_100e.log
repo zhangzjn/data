@@ -1,0 +1,762 @@
+2024-05-24 02:32:58,204 - ==> Logging on master GPU: 0
+2024-05-24 02:32:58,204 - ==> Running Trainer: DeSTSegTrainer
+2024-05-24 02:32:58,204 - ==> Using GPU: [0] for Training
+2024-05-24 02:32:58,205 - ==> Building model
+2024-05-24 02:32:58,359 - Loaded  from checkpoint 'model/pretrain/resnet18-5c106cde.pth'
+2024-05-24 02:33:00,904 - 
+------------------------------------ DESTSEG ------------------------------------
+| module                                                       | #parameters or shape   | #flops       |
+|:-------------------------------------------------------------|:-----------------------|:-------------|
+| model                                                        | 35.154M                | 30.673G      |
+|  net_t                                                       |  2.783M                |  3.676G      |
+|   net_t.conv1                                                |   9.408K               |   0.308G     |
+|    net_t.conv1.weight                                        |    (64, 3, 7, 7)       |              |
+|   net_t.bn1                                                  |   0.128K               |   4.194M     |
+|    net_t.bn1.weight                                          |    (64,)               |              |
+|    net_t.bn1.bias                                            |    (64,)               |              |
+|   net_t.layer1                                               |   0.148M               |   1.212G     |
+|    net_t.layer1.0                                            |    73.984K             |    0.606G    |
+|     net_t.layer1.0.conv1                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.0.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.0.bn1                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.0.bn1.weight                               |      (64,)             |              |
+|      net_t.layer1.0.bn1.bias                                 |      (64,)             |              |
+|     net_t.layer1.0.conv2                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.0.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.0.bn2                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.0.bn2.weight                               |      (64,)             |              |
+|      net_t.layer1.0.bn2.bias                                 |      (64,)             |              |
+|    net_t.layer1.1                                            |    73.984K             |    0.606G    |
+|     net_t.layer1.1.conv1                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.1.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.1.bn1                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.1.bn1.weight                               |      (64,)             |              |
+|      net_t.layer1.1.bn1.bias                                 |      (64,)             |              |
+|     net_t.layer1.1.conv2                                     |     36.864K            |     0.302G   |
+|      net_t.layer1.1.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_t.layer1.1.bn2                                       |     0.128K             |     1.049M   |
+|      net_t.layer1.1.bn2.weight                               |      (64,)             |              |
+|      net_t.layer1.1.bn2.bias                                 |      (64,)             |              |
+|   net_t.layer2                                               |   0.526M               |   1.076G     |
+|    net_t.layer2.0                                            |    0.23M               |    0.471G    |
+|     net_t.layer2.0.conv1                                     |     73.728K            |     0.151G   |
+|      net_t.layer2.0.conv1.weight                             |      (128, 64, 3, 3)   |              |
+|     net_t.layer2.0.bn1                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.0.bn1.weight                               |      (128,)            |              |
+|      net_t.layer2.0.bn1.bias                                 |      (128,)            |              |
+|     net_t.layer2.0.conv2                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.0.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.0.bn2                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.0.bn2.weight                               |      (128,)            |              |
+|      net_t.layer2.0.bn2.bias                                 |      (128,)            |              |
+|     net_t.layer2.0.downsample                                |     8.448K             |     17.302M  |
+|      net_t.layer2.0.downsample.0                             |      8.192K            |      16.777M |
+|      net_t.layer2.0.downsample.1                             |      0.256K            |      0.524M  |
+|    net_t.layer2.1                                            |    0.295M              |    0.605G    |
+|     net_t.layer2.1.conv1                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.1.conv1.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.1.bn1                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.1.bn1.weight                               |      (128,)            |              |
+|      net_t.layer2.1.bn1.bias                                 |      (128,)            |              |
+|     net_t.layer2.1.conv2                                     |     0.147M             |     0.302G   |
+|      net_t.layer2.1.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_t.layer2.1.bn2                                       |     0.256K             |     0.524M   |
+|      net_t.layer2.1.bn2.weight                               |      (128,)            |              |
+|      net_t.layer2.1.bn2.bias                                 |      (128,)            |              |
+|   net_t.layer3                                               |   2.1M                 |   1.075G     |
+|    net_t.layer3.0                                            |    0.919M              |    0.471G    |
+|     net_t.layer3.0.conv1                                     |     0.295M             |     0.151G   |
+|      net_t.layer3.0.conv1.weight                             |      (256, 128, 3, 3)  |              |
+|     net_t.layer3.0.bn1                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.0.bn1.weight                               |      (256,)            |              |
+|      net_t.layer3.0.bn1.bias                                 |      (256,)            |              |
+|     net_t.layer3.0.conv2                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.0.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.0.bn2                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.0.bn2.weight                               |      (256,)            |              |
+|      net_t.layer3.0.bn2.bias                                 |      (256,)            |              |
+|     net_t.layer3.0.downsample                                |     33.28K             |     17.039M  |
+|      net_t.layer3.0.downsample.0                             |      32.768K           |      16.777M |
+|      net_t.layer3.0.downsample.1                             |      0.512K            |      0.262M  |
+|    net_t.layer3.1                                            |    1.181M              |    0.605G    |
+|     net_t.layer3.1.conv1                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.1.conv1.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.1.bn1                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.1.bn1.weight                               |      (256,)            |              |
+|      net_t.layer3.1.bn1.bias                                 |      (256,)            |              |
+|     net_t.layer3.1.conv2                                     |     0.59M              |     0.302G   |
+|      net_t.layer3.1.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_t.layer3.1.bn2                                       |     0.512K             |     0.262M   |
+|      net_t.layer3.1.bn2.weight                               |      (256,)            |              |
+|      net_t.layer3.1.bn2.bias                                 |      (256,)            |              |
+|  net_s                                                       |  11.177M               |  2.375G      |
+|   net_s.conv1                                                |   9.408K               |   0.154G     |
+|    net_s.conv1.weight                                        |    (64, 3, 7, 7)       |              |
+|   net_s.bn1                                                  |   0.128K               |   2.097M     |
+|    net_s.bn1.weight                                          |    (64,)               |              |
+|    net_s.bn1.bias                                            |    (64,)               |              |
+|   net_s.layer1                                               |   0.148M               |   0.606G     |
+|    net_s.layer1.0                                            |    73.984K             |    0.303G    |
+|     net_s.layer1.0.conv1                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.0.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.0.bn1                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.0.bn1.weight                               |      (64,)             |              |
+|      net_s.layer1.0.bn1.bias                                 |      (64,)             |              |
+|     net_s.layer1.0.conv2                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.0.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.0.bn2                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.0.bn2.weight                               |      (64,)             |              |
+|      net_s.layer1.0.bn2.bias                                 |      (64,)             |              |
+|    net_s.layer1.1                                            |    73.984K             |    0.303G    |
+|     net_s.layer1.1.conv1                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.1.conv1.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.1.bn1                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.1.bn1.weight                               |      (64,)             |              |
+|      net_s.layer1.1.bn1.bias                                 |      (64,)             |              |
+|     net_s.layer1.1.conv2                                     |     36.864K            |     0.151G   |
+|      net_s.layer1.1.conv2.weight                             |      (64, 64, 3, 3)    |              |
+|     net_s.layer1.1.bn2                                       |     0.128K             |     0.524M   |
+|      net_s.layer1.1.bn2.weight                               |      (64,)             |              |
+|      net_s.layer1.1.bn2.bias                                 |      (64,)             |              |
+|   net_s.layer2                                               |   0.526M               |   0.538G     |
+|    net_s.layer2.0                                            |    0.23M               |    0.236G    |
+|     net_s.layer2.0.conv1                                     |     73.728K            |     75.497M  |
+|      net_s.layer2.0.conv1.weight                             |      (128, 64, 3, 3)   |              |
+|     net_s.layer2.0.bn1                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.0.bn1.weight                               |      (128,)            |              |
+|      net_s.layer2.0.bn1.bias                                 |      (128,)            |              |
+|     net_s.layer2.0.conv2                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.0.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.0.bn2                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.0.bn2.weight                               |      (128,)            |              |
+|      net_s.layer2.0.bn2.bias                                 |      (128,)            |              |
+|     net_s.layer2.0.downsample                                |     8.448K             |     8.651M   |
+|      net_s.layer2.0.downsample.0                             |      8.192K            |      8.389M  |
+|      net_s.layer2.0.downsample.1                             |      0.256K            |      0.262M  |
+|    net_s.layer2.1                                            |    0.295M              |    0.303G    |
+|     net_s.layer2.1.conv1                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.1.conv1.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.1.bn1                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.1.bn1.weight                               |      (128,)            |              |
+|      net_s.layer2.1.bn1.bias                                 |      (128,)            |              |
+|     net_s.layer2.1.conv2                                     |     0.147M             |     0.151G   |
+|      net_s.layer2.1.conv2.weight                             |      (128, 128, 3, 3)  |              |
+|     net_s.layer2.1.bn2                                       |     0.256K             |     0.262M   |
+|      net_s.layer2.1.bn2.weight                               |      (128,)            |              |
+|      net_s.layer2.1.bn2.bias                                 |      (128,)            |              |
+|   net_s.layer3                                               |   2.1M                 |   0.538G     |
+|    net_s.layer3.0                                            |    0.919M              |    0.235G    |
+|     net_s.layer3.0.conv1                                     |     0.295M             |     75.497M  |
+|      net_s.layer3.0.conv1.weight                             |      (256, 128, 3, 3)  |              |
+|     net_s.layer3.0.bn1                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.0.bn1.weight                               |      (256,)            |              |
+|      net_s.layer3.0.bn1.bias                                 |      (256,)            |              |
+|     net_s.layer3.0.conv2                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.0.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.0.bn2                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.0.bn2.weight                               |      (256,)            |              |
+|      net_s.layer3.0.bn2.bias                                 |      (256,)            |              |
+|     net_s.layer3.0.downsample                                |     33.28K             |     8.52M    |
+|      net_s.layer3.0.downsample.0                             |      32.768K           |      8.389M  |
+|      net_s.layer3.0.downsample.1                             |      0.512K            |      0.131M  |
+|    net_s.layer3.1                                            |    1.181M              |    0.302G    |
+|     net_s.layer3.1.conv1                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.1.conv1.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.1.bn1                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.1.bn1.weight                               |      (256,)            |              |
+|      net_s.layer3.1.bn1.bias                                 |      (256,)            |              |
+|     net_s.layer3.1.conv2                                     |     0.59M              |     0.151G   |
+|      net_s.layer3.1.conv2.weight                             |      (256, 256, 3, 3)  |              |
+|     net_s.layer3.1.bn2                                       |     0.512K             |     0.131M   |
+|      net_s.layer3.1.bn2.weight                               |      (256,)            |              |
+|      net_s.layer3.1.bn2.bias                                 |      (256,)            |              |
+|   net_s.layer4                                               |   8.394M               |   0.537G     |
+|    net_s.layer4.0                                            |    3.673M              |    0.235G    |
+|     net_s.layer4.0.conv1                                     |     1.18M              |     75.497M  |
+|      net_s.layer4.0.conv1.weight                             |      (512, 256, 3, 3)  |              |
+|     net_s.layer4.0.bn1                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.0.bn1.weight                               |      (512,)            |              |
+|      net_s.layer4.0.bn1.bias                                 |      (512,)            |              |
+|     net_s.layer4.0.conv2                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.0.conv2.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.0.bn2                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.0.bn2.weight                               |      (512,)            |              |
+|      net_s.layer4.0.bn2.bias                                 |      (512,)            |              |
+|     net_s.layer4.0.downsample                                |     0.132M             |     8.454M   |
+|      net_s.layer4.0.downsample.0                             |      0.131M            |      8.389M  |
+|      net_s.layer4.0.downsample.1                             |      1.024K            |      65.536K |
+|    net_s.layer4.1                                            |    4.721M              |    0.302G    |
+|     net_s.layer4.1.conv1                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.1.conv1.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.1.bn1                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.1.bn1.weight                               |      (512,)            |              |
+|      net_s.layer4.1.bn1.bias                                 |      (512,)            |              |
+|     net_s.layer4.1.conv2                                     |     2.359M             |     0.151G   |
+|      net_s.layer4.1.conv2.weight                             |      (512, 512, 3, 3)  |              |
+|     net_s.layer4.1.bn2                                       |     1.024K             |     65.536K  |
+|      net_s.layer4.1.bn2.weight                               |      (512,)            |              |
+|      net_s.layer4.1.bn2.bias                                 |      (512,)            |              |
+|  destseg                                                     |  21.195M               |  24.622G     |
+|   destseg.student_net                                        |   13.489M              |   2.978G     |
+|    destseg.student_net.decoder_layer4                        |    9.441M              |    0.604G    |
+|     destseg.student_net.decoder_layer4.0                     |     4.721M             |     0.302G   |
+|      destseg.student_net.decoder_layer4.0.conv1              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.0.bn1                |      1.024K            |      65.536K |
+|      destseg.student_net.decoder_layer4.0.conv2              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.0.bn2                |      1.024K            |      65.536K |
+|     destseg.student_net.decoder_layer4.1                     |     4.721M             |     0.302G   |
+|      destseg.student_net.decoder_layer4.1.conv1              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.1.bn1                |      1.024K            |      65.536K |
+|      destseg.student_net.decoder_layer4.1.conv2              |      2.359M            |      0.151G  |
+|      destseg.student_net.decoder_layer4.1.bn2                |      1.024K            |      65.536K |
+|    destseg.student_net.decoder_layer3                        |    3.083M              |    0.789G    |
+|     destseg.student_net.decoder_layer3.0                     |     1.902M             |     0.487G   |
+|      destseg.student_net.decoder_layer3.0.conv1              |      1.18M             |      0.302G  |
+|      destseg.student_net.decoder_layer3.0.bn1                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.0.conv2              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.0.bn2                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.0.downsample         |      0.132M            |      33.686M |
+|     destseg.student_net.decoder_layer3.1                     |     1.181M             |     0.302G   |
+|      destseg.student_net.decoder_layer3.1.conv1              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.1.bn1                |      0.512K            |      0.131M  |
+|      destseg.student_net.decoder_layer3.1.conv2              |      0.59M             |      0.151G  |
+|      destseg.student_net.decoder_layer3.1.bn2                |      0.512K            |      0.131M  |
+|    destseg.student_net.decoder_layer2                        |    0.771M              |    0.79G     |
+|     destseg.student_net.decoder_layer2.0                     |     0.476M             |     0.487G   |
+|      destseg.student_net.decoder_layer2.0.conv1              |      0.295M            |      0.302G  |
+|      destseg.student_net.decoder_layer2.0.bn1                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.0.conv2              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.0.bn2                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.0.downsample         |      33.024K           |      33.817M |
+|     destseg.student_net.decoder_layer2.1                     |     0.295M             |     0.303G   |
+|      destseg.student_net.decoder_layer2.1.conv1              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.1.bn1                |      0.256K            |      0.262M  |
+|      destseg.student_net.decoder_layer2.1.conv2              |      0.147M            |      0.151G  |
+|      destseg.student_net.decoder_layer2.1.bn2                |      0.256K            |      0.262M  |
+|    destseg.student_net.decoder_layer1                        |    0.193M              |    0.791G    |
+|     destseg.student_net.decoder_layer1.0                     |     0.119M             |     0.488G   |
+|      destseg.student_net.decoder_layer1.0.conv1              |      73.728K           |      0.302G  |
+|      destseg.student_net.decoder_layer1.0.bn1                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.0.conv2              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.0.bn2                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.0.downsample         |      8.32K             |      34.079M |
+|     destseg.student_net.decoder_layer1.1                     |     73.984K            |     0.303G   |
+|      destseg.student_net.decoder_layer1.1.conv1              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.1.bn1                |      0.128K            |      0.524M  |
+|      destseg.student_net.decoder_layer1.1.conv2              |      36.864K           |      0.151G  |
+|      destseg.student_net.decoder_layer1.1.bn2                |      0.128K            |      0.524M  |
+|   destseg.segmentation_net                                   |   7.706M               |   21.636G    |
+|    destseg.segmentation_net.res                              |    2.919M              |    11.956G   |
+|     destseg.segmentation_net.res.0                           |     1.738M             |     7.12G    |
+|      destseg.segmentation_net.res.0.conv1                    |      1.032M            |      4.228G  |
+|      destseg.segmentation_net.res.0.bn1                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.0.conv2                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.0.bn2                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.0.downsample               |      0.115M            |      0.472G  |
+|     destseg.segmentation_net.res.1                           |     1.181M             |     4.836G   |
+|      destseg.segmentation_net.res.1.conv1                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.1.bn1                      |      0.512K            |      2.097M  |
+|      destseg.segmentation_net.res.1.conv2                    |      0.59M             |      2.416G  |
+|      destseg.segmentation_net.res.1.bn2                      |      0.512K            |      2.097M  |
+|    destseg.segmentation_net.head                             |    4.787M              |    9.68G     |
+|     destseg.segmentation_net.head.0                          |     4.197M             |     7.261G   |
+|      destseg.segmentation_net.head.0.aspp_feature_extractors |      1.837M            |      7.255G  |
+|      destseg.segmentation_net.head.0.aspp_fusion_layer       |      2.36M             |      2.097M  |
+|     destseg.segmentation_net.head.1                          |     0.59M              |     2.416G   |
+|      destseg.segmentation_net.head.1.weight                  |      (256, 256, 3, 3)  |              |
+|     destseg.segmentation_net.head.2                          |     0.512K             |     2.097M   |
+|      destseg.segmentation_net.head.2.weight                  |      (256,)            |              |
+|      destseg.segmentation_net.head.2.bias                    |      (256,)            |              |
+|     destseg.segmentation_net.head.4                          |     0.257K             |     1.049M   |
+|      destseg.segmentation_net.head.4.weight                  |      (1, 256, 1, 1)    |              |
+|      destseg.segmentation_net.head.4.bias                    |      (1,)              |              |
+---------------------------------------------------------------------------------
+2024-05-24 02:33:00,906 - ==> Creating optimizer
+2024-05-24 02:33:00,921 - ==> Loading dataset: DeSTSeg
+2024-05-24 02:33:00,952 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 100                                 
+metrics                              : ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'AUROC_sp', 'mAUROC_px', 'mAUPRO_px', 'mAP_sp_max', 'mAP_px', 'mF1_max_sp_max', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mF1_max_px', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100, 'use_adeval': True}
+optim.lr                             : 0.005                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0.5, 0.999)}
+optim.de_st.kwargs                   : {'name': 'sgd', 'momentum': 0.9, 'weight_decay': 0.0001, 'nesterov': False}
+trainer.name                         : DeSTSegTrainer                      
+trainer.checkpoint                   : runs/benchmark/destseg_256_100e/mvtec_loco
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 100                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 0.0001, 'warmup_lr': 1e-05, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 80, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 100                                 
+trainer.test_per_epoch               : 10                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 6500                                
+trainer.metric_recorder              : {'mAUROC_sp_max_breakfast_box': [], 'AUROC_sp_breakfast_box': [], 'mAUROC_px_breakfast_box': [], 'mAUPRO_px_breakfast_box': [], 'mAP_sp_max_breakfast_box': [], 'mAP_px_breakfast_box': [], 'mF1_max_sp_max_breakfast_box': [], 'mF1_px_0.2_0.8_0.1_breakfast_box': [], 'mAcc_px_0.2_0.8_0.1_breakfast_box': [], 'mIoU_px_0.2_0.8_0.1_breakfast_box': [], 'mF1_max_px_breakfast_box': [], 'mIoU_max_px_breakfast_box': [], 'mAUROC_sp_max_juice_bottle': [], 'AUROC_sp_juice_bottle': [], 'mAUROC_px_juice_bottle': [], 'mAUPRO_px_juice_bottle': [], 'mAP_sp_max_juice_bottle': [], 'mAP_px_juice_bottle': [], 'mF1_max_sp_max_juice_bottle': [], 'mF1_px_0.2_0.8_0.1_juice_bottle': [], 'mAcc_px_0.2_0.8_0.1_juice_bottle': [], 'mIoU_px_0.2_0.8_0.1_juice_bottle': [], 'mF1_max_px_juice_bottle': [], 'mIoU_max_px_juice_bottle': [], 'mAUROC_sp_max_pushpins': [], 'AUROC_sp_pushpins': [], 'mAUROC_px_pushpins': [], 'mAUPRO_px_pushpins': [], 'mAP_sp_max_pushpins': [], 'mAP_px_pushpins': [], 'mF1_max_sp_max_pushpins': [], 'mF1_px_0.2_0.8_0.1_pushpins': [], 'mAcc_px_0.2_0.8_0.1_pushpins': [], 'mIoU_px_0.2_0.8_0.1_pushpins': [], 'mF1_max_px_pushpins': [], 'mIoU_max_px_pushpins': [], 'mAUROC_sp_max_screw_bag': [], 'AUROC_sp_screw_bag': [], 'mAUROC_px_screw_bag': [], 'mAUPRO_px_screw_bag': [], 'mAP_sp_max_screw_bag': [], 'mAP_px_screw_bag': [], 'mF1_max_sp_max_screw_bag': [], 'mF1_px_0.2_0.8_0.1_screw_bag': [], 'mAcc_px_0.2_0.8_0.1_screw_bag': [], 'mIoU_px_0.2_0.8_0.1_screw_bag': [], 'mF1_max_px_screw_bag': [], 'mIoU_max_px_screw_bag': [], 'mAUROC_sp_max_splicing_connectors': [], 'mAUROC_sp_max_Avg': [], 'AUROC_sp_splicing_connectors': [], 'AUROC_sp_Avg': [], 'mAUROC_px_splicing_connectors': [], 'mAUROC_px_Avg': [], 'mAUPRO_px_splicing_connectors': [], 'mAUPRO_px_Avg': [], 'mAP_sp_max_splicing_connectors': [], 'mAP_sp_max_Avg': [], 'mAP_px_splicing_connectors': [], 'mAP_px_Avg': [], 'mF1_max_sp_max_splicing_connectors': [], 'mF1_max_sp_max_Avg': [], 'mF1_px_0.2_0.8_0.1_splicing_connectors': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_splicing_connectors': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_splicing_connectors': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mF1_max_px_splicing_connectors': [], 'mF1_max_px_Avg': [], 'mIoU_max_px_splicing_connectors': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L1Loss', 'name': 'l1', 'lam': 1.0}, {'type': 'CSUMLoss', 'name': 'csum', 'lam': 1.0}, {'type': 'FFocalLoss', 'name': 'ffocal', 'gamma': 4, 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'total', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DeSTSeg                             
+data.root                            : data/mvtec_loco                     
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.anomaly_source_path             : data/dtd/images/                    
+data.resize_shape                    : [256, 256]                          
+data.use_sample                      : False                               
+data.views                           : []                                  
+data.train_size                      : 65                                  
+data.test_size                       : 49                                  
+data.train_length                    : 2083                                
+data.test_length                     : 1568                                
+model_t.name                         : timm_resnet18                       
+model_t.kwargs                       : {'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet18-5c106cde.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_s.name                         : timm_resnet18                       
+model_s.kwargs                       : {'pretrained': False, 'checkpoint_path': None, 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]}
+model.name                           : destseg                             
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': '', 'strict': True, 'model_t': Namespace(name='timm_resnet18', kwargs={'pretrained': False, 'checkpoint_path': 'model/pretrain/resnet18-5c106cde.pth', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_s': Namespace(name='timm_resnet18', kwargs={'pretrained': False, 'checkpoint_path': None, 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3, 4]})}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 100                                 
+test_per_epoch                       : 10                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.01                                
+cfg_path                             : configs.benchmark.destseg_256_100e  
+mode                                 : train                               
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['trainer.checkpoint=runs/benchmark/destseg_256_100e/mvtec_loco', 'data.root=data/mvtec_loco']
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.benchmark.destseg_256_100e -m train --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 trainer.checkpoint=runs/benchmark/destseg_256_100e/mvtec_loco data.root=data/mvtec_loco
+task_start_time                      : 2817819.467264667                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258/show_train
+logdir_test                          : runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258/show_test
+2024-05-24 02:33:00,953 - ==> Starting training with 1 nodes x 1 GPUs
+2024-05-24 02:33:28,076 - Train: 0.77% [50/6500]  [0.8/100.0] [batch_t 1.318 (0.539)] [data_t 1.237] [optim_t 0.081] [lr 0.005000] [total 20.980 (28.572)]
+2024-05-24 02:33:33,739 - ==> Total time: 0:00:35	 Eta: 0:58:41 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:33:49,753 - Train: 1.54% [100/6500]  [1.5/100.0] [batch_t 0.084 (0.443)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 18.973 (18.933)]
+2024-05-24 02:34:03,320 - ==> Total time: 0:01:05	 Eta: 0:53:12 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:34:12,668 - Train: 2.31% [150/6500]  [2.3/100.0] [batch_t 0.084 (0.441)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 14.761 (15.842)]
+2024-05-24 02:34:32,808 - ==> Total time: 0:01:34	 Eta: 0:51:00 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:34:36,825 - Train: 3.08% [200/6500]  [3.1/100.0] [batch_t 1.514 (0.696)] [data_t 1.432] [optim_t 0.082] [lr 0.005000] [total 13.267 (13.773)]
+2024-05-24 02:34:57,689 - Train: 3.85% [250/6500]  [3.8/100.0] [batch_t 0.084 (0.417)] [data_t 0.003] [optim_t 0.081] [lr 0.005000] [total 12.453 (13.456)]
+2024-05-24 02:35:02,129 - ==> Total time: 0:02:03	 Eta: 0:49:35 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:35:21,684 - Train: 4.62% [300/6500]  [4.6/100.0] [batch_t 0.084 (0.438)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 11.950 (13.036)]
+2024-05-24 02:35:33,446 - ==> Total time: 0:02:35	 Eta: 0:49:10 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:35:46,101 - Train: 5.38% [350/6500]  [5.4/100.0] [batch_t 1.508 (0.485)] [data_t 1.426] [optim_t 0.082] [lr 0.005000] [total 11.468 (12.270)]
+2024-05-24 02:36:03,113 - ==> Total time: 0:03:04	 Eta: 0:48:17 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:36:09,933 - Train: 6.15% [400/6500]  [6.2/100.0] [batch_t 0.084 (0.545)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 12.272 (11.881)]
+2024-05-24 02:36:30,727 - Train: 6.92% [450/6500]  [6.9/100.0] [batch_t 0.084 (0.416)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 11.473 (11.608)]
+2024-05-24 02:36:33,595 - ==> Total time: 0:03:35	 Eta: 0:47:42 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:36:54,513 - Train: 7.69% [500/6500]  [7.7/100.0] [batch_t 1.078 (0.451)] [data_t 0.996] [optim_t 0.082] [lr 0.005000] [total 11.510 (11.733)]
+2024-05-24 02:37:03,102 - ==> Total time: 0:04:04	 Eta: 0:46:56 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:37:17,713 - Train: 8.46% [550/6500]  [8.5/100.0] [batch_t 0.090 (0.457)] [data_t 0.008] [optim_t 0.082] [lr 0.005000] [total 11.255 (11.185)]
+2024-05-24 02:37:33,096 - ==> Total time: 0:04:34	 Eta: 0:46:19 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:37:40,741 - Train: 9.23% [600/6500]  [9.2/100.0] [batch_t 0.085 (0.475)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 11.008 (11.108)]
+2024-05-24 02:38:02,956 - Train: 10.00% [650/6500]  [10.0/100.0] [batch_t 1.469 (0.444)] [data_t 1.387] [optim_t 0.082] [lr 0.005000] [total 11.265 (10.869)]
+2024-05-24 02:38:21,399 - Test: 100.00% [49/49] [batch_t 1.077 (0.364)]
+2024-05-24 02:38:23,534 - ==> Metric Time for breakfast_box  :   0.002 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.181 (mF1_px_0.2_0.8_0.1)	  0.173 (mAcc_px_0.2_0.8_0.1)	  0.173 (mIoU_px_0.2_0.8_0.1)	  0.491 (mF1_max_px)	  0.497 (mIoU_max_px)	
+2024-05-24 02:38:25,868 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.209 (mF1_px_0.2_0.8_0.1)	  0.199 (mAcc_px_0.2_0.8_0.1)	  0.195 (mIoU_px_0.2_0.8_0.1)	  0.570 (mF1_max_px)	  0.572 (mIoU_max_px)	
+2024-05-24 02:38:28,077 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.200 (mF1_px_0.2_0.8_0.1)	  0.195 (mAcc_px_0.2_0.8_0.1)	  0.193 (mIoU_px_0.2_0.8_0.1)	  0.563 (mF1_max_px)	  0.565 (mIoU_max_px)	
+2024-05-24 02:38:30,459 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.213 (mF1_px_0.2_0.8_0.1)	  0.204 (mAcc_px_0.2_0.8_0.1)	  0.201 (mIoU_px_0.2_0.8_0.1)	  0.588 (mF1_max_px)	  0.587 (mIoU_max_px)	
+2024-05-24 02:38:32,793 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.201 (mF1_px_0.2_0.8_0.1)	  0.197 (mAcc_px_0.2_0.8_0.1)	  0.195 (mIoU_px_0.2_0.8_0.1)	  0.564 (mF1_max_px)	  0.567 (mIoU_max_px)	
+2024-05-24 02:38:32,798 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |   mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:-----------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     44.653      |  44.653 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   52.390    | 52.390 (10  epoch) |   16.839    | 16.839 (10  epoch) |    58.142    | 58.142 (10  epoch) |  6.693   | 6.693 (10  epoch) |      77.232      |   77.232 (10  epoch)   |        8.400         |     8.400 (10  epoch)      |        46.883         |     46.883 (10  epoch)      |         4.461         |      4.461 (10  epoch)      |    13.200    | 13.200 (10  epoch) |     7.066     |  7.066 (10  epoch)  |
+|    juice_bottle     |     35.242      |  35.242 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   36.802    | 36.802 (10  epoch) |    6.788    | 6.788 (10  epoch)  |    64.709    | 64.709 (10  epoch) |  3.938   | 3.938 (10  epoch) |      83.392      |   83.392 (10  epoch)   |        6.201         |     6.201 (10  epoch)      |        47.182         |     47.182 (10  epoch)      |         3.230         |      3.230 (10  epoch)      |    10.069    | 10.069 (10  epoch) |     5.301     |  5.301 (10  epoch)  |
+|      pushpins       |     43.689      |  43.689 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   50.432    | 50.432 (10  epoch) |   10.827    | 10.827 (10  epoch) |    52.329    | 52.329 (10  epoch) |  0.885   | 0.885 (10  epoch) |      71.369      |   71.369 (10  epoch)   |        1.467         |     1.467 (10  epoch)      |        49.736         |     49.736 (10  epoch)      |         0.740         |      0.740 (10  epoch)      |    1.746     | 1.746 (10  epoch)  |     0.881     |  0.881 (10  epoch)  |
+|      screw_bag      |     45.817      |  45.817 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   53.394    | 53.394 (10  epoch) |   11.268    | 11.268 (10  epoch) |    62.232    | 62.232 (10  epoch) |  8.293   | 8.293 (10  epoch) |      78.214      |   78.214 (10  epoch)   |        10.258        |     10.258 (10  epoch)     |        49.158         |     49.158 (10  epoch)      |         5.481         |      5.481 (10  epoch)      |    13.864    | 13.864 (10  epoch) |     7.448     |  7.448 (10  epoch)  |
+| splicing_connectors |     45.903      |  45.903 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   48.501    | 48.501 (10  epoch) |   18.136    | 18.136 (10  epoch) |    60.311    | 60.311 (10  epoch) |  6.978   | 6.978 (10  epoch) |      76.436      |   76.436 (10  epoch)   |        9.023         |     9.023 (10  epoch)      |        44.866         |     44.866 (10  epoch)      |         4.808         |      4.808 (10  epoch)      |    14.076    | 14.076 (10  epoch) |     7.571     |  7.571 (10  epoch)  |
+|         Avg         |     43.061      |  43.061 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   48.304    | 48.304 (10  epoch) |   12.771    | 12.771 (10  epoch) |    59.544    | 59.544 (10  epoch) |  5.357   | 5.357 (10  epoch) |      77.329      |   77.329 (10  epoch)   |        7.070         |     7.070 (10  epoch)      |        47.565         |     47.565 (10  epoch)      |         3.744         |      3.744 (10  epoch)      |    10.591    | 10.591 (10  epoch) |     5.653     |  5.653 (10  epoch)  |
+2024-05-24 02:38:32,880 - ==> Total time: 0:05:34	 Eta: 0:50:12 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:38:55,350 - Train: 10.77% [700/6500]  [10.8/100.0] [batch_t 0.168 (0.435)] [data_t 0.086] [optim_t 0.082] [lr 0.005000] [total 11.048 (10.843)]
+2024-05-24 02:39:02,009 - ==> Total time: 0:06:03	 Eta: 0:49:03 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:39:19,373 - Train: 11.54% [750/6500]  [11.5/100.0] [batch_t 0.085 (0.442)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.221 (11.124)]
+2024-05-24 02:39:33,027 - ==> Total time: 0:06:34	 Eta: 0:48:15 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:39:42,456 - Train: 12.31% [800/6500]  [12.3/100.0] [batch_t 0.084 (0.440)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.407 (10.370)]
+2024-05-24 02:40:02,465 - ==> Total time: 0:07:04	 Eta: 0:47:19 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:40:07,340 - Train: 13.08% [850/6500]  [13.1/100.0] [batch_t 1.443 (0.687)] [data_t 1.362] [optim_t 0.081] [lr 0.005000] [total 10.062 (10.020)]
+2024-05-24 02:40:27,889 - Train: 13.85% [900/6500]  [13.8/100.0] [batch_t 0.084 (0.411)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.303 (10.364)]
+2024-05-24 02:40:32,936 - ==> Total time: 0:07:34	 Eta: 0:46:33 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:40:50,806 - Train: 14.62% [950/6500]  [14.6/100.0] [batch_t 0.084 (0.430)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.447 (10.193)]
+2024-05-24 02:41:02,503 - ==> Total time: 0:08:04	 Eta: 0:45:44 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:41:16,695 - Train: 15.38% [1000/6500]  [15.4/100.0] [batch_t 1.489 (0.485)] [data_t 1.407] [optim_t 0.082] [lr 0.005000] [total 10.230 (10.118)]
+2024-05-24 02:41:33,936 - ==> Total time: 0:08:35	 Eta: 0:45:07 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:41:40,080 - Train: 16.15% [1050/6500]  [16.2/100.0] [batch_t 0.084 (0.546)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.703 (10.071)]
+2024-05-24 02:42:00,645 - Train: 16.92% [1100/6500]  [16.9/100.0] [batch_t 0.084 (0.411)] [data_t 0.002] [optim_t 0.082] [lr 0.005000] [total 9.890 (10.016)]
+2024-05-24 02:42:03,764 - ==> Total time: 0:09:05	 Eta: 0:44:23 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:42:25,480 - Train: 17.69% [1150/6500]  [17.7/100.0] [batch_t 1.404 (0.456)] [data_t 1.322] [optim_t 0.082] [lr 0.005000] [total 9.880 (9.771)]
+2024-05-24 02:42:34,309 - ==> Total time: 0:09:36	 Eta: 0:43:44 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:42:48,882 - Train: 18.46% [1200/6500]  [18.5/100.0] [batch_t 0.084 (0.461)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.274 (9.955)]
+2024-05-24 02:43:04,024 - ==> Total time: 0:10:05	 Eta: 0:43:02 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:43:12,321 - Train: 19.23% [1250/6500]  [19.2/100.0] [batch_t 0.084 (0.467)] [data_t 0.003] [optim_t 0.082] [lr 0.005000] [total 10.027 (9.802)]
+2024-05-24 02:43:34,063 - Train: 20.00% [1300/6500]  [20.0/100.0] [batch_t 1.160 (0.435)] [data_t 1.079] [optim_t 0.081] [lr 0.005000] [total 9.366 (9.732)]
+2024-05-24 02:43:51,938 - Test: 100.00% [49/49] [batch_t 1.074 (0.362)]
+2024-05-24 02:43:53,968 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.173 (mF1_px_0.2_0.8_0.1)	  0.171 (mAcc_px_0.2_0.8_0.1)	  0.169 (mIoU_px_0.2_0.8_0.1)	  0.492 (mF1_max_px)	  0.491 (mIoU_max_px)	
+2024-05-24 02:43:56,322 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.211 (mF1_px_0.2_0.8_0.1)	  0.207 (mAcc_px_0.2_0.8_0.1)	  0.204 (mIoU_px_0.2_0.8_0.1)	  0.597 (mF1_max_px)	  0.594 (mIoU_max_px)	
+2024-05-24 02:43:58,500 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.196 (mF1_px_0.2_0.8_0.1)	  0.194 (mAcc_px_0.2_0.8_0.1)	  0.191 (mIoU_px_0.2_0.8_0.1)	  0.556 (mF1_max_px)	  0.557 (mIoU_max_px)	
+2024-05-24 02:44:00,846 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.210 (mF1_px_0.2_0.8_0.1)	  0.205 (mAcc_px_0.2_0.8_0.1)	  0.204 (mIoU_px_0.2_0.8_0.1)	  0.582 (mF1_max_px)	  0.583 (mIoU_max_px)	
+2024-05-24 02:44:03,149 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.197 (mF1_px_0.2_0.8_0.1)	  0.194 (mAcc_px_0.2_0.8_0.1)	  0.192 (mIoU_px_0.2_0.8_0.1)	  0.563 (mF1_max_px)	  0.568 (mIoU_max_px)	
+2024-05-24 02:44:03,155 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |   mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:-----------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     46.407      |  46.407 (20  epoch)   |  100.000   | 100.000 (10  epoch) |   51.599    | 52.390 (10  epoch) |   16.395    | 16.839 (10  epoch) |    59.966    | 59.966 (20  epoch) |  6.567   | 6.693 (10  epoch) |      77.232      |   77.232 (10  epoch)   |        8.348         |     8.400 (10  epoch)      |        46.778         |     46.883 (10  epoch)      |         4.431         |      4.461 (10  epoch)      |    13.045    | 13.200 (10  epoch) |     6.978     |  7.066 (10  epoch)  |
+|    juice_bottle     |     37.103      |  37.103 (20  epoch)   |  100.000   | 100.000 (10  epoch) |   36.178    | 36.802 (10  epoch) |    6.320    | 6.788 (10  epoch)  |    65.523    | 65.523 (20  epoch) |  3.872   | 3.938 (10  epoch) |      83.392      |   83.392 (10  epoch)   |        6.256         |     6.256 (20  epoch)      |        48.503         |     48.503 (20  epoch)      |         3.259         |      3.259 (20  epoch)      |    10.069    | 10.069 (20  epoch) |     5.301     |  5.301 (20  epoch)  |
+|      pushpins       |     42.804      |  43.689 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   51.123    | 51.123 (20  epoch) |   11.392    | 11.392 (20  epoch) |    50.786    | 52.329 (10  epoch) |  0.901   | 0.901 (20  epoch) |      71.518      |   71.518 (20  epoch)   |        1.438         |     1.467 (10  epoch)      |        49.193         |     49.736 (10  epoch)      |         0.725         |      0.740 (10  epoch)      |    1.795     | 1.795 (20  epoch)  |     0.906     |  0.906 (20  epoch)  |
+|      screw_bag      |     45.653      |  45.817 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   53.858    | 53.858 (20  epoch) |   12.134    | 12.134 (20  epoch) |    64.523    | 64.523 (20  epoch) |  8.581   | 8.581 (20  epoch) |      78.214      |   78.214 (10  epoch)   |        10.707        |     10.707 (20  epoch)     |        51.624         |     51.624 (20  epoch)      |         5.724         |      5.724 (20  epoch)      |    13.967    | 13.967 (20  epoch) |     7.508     |  7.508 (20  epoch)  |
+| splicing_connectors |     45.509      |  45.903 (10  epoch)   |  100.000   | 100.000 (10  epoch) |   48.562    | 48.562 (20  epoch) |   18.687    | 18.687 (20  epoch) |    59.453    | 60.311 (10  epoch) |  7.050   | 7.050 (20  epoch) |      76.436      |   76.436 (10  epoch)   |        9.054         |     9.054 (20  epoch)      |        45.208         |     45.208 (20  epoch)      |         4.825         |      4.825 (20  epoch)      |    14.066    | 14.076 (10  epoch) |     7.565     |  7.571 (10  epoch)  |
+|         Avg         |     43.495      |  43.495 (20  epoch)   |  100.000   | 100.000 (10  epoch) |   48.264    | 48.304 (10  epoch) |   12.986    | 12.986 (20  epoch) |    60.050    | 60.050 (20  epoch) |  5.394   | 5.394 (20  epoch) |      77.358      |   77.358 (20  epoch)   |        7.161         |     7.161 (20  epoch)      |        48.261         |     48.261 (20  epoch)      |         3.793         |      3.793 (20  epoch)      |    10.588    | 10.591 (10  epoch) |     5.652     |  5.653 (10  epoch)  |
+2024-05-24 02:44:03,264 - ==> Total time: 0:11:05	 Eta: 0:44:20 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:44:30,771 - Train: 20.77% [1350/6500]  [20.8/100.0] [batch_t 0.859 (0.526)] [data_t 0.618] [optim_t 0.241] [lr 0.005000] [total 0.136 (0.195)]
+2024-05-24 02:44:36,699 - ==> Total time: 0:11:38	 Eta: 0:43:47 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:44:53,434 - Train: 21.54% [1400/6500]  [21.5/100.0] [batch_t 0.243 (0.458)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.108 (0.103)]
+2024-05-24 02:45:06,638 - ==> Total time: 0:12:08	 Eta: 0:43:02 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:45:17,169 - Train: 22.31% [1450/6500]  [22.3/100.0] [batch_t 0.245 (0.486)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.090 (0.092)]
+2024-05-24 02:45:36,632 - ==> Total time: 0:12:38	 Eta: 0:42:19 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:45:41,033 - Train: 23.08% [1500/6500]  [23.1/100.0] [batch_t 0.894 (0.709)] [data_t 0.651] [optim_t 0.242] [lr 0.005000] [total 0.079 (0.078)]
+2024-05-24 02:46:01,933 - Train: 23.85% [1550/6500]  [23.8/100.0] [batch_t 0.244 (0.418)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.086 (0.078)]
+2024-05-24 02:46:06,421 - ==> Total time: 0:13:08	 Eta: 0:41:36 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:46:25,136 - Train: 24.62% [1600/6500]  [24.6/100.0] [batch_t 0.244 (0.451)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.083 (0.079)]
+2024-05-24 02:46:36,644 - ==> Total time: 0:13:38	 Eta: 0:40:55 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:46:49,515 - Train: 25.38% [1650/6500]  [25.4/100.0] [batch_t 1.011 (0.485)] [data_t 0.769] [optim_t 0.241] [lr 0.005000] [total 0.063 (0.070)]
+2024-05-24 02:47:07,071 - ==> Total time: 0:14:08	 Eta: 0:40:16 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:47:13,249 - Train: 26.15% [1700/6500]  [26.2/100.0] [batch_t 0.244 (0.549)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.066 (0.063)]
+2024-05-24 02:47:34,012 - Train: 26.92% [1750/6500]  [26.9/100.0] [batch_t 0.243 (0.415)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.071 (0.068)]
+2024-05-24 02:47:36,749 - ==> Total time: 0:14:38	 Eta: 0:39:35 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:47:57,813 - Train: 27.69% [1800/6500]  [27.7/100.0] [batch_t 0.967 (0.452)] [data_t 0.724] [optim_t 0.242] [lr 0.005000] [total 0.054 (0.064)]
+2024-05-24 02:48:06,192 - ==> Total time: 0:15:08	 Eta: 0:38:54 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:48:21,026 - Train: 28.46% [1850/6500]  [28.5/100.0] [batch_t 0.244 (0.471)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.067 (0.066)]
+2024-05-24 02:48:36,287 - ==> Total time: 0:15:38	 Eta: 0:38:16 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:48:44,757 - Train: 29.23% [1900/6500]  [29.2/100.0] [batch_t 0.245 (0.517)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.073 (0.063)]
+2024-05-24 02:49:06,180 - Train: 30.00% [1950/6500]  [30.0/100.0] [batch_t 0.657 (0.428)] [data_t 0.415] [optim_t 0.242] [lr 0.005000] [total 0.063 (0.060)]
+2024-05-24 02:49:24,352 - Test: 100.00% [49/49] [batch_t 1.073 (0.363)]
+2024-05-24 02:49:26,455 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.179 (mF1_px_0.2_0.8_0.1)	  0.175 (mAcc_px_0.2_0.8_0.1)	  0.173 (mIoU_px_0.2_0.8_0.1)	  0.502 (mF1_max_px)	  0.498 (mIoU_max_px)	
+2024-05-24 02:49:28,907 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.219 (mF1_px_0.2_0.8_0.1)	  0.213 (mAcc_px_0.2_0.8_0.1)	  0.211 (mIoU_px_0.2_0.8_0.1)	  0.625 (mF1_max_px)	  0.616 (mIoU_max_px)	
+2024-05-24 02:49:31,163 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.203 (mF1_px_0.2_0.8_0.1)	  0.200 (mAcc_px_0.2_0.8_0.1)	  0.201 (mIoU_px_0.2_0.8_0.1)	  0.579 (mF1_max_px)	  0.575 (mIoU_max_px)	
+2024-05-24 02:49:33,579 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.217 (mF1_px_0.2_0.8_0.1)	  0.211 (mAcc_px_0.2_0.8_0.1)	  0.208 (mIoU_px_0.2_0.8_0.1)	  0.599 (mF1_max_px)	  0.596 (mIoU_max_px)	
+2024-05-24 02:49:35,906 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.206 (mF1_px_0.2_0.8_0.1)	  0.197 (mAcc_px_0.2_0.8_0.1)	  0.194 (mIoU_px_0.2_0.8_0.1)	  0.569 (mF1_max_px)	  0.571 (mIoU_max_px)	
+2024-05-24 02:49:35,911 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     75.031      |  75.031 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   79.137    | 79.137 (30  epoch) |   71.348    | 71.348 (30  epoch) |    86.751    | 86.751 (30  epoch) |  56.032  | 56.032 (30  epoch) |      78.104      |   78.104 (30  epoch)   |        48.951        |     48.951 (30  epoch)     |        35.391         |     46.883 (10  epoch)      |        32.541         |     32.541 (30  epoch)      |    53.754    | 53.754 (30  epoch) |    36.756     | 36.756 (30  epoch)  |
+|    juice_bottle     |     98.558      |  98.558 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   77.679    | 77.679 (30  epoch) |   79.506    | 79.506 (30  epoch) |    99.492    | 99.492 (30  epoch) |  55.752  | 55.752 (30  epoch) |      96.774      |   96.774 (30  epoch)   |        39.564        |     39.564 (30  epoch)     |        27.500         |     48.503 (20  epoch)      |        25.129         |     25.129 (30  epoch)      |    55.349    | 55.349 (30  epoch) |    38.264     | 38.264 (30  epoch)  |
+|      pushpins       |     67.926      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   55.453    | 55.453 (30  epoch) |   55.799    | 55.799 (30  epoch) |    78.123    | 78.123 (30  epoch) |  4.669   | 4.669 (30  epoch)  |      71.399      |   71.518 (20  epoch)   |        8.142         |     8.142 (30  epoch)      |         5.603         |     49.736 (10  epoch)      |         4.258         |      4.258 (30  epoch)      |    10.537    | 10.537 (30  epoch) |     5.561     |  5.561 (30  epoch)  |
+|      screw_bag      |     70.016      |  70.016 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   50.369    | 53.858 (20  epoch) |   53.882    | 53.882 (30  epoch) |    81.944    | 81.944 (30  epoch) |  8.521   | 8.581 (20  epoch)  |      78.777      |   78.777 (30  epoch)   |        2.837         |     10.707 (20  epoch)     |         1.554         |     51.624 (20  epoch)      |         1.442         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     75.243      |  75.243 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   60.524    | 60.524 (30  epoch) |   41.344    | 41.344 (30  epoch) |    85.810    | 85.810 (30  epoch) |  18.668  | 18.668 (30  epoch) |      76.587      |   76.587 (30  epoch)   |        10.369        |     10.369 (30  epoch)     |         6.095         |     45.208 (20  epoch)      |         5.536         |      5.536 (30  epoch)      |    19.612    | 19.612 (30  epoch) |    10.872     | 10.872 (30  epoch)  |
+|         Avg         |     77.355      |  77.355 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   64.633    | 64.633 (30  epoch) |   60.376    | 60.376 (30  epoch) |    86.424    | 86.424 (30  epoch) |  28.728  | 28.728 (30  epoch) |      80.328      |   80.328 (30  epoch)   |        21.973        |     21.973 (30  epoch)     |        15.229         |     48.261 (20  epoch)      |        13.781         |     13.781 (30  epoch)      |    30.578    | 30.578 (30  epoch) |    19.754     | 19.754 (30  epoch)  |
+2024-05-24 02:49:36,071 - ==> Total time: 0:16:37	 Eta: 0:38:48 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:50:00,150 - Train: 30.77% [2000/6500]  [30.8/100.0] [batch_t 0.244 (0.462)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.061 (0.058)]
+2024-05-24 02:50:06,748 - ==> Total time: 0:17:08	 Eta: 0:38:09 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:50:23,653 - Train: 31.54% [2050/6500]  [31.5/100.0] [batch_t 0.244 (0.461)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.069 (0.056)]
+2024-05-24 02:50:36,732 - ==> Total time: 0:17:38	 Eta: 0:37:29 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:50:46,918 - Train: 32.31% [2100/6500]  [32.3/100.0] [batch_t 0.245 (0.475)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.054 (0.060)]
+2024-05-24 02:51:07,081 - ==> Total time: 0:18:08	 Eta: 0:36:50 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:51:11,434 - Train: 33.08% [2150/6500]  [33.1/100.0] [batch_t 0.890 (0.691)] [data_t 0.649] [optim_t 0.241] [lr 0.005000] [total 0.050 (0.055)]
+2024-05-24 02:51:32,246 - Train: 33.85% [2200/6500]  [33.8/100.0] [batch_t 0.246 (0.416)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.058 (0.055)]
+2024-05-24 02:51:36,815 - ==> Total time: 0:18:38	 Eta: 0:36:11 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:51:55,690 - Train: 34.62% [2250/6500]  [34.6/100.0] [batch_t 0.245 (0.455)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.061 (0.055)]
+2024-05-24 02:52:07,132 - ==> Total time: 0:19:08	 Eta: 0:35:33 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:52:20,184 - Train: 35.38% [2300/6500]  [35.4/100.0] [batch_t 1.011 (0.485)] [data_t 0.770] [optim_t 0.241] [lr 0.005000] [total 0.062 (0.054)]
+2024-05-24 02:52:37,058 - ==> Total time: 0:19:38	 Eta: 0:34:55 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:52:43,336 - Train: 36.15% [2350/6500]  [36.2/100.0] [batch_t 0.244 (0.555)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.041 (0.052)]
+2024-05-24 02:53:04,482 - Train: 36.92% [2400/6500]  [36.9/100.0] [batch_t 0.244 (0.423)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.049 (0.053)]
+2024-05-24 02:53:07,197 - ==> Total time: 0:20:09	 Eta: 0:34:18 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:53:28,675 - Train: 37.69% [2450/6500]  [37.7/100.0] [batch_t 1.007 (0.461)] [data_t 0.766] [optim_t 0.241] [lr 0.005000] [total 0.045 (0.050)]
+2024-05-24 02:53:37,329 - ==> Total time: 0:20:39	 Eta: 0:33:41 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:53:52,359 - Train: 38.46% [2500/6500]  [38.5/100.0] [batch_t 0.244 (0.474)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.046 (0.052)]
+2024-05-24 02:54:07,892 - ==> Total time: 0:21:09	 Eta: 0:33:05 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:54:16,242 - Train: 39.23% [2550/6500]  [39.2/100.0] [batch_t 0.244 (0.499)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.059 (0.050)]
+2024-05-24 02:54:37,595 - Train: 40.00% [2600/6500]  [40.0/100.0] [batch_t 0.907 (0.427)] [data_t 0.665] [optim_t 0.241] [lr 0.005000] [total 0.052 (0.048)]
+2024-05-24 02:54:55,536 - Test: 100.00% [49/49] [batch_t 1.068 (0.363)]
+2024-05-24 02:54:57,545 - ==> Metric Time for breakfast_box  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.170 (mF1_px_0.2_0.8_0.1)	  0.168 (mAcc_px_0.2_0.8_0.1)	  0.168 (mIoU_px_0.2_0.8_0.1)	  0.489 (mF1_max_px)	  0.485 (mIoU_max_px)	
+2024-05-24 02:54:59,851 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.209 (mF1_px_0.2_0.8_0.1)	  0.203 (mAcc_px_0.2_0.8_0.1)	  0.202 (mIoU_px_0.2_0.8_0.1)	  0.590 (mF1_max_px)	  0.581 (mIoU_max_px)	
+2024-05-24 02:55:01,987 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.195 (mF1_px_0.2_0.8_0.1)	  0.191 (mAcc_px_0.2_0.8_0.1)	  0.188 (mIoU_px_0.2_0.8_0.1)	  0.553 (mF1_max_px)	  0.544 (mIoU_max_px)	
+2024-05-24 02:55:04,345 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.217 (mF1_px_0.2_0.8_0.1)	  0.207 (mAcc_px_0.2_0.8_0.1)	  0.206 (mIoU_px_0.2_0.8_0.1)	  0.595 (mF1_max_px)	  0.591 (mIoU_max_px)	
+2024-05-24 02:55:06,580 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.197 (mF1_px_0.2_0.8_0.1)	  0.190 (mAcc_px_0.2_0.8_0.1)	  0.189 (mIoU_px_0.2_0.8_0.1)	  0.546 (mF1_max_px)	  0.546 (mIoU_max_px)	
+2024-05-24 02:55:06,584 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     80.177      |  80.177 (40  epoch)   |  100.000   | 100.000 (10  epoch) |   81.593    | 81.593 (40  epoch) |   73.591    | 73.591 (40  epoch) |    89.509    | 89.509 (40  epoch) |  59.849  | 59.849 (40  epoch) |      79.576      |   79.576 (40  epoch)   |        52.999        |     52.999 (40  epoch)     |        39.782         |     46.883 (10  epoch)      |        36.149         |     36.149 (40  epoch)      |    57.063    | 57.063 (40  epoch) |    39.922     | 39.922 (40  epoch)  |
+|    juice_bottle     |     98.147      |  98.558 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   77.862    | 77.862 (40  epoch) |   76.857    | 79.506 (30  epoch) |    99.363    | 99.492 (30  epoch) |  56.065  | 56.065 (40  epoch) |      96.312      |   96.774 (30  epoch)   |        41.989        |     41.989 (40  epoch)     |        29.863         |     48.503 (20  epoch)      |        26.952         |     26.952 (40  epoch)      |    56.853    | 56.853 (40  epoch) |    39.716     | 39.716 (40  epoch)  |
+|      pushpins       |     66.376      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   55.943    | 55.943 (40  epoch) |   58.494    | 58.494 (40  epoch) |    76.740    | 78.123 (30  epoch) |  4.898   | 4.898 (40  epoch)  |      71.816      |   71.816 (40  epoch)   |        8.286         |     8.286 (40  epoch)      |         5.912         |     49.736 (10  epoch)      |         4.332         |      4.332 (40  epoch)      |    10.110    | 10.537 (30  epoch) |     5.324     |  5.561 (30  epoch)  |
+|      screw_bag      |     72.749      |  72.749 (40  epoch)   |  100.000   | 100.000 (10  epoch) |   54.506    | 54.506 (40  epoch) |   48.504    | 53.882 (30  epoch) |    83.643    | 83.643 (40  epoch) |  9.717   | 9.717 (40  epoch)  |      79.310      |   79.310 (40  epoch)   |        4.806         |     10.707 (20  epoch)     |         3.268         |     51.624 (20  epoch)      |         2.476         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     73.706      |  75.243 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   55.659    | 60.524 (30  epoch) |   32.024    | 41.344 (30  epoch) |    86.099    | 86.099 (40  epoch) |  24.869  | 24.869 (40  epoch) |      76.436      |   76.587 (30  epoch)   |        9.436         |     10.369 (30  epoch)     |         5.047         |     45.208 (20  epoch)      |         4.969         |      5.536 (30  epoch)      |    17.463    | 19.612 (30  epoch) |     9.567     | 10.872 (30  epoch)  |
+|         Avg         |     78.231      |  78.231 (40  epoch)   |  100.000   | 100.000 (10  epoch) |   65.113    | 65.113 (40  epoch) |   57.894    | 60.376 (30  epoch) |    87.071    | 87.071 (40  epoch) |  31.080  | 31.080 (40  epoch) |      80.690      |   80.690 (40  epoch)   |        23.503        |     23.503 (40  epoch)     |        16.775         |     48.261 (20  epoch)      |        14.976         |     14.976 (40  epoch)      |    31.025    | 31.025 (40  epoch) |    20.369     | 20.369 (40  epoch)  |
+2024-05-24 02:55:06,736 - ==> Total time: 0:22:08	 Eta: 0:33:12 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:55:30,127 - Train: 40.77% [2650/6500]  [40.8/100.0] [batch_t 0.244 (0.449)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.046 (0.049)]
+2024-05-24 02:55:36,710 - ==> Total time: 0:22:38	 Eta: 0:32:34 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:55:53,423 - Train: 41.54% [2700/6500]  [41.5/100.0] [batch_t 0.245 (0.455)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.049 (0.048)]
+2024-05-24 02:56:06,651 - ==> Total time: 0:23:08	 Eta: 0:31:57 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:56:16,907 - Train: 42.31% [2750/6500]  [42.3/100.0] [batch_t 0.245 (0.477)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.039 (0.048)]
+2024-05-24 02:56:36,702 - ==> Total time: 0:23:38	 Eta: 0:31:20 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:56:41,018 - Train: 43.08% [2800/6500]  [43.1/100.0] [batch_t 0.942 (0.717)] [data_t 0.701] [optim_t 0.241] [lr 0.005000] [total 0.042 (0.044)]
+2024-05-24 02:57:02,173 - Train: 43.85% [2850/6500]  [43.8/100.0] [batch_t 0.245 (0.423)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.046 (0.047)]
+2024-05-24 02:57:06,828 - ==> Total time: 0:24:08	 Eta: 0:30:43 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:57:26,019 - Train: 44.62% [2900/6500]  [44.6/100.0] [batch_t 0.244 (0.453)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.037 (0.045)]
+2024-05-24 02:57:37,444 - ==> Total time: 0:24:39	 Eta: 0:30:08 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:57:50,471 - Train: 45.38% [2950/6500]  [45.4/100.0] [batch_t 0.977 (0.492)] [data_t 0.736] [optim_t 0.241] [lr 0.005000] [total 0.038 (0.046)]
+2024-05-24 02:58:07,655 - ==> Total time: 0:25:09	 Eta: 0:29:32 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:58:13,981 - Train: 46.15% [3000/6500]  [46.2/100.0] [batch_t 0.244 (0.553)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.042 (0.041)]
+2024-05-24 02:58:35,196 - Train: 46.92% [3050/6500]  [46.9/100.0] [batch_t 0.243 (0.424)] [data_t 0.002] [optim_t 0.240] [lr 0.005000] [total 0.056 (0.048)]
+2024-05-24 02:58:37,843 - ==> Total time: 0:25:39	 Eta: 0:28:56 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:58:59,108 - Train: 47.69% [3100/6500]  [47.7/100.0] [batch_t 0.870 (0.452)] [data_t 0.629] [optim_t 0.241] [lr 0.005000] [total 0.044 (0.046)]
+2024-05-24 02:59:07,713 - ==> Total time: 0:26:09	 Eta: 0:28:20 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:59:22,878 - Train: 48.46% [3150/6500]  [48.5/100.0] [batch_t 0.245 (0.481)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.042 (0.045)]
+2024-05-24 02:59:38,227 - ==> Total time: 0:26:40	 Eta: 0:27:45 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 02:59:46,353 - Train: 49.23% [3200/6500]  [49.2/100.0] [batch_t 0.244 (0.493)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.042 (0.044)]
+2024-05-24 03:00:08,226 - Train: 50.00% [3250/6500]  [50.0/100.0] [batch_t 0.937 (0.437)] [data_t 0.696] [optim_t 0.241] [lr 0.005000] [total 0.039 (0.044)]
+2024-05-24 03:00:26,182 - Test: 100.00% [49/49] [batch_t 1.122 (0.362)]
+2024-05-24 03:00:28,284 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.187 (mF1_px_0.2_0.8_0.1)	  0.182 (mAcc_px_0.2_0.8_0.1)	  0.174 (mIoU_px_0.2_0.8_0.1)	  0.504 (mF1_max_px)	  0.506 (mIoU_max_px)	
+2024-05-24 03:00:30,710 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.218 (mF1_px_0.2_0.8_0.1)	  0.216 (mAcc_px_0.2_0.8_0.1)	  0.210 (mIoU_px_0.2_0.8_0.1)	  0.612 (mF1_max_px)	  0.625 (mIoU_max_px)	
+2024-05-24 03:00:32,939 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.206 (mF1_px_0.2_0.8_0.1)	  0.202 (mAcc_px_0.2_0.8_0.1)	  0.200 (mIoU_px_0.2_0.8_0.1)	  0.561 (mF1_max_px)	  0.574 (mIoU_max_px)	
+2024-05-24 03:00:35,372 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.230 (mF1_px_0.2_0.8_0.1)	  0.210 (mAcc_px_0.2_0.8_0.1)	  0.204 (mIoU_px_0.2_0.8_0.1)	  0.592 (mF1_max_px)	  0.597 (mIoU_max_px)	
+2024-05-24 03:00:37,740 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.208 (mF1_px_0.2_0.8_0.1)	  0.204 (mAcc_px_0.2_0.8_0.1)	  0.194 (mIoU_px_0.2_0.8_0.1)	  0.569 (mF1_max_px)	  0.579 (mIoU_max_px)	
+2024-05-24 03:00:37,745 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     80.574      |  80.574 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   82.896    | 82.896 (50  epoch) |   75.727    | 75.727 (50  epoch) |    90.208    | 90.208 (50  epoch) |  60.757  | 60.757 (50  epoch) |      78.510      |   79.576 (40  epoch)   |        54.581        |     54.581 (50  epoch)     |        42.295         |     46.883 (10  epoch)      |        37.591         |     37.591 (50  epoch)      |    57.579    | 57.579 (50  epoch) |    40.429     | 40.429 (50  epoch)  |
+|    juice_bottle     |     98.932      |  98.932 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   77.874    | 77.874 (50  epoch) |   77.292    | 79.506 (30  epoch) |    99.631    | 99.631 (50  epoch) |  55.350  | 56.065 (40  epoch) |      97.447      |   97.447 (50  epoch)   |        44.907        |     44.907 (50  epoch)     |        32.817         |     48.503 (20  epoch)      |        29.259         |     29.259 (50  epoch)      |    58.129    | 58.129 (50  epoch) |    40.973     | 40.973 (50  epoch)  |
+|      pushpins       |     64.034      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   55.467    | 55.943 (40  epoch) |   52.919    | 58.494 (40  epoch) |    74.167    | 78.123 (30  epoch) |  4.758   | 4.898 (40  epoch)  |      71.616      |   71.816 (40  epoch)   |        6.756         |     8.286 (40  epoch)      |         4.435         |     49.736 (10  epoch)      |         3.510         |      4.332 (40  epoch)      |    9.230     | 10.537 (30  epoch) |     4.838     |  5.561 (30  epoch)  |
+|      screw_bag      |     73.112      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   49.640    | 54.506 (40  epoch) |   51.307    | 53.882 (30  epoch) |    84.315    | 84.315 (50  epoch) |  8.010   | 9.717 (40  epoch)  |      78.495      |   79.310 (40  epoch)   |        3.276         |     10.707 (20  epoch)     |         1.890         |     51.624 (20  epoch)      |         1.669         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     75.565      |  75.565 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   56.895    | 60.524 (30  epoch) |   39.906    | 41.344 (30  epoch) |    86.579    | 86.579 (50  epoch) |  23.287  | 24.869 (40  epoch) |      76.494      |   76.587 (30  epoch)   |        9.719         |     10.369 (30  epoch)     |         5.234         |     45.208 (20  epoch)      |         5.137         |      5.536 (30  epoch)      |    19.740    | 19.740 (50  epoch) |    10.951     | 10.951 (50  epoch)  |
+|         Avg         |     78.443      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   64.554    | 65.113 (40  epoch) |   59.430    | 60.376 (30  epoch) |    86.980    | 87.071 (40  epoch) |  30.432  | 31.080 (40  epoch) |      80.512      |   80.690 (40  epoch)   |        23.848        |     23.848 (50  epoch)     |        17.334         |     48.261 (20  epoch)      |        15.433         |     15.433 (50  epoch)      |    31.663    | 31.663 (50  epoch) |    20.902     | 20.902 (50  epoch)  |
+2024-05-24 03:00:37,905 - ==> Total time: 0:27:39	 Eta: 0:27:39 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:01:01,224 - Train: 50.77% [3300/6500]  [50.8/100.0] [batch_t 0.244 (0.447)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.034 (0.042)]
+2024-05-24 03:01:07,780 - ==> Total time: 0:28:09	 Eta: 0:27:03 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:01:24,377 - Train: 51.54% [3350/6500]  [51.5/100.0] [batch_t 0.244 (0.455)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.042 (0.045)]
+2024-05-24 03:01:37,358 - ==> Total time: 0:28:39	 Eta: 0:26:26 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:01:47,449 - Train: 52.31% [3400/6500]  [52.3/100.0] [batch_t 0.245 (0.472)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.038 (0.043)]
+2024-05-24 03:02:06,616 - ==> Total time: 0:29:08	 Eta: 0:25:50 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:02:10,982 - Train: 53.08% [3450/6500]  [53.1/100.0] [batch_t 1.000 (0.733)] [data_t 0.759] [optim_t 0.242] [lr 0.005000] [total 0.036 (0.044)]
+2024-05-24 03:02:31,835 - Train: 53.85% [3500/6500]  [53.8/100.0] [batch_t 0.245 (0.417)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.048 (0.042)]
+2024-05-24 03:02:36,420 - ==> Total time: 0:29:38	 Eta: 0:25:14 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:02:55,379 - Train: 54.62% [3550/6500]  [54.6/100.0] [batch_t 0.244 (0.455)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.035 (0.040)]
+2024-05-24 03:03:06,338 - ==> Total time: 0:30:08	 Eta: 0:24:39 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:03:19,030 - Train: 55.38% [3600/6500]  [55.4/100.0] [batch_t 0.860 (0.477)] [data_t 0.620] [optim_t 0.240] [lr 0.005000] [total 0.036 (0.043)]
+2024-05-24 03:03:36,082 - ==> Total time: 0:30:37	 Eta: 0:24:04 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:03:42,283 - Train: 56.15% [3650/6500]  [56.2/100.0] [batch_t 0.244 (0.548)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.042 (0.041)]
+2024-05-24 03:04:03,155 - Train: 56.92% [3700/6500]  [56.9/100.0] [batch_t 0.243 (0.417)] [data_t 0.002] [optim_t 0.241] [lr 0.005000] [total 0.036 (0.042)]
+2024-05-24 03:04:05,849 - ==> Total time: 0:31:07	 Eta: 0:23:28 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:04:27,060 - Train: 57.69% [3750/6500]  [57.7/100.0] [batch_t 0.875 (0.456)] [data_t 0.633] [optim_t 0.241] [lr 0.005000] [total 0.030 (0.040)]
+2024-05-24 03:04:35,618 - ==> Total time: 0:31:37	 Eta: 0:22:54 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:04:50,482 - Train: 58.46% [3800/6500]  [58.5/100.0] [batch_t 0.243 (0.468)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.056 (0.040)]
+2024-05-24 03:05:05,741 - ==> Total time: 0:32:07	 Eta: 0:22:19 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:05:14,592 - Train: 59.23% [3850/6500]  [59.2/100.0] [batch_t 0.243 (0.511)] [data_t 0.003] [optim_t 0.240] [lr 0.005000] [total 0.033 (0.040)]
+2024-05-24 03:05:36,815 - Train: 60.00% [3900/6500]  [60.0/100.0] [batch_t 0.975 (0.444)] [data_t 0.734] [optim_t 0.241] [lr 0.005000] [total 0.034 (0.043)]
+2024-05-24 03:05:54,868 - Test: 100.00% [49/49] [batch_t 1.071 (0.364)]
+2024-05-24 03:05:56,896 - ==> Metric Time for breakfast_box  :   0.002 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.174 (mF1_px_0.2_0.8_0.1)	  0.170 (mAcc_px_0.2_0.8_0.1)	  0.170 (mIoU_px_0.2_0.8_0.1)	  0.491 (mF1_max_px)	  0.493 (mIoU_max_px)	
+2024-05-24 03:05:59,206 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.209 (mF1_px_0.2_0.8_0.1)	  0.203 (mAcc_px_0.2_0.8_0.1)	  0.204 (mIoU_px_0.2_0.8_0.1)	  0.589 (mF1_max_px)	  0.586 (mIoU_max_px)	
+2024-05-24 03:06:01,356 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.197 (mF1_px_0.2_0.8_0.1)	  0.196 (mAcc_px_0.2_0.8_0.1)	  0.188 (mIoU_px_0.2_0.8_0.1)	  0.541 (mF1_max_px)	  0.562 (mIoU_max_px)	
+2024-05-24 03:06:03,717 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.225 (mF1_px_0.2_0.8_0.1)	  0.205 (mAcc_px_0.2_0.8_0.1)	  0.203 (mIoU_px_0.2_0.8_0.1)	  0.595 (mF1_max_px)	  0.592 (mIoU_max_px)	
+2024-05-24 03:06:05,953 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.192 (mF1_px_0.2_0.8_0.1)	  0.192 (mAcc_px_0.2_0.8_0.1)	  0.189 (mIoU_px_0.2_0.8_0.1)	  0.548 (mF1_max_px)	  0.551 (mIoU_max_px)	
+2024-05-24 03:06:05,957 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     82.155      |  82.155 (60  epoch)   |  100.000   | 100.000 (10  epoch) |   82.032    | 82.896 (50  epoch) |   73.802    | 75.727 (50  epoch) |    91.080    | 91.080 (60  epoch) |  61.597  | 61.597 (60  epoch) |      82.941      |   82.941 (60  epoch)   |        51.606        |     54.581 (50  epoch)     |        37.322         |     46.883 (10  epoch)      |        34.913         |     37.591 (50  epoch)      |    57.485    | 57.579 (50  epoch) |    40.337     | 40.429 (50  epoch)  |
+|    juice_bottle     |     97.543      |  98.932 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   78.860    | 78.860 (60  epoch) |   80.485    | 80.485 (60  epoch) |    99.147    | 99.631 (50  epoch) |  53.727  | 56.065 (40  epoch) |      95.595      |   97.447 (50  epoch)   |        45.961        |     45.961 (60  epoch)     |        34.513         |     48.503 (20  epoch)      |        30.141         |     30.141 (60  epoch)      |    55.563    | 58.129 (50  epoch) |    38.469     | 40.973 (50  epoch)  |
+|      pushpins       |     61.691      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   54.870    | 55.943 (40  epoch) |   59.451    | 59.451 (60  epoch) |    73.911    | 78.123 (30  epoch) |  3.868   | 4.898 (40  epoch)  |      71.369      |   71.816 (40  epoch)   |        6.985         |     8.286 (40  epoch)      |         5.141         |     49.736 (10  epoch)      |         3.632         |      4.332 (40  epoch)      |    9.182     | 10.537 (30  epoch) |     4.812     |  5.561 (30  epoch)  |
+|      screw_bag      |     69.440      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   52.159    | 54.506 (40  epoch) |   53.686    | 53.882 (30  epoch) |    82.051    | 84.315 (50  epoch) |  9.760   | 9.760 (60  epoch)  |      78.777      |   79.310 (40  epoch)   |        3.692         |     10.707 (20  epoch)     |         2.106         |     51.624 (20  epoch)      |         1.887         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     75.739      |  75.739 (60  epoch)   |  100.000   | 100.000 (10  epoch) |   55.168    | 60.524 (30  epoch) |   34.703    | 41.344 (30  epoch) |    86.915    | 86.915 (60  epoch) |  26.301  | 26.301 (60  epoch) |      76.436      |   76.587 (30  epoch)   |        6.380         |     10.369 (30  epoch)     |         3.330         |     45.208 (20  epoch)      |         3.308         |      5.536 (30  epoch)      |    15.084    | 19.740 (50  epoch) |     8.157     | 10.951 (50  epoch)  |
+|         Avg         |     77.314      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   64.618    | 65.113 (40  epoch) |   60.426    | 60.426 (60  epoch) |    86.621    | 87.071 (40  epoch) |  31.050  | 31.080 (40  epoch) |      81.024      |   81.024 (60  epoch)   |        22.925        |     23.848 (50  epoch)     |        16.482         |     48.261 (20  epoch)      |        14.776         |     15.433 (50  epoch)      |    30.190    | 31.663 (50  epoch) |    19.818     | 20.902 (50  epoch)  |
+2024-05-24 03:06:06,108 - ==> Total time: 0:33:07	 Eta: 0:22:05 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:06:30,169 - Train: 60.77% [3950/6500]  [60.8/100.0] [batch_t 0.243 (0.457)] [data_t 0.003] [optim_t 0.240] [lr 0.005000] [total 0.043 (0.040)]
+2024-05-24 03:06:36,809 - ==> Total time: 0:33:38	 Eta: 0:21:30 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:06:53,730 - Train: 61.54% [4000/6500]  [61.5/100.0] [batch_t 0.244 (0.462)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.041 (0.039)]
+2024-05-24 03:07:06,956 - ==> Total time: 0:34:08	 Eta: 0:20:55 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:07:17,271 - Train: 62.31% [4050/6500]  [62.3/100.0] [batch_t 0.245 (0.473)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.033 (0.036)]
+2024-05-24 03:07:37,251 - ==> Total time: 0:34:39	 Eta: 0:20:21 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:07:41,502 - Train: 63.08% [4100/6500]  [63.1/100.0] [batch_t 0.913 (0.710)] [data_t 0.671] [optim_t 0.242] [lr 0.005000] [total 0.036 (0.035)]
+2024-05-24 03:08:02,622 - Train: 63.85% [4150/6500]  [63.8/100.0] [batch_t 0.244 (0.422)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.032 (0.038)]
+2024-05-24 03:08:07,248 - ==> Total time: 0:35:09	 Eta: 0:19:46 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:08:26,036 - Train: 64.62% [4200/6500]  [64.6/100.0] [batch_t 0.244 (0.451)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.035 (0.036)]
+2024-05-24 03:08:37,350 - ==> Total time: 0:35:39	 Eta: 0:19:11 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:08:50,468 - Train: 65.38% [4250/6500]  [65.4/100.0] [batch_t 0.985 (0.493)] [data_t 0.744] [optim_t 0.241] [lr 0.005000] [total 0.029 (0.038)]
+2024-05-24 03:09:07,230 - ==> Total time: 0:36:09	 Eta: 0:18:37 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:09:13,327 - Train: 66.15% [4300/6500]  [66.2/100.0] [batch_t 0.244 (0.538)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.031 (0.033)]
+2024-05-24 03:09:34,658 - Train: 66.92% [4350/6500]  [66.9/100.0] [batch_t 0.245 (0.427)] [data_t 0.002] [optim_t 0.243] [lr 0.005000] [total 0.047 (0.038)]
+2024-05-24 03:09:37,329 - ==> Total time: 0:36:39	 Eta: 0:18:03 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:09:58,916 - Train: 67.69% [4400/6500]  [67.7/100.0] [batch_t 0.932 (0.465)] [data_t 0.690] [optim_t 0.241] [lr 0.005000] [total 0.033 (0.038)]
+2024-05-24 03:10:07,477 - ==> Total time: 0:37:09	 Eta: 0:17:29 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:10:22,334 - Train: 68.46% [4450/6500]  [68.5/100.0] [batch_t 0.259 (0.467)] [data_t 0.018] [optim_t 0.242] [lr 0.005000] [total 0.037 (0.039)]
+2024-05-24 03:10:37,463 - ==> Total time: 0:37:39	 Eta: 0:16:55 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:10:45,777 - Train: 69.23% [4500/6500]  [69.2/100.0] [batch_t 0.245 (0.498)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.040 (0.037)]
+2024-05-24 03:11:07,590 - Train: 70.00% [4550/6500]  [70.0/100.0] [batch_t 1.007 (0.436)] [data_t 0.765] [optim_t 0.241] [lr 0.005000] [total 0.043 (0.037)]
+2024-05-24 03:11:25,517 - Test: 100.00% [49/49] [batch_t 1.069 (0.363)]
+2024-05-24 03:11:27,531 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.169 (mF1_px_0.2_0.8_0.1)	  0.167 (mAcc_px_0.2_0.8_0.1)	  0.165 (mIoU_px_0.2_0.8_0.1)	  0.472 (mF1_max_px)	  0.474 (mIoU_max_px)	
+2024-05-24 03:11:29,811 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.203 (mF1_px_0.2_0.8_0.1)	  0.199 (mAcc_px_0.2_0.8_0.1)	  0.198 (mIoU_px_0.2_0.8_0.1)	  0.575 (mF1_max_px)	  0.571 (mIoU_max_px)	
+2024-05-24 03:11:32,067 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.189 (mF1_px_0.2_0.8_0.1)	  0.187 (mAcc_px_0.2_0.8_0.1)	  0.187 (mIoU_px_0.2_0.8_0.1)	  0.610 (mF1_max_px)	  0.625 (mIoU_max_px)	
+2024-05-24 03:11:34,486 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.217 (mF1_px_0.2_0.8_0.1)	  0.209 (mAcc_px_0.2_0.8_0.1)	  0.204 (mIoU_px_0.2_0.8_0.1)	  0.608 (mF1_max_px)	  0.594 (mIoU_max_px)	
+2024-05-24 03:11:36,833 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.199 (mF1_px_0.2_0.8_0.1)	  0.197 (mAcc_px_0.2_0.8_0.1)	  0.197 (mIoU_px_0.2_0.8_0.1)	  0.582 (mF1_max_px)	  0.574 (mIoU_max_px)	
+2024-05-24 03:11:36,838 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     81.191      |  82.155 (60  epoch)   |  100.000   | 100.000 (10  epoch) |   82.545    | 82.896 (50  epoch) |   74.550    | 75.727 (50  epoch) |    90.558    | 91.080 (60  epoch) |  59.806  | 61.597 (60  epoch) |      79.612      |   82.941 (60  epoch)   |        56.381        |     56.381 (70  epoch)     |        47.690         |     47.690 (70  epoch)      |        39.268         |     39.268 (70  epoch)      |    57.696    | 57.696 (70  epoch) |    40.544     | 40.544 (70  epoch)  |
+|    juice_bottle     |     99.558      |  99.558 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   78.802    | 78.860 (60  epoch) |   79.479    | 80.485 (60  epoch) |    99.826    | 99.826 (70  epoch) |  54.840  | 56.065 (40  epoch) |      98.121      |   98.121 (70  epoch)   |        49.991        |     49.991 (70  epoch)     |        39.018         |     48.503 (20  epoch)      |        33.491         |     33.491 (70  epoch)      |    57.186    | 58.129 (50  epoch) |    40.042     | 40.973 (50  epoch)  |
+|      pushpins       |     62.942      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   54.561    | 55.943 (40  epoch) |   44.806    | 59.451 (60  epoch) |    74.122    | 78.123 (30  epoch) |  5.000   | 5.000 (70  epoch)  |      71.399      |   71.816 (40  epoch)   |        6.368         |     8.286 (40  epoch)      |         4.033         |     49.736 (10  epoch)      |         3.300         |      4.332 (40  epoch)      |    9.070     | 10.537 (30  epoch) |     4.750     |  5.561 (30  epoch)  |
+|      screw_bag      |     68.546      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   50.882    | 54.506 (40  epoch) |   56.302    | 56.302 (70  epoch) |    82.226    | 84.315 (50  epoch) |  8.730   | 9.760 (60  epoch)  |      78.495      |   79.310 (40  epoch)   |        4.145         |     10.707 (20  epoch)     |         2.484         |     51.624 (20  epoch)      |         2.120         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     77.202      |  77.202 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   58.076    | 60.524 (30  epoch) |   65.500    | 65.500 (70  epoch) |    87.662    | 87.662 (70  epoch) |  19.120  | 26.301 (60  epoch) |      76.724      |   76.724 (70  epoch)   |        10.381        |     10.381 (70  epoch)     |         5.885         |     45.208 (20  epoch)      |         5.519         |      5.536 (30  epoch)      |    18.990    | 19.740 (50  epoch) |    10.491     | 10.951 (50  epoch)  |
+|         Avg         |     77.888      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   64.973    | 65.113 (40  epoch) |   64.127    | 64.127 (70  epoch) |    86.879    | 87.071 (40  epoch) |  29.499  | 31.080 (40  epoch) |      80.870      |   81.024 (60  epoch)   |        25.453        |     25.453 (70  epoch)     |        19.822         |     48.261 (20  epoch)      |        16.740         |     16.740 (70  epoch)      |    31.316    | 31.663 (50  epoch) |    20.629     | 20.902 (50  epoch)  |
+2024-05-24 03:11:36,991 - ==> Total time: 0:38:38	 Eta: 0:16:33 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:12:00,529 - Train: 70.77% [4600/6500]  [70.8/100.0] [batch_t 0.487 (0.453)] [data_t 0.245] [optim_t 0.241] [lr 0.005000] [total 0.036 (0.037)]
+2024-05-24 03:12:06,780 - ==> Total time: 0:39:08	 Eta: 0:15:59 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:12:23,737 - Train: 71.54% [4650/6500]  [71.5/100.0] [batch_t 0.243 (0.458)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.035 (0.036)]
+2024-05-24 03:12:36,791 - ==> Total time: 0:39:38	 Eta: 0:15:25 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:12:46,929 - Train: 72.31% [4700/6500]  [72.3/100.0] [batch_t 0.245 (0.469)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.035 (0.036)]
+2024-05-24 03:13:06,743 - ==> Total time: 0:40:08	 Eta: 0:14:50 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:13:10,895 - Train: 73.08% [4750/6500]  [73.1/100.0] [batch_t 0.944 (0.687)] [data_t 0.702] [optim_t 0.241] [lr 0.005000] [total 0.036 (0.039)]
+2024-05-24 03:13:31,515 - Train: 73.85% [4800/6500]  [73.8/100.0] [batch_t 0.246 (0.412)] [data_t 0.003] [optim_t 0.243] [lr 0.005000] [total 0.036 (0.036)]
+2024-05-24 03:13:35,979 - ==> Total time: 0:40:37	 Eta: 0:14:16 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:13:54,739 - Train: 74.62% [4850/6500]  [74.6/100.0] [batch_t 0.268 (0.450)] [data_t 0.025] [optim_t 0.242] [lr 0.005000] [total 0.035 (0.040)]
+2024-05-24 03:14:06,018 - ==> Total time: 0:41:07	 Eta: 0:13:42 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:14:19,060 - Train: 75.38% [4900/6500]  [75.4/100.0] [batch_t 1.010 (0.493)] [data_t 0.769] [optim_t 0.241] [lr 0.005000] [total 0.035 (0.035)]
+2024-05-24 03:14:36,576 - ==> Total time: 0:41:38	 Eta: 0:13:08 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:14:42,869 - Train: 76.15% [4950/6500]  [76.2/100.0] [batch_t 0.243 (0.557)] [data_t 0.003] [optim_t 0.241] [lr 0.005000] [total 0.043 (0.038)]
+2024-05-24 03:15:04,134 - Train: 76.92% [5000/6500]  [76.9/100.0] [batch_t 0.245 (0.425)] [data_t 0.002] [optim_t 0.242] [lr 0.005000] [total 0.029 (0.034)]
+2024-05-24 03:15:06,872 - ==> Total time: 0:42:08	 Eta: 0:12:35 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:15:28,205 - Train: 77.69% [5050/6500]  [77.7/100.0] [batch_t 0.987 (0.457)] [data_t 0.745] [optim_t 0.242] [lr 0.005000] [total 0.027 (0.035)]
+2024-05-24 03:15:36,863 - ==> Total time: 0:42:38	 Eta: 0:12:01 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:15:51,770 - Train: 78.46% [5100/6500]  [78.5/100.0] [batch_t 0.358 (0.472)] [data_t 0.116] [optim_t 0.242] [lr 0.005000] [total 0.034 (0.036)]
+2024-05-24 03:16:06,552 - ==> Total time: 0:43:08	 Eta: 0:11:28 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:16:15,511 - Train: 79.23% [5150/6500]  [79.2/100.0] [batch_t 0.245 (0.512)] [data_t 0.003] [optim_t 0.242] [lr 0.005000] [total 0.041 (0.035)]
+2024-05-24 03:16:37,818 - Train: 80.00% [5200/6500]  [80.0/100.0] [batch_t 1.097 (0.446)] [data_t 0.855] [optim_t 0.242] [lr 0.005000] [total 0.038 (0.035)]
+2024-05-24 03:16:56,370 - Test: 100.00% [49/49] [batch_t 1.088 (0.375)]
+2024-05-24 03:16:58,551 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.179 (mF1_px_0.2_0.8_0.1)	  0.175 (mAcc_px_0.2_0.8_0.1)	  0.174 (mIoU_px_0.2_0.8_0.1)	  0.516 (mF1_max_px)	  0.523 (mIoU_max_px)	
+2024-05-24 03:17:00,998 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.216 (mF1_px_0.2_0.8_0.1)	  0.213 (mAcc_px_0.2_0.8_0.1)	  0.208 (mIoU_px_0.2_0.8_0.1)	  0.628 (mF1_max_px)	  0.608 (mIoU_max_px)	
+2024-05-24 03:17:03,253 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.204 (mF1_px_0.2_0.8_0.1)	  0.202 (mAcc_px_0.2_0.8_0.1)	  0.200 (mIoU_px_0.2_0.8_0.1)	  0.575 (mF1_max_px)	  0.566 (mIoU_max_px)	
+2024-05-24 03:17:05,655 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.220 (mF1_px_0.2_0.8_0.1)	  0.214 (mAcc_px_0.2_0.8_0.1)	  0.207 (mIoU_px_0.2_0.8_0.1)	  0.595 (mF1_max_px)	  0.594 (mIoU_max_px)	
+2024-05-24 03:17:08,016 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.001 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.206 (mF1_px_0.2_0.8_0.1)	  0.199 (mAcc_px_0.2_0.8_0.1)	  0.197 (mIoU_px_0.2_0.8_0.1)	  0.571 (mF1_max_px)	  0.573 (mIoU_max_px)	
+2024-05-24 03:17:08,021 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     82.585      |  82.585 (80  epoch)   |  100.000   | 100.000 (10  epoch) |   81.221    | 82.896 (50  epoch) |   74.986    | 75.727 (50  epoch) |    91.133    | 91.133 (80  epoch) |  61.828  | 61.828 (80  epoch) |      80.347      |   82.941 (60  epoch)   |        55.612        |     56.381 (70  epoch)     |        42.261         |     47.690 (70  epoch)      |        38.569         |     39.268 (70  epoch)      |    58.559    | 58.559 (80  epoch) |    41.402     | 41.402 (80  epoch)  |
+|    juice_bottle     |     98.693      |  99.558 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   77.548    | 78.860 (60  epoch) |   77.885    | 80.485 (60  epoch) |    99.540    | 99.826 (70  epoch) |  55.034  | 56.065 (40  epoch) |      96.957      |   98.121 (70  epoch)   |        43.203        |     49.991 (70  epoch)     |        31.106         |     48.503 (20  epoch)      |        27.869         |     33.491 (70  epoch)      |    56.915    | 58.129 (50  epoch) |    39.777     | 40.973 (50  epoch)  |
+|      pushpins       |     64.476      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   54.464    | 55.943 (40  epoch) |   43.127    | 59.451 (60  epoch) |    73.317    | 78.123 (30  epoch) |  4.870   | 5.000 (70  epoch)  |      72.360      |   72.360 (80  epoch)   |        6.268         |     8.286 (40  epoch)      |         3.945         |     49.736 (10  epoch)      |         3.244         |      4.332 (40  epoch)      |    8.607     | 10.537 (30  epoch) |     4.497     |  5.561 (30  epoch)  |
+|      screw_bag      |     68.096      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   51.543    | 54.506 (40  epoch) |   52.628    | 56.302 (70  epoch) |    82.545    | 84.315 (50  epoch) |  9.504   | 9.760 (60  epoch)  |      78.214      |   79.310 (40  epoch)   |        3.393         |     10.707 (20  epoch)     |         1.881         |     51.624 (20  epoch)      |         1.729         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     76.732      |  77.202 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   54.568    | 60.524 (30  epoch) |   28.739    | 65.500 (70  epoch) |    87.703    | 87.703 (80  epoch) |  40.516  | 40.516 (80  epoch) |      76.892      |   76.892 (80  epoch)   |        6.866         |     10.381 (70  epoch)     |         3.577         |     45.208 (20  epoch)      |         3.564         |      5.536 (30  epoch)      |    14.005    | 19.740 (50  epoch) |     7.530     | 10.951 (50  epoch)  |
+|         Avg         |     78.116      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   63.869    | 65.113 (40  epoch) |   55.473    | 64.127 (70  epoch) |    86.847    | 87.071 (40  epoch) |  34.351  | 34.351 (80  epoch) |      80.954      |   81.024 (60  epoch)   |        23.068        |     25.453 (70  epoch)     |        16.554         |     48.261 (20  epoch)      |        14.995         |     16.740 (70  epoch)      |    30.345    | 31.663 (50  epoch) |    20.105     | 20.902 (50  epoch)  |
+2024-05-24 03:17:08,180 - ==> Total time: 0:44:10	 Eta: 0:11:02 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:17:31,795 - Train: 80.77% [5250/6500]  [80.8/100.0] [batch_t 0.416 (0.453)] [data_t 0.174] [optim_t 0.241] [lr 0.000500] [total 0.034 (0.033)]
+2024-05-24 03:17:38,310 - ==> Total time: 0:44:40	 Eta: 0:10:28 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:17:54,973 - Train: 81.54% [5300/6500]  [81.5/100.0] [batch_t 0.247 (0.456)] [data_t 0.003] [optim_t 0.244] [lr 0.000500] [total 0.029 (0.034)]
+2024-05-24 03:18:07,828 - ==> Total time: 0:45:09	 Eta: 0:09:54 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:18:17,850 - Train: 82.31% [5350/6500]  [82.3/100.0] [batch_t 0.244 (0.467)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.028 (0.034)]
+2024-05-24 03:18:37,674 - ==> Total time: 0:45:39	 Eta: 0:09:21 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:18:42,160 - Train: 83.08% [5400/6500]  [83.1/100.0] [batch_t 0.966 (0.722)] [data_t 0.726] [optim_t 0.240] [lr 0.000500] [total 0.032 (0.029)]
+2024-05-24 03:19:03,446 - Train: 83.85% [5450/6500]  [83.8/100.0] [batch_t 0.245 (0.426)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.032 (0.032)]
+2024-05-24 03:19:08,013 - ==> Total time: 0:46:09	 Eta: 0:08:47 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:19:26,519 - Train: 84.62% [5500/6500]  [84.6/100.0] [batch_t 0.244 (0.445)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.030 (0.033)]
+2024-05-24 03:19:37,690 - ==> Total time: 0:46:39	 Eta: 0:08:14 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:19:50,478 - Train: 85.38% [5550/6500]  [85.4/100.0] [batch_t 0.967 (0.483)] [data_t 0.724] [optim_t 0.243] [lr 0.000500] [total 0.035 (0.032)]
+2024-05-24 03:20:07,550 - ==> Total time: 0:47:09	 Eta: 0:07:40 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:20:13,834 - Train: 86.15% [5600/6500]  [86.2/100.0] [batch_t 0.244 (0.561)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.035 (0.034)]
+2024-05-24 03:20:34,775 - Train: 86.92% [5650/6500]  [86.9/100.0] [batch_t 0.244 (0.419)] [data_t 0.002] [optim_t 0.242] [lr 0.000500] [total 0.035 (0.033)]
+2024-05-24 03:20:37,521 - ==> Total time: 0:47:39	 Eta: 0:07:07 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:20:58,736 - Train: 87.69% [5700/6500]  [87.7/100.0] [batch_t 0.745 (0.456)] [data_t 0.503] [optim_t 0.242] [lr 0.000500] [total 0.032 (0.033)]
+2024-05-24 03:21:07,285 - ==> Total time: 0:48:09	 Eta: 0:06:33 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:21:22,439 - Train: 88.46% [5750/6500]  [88.5/100.0] [batch_t 0.262 (0.476)] [data_t 0.020] [optim_t 0.241] [lr 0.000500] [total 0.046 (0.033)]
+2024-05-24 03:21:37,755 - ==> Total time: 0:48:39	 Eta: 0:06:00 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:21:45,880 - Train: 89.23% [5800/6500]  [89.2/100.0] [batch_t 0.245 (0.498)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.034 (0.034)]
+2024-05-24 03:22:07,664 - Train: 90.00% [5850/6500]  [90.0/100.0] [batch_t 0.935 (0.436)] [data_t 0.693] [optim_t 0.242] [lr 0.000500] [total 0.033 (0.033)]
+2024-05-24 03:22:25,975 - Test: 100.00% [49/49] [batch_t 1.085 (0.370)]
+2024-05-24 03:22:27,960 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.169 (mF1_px_0.2_0.8_0.1)	  0.167 (mAcc_px_0.2_0.8_0.1)	  0.166 (mIoU_px_0.2_0.8_0.1)	  0.478 (mF1_max_px)	  0.476 (mIoU_max_px)	
+2024-05-24 03:22:30,258 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.205 (mF1_px_0.2_0.8_0.1)	  0.204 (mAcc_px_0.2_0.8_0.1)	  0.200 (mIoU_px_0.2_0.8_0.1)	  0.580 (mF1_max_px)	  0.579 (mIoU_max_px)	
+2024-05-24 03:22:32,386 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.192 (mF1_px_0.2_0.8_0.1)	  0.190 (mAcc_px_0.2_0.8_0.1)	  0.189 (mIoU_px_0.2_0.8_0.1)	  0.542 (mF1_max_px)	  0.544 (mIoU_max_px)	
+2024-05-24 03:22:34,760 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.215 (mF1_px_0.2_0.8_0.1)	  0.209 (mAcc_px_0.2_0.8_0.1)	  0.205 (mIoU_px_0.2_0.8_0.1)	  0.598 (mF1_max_px)	  0.598 (mIoU_max_px)	
+2024-05-24 03:22:36,996 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.193 (mF1_px_0.2_0.8_0.1)	  0.190 (mAcc_px_0.2_0.8_0.1)	  0.187 (mIoU_px_0.2_0.8_0.1)	  0.545 (mF1_max_px)	  0.547 (mIoU_max_px)	
+2024-05-24 03:22:37,000 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     83.515      |  83.515 (90  epoch)   |  100.000   | 100.000 (10  epoch) |   77.771    | 82.896 (50  epoch) |   66.802    | 75.727 (50  epoch) |    91.791    | 91.791 (90  epoch) |  63.356  | 63.356 (90  epoch) |      80.000      |   82.941 (60  epoch)   |        53.092        |     56.381 (70  epoch)     |        38.646         |     47.690 (70  epoch)      |        36.201         |     39.268 (70  epoch)      |    58.062    | 58.559 (80  epoch) |    40.906     | 41.402 (80  epoch)  |
+|    juice_bottle     |     98.035      |  99.558 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   76.517    | 78.860 (60  epoch) |   72.170    | 80.485 (60  epoch) |    99.330    | 99.826 (70  epoch) |  57.835  | 57.835 (90  epoch) |      96.567      |   98.121 (70  epoch)   |        46.549        |     49.991 (70  epoch)     |        33.781         |     48.503 (20  epoch)      |        30.512         |     33.491 (70  epoch)      |    57.768    | 58.129 (50  epoch) |    40.615     | 40.973 (50  epoch)  |
+|      pushpins       |     61.847      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   54.999    | 55.943 (40  epoch) |   52.252    | 59.451 (60  epoch) |    71.628    | 78.123 (30  epoch) |  4.086   | 5.000 (70  epoch)  |      71.369      |   72.360 (80  epoch)   |        6.868         |     8.286 (40  epoch)      |         4.760         |     49.736 (10  epoch)      |         3.566         |      4.332 (40  epoch)      |    8.997     | 10.537 (30  epoch) |     4.710     |  5.561 (30  epoch)  |
+|      screw_bag      |     72.416      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   50.925    | 54.506 (40  epoch) |   44.122    | 56.302 (70  epoch) |    84.073    | 84.315 (50  epoch) |  10.800  | 10.800 (90  epoch) |      78.636      |   79.310 (40  epoch)   |        2.759         |     10.707 (20  epoch)     |         1.438         |     51.624 (20  epoch)      |         1.400         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     76.114      |  77.202 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   57.514    | 60.524 (30  epoch) |   41.945    | 65.500 (70  epoch) |    86.995    | 87.703 (80  epoch) |  16.764  | 40.516 (80  epoch) |      76.652      |   76.892 (80  epoch)   |        8.955         |     10.381 (70  epoch)     |         4.996         |     45.208 (20  epoch)      |         4.714         |      5.536 (30  epoch)      |    16.813    | 19.740 (50  epoch) |     9.178     | 10.951 (50  epoch)  |
+|         Avg         |     78.385      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   63.545    | 65.113 (40  epoch) |   55.458    | 64.127 (70  epoch) |    86.763    | 87.071 (40  epoch) |  30.568  | 34.351 (80  epoch) |      80.645      |   81.024 (60  epoch)   |        23.644        |     25.453 (70  epoch)     |        16.724         |     48.261 (20  epoch)      |        15.279         |     16.740 (70  epoch)      |    31.055    | 31.663 (50  epoch) |    20.545     | 20.902 (50  epoch)  |
+2024-05-24 03:22:37,117 - ==> Total time: 0:49:38	 Eta: 0:05:30 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:23:00,635 - Train: 90.77% [5900/6500]  [90.8/100.0] [batch_t 0.245 (0.453)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.051 (0.033)]
+2024-05-24 03:23:07,215 - ==> Total time: 0:50:09	 Eta: 0:04:57 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:23:23,987 - Train: 91.54% [5950/6500]  [91.5/100.0] [batch_t 0.245 (0.460)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.042 (0.036)]
+2024-05-24 03:23:37,205 - ==> Total time: 0:50:39	 Eta: 0:04:24 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:23:47,376 - Train: 92.31% [6000/6500]  [92.3/100.0] [batch_t 0.244 (0.471)] [data_t 0.003] [optim_t 0.241] [lr 0.000500] [total 0.028 (0.035)]
+2024-05-24 03:24:07,478 - ==> Total time: 0:51:09	 Eta: 0:03:51 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:24:11,614 - Train: 93.08% [6050/6500]  [93.1/100.0] [batch_t 0.831 (0.675)] [data_t 0.589] [optim_t 0.242] [lr 0.000500] [total 0.020 (0.030)]
+2024-05-24 03:24:32,550 - Train: 93.85% [6100/6500]  [93.8/100.0] [batch_t 0.419 (0.419)] [data_t 0.179] [optim_t 0.241] [lr 0.000500] [total 0.041 (0.032)]
+2024-05-24 03:24:37,069 - ==> Total time: 0:51:38	 Eta: 0:03:17 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:24:56,412 - Train: 94.62% [6150/6500]  [94.6/100.0] [batch_t 0.245 (0.464)] [data_t 0.003] [optim_t 0.243] [lr 0.000500] [total 0.035 (0.032)]
+2024-05-24 03:25:07,598 - ==> Total time: 0:52:09	 Eta: 0:02:44 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:25:20,438 - Train: 95.38% [6200/6500]  [95.4/100.0] [batch_t 0.968 (0.481)] [data_t 0.727] [optim_t 0.241] [lr 0.000500] [total 0.033 (0.035)]
+2024-05-24 03:25:37,028 - ==> Total time: 0:52:38	 Eta: 0:02:11 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:25:43,141 - Train: 96.15% [6250/6500]  [96.2/100.0] [batch_t 0.244 (0.536)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.036 (0.035)]
+2024-05-24 03:26:04,180 - Train: 96.92% [6300/6500]  [96.9/100.0] [batch_t 0.244 (0.421)] [data_t 0.002] [optim_t 0.241] [lr 0.000500] [total 0.046 (0.032)]
+2024-05-24 03:26:06,364 - ==> Total time: 0:53:08	 Eta: 0:01:38 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:26:28,373 - Train: 97.69% [6350/6500]  [97.7/100.0] [batch_t 0.989 (0.463)] [data_t 0.748] [optim_t 0.241] [lr 0.000500] [total 0.040 (0.034)]
+2024-05-24 03:26:36,821 - ==> Total time: 0:53:38	 Eta: 0:01:05 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:26:51,961 - Train: 98.46% [6400/6500]  [98.5/100.0] [batch_t 0.245 (0.462)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.034 (0.032)]
+2024-05-24 03:27:07,350 - ==> Total time: 0:54:09	 Eta: 0:00:32 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:27:15,573 - Train: 99.23% [6450/6500]  [99.2/100.0] [batch_t 0.244 (0.499)] [data_t 0.003] [optim_t 0.242] [lr 0.000500] [total 0.029 (0.033)]
+2024-05-24 03:27:36,982 - Train: 100.00% [6500/6500]  [100.0/100.0] [batch_t 0.940 (0.428)] [data_t 0.699] [optim_t 0.241] [lr 0.000500] [total 0.043 (0.033)]
+2024-05-24 03:27:55,489 - Test: 100.00% [49/49] [batch_t 1.095 (0.373)]
+2024-05-24 03:27:57,549 - ==> Metric Time for breakfast_box  :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.178 (mF1_px_0.2_0.8_0.1)	  0.176 (mAcc_px_0.2_0.8_0.1)	  0.174 (mIoU_px_0.2_0.8_0.1)	  0.502 (mF1_max_px)	  0.503 (mIoU_max_px)	
+2024-05-24 03:27:59,925 - ==> Metric Time for juice_bottle   :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.210 (mAcc_px_0.2_0.8_0.1)	  0.207 (mIoU_px_0.2_0.8_0.1)	  0.603 (mF1_max_px)	  0.601 (mIoU_max_px)	
+2024-05-24 03:28:02,126 - ==> Metric Time for pushpins       :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.200 (mF1_px_0.2_0.8_0.1)	  0.198 (mAcc_px_0.2_0.8_0.1)	  0.194 (mIoU_px_0.2_0.8_0.1)	  0.564 (mF1_max_px)	  0.565 (mIoU_max_px)	
+2024-05-24 03:28:04,487 - ==> Metric Time for screw_bag      :   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.212 (mF1_px_0.2_0.8_0.1)	  0.205 (mAcc_px_0.2_0.8_0.1)	  0.205 (mIoU_px_0.2_0.8_0.1)	  0.592 (mF1_max_px)	  0.582 (mIoU_max_px)	
+2024-05-24 03:28:06,780 - ==> Metric Time for splicing_connectors:   0.001 (mAUROC_sp_max)	  0.000 (AUROC_sp)	  0.000 (mAUROC_px)	  0.000 (mAUPRO_px)	  0.000 (mAP_sp_max)	  0.000 (mAP_px)	  0.000 (mF1_max_sp_max)	  0.198 (mF1_px_0.2_0.8_0.1)	  0.196 (mAcc_px_0.2_0.8_0.1)	  0.193 (mIoU_px_0.2_0.8_0.1)	  0.562 (mF1_max_px)	  0.563 (mIoU_max_px)	
+2024-05-24 03:28:06,784 - 
+|        Name         |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  AUROC_sp  |   AUROC_sp (Max)    |  mAUROC_px  |  mAUROC_px (Max)   |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAP_sp_max  |  mAP_sp_max (Max)  |  mAP_px  |    mAP_px (Max)    |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mF1_max_px  |  mF1_max_px (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:-------------------:|:---------------:|:---------------------:|:----------:|:-------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:------------:|:------------------:|:--------:|:------------------:|:----------------:|:----------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:------------:|:------------------:|:-------------:|:-------------------:|
+|    breakfast_box    |     85.543      |  85.543 (100 epoch)   |  100.000   | 100.000 (10  epoch) |   82.603    | 82.896 (50  epoch) |   72.618    | 75.727 (50  epoch) |    92.652    | 92.652 (100 epoch) |  64.107  | 64.107 (100 epoch) |      82.143      |   82.941 (60  epoch)   |        56.487        |     56.487 (100 epoch)     |        43.703         |     47.690 (70  epoch)      |        39.412         |     39.412 (100 epoch)      |    59.398    | 59.398 (100 epoch) |    42.245     | 42.245 (100 epoch)  |
+|    juice_bottle     |     98.454      |  99.558 (70  epoch)   |  100.000   | 100.000 (10  epoch) |   78.755    | 78.860 (60  epoch) |   79.740    | 80.485 (60  epoch) |    99.480    | 99.826 (70  epoch) |  57.013  | 57.835 (90  epoch) |      97.216      |   98.121 (70  epoch)   |        50.557        |     50.557 (100 epoch)     |        39.043         |     48.503 (20  epoch)      |        33.966         |     33.966 (100 epoch)      |    57.229    | 58.129 (50  epoch) |    40.084     | 40.973 (50  epoch)  |
+|      pushpins       |     59.871      |  67.926 (30  epoch)   |  100.000   | 100.000 (10  epoch) |   54.043    | 55.943 (40  epoch) |   42.267    | 59.451 (60  epoch) |    71.096    | 78.123 (30  epoch) |  3.935   | 5.000 (70  epoch)  |      71.698      |   72.360 (80  epoch)   |        6.646         |     8.286 (40  epoch)      |         4.447         |     49.736 (10  epoch)      |         3.443         |      4.332 (40  epoch)      |    8.228     | 10.537 (30  epoch) |     4.290     |  5.561 (30  epoch)  |
+|      screw_bag      |     68.362      |  73.112 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   51.187    | 54.506 (40  epoch) |   43.991    | 56.302 (70  epoch) |    81.900    | 84.315 (50  epoch) |  9.675   | 10.800 (90  epoch) |      78.354      |   79.310 (40  epoch)   |        3.496         |     10.707 (20  epoch)     |         1.939         |     51.624 (20  epoch)      |         1.781         |      5.724 (20  epoch)      |    13.638    | 13.967 (20  epoch) |     7.318     |  7.508 (20  epoch)  |
+| splicing_connectors |     77.459      |  77.459 (100 epoch)   |  100.000   | 100.000 (10  epoch) |   53.822    | 60.524 (30  epoch) |   28.440    | 65.500 (70  epoch) |    88.135    | 88.135 (100 epoch) |  41.282  | 41.282 (100 epoch) |      77.003      |   77.003 (100 epoch)   |        7.989         |     10.381 (70  epoch)     |         4.192         |     45.208 (20  epoch)      |         4.167         |      5.536 (30  epoch)      |    14.005    | 19.740 (50  epoch) |     7.530     | 10.951 (50  epoch)  |
+|         Avg         |     77.938      |  78.443 (50  epoch)   |  100.000   | 100.000 (10  epoch) |   64.082    | 65.113 (40  epoch) |   53.411    | 64.127 (70  epoch) |    86.653    | 87.071 (40  epoch) |  35.202  | 35.202 (100 epoch) |      81.283      |   81.283 (100 epoch)   |        25.035        |     25.453 (70  epoch)     |        18.665         |     48.261 (20  epoch)      |        16.554         |     16.740 (70  epoch)      |    30.499    | 31.663 (50  epoch) |    20.293     | 20.902 (50  epoch)  |
+2024-05-24 03:28:06,952 - ==> Total time: 0:55:08	 Eta: 0:00:00 	Logged in 'runs/benchmark/destseg_256_100e/mvtec_loco/DeSTSegTrainer_configs_benchmark_destseg_256_100e_20240524-023258'
+2024-05-24 03:28:08,055 - finish training
